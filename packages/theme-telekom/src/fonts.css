@@ -1,0 +1,39 @@
+@font-face {
+	font-family: "TeleGrotesk Next";
+	src: url("./fonts/telegrotesknext-regular.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Italic";
+	src: url("./fonts/telegrotesknext-regularitalic.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Thin";
+	src: url("./fonts/telegrotesknext-thin.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Medium";
+	src: url("./fonts/telegrotesknext-medium.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Medium Italic";
+	src: url("./fonts/telegrotesknext-mediumitalic.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Bold";
+	src: url("./fonts/telegrotesknext-bold.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Bold Italic";
+	src: url("./fonts/telegrotesknext-bolditalic.woff") format("opentype");
+}
+
+@font-face {
+	font-family: "TeleGrotesk Next Ultra";
+	src: url("./fonts/telegrotesknext-ultra.woff") format("opentype");
+}

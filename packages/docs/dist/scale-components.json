@@ -1,0 +1,2896 @@
+{
+  "timestamp": "2020-06-05T17:57:52",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.12.0",
+    "typescriptVersion": "3.8.3"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/alert/alert.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-alert",
+      "readme": "# scale-alert\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Alert class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "mutable": false,
+          "attr": "headline",
+          "reflectToAttr": true,
+          "docs": "(optional) Alert title",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "(optional) Alert icon",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "opened",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "opened",
+          "reflectToAttr": true,
+          "docs": "(optional) Alert opened",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Alert size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "timeout",
+          "type": "boolean | number",
+          "mutable": false,
+          "attr": "timeout",
+          "reflectToAttr": false,
+          "docs": "(optional) Alert timeout",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Alert variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "open",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "open() => Promise<void>",
+          "parameters": [],
+          "docs": "Alert method: open()",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/breadcrumb/breadcrumb.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-breadcrumb",
+      "readme": "# scale-breadcrumb\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "separator",
+          "type": "string",
+          "mutable": false,
+          "attr": "separator",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'\\\\'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/button/button.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-button",
+      "readme": "# scale-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "button": "### Default\n\n<scale-button>\n  Hello\n</scale-button>\n",
+        "button-accessibility": "### Aria label\n\n<scale-button aria-label=\"label\">\n  Label\n</scale-button>\n\n### Focusable\n\n<scale-button focusable=\"false\">\n  Label\n</scale-button>\n",
+        "button-disabled": "### Disabled\n\n<scale-button disabled>\n  Label\n</scale-button>\n",
+        "button-icon": "### Icon before\n\n<scale-button icon-before=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n  Label\n</scale-button>\n\n### Icon after\n\n<scale-button icon-after=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n  Label\n</scale-button>\n\n### Icon only\n\n<scale-button icon=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-button>\n\n### Icon size\n\n<scale-button icon-size=\"12\" icon=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-button>\n",
+        "button-link": "### Link\n\n<scale-button href=\"http://example.com\" target=\"_blank\">\n  Label\n</scale-button>\n",
+        "button-small": "### Small\n\n<scale-button size=\"small\">\n  Label\n</scale-button>\n",
+        "button-variant": "## Variants\n### primary\n\n<scale-button variant=\"primary\">\n  Hello\n</scale-button>\n\n### secondary\n\n<scale-button variant=\"secondary\">\n  Hello\n</scale-button>\n\n### error\n\n<scale-button variant=\"error\">\n  Hello\n</scale-button>\n\n### warning\n\n<scale-button variant=\"warning\">\n  Hello\n</scale-button>\n\n### info\n\n<scale-button variant=\"info\">\n  Hello\n</scale-button>\n\n### success\n\n<scale-button variant=\"success\">\n  Hello\n</scale-button>\n\n### custom\n<div>\n  <script>\n  scale.useTheme({\n    components: {\n      Button: {\n        \"button--variant-custom\": {\n          background: \"pink\",\n          borderColor: \"pink\",\n        },\n      },\n    },\n  })\n  </script>\n  <scale-button variant=\"custom\">\n    Hello\n  </scale-button>\n</div>\n"
+      },
+      "props": [
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Button class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Disabled button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "focusable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "focusable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "(optional) Link button",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon only",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconAfter",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-after",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon after",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconBefore",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-before",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon before",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconSize",
+          "type": "number",
+          "mutable": false,
+          "attr": "icon-size",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon only",
+          "docsTags": [],
+          "default": "24",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "role",
+          "type": "string",
+          "mutable": false,
+          "attr": "role",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Button size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "(optional) Link target button",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Button variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "disable",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "disable() => Promise<void>",
+          "parameters": [],
+          "docs": "Button method: disable()",
+          "docsTags": []
+        },
+        {
+          "name": "enable",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "enable() => Promise<void>",
+          "parameters": [],
+          "docs": "Button method: enable()",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "scale-icon"
+      ],
+      "dependencyGraph": {
+        "scale-button": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/card/card.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-card",
+      "readme": "# scale-card\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "card": "# Default\n\n<scale-card>\n  <h1>Card Title</h1>\n  <p>This is card content</p>\n</scale-card>\n",
+        "card-interactive": "### Interactive\n\n<scale-card href=\"http://example.com\" target=\"_blank\">\n  <p>click me</p>\n</scale-card>\n"
+      },
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Card class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Link disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "(optional) Link card",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "interactive",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "interactive",
+          "reflectToAttr": false,
+          "docs": "(optional) Link interactive",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "(optional) Link card target",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/carousel/carousel.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-carousel",
+      "readme": "# scale-carousel\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Carousel class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "vertical",
+          "reflectToAttr": false,
+          "docs": "(optional) carousel display direction",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/divider/divider.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-divider",
+      "readme": "# scale-divider\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Divider class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Divider size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "vertical",
+          "reflectToAttr": false,
+          "docs": "(optional) Divider vertical",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/icon/icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-icon",
+      "readme": "# scale-icon\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "icon": "### Default\n\n<scale-icon path=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-icon>\n\n### Color\n<scale-icon color=\"red\" path=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-icon>\n\n### Size\n<scale-icon size=\"32\" path=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-icon>\n\n### Height & width\n<scale-icon height=\"32\" width=\"64\" path=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n</scale-icon>\n"
+      },
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "focusable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "focusable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "24",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag theme",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "mutable": false,
+          "attr": "path",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "viewBox",
+          "type": "string",
+          "mutable": false,
+          "attr": "view-box",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "24",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "scale-button",
+        "scale-input",
+        "scale-link",
+        "scale-list-item",
+        "scale-tag"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "scale-button": [
+          "scale-icon"
+        ],
+        "scale-input": [
+          "scale-icon"
+        ],
+        "scale-link": [
+          "scale-icon"
+        ],
+        "scale-list-item": [
+          "scale-icon"
+        ],
+        "scale-tag": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/input/input.tsx",
+      "encapsulation": "none",
+      "tag": "scale-input",
+      "readme": "# scale-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "counter",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "counter",
+          "reflectToAttr": false,
+          "docs": "(optional) Input counter",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Input text class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Input disabled",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": false,
+          "docs": "(optional) Input helper text",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "(optional) Input checkbox checked icon",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inputId",
+          "type": "string",
+          "mutable": false,
+          "attr": "input-id",
+          "reflectToAttr": false,
+          "docs": "(optional) Input checkbox id",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "(optional) Input label",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maxLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "max-length",
+          "reflectToAttr": false,
+          "docs": "(optional) Input max length",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "min-length",
+          "reflectToAttr": false,
+          "docs": "(optional) Input min length",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "(optional) Input name",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "(optional) Input placeHolder",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "preChecked",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "pre-checked",
+          "reflectToAttr": false,
+          "docs": "(optional) radio checked value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "(optional) Input required",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Input size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "mutable": false,
+          "attr": "status",
+          "reflectToAttr": false,
+          "docs": "(optional) Input status",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"checkbox\" | \"email\" | \"hidden\" | \"number\" | \"password\" | \"radio\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "(optional) Input type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "checkbox",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "hidden",
+              "type": "string"
+            },
+            {
+              "value": "number",
+              "type": "string"
+            },
+            {
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "value": "radio",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "(optional) Input value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"animated\" | \"static\"",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Input label variant",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "animated",
+              "type": "string"
+            },
+            {
+              "value": "static",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "scaleBlur",
+          "detail": "FocusEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "(optional) Input blur event",
+          "docsTags": []
+        },
+        {
+          "event": "scaleChange",
+          "detail": "InputEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "(optional) Input text event changed",
+          "docsTags": []
+        },
+        {
+          "event": "scaleFocus",
+          "detail": "FocusEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "(optional) Input focus event",
+          "docsTags": []
+        },
+        {
+          "event": "scaleKeyDown",
+          "detail": "KeyboardEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "(optional) Input keyDown event",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "scale-icon"
+      ],
+      "dependencyGraph": {
+        "scale-input": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/link/link.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-link",
+      "readme": "# scale-link\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "link": "## Default\n\n<scale-link href=\"http://example.com\">\n\tLabel\n</scale-link>\n\n## Target\n\n<scale-link href=\"http://example.com\" target=\"_blank\">\n\tLabel\n</scale-link>\n\n## Disabled\n\n<scale-link href=\"http://example.com\" disabled>\n\tLabel\n</scale-link>\n\n## Block\n\n<scale-link href=\"http://example.com\" block=\"true\">\n\tLabel\n</scale-link>\n\n## No underline\n\n<scale-link href=\"http://example.com\" underline=\"false\">\n\tLabel\n</scale-link>\n\n## Icon\n\n<scale-link href=\"http://example.com\" icon=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n\tLabel\n</scale-link>\n\n## Icon size\n\n<scale-link href=\"http://example.com\" icon-size=\"16\" icon=\"M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z\">\n\tLabel\n</scale-link>\n"
+      },
+      "props": [
+        {
+          "name": "block",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "block",
+          "reflectToAttr": false,
+          "docs": "(optional) Block link",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Link class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Disabled link",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "(optional) Link href",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon only",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconSize",
+          "type": "number",
+          "mutable": false,
+          "attr": "icon-size",
+          "reflectToAttr": false,
+          "docs": "(optional) Icon size",
+          "docsTags": [],
+          "default": "24",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "(optional) Link open a new tag",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "underline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "underline",
+          "reflectToAttr": false,
+          "docs": "(optional) Link underline",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Link variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "scale-icon"
+      ],
+      "dependencyGraph": {
+        "scale-link": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/list/list.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-list",
+      "readme": "# scale-list\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) List variant",
+          "docsTags": [],
+          "default": "'unordered'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/list/listItem/list-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-list-item",
+      "readme": "# scale-list-item\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "(optional) List item icon",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconSize",
+          "type": "number",
+          "mutable": false,
+          "attr": "icon-size",
+          "reflectToAttr": false,
+          "docs": "(optional) list Icon size",
+          "docsTags": [],
+          "default": "16",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "(optional) List item style type",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "scale-icon"
+      ],
+      "dependencyGraph": {
+        "scale-list-item": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/modal/modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-modal",
+      "readme": "# scale-modal\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Modal class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "opened",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "opened",
+          "reflectToAttr": true,
+          "docs": "(required) Modal opened",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Modal size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Modal variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "close() => Promise<void>",
+          "parameters": [],
+          "docs": "Modal method: onCloseModal()",
+          "docsTags": []
+        },
+        {
+          "name": "open",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "open() => Promise<void>",
+          "parameters": [],
+          "docs": "Modal method: open()",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/progress-bar/progress-bar.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-progress-bar",
+      "readme": "# scale-progress-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Progress bar class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "percentage",
+          "type": "number",
+          "mutable": false,
+          "attr": "percentage",
+          "reflectToAttr": false,
+          "docs": "(required) Progress bar percentage",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showText",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-text",
+          "reflectToAttr": false,
+          "docs": "(optional) Progress bar percentage text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "strokeWidth",
+          "type": "number",
+          "mutable": false,
+          "attr": "stroke-width",
+          "reflectToAttr": false,
+          "docs": "(optional) Progress bar stroke width",
+          "docsTags": [],
+          "default": "6",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "textInside",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "text-inside",
+          "reflectToAttr": false,
+          "docs": "(optional) Progress text display inside bar",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Progress bar variant",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/slider/slider.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-slider",
+      "readme": "# scale-slider\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider display value",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider range max value",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider range start value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider step",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "(optional) Slider binding value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/ssr-slot-fix/ssr-slot-fix.tsx",
+      "encapsulation": "none",
+      "tag": "scale-ssr-slot-fix",
+      "readme": "# scale-ssr-slot-fix\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/switch/switch.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-switch",
+      "readme": "# scale-switch\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "(optional) Active switch",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Switch class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Disabled switch",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/table/table.tsx",
+      "encapsulation": "none",
+      "tag": "scale-table",
+      "readme": "# scale-table\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "table": "### Default\n\n<scale-table>\n  <table>\n    <thead>\n    <tr>\n      <th>Title</th>\n      <th>Stats</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr>\n      <td>Jane</td>\n      <td>9.356</td>\n    </tr>\n    <tr>\n      <td>Jack</td>\n      <td>3.356</td>\n    </tr>\n    <tr>\n      <td>John</td>\n      <td>3.356</td>\n    </tr>\n    </tbody>\n    <tfoot>\n    <tr>\n      <td>Total</td>\n      <td>100.245,10</td>\n    </tr>\n    </tfoot>\n  </table>\n</scale-table>\n\n### Small size\n\n<scale-table size=\"small\">\n  <table>\n    <thead>\n    <tr>\n      <th>Title</th>\n      <th>Stats</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr>\n      <td>Jane</td>\n      <td>9.356</td>\n    </tr>\n    <tr>\n      <td>Jack</td>\n      <td>3.356</td>\n    </tr>\n    <tr>\n      <td>John</td>\n      <td>3.356</td>\n    </tr>\n    </tbody>\n    <tfoot>\n    <tr>\n      <td>Total</td>\n      <td>100.245,10</td>\n    </tr>\n    </tfoot>\n  </table>\n</scale-table>\n\n### Full sorting example\n\n<scale-table show-sort=\"true\">\n  <table id=\"sortable-table\">\n    <div style=\"padding: 20px 8px 0px 8px;\">\n      <scale-text size=\"h5\">Table title</scale-text>\n    </div>\n    <thead>\n    <tr>\n      <!--  Pay attention to the usage of `th` `aria-sort` attribute-->\n      <!--  which supports all the native values: `ascending`, `descending`, `none`, `other`.-->\n      <th aria-sort=\"descending\" onclick=\"sortTable(this)\">Title</th>\n      <!--  When you want to disable sorting for a particular column,-->\n      <!--  add the `aria-disabled` attribute to the `th`.-->\n      <th aria-disabled=\"true\" onclick=\"sortTable(this)\">Tags</th>\n      <th onclick=\"sortTable(this)\">Stats</th>\n      <th onclick=\"sortTable(this)\" style=\"text-align: right;\">Time</th>\n      <th onclick=\"sortTable(this)\" style=\"text-align: right;\">\n        Euros\n      </th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr>\n      <td>Jane</td>\n      <td>\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >Other</scale-tag\n        >\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >N/A</scale-tag\n        >\n        <scale-tag size=\"small\">Demo</scale-tag>\n      </td>\n      <td>\n        <div style=\"display: inline-flex; align-items: center;\">\n          <span style=\"margin-right: 8px\">9.356</span>\n          <scale-progress-bar\n                  size=\"info\"\n                  style=\" max-width: 120px;\"\n                  stroke-width=\"6\"\n                  percentage=\"90\"\n          />\n        </div>\n      </td>\n      <td style=\"text-align: right; font-weight: 100;\">00:00:20</td>\n      <td style=\"text-align: right; font-weight: 100;\">100.245,10</td>\n    </tr>\n    <tr>\n      <td>Jack</td>\n      <td>\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >Other</scale-tag\n        >\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >N/A</scale-tag\n        >\n        <scale-tag size=\"small\">Demo</scale-tag>\n      </td>\n      <td>\n        <div style=\"display: inline-flex; align-items: center;\">\n          <span style=\"margin-right: 8px\">3.356</span>\n          <scale-progress-bar\n                  size=\"info\"\n                  style=\" max-width: 120px;\"\n                  stroke-width=\"6\"\n                  percentage=\"90\"\n          />\n        </div>\n      </td>\n      <td style=\"text-align: right; font-weight: 100;\">00:00:30</td>\n      <td style=\"text-align: right; font-weight: 100;\">100.345,10</td>\n    </tr>\n    <tr>\n      <td>John</td>\n      <td>\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >Other</scale-tag\n        >\n        <scale-tag size=\"small\" style=\"margin-right: 8px\"\n        >N/A</scale-tag\n        >\n        <scale-tag size=\"small\">Demo</scale-tag>\n      </td>\n      <td>\n        <div style=\"display: inline-flex; align-items: center;\">\n          <span style=\"margin-right: 8px\">6.356</span>\n          <scale-progress-bar\n                  size=\"info\"\n                  style=\" max-width: 120px;\"\n                  stroke-width=\"6\"\n                  percentage=\"90\"\n          />\n        </div>\n      </td>\n      <td style=\"text-align: right; font-weight: 100;\">00:00:40</td>\n      <td style=\"text-align: right; font-weight: 100;\">100.445,10</td>\n    </tr>\n    </tbody>\n    <tfoot>\n    <tr>\n      <td>Total</td>\n      <td />\n      <td />\n      <td style=\"text-align: right;\">00:00:20</td>\n      <td style=\"text-align: right;\">100.245,10</td>\n    </tr>\n    </tfoot>\n  </table>\n  <script>\n    function getNextSort(sort) {\n      if (!sort || [\"none\", \"other\"].includes(sort)) {\n        return \"descending\";\n      }\n      if (sort === \"descending\") {\n        return \"ascending\";\n      }\n      return \"none\";\n    };\n    \n    function sortTable(th) {\n      const currentSort = th.getAttribute(\"aria-sort\");\n      const nextSort = getNextSort(currentSort);\n      const tableHeaders = Array.from(document.getElementsByTagName(\"TH\"));\n      const columnIndex = tableHeaders.findIndex((x) => x === th);\n    \n      // clean up previous aria-sort value\n      tableHeaders.forEach((tableHeader) => {\n        tableHeader.setAttribute(\"aria-sort\", \"none\");\n      });\n    \n      // set actual sort\n      th.setAttribute(\"aria-sort\", nextSort);\n    \n      // Taken from:\n      // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table\n      var table, rows, switching, i, x, y, shouldSwitch;\n      table = document.getElementById(\"sortable-table\");\n      switching = true;\n      /*Make a loop that will continue until\n        no switching has been done:*/\n      while (switching) {\n        //start by saying: no switching is done:\n        switching = false;\n        rows = table.rows;\n        /*Loop through all table rows (except the\n            first, which contains table headers):*/\n        for (i = 1; i < rows.length - 1; i++) {\n          //start by saying there should be no switching:\n          shouldSwitch = false;\n    \n          /*Get the two elements you want to compare,\n                one from current row and one from the next:*/\n          x = rows[i].getElementsByTagName(\"TD\")[columnIndex];\n          y = rows[i + 1].getElementsByTagName(\"TD\")[columnIndex];\n    \n          if (\n            ![\"ascending\", \"descending\"].includes(nextSort) ||\n            x.parentElement.parentElement.tagName === \"TFOOT\" ||\n            y.parentElement.parentElement.tagName === \"TFOOT\"\n          ) {\n            break;\n          }\n    \n          //check if the two rows should switch place:\n          if (\n            (nextSort === \"descending\" ? y : x).innerHTML.toLowerCase() >\n            (nextSort === \"descending\" ? x : y).innerHTML.toLowerCase()\n          ) {\n            //if so, mark as a switch and break the loop:\n            shouldSwitch = true;\n            break;\n          }\n        }\n        if (shouldSwitch) {\n          /*If a switch has been marked, make the switch\n                and mark that a switch has been done:*/\n          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);\n          switching = true;\n        }\n      }\n    }\n  </script>\n</scale-table>\n"
+      },
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showSort",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-sort",
+          "reflectToAttr": false,
+          "docs": "(optional) Display sort arrows on/off",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Visual size",
+          "docsTags": [],
+          "default": "'default'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/tag/tag.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-tag",
+      "readme": "# scale-tag\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "tag": "### Default\n\n<scale-tag>\n  Label\n</scale-tag>\n\n### Pill\n\n<scale-tag pill>\n  Label\n</scale-tag>\n\n### Link\n\n<scale-tag href=\"http://example.com\">\n  Label\n</scale-tag>\n"
+      },
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dismissable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "dismissable",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag dismissable",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag href",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag target",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Tag variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "scaleClose",
+          "detail": "MouseEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "(optional) Close icon click event",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "scale-icon"
+      ],
+      "dependencyGraph": {
+        "scale-tag": [
+          "scale-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/text/text.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-text",
+      "readme": "# scale-text\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Text class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tag",
+          "type": "string",
+          "mutable": false,
+          "attr": "tag",
+          "reflectToAttr": false,
+          "docs": "(optional) Text tag",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Text variant",
+          "docsTags": [],
+          "default": "'body'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/toast/toast.tsx",
+      "encapsulation": "shadow",
+      "tag": "scale-toast",
+      "readme": "# scale-toast\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "animated",
+          "reflectToAttr": false,
+          "docs": "(optional) Animated toast",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autoHide",
+          "type": "boolean | number",
+          "mutable": false,
+          "attr": "auto-hide",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast autohide time",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "customClass",
+          "type": "string",
+          "mutable": false,
+          "attr": "custom-class",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast class",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "fadeDuration",
+          "type": "number",
+          "mutable": false,
+          "attr": "fade-duration",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast fade duration",
+          "docsTags": [],
+          "default": "500",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "opened",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "opened",
+          "reflectToAttr": true,
+          "docs": "(optional) Toast opened",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "positionRight",
+          "type": "number",
+          "mutable": false,
+          "attr": "position-right",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast position right",
+          "docsTags": [],
+          "default": "12",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "positionTop",
+          "type": "number",
+          "mutable": false,
+          "attr": "position-top",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast position at the top",
+          "docsTags": [],
+          "default": "12",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast size",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "styles",
+          "type": "StyleSheet<string | number | symbol>",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "(optional) Injected jss styles",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "StyleSheet<string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "symbol>"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "time",
+          "type": "number",
+          "mutable": false,
+          "attr": "time",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast time",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "(optional) Toast variant",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "open",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "open() => Promise<void>",
+          "parameters": [],
+          "docs": "Toast method: open()",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

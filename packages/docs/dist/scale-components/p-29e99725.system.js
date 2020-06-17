@@ -1,0 +1,1 @@
+System.register(["./p-ba486a0e.system.js"],(function(e){"use strict";return{setters:[function(t){var s={};s.THEME_MAGIC_STRING=t.T;s.getTheme=t.g;s.useTheme=t.u;e(s)}],execute:function(){}}}));

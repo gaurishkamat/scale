@@ -1,0 +1,21 @@
+{
+  "packages": [
+    "packages/components",
+    "packages/components-react",
+    "packages/config",
+    "packages/docs",
+    "packages/gatsby-plugin",
+    "packages/generator-sketch",
+    "packages/html-to-sketch",
+    "packages/nuxt-module",
+    "theme-telekom"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "0.1.4",
+  "command": {
+    "version": {
+      "allowBranch": "master"
+    }
+  }
+}

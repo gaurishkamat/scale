@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarNav should match snapshot 1`] = `
+<scale-sidebar-nav>
+  <mock:shadow-root>
+    <style>
+      .sidebar-nav-0-0-1 {}
+.sidebar-nav__list-0-0-2 {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+    </style>
+    <nav class="sidebar-nav-0-0-1">
+      <ul class="sidebar-nav__list-0-0-2">
+        <slot></slot>
+      </ul>
+    </nav>
+  </mock:shadow-root>
+</scale-sidebar-nav>
+`;

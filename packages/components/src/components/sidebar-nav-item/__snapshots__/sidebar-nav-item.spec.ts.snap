@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarNavItem should match snapshot 1`] = `
+<scale-sidebar-nav-item>
+  <mock:shadow-root>
+    <style>
+      .sidebar-nav-item-0-0-1 {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #E0E0E0;
+}
+.sidebar-nav-item-0-0-1 ::slotted(a) {
+  color: currentColor;
+  display: block;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  border-radius: 2px;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+}
+.sidebar-nav-item-0-0-1 ::slotted(a:hover) {
+  color: #E20074;
+}
+.sidebar-nav-item-0-0-1 ::slotted(a:focus) {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #009DE0;
+}
+.sidebar-nav-item-0-0-1 ::slotted(a:active) {
+  color: #CB0068;
+}
+.sidebar-nav-item--current-0-0-2 {
+  color: #E20074;
+}
+.sidebar-nav-item--bold-0-0-3 {
+  font-weight: 700;
+}
+.sidebar-nav-item--condensed-0-0-4 {
+  border-bottom-width: 0;
+}
+.sidebar-nav-item--condensed-0-0-4 ::slotted(a) {
+  padding-top: 0.5rem;
+  border-width: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+    </style>
+    <li class="sidebar-nav-item-0-0-1">
+      <slot></slot>
+    </li>
+  </mock:shadow-root>
+</scale-sidebar-nav-item>
+`;
