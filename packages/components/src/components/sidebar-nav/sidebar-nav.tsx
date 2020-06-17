@@ -24,6 +24,7 @@ export class SidebarNav implements Base {
   @Prop() ariaLabel?: string;
 
   componentWillLoad() {}
+  componentDidUnload() {}
   componentWillUpdate() {}
   componentDidUnload() {}
 
