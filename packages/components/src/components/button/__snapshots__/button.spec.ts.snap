@@ -2,9 +2,9 @@
 
 exports[`Button should match snapshot 1`] = `
 <scale-button>
-  <mock:shadow-root>
-    <style>
-      .button-0-0-12 {
+  <!---->
+  <style>
+    .button-0-0-12 {
   cursor: pointer;
   display: inline-flex;
   padding: 0.25rem 1rem;
@@ -139,11 +139,9 @@ exports[`Button should match snapshot 1`] = `
   background: #00b248;
   border: 1px solid #00b248;
 }
-    </style>
-    <button class="button-0-0-12" tabindex="0">
-      <slot></slot>
-    </button>
-  </mock:shadow-root>
-  Label
+  </style>
+  <button class="button-0-0-12" tabindex="0">
+    Label
+  </button>
 </scale-button>
 `;

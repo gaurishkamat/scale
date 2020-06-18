@@ -2,6 +2,9 @@ import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
 
 export const config: Config = {
+  testing: {
+    testRegex: '/src/.*\\.spec\\.(ts|tsx)$',
+  },
   namespace: 'scale-components',
   outputTargets: [
     reactOutputTarget({

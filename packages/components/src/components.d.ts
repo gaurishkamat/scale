@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { StyleSheet, } from "jss";
+import { StyleSheet } from "jss";
 export namespace Components {
     interface ScaleAlert {
         /**
@@ -255,7 +255,15 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'checkbox'
+    | 'radio'
+    | 'url';
         /**
           * (optional) Input value
          */
@@ -263,7 +271,7 @@ export namespace Components {
         /**
           * (optional) Input label variant
          */
-        "variant"?: "animated" | "static";
+        "variant"?: 'animated' | 'static';
     }
     interface ScaleLink {
         /**
@@ -516,7 +524,7 @@ export namespace Components {
         /**
           * (optional) Visual size
          */
-        "size"?: "default" | "small" | string;
+        "size"?: 'default' | 'small' | string;
         /**
           * (optional) Injected jss styles
          */
@@ -1043,7 +1051,15 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'checkbox'
+    | 'radio'
+    | 'url';
         /**
           * (optional) Input value
          */
@@ -1051,7 +1067,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input label variant
          */
-        "variant"?: "animated" | "static";
+        "variant"?: 'animated' | 'static';
     }
     interface ScaleLink {
         /**
@@ -1296,7 +1312,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Visual size
          */
-        "size"?: "default" | "small" | string;
+        "size"?: 'default' | 'small' | string;
         /**
           * (optional) Injected jss styles
          */
