@@ -994,5 +994,64 @@
         </tfoot>
       </table>
     </scale-table>
+
+    <h2>Sidebar Nav</h2>
+
+    <div style="max-width: 22rem;">
+      <scale-sidebar-nav>
+        <scale-sidebar-nav-item bold>
+          <a href="/overview">Overview</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-collapsible label="Reference" bold>
+          <scale-sidebar-nav-collapsible label="Function A" condensed>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed current>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-collapsible label="Function B" condensed>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-collapsible label="Function C" condensed>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-collapsible label="Etcetera" bold>
+          <scale-sidebar-nav-item>
+            <a href="#">Some foo</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">More bar</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Links baz</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-item bold>
+          <a href="/console">Console</a>
+        </scale-sidebar-nav-item>
+      </scale-sidebar-nav>
+    </div>
   </body>
 </html>

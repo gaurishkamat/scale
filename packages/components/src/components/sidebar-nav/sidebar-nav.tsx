@@ -1,4 +1,3 @@
-import '@scaleds/components';
 import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -26,6 +25,7 @@ export class SidebarNav implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;
