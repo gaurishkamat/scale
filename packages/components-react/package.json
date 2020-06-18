@@ -1,5 +1,8 @@
 {
-  "name": "@scaleds/components-react",
+  "name": "@scaleds/components-telekom-react",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "sideEffects": false,
   "version": "0.1.4",
   "description": "React proxy for @scaleds/components",

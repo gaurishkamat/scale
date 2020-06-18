@@ -5,7 +5,7 @@ export const config: Config = {
   namespace: 'scale-components',
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: '@scaleds/components',
+      componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
     }),
     {

@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-nuxt",
+  "name": "@scaleds/boilerplate-nuxt",
   "version": "1.0.0",
   "description": "My legendary Nuxt.js project",
   "author": "@scaled",
@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@scaleds/components": "^0.1.4",
+    "@scaleds/components-telekom": "^0.1.4",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

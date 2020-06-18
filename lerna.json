@@ -8,7 +8,7 @@
     "packages/generator-sketch",
     "packages/html-to-sketch",
     "packages/nuxt-module",
-    "theme-telekom"
+    "packages/theme-telekom"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,

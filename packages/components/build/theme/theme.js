@@ -263,7 +263,7 @@ function createCommonjsModule(fn, module) {
 }
 
 /** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsHelpers.commonjsGlobal.Object === Object && commonjsGlobal;
 
 var _freeGlobal = freeGlobal;
 

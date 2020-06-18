@@ -392,6 +392,68 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleSidebarNav {
+        /**
+          * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
+         */
+        "ariaLabel"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleSidebarNavCollapsible {
+        /**
+          * Bold label and icon
+         */
+        "bold": boolean;
+        /**
+          * Used normally for third level items
+         */
+        "condensed": boolean;
+        /**
+          * The width and height of the icon in pixels
+         */
+        "iconSize": number;
+        /**
+          * Label and icon get the active color
+         */
+        "isCurrent"?: boolean;
+        /**
+          * Set this to `true` to expand
+         */
+        "isExpanded"?: boolean;
+        /**
+          * The text for the button
+         */
+        "label": string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * The parent wrapper
+         */
+        "tag"?: string;
+    }
+    interface ScaleSidebarNavItem {
+        /**
+          * Bold text
+         */
+        "bold": boolean;
+        /**
+          * Used normally for third level items, remove the bottom border
+         */
+        "condensed": boolean;
+        /**
+          * Text gets the active color
+         */
+        "isCurrent": boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
     interface ScaleSlider {
         /**
           * (optional) Slider class
@@ -642,6 +704,24 @@ declare global {
         prototype: HTMLScaleProgressBarElement;
         new (): HTMLScaleProgressBarElement;
     };
+    interface HTMLScaleSidebarNavElement extends Components.ScaleSidebarNav, HTMLStencilElement {
+    }
+    var HTMLScaleSidebarNavElement: {
+        prototype: HTMLScaleSidebarNavElement;
+        new (): HTMLScaleSidebarNavElement;
+    };
+    interface HTMLScaleSidebarNavCollapsibleElement extends Components.ScaleSidebarNavCollapsible, HTMLStencilElement {
+    }
+    var HTMLScaleSidebarNavCollapsibleElement: {
+        prototype: HTMLScaleSidebarNavCollapsibleElement;
+        new (): HTMLScaleSidebarNavCollapsibleElement;
+    };
+    interface HTMLScaleSidebarNavItemElement extends Components.ScaleSidebarNavItem, HTMLStencilElement {
+    }
+    var HTMLScaleSidebarNavItemElement: {
+        prototype: HTMLScaleSidebarNavItemElement;
+        new (): HTMLScaleSidebarNavItemElement;
+    };
     interface HTMLScaleSliderElement extends Components.ScaleSlider, HTMLStencilElement {
     }
     var HTMLScaleSliderElement: {
@@ -698,6 +778,9 @@ declare global {
         "scale-list-item": HTMLScaleListItemElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
+        "scale-sidebar-nav": HTMLScaleSidebarNavElement;
+        "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
+        "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
         "scale-slider": HTMLScaleSliderElement;
         "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
@@ -1089,6 +1172,68 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface ScaleSidebarNav {
+        /**
+          * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
+         */
+        "ariaLabel"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleSidebarNavCollapsible {
+        /**
+          * Bold label and icon
+         */
+        "bold"?: boolean;
+        /**
+          * Used normally for third level items
+         */
+        "condensed"?: boolean;
+        /**
+          * The width and height of the icon in pixels
+         */
+        "iconSize"?: number;
+        /**
+          * Label and icon get the active color
+         */
+        "isCurrent"?: boolean;
+        /**
+          * Set this to `true` to expand
+         */
+        "isExpanded"?: boolean;
+        /**
+          * The text for the button
+         */
+        "label"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * The parent wrapper
+         */
+        "tag"?: string;
+    }
+    interface ScaleSidebarNavItem {
+        /**
+          * Bold text
+         */
+        "bold"?: boolean;
+        /**
+          * Used normally for third level items, remove the bottom border
+         */
+        "condensed"?: boolean;
+        /**
+          * Text gets the active color
+         */
+        "isCurrent"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
     interface ScaleSlider {
         /**
           * (optional) Slider class
@@ -1273,6 +1418,9 @@ declare namespace LocalJSX {
         "scale-list-item": ScaleListItem;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
+        "scale-sidebar-nav": ScaleSidebarNav;
+        "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
+        "scale-sidebar-nav-item": ScaleSidebarNavItem;
         "scale-slider": ScaleSlider;
         "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
@@ -1299,6 +1447,9 @@ declare module "@stencil/core" {
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
+            "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
+            "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
+            "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
             "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;

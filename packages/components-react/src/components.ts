@@ -3,9 +3,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@scaleds/components';
+import { JSX } from '@scaleds/components-telekom';
 
-import { defineCustomElements, applyPolyfills } from '@scaleds/components/loader';
+import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
 applyPolyfills().then(() => defineCustomElements());
 export const ScaleAlert = /*@__PURE__*/createReactComponent<JSX.ScaleAlert, HTMLScaleAlertElement>('scale-alert');
@@ -21,6 +21,9 @@ export const ScaleList = /*@__PURE__*/createReactComponent<JSX.ScaleList, HTMLSc
 export const ScaleListItem = /*@__PURE__*/createReactComponent<JSX.ScaleListItem, HTMLScaleListItemElement>('scale-list-item');
 export const ScaleModal = /*@__PURE__*/createReactComponent<JSX.ScaleModal, HTMLScaleModalElement>('scale-modal');
 export const ScaleProgressBar = /*@__PURE__*/createReactComponent<JSX.ScaleProgressBar, HTMLScaleProgressBarElement>('scale-progress-bar');
+export const ScaleSidebarNav = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNav, HTMLScaleSidebarNavElement>('scale-sidebar-nav');
+export const ScaleSidebarNavCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavCollapsible, HTMLScaleSidebarNavCollapsibleElement>('scale-sidebar-nav-collapsible');
+export const ScaleSidebarNavItem = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavItem, HTMLScaleSidebarNavItemElement>('scale-sidebar-nav-item');
 export const ScaleSlider = /*@__PURE__*/createReactComponent<JSX.ScaleSlider, HTMLScaleSliderElement>('scale-slider');
 export const ScaleSsrSlotFix = /*@__PURE__*/createReactComponent<JSX.ScaleSsrSlotFix, HTMLScaleSsrSlotFixElement>('scale-ssr-slot-fix');
 export const ScaleSwitch = /*@__PURE__*/createReactComponent<JSX.ScaleSwitch, HTMLScaleSwitchElement>('scale-switch');
