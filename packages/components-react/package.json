@@ -1,7 +1,7 @@
 {
   "name": "@scaleds/components-react",
   "sideEffects": false,
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React proxy for @scaleds/components",
   "scripts": {
     "build": "yarn clean && yarn compile",
