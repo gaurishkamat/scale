@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Scale Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -67,6 +67,8 @@
     "classnames": "^2.2.6"
   },
   "jest": {
-    "testMatch": ["<rootDir>/src/**/?(*.)+(.spec).(ts|tsx)"]
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)+(.spec).(ts|tsx)"
+    ]
   }
 }

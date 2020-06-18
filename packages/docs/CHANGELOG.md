@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.5 (2020-06-18)
+
+
+### Bug Fixes
+
+* resolve remaining repo-merge issues ([93f788f](https://github.com/gatsbyjs/gatsby-starter-default/commit/93f788f2027f5331aee8f6214ff2b563a624165e))
+
+
+
+
+
 ## [0.1.4](https://github.com/gatsbyjs/gatsby-starter-default/compare/v0.1.3...v0.1.4) (2020-04-29)
 
 ### Bug Fixes
