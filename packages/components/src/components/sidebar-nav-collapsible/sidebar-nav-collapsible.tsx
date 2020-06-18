@@ -38,7 +38,6 @@ export class SidebarNavCollapsible implements Base {
   }
   componentDidUnload() {}
   componentWillUpdate() {}
-  componentDidUnload() {}
 
   handleClick() {
     this.expanded = !this.expanded;

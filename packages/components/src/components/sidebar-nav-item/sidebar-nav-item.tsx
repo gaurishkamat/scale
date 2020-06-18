@@ -26,7 +26,6 @@ export class SidebarNavItem implements Base {
   componentWillLoad() {}
   componentDidUnload() {}
   componentWillUpdate() {}
-  componentDidUnload() {}
 
   render() {
     return (

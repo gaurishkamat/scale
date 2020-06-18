@@ -26,7 +26,6 @@ export class SidebarNav implements Base {
   componentWillLoad() {}
   componentDidUnload() {}
   componentWillUpdate() {}
-  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;
