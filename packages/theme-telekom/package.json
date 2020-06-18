@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "0.1.10",
+  "version": "0.1.13",
   "main": "dist/index.js",
   "files": [
     "dist/"
