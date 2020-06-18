@@ -28,5 +28,7 @@ UserInterfaceState.xcuserstate
 .env
 
 hydrate/
-build/
-
+build/theme/components
+build/theme/utils
+build/theme/index.d.ts
+__diff_output__/
