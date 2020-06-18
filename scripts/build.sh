@@ -9,13 +9,13 @@ echo "${GREEN}Build config...${NC}"
 yarn workspace @scaleds/config build;
 echo "--------"
 echo "${GREEN}Build Components...${NC}"
-yarn workspace @scaleds/components build;
+yarn workspace @scaleds/components-telekom build;
 echo "--------"
 echo "${GREEN}Build React wrappers...${NC}"
-yarn workspace @scaleds/components-react build;
+yarn workspace @scaleds/components-telekom-react build;
 echo "--------"
 echo "${GREEN}Build Docs...${NC}"
-yarn workspace @scaleds/docs build;
+yarn workspace @scaleds/docs-telekom build;
 echo "--------"
 echo "${GREEN}Building Html to Sketch!${NC}"
 cd packages/html-to-sketch
