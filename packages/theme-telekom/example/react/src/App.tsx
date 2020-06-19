@@ -495,7 +495,12 @@ const App: React.FC = () => {
           <ScaleInput label="First Name" variant="animated" />
         </div>
         <div style={{ marginBottom: 24 }}>
-          <ScaleInput label="Last Name" variant="animated" counter maxLength={24} />
+          <ScaleInput
+            label="Last Name"
+            variant="animated"
+            counter
+            maxLength={24}
+          />
         </div>
         <div style={{ marginBottom: 24 }}>
           <ScaleInput
@@ -507,7 +512,11 @@ const App: React.FC = () => {
           />
         </div>
         <div style={{ marginBottom: 24 }}>
-          <ScaleInput placeholder="Placeholder" variant="animated" label="Label" />
+          <ScaleInput
+            placeholder="Placeholder"
+            variant="animated"
+            label="Label"
+          />
         </div>
         <div style={{ marginBottom: 24 }}>
           <ScaleInput disabled label="label" variant="animated" />
@@ -669,6 +678,74 @@ const App: React.FC = () => {
             label="disabled textarea"
             disabled={true}
           ></ScaleInput>
+        </div>
+        <div style={{ marginBottom: 24 }}>
+          <ScaleInput type="select" variant="animated" label="basic select box">
+            <option hidden selected></option>
+            <option value="1">item 1</option>
+            <option value="2">item 2</option>
+            <option value="3">item 3</option>
+          </ScaleInput>
+        </div>
+        <div style={{ marginBottom: 24 }}>
+          <ScaleInput
+            type="select"
+            variant="animated"
+            label="basic select box with icon"
+            icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
+          >
+            <option hidden selected></option>
+            <option value="1">item 1</option>
+            <option value="2">item 2</option>
+            <option value="3">item 3</option>
+          </ScaleInput>
+        </div>
+        <div style={{ marginBottom: 24 }}>
+          <ScaleInput
+            variant="static"
+            label="multi select with opt group"
+            type="select"
+            input-id="select box"
+            icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
+          >
+            <optgroup label="Category 1">
+              <option value="A">option A</option>
+              <option value="B">option B</option>
+            </optgroup>
+            <optgroup label="Category 2">
+              <option value="one">option one</option>
+              <option value="two">option two</option>
+            </optgroup>
+          </ScaleInput>
+        </div>
+        <div style={{ marginBottom: 24 }}>
+          <ScaleInput
+            variant="animated"
+            label="select with error"
+            status="error"
+            helper-text="error occurs"
+            type="select"
+            input-id="select box"
+            icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
+          >
+            <option hidden selected></option>
+            <option value="1">item A</option>
+            <option value="2">item B</option>
+            <option value="3">item C</option>
+          </ScaleInput>
+        </div>
+        <div style={{ marginBottom: 24 }}>
+          <ScaleInput
+            type="select"
+            variant="animated"
+            label="basic select box"
+            disabled={true}
+          >
+            <option hidden selected></option>
+            <option value="1">item 1</option>
+            <option value="2">item 2</option>
+            <option value="3">item 3</option>
+          </ScaleInput>
         </div>
       </div>
     </div>
