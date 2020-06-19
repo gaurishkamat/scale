@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { StyleSheet } from "jss";
+import { StyleSheet, } from "jss";
 export namespace Components {
     interface ScaleAlert {
         /**
@@ -225,6 +225,10 @@ export namespace Components {
          */
         "minLength"?: number;
         /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
           * (optional) Input name
          */
         "name"?: string;
@@ -255,15 +259,7 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: | 'email'
-    | 'hidden'
-    | 'number'
-    | 'password'
-    | 'tel'
-    | 'text'
-    | 'checkbox'
-    | 'radio'
-    | 'url';
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "select" | "url";
         /**
           * (optional) Input value
          */
@@ -271,7 +267,11 @@ export namespace Components {
         /**
           * (optional) Input label variant
          */
-        "variant"?: 'animated' | 'static';
+        "variant"?: "animated" | "static";
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleLink {
         /**
@@ -524,7 +524,7 @@ export namespace Components {
         /**
           * (optional) Visual size
          */
-        "size"?: 'default' | 'small' | string;
+        "size"?: "default" | "small" | string;
         /**
           * (optional) Injected jss styles
          */
@@ -1005,6 +1005,10 @@ declare namespace LocalJSX {
          */
         "minLength"?: number;
         /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
           * (optional) Input name
          */
         "name"?: string;
@@ -1051,15 +1055,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: | 'email'
-    | 'hidden'
-    | 'number'
-    | 'password'
-    | 'tel'
-    | 'text'
-    | 'checkbox'
-    | 'radio'
-    | 'url';
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "select" | "url";
         /**
           * (optional) Input value
          */
@@ -1067,7 +1063,11 @@ declare namespace LocalJSX {
         /**
           * (optional) Input label variant
          */
-        "variant"?: 'animated' | 'static';
+        "variant"?: "animated" | "static";
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleLink {
         /**
@@ -1312,7 +1312,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Visual size
          */
-        "size"?: 'default' | 'small' | string;
+        "size"?: "default" | "small" | string;
         /**
           * (optional) Injected jss styles
          */
