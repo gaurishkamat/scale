@@ -5,7 +5,8 @@ import {
   ScaleLink,
   ScaleText,
   ScaleInput,
-  ScaleTag
+  ScaleTag,
+  ScaleSwitch
 } from "@scaleds/components-react";
 import "./App.css";
 
@@ -746,6 +747,27 @@ const App: React.FC = () => {
             <option value="2">item 2</option>
             <option value="3">item 3</option>
           </ScaleInput>
+        </div>
+      </div>
+      <div>
+        <h3>switch</h3>
+        <div style={{ marginBottom: 12 }}>
+          <ScaleSwitch />
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <ScaleSwitch on-text="I" off-text="O"></ScaleSwitch>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <ScaleSwitch
+            icon-on="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+            icon-off="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></ScaleSwitch>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <ScaleSwitch active={true} disabled={true}></ScaleSwitch>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <ScaleSwitch active={false} disabled={true}></ScaleSwitch>
         </div>
       </div>
     </div>

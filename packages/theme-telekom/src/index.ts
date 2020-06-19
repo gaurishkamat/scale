@@ -4,6 +4,7 @@ import { Card } from "./components/Card";
 import { Link } from "./components/Link";
 import { Tag } from "./components/Tag";
 import { Input } from "./components/Input";
+import { Switch } from "./components/Switch";
 
 const theme: JssStyle = {
   shape: {
@@ -93,7 +94,8 @@ const theme: JssStyle = {
     Card,
     Link,
     Tag,
-    Input
+    Input,
+    Switch
   }
 };
 
