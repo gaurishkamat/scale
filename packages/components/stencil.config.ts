@@ -39,5 +39,6 @@ export const config: Config = {
       file: './dist/scale-components.json'
     },
     { type: 'dist-hydrate-script' }
-  ]
+  ],
+  extras: { cloneNodeFix: true }
 };
