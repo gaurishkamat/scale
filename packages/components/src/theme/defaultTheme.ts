@@ -179,4 +179,30 @@ export const defaultTheme: Theme = {
     separator:
       'M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z',
   },
+  components: {
+    Modal: {
+      transitions: {
+        modalContent: {
+          IN: {
+            duration: 200,
+            transition: 'fade-in-top',
+          },
+          OUT: {
+            transition: 'fadeOutUp',
+            duration: 200,
+          },
+        },
+        backDrop: {
+          IN: {
+            duration: 200,
+            transition: 'fadeIn',
+          },
+          OUT: {
+            transition: 'fadeOut',
+            duration: 200,
+          },
+        },
+      },
+    },
+  },
 };

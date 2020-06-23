@@ -60,6 +60,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Link to="/404">404</Link>
       <Link to="/">Home</Link>
+      <Link to="/modal">Modal</Link>
 
       <h3>Alert</h3>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
