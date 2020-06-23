@@ -60,9 +60,13 @@ export class Collapsible implements Base {
   }
 
   handleKeyDown(event: KeyboardEvent) {
+    // tslint:disable-next-line: no-unused-expression
     event.key === `ArrowDown` && event.preventDefault();
+    // tslint:disable-next-line: no-unused-expression
     event.key === `ArrowUp` && event.preventDefault();
+    // tslint:disable-next-line: no-unused-expression
     event.key === `Home` && event.preventDefault();
+    // tslint:disable-next-line: no-unused-expression
     event.key === `End` && event.preventDefault();
 
     this.onPress.emit({ key: event.key });
@@ -84,18 +88,9 @@ export class Collapsible implements Base {
       }
     `;
     const { classes } = this.stylesheet;
-    const wrapperClassMap = classNames(
-      classes['collapsible__wrapper']
-      // this.condensed && classes['collapsible__wrapper--condensed']
-    );
-    const buttonClassMap = classNames(
-      classes['collapsible__button']
-      // this.bold && classes['collapsible__button--bold']
-    );
-    const contentClassMap = classNames(
-      classes['collapsible__content']
-      // this.condensed && classes['collapsible__content--condensed']
-    );
+    const wrapperClassMap = classNames(classes['collapsible__wrapper']);
+    const buttonClassMap = classNames(classes['collapsible__button']);
+    const contentClassMap = classNames(classes['collapsible__content']);
 
     return (
       <Host>

@@ -25,6 +25,7 @@ export class Accordion implements Base {
       const current = event.target;
       const children = this.el.querySelectorAll('scale-collapsible');
       Array.from(children).forEach(child => {
+        // tslint:disable-next-line: no-unused-expression
         child !== current && child.close();
       });
     }
