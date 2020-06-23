@@ -1,0 +1,32 @@
+import { Meta, Story, Description, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './button.stories.js';
+import readme from './readme.md'
+
+<Meta title="Components/Button" component="scale-button"/>
+
+# Scale Button
+The scale button is used to perform actions through the user's interaction.
+
+
+<Preview>
+  <Story name="playground">
+    {stories.playground()}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="primary">
+    {stories.primary()}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="secondary">
+    {stories.secondary()}
+  </Story>
+</Preview>
+
+<Description>
+  {readme}
+</Description>
+
