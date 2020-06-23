@@ -755,7 +755,7 @@ const App: React.FC = () => {
           <ScaleSwitch />
         </div>
         <div style={{ marginBottom: 12 }}>
-          <ScaleSwitch on-text="I" off-text="O"></ScaleSwitch>
+          <ScaleSwitch text-on="I" text-off="O"></ScaleSwitch>
         </div>
         <div style={{ marginBottom: 12 }}>
           <ScaleSwitch

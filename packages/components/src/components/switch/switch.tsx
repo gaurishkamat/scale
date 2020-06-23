@@ -24,9 +24,9 @@ export class Switch implements Base {
   /** (optional)  Icon size */
   @Prop() iconSize?: number = 16;
   /** (optional) List item icon */
-  @Prop() onText?: string;
+  @Prop() textOn?: string;
   /** (optional) list Icon size */
-  @Prop() offText?: string;
+  @Prop() textOff?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -48,7 +48,7 @@ export class Switch implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()} onClick={this.toggleSwitch}>
-          {this.active && (!!this.iconOn || !!this.onText) && (
+          {this.active && (!!this.iconOn || !!this.textOn) && (
             <span class="switch--on">
               {!!this.iconOn && (
                 <scale-icon
@@ -56,10 +56,10 @@ export class Switch implements Base {
                   size={this.iconSize}
                 ></scale-icon>
               )}
-              {this.onText && this.onText}
+              {this.textOn && this.textOn}
             </span>
           )}
-          {!this.active && (!!this.iconOff || !!this.offText) && (
+          {!this.active && (!!this.iconOff || !!this.textOff) && (
             <span class="switch--off">
               {!!this.iconOff && (
                 <scale-icon
@@ -67,7 +67,7 @@ export class Switch implements Base {
                   size={this.iconSize}
                 ></scale-icon>
               )}
-              {this.offText && this.offText}
+              {this.textOff && this.textOff}
             </span>
           )}
         </div>

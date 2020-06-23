@@ -15,9 +15,9 @@
 | `iconOff`     | `icon-off`     | (optional) icon when switch is off | `string`                                 | `undefined` |
 | `iconOn`      | `icon-on`      | (optional) icon when switch is on  | `string`                                 | `undefined` |
 | `iconSize`    | `icon-size`    | (optional)  Icon size              | `number`                                 | `16`        |
-| `offText`     | `off-text`     | (optional) list Icon size          | `string`                                 | `undefined` |
-| `onText`      | `on-text`      | (optional) List item icon          | `string`                                 | `undefined` |
 | `styles`      | --             | (optional) Injected jss styles     | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| `textOff`     | `text-off`     | (optional) list Icon size          | `string`                                 | `undefined` |
+| `textOn`      | `text-on`      | (optional) List item icon          | `string`                                 | `undefined` |
 
 
 ## Dependencies

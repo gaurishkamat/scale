@@ -529,17 +529,17 @@ export namespace Components {
          */
         "iconSize"?: number;
         /**
-          * (optional) list Icon size
-         */
-        "offText"?: string;
-        /**
-          * (optional) List item icon
-         */
-        "onText"?: string;
-        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) list Icon size
+         */
+        "textOff"?: string;
+        /**
+          * (optional) List item icon
+         */
+        "textOn"?: string;
     }
     interface ScaleTable {
         /**
@@ -1346,17 +1346,17 @@ declare namespace LocalJSX {
          */
         "iconSize"?: number;
         /**
-          * (optional) list Icon size
-         */
-        "offText"?: string;
-        /**
-          * (optional) List item icon
-         */
-        "onText"?: string;
-        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) list Icon size
+         */
+        "textOff"?: string;
+        /**
+          * (optional) List item icon
+         */
+        "textOn"?: string;
     }
     interface ScaleTable {
         /**
