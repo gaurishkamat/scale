@@ -42,7 +42,7 @@ See the `scripts` section inside `package.json` for a list of all available comm
 |`yarn lint` |Run linter for all supported files|
 
 #### Before you push
-In order to satisfy the `CI` pipeline it is advised to run some scripts before pushing your changes to remote. Here some crutial ones:
+In order to satisfy the `CI` pipeline it is advised to run some scripts before pushing your changes to remote. Here some crucial ones:
 
 `yarn format`
 `yarn lint`
