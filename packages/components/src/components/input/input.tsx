@@ -135,7 +135,7 @@ export class Input implements Base {
                 <scale-icon path={this.icon}></scale-icon>
               )}
             </div>
-            <label class="input__label" htmlFor={this.name}>
+            <label class="input__label" htmlFor={this.inputId}>
               {this.label}
             </label>
           </div>
