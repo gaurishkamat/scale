@@ -35,7 +35,7 @@
     "lint:style": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "verify": "yarn format && yarn lint:fix",
-    "develop": "stencil build --prod --docs --watch",
+    "develop": "stencil build --docs --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
