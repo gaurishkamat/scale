@@ -1,7 +1,10 @@
 {
-  "name": "@scaleds/components-react",
+  "name": "@scaleds/components-react-telekom",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "sideEffects": false,
-  "version": "0.1.4",
+  "version": "0.1.13",
   "description": "React proxy for @scaleds/components",
   "scripts": {
     "build": "yarn clean && yarn compile",

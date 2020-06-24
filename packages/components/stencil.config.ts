@@ -8,7 +8,7 @@ export const config: Config = {
   namespace: 'scale-components',
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: '@scaleds/components',
+      componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
     }),
     {
@@ -39,5 +39,6 @@ export const config: Config = {
       file: './dist/scale-components.json'
     },
     { type: 'dist-hydrate-script' }
-  ]
+  ],
+  extras: { cloneNodeFix: true }
 };

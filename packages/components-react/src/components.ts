@@ -3,9 +3,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@scaleds/components';
+import { JSX } from '@scaleds/components-telekom';
 
-import { defineCustomElements, applyPolyfills } from '@scaleds/components/loader';
+import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
 applyPolyfills().then(() => defineCustomElements());
 export const ScaleAlert = /*@__PURE__*/createReactComponent<JSX.ScaleAlert, HTMLScaleAlertElement>('scale-alert');
