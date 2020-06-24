@@ -40,7 +40,11 @@ yarn build
 ```bash
 # components
 cd packages/components
-yarn start
+yarn develop
+```
+and then in a new terminal session
+```bash
+yarn storybook
 ```
 
 ### Contributing

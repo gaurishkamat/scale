@@ -24,8 +24,8 @@ export class SidebarNav implements Base {
   @Prop() ariaLabel?: string;
 
   componentWillLoad() {}
-  componentWillUpdate() {}
   componentDidUnload() {}
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

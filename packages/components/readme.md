@@ -10,7 +10,11 @@ yarn
 yarn build
 
 # start development mode
-yarn start
+yarn develop
+```
+and then in a new terminal session
+```bash
+yarn storybook
 ```
 
 ## Theming
