@@ -65,7 +65,7 @@ export class Modal implements Base {
   }
 
   waitForChildren(children) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const findChildren = () =>
         children.length
           ? resolve()
@@ -146,8 +146,8 @@ export class Modal implements Base {
     animationBackdrop.play();
     animationModal.play();
 
-    return new Promise((resolve) => {
-      animationModal.onfinish = function () {
+    return new Promise(resolve => {
+      animationModal.onfinish = function() {
         if (direction === 'OUT') {
           modalClassList.remove(this.stylesheet.classes['modal--opened']);
           document.removeEventListener('keydown', this.handleKeyDown);
