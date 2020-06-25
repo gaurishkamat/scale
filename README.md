@@ -10,6 +10,15 @@ The `scale` library offers a set of customizable UI components written in `TypeS
 
 This repository uses `lerna` and `typescript`
 
+#### Package overview
+|Package name       |Description|
+|---                |---|
+|components         |Stencil components|
+|components-react   |Component binding for React (auto-generated)|
+|config             |Shared configuration across packages|
+|gatsby-plugin      |Plugin to enable SSR for Gatsby apps|
+|nuxt-module        |Plugin to enable SSR for Nuxt apps|
+
 ### Running locally
 
 #### 1. Clone this repository to a local folder of your choice
@@ -35,23 +44,19 @@ yarn bootstrap
 yarn build
 ```
 
-#### 4. Local development
-
-```bash
-# components
-cd packages/components
-yarn develop
-```
-and then in a new terminal session
-```bash
-yarn storybook
-```
-
 ### Contributing
 
-We strongly recommend that the community help us make improvements and determine the future direction of the library. To report bugs within this package, please create an issue in this repository.
+#### Pull requests
 
+When opening a new PR it is advised to branch off the latest `master` branch. We loosely follow the `Git flow` standards for branch naming e.g. `feat|feature`, `fix`, `chore`, `test` etc. All pull requests are then merged into `master` and released through the `CI` pipeline via the `release` branch.
 
-##### Development Tooling
+#### Tests
+
+When developing new features or components it is required to provide `unit tests` and `end to end` tests if appropriate and aim at 100% test coverage. In addition we use `screenshot tests` for components via `jest-image-snapshot`. Stencil uses `Jest` as the testing framework, please take a look at the existing components as an example or visit the official documentation:
+
+- https://stenciljs.com/docs/testing-overview
+- https://jestjs.io/
+
+#### Development Tooling
 
 We strongly recommend you use the `VSCode text editor` since most of our code is written in `Typescript` and it offers amazing support for the language.

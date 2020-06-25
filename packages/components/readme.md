@@ -17,12 +17,109 @@ and then in a new terminal session
 yarn storybook
 ```
 
+## Component development
+
+
+### Useful commands
+See the `scripts` section inside `package.json` for a list of all available commands
+
+#### Testing
+|Command|Description|
+|---|---|
+|`yarn test` |Run all tests|
+|`yarn test component-name` |Run all tests for a specific component|
+|`yarn test:watch` |Run all tests in watch mode|
+|`yarn test -u`|Run all tests and update snapshots|
+|`yarn test --coverage`|Run all tests and show coverage|
+|`yarn test:visual`|Run all visual tests|
+
+> Some test commands can be combined e.g. `yarn test -u --coverage`
+
+#### Format & lint
+|Command|Description|
+|---|---|
+|`yarn format` |Run formatter on all supported files|
+|`yarn lint` |Run linter for all supported files|
+
+#### Before you push
+In order to satisfy the `CI` pipeline it is advised to run some scripts before pushing your changes to remote. Here some crucial ones:
+
+`yarn format`
+`yarn lint`
+`yarn test -u`
+
+> If any of the above commands throw an error, please fix the errors before pushing to remote
+
+### Component blueprint
+
+When building a new component it may be helpful to rely on this blueprint to get started
+
+`components/src/example/example.tsx`
+
+```typescript
+import { Component, h, Prop, Listen, State, Host } from '@stencil/core';
+import classNames from 'classnames';
+import { StyleSheet } from 'jss';
+import { CssClassMap } from '../../utils/utils';
+import { CssInJs } from '../../utils/css-in-js';
+import Base from '../../utils/base-interface';
+import { styles } from './example.styles';
+
+@Component({
+  tag: 'example',
+})
+export class Example implements Base {
+  stylesheet: StyleSheet;
+  @CssInJs('Example', styles)
+  @Prop() styles?: StyleSheet;
+  @Prop() customClass?: string = '';
+
+  componentWillLoad() {}
+  componentWillUpdate() {}
+  componentDidUnload() {}
+
+  render() {
+    return (
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          Content goes here...
+        </div>
+      </Host>
+    );
+  }
+
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+    return classNames(
+      classes.example,
+      this.customClass && this.customClass,
+    );
+  }
+}
+```
+
+`components/src/example/example.styles.ts`
+
+```typescript
+import { JssStyle } from 'jss';
+
+export const styles: JssStyle = {
+  'example': {
+    background: '#fff',
+    color: '#333'
+  }
+}
+```
+
 ## Theming
 
 Scale uses `css-in-js` and particular [`jss`](http://jss.com) as it's styling solution. 
 
 ### Default theme
 The default theme can be found under `src/theme/defaultTheme.ts`
+
+## Using a custom theme
 
 ### Using the theme in a HTML file
 

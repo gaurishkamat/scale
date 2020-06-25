@@ -28,7 +28,7 @@
     "test:watch": "stencil test --spec --e2e --watchAll",
     "test:visual.build": "yarn build && yarn monument build",
     "test:visual": "jest --forceExit",
-    "format": "prettier --write \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
+    "format": "prettier --write \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint": "yarn lint:types && yarn lint:style && yarn lint:format",
     "lint:fix": "yarn lint:style --fix",
     "lint:types": "tsc --noEmit",
