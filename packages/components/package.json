@@ -79,7 +79,6 @@
   "license": "MIT",
   "dependencies": {
     "@proyecto26/animatable-component": "^1.1.8",
-    "@stencil/core": "1.14.0",
     "classnames": "^2.2.6",
     "web-animations-js": "^2.3.2"
   },
