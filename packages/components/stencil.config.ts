@@ -6,6 +6,7 @@ export const config: Config = {
     testRegex: '/src/.*\\.spec\\.(ts|tsx)$',
   },
   namespace: 'scale-components',
+  globalScript: './global',
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
