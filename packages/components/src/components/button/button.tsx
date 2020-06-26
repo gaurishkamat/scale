@@ -8,7 +8,6 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-button',
-  shadow: true,
 })
 export class Button implements Base {
   hasSlotBefore: boolean;
