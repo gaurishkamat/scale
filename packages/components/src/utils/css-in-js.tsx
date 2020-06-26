@@ -17,7 +17,7 @@ const getKeys = obj => {
   const keys = [];
 
   for (const key in obj) {
-    if (obj[key] && !whitelistedProps.includes(key)) {
+    if (obj[key] && whitelistedProps.includes(key)) {
       keys.push(key);
     }
   }
