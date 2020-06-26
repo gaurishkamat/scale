@@ -186,7 +186,7 @@ export class Modal implements Base {
             <div class={classes.modal__backdrop} onClick={this.close}></div>
 
             <div class={classes.modal__content}>
-              {this.hasSlotHeader /* istanbul ignore next */ && (
+              {this.hasSlotHeader && (
                 <div class={classes.modal__header}>
                   <slot name="header" />
                   <a class={classes.modal__close} onClick={this.close}>
