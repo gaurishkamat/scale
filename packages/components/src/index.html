@@ -143,6 +143,64 @@
       <option value="2">item 2</option>
       <option value="3">item 3</option>
     </scale-input>
+    <h3>Textarea default</h3>
+    <scale-input
+      type="textarea"
+      rows="4"
+      cols="50"
+      resize="vertical"
+      label="text area default"
+      variant="static"
+    ></scale-input>
+    <h3>Textarea with animated label and no resize</h3>
+    <scale-input
+      type="textarea"
+      rows="6"
+      cols="50"
+      label="textarea label"
+      variant="animated"
+      resize="none"
+    ></scale-input>
+    <h3>textarea with helper info text</h3>
+    <scale-input
+      type="textarea"
+      rows="4"
+      cols="40"
+      label="textarea with helper info text"
+      variant="animated"
+      resize="horizontal"
+      status="info"
+      helper-text="this is an info message"
+    ></scale-input>
+    <h3>textarea with error</h3>
+    <scale-input
+      type="textarea"
+      rows="4"
+      cols="40"
+      label="textarea with helper info text"
+      variant="animated"
+      status="error"
+      helper-text="error occurs"
+    ></scale-input>
+    <h3>textarea with max length</h3>
+    <scale-input
+      type="textarea"
+      rows="4"
+      cols="40"
+      label="textarea with helper info text"
+      variant="animated"
+      counter="true"
+      max-length="512"
+    ></scale-input>
+    <h3>disabled textarea</h3>
+    <scale-input
+      type="textarea"
+      rows="4"
+      cols="40"
+      variant="animated"
+      label="disabled textarea"
+      disabled="true"
+    ></scale-input>
     <h3>Checkbox</h3>
     <scale-input
       input-id="checkbox1"
@@ -264,10 +322,10 @@
     <scale-input variant="static" label="Text"></scale-input>
 
     <h3>Animated input</h3>
-    <scale-input label="First Name" placeholder="Hello"></scale-input>
+    <scale-input label="First Name" placeholder="Hello" variant="animated"></scale-input>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input label="Last Name" max-length="24" counter></scale-input>
+    <scale-input label="Last Name" max-length="24" counter variant="animated"></scale-input>
 
     <h3>Input Text - helper text</h3>
     <scale-input
@@ -275,6 +333,7 @@
       label="address"
       required="true"
       max-length="24"
+      variant="animated"
       counter
     ></scale-input>
     <button id="show-error">Toggle error</button>
@@ -291,6 +350,7 @@
     <h3>Input Text - helper text</h3>
     <scale-input
       label="address"
+      variant="animated"
       required="true"
       status="error"
       max-length="24"
@@ -300,6 +360,7 @@
     <scale-input
       label="address"
       required="true"
+      variant="animated"
       status="error"
       helper-text="please fill out this field"
     ></scale-input>
@@ -308,35 +369,22 @@
     <scale-input
       type="string"
       variant="inline"
+      variant="static"
+      label="input text with placeholder"
       placeholder="placeholder"
     ></scale-input>
 
     <h3>Input Text - disabled</h3>
-    <scale-input type="string" disabled="true"></scale-input>
+    <scale-input type="string" disabled="true" label="input text disabled"></scale-input>
 
-    <h3>Input Email</h3>
-    <scale-input type="email"></scale-input>
-
-    <h3>Input number</h3>
-    <scale-input type="number"></scale-input>
-
-    <h3>Input password</h3>
-    <scale-input type="password"></scale-input>
-
-    <h3>Input tel</h3>
-    <scale-input type="tel"></scale-input>
-
-    <h3>Input url</h3>
-    <scale-input type="url"></scale-input>
-
-    <h3>Input hidden</h3>
+    <scale-input type="email" label="email"></scale-input>
+    <scale-input type="number" label="number"></scale-input>
+    <scale-input type="password" label="password"></scale-input>
+    <scale-input type="tel" label="telephone"></scale-input>
+    <scale-input type="url" label="url"></scale-input>
     <scale-input type="hidden"></scale-input>
-
-    <h3>Input small</h3>
-    <scale-input size="small"></scale-input>
-
-    <h3>Input small animated</h3>
-    <scale-input label="Name" size="small"></scale-input>
+    <scale-input size="small" label="small input"></scale-input>
+    <scale-input label="Name" size="small" variant="animated"></scale-input>
 
     <h3>Tag</h3>
     <scale-tag>default</scale-tag>

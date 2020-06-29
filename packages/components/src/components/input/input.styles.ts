@@ -33,7 +33,7 @@ const defaultTransition = 'all 0.2s ease-in-out';
 const animated = (size: string) => ({
   start: {
     fontSize: 16,
-    color: '#dfdfdf',
+    color: '#6c6c6c',
     transform: `translate(${input[size].paddingX + 1}px, ${(input[size].height -
       input[size].fontSize) /
       2}px)`,
@@ -62,8 +62,21 @@ export const styles: JssStyle = {
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
+      margin: '6px 0',
       height: input.large.height,
       transition: defaultTransition,
+    },
+    '& .input__textarea': {
+      display: 'flex',
+      padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
+      fontSize: 16,
+      borderRadius: 4,
+      border: '1px solid #cecece',
+      fontFamily: 'inherit',
+      boxSizing: 'border-box',
+      zIndex: 1,
+      margin: '6px 0',
+      transition: 'border-color 0.2s ease-in-out',
     },
     '& .input__select': {
       appearance: 'none',
@@ -90,12 +103,11 @@ export const styles: JssStyle = {
       transition: defaultTransition,
     },
     '& .input__meta': {
-      marginTop: 6,
       display: 'flex',
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input, & .input__select': {
+      '& .input__input, & .input__select, & .input__textarea': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
@@ -117,13 +129,15 @@ export const styles: JssStyle = {
   'input--variant-static': {
     '& .input__label': {
       display: 'flex',
-      marginBottom: 12,
     },
   },
   'input--variant-animated': {
-    '& .input__input.has-label, & .input__select.has-label': {
+    '& .input__input, & .input__select': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
+    },
+    '& .input__textarea': {
+      paddingTop: `${input.large.paddingY * 2}px`,
     },
     '& .input__label': {
       position: 'absolute',
@@ -137,9 +151,15 @@ export const styles: JssStyle = {
     '& .input__input:focus + .input__label, & .input__select:focus + .input__label, &.animated .input__label': animated(
       'large'
     ).end,
+    '& .input__textarea:focus + .input__label, &.animated .input__label': animated(
+      'large'
+    ).end,
   },
   'input--status-error': {
     '&.animated .input__label, & label': {
+      color: ({ colors }) => `${colors.error.default} !important`,
+    },
+    '& .input__input:focus + .input__label, & .input__textarea:focus + .input__label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
     '& .input__input:focus + .input__label': {
@@ -173,7 +193,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select': {
+    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select, & .input__textarea': {
       opacity: '0.5',
       cursor: 'not-allowed!important',
     },

@@ -189,6 +189,10 @@ export namespace Components {
     }
     interface ScaleInput {
         /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
           * (optional) Input counter
          */
         "counter"?: boolean;
@@ -215,7 +219,7 @@ export namespace Components {
         /**
           * (optional) Input label
          */
-        "label"?: string;
+        "label": string;
         /**
           * (optional) Input max length
          */
@@ -245,6 +249,14 @@ export namespace Components {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -268,6 +280,7 @@ export namespace Components {
     | 'checkbox'
     | 'radio'
     | 'select'
+    | 'textarea'
     | 'url';
         /**
           * (optional) Input value
@@ -998,6 +1011,10 @@ declare namespace LocalJSX {
     }
     interface ScaleInput {
         /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
           * (optional) Input counter
          */
         "counter"?: boolean;
@@ -1070,6 +1087,14 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -1093,6 +1118,7 @@ declare namespace LocalJSX {
     | 'checkbox'
     | 'radio'
     | 'select'
+    | 'textarea'
     | 'url';
         /**
           * (optional) Input value
