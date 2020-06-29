@@ -32,15 +32,20 @@ export class Input implements Base {
     | 'checkbox'
     | 'radio'
     | 'select'
+    | 'textarea'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label variant */
-  @Prop() variant?: 'animated' | 'static';
+  @Prop() variant?: 'animated' | 'static' = 'static';
   /** (optional) Input label */
-  @Prop() label?: string = '';
+  @Prop() label: string = '';
   /** (optional) Input size */
   @Prop() size?: string = '';
+  /** (optional) textarea row */
+  @Prop() rows?: number;
+  /** (optional) textarea column */
+  @Prop() cols?: number;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** (optional) Input status */
@@ -59,6 +64,8 @@ export class Input implements Base {
   @Prop() counter?: boolean;
   /** (optional) radio checked value */
   @Prop() preChecked?: boolean;
+  /** (optional) textarea resize */
+  @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal';
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input checkbox id */
@@ -85,16 +92,16 @@ export class Input implements Base {
 
   /** (optional) Input checkbox checked */
   @State() checked?: boolean = this.preChecked;
-  @State() checkedValue?: string;
+  @State() customResize?: any;
 
   componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidLoad() {}
   componentDidUnload() {}
 
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
-    this.checkedValue = event.target.value;
     this.scaleChange.emit(event);
   }
 
@@ -165,12 +172,13 @@ export class Input implements Base {
         </Host>
       );
     }
+    const Element = this.type === 'textarea' ? 'textarea' : 'input';
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
-          {!!this.label && this.variant === 'static' && (
+          {this.variant === 'static' && (
             <label class="input__label" htmlFor={this.inputId}>
               {this.label}
             </label>
@@ -178,7 +186,7 @@ export class Input implements Base {
           {this.type === 'select' ? (
             <div class="input__select-wrapper">
               <select
-                class={classNames('input__select', this.label && 'has-label')}
+                class={classNames('input__select')}
                 onChange={event => this.handleChange(event)}
                 disabled={this.disabled}
                 required={this.required}
@@ -191,23 +199,31 @@ export class Input implements Base {
               {!!this.icon && <scale-icon path={this.icon}></scale-icon>}
             </div>
           ) : (
-            <input
+            <Element
               type={this.type}
-              class={classNames('input__input', this.label && 'has-label')}
+              class={classNames(
+                `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
+                this.customResize && this.customResize.id
+              )}
+              style={!!this.resize && { resize: this.resize }}
               value={this.value}
-              name={this.name}
+              {...(!!this.name ? { name: this.name } : {})}
               required={this.required}
               minLength={this.minLength}
               maxLength={this.maxLength}
+              id={this.inputId}
               onInput={event => this.handleChange(event)}
               onFocus={event => this.handleFocus(event)}
               onBlur={event => this.handleBlur(event)}
               onKeyDown={event => this.handleKeyDown(event)}
-              placeholder={this.placeholder}
+              {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
               disabled={this.disabled}
+              {...(!!this.rows ? { rows: this.rows } : {})}
+              {...(!!this.cols ? { cols: this.cols } : {})}
             />
           )}
-          {!!this.label && this.variant === 'animated' && (
+
+          {this.variant === 'animated' && (
             <label class="input__label" htmlFor={this.inputId}>
               {this.label}
             </label>
@@ -232,15 +248,13 @@ export class Input implements Base {
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
     const isAnimated =
-      (!!this.placeholder || !!this.value) &&
-      !!this.label &&
-      this.variant === 'animated';
+      (!!this.placeholder || !!this.value) && this.variant === 'animated';
     return classNames(
       classes.input,
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
       this.checked && classes[`input--checked`],
-      this.size && classes[`input--size-${this.size}`],
+      this.resize && classes[`input--resize-${this.resize}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
       this.status && classes[`input--status-${this.status}`],

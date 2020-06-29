@@ -11,12 +11,25 @@ exports[`Input should match snapshot 1`] = `
   width: 100%;
   border: 1px solid #cecece;
   height: 48px;
+  margin: 6px 0;
   display: flex;
   padding: 12px 12px;
   z-index: 1;
   font-size: 16px;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
+  font-family: inherit;
+  border-radius: 4px;
+}
+.input-0-0-10 .input__textarea {
+  border: 1px solid #cecece;
+  margin: 6px 0;
+  display: flex;
+  padding: 12px 12px;
+  z-index: 1;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
   font-family: inherit;
   border-radius: 4px;
 }
@@ -40,11 +53,10 @@ exports[`Input should match snapshot 1`] = `
 }
 .input-0-0-10 .input__meta {
   display: flex;
-  margin-top: 6px;
   justify-content: space-between;
 }
 .input-0-0-10:not(.input--disabled-0-0-15) {}
-.input-0-0-10:not(.input--disabled-0-0-15) .input__input, .input-0-0-10:not(.input--disabled-0-0-15) .input__select {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input, .input-0-0-10:not(.input--disabled-0-0-15) .input__select, .input-0-0-10:not(.input--disabled-0-0-15) .input__textarea {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:focus {
@@ -54,7 +66,7 @@ exports[`Input should match snapshot 1`] = `
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus .input__checkbox-placeholder {
   border-color: #2962ff;
 }
-.input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:focus {
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__textarea:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__textarea:focus {
   border-color: #2962ff;
 }
 .input-0-0-10 .input__select-wrapper scale-icon {
@@ -66,16 +78,18 @@ exports[`Input should match snapshot 1`] = `
 .input--variant-static-0-0-11 {}
 .input--variant-static-0-0-11 .input__label {
   display: flex;
-  margin-bottom: 12px;
 }
 .input--variant-animated-0-0-12 {}
-.input--variant-animated-0-0-12 .input__input.has-label, .input--variant-animated-0-0-12 .input__select.has-label {
+.input--variant-animated-0-0-12 .input__input, .input--variant-animated-0-0-12 .input__select {
   padding: 12px 12px 0 11px;
+}
+.input--variant-animated-0-0-12 .input__textarea {
+  padding-top: 24px;
 }
 .input--variant-animated-0-0-12 .input__label {
   top: 0;
   left: 0;
-  color: #dfdfdf;
+  color: #6c6c6c;
   display: flex;
   z-index: 10;
   position: absolute;
@@ -92,8 +106,18 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 700;
   color: #2962ff;
 }
+.input--variant-animated-0-0-12 .input__textarea:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
+  font-size: 10px;
+  transform: translate(12px, 8px);
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  color: #2962ff;
+}
 .input--status-error-0-0-13 {}
 .input--status-error-0-0-13.animated .input__label, .input--status-error-0-0-13 label {
+  color: #f50057 !important;
+}
+.input--status-error-0-0-13 .input__input:focus + .input__label, .input--status-error-0-0-13 .input__textarea:focus + .input__label {
   color: #f50057 !important;
 }
 .input--status-error-0-0-13 .input__input:focus + .input__label {
@@ -115,7 +139,7 @@ exports[`Input should match snapshot 1`] = `
 .input--size-small-0-0-14 .input__label {
   top: 0;
   left: 0;
-  color: #dfdfdf;
+  color: #6c6c6c;
   display: flex;
   z-index: 10;
   position: absolute;
@@ -133,7 +157,7 @@ exports[`Input should match snapshot 1`] = `
   color: #2962ff;
 }
 .input--disabled-0-0-15 {}
-.input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio, .input--disabled-0-0-15 .input__select {
+.input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio, .input--disabled-0-0-15 .input__select, .input--disabled-0-0-15 .input__textarea {
   cursor: not-allowed!important;
   opacity: 0.5;
 }
@@ -204,8 +228,9 @@ exports[`Input should match snapshot 1`] = `
   border: 6px solid #2962ff;
 }
   </style>
-  <div class="input-0-0-10">
-    <input class="input__input" placeholder="" type="text">
+  <div class="input--variant-static-0-0-11 input-0-0-10">
+    <label class="input__label"></label>
+    <input class="input__input" type="text">
   </div>
 </scale-input>
 `;
