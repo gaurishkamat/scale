@@ -1,4 +1,5 @@
 import jss, { SheetsManager } from 'jss';
+import { getTheme } from '../theme/theme';
 
 class ScaleSheetManager {
   sheetManager = new SheetsManager();
@@ -26,7 +27,8 @@ class ScaleSheetManager {
     const oldSheet = this._get(nextKey);
 
     const newSheet =
-      !oldSheet && jss.createStyleSheet(injectedValues, { link: true });
+      !oldSheet &&
+      jss.createStyleSheet(injectedValues, { link: true }).update(getTheme());
 
     if (newSheet) {
       this._set(nextKey, newSheet);
