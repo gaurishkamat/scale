@@ -73,20 +73,6 @@ export class Collapsible implements Base {
   }
 
   render() {
-    // Reset, low-specificity
-    const reset = `
-      button {
-        appearance: none;
-        padding: 0;
-        color: inherit;
-        background: transparent;
-        font: inherit;
-        font-weight: inherit;
-        border: none;
-        border-radius: 0;
-        cursor: pointer;
-      }
-    `;
     const { classes } = this.stylesheet;
     const wrapperClassMap = classNames(classes['collapsible__wrapper']);
     const buttonClassMap = classNames(classes['collapsible__button']);
@@ -94,10 +80,6 @@ export class Collapsible implements Base {
 
     return (
       <Host>
-        <style>
-          {reset}
-          {this.stylesheet.toString()}
-        </style>
         <div class={this.getCssClassMap()}>
           <div class={wrapperClassMap}>
             <button
