@@ -83,7 +83,6 @@ export class Accordion implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
         <div class={classes.accordionContainer}>
           {/* {this.headline ? (
             <scale-text tag="h3" variant="h3">
