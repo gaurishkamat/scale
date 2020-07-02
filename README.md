@@ -31,6 +31,15 @@ cd scale
 
 #### 2. Install dependencies
 
+Before you install any packages, make sure you are logged into your npm account locally.
+You will also need to be part of the scaleds organization on npm.
+(if you need an invitation please send an email to Egor egor.kirpichev@telekom.de)
+
+To login to npm use the following command and follow the instructions.
+```
+npm login
+```
+
 This repository uses `yarn lerna`, for the symlinks to work correctly we use `yarn` in favour of `npm`
 
 ```bash
