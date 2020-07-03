@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = async (jestConfig) => {
   const app = express();
-  const directory = 'monument';
+  const directory = 'storybook-static';
   app.use(express.static(path.join(__dirname, directory)));
 
   app.get('/', (req, res) => {
