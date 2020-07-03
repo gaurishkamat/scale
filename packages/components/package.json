@@ -43,7 +43,7 @@
     "@babel/core": "7.10.2",
     "@babel/plugin-syntax-jsx": "7.10.1",
     "@babel/plugin-transform-react-jsx": "7.10.1",
-    "@nowseemee/stencil-react-output-target": "0.0.8",
+    "@nowseemee/stencil-react-output-target": "^0.0.10",
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "7.1.1",
     "@rollup/plugin-typescript": "4.0.0",
@@ -78,7 +78,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.2.6"
+    "@proyecto26/animatable-component": "^1.1.8",
+    "classnames": "^2.2.6",
+    "web-animations-js": "^2.3.2"
   },
   "jest": {
     "testMatch": [

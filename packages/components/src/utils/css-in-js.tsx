@@ -13,11 +13,11 @@ declare type CssInJsDecorator = (
 ) => void;
 
 const getKeys = obj => {
-  const whitelistedProps = ['styles'];
+  const allowedProps = ['styles'];
   const keys = [];
 
   for (const key in obj) {
-    if (obj[key] && whitelistedProps.includes(key)) {
+    if (obj[key] && allowedProps.includes(key)) {
       keys.push(key);
     }
   }
@@ -42,7 +42,8 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     try {
       withDefaultTheme = combineObjects(
         styles,
-        getTheme().components[componentKey]
+        (getTheme().components[componentKey] || {}).styles ||
+          getTheme().components[componentKey] // fallback for compatibility
       );
     } catch (error) {
       withDefaultTheme = styles;

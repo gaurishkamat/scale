@@ -7,37 +7,35 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Modal class         | `string`                                 | `''`        |
-| `opened`      | `opened`       | (required) Modal opened        | `boolean`                                | `false`     |
-| `size`        | `size`         | (optional) Modal size          | `string`                                 | `''`        |
-| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `variant`     | `variant`      | (optional) Modal variant       | `string`                                 | `''`        |
+| Property      | Attribute      | Description                            | Type                                     | Default     |
+| ------------- | -------------- | -------------------------------------- | ---------------------------------------- | ----------- |
+| `customClass` | `custom-class` | (optional) Modal class                 | `string`                                 | `''`        |
+| `opened`      | `opened`       | (optional) If true, the Modal is open. | `boolean`                                | `false`     |
+| `size`        | `size`         | (optional) Modal size                  | `string`                                 | `'default'` |
+| `styles`      | --             | (optional) Injected jss styles         | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| `transitions` | `transitions`  | (optional) Transition overrides        | `any`                                    | `undefined` |
+| `variant`     | `variant`      | (optional) Modal variant               | `string`                                 | `''`        |
 
 
-## Methods
+## Events
 
-### `close() => Promise<void>`
-
-Modal method: onCloseModal()
-
-#### Returns
-
-Type: `Promise<void>`
+| Event        | Description                                                         | Type                      |
+| ------------ | ------------------------------------------------------------------- | ------------------------- |
+| `scaleClose` | (optional) Callback fired when the component requests to be closed. | `CustomEvent<MouseEvent>` |
 
 
+## Dependencies
 
-### `open() => Promise<void>`
+### Depends on
 
-Modal method: open()
+- animatable-component
 
-#### Returns
-
-Type: `Promise<void>`
-
-
-
+### Graph
+```mermaid
+graph TD;
+  scale-modal --> animatable-component
+  style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
