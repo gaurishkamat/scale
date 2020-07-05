@@ -1,17 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import { defineCustomElements } from '@scaleds/components/loader';
+import { defineCustomElements } from '@scaleds/components-telekom/loader';
 import App from './App';
 import './index.css';
 
-import { useTheme } from '@scaleds/components/dist/theme';
-
-useTheme({
-  shape: {
-    borderRadius: 24
-  }
-})
 
 defineCustomElements(window)
 
