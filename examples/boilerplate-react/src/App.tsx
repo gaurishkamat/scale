@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/components-react';
+import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/components-react-telekom';
 import './App.css';
 
 const App: React.FC = () => (
