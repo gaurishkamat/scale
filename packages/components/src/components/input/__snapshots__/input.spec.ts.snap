@@ -7,6 +7,9 @@ exports[`Input should match snapshot 1`] = `
     .input-0-0-10 {
   position: relative;
 }
+.input-0-0-10 .input__helper-text, .input-0-0-10 .input__counter {
+  font-family: TeleNeoWeb-Bold;
+}
 .input-0-0-10 .input__input, .input-0-0-10 .input__select {
   width: 100%;
   border: 1px solid #cecece;
@@ -60,14 +63,14 @@ exports[`Input should match snapshot 1`] = `
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:focus {
-  border-color: #2962ff;
+  border-color: #e20074;
 }
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus .input__checkbox-placeholder {
-  border-color: #2962ff;
+  border-color: #e20074;
 }
 .input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__textarea:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__textarea:focus {
-  border-color: #2962ff;
+  border-color: #e20074;
 }
 .input-0-0-10 .input__select-wrapper scale-icon {
   top: 50%;
@@ -80,6 +83,14 @@ exports[`Input should match snapshot 1`] = `
   display: flex;
 }
 .input--variant-animated-0-0-12 {}
+.input--variant-animated-0-0-12 .input__input:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
+  font-size: 10px;
+  transform: translate(12px, 8px);
+  transition: all 0.2s ease-in-out;
+  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
+  color: #e20074;
+}
 .input--variant-animated-0-0-12 .input__input, .input--variant-animated-0-0-12 .input__select {
   padding: 12px 12px 0 11px;
 }
@@ -104,14 +115,15 @@ exports[`Input should match snapshot 1`] = `
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
-  color: #2962ff;
+  color: #e20074;
 }
 .input--variant-animated-0-0-12 .input__textarea:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;
+  font-family: TeleNeoWeb-Bold;
   font-weight: 700;
-  color: #2962ff;
+  color: #e20074;
 }
 .input--status-error-0-0-13 {}
 .input--status-error-0-0-13.animated .input__label, .input--status-error-0-0-13 label {
@@ -154,7 +166,7 @@ exports[`Input should match snapshot 1`] = `
   transform: translate(12px, 4px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
-  color: #2962ff;
+  color: #e20074;
 }
 .input--disabled-0-0-15 {}
 .input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio, .input--disabled-0-0-15 .input__select, .input--disabled-0-0-15 .input__textarea {
@@ -171,6 +183,18 @@ exports[`Input should match snapshot 1`] = `
   display: flex;
   position: relative;
   align-items: center;
+  margin-right: 10px;
+}
+.input--type-checkbox-0-0-16:not(.input--disabled-0-0-15) {}
+.input--type-checkbox-0-0-16:not(.input--disabled-0-0-15) .input__checkbox-container {}
+.input--type-checkbox-0-0-16:not(.input--disabled-0-0-15) .input__checkbox-container .input__checkbox-placeholder {
+  border: 1px solid #111111;
+  background-color: #D8D8D8;
+}
+.input--type-checkbox-0-0-16:not(.input--disabled-0-0-15) .input__checkbox-container:hover {}
+.input--type-checkbox-0-0-16:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder {
+  border: 1px solid #E20074;
+  background-color: #ffffff;
 }
 .input--type-checkbox-0-0-16 .input__checkbox-container .input__checkbox {
   top: 0;
@@ -201,6 +225,20 @@ exports[`Input should match snapshot 1`] = `
   user-select: none;
 }
 .input--checked-0-0-17.input--disabled-0-0-15 {}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) {}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) .input__checkbox-container {}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) scale-icon {
+  --icon-color: #ffffff;
+}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) .input__checkbox-container .input__checkbox-placeholder {
+  border: 1px solid #E20074;
+  background-color: #E20074;
+}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) .input__checkbox-container:hover {}
+.input--checked-0-0-17:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder {
+  border: 1px solid #E20074;
+  background-color: #F90984;
+}
 .input--checked-0-0-17.input--disabled-0-0-15 .input__checkbox-placeholder {
   background-color: #cdcdcd;
 }
@@ -213,6 +251,7 @@ exports[`Input should match snapshot 1`] = `
   border: 1px solid #cecece;
   height: 16px;
   appearance: none;
+  margin-right: 10px;
   border-radius: 50%;
   background-color: #ffffff;
 }
@@ -225,7 +264,7 @@ exports[`Input should match snapshot 1`] = `
 .input--type-radio-0-0-18 .input__radio:checked, .input--type-radio-0-0-18 .input__radio:focus {
   outline: none;
   transition: all 0.2s ease-in-out;
-  border: 6px solid #2962ff;
+  border: 6px solid #e20074;
 }
   </style>
   <div class="input--variant-static-0-0-11 input-0-0-10">

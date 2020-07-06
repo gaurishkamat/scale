@@ -63,9 +63,9 @@ export interface Theme {
     [key: string]: string;
   };
   typography?: {
-    htmlFontSize: number | string;
-    fontFamily: string;
-    fontSize: string | number;
+    htmlFontSize?: number | string;
+    fontFamily?: string;
+    fontSize?: string | number;
     [key: string]:
       | {
           fontFamily?: string;

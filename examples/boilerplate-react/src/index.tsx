@@ -5,7 +5,6 @@ import { defineCustomElements } from '@scaleds/components-telekom/loader';
 import App from './App';
 import './index.css';
 
-
 defineCustomElements(window)
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -8,7 +8,14 @@ import { JSX } from '@scaleds/components-telekom';
 import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
 applyPolyfills().then(() => defineCustomElements());
+export const AppIcon = /*@__PURE__*/createReactComponent<JSX.AppIcon, HTMLAppIconElement>('app-icon');
+export const AppLogo = /*@__PURE__*/createReactComponent<JSX.AppLogo, HTMLAppLogoElement>('app-logo');
+export const AppMegaMenu = /*@__PURE__*/createReactComponent<JSX.AppMegaMenu, HTMLAppMegaMenuElement>('app-mega-menu');
+export const AppNavigationMainMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationMainMobile, HTMLAppNavigationMainMobileElement>('app-navigation-main-mobile');
+export const AppNavigationSectorMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationSectorMobile, HTMLAppNavigationSectorMobileElement>('app-navigation-sector-mobile');
 export const ScaleAlert = /*@__PURE__*/createReactComponent<JSX.ScaleAlert, HTMLScaleAlertElement>('scale-alert');
+export const ScaleAppHeader = /*@__PURE__*/createReactComponent<JSX.ScaleAppHeader, HTMLScaleAppHeaderElement>('scale-app-header');
+export const ScaleAppShell = /*@__PURE__*/createReactComponent<JSX.ScaleAppShell, HTMLScaleAppShellElement>('scale-app-shell');
 export const ScaleBreadcrumb = /*@__PURE__*/createReactComponent<JSX.ScaleBreadcrumb, HTMLScaleBreadcrumbElement>('scale-breadcrumb');
 export const ScaleButton = /*@__PURE__*/createReactComponent<JSX.ScaleButton, HTMLScaleButtonElement>('scale-button');
 export const ScaleCard = /*@__PURE__*/createReactComponent<JSX.ScaleCard, HTMLScaleCardElement>('scale-card');

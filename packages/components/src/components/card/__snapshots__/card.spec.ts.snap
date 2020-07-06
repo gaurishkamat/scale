@@ -7,17 +7,17 @@ exports[`Card should match snapshot 1`] = `
       .card-0-0-5 {
   color: #333;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   overflow: hidden;
   max-width: 400px;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 19px 18px 0 rgba(0,0,0, 0.05), 0 8px 12px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.04), 0 0 2px 0 rgba(0,0,0, 0.03);
   box-sizing: border-box;
   transition: all .2s ease-in-out;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .card__body-0-0-6 {
-  padding: 1rem;
+  padding: 24px;
 }
 .card__body-0-0-6 ::slotted(*) {
   margin: 0;
@@ -28,13 +28,14 @@ exports[`Card should match snapshot 1`] = `
   text-decoration: none;
 }
 .card--interactive-0-0-7:hover {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 24px 18px 0 rgba(0,0,0, 0.05), 0 8px 12px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.24), 0 0 2px 0 rgba(0,0,0, 0.03);
 }
 .card--interactive-0-0-7:focus {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 19px 18px 0 rgba(0,0,0, 0.10), 0 8px 12px 0 rgba(0,0,0, 0.10), 0 1px 5px 0 rgba(0,0,0, 0.08), 0 0 2px 0 rgba(0,0,0, 0.06);
 }
 .card--interactive-0-0-7:active {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+  border: none;
+  box-shadow: 0 8px 18px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.04), 0 0 2px 0 rgba(0,0,0, 0.03);
 }
 .card--interactive-0-0-7 .card__body-0-0-6 ::slotted(*) {
   margin: 0;

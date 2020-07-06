@@ -13,9 +13,9 @@ export const styles: JssStyle = {
     padding: 0,
     fontSize: 16,
     fontWeight: 500,
-    color: '#000',
     transition: 'all .2s ease-in-out',
-    '--icon-color': '#000',
+    color: '#00A6F0',
+    '--icon-color': '#00A6F0',
     '& scale-icon': {
       marginLeft: 4,
     },
@@ -26,7 +26,8 @@ export const styles: JssStyle = {
   },
   'link--underline': {
     '&:hover:not($link--disabled)': {
-      textDecoration: 'underline',
+      textDecoration: 'none',
+      borderBottom: '1px solid #00A6F0',
     },
   },
   'link--disabled': {

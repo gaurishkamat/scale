@@ -7,20 +7,16 @@
         "packages/components",
         "packages/components-react",
         "packages/config",
-        "packages/docs",
         "packages/gatsby-plugin",
-        "packages/generator-sketch",
-        "packages/html-to-sketch",
-        "packages/nuxt-module",
-        "packages/theme-telekom"
+        "packages/nuxt-module"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
-        "build:components": "yarn workspace @scaleds/components build",
-        "watch:components": "yarn workspace @scaleds/components start",
+        "build:components": "yarn workspace @scaleds/components-telekom build",
+        "watch:components": "yarn workspace @scaleds/components-telekom start",
         "bootstrap": "lerna bootstrap",
-        "test": "lerna run test --scope @scaleds/components",
+        "test": "lerna run test --scope @scaleds/components-telekom",
         "new-version": "lerna version --conventional-commits --no-push",
         "force-version": "lerna version --conventional-commits --force-publish --no-push"
     },

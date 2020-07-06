@@ -1,35 +1,15 @@
 import { JssStyle } from 'jss';
 
-const tagVariant = (variant: string) => ({
-  [`tag--variant-${variant}`]: {
-    color: ({ colors }) => colors[variant].contrastText,
-    background: ({ colors }) => colors[variant].default,
-    border: ({ colors }) => `1px solid ${colors[variant].default}`,
-  },
-});
-
-const tagVariantLink = (variant: string) => ({
-  [`&$tag--variant-${variant}`]: {
-    ...tagVariant(variant),
-    '&:hover': {
-      color: ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
-    },
-    '&:active': {
-      color: ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
-    },
-  },
-});
+const tagSecondary = {
+  background: '#00739F',
+  border: '1px solid #00739F',
+};
 
 export const styles: JssStyle = {
   tag: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '6px 12px',
     fontSize: 16,
     fontWeight: 400,
     lineHeight: 1,
@@ -41,8 +21,10 @@ export const styles: JssStyle = {
     background: '#343a40',
     color: ' #fff',
     '--icon-color': '#fff',
+    padding: '4px 10px',
+    fontFamily: 'TeleNeoWeb-Bold',
     '& scale-icon': {
-      marginLeft: 2,
+      marginLeft: 5,
     },
     '&:not($tag--disabled)': {
       '& scale-icon': {
@@ -53,7 +35,7 @@ export const styles: JssStyle = {
     },
   },
   'tag--dismissable': {
-    paddingRight: 8,
+    paddingRight: 6,
   },
   'tag--size-small': {
     padding: '4px 8px',
@@ -66,20 +48,14 @@ export const styles: JssStyle = {
       paddingRight: 4,
     },
   },
-  ...tagVariant('primary'),
-  ...tagVariant('secondary'),
-  ...tagVariant('error'),
-  ...tagVariant('warning'),
-  ...tagVariant('info'),
-  ...tagVariant('success'),
+  'tag--variant-secondary': tagSecondary,
   'tag--link': {
     textDecoration: 'none',
-    ...tagVariantLink('primary'),
-    ...tagVariantLink('secondary'),
-    ...tagVariantLink('error'),
-    ...tagVariantLink('warning'),
-    ...tagVariantLink('info'),
-    ...tagVariantLink('success'),
+    '&$tag--variant-secondary': {
+      ...tagSecondary,
+      '&:hover': tagSecondary,
+      '&:focus': tagSecondary,
+    },
   },
   'tag--disabled': {
     opacity: 0.5,
