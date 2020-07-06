@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.15](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.14...v0.1.15) (2020-07-06)
+
+
+### Bug Fixes
+
+* apparently resolve issue with duplication of slots within header-nav ([0b51e22](https://gitlab.com/scale-ds/scale-telekom/commit/0b51e22b130a39722aa3cd6974490de03e5b4317))
+* fixes components package name inside angular boilerplate ([55cca77](https://gitlab.com/scale-ds/scale-telekom/commit/55cca773ee7742e99922cc088680422a90424013))
+* fixes package names inside react boilerplate example. Releases a new package version for react proxy package. ([932c513](https://gitlab.com/scale-ds/scale-telekom/commit/932c513eba7258e15980d852a050306e06865af5))
+* fixes vue boilerplate ([d579ae5](https://gitlab.com/scale-ds/scale-telekom/commit/d579ae59f359e037243e97b1020aa51c935f0b55))
+
+
+
+
+
 ## [0.1.13](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.12...v0.1.13) (2020-06-18)
 
 **Note:** Version bump only for package scaleds
