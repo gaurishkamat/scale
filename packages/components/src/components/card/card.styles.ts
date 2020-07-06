@@ -5,15 +5,20 @@ export const styles: JssStyle = {
     overflow: 'hidden',
     color: '#333',
     background: '#fff',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: 4,
     width: '100%',
     maxWidth: 400,
-    boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.12)',
     transition: 'all .2s ease-in-out',
+    borderRadius: 8,
+    boxShadow: [
+      [0, 19, 18, 0, 'rgba(0,0,0, 0.05)'],
+      [0, 8, 12, 0, 'rgba(0,0,0, 0.05)'],
+      [0, 1, 5, 0, 'rgba(0,0,0, 0.04)'],
+      [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
+    ],
+    border: 'none',
   },
   card__body: {
-    padding: '1rem',
+    padding: 24,
     '& ::slotted(*)': {
       margin: 0,
     },
@@ -23,13 +28,28 @@ export const styles: JssStyle = {
     cursor: 'pointer',
     display: 'block',
     '&:hover': {
-      boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
+      boxShadow: [
+        [0, 24, 18, 0, 'rgba(0,0,0, 0.05)'],
+        [0, 8, 12, 0, 'rgba(0,0,0, 0.05)'],
+        [0, 1, 5, 0, 'rgba(0,0,0, 0.24)'],
+        [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
+      ],
     },
     '&:focus': {
-      boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
+      boxShadow: [
+        [0, 19, 18, 0, 'rgba(0,0,0, 0.10)'],
+        [0, 8, 12, 0, 'rgba(0,0,0, 0.10)'],
+        [0, 1, 5, 0, 'rgba(0,0,0, 0.08)'],
+        [0, 0, 2, 0, 'rgba(0,0,0, 0.06)'],
+      ],
     },
     '&:active': {
-      boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
+      border: 'none',
+      boxShadow: [
+        [0, 8, 18, 0, 'rgba(0,0,0, 0.05)'],
+        [0, 1, 5, 0, 'rgba(0,0,0, 0.04)'],
+        [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
+      ],
     },
     '& $card__body ::slotted(*)': {
       margin: 0,

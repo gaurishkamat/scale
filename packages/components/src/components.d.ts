@@ -5,8 +5,26 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MenuItem } from "./components/app-interfaces";
 import { StyleSheet } from "jss";
 export namespace Components {
+    interface AppIcon {
+        "name"?: string;
+    }
+    interface AppLogo {
+        "claim": boolean;
+        "color": string;
+        "href": string;
+    }
+    interface AppMegaMenu {
+        "navigation": MenuItem[];
+    }
+    interface AppNavigationMainMobile {
+        "navigation": MenuItem[];
+    }
+    interface AppNavigationSectorMobile {
+        "navigation": MenuItem[];
+    }
     interface ScaleAlert {
         /**
           * (optional) Alert class
@@ -44,6 +62,23 @@ export namespace Components {
           * (optional) Alert variant
          */
         "variant"?: string;
+    }
+    interface ScaleAppHeader {
+        "addonNavigation"?: any[];
+        "customClass"?: string;
+        "iconNavigation"?: any[];
+        "mainNavigation"?: any[];
+        "scrolled": boolean;
+        "sectorNavigation"?: any[];
+        "styles"?: StyleSheet;
+    }
+    interface ScaleAppShell {
+        "addonNavigation"?: any[];
+        "customClass"?: string;
+        "iconNavigation"?: any[];
+        "mainNavigation"?: any[];
+        "sectorNavigation"?: any[];
+        "styles"?: StyleSheet;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -672,11 +707,53 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppIconElement extends Components.AppIcon, HTMLStencilElement {
+    }
+    var HTMLAppIconElement: {
+        prototype: HTMLAppIconElement;
+        new (): HTMLAppIconElement;
+    };
+    interface HTMLAppLogoElement extends Components.AppLogo, HTMLStencilElement {
+    }
+    var HTMLAppLogoElement: {
+        prototype: HTMLAppLogoElement;
+        new (): HTMLAppLogoElement;
+    };
+    interface HTMLAppMegaMenuElement extends Components.AppMegaMenu, HTMLStencilElement {
+    }
+    var HTMLAppMegaMenuElement: {
+        prototype: HTMLAppMegaMenuElement;
+        new (): HTMLAppMegaMenuElement;
+    };
+    interface HTMLAppNavigationMainMobileElement extends Components.AppNavigationMainMobile, HTMLStencilElement {
+    }
+    var HTMLAppNavigationMainMobileElement: {
+        prototype: HTMLAppNavigationMainMobileElement;
+        new (): HTMLAppNavigationMainMobileElement;
+    };
+    interface HTMLAppNavigationSectorMobileElement extends Components.AppNavigationSectorMobile, HTMLStencilElement {
+    }
+    var HTMLAppNavigationSectorMobileElement: {
+        prototype: HTMLAppNavigationSectorMobileElement;
+        new (): HTMLAppNavigationSectorMobileElement;
+    };
     interface HTMLScaleAlertElement extends Components.ScaleAlert, HTMLStencilElement {
     }
     var HTMLScaleAlertElement: {
         prototype: HTMLScaleAlertElement;
         new (): HTMLScaleAlertElement;
+    };
+    interface HTMLScaleAppHeaderElement extends Components.ScaleAppHeader, HTMLStencilElement {
+    }
+    var HTMLScaleAppHeaderElement: {
+        prototype: HTMLScaleAppHeaderElement;
+        new (): HTMLScaleAppHeaderElement;
+    };
+    interface HTMLScaleAppShellElement extends Components.ScaleAppShell, HTMLStencilElement {
+    }
+    var HTMLScaleAppShellElement: {
+        prototype: HTMLScaleAppShellElement;
+        new (): HTMLScaleAppShellElement;
     };
     interface HTMLScaleBreadcrumbElement extends Components.ScaleBreadcrumb, HTMLStencilElement {
     }
@@ -811,7 +888,14 @@ declare global {
         new (): HTMLScaleToastElement;
     };
     interface HTMLElementTagNameMap {
+        "app-icon": HTMLAppIconElement;
+        "app-logo": HTMLAppLogoElement;
+        "app-mega-menu": HTMLAppMegaMenuElement;
+        "app-navigation-main-mobile": HTMLAppNavigationMainMobileElement;
+        "app-navigation-sector-mobile": HTMLAppNavigationSectorMobileElement;
         "scale-alert": HTMLScaleAlertElement;
+        "scale-app-header": HTMLScaleAppHeaderElement;
+        "scale-app-shell": HTMLScaleAppShellElement;
         "scale-breadcrumb": HTMLScaleBreadcrumbElement;
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
@@ -837,6 +921,24 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppIcon {
+        "name"?: string;
+    }
+    interface AppLogo {
+        "claim"?: boolean;
+        "color"?: string;
+        "href"?: string;
+    }
+    interface AppMegaMenu {
+        "navigation"?: MenuItem[];
+    }
+    interface AppNavigationMainMobile {
+        "navigation"?: MenuItem[];
+        "onCloseMenu"?: (event: CustomEvent<any>) => void;
+    }
+    interface AppNavigationSectorMobile {
+        "navigation"?: MenuItem[];
+    }
     interface ScaleAlert {
         /**
           * (optional) Alert class
@@ -870,6 +972,23 @@ declare namespace LocalJSX {
           * (optional) Alert variant
          */
         "variant"?: string;
+    }
+    interface ScaleAppHeader {
+        "addonNavigation"?: any[];
+        "customClass"?: string;
+        "iconNavigation"?: any[];
+        "mainNavigation"?: any[];
+        "scrolled"?: boolean;
+        "sectorNavigation"?: any[];
+        "styles"?: StyleSheet;
+    }
+    interface ScaleAppShell {
+        "addonNavigation"?: any[];
+        "customClass"?: string;
+        "iconNavigation"?: any[];
+        "mainNavigation"?: any[];
+        "sectorNavigation"?: any[];
+        "styles"?: StyleSheet;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -1509,7 +1628,14 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
+        "app-icon": AppIcon;
+        "app-logo": AppLogo;
+        "app-mega-menu": AppMegaMenu;
+        "app-navigation-main-mobile": AppNavigationMainMobile;
+        "app-navigation-sector-mobile": AppNavigationSectorMobile;
         "scale-alert": ScaleAlert;
+        "scale-app-header": ScaleAppHeader;
+        "scale-app-shell": ScaleAppShell;
         "scale-breadcrumb": ScaleBreadcrumb;
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
@@ -1538,7 +1664,14 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
+            "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
+            "app-mega-menu": LocalJSX.AppMegaMenu & JSXBase.HTMLAttributes<HTMLAppMegaMenuElement>;
+            "app-navigation-main-mobile": LocalJSX.AppNavigationMainMobile & JSXBase.HTMLAttributes<HTMLAppNavigationMainMobileElement>;
+            "app-navigation-sector-mobile": LocalJSX.AppNavigationSectorMobile & JSXBase.HTMLAttributes<HTMLAppNavigationSectorMobileElement>;
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
+            "scale-app-header": LocalJSX.ScaleAppHeader & JSXBase.HTMLAttributes<HTMLScaleAppHeaderElement>;
+            "scale-app-shell": LocalJSX.ScaleAppShell & JSXBase.HTMLAttributes<HTMLScaleAppShellElement>;
             "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;

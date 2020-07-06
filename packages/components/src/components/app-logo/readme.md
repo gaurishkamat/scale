@@ -1,0 +1,32 @@
+# app-logo
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property | Attribute | Description | Type      | Default  |
+| -------- | --------- | ----------- | --------- | -------- |
+| `claim`  | `claim`   |             | `boolean` | `false`  |
+| `color`  | `color`   |             | `string`  | `'#fff'` |
+| `href`   | `href`    |             | `string`  | `''`     |
+
+
+## Dependencies
+
+### Used by
+
+ - [scale-app-header](../app-header)
+
+### Graph
+```mermaid
+graph TD;
+  scale-app-header --> app-logo
+  style app-logo fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

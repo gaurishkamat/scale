@@ -28,6 +28,10 @@ const checkBoxCheckedIcon = {
   width: 12,
 };
 
+const bold = {
+  fontFamily: 'TeleNeoWeb-Bold',
+};
+
 const defaultTransition = 'all 0.2s ease-in-out';
 
 const animated = (size: string) => ({
@@ -52,6 +56,7 @@ const animated = (size: string) => ({
 export const styles: JssStyle = {
   input: {
     position: 'relative',
+    '& .input__helper-text, & .input__counter': bold,
     '& .input__input, & .input__select': {
       display: 'flex',
       width: '100%',
@@ -132,6 +137,10 @@ export const styles: JssStyle = {
     },
   },
   'input--variant-animated': {
+    '& .input__input:focus + .input__label, &.animated .input__label': {
+      ...bold,
+      ...animated('large').end,
+    },
     '& .input__input, & .input__select': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
@@ -151,9 +160,10 @@ export const styles: JssStyle = {
     '& .input__input:focus + .input__label, & .input__select:focus + .input__label, &.animated .input__label': animated(
       'large'
     ).end,
-    '& .input__textarea:focus + .input__label, &.animated .input__label': animated(
-      'large'
-    ).end,
+    '& .input__textarea:focus + .input__label, &.animated .input__label': {
+      ...animated('large').end,
+      ...bold,
+    },
   },
   'input--status-error': {
     '&.animated .input__label, & label': {
@@ -207,6 +217,7 @@ export const styles: JssStyle = {
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
+      marginRight: 10,
       '& .input__checkbox': {
         // define a default checkbox
         top: 0,
@@ -228,6 +239,20 @@ export const styles: JssStyle = {
         borderRadius: 4,
       },
     },
+    '&:not($input--disabled)': {
+      '& .input__checkbox-container': {
+        '& .input__checkbox-placeholder': {
+          border: '1px solid #111111',
+          backgroundColor: '#D8D8D8',
+        },
+        '&:hover': {
+          '& .input__checkbox-placeholder': {
+            border: '1px solid #E20074',
+            backgroundColor: '#ffffff',
+          },
+        },
+      },
+    },
   },
   'input--checked': {
     '& scale-icon': {
@@ -243,6 +268,23 @@ export const styles: JssStyle = {
         backgroundColor: '#cdcdcd',
       },
     },
+    '&:not($input--disabled)': {
+      '& .input__checkbox-container': {
+        '& .input__checkbox-placeholder': {
+          border: '1px solid #E20074',
+          backgroundColor: '#E20074',
+        },
+        '&:hover': {
+          '& .input__checkbox-placeholder': {
+            border: '1px solid #E20074',
+            backgroundColor: '#F90984',
+          },
+        },
+      },
+      '& scale-icon': {
+        '--icon-color': '#ffffff',
+      },
+    },
   },
   'input--type-radio': {
     display: 'flex',
@@ -254,6 +296,7 @@ export const styles: JssStyle = {
       backgroundColor: '#ffffff',
       border: '1px solid #cecece',
       borderRadius: '50%',
+      marginRight: 10,
       '&:checked, &:focus': {
         border: ({ colors }) => `6px solid ${colors.primary.default}`,
         transition: defaultTransition,

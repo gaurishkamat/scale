@@ -17,7 +17,8 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: '../build/theme' , dest: '..', warn: true}
+        { src: '../build/theme' , dest: '..', warn: true},
+        { src: 'fonts' }
       ]
     },
     {
@@ -27,20 +28,15 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: '../build/theme' , dest: 'build/theme', warn: true}
+        { src: '../build/theme' , dest: 'build/theme', warn: true},
+        { src: 'header.html', warn: true},
+        { src: 'fonts' }
       ]
     },
-    // {
-    //   type: 'docs-custom',
-    //   generator: docs => {
-    //     fs.writeFileSync('./dist/scale-components.json', JSON.stringify(docs, null, 4))
-    //   }
-    // }
     {
       type: 'docs-json',
       file: './dist/scale-components.json'
     },
     { type: 'dist-hydrate-script' }
-  ],
-  extras: { cloneNodeFix: true }
-};
+  ]
+}

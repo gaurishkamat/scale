@@ -3,12 +3,8 @@
     "packages/components",
     "packages/components-react",
     "packages/config",
-    "packages/docs",
     "packages/gatsby-plugin",
-    "packages/generator-sketch",
-    "packages/html-to-sketch",
-    "packages/nuxt-module",
-    "packages/theme-telekom"
+    "packages/nuxt-module"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,

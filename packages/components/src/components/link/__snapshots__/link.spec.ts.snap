@@ -5,7 +5,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #000;
+  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
@@ -15,7 +15,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
-  --icon-color: #000;
+  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
@@ -29,7 +29,8 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: underline;
+  border-bottom: 1px solid #00A6F0;
+  text-decoration: none;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;
@@ -72,7 +73,7 @@ exports[`Link should have link href value when href value is set 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #000;
+  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
@@ -82,7 +83,7 @@ exports[`Link should have link href value when href value is set 1`] = `
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
-  --icon-color: #000;
+  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
@@ -96,7 +97,8 @@ exports[`Link should have link href value when href value is set 1`] = `
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: underline;
+  border-bottom: 1px solid #00A6F0;
+  text-decoration: none;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;
@@ -139,7 +141,7 @@ exports[`Link should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #000;
+  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
@@ -149,7 +151,7 @@ exports[`Link should match snapshot 1`] = `
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
-  --icon-color: #000;
+  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
@@ -163,7 +165,8 @@ exports[`Link should match snapshot 1`] = `
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: underline;
+  border-bottom: 1px solid #00A6F0;
+  text-decoration: none;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;

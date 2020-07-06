@@ -1,0 +1,112 @@
+app-navigation-main-mobile {
+  width: 100%;
+  --main-navigation-mobile-height: calc(100vh - 56px - 56px);
+}
+
+.main-navigation-mobile {
+  width: 100%;
+  /* height: var(--main-navigation-mobile-height); */
+  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  position: relative;
+}
+
+.main-navigation-mobile__main-menu {
+  background: #fff;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-navigation-mobile__item {
+  font-size: 24px;
+  line-height: 80px;
+  font-family: 'TeleNeoWeb-ExtraBold';
+}
+
+.main-navigation-mobile__item-wrapper {
+  width: calc(100% - 34px);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 34px;
+  border-bottom: 1px solid #efefef;
+  padding-right: 34px;
+  align-items: center;
+}
+
+.main-navigation-mobile__item-link {
+  text-decoration: none;
+  color: #000;
+  transition: var(--transition-in);
+}
+
+.main-navigation-mobile__item-link--selected {
+  color: #e20074;
+  transition: var(--transition-out);
+}
+
+.main-navigation-mobile__child-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  min-height: var(--main-navigation-mobile-height);
+}
+
+.main-navigation-mobile__child-menu-current-item {
+  line-height: 80px;
+}
+
+.main-navigation-mobile__child-menu-current {
+  font-size: 24px;
+  font-family: 'TeleNeoWeb-ExtraBold';
+  color: #e20074;
+  text-decoration: none;
+}
+
+.main-navigation-mobile__child-menu-current-wrapper {
+  width: calc(100% - 34px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  margin-left: 34px;
+}
+
+.main-navigation-mobile__child-menu-current app-icon {
+  margin-right: 8px;
+}
+
+svg path {
+  fill: inherit;
+}
+
+.main-navigation-mobile__child-menu-current .icon-back {
+  fill: #e20074;
+}
+
+.main-navigation-mobile__child-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation-mobile__child-menu-item-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.main-navigation-mobile__child-menu-item {
+  font-size: 24px;
+  line-height: 60px;
+  font-family: 'TeleNeoWeb-Regular';
+}
+
+.main-navigation-mobile__child-menu-item-wrapper {
+  width: calc(100% - 64px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  margin-left: 64px;
+}

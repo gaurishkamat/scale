@@ -11,12 +11,58 @@
     <script src="/build/theme/theme.iife.js"></script>
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
-    <style>
+    <style type="text/css" media="screen, print">
+      @font-face {
+        font-family: 'TeleNeoWeb-Bold';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Bold.woff') format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-BoldItalic';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-BoldItalic.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-ExtraBold';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBold.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-ExtraBoldItalic';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-Medium';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Medium.woff') format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-MediumItalic';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-MediumItalic.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-Regular';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Regular.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-RegularItalic';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-RegularItalic.woff')
+          format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-Thin';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-Thin.woff') format('opentype');
+      }
+      @font-face {
+        font-family: 'TeleNeoWeb-ThinItalic';
+        src: url('./fonts/TeleNeoWeb/TeleNeoWeb-ThinItalic.woff')
+          format('opentype');
+      }
       html {
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'TeleNeoWeb-Regular', sans-serif;
         --icon-color: black;
       }
 
@@ -30,6 +76,7 @@
       }
     </style>
     <script>
+      console.log(scale);
       const variants = {
         custom: {
           background: 'pink',
@@ -37,9 +84,6 @@
         },
       };
       scale.useTheme({
-        shape: {
-          borderRadius: 4,
-        },
         typography: {
           variants: {
             custom: {
@@ -293,22 +337,6 @@
       input-id="choiceSix"
     ></scale-input>
 
-    <h3>Default input</h3>
-    <scale-input id="change-input"></scale-input>
-    <button id="change">Change</button>
-
-    <script>
-      document.getElementById('change').addEventListener('click', () => {
-        document.getElementById('change-input').styles = {
-          input: {
-            '& .input__input': {
-              color: 'blue',
-            },
-          },
-        };
-      });
-    </script>
-
     <h3>Input with change handler</h3>
     <scale-input></scale-input>
 
@@ -322,10 +350,19 @@
     <scale-input variant="static" label="Text"></scale-input>
 
     <h3>Animated input</h3>
-    <scale-input label="First Name" placeholder="Hello" variant="animated"></scale-input>
+    <scale-input
+      label="First Name"
+      placeholder="Hello"
+      variant="animated"
+    ></scale-input>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input label="Last Name" max-length="24" counter variant="animated"></scale-input>
+    <scale-input
+      label="Last Name"
+      max-length="24"
+      counter
+      variant="animated"
+    ></scale-input>
 
     <h3>Input Text - helper text</h3>
     <scale-input
@@ -375,7 +412,11 @@
     ></scale-input>
 
     <h3>Input Text - disabled</h3>
-    <scale-input type="string" disabled="true" label="input text disabled"></scale-input>
+    <scale-input
+      type="string"
+      disabled="true"
+      label="input text disabled"
+    ></scale-input>
 
     <scale-input type="email" label="email"></scale-input>
     <scale-input type="number" label="number"></scale-input>
@@ -415,11 +456,6 @@
     <h3>Tag - variants</h3>
     <scale-tag variant="primary">tag</scale-tag>
     <scale-tag variant="secondary">tag</scale-tag>
-    <scale-tag variant="error">tag</scale-tag>
-    <scale-tag variant="warning">tag</scale-tag>
-    <scale-tag variant="info">tag</scale-tag>
-    <scale-tag variant="success">tag</scale-tag>
-    <scale-tag variant="custom">tag</scale-tag>
     <h3>Tag - variants link</h3>
     <scale-tag href="http://example.com" target="_blank" variant="primary"
       >tag</scale-tag
@@ -427,21 +463,7 @@
     <scale-tag href="http://example.com" target="_blank" variant="secondary"
       >tag</scale-tag
     >
-    <scale-tag href="http://example.com" target="_blank" variant="error"
-      >tag</scale-tag
-    >
-    <scale-tag href="http://example.com" target="_blank" variant="warning"
-      >tag</scale-tag
-    >
-    <scale-tag href="http://example.com" target="_blank" variant="info"
-      >tag</scale-tag
-    >
-    <scale-tag href="http://example.com" target="_blank" variant="success"
-      >tag</scale-tag
-    >
-    <scale-tag href="http://example.com" target="_blank" variant="custom"
-      >tag</scale-tag
-    >
+
     <h3>Tag - variants link dismissable</h3>
     <scale-tag
       dismissable
@@ -457,62 +479,18 @@
       variant="secondary"
       >tag</scale-tag
     >
-    <scale-tag
-      dismissable
-      href="http://example.com"
-      target="_blank"
-      variant="error"
-      >tag</scale-tag
-    >
-    <scale-tag
-      dismissable
-      href="http://example.com"
-      target="_blank"
-      variant="warning"
-      >tag</scale-tag
-    >
-    <scale-tag
-      dismissable
-      href="http://example.com"
-      target="_blank"
-      variant="info"
-      >tag</scale-tag
-    >
-    <scale-tag
-      dismissable
-      href="http://example.com"
-      target="_blank"
-      variant="success"
-      >tag</scale-tag
-    >
-    <scale-tag
-      dismissable
-      href="http://example.com"
-      target="_blank"
-      variant="custom"
-      >tag</scale-tag
-    >
+
     <h3>Tag - dismissable</h3>
     <scale-tag variant="primary" dismissable>tag</scale-tag>
     <scale-tag variant="secondary" dismissable>tag</scale-tag>
-    <scale-tag variant="error" dismissable>tag</scale-tag>
-    <scale-tag variant="warning" dismissable>tag</scale-tag>
-    <scale-tag variant="info" dismissable>tag</scale-tag>
-    <scale-tag variant="success" dismissable>tag</scale-tag>
+
     <h3>Tag - small</h3>
     <scale-tag size="small" variant="primary">tag</scale-tag>
     <scale-tag size="small" variant="secondary">tag</scale-tag>
-    <scale-tag size="small" variant="error">tag</scale-tag>
-    <scale-tag size="small" variant="warning">tag</scale-tag>
-    <scale-tag size="small" variant="info">tag</scale-tag>
-    <scale-tag size="small" variant="success">tag</scale-tag>
+
     <h3>Tag - dismissable small</h3>
     <scale-tag size="small" variant="primary" dismissable>tag</scale-tag>
     <scale-tag size="small" variant="secondary" dismissable>tag</scale-tag>
-    <scale-tag size="small" variant="error" dismissable>tag</scale-tag>
-    <scale-tag size="small" variant="warning" dismissable>tag</scale-tag>
-    <scale-tag size="small" variant="info" dismissable>tag</scale-tag>
-    <scale-tag size="small" variant="success" dismissable>tag</scale-tag>
 
     <script>
       document
@@ -581,8 +559,6 @@
 
     <scale-text>Default paragraph</scale-text>
 
-    <scale-text variant="custom">Custom</scale-text>
-
     <h3>Button Default</h3>
     <scale-button>Hello</scale-button>
 
@@ -594,31 +570,6 @@
     >
     <scale-button
       variant="secondary"
-      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="error"
-      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="warning"
-      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="info"
-      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="success"
-      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="custom"
       icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
       >Hello</scale-button
     >
@@ -655,126 +606,6 @@
     <div style="height: 100px; margin: 1px">
       <scale-divider vertical="true"></scale-divider>
     </div>
-
-    <h3>Toast</h3>
-
-    <scale-button id="show-toast-auto-hide">show toast</scale-button>
-    <scale-toast
-      id="enabled-toast-auto-hide"
-      auto-hide="3000"
-      position-top="36"
-      position-right="36"
-      fade-duration="500"
-    >
-      With auto hide
-    </scale-toast>
-    <script>
-      const showToastAutoHide = document.getElementById('show-toast-auto-hide');
-      const enabledToastAutoHide = document.getElementById(
-        'enabled-toast-auto-hide'
-      );
-      showToastAutoHide.addEventListener('click', () => {
-        !enabledToastAutoHide.opened && enabledToastAutoHide.open();
-        var d = new Date();
-        d.setDate(d.getDate() - 5);
-        enabledToastAutoHide.time = d;
-      });
-    </script>
-
-    <scale-button id="show-toast">show toast</scale-button>
-    <scale-toast
-      id="enabled-toast"
-      position-top="154"
-      position-right="36"
-      fade-duration="500"
-    >
-      No auto hide
-    </scale-toast>
-    <script>
-      const showToast = document.getElementById('show-toast');
-      const enabledToast = document.getElementById('enabled-toast');
-      showToast.addEventListener('click', () => {
-        !enabledToast.opened && enabledToast.open();
-        var d = new Date();
-        d.setDate(d.getDate() - 5);
-        enabledToast.time = d;
-      });
-    </script>
-
-    <h3>Alert</h3>
-    <scale-button id="show-alert-btn-without-timeout"
-      >show alert without timeout
-    </scale-button>
-    <scale-alert
-      id="alert-without-timeout"
-      variant="primary"
-      title="Help!"
-      icon="!"
-    >
-      This is only a warning - for your information!
-      <div slot="close">Close</div>
-    </scale-alert>
-    <script>
-      const showAlertWithout = document.querySelector(
-        '#show-alert-btn-without-timeout'
-      );
-      const alertWithout = document.getElementById('alert-without-timeout');
-      showAlertWithout.addEventListener(
-        'click',
-        () => !alertWithout.opened && alertWithout.open()
-      );
-    </script>
-
-    <h3>Alert with default timeout</h3>
-    <scale-button id="show-alert-btn-with-default-timeout"
-      >show alert with default timeout
-    </scale-button>
-    <scale-alert
-      id="alert-with-default-timeout"
-      variant="danger"
-      title="Help!"
-      icon="!"
-      close="x"
-      timeout="true"
-    >
-      This is only a warning - for your information!
-    </scale-alert>
-
-    <script>
-      const showAlert = document.querySelector(
-        '#show-alert-btn-with-default-timeout'
-      );
-      const alert = document.getElementById('alert-with-default-timeout');
-      showAlert.addEventListener('click', () => !alert.opened && alert.open());
-    </script>
-
-    <h3>Alert with custom timeout</h3>
-    <scale-button id="show-alert-btn-with-custom-timeout"
-      >show alert with custom timeout
-    </scale-button>
-    <scale-alert
-      id="alert-with-custom-timeout"
-      variant="danger"
-      title="Help!"
-      icon="!"
-      timeout="500"
-    >
-      This is only a warning - for your information!
-    </scale-alert>
-
-    <script>
-      const showAlertWithCustom = document.querySelector(
-        '#show-alert-btn-with-custom-timeout'
-      );
-      const alertWithCustom = document.getElementById(
-        'alert-with-custom-timeout'
-      );
-      showAlertWithCustom.addEventListener(
-        'click',
-        () => !alertWithCustom.opened && alertWithCustom.open()
-      );
-    </script>
-
     <h3>Button</h3>
     <scale-button>Label</scale-button>
     <h3>Button - disabled</h3>

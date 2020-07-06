@@ -1,21 +1,6 @@
 import { JssStyle } from 'jss';
 import { getTransition } from '../../theme/helpers';
 
-const buttonVariant = (variant: string) => ({
-  [`button--variant-${variant}`]: {
-    color: ({ colors }) => colors[variant].contrastText,
-    '--icon-color': ({ colors }) => colors[variant].contrastText,
-    background: ({ colors }) => colors[variant].default,
-    border: ({ colors }) => `1px solid ${colors[variant].default}`,
-    '&:hover': {
-      color: ({ colors }) => colors[variant].contrastText,
-      '--icon-color': ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
-    },
-  },
-});
-
 export const styles: JssStyle = {
   button: {
     color: ({ colors }) => colors.common.black,
@@ -23,7 +8,6 @@ export const styles: JssStyle = {
     background: ({ colors }) => colors.grey[300],
     border: ({ colors }) => `1px solid ${colors.grey[300]}`,
     borderRadius: ({ shape }) => shape.borderRadius,
-    fontFamily: ({ typography }) => typography.variants.button.fontFamily,
     fontSize: ({ typography }) => typography.variants.button.fontSize,
     fontWeight: ({ typography }) =>
       typography.variants.button.fontWeightRegular,
@@ -42,8 +26,16 @@ export const styles: JssStyle = {
     userSelect: 'none',
     padding: '0.25rem 1rem',
     boxShadow: 'none',
-    minHeight: 40,
     textDecoration: 'none',
+    fontFamily: 'TeleNeoWeb-Bold',
+    paddingLeft: 22,
+    paddingRight: 22,
+    paddingTop: 8,
+    paddingBottom: 8,
+    height: 'unset',
+    minHeight: 42,
+    lineHeight: '24px',
+    whiteSpace: 'nowrap',
     '&:before': {
       width: 0,
       content: '""',
@@ -51,23 +43,41 @@ export const styles: JssStyle = {
       height: '100%',
     },
     '&:hover': {
-      color: ({ colors }) => colors.common.white,
-      '--icon-color': ({ colors }) => colors.common.white,
-      background: ({ colors }) => colors.grey[700],
-      borderColor: ({ colors }) => colors.grey[700],
       transition: theme => getTransition(theme, 'all', 'standard', 'easeInOut'),
       boxShadow: 'none',
       textDecoration: 'none',
+      borderColor: '#F90984',
+      background: '#F90984',
+      color: '#fff',
+      '--icon-color': '#fff',
+    },
+    '&, &:focus': {
+      borderColor: '#e20074',
+      background: '#e20074',
+      color: '#fff',
+      '--icon-color': '#fff',
+    },
+    '&:active, &.selected': {
+      borderColor: '#CB0068',
+      background: '#CB0068',
+      color: '#fff',
+      '--icon-color': '#fff',
     },
   },
   'button--disabled': {
     '&, &:hover': {
-      opacity: ({ colors }) => colors.action.disabledOpacity,
-      border: ({ colors }) => `1px solid ${colors.action.disabled}`,
-      color: ({ colors }) => colors.text.disabled,
-      '--icon-color': ({ colors }) => colors.text.disabled,
-      background: ({ colors }) => colors.common.white,
       cursor: 'not-allowed',
+      background: '#CDCDCD',
+      border: '1px solid #CDCDCD',
+      color: '#999999',
+      '--icon-color': '#999999',
+      opacity: 1,
+    },
+    '&$button--variant-secondary, &$button--variant-secondary:hover': {
+      background: 'none',
+      border: '1px solid #CDCDCD',
+      color: '#CDCDCD',
+      '--icon-color': '#cdcdcd',
     },
   },
   button__before: {
@@ -81,13 +91,42 @@ export const styles: JssStyle = {
     alignItems: 'center',
   },
   'button--icon-only': {
-    height: 40,
-    width: 40,
+    height: 42,
+    width: 42,
+    padding: 0,
   },
-  ...buttonVariant('primary'),
-  ...buttonVariant('secondary'),
-  ...buttonVariant('error'),
-  ...buttonVariant('warning'),
-  ...buttonVariant('info'),
-  ...buttonVariant('success'),
+  'button--variant-secondary': {
+    '&, &:focus, &.focus': {
+      borderColor: '#111111',
+      background: 'none',
+      color: '#161616',
+      '--icon-color': '#161616',
+    },
+    '&:hover, &.hover': {
+      borderColor: '#E20074',
+      background: 'none',
+      color: '#E20074',
+      '--icon-color': '#e20074',
+    },
+    '&:active, &.active, &.selected': {
+      borderColor: '#CB0068',
+      background: 'none',
+      color: '#CB0068',
+      '--icon-color': '#cb0068',
+    },
+  },
+  'button--size-small': {
+    minHeight: 32,
+    fontSize: 12,
+    paddingLeft: 14,
+    paddingRight: 14,
+    paddingTop: 4,
+    paddingBottom: 4,
+    lineHeight: '16px',
+    '&$button--icon-only': {
+      height: 32,
+      width: 32,
+      padding: 0,
+    },
+  },
 };
