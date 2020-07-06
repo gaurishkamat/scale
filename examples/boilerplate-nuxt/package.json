@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@scaleds/components-telekom": "^0.1.4",
+    "@scaleds/components-telekom": "^0.1.15",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
