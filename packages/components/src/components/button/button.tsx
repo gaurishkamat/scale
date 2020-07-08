@@ -3,6 +3,7 @@ import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './button.styles';
 import { CssInJs } from '../../utils/css-in-js';
+import { hasShadowDom } from '../../utils/utils';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
@@ -37,7 +38,6 @@ export class Button implements Base {
   @Prop() target?: string = '_self';
   /** (optional) button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
-
   @Prop() ariaLabel?: string = '';
   @Prop() focusable?: boolean = true;
   @Prop() role?: string = '';
@@ -60,6 +60,27 @@ export class Button implements Base {
     this.disabled = false;
   }
 
+  /**
+   * Hake to make the button behave semantically like a
+   * real button so plain forms can be submitted, etc.
+   * @see https://github.com/ionic-team/ionic-framework/blob/master/core/src/components/button/button.tsx#L155-L175
+   */
+  handleClick = (ev: Event) => {
+    if (hasShadowDom(this.hostElement) && !this.href) {
+      const form = this.hostElement.closest('form');
+      if (form) {
+        ev.preventDefault();
+
+        const fakeButton = document.createElement('button');
+        // fakeButton.type = this.type;
+        fakeButton.style.display = 'none';
+        form.appendChild(fakeButton);
+        fakeButton.click();
+        fakeButton.remove();
+      }
+    }
+  };
+
   componentWillLoad() {
     this.hasSlotBefore = !!this.hostElement.querySelector('[slot="before"]');
     this.hasSlotAfter = !!this.hostElement.querySelector('[slot="after"]');
@@ -78,7 +99,7 @@ export class Button implements Base {
       : {};
 
     return (
-      <Host>
+      <Host onClick={this.handleClick}>
         <style>{this.stylesheet.toString()}</style>
         <Tag
           class={this.getCssClassMap()}

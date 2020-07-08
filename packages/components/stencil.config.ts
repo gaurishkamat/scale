@@ -30,6 +30,7 @@ export const config: Config = {
       copy: [
         { src: '../build/theme' , dest: 'build/theme', warn: true},
         { src: 'header.html', warn: true},
+        { src: 'form.html', warn: true},
         { src: 'fonts' }
       ]
     },
