@@ -76,6 +76,8 @@ export class Input implements Base {
   @Prop() multiple?: boolean;
   /** (optional) the number of visible options in a select drop-down list */
   @Prop() visibleSize?: number;
+  /** (optional) input background transparent */
+  @Prop() transparent?: boolean;
   /** (optional) Input text event changed */
   @Event() scaleChange: EventEmitter<InputEvent>;
   /** (optional) Input focus event */
@@ -257,6 +259,7 @@ export class Input implements Base {
       this.resize && classes[`input--resize-${this.resize}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
+      this.transparent && classes['input--transparent'],
       this.status && classes[`input--status-${this.status}`],
       isAnimated && 'animated'
     );
