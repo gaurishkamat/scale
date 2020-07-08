@@ -500,7 +500,7 @@
     <script>
       document
         .getElementById('tag-dismissable')
-        .addEventListener('scaleClose', (event) =>
+        .addEventListener('scaleClose', event =>
           console.log('Tag closed', event)
         );
     </script>
@@ -832,7 +832,7 @@
     <h3>Table</h3>
 
     <script>
-      const getNextSort = (sort) => {
+      const getNextSort = sort => {
         if (!sort || ['none', 'other'].includes(sort)) {
           return 'descending';
         }
@@ -846,10 +846,10 @@
         const currentSort = th.getAttribute('aria-sort');
         const nextSort = getNextSort(currentSort);
         const tableHeaders = Array.from(document.getElementsByTagName('TH'));
-        const columnIndex = tableHeaders.findIndex((x) => x === th);
+        const columnIndex = tableHeaders.findIndex(x => x === th);
 
         // clean up previous aria-sort value
-        tableHeaders.forEach((tableHeader) => {
+        tableHeaders.forEach(tableHeader => {
           tableHeader.setAttribute('aria-sort', 'none');
         });
 

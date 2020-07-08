@@ -82,7 +82,7 @@ export const styles: JssStyle = {
       zIndex: 1,
       margin: '6px 0',
       transition: 'border-color 0.2s ease-in-out',
-      width: '100%'
+      width: '100%',
     },
     '& .input__select': {
       appearance: 'none',

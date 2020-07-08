@@ -96,7 +96,7 @@ const App: React.FC = () => {
             transparent={true}
             onScaleChange={event => handleChange(event, 'location')}
           ></ScaleInput>
-          <button type="submit">Submit</button>
+          <ScaleButton>Submit</ScaleButton>
         </form>
     </div>
   )};
