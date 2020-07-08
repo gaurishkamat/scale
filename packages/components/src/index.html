@@ -112,6 +112,7 @@
       label="basic select with animated label"
       type="select"
       input-id="select box"
+      transparent="true"
     >
       <option hidden selected></option>
       <option value="1">item 1</option>
@@ -259,6 +260,7 @@
       input-id="checkbox2"
       type="checkbox"
       value="2"
+      transparent="true"
       label="another checkbox"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
@@ -296,6 +298,7 @@
       value="1"
       label="One"
       name="radioSelect"
+      transparent="true"
       input-id="choiceOne"
     ></scale-input>
     <scale-input
@@ -497,7 +500,7 @@
     <script>
       document
         .getElementById('tag-dismissable')
-        .addEventListener('scaleClose', event =>
+        .addEventListener('scaleClose', (event) =>
           console.log('Tag closed', event)
         );
     </script>
@@ -605,7 +608,7 @@
     <scale-divider></scale-divider>
 
     <h3>Divider vertical</h3>
-    <div style="height: 100px; margin: 1px">
+    <div style="height: 100px; margin: 1px;">
       <scale-divider vertical="true"></scale-divider>
     </div>
     <h3>Button</h3>
@@ -829,7 +832,7 @@
     <h3>Table</h3>
 
     <script>
-      const getNextSort = sort => {
+      const getNextSort = (sort) => {
         if (!sort || ['none', 'other'].includes(sort)) {
           return 'descending';
         }
@@ -843,10 +846,10 @@
         const currentSort = th.getAttribute('aria-sort');
         const nextSort = getNextSort(currentSort);
         const tableHeaders = Array.from(document.getElementsByTagName('TH'));
-        const columnIndex = tableHeaders.findIndex(x => x === th);
+        const columnIndex = tableHeaders.findIndex((x) => x === th);
 
         // clean up previous aria-sort value
-        tableHeaders.forEach(tableHeader => {
+        tableHeaders.forEach((tableHeader) => {
           tableHeader.setAttribute('aria-sort', 'none');
         });
 
@@ -923,18 +926,18 @@
           <tr>
             <td>Jane</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px"
+              <scale-tag size="small" style="margin-right: 8px;"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px">9.356</span>
+                <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style=" max-width: 120px;"
+                  style="max-width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
@@ -946,18 +949,18 @@
           <tr>
             <td>Jack</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px"
+              <scale-tag size="small" style="margin-right: 8px;"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px">3.356</span>
+                <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style=" max-width: 120px;"
+                  style="max-width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
@@ -969,18 +972,18 @@
           <tr>
             <td>John</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px"
+              <scale-tag size="small" style="margin-right: 8px;"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px">6.356</span>
+                <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style=" max-width: 120px;"
+                  style="max-width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
