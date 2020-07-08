@@ -162,6 +162,7 @@
 | `size`        | `size`         | (optional) Button size         | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Link target button  | `string`                                 | `'_self'`   |
+| `type`        | `type`         | (optional) button type         | `"button" \| "reset" \| "submit"`        | `undefined` |
 | `variant`     | `variant`      | (optional) Button variant      | `string`                                 | `''`        |
 
 

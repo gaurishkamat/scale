@@ -35,6 +35,8 @@ export class Button implements Base {
   @Prop() href?: string = '';
   /** (optional) Link target button */
   @Prop() target?: string = '_self';
+  /** (optional) button type */
+  @Prop() type?: 'reset' | 'submit' | 'button';
 
   @Prop() ariaLabel?: string = '';
   @Prop() focusable?: boolean = true;
@@ -81,6 +83,7 @@ export class Button implements Base {
         <Tag
           class={this.getCssClassMap()}
           tabindex={this.focusable ? 0 : -1}
+          type={this.type}
           {...(!!this.href ? { href: this.href } : {})}
           {...(!!this.href ? { target: this.target } : {})}
           {...(!!!this.href ? { disabled: this.disabled } : {})}

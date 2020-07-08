@@ -140,6 +140,10 @@ export namespace Components {
          */
         "target"?: string;
         /**
+          * (optional) button type
+         */
+        "type"?: 'reset' | 'submit' | 'button';
+        /**
           * (optional) Button variant
          */
         "variant"?: string;
@@ -303,6 +307,10 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
         /**
           * (optional) Input type
          */
@@ -1042,6 +1050,10 @@ declare namespace LocalJSX {
          */
         "target"?: string;
         /**
+          * (optional) button type
+         */
+        "type"?: 'reset' | 'submit' | 'button';
+        /**
           * (optional) Button variant
          */
         "variant"?: string;
@@ -1221,6 +1233,10 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
         /**
           * (optional) Input type
          */

@@ -208,6 +208,11 @@ export const styles: JssStyle = {
       cursor: 'not-allowed!important',
     },
   },
+  'input--transparent': {
+    '& .input__input, & .input__textarea': {
+      background: 'transparent',
+    },
+  },
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
