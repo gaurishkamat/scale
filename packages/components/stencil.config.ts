@@ -17,8 +17,7 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: '../build/theme' , dest: '..', warn: true},
-        { src: 'fonts' }
+        { src: '../build/theme' , dest: '..', warn: true }
       ]
     },
     {
@@ -28,10 +27,8 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: '../build/theme' , dest: 'build/theme', warn: true},
-        { src: 'header.html', warn: true},
-        { src: 'form.html', warn: true},
-        { src: 'fonts' }
+        { src: '../build/theme', dest: 'build/theme' , warn: true },
+        { src: 'header.html', warn: true },
       ]
     },
     {
