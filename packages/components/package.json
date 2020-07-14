@@ -19,9 +19,10 @@
     "hydrate/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build:theme": "rimraf build && rollup -c",
     "prebuild": "yarn build:theme",
-    "build:theme": "rollup -c",
+    "build": "stencil build --docs",
+    "prebuild:prod": "yarn build:theme",
     "build:prod": "stencil build --prod",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e --max-workers=2",
@@ -34,9 +35,10 @@
     "lint:style": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "verify": "yarn format && yarn lint:fix",
+    "predevelop": "yarn build:theme",
     "develop": "stencil build --docs --watch",
-    "storybook": "start-storybook -p 6006 -s ./src",
-    "build-storybook": "build-storybook -s ./src"
+    "storybook": "start-storybook -p 6006 -s ./build",
+    "build-storybook": "build-storybook -s ./build"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
@@ -73,7 +75,9 @@
     "lodash": "^4.17.15",
     "prettier": "^1.18.2",
     "puppeteer": "^4.0.0",
+    "rimraf": "^3.0.2",
     "rollup": "2.16.1",
+    "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0"
