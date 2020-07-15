@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
+| Property | Attribute | Description | Type     | Default          |
+| -------- | --------- | ----------- | -------- | ---------------- |
+| `fill`   | `fill`    |             | `string` | `'currentColor'` |
+| `name`   | `name`    |             | `string` | `undefined`      |
+| `size`   | `size`    |             | `number` | `24`             |
 
 
 ## Dependencies

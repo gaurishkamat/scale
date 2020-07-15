@@ -593,35 +593,47 @@
     <scale-card interactive="true" disabled="true">A title</scale-card>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
-    <scale-progress-bar
-      percentage="30"
-      variant="info"
-      show-text="true"
-      stroke-width="6"
-    ></scale-progress-bar>
+    <scale-progress-bar percentage="30" stroke-width="8"></scale-progress-bar>
     <scale-progress-bar
       percentage="50"
-      variant="danger"
-      stroke-width="6"
-      show-text="true"
+      stroke-width="8"
+      show-status="true"
+      status-description="upload in progress"
     ></scale-progress-bar>
     <scale-progress-bar
       percentage="80"
       stroke-width="6"
-      variant="warning"
-      show-text="true"
+      show-status="true"
     ></scale-progress-bar>
     <scale-progress-bar
       percentage="100"
-      variant="success"
       stroke-width="6"
-      show-text="true"
+      custom-color="#00e676"
+      icon="M11.5360266,3.32989167 C12.0150269,2.71935349 12.8865593,2.62213333 13.4826486,3.11274437 C14.0414824,3.57269222 14.1598347,4.3860015 13.7777617,4.98893646 L13.694657,5.10655142 L7.76061786,12.6701315 C7.28601474,13.275065 6.43316615,13.3711445 5.843817,12.9113086 L5.73655859,12.8185632 L2.4398702,9.66707153 C1.88083332,9.13265643 1.85062073,8.23525342 2.37238848,7.66266581 C2.86154574,7.12586492 3.66218519,7.06511718 4.22098653,7.49996506 L4.32935835,7.59354837 L6.53506157,9.70276258 L11.5360266,3.32989167 Z"
+      status-description="upload completed"
+    ></scale-progress-bar>
+    <scale-progress-bar
+      percentage="0"
+      stroke-width="8"
+      has-error="true"
+      icon="M8,0.666666667 C12.05,0.666666667 15.3333333,3.95 15.3333333,8 C15.3333333,12.05 12.05,15.3333333 8,15.3333333 C3.95,15.3333333 0.666666667,12.05 0.666666667,8 C0.666666667,3.95 3.95,0.666666667 8,0.666666667 Z M8,1.66666667 C4.50766667,1.66666667 1.66666667,4.50766667 1.66666667,8 C1.66666667,11.4923333 4.50766667,14.3333333 8,14.3333333 C11.4923333,14.3333333 14.3333333,11.4923333 14.3333333,8 C14.3333333,4.50766667 11.4923333,1.66666667 8,1.66666667 Z M10.7107867,5.28921328 C10.8882978,5.46672432 10.9044351,5.74450011 10.7591988,5.9402411 L10.7107867,5.99632006 L8.70666667,7.99966667 L10.7107867,10.0036799 C10.9060489,10.1989421 10.9060489,10.5155246 10.7107867,10.7107867 C10.5332757,10.8882978 10.2554999,10.9044351 10.0597589,10.7591988 L10.0036799,10.7107867 L7.99966667,8.70666667 L5.99645339,10.7106534 C5.80119124,10.9059155 5.48460876,10.9059155 5.28934661,10.7106534 C5.11183557,10.5331423 5.0956982,10.2553666 5.24093451,10.0596256 L5.28934661,10.0035466 L7.29266667,7.99966667 L5.28934661,5.99645339 C5.09408446,5.80119124 5.09408446,5.48460876 5.28934661,5.28934661 C5.46685765,5.11183557 5.74463344,5.0956982 5.94037444,5.24093451 L5.99645339,5.28934661 L7.99966667,7.29266667 L10.0036799,5.28921328 C10.1989421,5.09395113 10.5155246,5.09395113 10.7107867,5.28921328 Z"
+      status-description="upload failed"
+    ></scale-progress-bar>
+    <scale-progress-bar
+      percentage="0"
+      stroke-width="8"
+      disabled="true"
     ></scale-progress-bar>
     <h3>Progress bar - show progress percentage inside of bar</h3>
     <scale-progress-bar
       percentage="80"
-      variant="info"
-      text-inside="true"
+      status-inside="true"
+      stroke-width="18"
+    ></scale-progress-bar>
+    <scale-progress-bar
+      percentage="60"
+      status-inside="true"
+      custom-color="#ffc400"
       stroke-width="18"
     ></scale-progress-bar>
     <h3>Link</h3>
@@ -889,8 +901,7 @@
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
-                  variant="info"
-                  style="max-width: 120px;"
+                  style="width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
@@ -912,8 +923,7 @@
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
-                  variant="info"
-                  style="max-width: 120px;"
+                  style="width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
@@ -935,8 +945,7 @@
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
-                  variant="info"
-                  style="max-width: 120px;"
+                  style="width:120px;"
                   stroke-width="6"
                   percentage="90"
                 />

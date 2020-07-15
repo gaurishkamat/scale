@@ -7,16 +7,33 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                                 | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------------------- | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Progress bar class               | `string`                                 | `''`        |
-| `percentage`  | `percentage`   | (required) Progress bar percentage          | `number`                                 | `0`         |
-| `showText`    | `show-text`    | (optional) Progress bar percentage text     | `boolean`                                | `undefined` |
-| `strokeWidth` | `stroke-width` | (optional) Progress bar stroke width        | `number`                                 | `6`         |
-| `styles`      | --             | (optional) Injected jss styles              | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `textInside`  | `text-inside`  | (optional) Progress text display inside bar | `boolean`                                | `undefined` |
-| `variant`     | `variant`      | (optional) Progress bar variant             | `string`                                 | `undefined` |
+| Property            | Attribute            | Description                                     | Type                                     | Default     |
+| ------------------- | -------------------- | ----------------------------------------------- | ---------------------------------------- | ----------- |
+| `customClass`       | `custom-class`       | (optional) Progress bar class                   | `string`                                 | `''`        |
+| `customColor`       | `custom-color`       | (optional) Progress bar customColor             | `string`                                 | `undefined` |
+| `disabled`          | `disabled`           | (optional) Progress bar disabled                | `boolean`                                | `undefined` |
+| `hasError`          | `has-error`          | (optional) Progress bar error                   | `boolean`                                | `undefined` |
+| `icon`              | `icon`               | (optional) Progress bar icon indicator          | `string`                                 | `undefined` |
+| `percentage`        | `percentage`         | (required) Progress bar percentage              | `number`                                 | `0`         |
+| `showStatus`        | `show-status`        | (optional) Progress bar percentage text         | `boolean`                                | `undefined` |
+| `statusDescription` | `status-description` | (optional) Progress bar status description text | `string`                                 | `undefined` |
+| `statusInside`      | `status-inside`      | (optional) Progress text display inside bar     | `boolean`                                | `undefined` |
+| `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width            | `number`                                 | `6`         |
+| `styles`            | --                   | (optional) Injected jss styles                  | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
+
+## Dependencies
+
+### Depends on
+
+- [scale-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  scale-progress-bar --> scale-icon
+  style scale-progress-bar fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

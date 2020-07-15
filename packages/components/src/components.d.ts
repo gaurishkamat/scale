@@ -439,13 +439,37 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
+          * (optional) Progress bar customColor
+         */
+        "customColor"?: string;
+        /**
+          * (optional) Progress bar disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Progress bar error
+         */
+        "hasError"?: boolean;
+        /**
+          * (optional) Progress bar icon indicator
+         */
+        "icon"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage": number;
         /**
           * (optional) Progress bar percentage text
          */
-        "showText"?: boolean;
+        "showStatus"?: boolean;
+        /**
+          * (optional) Progress bar status description text
+         */
+        "statusDescription"?: string;
+        /**
+          * (optional) Progress text display inside bar
+         */
+        "statusInside"?: boolean;
         /**
           * (optional) Progress bar stroke width
          */
@@ -454,14 +478,6 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Progress text display inside bar
-         */
-        "textInside"?: boolean;
-        /**
-          * (optional) Progress bar variant
-         */
-        "variant"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -1371,13 +1387,37 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
+          * (optional) Progress bar customColor
+         */
+        "customColor"?: string;
+        /**
+          * (optional) Progress bar disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Progress bar error
+         */
+        "hasError"?: boolean;
+        /**
+          * (optional) Progress bar icon indicator
+         */
+        "icon"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage"?: number;
         /**
           * (optional) Progress bar percentage text
          */
-        "showText"?: boolean;
+        "showStatus"?: boolean;
+        /**
+          * (optional) Progress bar status description text
+         */
+        "statusDescription"?: string;
+        /**
+          * (optional) Progress text display inside bar
+         */
+        "statusInside"?: boolean;
         /**
           * (optional) Progress bar stroke width
          */
@@ -1386,14 +1426,6 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Progress text display inside bar
-         */
-        "textInside"?: boolean;
-        /**
-          * (optional) Progress bar variant
-         */
-        "variant"?: string;
     }
     interface ScaleSidebarNav {
         /**
