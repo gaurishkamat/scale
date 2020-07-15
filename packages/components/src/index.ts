@@ -1,4 +1,4 @@
-export { Components } from './components';
+export type { Components, JSX } from './components';
 export * from './theme';
 export * from './theme.iife';
 export * from './theme.esm';
