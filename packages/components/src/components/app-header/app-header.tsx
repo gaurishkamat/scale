@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { StyleSheet } from 'jss';
 import { CssClassMap } from '../../utils/utils';
 import { CssInJs } from '../../utils/css-in-js';
+import { renderIcon } from '../../utils/render-icon';
 import Base from '../../utils/base-interface';
 import { styles } from './app-header.styles';
 
@@ -64,7 +65,7 @@ export class Header implements Base {
         {this.iconNavigation.map(item => (
           <li class="meta-navigation__item">
             <a class="meta-navigation__item-link" href={item.href}>
-              <app-icon name={item.icon}></app-icon>
+              {renderIcon(item.icon, 'meta-navigation__item-link')}
               <span class="meta-navigation__item-label">{item.name}</span>
             </a>
           </li>
