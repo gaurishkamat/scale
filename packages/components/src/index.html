@@ -748,13 +748,39 @@
     <scale-switch active="false" disabled="true"></scale-switch>
 
     <h3>Slider</h3>
-    <scale-slider></scale-slider>
-    <h3>Slider - with label</h3>
-    <scale-slider label></scale-slider>
-    <h3>Slider - step 10</h3>
-    <scale-slider label step="10"></scale-slider>
-    <h3>Slider - min max</h3>
-    <scale-slider label min="10" max="1000"></scale-slider>
+    <scale-slider
+      min="0"
+      max="100"
+      value="20"
+      step="1"
+      displayValue="true"
+      label="slider track large"
+    ></scale-slider>
+    <scale-slider
+      min="0"
+      max="100"
+      value="20"
+      step="1"
+      track-height="2"
+      displayValue="true"
+      label="slider track small"
+    ></scale-slider>
+    <scale-slider
+      min="0"
+      max="100"
+      value="20"
+      step="1"
+      displayValue="false"
+      custom-color="#009DE0"
+      label="slider track with custom color"
+    ></scale-slider>
+    <scale-slider
+      min="0"
+      max="100"
+      value="40"
+      disabled="true"
+      label="slider disabled"
+    ></scale-slider>
 
     <h3>Carousel - horizontal</h3>
     <scale-carousel>

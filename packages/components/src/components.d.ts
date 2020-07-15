@@ -547,29 +547,45 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Slider display value
+          * (optional) slider custom color
          */
-        "label": boolean;
+        "customColor"?: string;
         /**
-          * (optional) Slider range max value
+          * (optional) disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) the maximal value of the slider
          */
         "max"?: number;
         /**
-          * (optional) Slider range start value
+          * t(optional) he minimal value of the slider
          */
         "min"?: number;
         /**
-          * (optional) Slider step
+          * (optional) slider display value
          */
-        "step": number;
+        "showValue"?: boolean;
+        /**
+          * (optional) the step size to increase or decrease when dragging slider
+         */
+        "step"?: number;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
         /**
-          * (optional) Slider binding value
+          * (optional) the height of slider track
          */
-        "value": number;
+        "trackHeight"?: number;
+        /**
+          * (optional) the display value of the slider
+         */
+        "value"?: number;
     }
     interface ScaleSsrSlotFix {
     }
@@ -1495,19 +1511,31 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Slider display value
+          * (optional) slider custom color
          */
-        "label"?: boolean;
+        "customColor"?: string;
         /**
-          * (optional) Slider range max value
+          * (optional) disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) the maximal value of the slider
          */
         "max"?: number;
         /**
-          * (optional) Slider range start value
+          * t(optional) he minimal value of the slider
          */
         "min"?: number;
         /**
-          * (optional) Slider step
+          * (optional) slider display value
+         */
+        "showValue"?: boolean;
+        /**
+          * (optional) the step size to increase or decrease when dragging slider
          */
         "step"?: number;
         /**
@@ -1515,7 +1543,11 @@ declare namespace LocalJSX {
          */
         "styles"?: StyleSheet;
         /**
-          * (optional) Slider binding value
+          * (optional) the height of slider track
+         */
+        "trackHeight"?: number;
+        /**
+          * (optional) the display value of the slider
          */
         "value"?: number;
     }
