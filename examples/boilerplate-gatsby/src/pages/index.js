@@ -7,7 +7,7 @@ import {
   ScaleTable,
   ScaleInput,
   ScaleText,
-} from "@scaleds/components-react"
+} from "@scaleds/components-react-telekom"
 import { Link } from "gatsby"
 import { useTable, useSortBy } from "react-table"
 
@@ -15,45 +15,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const columns = React.useMemo(
-    () => [
-      {
-        id: "x01337",
-        Header: "First Name",
-        accessor: "firstName",
-      },
-      {
-        id: "x01338",
-        Header: "Last Name",
-        accessor: "lastName",
-      },
-    ],
-    []
-  )
-
-  const data = React.useMemo(
-    () => [
-      { firstName: "John", lastName: "Doe" },
-      { firstName: "Jane", lastName: "Doe" },
-      { firstName: "Jack", lastName: "Doe" },
-      { firstName: "Joe", lastName: "Doe" },
-    ],
-    []
-  )
-
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable(
-    {
-      columns,
-      data,
-    },
-    useSortBy
-  )
 
   return (
     <Layout>
@@ -61,7 +22,6 @@ const IndexPage = () => {
       <Link to="/404">404</Link>
       <Link to="/">Home</Link>
       <Link to="/modal">Modal</Link>
-
       <h3>Alert</h3>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
@@ -80,47 +40,7 @@ const IndexPage = () => {
         value="initial value"
         onScaleChange={console.log}
       />
-      <h3>Table</h3>
-      <ScaleTable showSort>
-        <table {...getTableProps()}>
-          <thead>
-            {headerGroups.map(headerGroup => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                  <th
-                    width="200px"
-                    aria-sort={
-                      !column.isSorted
-                        ? "none"
-                        : column.isSortedDesc
-                        ? "descending"
-                        : "ascending"
-                    }
-                    {...column.getHeaderProps(column.getSortByToggleProps())}
-                  >
-                    {column.render("Header")}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {rows.map(row => {
-              prepareRow(row)
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    )
-                  })}
-                </tr>
-              )
-            })}
-          </tbody>
-          <tfoot />
-        </table>
-      </ScaleTable>
+      
     </Layout>
   )
 }

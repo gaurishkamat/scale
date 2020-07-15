@@ -1,0 +1,324 @@
+@keyframes keyframes-slideUp {
+  from {
+    top: 0;
+  }
+  to {
+    top: -56px;
+  }
+}
+.header {
+  width: 100%;
+  z-index: 999999999;
+  position: fixed;
+  background: #e20074;
+  font-family: TeleNeoWeb-Regular;
+}
+.header .header__brand {
+  color: #fff;
+  display: flex;
+  background: #e20074;
+  align-items: center;
+}
+.header .header__nav {
+  color: #333;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+  border-top-left-radius: var(--header-border-radius);
+  border-top-right-radius: var(--header-border-radius);
+}
+.header .header__nav-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .header__nav-menu-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header__nav-before,
+.header .header__nav-after {
+  width: var(--header-border-radius);
+  bottom: calc(-2 * var(--header-border-radius));
+  height: calc(2 * var(--header-border-radius));
+  position: absolute;
+  border-top: 1px solid #dfdfdf;
+  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0 #fff;
+  background-color: transparent;
+}
+.header .header__nav-before {
+  left: -1px;
+  z-index: 999999997;
+  border-left: 1px solid #dfdfdf;
+  border-top-left-radius: var(--header-border-radius);
+}
+.header .header__nav-after {
+  right: -1px;
+  z-index: 999999998;
+  border-right: 1px solid #dfdfdf;
+  border-top-right-radius: var(--header-border-radius);
+}
+.header .meta-navigation {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+@media (max-width: 1023px) {
+  .header {
+    height: var(--header-nav-height);
+  }
+  .header .meta-navigation__item-link {
+    min-width: 24px;
+  }
+  .header .segment-navigation,
+  .header .addon-navigation,
+  .header .main-navigation {
+    display: none !important;
+  }
+  .header .header__brand {
+    width: 100%;
+    height: var(--header-nav-height);
+    display: flex;
+    padding: 0 16px;
+    z-index: 4001;
+    position: absolute;
+    transition: height var(--header-transition-speed) ease-in-out;
+    align-items: center;
+    animation-name: keyframes-slideUp;
+    animation-delay: 0.5s;
+    justify-content: space-between;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.1, 1);
+  }
+  .header .header__nav {
+    top: 4px;
+    width: 100%;
+    height: calc(var(--header-nav-height) - 4px);
+    padding: 0 16px;
+    z-index: 4000;
+    position: absolute;
+  }
+  .header .header__nav__mobile-menu {
+    top: var(--header-nav-height);
+    width: 100%;
+    display: none;
+    position: relative;
+  }
+  .header .header__nav__mobile-menu--opened {
+    height: calc(100vh - var(--header-nav-height));
+    display: block;
+    overflow-y: scroll;
+  }
+  .header .meta-navigation .meta-navigation__item-link {
+    margin: 0 6px;
+    font-size: 10px;
+    line-height: 12px;
+    flex-direction: column;
+  }
+  .header .meta-navigation .meta-navigation__item-link app-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 4px;
+  }
+  .header .header__brand .header__brand-before,
+  .header .header__brand .header__brand-after {
+    width: var(--header-border-radius);
+    bottom: calc(-2 * var(--header-border-radius));
+    height: calc(2 * var(--header-border-radius));
+    position: absolute;
+    border-top: transparent;
+    box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0 #e20074;
+    background-color: transparent;
+  }
+  .header .header__brand .header__brand-before {
+    left: -1px;
+    z-index: 999999997;
+    border-left: transparent;
+    border-top-left-radius: var(--header-border-radius);
+  }
+  .header .header__brand .header__brand-after {
+    right: -1px;
+    z-index: 999999998;
+    border-right: transparent;
+    border-top-right-radius: var(--header-border-radius);
+  }
+  .header .header__brand .logo svg {
+    width: auto;
+    height: 26px;
+  }
+}
+.header .meta-navigation .meta-navigation__item-link {
+  color: #000;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  font-family: TeleNeoWeb-Bold;
+  text-decoration: none;
+}
+.header .header__nav .header__nav-logo svg path {
+  fill: #e20074 !important;
+}
+@media (min-width: 1024px) {
+  .header .mobile-menu,
+  .header .header__nav__mobile-menu {
+    display: none;
+  }
+  .header .header__brand {
+    height: var(--header-brand-height);
+    padding: 0 24px;
+    transition: height var(--header-transition-speed) ease-in-out;
+    justify-content: space-between;
+  }
+  .header .header__brand-content {
+    top: 0;
+    width: 100%;
+    display: flex;
+    opacity: 1;
+    position: relative;
+    transition: opacity var(--header-transition-speed) ease-in-out,
+      top var(--header-transition-speed) ease-in-out;
+    align-items: center;
+  }
+  .header .header__nav {
+    height: var(--header-nav-height);
+    padding: 0 24px;
+    position: relative;
+  }
+  .header .header__nav-logo {
+    width: 50px;
+    opacity: 0;
+    transition: opacity var(--header-transition-speed) ease-in-out;
+    font-weight: bold;
+    margin-right: 1rem;
+    pointer-events: none;
+  }
+  .header .main-navigation {
+    height: var(--header-nav-height);
+    margin: 0;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    transition: margin-left var(--header-transition-speed) ease-in-out;
+    align-items: center;
+    margin-left: calc(-50px - 1rem);
+  }
+  .header .segment-navigation {
+    display: flex;
+    list-style: none;
+  }
+  .header .addon-navigation {
+    display: flex;
+    list-style: none;
+  }
+  .header.sticky {
+    --header-brand-height: 4px;
+  }
+  .header.sticky .header__nav-logo {
+    opacity: 1;
+    transition: opacity var(--header-transition-speed) ease-in-out;
+  }
+  .header.sticky .header__brand-content {
+    top: 56px;
+    opacity: 0;
+    transition: opacity var(--header-transition-speed) ease-in-out,
+      top var(--header-transition-speed) ease-in-out;
+  }
+  .header.sticky .main-navigation {
+    transition: margin-left var(--header-transition-speed) ease-in-out;
+    margin-left: 0;
+  }
+  .header .addon-navigation .addon-navigation__item-link {
+    color: #fff;
+    margin: 0 0 0 14px;
+    padding: 4px 0;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    font-family: TeleNeoWeb-ExtraBold;
+    line-height: 16px;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+  }
+  .header .addon-navigation .addon-navigation__item-link:hover {
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid #fff;
+  }
+  .header .segment-navigation .segment-navigation__item-link {
+    color: #fff;
+    margin: 0 7px;
+    padding: 4px 0;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    font-family: TeleNeoWeb-ExtraBold;
+    line-height: 16px;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+  }
+  .header .segment-navigation .segment-navigation__item-link:hover,
+  .header .segment-navigation .segment-navigation__item-link.is-active {
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid #fff;
+  }
+  .header .meta-navigation .meta-navigation__item-link {
+    margin: 0 0 0 16px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .header .meta-navigation .meta-navigation__item-link app-icon {
+    margin-right: 6px;
+  }
+  .header .main-navigation .main-navigation__item {
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header .main-navigation .main-navigation__item:first-child {
+    padding-left: 0;
+  }
+  .header .main-navigation .main-navigation__item:hover .mega-menu {
+    opacity: 1;
+    pointer-events: visible;
+  }
+  .header .main-navigation .main-navigation__item .main-navigation__item-link {
+    color: #000;
+    height: 100%;
+    display: flex;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    align-items: center;
+    font-family: TeleNeoWeb-ExtraBold;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item
+    .main-navigation__item-link:hover {
+    color: #e20074;
+  }
+  .header .header__brand-content .header__brand-branding {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .header .header__brand-content .header__brand-sector {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .header__brand-content .header__brand-meta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .header .header__brand app-logo {
+    margin-right: 1rem;
+  }
+}
