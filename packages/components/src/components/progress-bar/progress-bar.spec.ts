@@ -30,7 +30,7 @@ describe('ProgressBar', () => {
   it('should contain progress-bar-text css class when show text is set true', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<scale-progress-bar show-text=true>Label</scale-progress-bar>`,
+      html: `<scale-progress-bar show-status=true>Label</scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -47,10 +47,10 @@ describe('ProgressBar', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
 
-    element.variant = 'primary';
-    stylesheet.addRule('progress-bar--variant-primary', {});
+    element.hasError = true;
+    stylesheet.addRule('progress-bar--has-error', {});
     expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['progress-bar--variant-primary']
+      stylesheet.classes['progress-bar--has-error']
     );
   });
 });
