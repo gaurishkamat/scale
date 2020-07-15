@@ -198,13 +198,13 @@ exports[`Input should match snapshot 1`] = `
   background-color: transparent;
 }
 .input--type-checkbox-0-0-18:not(.input--disabled-0-0-16) .input__checkbox-container .input__checkbox-placeholder {
-  border: 1px solid #111111;
-  background-color: #D8D8D8;
+  border: 1px solid #cecece;
+  background-color: #ffffff;
 }
 .input--type-checkbox-0-0-18:not(.input--disabled-0-0-16) .input__checkbox-container:hover {}
 .input--type-checkbox-0-0-18:not(.input--disabled-0-0-16) .input__checkbox-container:hover .input__checkbox-placeholder {
-  border: 1px solid #E20074;
   background-color: #ffffff;
+  border: 1px solid #e20074;
 }
 .input--type-checkbox-0-0-18 .input__checkbox-container .input__checkbox {
   top: 0;
@@ -237,17 +237,24 @@ exports[`Input should match snapshot 1`] = `
 .input--checked-0-0-19.input--disabled-0-0-16 {}
 .input--checked-0-0-19:not(.input--disabled-0-0-16) {}
 .input--checked-0-0-19:not(.input--disabled-0-0-16) .input__checkbox-container {}
+.input--checked-0-0-19:not(.input--disabled-0-0-16).input--transparent-0-0-17 {}
 .input--checked-0-0-19:not(.input--disabled-0-0-16) scale-icon {
   --icon-color: #ffffff;
 }
+.input--checked-0-0-19:not(.input--disabled-0-0-16).input--transparent-0-0-17 .input__checkbox-container {}
+.input--checked-0-0-19:not(.input--disabled-0-0-16).input--transparent-0-0-17 .input__checkbox-container .input__checkbox-placeholder {
+  background-color: #e20074;
+}
 .input--checked-0-0-19:not(.input--disabled-0-0-16) .input__checkbox-container .input__checkbox-placeholder {
-  border: 1px solid #E20074;
-  background-color: #E20074;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #e20074;
+  background-color: #e20074;
 }
 .input--checked-0-0-19:not(.input--disabled-0-0-16) .input__checkbox-container:hover {}
 .input--checked-0-0-19:not(.input--disabled-0-0-16) .input__checkbox-container:hover .input__checkbox-placeholder {
-  border: 1px solid #E20074;
+  transition: all 0.2s ease-in-out;
   background-color: #F90984;
+  border: 1px solid #e20074;
 }
 .input--checked-0-0-19.input--disabled-0-0-16 .input__checkbox-placeholder {
   background-color: #cdcdcd;

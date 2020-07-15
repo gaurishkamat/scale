@@ -248,12 +248,12 @@ export const styles: JssStyle = {
     '&:not($input--disabled)': {
       '& .input__checkbox-container': {
         '& .input__checkbox-placeholder': {
-          border: '1px solid #111111',
-          backgroundColor: '#D8D8D8',
+          border: '1px solid #cecece',
+          backgroundColor: '#ffffff',
         },
         '&:hover': {
           '& .input__checkbox-placeholder': {
-            border: '1px solid #E20074',
+            border: ({ colors }) => `1px solid ${colors.primary.default}`,
             backgroundColor: '#ffffff',
           },
         },
@@ -284,13 +284,22 @@ export const styles: JssStyle = {
     '&:not($input--disabled)': {
       '& .input__checkbox-container': {
         '& .input__checkbox-placeholder': {
-          border: '1px solid #E20074',
-          backgroundColor: '#E20074',
+          border: ({ colors }) => `1px solid ${colors.primary.default}`,
+          backgroundColor: ({ colors }) => colors.primary.default,
+          transition: defaultTransition,
         },
         '&:hover': {
           '& .input__checkbox-placeholder': {
-            border: '1px solid #E20074',
+            border: ({ colors }) => `1px solid ${colors.primary.default}`,
             backgroundColor: '#F90984',
+            transition: defaultTransition,
+          },
+        },
+      },
+      '&$input--transparent': {
+        '& .input__checkbox-container': {
+          '& .input__checkbox-placeholder': {
+            backgroundColor: ({ colors }) => colors.primary.default,
           },
         },
       },
