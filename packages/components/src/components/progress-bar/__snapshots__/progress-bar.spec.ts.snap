@@ -69,13 +69,13 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
     </style>
     <style>
       @keyframes showProgress {
-    from {
-      width: 0;
+      from {
+        width: 0;
+      }
+      to {
+        width: 0%;
+      }
     }
-    to {
-      width: 0%;
-    }
-  }
     </style>
     <div class="progress-bar-0-0-10">
       <div class="progress-bar-wrapper-0-0-13">
@@ -158,13 +158,13 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
     </style>
     <style>
       @keyframes showProgress {
-    from {
-      width: 0;
+      from {
+        width: 0;
+      }
+      to {
+        width: 0%;
+      }
     }
-    to {
-      width: 0%;
-    }
-  }
     </style>
     <div class="progress-bar-0-0-10">
       <div class="progress-bar-wrapper-0-0-13">
@@ -250,13 +250,13 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
     </style>
     <style>
       @keyframes showProgress {
-    from {
-      width: 0;
+      from {
+        width: 0;
+      }
+      to {
+        width: 0%;
+      }
     }
-    to {
-      width: 0%;
-    }
-  }
     </style>
     <div class="progress-bar-0-0-10">
       <div class="progress-bar-wrapper-0-0-13">
@@ -339,13 +339,13 @@ exports[`ProgressBar should match snapshot 1`] = `
     </style>
     <style>
       @keyframes showProgress {
-    from {
-      width: 0;
+      from {
+        width: 0;
+      }
+      to {
+        width: 0%;
+      }
     }
-    to {
-      width: 0%;
-    }
-  }
     </style>
     <div class="progress-bar-0-0-10">
       <div class="progress-bar-wrapper-0-0-13">
