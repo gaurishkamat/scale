@@ -9,7 +9,9 @@ import { MenuItem } from "./components/app-interfaces";
 import { StyleSheet } from "jss";
 export namespace Components {
     interface AppIcon {
-        "name"?: string;
+        "fill"?: string;
+        "name": string;
+        "size": number;
     }
     interface AppLogo {
         "claim": boolean;
@@ -930,7 +932,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppIcon {
+        "fill"?: string;
         "name"?: string;
+        "size"?: number;
     }
     interface AppLogo {
         "claim"?: boolean;
