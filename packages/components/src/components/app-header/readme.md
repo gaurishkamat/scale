@@ -7,15 +7,14 @@
 
 ## Properties
 
-| Property           | Attribute      | Description | Type                                     | Default     |
-| ------------------ | -------------- | ----------- | ---------------------------------------- | ----------- |
-| `addonNavigation`  | --             |             | `any[]`                                  | `[]`        |
-| `customClass`      | `custom-class` |             | `string`                                 | `''`        |
-| `iconNavigation`   | --             |             | `any[]`                                  | `[]`        |
-| `mainNavigation`   | --             |             | `any[]`                                  | `[]`        |
-| `scrolled`         | `scrolled`     |             | `boolean`                                | `false`     |
-| `sectorNavigation` | --             |             | `any[]`                                  | `[]`        |
-| `styles`           | --             |             | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property           | Attribute      | Description | Type      | Default |
+| ------------------ | -------------- | ----------- | --------- | ------- |
+| `addonNavigation`  | --             |             | `any[]`   | `[]`    |
+| `customClass`      | `custom-class` |             | `string`  | `''`    |
+| `iconNavigation`   | --             |             | `any[]`   | `[]`    |
+| `mainNavigation`   | --             |             | `any[]`   | `[]`    |
+| `scrolled`         | `scrolled`     |             | `boolean` | `false` |
+| `sectorNavigation` | --             |             | `any[]`   | `[]`    |
 
 
 ## Dependencies

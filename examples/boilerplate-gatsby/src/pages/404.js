@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ScaleButton } from "@scaleds/components-react"
+import { ScaleButton } from "@scaleds/components-react-telekom"
 
 const NotFoundPage = () => {
   const [variant, setVariant] = React.useState("primary")

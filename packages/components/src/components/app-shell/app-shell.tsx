@@ -1,10 +1,6 @@
 import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
-import { StyleSheet } from 'jss';
 import { CssClassMap } from '../../utils/utils';
-import { CssInJs } from '../../utils/css-in-js';
-import Base from '../../utils/base-interface';
-import { styles } from './app-shell.styles';
 
 const levelEnhancer = (data, i = 0) =>
   data.reduce((previous, current) => {
@@ -22,17 +18,15 @@ const levelEnhancer = (data, i = 0) =>
 
 @Component({
   tag: 'scale-app-shell',
+  styleUrl: 'app-shell.css',
+  shadow: true,
 })
-export class Shell implements Base {
+export class Shell {
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
   @Prop() customClass?: string = '';
-  @Prop() styles?: StyleSheet;
-  @CssInJs('AppShell', styles)
-  stylesheet: StyleSheet;
-
   @State() scrolled: boolean = false;
 
   @Listen('scroll', { target: 'window' })
@@ -45,10 +39,8 @@ export class Shell implements Base {
   componentDidUnload() {}
 
   render() {
-    const { classes } = this.stylesheet;
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
           <scale-app-header
             scrolled={this.scrolled}
@@ -57,7 +49,7 @@ export class Shell implements Base {
             sectorNavigation={levelEnhancer(this.sectorNavigation)}
             addonNavigation={levelEnhancer(this.addonNavigation)}
           ></scale-app-header>
-          <div class={classes.content}>
+          <div class="content">
             <slot></slot>
           </div>
         </div>
@@ -66,9 +58,8 @@ export class Shell implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes.shell,
+      'shell',
       this.customClass && this.customClass,
       this.scrolled && 'sticky'
     );

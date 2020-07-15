@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ScaleButton, ScaleModal } from "@scaleds/components-react"
+import { ScaleButton, ScaleModal } from "@scaleds/components-react-telekom"
 
 const icons = {
   close:
