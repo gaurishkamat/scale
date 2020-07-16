@@ -11,7 +11,7 @@ module.exports = async (jestConfig) => {
     res.sendFile('index.html');
   });
 
-  global.__SERVER__ = app.listen(3000);
+  global.__SERVER__ = app.listen(3123);
 
   await setupPuppeteer(jestConfig);
 };

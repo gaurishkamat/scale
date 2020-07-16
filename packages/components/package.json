@@ -24,10 +24,13 @@
     "build": "stencil build --docs",
     "prebuild:prod": "yarn build:theme",
     "build:prod": "stencil build --prod",
+    "build:storybook": "build-storybook -s ./build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e --max-workers=2",
     "test:watch": "stencil test --spec --e2e --watchAll",
+    "pretest:visual": "yarn build && yarn build:storybook",
     "test:visual": "jest --forceExit",
+    "test:visual:ci": "jest --forceExit",
     "format": "prettier --write \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint": "yarn lint:types && yarn lint:style && yarn lint:format",
     "lint:fix": "yarn lint:style --fix",
@@ -37,8 +40,7 @@
     "verify": "yarn format && yarn lint:fix",
     "predevelop": "yarn build:theme",
     "develop": "stencil build --docs --watch",
-    "storybook": "start-storybook -p 6006 -s ./build",
-    "build-storybook": "build-storybook -s ./build"
+    "storybook": "start-storybook -p 6006 -s ./build"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",

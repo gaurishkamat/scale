@@ -3,7 +3,7 @@ describe.skip('Breadcrumb tests', () => {
     'matches snapshot when hovering',
     async story => {
       await global.page.goto(
-        `http://host.docker.internal:3000/?path=/story/components-breadcrumb--${story}`
+        `http://host.docker.internal:3123/?path=/story/components-breadcrumb--${story}`
       );
 
       await page.waitForSelector('iframe#storybook-preview-iframe');

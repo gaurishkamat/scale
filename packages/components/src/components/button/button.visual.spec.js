@@ -8,7 +8,7 @@ describe('Button', () => {
     ['link'],
   ])('matches snapshot', async variant => {
     await global.page.goto(
-      `http://host.docker.internal:3000/?path=/story/components-button--${variant}`
+      `http://host.docker.internal:3123/?path=/story/components-button--${variant}`
     );
 
     await page.waitForSelector('iframe#storybook-preview-iframe');
