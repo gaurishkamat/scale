@@ -23,7 +23,7 @@ export class TabNav implements Base {
   @Listen('tabclick')
   clickHandler(ev: CustomEvent<TabHeader>) {
     console.log(ev.target);
-    this.selectTab(event.target);
+    this.selectTab(ev.target);
   }
 
   componentWillLoad() {
@@ -63,7 +63,7 @@ export class TabNav implements Base {
     const panels = this.getAllPanels();
 
     tabs.forEach(tab => (tab.selected = false));
-    tabs.forEach(tab => console.log(tab.selected));
+
     panels.forEach(panel => (panel.hidden = true));
   }
 
@@ -71,7 +71,6 @@ export class TabNav implements Base {
     const tabs = this.getAllTabs();
 
     tabs.forEach((tab, i) => {
-      console.log(tab);
       const panel = tab.nextElementSibling;
       if (panel.tagName.toLowerCase() !== 'scale-tab-panel') {
         console.error(`Tab #${i} is not a` + `sibling of a Panel`);
@@ -95,9 +94,6 @@ export class TabNav implements Base {
   }
 
   render() {
-    const { classes } = this.stylesheet;
-    const label = this.ariaLabel ? { 'aria-label': this.ariaLabel } : {};
-
     return (
       <Host>
         <nav>

@@ -13,7 +13,6 @@ import { styles } from './tab-header.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { divide } from 'lodash';
 
 @Component({
   tag: 'scale-tab-header',
@@ -42,7 +41,7 @@ export class TabHeader implements Base {
   }
 
   render() {
-    const { classes } = this.stylesheet;
+    // const { classes } = this.stylesheet;
     // const wrapperClassMap = classNames(
     //   classes[],
     //   this.selected && classes[]

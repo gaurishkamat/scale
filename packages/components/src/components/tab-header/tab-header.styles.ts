@@ -1,5 +1,4 @@
 import { JssStyle } from 'jss';
-import { template } from 'lodash';
 
 export const styles: JssStyle = {
   'tab-header': {
