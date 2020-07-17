@@ -9,7 +9,7 @@ import { Collapsible } from '../collapsible/collapsible';
 
 @Component({
   tag: 'scale-accordion',
-  shadow: false,
+  shadow: true,
 })
 export class Accordion implements Base {
   @Element() el: HTMLElement;
@@ -84,12 +84,6 @@ export class Accordion implements Base {
     return (
       <Host>
         <div class={classes.accordionContainer}>
-          {/* {this.headline ? (
-            <scale-text tag="h3" variant="h3">
-              {this.headline}
-            </scale-text>
-          ) : null} */}
-
           <div class="accordion-container">
             <slot />
           </div>

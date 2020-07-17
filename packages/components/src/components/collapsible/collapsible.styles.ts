@@ -54,24 +54,11 @@ export const styles: JssStyle = {
         `opacity ${transitions.duration.shortest}ms`,
     },
   },
-  '@media (hover: hover)': {
-    collapsible__button: {
-      '&[aria-expanded="false"] svg': {
-        opacity: 1,
-      },
-      '&:hover svg': {
-        opacity: 1,
-      },
-    },
-  },
-  // 'collapsible__button--bold': {
-  //   fontWeight: ({ typography }) => typography.fontWeightBold,
-  // },
+
   // List
   collapsible__content: {
     marginTop: 0,
     marginBottom: 0,
-    // listStyle: 'none',
     padding: '1rem',
     border: '1px solid #E6E6E6',
   },
