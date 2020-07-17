@@ -63,6 +63,7 @@ export class TabNav implements Base {
     const panels = this.getAllPanels();
 
     tabs.forEach(tab => (tab.selected = false));
+    tabs.forEach(tab => console.log(tab.selected));
     panels.forEach(panel => (panel.hidden = true));
   }
 
@@ -82,7 +83,7 @@ export class TabNav implements Base {
         !panel.getAttribute('aria-labelledby')
       ) {
         const id = `auto-generated-${i}`;
-        console.log(`set id ${id}`);
+
         tab.setAttribute('aria-controls', id);
         panel.setAttribute('aria-labelledby', id);
         panel.setAttribute('id', id);
@@ -99,13 +100,19 @@ export class TabNav implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <nav style={{ border: `2px solid red` }}>
-          <ul style={{ border: `1px solid green` }}>
+        <nav>
+          <ul
+            style={{
+              display: 'flex',
+              borderBottom: `1px solid #f4f4f4`,
+              margin: '0',
+              padding: '0',
+            }}
+          >
             <slot name="headings"></slot>
           </ul>
         </nav>
-        <div style={{ border: `1px solid blue` }}>
+        <div>
           <slot name="content"></slot>
         </div>
       </Host>
