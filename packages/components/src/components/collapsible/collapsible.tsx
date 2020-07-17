@@ -97,8 +97,8 @@ export class Collapsible implements Base {
               >
                 <path
                   stroke="currentColor"
-                  d="M4 9l9 9.5L22 9"
-                  fill="none"
+                  d="M4 9l9 9.5L22 9Z"
+                  fill="currentColor"
                   fill-rule="evenodd"
                   stroke-linecap="round"
                   stroke-linejoin="round"
