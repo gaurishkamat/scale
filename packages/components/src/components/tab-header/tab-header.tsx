@@ -13,6 +13,7 @@ import { styles } from './tab-header.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+import { divide } from 'lodash';
 
 @Component({
   tag: 'scale-tab-header',
@@ -28,6 +29,9 @@ export class TabHeader implements Base {
   @Prop() ariaLabel?: string;
   @Prop() identifier?: string;
   @Prop() selected?: boolean;
+  @Prop() icon?: string;
+  @Prop() iconSize?: number = 16;
+
   @Event({ eventName: 'tabclick' }) tabClick: EventEmitter;
   componentWillLoad() {}
   componentDidUnload() {}
@@ -38,9 +42,47 @@ export class TabHeader implements Base {
   }
 
   render() {
+    const { classes } = this.stylesheet;
+    // const wrapperClassMap = classNames(
+    //   classes[],
+    //   this.selected && classes[]
+    // )
     return (
-      <Host onclick={this.handleClick.bind(this)} role="tab">
-        {this.label}
+      <Host
+        style={{
+          backgroundColor: this.selected ? '' : '#f4f4f4',
+          margin: '0 4px',
+          borderRadius: '8px 8px 0 0',
+        }}
+        onclick={this.handleClick.bind(this)}
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class={this.getCssClassMap()}
+          style={{ background: this.selected ? 'none' : '' }}
+        >
+          {this.icon ? (
+            <scale-icon
+              style={{ marginRight: '8px' }}
+              path={this.icon}
+              size={this.iconSize}
+            />
+          ) : null}
+          <span style={{ color: this.selected ? '#E20074' : '' }}>
+            {this.label}
+          </span>
+        </div>
+
+        <div
+          style={{
+            width: '100%',
+            height: '4px',
+            transform: 'translateY(1px)',
+            backgroundColor: this.selected ? '#E20074' : 'transparent',
+            borderRadius: '8px 8px 0 0',
+          }}
+        ></div>
       </Host>
     );
   }
