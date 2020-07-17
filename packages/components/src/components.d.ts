@@ -1753,15 +1753,12 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
-<<<<<<< HEAD
         "app-icon": AppIcon;
         "app-logo": AppLogo;
         "app-mega-menu": AppMegaMenu;
         "app-navigation-main-mobile": AppNavigationMainMobile;
         "app-navigation-sector-mobile": AppNavigationSectorMobile;
-=======
         "scale-accordion": ScaleAccordion;
->>>>>>> feat: implement accordion and collapsible
         "scale-alert": ScaleAlert;
         "scale-app-header": ScaleAppHeader;
         "scale-app-shell": ScaleAppShell;
@@ -1794,15 +1791,12 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-<<<<<<< HEAD
             "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-mega-menu": LocalJSX.AppMegaMenu & JSXBase.HTMLAttributes<HTMLAppMegaMenuElement>;
             "app-navigation-main-mobile": LocalJSX.AppNavigationMainMobile & JSXBase.HTMLAttributes<HTMLAppNavigationMainMobileElement>;
             "app-navigation-sector-mobile": LocalJSX.AppNavigationSectorMobile & JSXBase.HTMLAttributes<HTMLAppNavigationSectorMobileElement>;
-=======
             "scale-accordion": LocalJSX.ScaleAccordion & JSXBase.HTMLAttributes<HTMLScaleAccordionElement>;
->>>>>>> feat: implement accordion and collapsible
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
             "scale-app-header": LocalJSX.ScaleAppHeader & JSXBase.HTMLAttributes<HTMLScaleAppHeaderElement>;
             "scale-app-shell": LocalJSX.ScaleAppShell & JSXBase.HTMLAttributes<HTMLScaleAppShellElement>;
