@@ -26,6 +26,7 @@ export namespace Components {
     }
     interface AppNavigationSectorMobile {
         "navigation": MenuItem[];
+    }
     interface ScaleAccordion {
         "dependend": boolean;
         "headline"?: string;
@@ -792,6 +793,7 @@ declare global {
     var HTMLAppNavigationSectorMobileElement: {
         prototype: HTMLAppNavigationSectorMobileElement;
         new (): HTMLAppNavigationSectorMobileElement;
+    };
     interface HTMLScaleAccordionElement extends Components.ScaleAccordion, HTMLStencilElement {
     }
     var HTMLScaleAccordionElement: {
@@ -1009,6 +1011,7 @@ declare namespace LocalJSX {
     }
     interface AppNavigationSectorMobile {
         "navigation"?: MenuItem[];
+    }
     interface ScaleAccordion {
         "dependend"?: boolean;
         "headline"?: string;
