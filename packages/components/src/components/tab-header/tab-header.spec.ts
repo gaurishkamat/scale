@@ -1,11 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { SidebarNav } from './sidebar-nav';
+import { TabHeader } from './tab-header';
 
-describe('SidebarNav', () => {
+describe('TabHeaderg', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
-      components: [SidebarNav],
-      html: `<scale-sidebar-nav></scale-sidebar-nav>`,
+      components: [TabHeader],
+      html: `<scale-tab-header></scale-tab-header>`,
     });
     expect(page.root).toMatchSnapshot();
   });
