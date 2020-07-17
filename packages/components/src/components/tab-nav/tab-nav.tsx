@@ -22,7 +22,7 @@ export class TabNav implements Base {
 
   @Listen('tabclick')
   clickHandler(ev: CustomEvent<TabHeader>) {
-    console.log(ev.target);
+    // console.log(ev.target);
     this.selectTab(ev.target);
   }
 
@@ -73,10 +73,10 @@ export class TabNav implements Base {
     tabs.forEach((tab, i) => {
       const panel = tab.nextElementSibling;
       if (panel.tagName.toLowerCase() !== 'scale-tab-panel') {
-        console.error(`Tab #${i} is not a` + `sibling of a Panel`);
+        // console.error(`Tab #${i} is not a` + `sibling of a Panel`);
         return;
       }
-      //auto-generate id
+      // auto-generate id
       if (
         !tab.getAttribute('aria-controls') &&
         !panel.getAttribute('aria-labelledby')
