@@ -1,5 +1,19 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
+import { vueOutputTarget, ComponentModelConfig } from '@stencil/vue-output-target';
+
+const vueComponentModels: ComponentModelConfig[] = [
+  {
+    elements: ['scale-input'],
+    event: 'inputChange',
+    targetAttr: 'value'
+  },
+  {
+    elements: ['scale-button'],
+    event: 'click',
+    targetAttr: ''
+  }
+]
 
 export const config: Config = {
   testing: {
@@ -11,6 +25,12 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
+      excludeComponents: ['animatable-component', 'animatable-cube']
+    }),
+    vueOutputTarget({
+      componentCorePackage: '@scaleds/components-telekom',
+      proxiesFile: '../components-vue/src/components.ts',
+      componentModels: vueComponentModels,
       excludeComponents: ['animatable-component', 'animatable-cube']
     }),
     {
