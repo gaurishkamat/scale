@@ -3,7 +3,7 @@
   "name": "@scaleds/components-telekom-vue",
   "sideEffects": false,
   "version": "0.0.1",
-  "description": "Vue specific wrapper for @scaleds/components",
+  "description": "Vue specific wrapper for @scaleds/components-telekom",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p ."
@@ -19,7 +19,6 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@scaleds/components": "^0.1.14",
     "vue": "^2.6.11"
   }
 }

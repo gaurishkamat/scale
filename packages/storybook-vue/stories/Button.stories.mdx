@@ -1,4 +1,4 @@
-import { Meta, Story, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import { ScaleButton } from '@scaleds/components-telekom-vue';
 
 <Meta title='Button' component={ScaleButton} />
@@ -7,10 +7,14 @@ import { ScaleButton } from '@scaleds/components-telekom-vue';
 
 Some **markdown** description, or whatever you want.
 
-<Story name='default' height='400px'>{{
-  components: { ScaleButton },
-  template: '<scale-button>Click!</scale-button>',
-}}</Story>
+<Preview>
+  <Story name='Text'>{{
+    components: { ScaleButton },
+    template: '<scale-button>Click</scale-button>',
+  }}</Story>
+</Preview>
+
+<p>&nbsp;</p>
 
 ## Props
 

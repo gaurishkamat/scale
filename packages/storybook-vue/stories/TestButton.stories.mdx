@@ -1,0 +1,23 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import TestButton from './TestButton.vue';
+
+<Meta title='Test Button' component={TestButton} />
+
+# Test Button
+
+I'm testing a real Vue component here.
+
+<Preview>
+  <Story name='Text'>{{
+    components: { TestButton },
+    template: '<test-button label="Click!"></test-button>',
+  }}</Story>
+</Preview>
+
+<p>&nbsp;</p>
+
+## Props
+
+This works… Also removing this MDX and adding `component: TestButton` in the default export of `TestButton.stories.js` will render this props table.
+
+<Props of={TestButton} />
