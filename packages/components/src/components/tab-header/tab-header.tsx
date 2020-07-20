@@ -41,11 +41,12 @@ export class TabHeader implements Base {
   }
 
   render() {
-    // const { classes } = this.stylesheet;
-    // const wrapperClassMap = classNames(
-    //   classes[],
-    //   this.selected && classes[]
-    // )
+    const { classes } = this.stylesheet;
+    const wrapperClassMap = classNames(
+      classes['tab-header'],
+      this.selected && classes['tab-']
+    );
+
     return (
       <Host
         style={{
@@ -58,7 +59,7 @@ export class TabHeader implements Base {
         tabindex="0"
       >
         <div
-          class={this.getCssClassMap()}
+          class={wrapperClassMap}
           style={{ background: this.selected ? 'none' : '' }}
         >
           {this.icon ? (

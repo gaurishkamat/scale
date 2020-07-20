@@ -7,12 +7,19 @@ export const styles: JssStyle = {
 
     display: 'inline-flex',
     '&:hover': {
+      '--icon-color': '#F90984',
       color: '#F90984',
       cursor: 'pointer',
     },
     '&:active': {
-      color: '#CB0068',
+      '--icon-color': '#ff0033',
+      color: '#ff0033',
     },
+  },
+
+  'tab-header--selected': {
+    '--icon-color': '#CB0068',
+    color: '#CB0068',
   },
   'tab-header__underline': {
     width: '100%',
