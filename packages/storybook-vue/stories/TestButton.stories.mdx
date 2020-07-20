@@ -17,14 +17,14 @@ export const Template = (args) => ({
 I'm testing a real Vue component here.
 
 <Preview>
-  <Story name='Text'>{{
+  <Story name='Text' withControls>{{
     components: { TestButton },
     template: '<test-button label="Click!"></test-button>',
   }}</Story>
 </Preview>
 
 <Preview>
-  <Story name='With Args' args={{ label: 'OKCOOL' }}>
+  <Story name='With Args' withControls args={{ label: 'OKCOOL' }}>
     {Template.bind(null)}
   </Story>
 </Preview>

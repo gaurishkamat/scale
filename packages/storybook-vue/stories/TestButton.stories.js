@@ -7,14 +7,6 @@ export default {
   component: TestButton
 };
 
-/* const Template = (args) => ({
-  components: { TestButton },
-  data() {
-    return { args }
-  },
-  template: '<test-button v-bind="args"></test-button>'
-}) */
-
 export const Text = () => ({
   components: { TestButton },
   template: '<test-button @click.native="action" label="Click!" />',

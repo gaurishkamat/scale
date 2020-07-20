@@ -1,21 +1,63 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
 import { ScaleButton } from '@scaleds/components-telekom-vue';
+import { action } from "@storybook/addon-actions";
 
-<Meta title='Button' component={ScaleButton} />
+<Meta
+  title='Button'
+  component={ScaleButton}
+  argTypes={{
+    variant: {
+      control: { type: 'select', options: ['primary', 'secondary'] }
+    },
+    label: {
+      defaultValue: 'Label',
+      description: 'Description text',
+      control: { type: 'text' }
+    },
+    disabled: {
+      control: { type: 'boolean' }
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ScaleButton },
+  template: '<scale-button :variant="variant" :disabled="disabled" @click="handle">{{ label }} - {{ variant }}, {{ disabled }}</scale-button>',
+  methods: { handle: action('click') }
+})
 
 # Scale Button
 
 Some **markdown** description, or whatever you want.
 
+https://github.com/storybookjs/storybook/issues/8444  
+https://github.com/storybookjs/storybook/pull/11332
+
 <Preview>
-  <Story name='Text'>{{
-    components: { ScaleButton },
-    template: '<scale-button>Click</scale-button>',
-  }}</Story>
+  <Story
+    name='Text'
+    args={{
+      variant: 'primary',
+      label: 'Yep',
+      disabled: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Preview>
 
-<p>&nbsp;</p>
+<Props story="Text" />
 
-## Props
-
-<Props of={ScaleButton} />
+<Preview>
+  <Story
+    name='Text2'
+    args={{
+      variant: 'primary',
+      disabled: true
+    }}
+    parameters={{ docs: { source: { code: '<div>ok</div>' }}}}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
