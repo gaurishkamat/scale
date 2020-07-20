@@ -43,23 +43,27 @@ export class TabHeader implements Base {
   render() {
     const { classes } = this.stylesheet;
     const wrapperClassMap = classNames(
+      classes['tab-wrapper'],
+      this.selected && classes['tab-wrapper--selected']
+    );
+    const headerClassMap = classNames(
       classes['tab-header'],
-      this.selected && classes['tab-']
+      this.selected && classes['tab-header--selected']
+    );
+    const underlineClassMap = classNames(
+      classes['tab-header__underline'],
+      !this.selected && classes['tab-header__underline--transparent']
     );
 
     return (
       <Host
-        style={{
-          backgroundColor: this.selected ? '' : '#f4f4f4',
-          margin: '0 4px',
-          borderRadius: '8px 8px 0 0',
-        }}
-        onclick={this.handleClick.bind(this)}
+        class={wrapperClassMap}
+        onclick={() => this.handleClick()}
         role="tab"
         tabindex="0"
       >
         <div
-          class={wrapperClassMap}
+          class={headerClassMap}
           style={{ background: this.selected ? 'none' : '' }}
         >
           {this.icon ? (
@@ -69,20 +73,10 @@ export class TabHeader implements Base {
               size={this.iconSize}
             />
           ) : null}
-          <span style={{ color: this.selected ? '#E20074' : '' }}>
-            {this.label}
-          </span>
+          <span>{this.label}</span>
         </div>
 
-        <div
-          style={{
-            width: '100%',
-            height: '4px',
-            transform: 'translateY(1px)',
-            backgroundColor: this.selected ? '#E20074' : 'transparent',
-            borderRadius: '8px 8px 0 0',
-          }}
-        ></div>
+        <div class={underlineClassMap}></div>
       </Host>
     );
   }
