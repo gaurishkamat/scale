@@ -1,6 +1,6 @@
 import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
-import { ScaleButton } from '@scaleds/components-telekom-vue';
 import { action } from "@storybook/addon-actions";
+import ScaleButton from "./ScaleButton.vue";
 
 <Meta
   title='Button'
@@ -23,9 +23,11 @@ import { action } from "@storybook/addon-actions";
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { ScaleButton },
-  template: '<scale-button :variant="variant" :disabled="disabled" @click="handle">{{ label }} - {{ variant }}, {{ disabled }}</scale-button>',
+  template: '<scale-button :variant="variant" :disabled="disabled" @click="handle">{{ label }}</scale-button>',
   methods: { handle: action('click') }
 })
+
+export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
 
 # Scale Button
 
@@ -33,6 +35,7 @@ Some **markdown** description, or whatever you want.
 
 https://github.com/storybookjs/storybook/issues/8444  
 https://github.com/storybookjs/storybook/pull/11332
+
 
 <Preview>
   <Story
@@ -42,6 +45,7 @@ https://github.com/storybookjs/storybook/pull/11332
       label: 'Yep',
       disabled: false
     }}
+    parameters={{ docs: { source: { code: '<scale-button :variant="variant" :disabled="disabled" @click="handle">{{ label }}</scale-button>'}}}} 
   >
     {Template.bind({})}
   </Story>
@@ -49,15 +53,3 @@ https://github.com/storybookjs/storybook/pull/11332
 
 <Props story="Text" />
 
-<Preview>
-  <Story
-    name='Text2'
-    args={{
-      variant: 'primary',
-      disabled: true
-    }}
-    parameters={{ docs: { source: { code: '<div>ok</div>' }}}}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>

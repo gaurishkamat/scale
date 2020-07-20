@@ -6,5 +6,5 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-controls"
   ],
-  stories: ["../stories/**/*.stories.@(js|mdx)"]
+  stories: ["../stories/**/*.stories.mdx"]
 };
