@@ -29,6 +29,7 @@ export const styles: JssStyle = {
     '&:hover': {
       color: '#E20074',
       backgroundColor: '#f4f4f4',
+      cursor: 'pointer',
     },
     '&:active': {
       color: '#CB0068',
