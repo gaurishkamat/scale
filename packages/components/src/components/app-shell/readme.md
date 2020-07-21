@@ -7,14 +7,13 @@
 
 ## Properties
 
-| Property           | Attribute      | Description | Type                                     | Default     |
-| ------------------ | -------------- | ----------- | ---------------------------------------- | ----------- |
-| `addonNavigation`  | --             |             | `any[]`                                  | `[]`        |
-| `customClass`      | `custom-class` |             | `string`                                 | `''`        |
-| `iconNavigation`   | --             |             | `any[]`                                  | `[]`        |
-| `mainNavigation`   | --             |             | `any[]`                                  | `[]`        |
-| `sectorNavigation` | --             |             | `any[]`                                  | `[]`        |
-| `styles`           | --             |             | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property           | Attribute      | Description | Type     | Default |
+| ------------------ | -------------- | ----------- | -------- | ------- |
+| `addonNavigation`  | --             |             | `any[]`  | `[]`    |
+| `customClass`      | `custom-class` |             | `string` | `''`    |
+| `iconNavigation`   | --             |             | `any[]`  | `[]`    |
+| `mainNavigation`   | --             |             | `any[]`  | `[]`    |
+| `sectorNavigation` | --             |             | `any[]`  | `[]`    |
 
 
 ## Dependencies

@@ -1,24 +1,18 @@
 import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
-import { StyleSheet } from 'jss';
 import { CssClassMap } from '../../utils/utils';
-import { CssInJs } from '../../utils/css-in-js';
 import { renderIcon } from '../../utils/render-icon';
-import Base from '../../utils/base-interface';
-import { styles } from './app-header.styles';
 
 @Component({
   tag: 'scale-app-header',
+  styleUrl: 'app-header.css',
 })
-export class Header implements Base {
+export class Header {
   @Prop() customClass?: string = '';
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
-  @Prop() styles?: StyleSheet;
-  @CssInJs('AppHeader', styles)
-  stylesheet: StyleSheet;
   @Prop({ reflect: true }) scrolled: boolean = false;
   @State() activeSegment: any = this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
@@ -32,10 +26,6 @@ export class Header implements Base {
     event.preventDefault();
     this.mobileMenu = !this.mobileMenu;
   }
-
-  componentWillLoad() {}
-  componentWillUpdate() {}
-  componentDidUnload() {}
 
   handleSelectedSegment(event, item) {
     event.preventDefault();
@@ -122,7 +112,6 @@ export class Header implements Base {
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
           <div class="header__brand">
             <span class="header__brand-before"></span>
@@ -166,9 +155,8 @@ export class Header implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes.header,
+      'header',
       this.customClass && this.customClass,
       this.scrolled && 'sticky'
     );

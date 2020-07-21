@@ -72,7 +72,6 @@ export namespace Components {
         "mainNavigation"?: any[];
         "scrolled": boolean;
         "sectorNavigation"?: any[];
-        "styles"?: StyleSheet;
     }
     interface ScaleAppShell {
         "addonNavigation"?: any[];
@@ -80,7 +79,6 @@ export namespace Components {
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "sectorNavigation"?: any[];
-        "styles"?: StyleSheet;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -439,13 +437,37 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
+          * (optional) Progress bar customColor
+         */
+        "customColor"?: string;
+        /**
+          * (optional) Progress bar disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Progress bar error
+         */
+        "hasError"?: boolean;
+        /**
+          * (optional) Progress bar icon indicator
+         */
+        "icon"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage": number;
         /**
           * (optional) Progress bar percentage text
          */
-        "showText"?: boolean;
+        "showStatus"?: boolean;
+        /**
+          * (optional) Progress bar status description text
+         */
+        "statusDescription"?: string;
+        /**
+          * (optional) Progress text display inside bar
+         */
+        "statusInside"?: boolean;
         /**
           * (optional) Progress bar stroke width
          */
@@ -454,14 +476,6 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Progress text display inside bar
-         */
-        "textInside"?: boolean;
-        /**
-          * (optional) Progress bar variant
-         */
-        "variant"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -531,29 +545,45 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Slider display value
+          * (optional) slider custom color
          */
-        "label": boolean;
+        "customColor"?: string;
         /**
-          * (optional) Slider range max value
+          * (optional) disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) the maximal value of the slider
          */
         "max"?: number;
         /**
-          * (optional) Slider range start value
+          * t(optional) he minimal value of the slider
          */
         "min"?: number;
         /**
-          * (optional) Slider step
+          * (optional) slider display value
          */
-        "step": number;
+        "showValue"?: boolean;
+        /**
+          * (optional) the step size to increase or decrease when dragging slider
+         */
+        "step"?: number;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
         /**
-          * (optional) Slider binding value
+          * (optional) the height of slider track
          */
-        "value": number;
+        "trackHeight"?: number;
+        /**
+          * (optional) the display value of the slider
+         */
+        "value"?: number;
     }
     interface ScaleSsrSlotFix {
     }
@@ -992,7 +1022,6 @@ declare namespace LocalJSX {
         "mainNavigation"?: any[];
         "scrolled"?: boolean;
         "sectorNavigation"?: any[];
-        "styles"?: StyleSheet;
     }
     interface ScaleAppShell {
         "addonNavigation"?: any[];
@@ -1000,7 +1029,6 @@ declare namespace LocalJSX {
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "sectorNavigation"?: any[];
-        "styles"?: StyleSheet;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -1371,13 +1399,37 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
+          * (optional) Progress bar customColor
+         */
+        "customColor"?: string;
+        /**
+          * (optional) Progress bar disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Progress bar error
+         */
+        "hasError"?: boolean;
+        /**
+          * (optional) Progress bar icon indicator
+         */
+        "icon"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage"?: number;
         /**
           * (optional) Progress bar percentage text
          */
-        "showText"?: boolean;
+        "showStatus"?: boolean;
+        /**
+          * (optional) Progress bar status description text
+         */
+        "statusDescription"?: string;
+        /**
+          * (optional) Progress text display inside bar
+         */
+        "statusInside"?: boolean;
         /**
           * (optional) Progress bar stroke width
          */
@@ -1386,14 +1438,6 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Progress text display inside bar
-         */
-        "textInside"?: boolean;
-        /**
-          * (optional) Progress bar variant
-         */
-        "variant"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -1463,19 +1507,31 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Slider display value
+          * (optional) slider custom color
          */
-        "label"?: boolean;
+        "customColor"?: string;
         /**
-          * (optional) Slider range max value
+          * (optional) disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) the maximal value of the slider
          */
         "max"?: number;
         /**
-          * (optional) Slider range start value
+          * t(optional) he minimal value of the slider
          */
         "min"?: number;
         /**
-          * (optional) Slider step
+          * (optional) slider display value
+         */
+        "showValue"?: boolean;
+        /**
+          * (optional) the step size to increase or decrease when dragging slider
          */
         "step"?: number;
         /**
@@ -1483,7 +1539,11 @@ declare namespace LocalJSX {
          */
         "styles"?: StyleSheet;
         /**
-          * (optional) Slider binding value
+          * (optional) the height of slider track
+         */
+        "trackHeight"?: number;
+        /**
+          * (optional) the display value of the slider
          */
         "value"?: number;
     }

@@ -1,0 +1,28 @@
+.content {
+  background: #fff;
+}
+.shell {
+  --header-nav-height: 56px;
+  --header-brand-height: 72px;
+  --header-border-radius: 8px;
+  --header-transition-speed: 0.3s;
+  --header-brand-collapsed-height: 4px;
+}
+@media (max-width: 1023px) {
+  .shell .content {
+    padding-top: calc(
+      var(--header-brand-collapsed-height) + var(--header-nav-height)
+    );
+  }
+}
+@media (min-width: 1024px) {
+  .shell.sticky .content {
+    padding-top: calc(
+      var(--header-brand-collapsed-height) + var(--header-nav-height)
+    );
+  }
+  .content {
+    transition: padding-top var(--header-transition-speed) ease-in-out;
+    padding-top: calc(var(--header-brand-height) + var(--header-nav-height));
+  }
+}

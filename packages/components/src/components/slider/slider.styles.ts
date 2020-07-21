@@ -1,43 +1,78 @@
 import { JssStyle } from 'jss';
 
-const sliderKnob: JssStyle = {
-  '-webkit-appearance': 'none',
-  border: '2px solid #409eff',
-  height: '20px',
-  width: '20px',
-  borderRadius: '50%',
-  background: '#fff',
-};
-
 export const styles: JssStyle = {
   slider: {
-    display: 'inline-flex',
+    display: 'block',
     alignItems: 'center',
     width: '100%',
+    '& .slider--track-wrapper': {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    '& .slider--track': {
+      width: '400px', // slider track size should have a fix number not percentage otherwise when dragging, the track flickers
+      height: 8,
+      margin: '16px 0',
+      backgroundColor: '#ebeef5',
+      borderRadius: 3,
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    '& .slider--bar': {
+      height: 8,
+      backgroundColor: ({ colors }) => colors.primary.default,
+      borderTopLeftRadius: 3,
+      borderBottomLeftRadius: 3,
+      position: 'absolute',
+    },
+    '& .slider--thumb-wrapper': {
+      height: 36,
+      width: 36,
+      position: 'absolute',
+      zIndex: 100,
+      marginLeft: -4,
+      backgroundColor: 'transparent',
+      textAlign: 'center',
+      userSelect: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      '&:hover': {
+        cursor: 'grab',
+      },
+    },
+    '& .slider--thumb': {
+      width: 16,
+      height: 16,
+      border: '2px solid',
+      borderColor: ({ colors }) => colors.primary.default,
+      backgroundColor: '#fff',
+      borderRadius: '50%',
+      transition: 'all 0.2s',
+      userSelect: 'none',
+      '&:hover': {
+        transform: 'scale(1.2)',
+      },
+    },
+    '& .slider--display-value': {
+      marginLeft: 24,
+    },
   },
-  slider__text: {
-    margin: 'var(--slider-text-margin, 0 0 0 1rem)',
-    minWidth: 30,
-    textAlign: 'right',
+  'slider--disabled': {
+    '& .slider--track-wrapper': {
+      opacity: 0.4,
+      cursor: 'not-allowed',
+    },
+    '& .slider--bar': {
+      backgroundColor: 'grey',
+    },
+    '& .slider--thumb': {
+      display: 'none',
+    },
+    '& .slider--thumb-wrapper': {
+      '&:hover': {
+        cursor: 'not-allowed',
+      },
+    },
   },
-  slider__input: {
-    outline: 'none',
-    '-webkit-appearance': 'none',
-    cursor: 'pointer',
-    background: '#e4e7ed',
-    height: '4px',
-    width: '100%',
-    borderRadius: '2px',
-    '&::-webkit-slider-thumb': sliderKnob,
-
-    // TODO: currently throws warning in chrome, enable browser check to support firefox and edge
-    // '&::-moz-range-thumb': sliderKnob,
-    // '&::-ms-thumb': sliderKnob,
-  },
-  // TODO: currently throws warning in chrome, enable browser check to support firefox
-  // "input[type='range']": {
-  //   '&::-moz-focus-outer': {
-  //     border: '0',
-  //   },
-  // },
 };
