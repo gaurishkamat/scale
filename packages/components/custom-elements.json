@@ -613,24 +613,40 @@
           "description": "(optional) Progress bar class"
         },
         {
+          "name": "custom-color",
+          "description": "(optional) Progress bar customColor"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Progress bar disabled"
+        },
+        {
+          "name": "has-error",
+          "description": "(optional) Progress bar error"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Progress bar icon indicator"
+        },
+        {
           "name": "percentage",
           "description": "(required) Progress bar percentage"
         },
         {
-          "name": "show-text",
+          "name": "show-status",
           "description": "(optional) Progress bar percentage text"
+        },
+        {
+          "name": "status-description",
+          "description": "(optional) Progress bar status description text"
+        },
+        {
+          "name": "status-inside",
+          "description": "(optional) Progress text display inside bar"
         },
         {
           "name": "stroke-width",
           "description": "(optional) Progress bar stroke width"
-        },
-        {
-          "name": "text-inside",
-          "description": "(optional) Progress text display inside bar"
-        },
-        {
-          "name": "variant",
-          "description": "(optional) Progress bar variant"
         }
       ]
     },
@@ -717,24 +733,40 @@
           "description": "(optional) Slider class"
         },
         {
+          "name": "custom-color",
+          "description": "(optional) slider custom color"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) disabled"
+        },
+        {
           "name": "label",
-          "description": "(optional) Slider display value"
+          "description": "(optional) slider label"
         },
         {
           "name": "max",
-          "description": "(optional) Slider range max value"
+          "description": "(optional) the maximal value of the slider"
         },
         {
           "name": "min",
-          "description": "(optional) Slider range start value"
+          "description": "t(optional) he minimal value of the slider"
+        },
+        {
+          "name": "show-value",
+          "description": "(optional) slider display value"
         },
         {
           "name": "step",
-          "description": "(optional) Slider step"
+          "description": "(optional) the step size to increase or decrease when dragging slider"
+        },
+        {
+          "name": "track-height",
+          "description": "(optional) the height of slider track"
         },
         {
           "name": "value",
-          "description": "(optional) Slider binding value"
+          "description": "(optional) the display value of the slider"
         }
       ]
     },
