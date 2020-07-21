@@ -1,12 +1,9 @@
 {
   "packages": [
-    "packages/components",
-    "packages/components-react",
-    "packages/config",
-    "packages/gatsby-plugin",
-    "packages/nuxt-module"
+    "packages/*"
   ],
   "npmClient": "yarn",
+  "npmClientArgs": ["--pure-lockfile"],
   "useWorkspaces": true,
   "version": "0.1.15",
   "command": {

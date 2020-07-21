@@ -6,5 +6,6 @@ module.exports = async ({ config }) => {
       patterns: [{ from: "../components/src/theme/fonts", to: "fonts" }]
     })
   );
+
   return config;
 };

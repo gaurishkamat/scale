@@ -4,11 +4,7 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
-        "packages/components",
-        "packages/components-react",
-        "packages/config",
-        "packages/gatsby-plugin",
-        "packages/nuxt-module"
+        "packages/*"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
