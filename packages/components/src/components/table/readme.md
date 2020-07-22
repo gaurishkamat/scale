@@ -264,12 +264,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                           | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------------- | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Tag class                  | `string`                                 | `''`        |
-| `showSort`    | `show-sort`    | (optional) Display sort arrows on/off | `boolean`                                | `false`     |
-| `size`        | `size`         | (optional) Visual size                | `string`                                 | `'default'` |
-| `styles`      | --             | (optional) Injected jss styles        | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property      | Attribute      | Description                           | Type      | Default     |
+| ------------- | -------------- | ------------------------------------- | --------- | ----------- |
+| `customClass` | `custom-class` | (optional) Tag class                  | `string`  | `''`        |
+| `showSort`    | `show-sort`    | (optional) Display sort arrows on/off | `boolean` | `false`     |
+| `size`        | `size`         | (optional) Visual size                | `string`  | `'default'` |
+| `styles`      | `styles`       | (optional) Injected jss styles        | `any`     | `undefined` |
 
 
 ----------------------------------------------

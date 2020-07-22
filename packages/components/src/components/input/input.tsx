@@ -88,7 +88,7 @@ export class Input implements Base {
   @Event() scaleKeyDown: EventEmitter<KeyboardEvent>;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Input', styles) stylesheet: StyleSheet;
 

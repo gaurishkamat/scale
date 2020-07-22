@@ -28,7 +28,7 @@ export class Tag implements Base {
   @Prop() disabled?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Tag', styles) stylesheet: StyleSheet;
   /** (optional) Close icon click event */

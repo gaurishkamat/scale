@@ -31,16 +31,16 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Tag class           | `string`                                 | `''`        |
-| `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean`                                | `false`     |
-| `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean`                                | `false`     |
-| `href`        | `href`         | (optional) Tag href            | `string`                                 | `''`        |
-| `size`        | `size`         | (optional) Tag size            | `string`                                 | `''`        |
-| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `target`      | `target`       | (optional) Tag target          | `string`                                 | `'_self'`   |
-| `variant`     | `variant`      | (optional) Tag variant         | `string`                                 | `''`        |
+| Property      | Attribute      | Description                    | Type      | Default     |
+| ------------- | -------------- | ------------------------------ | --------- | ----------- |
+| `customClass` | `custom-class` | (optional) Tag class           | `string`  | `''`        |
+| `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean` | `false`     |
+| `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean` | `false`     |
+| `href`        | `href`         | (optional) Tag href            | `string`  | `''`        |
+| `size`        | `size`         | (optional) Tag size            | `string`  | `''`        |
+| `styles`      | `styles`       | (optional) Injected jss styles | `any`     | `undefined` |
+| `target`      | `target`       | (optional) Tag target          | `string`  | `'_self'`   |
+| `variant`     | `variant`      | (optional) Tag variant         | `string`  | `''`        |
 
 
 ## Events

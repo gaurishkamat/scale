@@ -10,16 +10,16 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 
 ## Properties
 
-| Property     | Attribute     | Description                                | Type                                     | Default     |
-| ------------ | ------------- | ------------------------------------------ | ---------------------------------------- | ----------- |
-| `bold`       | `bold`        | Bold label and icon                        | `boolean`                                | `false`     |
-| `condensed`  | `condensed`   | Used normally for third level items        | `boolean`                                | `false`     |
-| `iconSize`   | `icon-size`   | The width and height of the icon in pixels | `number`                                 | `16`        |
-| `isCurrent`  | `is-current`  | Label and icon get the active color        | `boolean`                                | `false`     |
-| `isExpanded` | `is-expanded` | Set this to `true` to expand               | `boolean`                                | `undefined` |
-| `label`      | `label`       | The text for the button                    | `string`                                 | `undefined` |
-| `styles`     | --            | (optional) Injected jss styles             | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `tag`        | `tag`         | The parent wrapper                         | `string`                                 | `'li'`      |
+| Property     | Attribute     | Description                                | Type      | Default     |
+| ------------ | ------------- | ------------------------------------------ | --------- | ----------- |
+| `bold`       | `bold`        | Bold label and icon                        | `boolean` | `false`     |
+| `condensed`  | `condensed`   | Used normally for third level items        | `boolean` | `false`     |
+| `iconSize`   | `icon-size`   | The width and height of the icon in pixels | `number`  | `16`        |
+| `isCurrent`  | `is-current`  | Label and icon get the active color        | `boolean` | `false`     |
+| `isExpanded` | `is-expanded` | Set this to `true` to expand               | `boolean` | `undefined` |
+| `label`      | `label`       | The text for the button                    | `string`  | `undefined` |
+| `styles`     | `styles`      | (optional) Injected jss styles             | `any`     | `undefined` |
+| `tag`        | `tag`         | The parent wrapper                         | `string`  | `'li'`      |
 
 
 ----------------------------------------------

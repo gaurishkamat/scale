@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute   | Description                     | Type                                     | Default     |
-| ---------- | ----------- | ------------------------------- | ---------------------------------------- | ----------- |
-| `icon`     | `icon`      | (optional) List item icon       | `string`                                 | `undefined` |
-| `iconSize` | `icon-size` | (optional) list Icon size       | `number`                                 | `16`        |
-| `styles`   | --          | (optional) Injected jss styles  | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `type`     | `type`      | (optional) List item style type | `string`                                 | `undefined` |
+| Property   | Attribute   | Description                     | Type     | Default     |
+| ---------- | ----------- | ------------------------------- | -------- | ----------- |
+| `icon`     | `icon`      | (optional) List item icon       | `string` | `undefined` |
+| `iconSize` | `icon-size` | (optional) list Icon size       | `number` | `16`        |
+| `styles`   | `styles`    | (optional) Injected jss styles  | `any`    | `undefined` |
+| `type`     | `type`      | (optional) List item style type | `string` | `undefined` |
 
 
 ## Dependencies

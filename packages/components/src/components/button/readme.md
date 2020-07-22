@@ -7,23 +7,23 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `ariaLabel`   | `aria-label`   |                                | `string`                                 | `''`        |
-| `customClass` | `custom-class` | (optional) Button class        | `string`                                 | `''`        |
-| `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                                | `false`     |
-| `focusable`   | `focusable`    |                                | `boolean`                                | `true`      |
-| `href`        | `href`         | (optional) Link button         | `string`                                 | `''`        |
-| `icon`        | `icon`         | (optional) Icon only           | `string`                                 | `undefined` |
-| `iconAfter`   | `icon-after`   | (optional) Icon after          | `string`                                 | `undefined` |
-| `iconBefore`  | `icon-before`  | (optional) Icon before         | `string`                                 | `undefined` |
-| `iconSize`    | `icon-size`    | (optional) Icon only           | `number`                                 | `24`        |
-| `role`        | `role`         |                                | `string`                                 | `''`        |
-| `size`        | `size`         | (optional) Button size         | `string`                                 | `''`        |
-| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `target`      | `target`       | (optional) Link target button  | `string`                                 | `'_self'`   |
-| `type`        | `type`         | (optional) button type         | `"button" \| "reset" \| "submit"`        | `undefined` |
-| `variant`     | `variant`      | (optional) Button variant      | `string`                                 | `''`        |
+| Property      | Attribute      | Description                    | Type                              | Default     |
+| ------------- | -------------- | ------------------------------ | --------------------------------- | ----------- |
+| `ariaLabel`   | `aria-label`   |                                | `string`                          | `''`        |
+| `customClass` | `custom-class` | (optional) Button class        | `string`                          | `''`        |
+| `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                         | `false`     |
+| `focusable`   | `focusable`    |                                | `boolean`                         | `true`      |
+| `href`        | `href`         | (optional) Link button         | `string`                          | `''`        |
+| `icon`        | `icon`         | (optional) Icon only           | `string`                          | `undefined` |
+| `iconAfter`   | `icon-after`   | (optional) Icon after          | `string`                          | `undefined` |
+| `iconBefore`  | `icon-before`  | (optional) Icon before         | `string`                          | `undefined` |
+| `iconSize`    | `icon-size`    | (optional) Icon only           | `number`                          | `24`        |
+| `role`        | `role`         |                                | `string`                          | `''`        |
+| `size`        | `size`         | (optional) Button size         | `string`                          | `''`        |
+| `styles`      | `styles`       | (optional) Injected jss styles | `any`                             | `undefined` |
+| `target`      | `target`       | (optional) Link target button  | `string`                          | `'_self'`   |
+| `type`        | `type`         | (optional) button type         | `"button" \| "reset" \| "submit"` | `undefined` |
+| `variant`     | `variant`      | (optional) Button variant      | `string`                          | `''`        |
 
 
 ## Methods

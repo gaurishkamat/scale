@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                    | Type                                     | Default     |
-| ----------- | ----------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `separator` | `separator` |                                | `string`                                 | `'\\'`      |
-| `styles`    | --          | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property    | Attribute   | Description                    | Type     | Default     |
+| ----------- | ----------- | ------------------------------ | -------- | ----------- |
+| `separator` | `separator` |                                | `string` | `'\\'`      |
+| `styles`    | `styles`    | (optional) Injected jss styles | `any`    | `undefined` |
 
 
 ----------------------------------------------

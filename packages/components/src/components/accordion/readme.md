@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                                     | Default     |
-| ----------- | ----------- | ----------- | ---------------------------------------- | ----------- |
-| `dependend` | `dependend` |             | `boolean`                                | `false`     |
-| `headline`  | `headline`  |             | `string`                                 | `undefined` |
-| `styles`    | --          |             | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property    | Attribute   | Description | Type      | Default     |
+| ----------- | ----------- | ----------- | --------- | ----------- |
+| `dependend` | `dependend` |             | `boolean` | `false`     |
+| `headline`  | `headline`  |             | `string`  | `undefined` |
+| `styles`    | `styles`    |             | `any`     | `undefined` |
 
 
 ----------------------------------------------

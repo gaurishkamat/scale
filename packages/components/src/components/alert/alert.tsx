@@ -30,7 +30,7 @@ export class Alert implements Base {
   @Prop() icon?: string = '';
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Alert', styles) stylesheet: StyleSheet;
 

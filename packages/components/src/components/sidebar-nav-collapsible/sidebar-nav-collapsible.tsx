@@ -12,7 +12,7 @@ import Base from '../../utils/base-interface';
 })
 export class SidebarNavCollapsible implements Base {
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('SidebarNavCollapsible', styles) stylesheet: StyleSheet;
 

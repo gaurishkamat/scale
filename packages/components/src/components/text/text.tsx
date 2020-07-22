@@ -29,7 +29,7 @@ export class Text implements Base {
   @Prop() tag?: string = '';
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 

@@ -19,7 +19,7 @@ export class Divider implements Base {
   @Prop() vertical?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Divider', styles) stylesheet: StyleSheet;
 

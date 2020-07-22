@@ -19,7 +19,7 @@ export class Table implements Base {
   /** (optional) Visual size */
   @Prop() size?: 'default' | 'small' | string = 'default';
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Table', styles) stylesheet: StyleSheet;
   /** object of the slots in use */
