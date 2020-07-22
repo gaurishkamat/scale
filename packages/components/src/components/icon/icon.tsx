@@ -23,7 +23,7 @@ export class Icon implements Base {
   @Prop() focusable?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Icon', styles) stylesheet: StyleSheet;
 

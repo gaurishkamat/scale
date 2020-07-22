@@ -17,7 +17,7 @@ export class ListItem implements Base {
   /** (optional) List item style type */
   @Prop() type?: string;
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('ListItem', styles) stylesheet: StyleSheet;
   componentWillLoad() {}

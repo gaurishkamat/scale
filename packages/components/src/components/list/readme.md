@@ -5,10 +5,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description             | Type                                     | Default       |
-| --------- | --------- | ----------------------- | ---------------------------------------- | ------------- |
-| `styles`  | --        |                         | `StyleSheet<string \| number \| symbol>` | `undefined`   |
-| `variant` | `variant` | (optional) List variant | `string`                                 | `'unordered'` |
+| Property  | Attribute | Description             | Type     | Default       |
+| --------- | --------- | ----------------------- | -------- | ------------- |
+| `styles`  | `styles`  |                         | `any`    | `undefined`   |
+| `variant` | `variant` | (optional) List variant | `string` | `'unordered'` |
 
 
 ----------------------------------------------

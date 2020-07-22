@@ -33,7 +33,7 @@ export class Slider implements Base {
   @Prop() disabled?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Slider', styles) stylesheet: StyleSheet;
 

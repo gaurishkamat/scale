@@ -68,6 +68,27 @@
       "attributes": []
     },
     {
+      "name": "scale-accordion",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "dependend",
+          "description": ""
+        },
+        {
+          "name": "headline",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "scale-alert",
       "description": {
         "kind": "markdown",
@@ -93,6 +114,10 @@
         {
           "name": "size",
           "description": "(optional) Alert size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "timeout",
@@ -144,6 +169,10 @@
         {
           "name": "separator",
           "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -199,6 +228,10 @@
           "description": "(optional) Button size"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "target",
           "description": "(optional) Link target button"
         },
@@ -247,6 +280,10 @@
           "description": "(optional) Link interactive"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "target",
           "description": "(optional) Link card target"
         }
@@ -264,8 +301,41 @@
           "description": "(optional) Carousel class"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "vertical",
           "description": "(optional) carousel display direction"
+        }
+      ]
+    },
+    {
+      "name": "scale-collapsible",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "icon-size",
+          "description": ""
+        },
+        {
+          "name": "is-expanded",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "tag",
+          "description": ""
         }
       ]
     },
@@ -283,6 +353,10 @@
         {
           "name": "size",
           "description": "(optional) Divider size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "vertical",
@@ -320,6 +394,10 @@
         {
           "name": "size",
           "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "view-box",
@@ -429,6 +507,10 @@
           "description": "(optional) Input status"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "transparent",
           "description": "(optional) input background transparent"
         },
@@ -525,6 +607,10 @@
           "description": "(optional) Icon size"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "target",
           "description": "(optional) Link open a new tag"
         },
@@ -546,6 +632,10 @@
       },
       "attributes": [
         {
+          "name": "styles",
+          "description": ""
+        },
+        {
           "name": "variant",
           "description": "(optional) List variant"
         }
@@ -565,6 +655,10 @@
         {
           "name": "icon-size",
           "description": "(optional) list Icon size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "type",
@@ -590,6 +684,10 @@
         {
           "name": "size",
           "description": "(optional) Modal size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "transitions",
@@ -647,6 +745,10 @@
         {
           "name": "stroke-width",
           "description": "(optional) Progress bar stroke width"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -660,6 +762,10 @@
         {
           "name": "aria-label",
           "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -695,6 +801,10 @@
           "description": "The text for the button"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "tag",
           "description": "The parent wrapper"
         }
@@ -718,6 +828,10 @@
         {
           "name": "is-current",
           "description": "Text gets the active color"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -759,6 +873,10 @@
         {
           "name": "step",
           "description": "(optional) the step size to increase or decrease when dragging slider"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "track-height",
@@ -810,6 +928,10 @@
           "description": "(optional)  Icon size"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "text-off",
           "description": "(optional) list Icon size"
         },
@@ -837,6 +959,10 @@
         {
           "name": "size",
           "description": "(optional) Visual size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -868,6 +994,10 @@
           "description": "(optional) Tag size"
         },
         {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
           "name": "target",
           "description": "(optional) Tag target"
         },
@@ -887,6 +1017,10 @@
         {
           "name": "custom-class",
           "description": "(optional) Text class"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         },
         {
           "name": "tag",

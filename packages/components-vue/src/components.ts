@@ -15,6 +15,7 @@ const customElementTags: string[] = [
  'app-mega-menu',
  'app-navigation-main-mobile',
  'app-navigation-sector-mobile',
+ 'scale-accordion',
  'scale-alert',
  'scale-app-header',
  'scale-app-shell',
@@ -22,6 +23,7 @@ const customElementTags: string[] = [
  'scale-button',
  'scale-card',
  'scale-carousel',
+ 'scale-collapsible',
  'scale-divider',
  'scale-icon',
  'scale-input',
@@ -100,6 +102,19 @@ export const AppNavigationSectorMobile = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('app-navigation-sector-mobile', []),
+});
+
+
+export const ScaleAccordion = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleAccordion['styles']>,
+    headline: {} as PropOptions<Components.ScaleAccordion['headline']>,
+    dependend: {} as PropOptions<Components.ScaleAccordion['dependend']>,
+  },
+
+
+  render: createCommonRender('scale-accordion', []),
 });
 
 
@@ -226,6 +241,25 @@ export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-carousel', []),
+});
+
+
+export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleCollapsible['styles']>,
+    tag: {} as PropOptions<Components.ScaleCollapsible['tag']>,
+    label: {} as PropOptions<Components.ScaleCollapsible['label']>,
+    isExpanded: {} as PropOptions<Components.ScaleCollapsible['isExpanded']>,
+    iconSize: {} as PropOptions<Components.ScaleCollapsible['iconSize']>,
+  },
+
+
+  methods: {
+    close: createCommonMethod('close') as Components.ScaleCollapsible['close'],
+    setFocus: createCommonMethod('setFocus') as Components.ScaleCollapsible['setFocus'],
+  },
+  render: createCommonRender('scale-collapsible', ['toggler', 'toggleHead']),
 });
 
 

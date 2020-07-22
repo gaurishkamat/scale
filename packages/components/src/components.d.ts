@@ -30,7 +30,7 @@ export namespace Components {
     interface ScaleAccordion {
         "dependend": boolean;
         "headline"?: string;
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleAlert {
         /**
@@ -60,7 +60,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Alert timeout
          */
@@ -90,7 +90,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleButton {
         "ariaLabel"?: string;
@@ -139,7 +139,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link target button
          */
@@ -173,7 +173,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link card target
          */
@@ -187,7 +187,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) carousel display direction
          */
@@ -202,7 +202,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "tag"?: string;
     }
     interface ScaleDivider {
@@ -217,7 +217,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Divider vertical
          */
@@ -239,7 +239,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "viewBox"?: string;
         "width"?: number;
     }
@@ -323,7 +323,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) input background transparent
          */
@@ -383,7 +383,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link open a new tag
          */
@@ -398,7 +398,7 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) List variant
          */
@@ -416,7 +416,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) List item style type
          */
@@ -438,7 +438,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Transition overrides
          */
@@ -492,7 +492,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSidebarNav {
         /**
@@ -502,7 +502,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSidebarNavCollapsible {
         /**
@@ -532,7 +532,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * The parent wrapper
          */
@@ -554,7 +554,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSlider {
         /**
@@ -592,7 +592,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) the height of slider track
          */
@@ -632,7 +632,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) list Icon size
          */
@@ -658,7 +658,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleTag {
         /**
@@ -684,7 +684,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Tag target
          */
@@ -702,7 +702,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Text tag
          */
@@ -1015,7 +1015,7 @@ declare namespace LocalJSX {
     interface ScaleAccordion {
         "dependend"?: boolean;
         "headline"?: string;
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleAlert {
         /**
@@ -1041,7 +1041,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Alert timeout
          */
@@ -1071,7 +1071,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleButton {
         "ariaLabel"?: string;
@@ -1112,7 +1112,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link target button
          */
@@ -1146,7 +1146,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link card target
          */
@@ -1160,7 +1160,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) carousel display direction
          */
@@ -1175,7 +1175,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "tag"?: string;
     }
     interface ScaleDivider {
@@ -1190,7 +1190,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Divider vertical
          */
@@ -1212,7 +1212,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "viewBox"?: string;
         "width"?: number;
     }
@@ -1312,7 +1312,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) input background transparent
          */
@@ -1372,7 +1372,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Link open a new tag
          */
@@ -1387,7 +1387,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) List variant
          */
@@ -1405,7 +1405,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) List item style type
          */
@@ -1431,7 +1431,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Transition overrides
          */
@@ -1485,7 +1485,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSidebarNav {
         /**
@@ -1495,7 +1495,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSidebarNavCollapsible {
         /**
@@ -1525,7 +1525,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * The parent wrapper
          */
@@ -1547,7 +1547,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleSlider {
         /**
@@ -1585,7 +1585,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) the height of slider track
          */
@@ -1625,7 +1625,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) list Icon size
          */
@@ -1651,7 +1651,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
     }
     interface ScaleTag {
         /**
@@ -1681,7 +1681,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Tag target
          */
@@ -1699,7 +1699,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         /**
           * (optional) Text tag
          */
