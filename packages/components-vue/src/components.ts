@@ -132,7 +132,6 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppHeader['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppHeader['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppHeader['addonNavigation']>,
-    styles: {} as PropOptions<Components.ScaleAppHeader['styles']>,
     scrolled: {} as PropOptions<Components.ScaleAppHeader['scrolled']>,
   },
 
@@ -149,7 +148,6 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
     customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
-    styles: {} as PropOptions<Components.ScaleAppShell['styles']>,
   },
 
 
@@ -370,10 +368,14 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
   props: {
     customClass: {} as PropOptions<Components.ScaleProgressBar['customClass']>,
     percentage: {} as PropOptions<Components.ScaleProgressBar['percentage']>,
-    variant: {} as PropOptions<Components.ScaleProgressBar['variant']>,
+    customColor: {} as PropOptions<Components.ScaleProgressBar['customColor']>,
     strokeWidth: {} as PropOptions<Components.ScaleProgressBar['strokeWidth']>,
-    showText: {} as PropOptions<Components.ScaleProgressBar['showText']>,
-    textInside: {} as PropOptions<Components.ScaleProgressBar['textInside']>,
+    showStatus: {} as PropOptions<Components.ScaleProgressBar['showStatus']>,
+    icon: {} as PropOptions<Components.ScaleProgressBar['icon']>,
+    statusDescription: {} as PropOptions<Components.ScaleProgressBar['statusDescription']>,
+    statusInside: {} as PropOptions<Components.ScaleProgressBar['statusInside']>,
+    hasError: {} as PropOptions<Components.ScaleProgressBar['hasError']>,
+    disabled: {} as PropOptions<Components.ScaleProgressBar['disabled']>,
     styles: {} as PropOptions<Components.ScaleProgressBar['styles']>,
   },
 
@@ -430,11 +432,15 @@ export const ScaleSlider = /*@__PURE__*/ Vue.extend({
 
   props: {
     customClass: {} as PropOptions<Components.ScaleSlider['customClass']>,
+    value: {} as PropOptions<Components.ScaleSlider['value']>,
     min: {} as PropOptions<Components.ScaleSlider['min']>,
     max: {} as PropOptions<Components.ScaleSlider['max']>,
-    value: {} as PropOptions<Components.ScaleSlider['value']>,
     step: {} as PropOptions<Components.ScaleSlider['step']>,
+    trackHeight: {} as PropOptions<Components.ScaleSlider['trackHeight']>,
     label: {} as PropOptions<Components.ScaleSlider['label']>,
+    showValue: {} as PropOptions<Components.ScaleSlider['showValue']>,
+    customColor: {} as PropOptions<Components.ScaleSlider['customColor']>,
+    disabled: {} as PropOptions<Components.ScaleSlider['disabled']>,
     styles: {} as PropOptions<Components.ScaleSlider['styles']>,
   },
 
