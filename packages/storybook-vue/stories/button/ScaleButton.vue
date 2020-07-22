@@ -1,25 +1,26 @@
 <template>
-  <scale-button 
+  <scale-button
     :ariaLabel="ariaLabel"
     :disabled="disabled"
     :focusable="focusable"
     :icon="icon"
-    :iconAfter="iconAfter"
-    :iconBefore="iconBefore"
-    :iconSize="iconSize"
+    :icon-after="iconAfter"
+    :icon-before="iconBefore"
+    :icon-size="iconSize"
     :href="href"
     :role="role"
+    :size="size"
     :target="target"
     :type="type"
     :variant="variant"
-    @click="handle"
-    >
+    @click="click"
+  >
     <slot></slot>
   </scale-button>
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions"
+import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
@@ -31,29 +32,22 @@ export default {
     iconBefore: String,
     iconSize: String,
     href: String,
+    type: String,
     role: String,
+    size: String,
     target: String,
     variant: String
   },
   methods: {
-    handle($event){
+    click($event) {
       /**
        * Emitted when the button is clicked.
        * @event click
        * @type {Event}
        */
-      action('click')
-      this.$emit('click', $event)
-    },
-    crystal($method){
-      /**
-      * The Crystal Method
-      * @method Crystal
-      * @type {Method}
-      */
-      alert('The crystal method')
-      this.$emit('crystal', $method)
+      action("click");
+      this.$emit("click", $event);
     }
   }
-}
+};
 </script>
