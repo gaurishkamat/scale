@@ -22,10 +22,11 @@ export default {
         disabled: {type: Boolean, default: false},
         href: String,
         icon: String,
-        iconSize: {type: Number, default: 24},
+        iconSize: {type: Number, default: 16},
         target: {type: String, default: '_self'},
         underline: {type: Boolean, default: true},
         variant: String
     }
+
 }
 </script>

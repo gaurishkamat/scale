@@ -65,7 +65,7 @@
 | `iconSize`    | `icon-size`    | (optional) Icon size           | `number`                                 | `24`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Link open a new tag | `string`                                 | `'_self'`   |
-| `underline`   | `underline`    | (optional) Link underline      | `boolean`                                | `true`      |
+| `underline`   | `underline`    | (optional) Link underline      | `boolean`                                | `false`     |
 | `variant`     | `variant`      | (optional) Link variant        | `string`                                 | `''`        |
 
 

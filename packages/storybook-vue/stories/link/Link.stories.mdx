@@ -12,6 +12,9 @@ export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
         },
         styles: {
             control: {disable: true}
+        },
+        underline: {
+            control: {type: 'boolean', default: false}
         }
     }}
 />
@@ -20,7 +23,8 @@ export const Template = (args, {argTypes}) => ({
     components: {ScaleLink},
     props: {
         label: String,
-        ...ScaleLink.props
+        ...ScaleLink.props,
+        underline: false
     },
     template: `
         <scale-link

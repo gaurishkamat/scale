@@ -15,6 +15,7 @@
       @scaleChange="handleChange"
       placeholder="add multiple lines"
     ></scale-input>
+  <scale-link underline="false">Textttt</scale-link>
   </div>
 </template>
 

@@ -68,6 +68,23 @@
       "attributes": []
     },
     {
+      "name": "scale-accordion",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "dependend",
+          "description": ""
+        },
+        {
+          "name": "headline",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "scale-alert",
       "description": {
         "kind": "markdown",
@@ -266,6 +283,31 @@
         {
           "name": "vertical",
           "description": "(optional) carousel display direction"
+        }
+      ]
+    },
+    {
+      "name": "scale-collapsible",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "icon-size",
+          "description": ""
+        },
+        {
+          "name": "is-expanded",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "tag",
+          "description": ""
         }
       ]
     },
