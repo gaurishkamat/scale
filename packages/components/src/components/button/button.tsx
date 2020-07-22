@@ -43,7 +43,7 @@ export class Button implements Base {
   @Prop() role?: string = '';
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Button', styles)
   stylesheet: StyleSheet;

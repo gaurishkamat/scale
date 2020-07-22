@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                    | Type                                     | Default     |
-| ------------ | ------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `iconSize`   | `icon-size`   |                                | `number`                                 | `16`        |
-| `isExpanded` | `is-expanded` |                                | `boolean`                                | `undefined` |
-| `label`      | `label`       |                                | `string`                                 | `'label'`   |
-| `styles`     | --            | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `tag`        | `tag`         |                                | `string`                                 | `'li'`      |
+| Property     | Attribute     | Description                    | Type      | Default     |
+| ------------ | ------------- | ------------------------------ | --------- | ----------- |
+| `iconSize`   | `icon-size`   |                                | `number`  | `16`        |
+| `isExpanded` | `is-expanded` |                                | `boolean` | `undefined` |
+| `label`      | `label`       |                                | `string`  | `'label'`   |
+| `styles`     | `styles`      | (optional) Injected jss styles | `any`     | `undefined` |
+| `tag`        | `tag`         |                                | `string`  | `'li'`      |
 
 
 ## Events

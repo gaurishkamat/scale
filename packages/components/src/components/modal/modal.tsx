@@ -42,7 +42,7 @@ export class Modal implements Base {
   @Prop() opened?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
