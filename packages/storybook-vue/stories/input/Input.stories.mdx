@@ -1,0 +1,358 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleInput from "./ScaleInput.vue";
+import description from './input.md'
+import { action } from "@storybook/addon-actions";
+export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+
+<Meta
+  title='Input'
+  component={ScaleInput}
+  argTypes={{
+    resize: {
+      control: {
+        type: "select",
+        options: ["unset", "none", "vertical", "horizontal"]
+      }
+    },
+    type: {
+      control: {
+        type: "select",
+        options: [
+          "email",
+          "hidden",
+          "number",
+          "password",
+          "tel",
+          "text",
+          "checkbox",
+          "radio",
+          "select",
+          "textarea",
+          "url"
+        ]
+      }
+    },
+    variant: {
+      control: { type: "select", options: ["animated", "static"] }
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleInput },
+  props: {
+    label: String,
+    ...ScaleInput.props
+  },
+  template: `
+    <scale-input
+      :name="name"
+      :variant="variant"
+      :type="type"
+      :label="label"
+      :size="size"
+      :rows="rows"
+      :cols="cols"
+      :helper-text="helperText"
+      :status="status"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :required="required"
+      :counter="counter"
+      :pre-checked="preChecked"
+      :resize="resize"
+      :value="value"
+      :input-id="inputId"
+      :icon="icon"
+      :multiple="multiple"
+      :visible-size="visibleSize"
+      :transparent="transparent"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    >
+      <option v-if="type==='select'" value="1">item 1</option>
+      <option v-if="type==='select'" value="2" selected>item 2</option>
+      <option v-if="type==='select'" value="3">item 3</option>
+    </scale-input>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  }
+})
+
+<Description>{description}</Description>
+
+<Preview>
+  <Story
+    name='Standard'
+    args={{
+      label: 'An input'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story='Standard' />
+
+
+## TextWithEvents
+
+<Preview>
+  <Story
+    name='TextWithEvents'
+    args={{
+      label: 'TextWithEvents',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="text" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDow="handleKeyDown"></scale-button>
+```
+
+
+## Placeholder
+
+<Preview>
+  <Story
+    name='Placeholder'
+    args={{
+      label: 'Placeholder',
+      placeholder: 'this is the placeholder',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="text" :placeholder="this is the placeholder"></scale-button>
+```
+
+
+## Static
+
+<Preview>
+  <Story
+    name='Static'
+    args={{
+      label: 'Static',
+      variant: 'static',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="text" :variant="static"></scale-button>
+```
+
+
+## Animated
+
+<Preview>
+  <Story
+    name='Animated'
+    args={{
+      label: 'Animated',
+      variant: 'animated',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="text" :variant="animated"></scale-button>
+```
+
+## WithError
+
+<Preview>
+  <Story
+    name='WithError'
+    args={{
+      label: 'WithError',
+      status: 'error',
+      helperText: 'something is wrong'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="text" :helper-text="something is wrong" :status="error"></scale-button>
+```
+
+
+## Disabled
+
+<Preview>
+  <Story
+    name='Disabled'
+    args={{
+      label: 'Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :disabled="true"></scale-button>
+```
+
+
+## MaxLengthWithCounter
+
+<Preview>
+  <Story
+    name='MaxLengthWithCounter'
+    args={{
+      label: 'MaxLengthWithCounter',
+      maxLength: 10,
+      counter: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :label={label} :max-length="10" :counter="true"></scale-button>
+```
+
+
+## Checkbox
+
+<Preview>
+  <Story
+    name='Checkbox'
+    args={{
+      label: 'Checkbox',
+      type: 'checkbox'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="checkbox"></scale-button>
+```
+
+
+## CheckboxWithCustomIcon
+
+<Preview>
+  <Story
+    name='CheckboxWithCustomIcon'
+    args={{
+      label: 'CheckboxWithCustomIcon',
+      type: 'checkbox',
+      icon: ICON
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="checkbox" :icon="SVG-PATH"></scale-button>
+```
+
+
+## Radio
+
+<Preview>
+  <Story
+    name='Radio'
+    args={{
+      label: 'Radio',
+      type: 'radio'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="radio"></scale-button>
+```
+
+
+## RadioPrechecked
+
+<Preview>
+  <Story
+    name='RadioPrechecked'
+    args={{
+      label: 'RadioPrechecked',
+      type: 'radio',
+      preChecked: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="radio" :pre-checked="true"></scale-button>
+```
+
+
+## Select
+
+<Preview>
+  <Story
+    name='Select'
+    args={{
+      label: 'Select',
+      type: 'select',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="select">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-button>
+```
+
+
+## Textarea
+
+<Preview>
+  <Story
+    name='Textarea'
+    args={{
+      label: 'Textarea',
+      type: 'textarea',
+      rows: 3,
+      resize: 'vertical'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button :type="textarea" :rows="3" :resize="vertical"></scale-button>
+```
