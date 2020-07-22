@@ -165,6 +165,12 @@ export const defaultTheme: Theme = {
         letterSpacing: '0.02857em',
         textTransform: 'none',
       },
+      collapsible: {
+        fontSize: '1.25rem',
+        fontFamily: 'TeleNeoWeb-ExtraBold',
+        marginBottom: 0,
+        textTransform: 'none',
+      },
     },
   },
   shape: {

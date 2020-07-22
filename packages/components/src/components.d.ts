@@ -27,6 +27,11 @@ export namespace Components {
     interface AppNavigationSectorMobile {
         "navigation": MenuItem[];
     }
+    interface ScaleAccordion {
+        "dependend": boolean;
+        "headline"?: string;
+        "styles"?: StyleSheet;
+    }
     interface ScaleAlert {
         /**
           * (optional) Alert class
@@ -187,6 +192,18 @@ export namespace Components {
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
+    }
+    interface ScaleCollapsible {
+        "close": () => Promise<void>;
+        "iconSize": number;
+        "isExpanded"?: boolean;
+        "label": string;
+        "setFocus": () => Promise<void>;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "tag"?: string;
     }
     interface ScaleDivider {
         /**
@@ -777,6 +794,12 @@ declare global {
         prototype: HTMLAppNavigationSectorMobileElement;
         new (): HTMLAppNavigationSectorMobileElement;
     };
+    interface HTMLScaleAccordionElement extends Components.ScaleAccordion, HTMLStencilElement {
+    }
+    var HTMLScaleAccordionElement: {
+        prototype: HTMLScaleAccordionElement;
+        new (): HTMLScaleAccordionElement;
+    };
     interface HTMLScaleAlertElement extends Components.ScaleAlert, HTMLStencilElement {
     }
     var HTMLScaleAlertElement: {
@@ -818,6 +841,12 @@ declare global {
     var HTMLScaleCarouselElement: {
         prototype: HTMLScaleCarouselElement;
         new (): HTMLScaleCarouselElement;
+    };
+    interface HTMLScaleCollapsibleElement extends Components.ScaleCollapsible, HTMLStencilElement {
+    }
+    var HTMLScaleCollapsibleElement: {
+        prototype: HTMLScaleCollapsibleElement;
+        new (): HTMLScaleCollapsibleElement;
     };
     interface HTMLScaleDividerElement extends Components.ScaleDivider, HTMLStencilElement {
     }
@@ -933,6 +962,7 @@ declare global {
         "app-mega-menu": HTMLAppMegaMenuElement;
         "app-navigation-main-mobile": HTMLAppNavigationMainMobileElement;
         "app-navigation-sector-mobile": HTMLAppNavigationSectorMobileElement;
+        "scale-accordion": HTMLScaleAccordionElement;
         "scale-alert": HTMLScaleAlertElement;
         "scale-app-header": HTMLScaleAppHeaderElement;
         "scale-app-shell": HTMLScaleAppShellElement;
@@ -940,6 +970,7 @@ declare global {
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
+        "scale-collapsible": HTMLScaleCollapsibleElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
@@ -980,6 +1011,11 @@ declare namespace LocalJSX {
     }
     interface AppNavigationSectorMobile {
         "navigation"?: MenuItem[];
+    }
+    interface ScaleAccordion {
+        "dependend"?: boolean;
+        "headline"?: string;
+        "styles"?: StyleSheet;
     }
     interface ScaleAlert {
         /**
@@ -1129,6 +1165,18 @@ declare namespace LocalJSX {
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
+    }
+    interface ScaleCollapsible {
+        "iconSize"?: number;
+        "isExpanded"?: boolean;
+        "label"?: string;
+        "onToggleHead"?: (event: CustomEvent<any>) => void;
+        "onToggler"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "tag"?: string;
     }
     interface ScaleDivider {
         /**
@@ -1713,6 +1761,7 @@ declare namespace LocalJSX {
         "app-mega-menu": AppMegaMenu;
         "app-navigation-main-mobile": AppNavigationMainMobile;
         "app-navigation-sector-mobile": AppNavigationSectorMobile;
+        "scale-accordion": ScaleAccordion;
         "scale-alert": ScaleAlert;
         "scale-app-header": ScaleAppHeader;
         "scale-app-shell": ScaleAppShell;
@@ -1720,6 +1769,7 @@ declare namespace LocalJSX {
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
+        "scale-collapsible": ScaleCollapsible;
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
@@ -1749,6 +1799,7 @@ declare module "@stencil/core" {
             "app-mega-menu": LocalJSX.AppMegaMenu & JSXBase.HTMLAttributes<HTMLAppMegaMenuElement>;
             "app-navigation-main-mobile": LocalJSX.AppNavigationMainMobile & JSXBase.HTMLAttributes<HTMLAppNavigationMainMobileElement>;
             "app-navigation-sector-mobile": LocalJSX.AppNavigationSectorMobile & JSXBase.HTMLAttributes<HTMLAppNavigationSectorMobileElement>;
+            "scale-accordion": LocalJSX.ScaleAccordion & JSXBase.HTMLAttributes<HTMLScaleAccordionElement>;
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
             "scale-app-header": LocalJSX.ScaleAppHeader & JSXBase.HTMLAttributes<HTMLScaleAppHeaderElement>;
             "scale-app-shell": LocalJSX.ScaleAppShell & JSXBase.HTMLAttributes<HTMLScaleAppShellElement>;
@@ -1756,6 +1807,7 @@ declare module "@stencil/core" {
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
+            "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
