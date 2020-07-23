@@ -642,6 +642,33 @@ export namespace Components {
          */
         "textOn"?: string;
     }
+    interface ScaleTabHeader {
+        "ariaLabel"?: string;
+        "icon"?: string;
+        "iconSize"?: number;
+        "identifier"?: string;
+        "label": string;
+        "selected"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleTabNav {
+        "ariaLabel"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleTabPanel {
+        "ariaLabel"?: string;
+        "identifier"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
     interface ScaleTable {
         /**
           * (optional) Tag class
@@ -932,6 +959,24 @@ declare global {
         prototype: HTMLScaleSwitchElement;
         new (): HTMLScaleSwitchElement;
     };
+    interface HTMLScaleTabHeaderElement extends Components.ScaleTabHeader, HTMLStencilElement {
+    }
+    var HTMLScaleTabHeaderElement: {
+        prototype: HTMLScaleTabHeaderElement;
+        new (): HTMLScaleTabHeaderElement;
+    };
+    interface HTMLScaleTabNavElement extends Components.ScaleTabNav, HTMLStencilElement {
+    }
+    var HTMLScaleTabNavElement: {
+        prototype: HTMLScaleTabNavElement;
+        new (): HTMLScaleTabNavElement;
+    };
+    interface HTMLScaleTabPanelElement extends Components.ScaleTabPanel, HTMLStencilElement {
+    }
+    var HTMLScaleTabPanelElement: {
+        prototype: HTMLScaleTabPanelElement;
+        new (): HTMLScaleTabPanelElement;
+    };
     interface HTMLScaleTableElement extends Components.ScaleTable, HTMLStencilElement {
     }
     var HTMLScaleTableElement: {
@@ -985,6 +1030,9 @@ declare global {
         "scale-slider": HTMLScaleSliderElement;
         "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
+        "scale-tab-header": HTMLScaleTabHeaderElement;
+        "scale-tab-nav": HTMLScaleTabNavElement;
+        "scale-tab-panel": HTMLScaleTabPanelElement;
         "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
@@ -1635,6 +1683,34 @@ declare namespace LocalJSX {
          */
         "textOn"?: string;
     }
+    interface ScaleTabHeader {
+        "ariaLabel"?: string;
+        "icon"?: string;
+        "iconSize"?: number;
+        "identifier"?: string;
+        "label"?: string;
+        "onTabclick"?: (event: CustomEvent<any>) => void;
+        "selected"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleTabNav {
+        "ariaLabel"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleTabPanel {
+        "ariaLabel"?: string;
+        "identifier"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
     interface ScaleTable {
         /**
           * (optional) Tag class
@@ -1784,6 +1860,9 @@ declare namespace LocalJSX {
         "scale-slider": ScaleSlider;
         "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
+        "scale-tab-header": ScaleTabHeader;
+        "scale-tab-nav": ScaleTabNav;
+        "scale-tab-panel": ScaleTabPanel;
         "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
@@ -1822,6 +1901,9 @@ declare module "@stencil/core" {
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
             "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
+            "scale-tab-header": LocalJSX.ScaleTabHeader & JSXBase.HTMLAttributes<HTMLScaleTabHeaderElement>;
+            "scale-tab-nav": LocalJSX.ScaleTabNav & JSXBase.HTMLAttributes<HTMLScaleTabNavElement>;
+            "scale-tab-panel": LocalJSX.ScaleTabPanel & JSXBase.HTMLAttributes<HTMLScaleTabPanelElement>;
             "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
