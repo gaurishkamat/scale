@@ -2,12 +2,12 @@
     <scale-link
         :block="block"
         :custom-lass="customClass"
-        :disabled="disabled"
+        :disabled="JSON.stringify(disabled)"
         :href="href"
         :icon="icon"
         :icon-size="iconSize"
         :target="target"
-        :underline="underline"
+        :underline="JSON.stringify(underline)"
         :variant="variant"
     >
         <slot></slot>
@@ -24,7 +24,7 @@ export default {
         icon: String,
         iconSize: {type: Number, default: 16},
         target: {type: String, default: '_self'},
-        underline: {type: Boolean, default: true},
+        underline: Boolean,
         variant: String
     }
 
