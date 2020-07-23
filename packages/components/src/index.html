@@ -59,6 +59,8 @@
 
   <body>
     <h1>Components</h1>
+
+    
     <h3>Select</h3>
     <scale-input
       variant="animated"
@@ -1065,6 +1067,37 @@
         <scale-tab-header slot="headings" label="test2"></scale-tab-header>
         <scale-tab-panel slot="content">this is another test</scale-tab-panel>
       </scale-tab-nav>
+
+      <h3>Accordion</h3>
+      <scale-accordion headline='multi'>
+        <scale-collapsible is-expanded>
+          <scale-text slot="headline" variant="collapsible">Accordion with multi</scale-text>
+          <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+        </scale-collapsible>
+        <scale-collapsible>
+          <scale-text slot="headline" variant="collapsible">Accordion with multi</scale-text>
+          <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+        </scale-collapsible>
+      </scale-accordion>
+      <scale-accordion headline='single' dependend>
+        <scale-collapsible is-expanded>
+          <scale-text slot="headline" variant="collapsible">Accordion with single</scale-text>
+          <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+        </scale-collapsible>
+        <scale-collapsible>
+          <scale-text slot="headline" variant="collapsible">Accordion with single</scale-text>
+          <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+        </scale-collapsible>
+      </scale-accordion>
+      <h3>collapsible</h3>
+      <scale-collapsible>
+        <scale-text slot="headline" variant="collapsible">here it goes</scale-text>
+        <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+      </scale-collapsible>
+      <scale-collapsible is-expanded>
+        <scale-text slot="headline" variant="collapsible">here it goes</scale-text>
+        <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
+      </scale-collapsible>
     </div>
   </body>
 </html>

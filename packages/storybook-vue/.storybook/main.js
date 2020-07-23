@@ -1,4 +1,10 @@
+// const { merge } = require('webpack-merge');
 module.exports = {
-  stories: ["../stories/**/*.stories.js"],
-  addons: ["@storybook/addon-actions", "@storybook/addon-links"]
+  addons: [
+    "@storybook/addon-actions",
+    "@storybook/addon-links",
+    "@storybook/addon-docs",
+    "@storybook/addon-controls"
+  ],
+  stories: ["../stories/**/*.stories.mdx"]
 };

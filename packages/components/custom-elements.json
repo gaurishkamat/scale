@@ -1,0 +1,1085 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "app-icon",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "fill",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "app-logo",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "claim",
+          "description": ""
+        },
+        {
+          "name": "color",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "app-mega-menu",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
+      "name": "app-navigation-main-mobile",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
+      "name": "app-navigation-sector-mobile",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
+      "name": "scale-accordion",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "dependend",
+          "description": ""
+        },
+        {
+          "name": "headline",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-alert",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Alert class"
+        },
+        {
+          "name": "headline",
+          "description": "(optional) Alert title"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Alert icon"
+        },
+        {
+          "name": "opened",
+          "description": "(optional) Alert opened"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Alert size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "timeout",
+          "description": "(optional) Alert timeout"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Alert variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-app-header",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": ""
+        },
+        {
+          "name": "scrolled",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-app-shell",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-breadcrumb",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "separator",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        },
+        {
+          "name": "custom-class",
+          "description": "(optional) Button class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Disabled button"
+        },
+        {
+          "name": "focusable",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": "(optional) Link button"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Icon only"
+        },
+        {
+          "name": "icon-after",
+          "description": "(optional) Icon after"
+        },
+        {
+          "name": "icon-before",
+          "description": "(optional) Icon before"
+        },
+        {
+          "name": "icon-size",
+          "description": "(optional) Icon only"
+        },
+        {
+          "name": "role",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": "(optional) Button size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "target",
+          "description": "(optional) Link target button"
+        },
+        {
+          "name": "type",
+          "description": "(optional) button type",
+          "values": [
+            {
+              "name": "button"
+            },
+            {
+              "name": "reset"
+            },
+            {
+              "name": "submit"
+            }
+          ]
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Button variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Card class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Link disabled"
+        },
+        {
+          "name": "href",
+          "description": "(optional) Link card"
+        },
+        {
+          "name": "interactive",
+          "description": "(optional) Link interactive"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "target",
+          "description": "(optional) Link card target"
+        }
+      ]
+    },
+    {
+      "name": "scale-carousel",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Carousel class"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "vertical",
+          "description": "(optional) carousel display direction"
+        }
+      ]
+    },
+    {
+      "name": "scale-collapsible",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "icon-size",
+          "description": ""
+        },
+        {
+          "name": "is-expanded",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "tag",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-divider",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Divider class"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Divider size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "vertical",
+          "description": "(optional) Divider vertical"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Tag class"
+        },
+        {
+          "name": "focusable",
+          "description": ""
+        },
+        {
+          "name": "height",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "description": "(optional) Tag theme"
+        },
+        {
+          "name": "path",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "view-box",
+          "description": ""
+        },
+        {
+          "name": "width",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-input",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "cols",
+          "description": "(optional) textarea column"
+        },
+        {
+          "name": "counter",
+          "description": "(optional) Input counter"
+        },
+        {
+          "name": "custom-class",
+          "description": "(optional) Input text class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Input checkbox checked icon"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "max-length",
+          "description": "(optional) Input max length"
+        },
+        {
+          "name": "min-length",
+          "description": "(optional) Input min length"
+        },
+        {
+          "name": "multiple",
+          "description": "(optional) select multiple options"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "pre-checked",
+          "description": "(optional) radio checked value"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "resize",
+          "description": "(optional) textarea resize",
+          "values": [
+            {
+              "name": "horizontal"
+            },
+            {
+              "name": "none"
+            },
+            {
+              "name": "unset"
+            },
+            {
+              "name": "vertical"
+            }
+          ]
+        },
+        {
+          "name": "rows",
+          "description": "(optional) textarea row"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) input background transparent"
+        },
+        {
+          "name": "type",
+          "description": "(optional) Input type",
+          "values": [
+            {
+              "name": "checkbox"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "hidden"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "radio"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "text"
+            },
+            {
+              "name": "textarea"
+            },
+            {
+              "name": "url"
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Input label variant",
+          "values": [
+            {
+              "name": "animated"
+            },
+            {
+              "name": "static"
+            }
+          ]
+        },
+        {
+          "name": "visible-size",
+          "description": "(optional) the number of visible options in a select drop-down list"
+        }
+      ]
+    },
+    {
+      "name": "scale-link",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "block",
+          "description": "(optional) Block link"
+        },
+        {
+          "name": "custom-class",
+          "description": "(optional) Link class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Disabled link"
+        },
+        {
+          "name": "href",
+          "description": "(optional) Link href"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Icon only"
+        },
+        {
+          "name": "icon-size",
+          "description": "(optional) Icon size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "target",
+          "description": "(optional) Link open a new tag"
+        },
+        {
+          "name": "underline",
+          "description": "(optional) Link underline"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Link variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-list",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "styles",
+          "description": ""
+        },
+        {
+          "name": "variant",
+          "description": "(optional) List variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-list-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "(optional) List item icon"
+        },
+        {
+          "name": "icon-size",
+          "description": "(optional) list Icon size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "type",
+          "description": "(optional) List item style type"
+        }
+      ]
+    },
+    {
+      "name": "scale-modal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Modal class"
+        },
+        {
+          "name": "opened",
+          "description": "(optional) If true, the Modal is open."
+        },
+        {
+          "name": "size",
+          "description": "(optional) Modal size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "transitions",
+          "description": "(optional) Transition overrides"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Modal variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-progress-bar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Progress bar class"
+        },
+        {
+          "name": "custom-color",
+          "description": "(optional) Progress bar customColor"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Progress bar disabled"
+        },
+        {
+          "name": "has-error",
+          "description": "(optional) Progress bar error"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Progress bar icon indicator"
+        },
+        {
+          "name": "percentage",
+          "description": "(required) Progress bar percentage"
+        },
+        {
+          "name": "show-status",
+          "description": "(optional) Progress bar percentage text"
+        },
+        {
+          "name": "status-description",
+          "description": "(optional) Progress bar status description text"
+        },
+        {
+          "name": "status-inside",
+          "description": "(optional) Progress text display inside bar"
+        },
+        {
+          "name": "stroke-width",
+          "description": "(optional) Progress bar stroke width"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-sidebar-nav",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-sidebar-nav-collapsible",
+      "description": {
+        "kind": "markdown",
+        "value": "We tried adding ::-moz-focus-inner for the button but JSS fails to parse that selector.\n\n- https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-focus-inner\n- https://stackoverflow.com/a/199319"
+      },
+      "attributes": [
+        {
+          "name": "bold",
+          "description": "Bold label and icon"
+        },
+        {
+          "name": "condensed",
+          "description": "Used normally for third level items"
+        },
+        {
+          "name": "icon-size",
+          "description": "The width and height of the icon in pixels"
+        },
+        {
+          "name": "is-current",
+          "description": "Label and icon get the active color"
+        },
+        {
+          "name": "is-expanded",
+          "description": "Set this to `true` to expand"
+        },
+        {
+          "name": "label",
+          "description": "The text for the button"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "tag",
+          "description": "The parent wrapper"
+        }
+      ]
+    },
+    {
+      "name": "scale-sidebar-nav-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "bold",
+          "description": "Bold text"
+        },
+        {
+          "name": "condensed",
+          "description": "Used normally for third level items, remove the bottom border"
+        },
+        {
+          "name": "is-current",
+          "description": "Text gets the active color"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-slider",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Slider class"
+        },
+        {
+          "name": "custom-color",
+          "description": "(optional) slider custom color"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) disabled"
+        },
+        {
+          "name": "label",
+          "description": "(optional) slider label"
+        },
+        {
+          "name": "max",
+          "description": "(optional) the maximal value of the slider"
+        },
+        {
+          "name": "min",
+          "description": "t(optional) he minimal value of the slider"
+        },
+        {
+          "name": "show-value",
+          "description": "(optional) slider display value"
+        },
+        {
+          "name": "step",
+          "description": "(optional) the step size to increase or decrease when dragging slider"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "track-height",
+          "description": "(optional) the height of slider track"
+        },
+        {
+          "name": "value",
+          "description": "(optional) the display value of the slider"
+        }
+      ]
+    },
+    {
+      "name": "scale-ssr-slot-fix",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": []
+    },
+    {
+      "name": "scale-switch",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "(optional) Active switch"
+        },
+        {
+          "name": "custom-class",
+          "description": "(optional) Switch class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Disabled switch"
+        },
+        {
+          "name": "icon-off",
+          "description": "(optional) icon when switch is off"
+        },
+        {
+          "name": "icon-on",
+          "description": "(optional) icon when switch is on"
+        },
+        {
+          "name": "icon-size",
+          "description": "(optional)  Icon size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "text-off",
+          "description": "(optional) list Icon size"
+        },
+        {
+          "name": "text-on",
+          "description": "(optional) List item icon"
+        }
+      ]
+    },
+    {
+      "name": "scale-table",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Tag class"
+        },
+        {
+          "name": "show-sort",
+          "description": "(optional) Display sort arrows on/off"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Visual size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-tag",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Tag class"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Tag disabled"
+        },
+        {
+          "name": "dismissable",
+          "description": "(optional) Tag dismissable"
+        },
+        {
+          "name": "href",
+          "description": "(optional) Tag href"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Tag size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "target",
+          "description": "(optional) Tag target"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Tag variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-text",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Text class"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        },
+        {
+          "name": "tag",
+          "description": "(optional) Text tag"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Text variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-toast",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "animated",
+          "description": "(optional) Animated toast"
+        },
+        {
+          "name": "auto-hide",
+          "description": "(optional) Toast autohide time"
+        },
+        {
+          "name": "custom-class",
+          "description": "(optional) Toast class"
+        },
+        {
+          "name": "fade-duration",
+          "description": "(optional) Toast fade duration"
+        },
+        {
+          "name": "opened",
+          "description": "(optional) Toast opened"
+        },
+        {
+          "name": "position-right",
+          "description": "(optional) Toast position right"
+        },
+        {
+          "name": "position-top",
+          "description": "(optional) Toast position at the top"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Toast size"
+        },
+        {
+          "name": "time",
+          "description": "(optional) Toast time"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Toast variant"
+        }
+      ]
+    }
+  ]
+}

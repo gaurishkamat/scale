@@ -18,7 +18,7 @@ export class Carousel implements Base {
   @Prop() vertical?: boolean = false;
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Carousel', styles) stylesheet: StyleSheet;
 

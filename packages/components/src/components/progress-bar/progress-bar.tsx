@@ -32,7 +32,7 @@ export class ProgressBar implements Base {
   /** (optional) Progress bar disabled */
   @Prop() disabled?: boolean;
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('ProgressBar', styles) stylesheet: StyleSheet;
 

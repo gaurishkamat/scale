@@ -22,7 +22,7 @@ export class Card implements Base {
   /** (optional) Link disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Card', styles) stylesheet: StyleSheet;
 

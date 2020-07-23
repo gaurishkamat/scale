@@ -12,7 +12,7 @@ import Base from '../../utils/base-interface';
 export class List implements Base {
   /** (optional) List variant */
   @Prop() variant?: string = 'unordered';
-  @Prop() styles?: StyleSheet;
+  @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('List', styles) stylesheet: StyleSheet;
   componentWillLoad() {}
