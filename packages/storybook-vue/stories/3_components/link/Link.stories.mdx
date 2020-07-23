@@ -1,0 +1,92 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleLink from './ScaleLink.vue';
+import description from './link.md';
+export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+
+<Meta
+    title="Components/Link"
+    component={ScaleLink}
+    argTypes={{
+        label: {
+            control: {type: 'text'}
+        },
+        styles: {
+            control: {disable: true}
+        }
+    }}
+/>
+
+export const Template = (args, {argTypes}) => ({
+    components: {ScaleLink},
+    props: {
+        label: String,
+        ...ScaleLink.props
+    },
+    template: `
+        <scale-link
+        :block="block"
+        :custom-lass="customClass"
+        :disabled="disabled"
+        :href="href"
+        :icon="icon"
+        :icon-size="iconSize"
+        :target="target"
+        :underline="underline"
+        :variant="variant"
+    >
+    {{ label }}
+    </scale-link>
+    `
+})
+
+<Description>{description}</Description>
+
+<Preview>
+    <Story
+        name="Standard"
+        args={{
+            label: 'A link'
+        }}>
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+## disabled
+
+<Preview>
+    <Story
+        name="Disabled"
+        args={{
+            label: 'A link, disabled',
+            disabled: true
+        }}
+    >
+    {Template.bind({})}
+    </Story>
+</Preview>
+
+## with icon
+
+<Preview>
+    <Story 
+        name="With Icon"
+        args={{
+            label: 'A link, with an icon',
+            icon: ICON
+        }}>
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+## without underline
+
+<Preview>
+    <Story
+        name="Without underline"
+        args={{
+            label: 'A link without underline',
+            underline: false
+        }}>
+        { Template.bind({})}
+    </Story>
+</Preview>
