@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host} from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './link.styles';
