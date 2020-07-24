@@ -9,7 +9,6 @@
     :text-off="textOff"
     :text-on="textOn"
     >
-        <slot></slot>
     </scale-switch>
 </template>
 
