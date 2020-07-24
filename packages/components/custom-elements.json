@@ -942,6 +942,69 @@
       ]
     },
     {
+      "name": "scale-tab-header",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "icon-size",
+          "description": ""
+        },
+        {
+          "name": "identifier",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "selected",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-tab-nav",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-tab-panel",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        },
+        {
+          "name": "identifier",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "scale-table",
       "description": {
         "kind": "markdown",

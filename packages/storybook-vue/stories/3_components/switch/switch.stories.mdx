@@ -5,7 +5,7 @@ const ICONON = 'M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,
 const ICONOFF = 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z';
 
 <Meta
-title="Switch"
+title="Components/Switch"
 component={ScaleSwitch}
 argTypes={{
     label: {
@@ -45,13 +45,16 @@ export const Template = (args, {argTypes}) => ({
 
 <Preview>
     <Story
-    name="Standard"
+    name='Standard'
     args={{
         label: 'A switch'
-    }}>
+    }}
+    >
     {Template.bind({})}
     </Story>
 </Preview>
+
+<Props story="Standard"/>
 
 ## Switch with icon
 
@@ -67,6 +70,10 @@ export const Template = (args, {argTypes}) => ({
     </Story>
 </Preview>
 
+```html
+<scale-switch icon-on="SVG-PATH" icon-off="SVG-PATH">Label</scale-switch>
+```
+
 ## Active switch disabled
 
 <Preview>
@@ -81,6 +88,7 @@ export const Template = (args, {argTypes}) => ({
     {Template.bind({})}
     </Story>
 </Preview>
+
 
 ## Inactive switch disabled
 

@@ -38,6 +38,9 @@ const customElementTags: string[] = [
  'scale-slider',
  'scale-ssr-slot-fix',
  'scale-switch',
+ 'scale-tab-header',
+ 'scale-tab-nav',
+ 'scale-tab-panel',
  'scale-table',
  'scale-tag',
  'scale-text',
@@ -507,6 +510,48 @@ export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-switch', []),
+});
+
+
+export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
+    label: {} as PropOptions<Components.ScaleTabHeader['label']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabHeader['ariaLabel']>,
+    identifier: {} as PropOptions<Components.ScaleTabHeader['identifier']>,
+    selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
+    icon: {} as PropOptions<Components.ScaleTabHeader['icon']>,
+    iconSize: {} as PropOptions<Components.ScaleTabHeader['iconSize']>,
+  },
+
+
+  render: createCommonRender('scale-tab-header', ['tabclick']),
+});
+
+
+export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabNav['styles']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabNav['ariaLabel']>,
+  },
+
+
+  render: createCommonRender('scale-tab-nav', []),
+});
+
+
+export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabPanel['styles']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabPanel['ariaLabel']>,
+    identifier: {} as PropOptions<Components.ScaleTabPanel['identifier']>,
+  },
+
+
+  render: createCommonRender('scale-tab-panel', []),
 });
 
 
