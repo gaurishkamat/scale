@@ -1,7 +1,7 @@
 <template>
     <scale-link
         :block="block"
-        :custom-lass="customClass"
+        :custom-class="customClass"
         :disabled="JSON.stringify(disabled)"
         :href="href"
         :icon="icon"

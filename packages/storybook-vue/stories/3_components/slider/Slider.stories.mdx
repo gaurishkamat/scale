@@ -1,0 +1,117 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleSlider from './ScaleSlider.vue';
+import description from './slider.md';
+import { action } from "@storybook/addon-actions";
+
+<Meta
+    title="Components/Slider"
+    component={ScaleSlider}
+    argTypes={{
+        styles: {
+            control: {disable: true}
+        }
+    }}
+/>
+
+export const Template = (args, {argTypes}) => ({
+    components:{ScaleSlider},
+    props: {
+        ...ScaleSlider.props
+    },
+    template: `
+    <scale-slider
+        :custom-class="customClass"
+        :custom-color="customColor"
+        :disabled="disabled"
+        :label="label"
+        :max="max"
+        :min="min"
+        :show-value="showValue"
+        :step="step"
+        :track-height="trackHeight"
+        :value="value"
+        @scaleButtonDown="scaleButtonDown"
+        @scaleDragStart="scaleDragStart"
+        @scaleDragging="scaleDragging"
+        @scaleDragEnd="scaleDragEnd"
+        @scaleSetPosition="scaleSetPosition"
+        @scaleCurrentPosition="scaleCurrentPosition"
+        >
+    </scale-slider>
+    `,
+    methods: {
+        scaleButtonDown: action('scaleButtonDown'),
+        scaleDragStart: action('scaleDragStart'),
+        scaleDragging: action('scaleDragging'),
+        scaleDragEnd: action('scaleDragEnd'),
+        scaleSetPosition: action('scaleSetPosition'),
+        scaleCurrentPosition: action('scaleCurrentPosition')
+    }
+})
+
+<Description>{description}</Description>
+
+<Preview>
+    <Story
+        name="Standard"
+        args={{
+            value: "20"
+        }}
+        >
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+<Props story='Standard' />
+
+## Slider track small
+
+<Preview>
+    <Story
+        name="Slider track small"
+        args={{
+            value:"20",
+            trackHeight: "2",
+        }}>
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-slider :value="20" :track-height="2"></scale-slider>
+```
+
+## Slider with custom color
+
+<Preview>
+    <Story
+        name="Slider with custom color"
+        args={{
+            value: "20",
+            customColor: "#009DE0"
+        }}
+        >
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-slider :value="20" :custom-color="#009DE0"></scale-slider>
+```
+
+## Disabled slider
+
+<Preview>
+    <Story
+        name="Disabled Slider"
+        args={{
+            value: "40",
+            disabled: true
+        }}>
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-slider :value="40" :disabled="true"></scale-slider>
+```
