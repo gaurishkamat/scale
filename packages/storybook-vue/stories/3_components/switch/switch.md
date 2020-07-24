@@ -1,3 +1,2 @@
-## Scale switch component
-
-Here is all what is related with the switch component
+# Scale Switch Component
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus delectus sequi quas eaque voluptatem, distinctio consectetur laudantium voluptas aliquid dolor molestiae eum ab molestias. Adipisci ipsa illo ut commodi eligendi!
