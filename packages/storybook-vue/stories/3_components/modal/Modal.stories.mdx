@@ -11,6 +11,10 @@ import { action } from "@storybook/addon-actions";
       control: {
         type: "select",
         options: ["small", "default", "large"]
+      },
+      opened: {
+        type: "boolean",
+        defaultValue: false,
       }
     },
   }}
@@ -28,7 +32,7 @@ export const Template = (args, { argTypes }) => ({
       :transitions="transitions"
       :size="size"
       :header="header"
-      :opened="opened"
+      :opened="isOpen"
       :styles="styles"
       @scaleClose="scaleClose"
     >
@@ -60,10 +64,18 @@ export const Template = (args, { argTypes }) => ({
   `,
    methods: {
      scaleClose: function() {
-       this.opened=false;
-       action('scaleClose')()
+       this.isOpen=false;
+       action('scaleClose')();
      },
-   }
+   },
+   data: function() {
+      return { isOpen: this.opened }
+   },
+   watch: {
+     opened: function (newOpened) {
+       this.isOpen = newOpened;
+     }
+   },
 })
 
 <Description>{description}</Description>
@@ -72,6 +84,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Standard'
     args={{
+      opened: false,
       header: 'Header',
     }}
   >
@@ -87,7 +100,8 @@ export const Template = (args, { argTypes }) => ({
 <Preview>
   <Story
     name='WithoutHeader'
-    args={{}}
+    args={{
+      opened: false,}}
   >
     {Template.bind({})}
   </Story>
@@ -100,6 +114,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Small'
     args={{
+      opened: false,
       header: 'Header',
       size: 'small'
     }}
@@ -122,6 +137,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large'
     args={{
+      opened: false,
       header: 'Header',
       size: 'large'
     }}
@@ -144,6 +160,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='WithCustomCloseElement'
     args={{
+      opened: false,
       header: 'Header',
       close: 'Close!',
     }}
@@ -167,6 +184,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='WithActions'
     args={{
+      opened: false,
       header: 'Header',
       close: 'showActions',
     }}
