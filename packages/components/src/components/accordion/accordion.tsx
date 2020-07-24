@@ -15,7 +15,6 @@ export class Accordion implements Base {
   @Element() el: HTMLElement;
   @Prop() styles?: any;
   @CssInJs('Accordion', styles) stylesheet: StyleSheet;
-  @Prop() headline?: string;
 
   @Prop() dependend: boolean = false;
 

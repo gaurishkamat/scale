@@ -10,7 +10,6 @@
 | Property    | Attribute   | Description | Type      | Default     |
 | ----------- | ----------- | ----------- | --------- | ----------- |
 | `dependend` | `dependend` |             | `boolean` | `false`     |
-| `headline`  | `headline`  |             | `string`  | `undefined` |
 | `styles`    | `styles`    |             | `any`     | `undefined` |
 
 

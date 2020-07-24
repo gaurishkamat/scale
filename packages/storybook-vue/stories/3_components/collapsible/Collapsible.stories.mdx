@@ -12,7 +12,7 @@ export const ICON =
 import { action } from "@storybook/addon-actions";
 
 <Meta
-  title="Collapsible"
+  title="Components/Collapsible"
   component={ScaleCollapsible}
   argTypes={{
     headline: {
@@ -64,18 +64,3 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 <Props story="Standard" />
-
-## Expanded
-
-<Preview>
-  <Story
-    name="Expanded"
-    args={{
-      headline: "A collapsible",
-      content: "A content",
-      isExpanded: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>

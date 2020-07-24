@@ -29,7 +29,6 @@ export namespace Components {
     }
     interface ScaleAccordion {
         "dependend": boolean;
-        "headline"?: string;
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -202,7 +201,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: any;
+        "styles"?: StyleSheet;
         "tag"?: string;
     }
     interface ScaleDivider {
@@ -1062,7 +1061,6 @@ declare namespace LocalJSX {
     }
     interface ScaleAccordion {
         "dependend"?: boolean;
-        "headline"?: string;
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -1223,7 +1221,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: any;
+        "styles"?: StyleSheet;
         "tag"?: string;
     }
     interface ScaleDivider {

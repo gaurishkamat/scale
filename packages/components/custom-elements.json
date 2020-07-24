@@ -79,10 +79,6 @@
           "description": ""
         },
         {
-          "name": "headline",
-          "description": ""
-        },
-        {
           "name": "styles",
           "description": ""
         }
@@ -328,10 +324,6 @@
         {
           "name": "label",
           "description": ""
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         },
         {
           "name": "tag",
@@ -938,6 +930,69 @@
         {
           "name": "text-on",
           "description": "(optional) List item icon"
+        }
+      ]
+    },
+    {
+      "name": "scale-tab-header",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "icon-size",
+          "description": ""
+        },
+        {
+          "name": "identifier",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "selected",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-tab-nav",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-tab-panel",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-label",
+          "description": ""
+        },
+        {
+          "name": "identifier",
+          "description": ""
         }
       ]
     },

@@ -23,7 +23,7 @@ import Base from '../../utils/base-interface';
 export class Collapsible implements Base {
   @Element() el: HTMLElement;
   /** (optional) Injected jss styles */
-  @Prop() styles?: any;
+  @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Collapsible', styles) stylesheet: StyleSheet;
 
