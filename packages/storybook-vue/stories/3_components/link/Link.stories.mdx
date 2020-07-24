@@ -20,7 +20,8 @@ export const Template = (args, {argTypes}) => ({
     components: {ScaleLink},
     props: {
         label: String,
-        ...ScaleLink.props
+        ...ScaleLink.props,
+        underline: true
     },
     template: `
         <scale-link
