@@ -51,6 +51,8 @@ export const Template = (args, {argTypes}) => ({
     </Story>
 </Preview>
 
+<Props story='Standard'/>
+
 ## disabled
 
 <Preview>
@@ -65,6 +67,11 @@ export const Template = (args, {argTypes}) => ({
     </Story>
 </Preview>
 
+```html
+<scale-link disabled >Label</scale-link>
+```
+
+
 ## with icon
 
 <Preview>
@@ -78,6 +85,10 @@ export const Template = (args, {argTypes}) => ({
     </Story>
 </Preview>
 
+```html
+<scale-link icon="SVG-PATH">Label</scale-link>
+```
+
 ## without underline
 
 <Preview>
@@ -90,3 +101,7 @@ export const Template = (args, {argTypes}) => ({
         { Template.bind({})}
     </Story>
 </Preview>
+
+```html
+<scale-link underline=false>Label</scale-link>
+```
