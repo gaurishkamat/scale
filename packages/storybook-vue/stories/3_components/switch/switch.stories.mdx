@@ -8,9 +8,6 @@ const ICONOFF = 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 1
 title="Components/Switch"
 component={ScaleSwitch}
 argTypes={{
-    label: {
-        control: {type: 'text'}
-    },
     styles: {
         control: {disable: true}
     }
@@ -20,37 +17,27 @@ argTypes={{
 export const Template = (args, {argTypes}) => ({
     components: {ScaleSwitch},
     props: {
-        label: String,
         ...ScaleSwitch.props
     },
     template: `
     <scale-switch
-    :active="active"
-    :custom-class="customClass"
-    :disabled="disabled"
-    :icon-off="iconOff"
-    :icon-on="iconOn"
-    :icon-size="iconSize"
-    :text-off="textOff"
-    :text-on="textOn"
-    >
-     {{ label }}
+        :active="active"
+        :custom-class="customClass"
+        :disabled="disabled"
+        :icon-off="iconOff"
+        :icon-on="iconOn"
+        :icon-size="iconSize"
+        :text-off="textOff"
+        :text-on="textOn"
+        >
     </scale-switch>
     `
 })
 
-<Description> {description} </Description>
-
-## Standard
-
 <Preview>
     <Story
-    name='Standard'
-    args={{
-        label: 'A switch'
-    }}
-    >
-    {Template.bind({})}
+        name="Standard">
+        {Template.bind({})}
     </Story>
 </Preview>
 
@@ -62,7 +49,6 @@ export const Template = (args, {argTypes}) => ({
     <Story
     name="A switch with icon"
     args={{
-        label: 'A switch with icon',
         iconOn: ICONON,
         iconOff: ICONOFF
     }}>
@@ -71,7 +57,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-switch icon-on="SVG-PATH" icon-off="SVG-PATH">Label</scale-switch>
+<scale-switch icon-on="SVG-PATH" icon-off="SVG-PATH"></scale-switch>
 ```
 
 ## Active switch disabled
@@ -80,7 +66,6 @@ export const Template = (args, {argTypes}) => ({
     <Story
     name="Active switch disabled"
     args={{
-        label: 'Active switch disabled',
         disabled: true,
         active: true
     }}
@@ -89,6 +74,9 @@ export const Template = (args, {argTypes}) => ({
     </Story>
 </Preview>
 
+```html
+<scale-switch disabled=true active=true></scale-switch>
+```
 
 ## Inactive switch disabled
 
@@ -96,10 +84,13 @@ export const Template = (args, {argTypes}) => ({
     <Story
     name="Inactive switch disabled"
     args={{
-        label: 'Inactive switch disabled',
         disabled: true,
         active: false
     }}>
     {Template.bind({})}
     </Story>
 </Preview>
+
+```html
+<scale-switch disabled=true active=false></scale-switch>
+```
