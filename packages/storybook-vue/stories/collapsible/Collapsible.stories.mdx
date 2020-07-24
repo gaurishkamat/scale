@@ -1,0 +1,81 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import ScaleCollapsible from "./ScaleCollapsible.vue";
+import description from "./collapsible.md";
+export const ICON =
+  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
+import { action } from "@storybook/addon-actions";
+
+<Meta
+  title="Collapsible"
+  component={ScaleCollapsible}
+  argTypes={{
+    headline: {
+      defaultValue: "Headline",
+      control: { type: "text" },
+    },
+    content: {
+      defaultValue: "Content",
+      control: { type: "text" },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleCollapsible },
+  props: {
+    headline: String,
+    content: String,
+    ...ScaleCollapsible.props,
+  },
+  template: `
+    <scale-collapsible
+    :styles="styles"
+    :isExpanded="isExpanded"
+    @scaleClick="scaleClick"
+    @scaleKeyDown="scaleKeyDown">
+      <template #headline><scale-text slot="headline" variant="collapsible">{{ headline }}</scale-text></template>
+      <template #content><p slot="content">{{ content }}</p></template>
+    </scale-collapsible>
+  `,
+  methods: {
+    scaleClick: action("scaleClick"),
+    scaleKeyDown: action("scaleKeyDown"),
+  },
+});
+
+<Description>{description}</Description>
+
+<Preview>
+  <Story
+    name="Standard"
+    args={{
+      headline: "A collapsible",
+      content: "A content",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story="Standard" />
+
+## Expanded
+
+<Preview>
+  <Story
+    name="Expanded"
+    args={{
+      headline: "A collapsible",
+      content: "A content",
+      isExpanded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
