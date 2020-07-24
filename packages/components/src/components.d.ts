@@ -28,7 +28,7 @@ export namespace Components {
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
-        "dependend": boolean;
+        "dependent": boolean;
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -1060,7 +1060,7 @@ declare namespace LocalJSX {
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {
-        "dependend"?: boolean;
+        "dependent"?: boolean;
         "styles"?: any;
     }
     interface ScaleAlert {

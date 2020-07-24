@@ -15,7 +15,7 @@ import { action } from "@storybook/addon-actions";
   title="Components/Accordion"
   component={ScaleAccordion}
   argTypes={{
-    dependend: {
+    dependent: {
       defaultValue: false,
       control: { type: "boolean" },
     },
@@ -30,7 +30,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-accordion
     :styles="styles"
-    :dependend="JSON.stringify(dependend)"
+    :dependent="JSON.stringify(dependent)"
     >
     <template>
     <scale-collapsible>
@@ -57,13 +57,13 @@ export const Template = (args, { argTypes }) => ({
 
 <Props story="Standard" />
 
-## Dependend
+## Dependent
 
 <Preview>
   <Story
-    name="Dependend"
+    name="Dependent"
     args={{
-      dependend: true,
+      dependent: true,
     }}
   >
     {Template.bind({})}
@@ -71,7 +71,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-accordion dependend>
+<scale-accordion dependent>
   <scale-collapsible>
     <foo slot="headline">This is one headline</foo>
     <bar slot="content">This is one content</bar>
