@@ -15,13 +15,12 @@ export class Accordion implements Base {
   @Element() el: HTMLElement;
   @Prop() styles?: any;
   @CssInJs('Accordion', styles) stylesheet: StyleSheet;
-  @Prop() headline?: string;
 
-  @Prop() dependend: boolean = false;
+  @Prop() dependent: boolean = false;
 
   @Listen('toggler')
   collapsibleHandler(event: CustomEvent<Collapsible>) {
-    if (this.dependend) {
+    if (this.dependent) {
       const current = event.target;
       const children = this.el.querySelectorAll('scale-collapsible');
       Array.from(children).forEach(child => {

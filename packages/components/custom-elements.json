@@ -75,11 +75,7 @@
       },
       "attributes": [
         {
-          "name": "dependend",
-          "description": ""
-        },
-        {
-          "name": "headline",
+          "name": "dependent",
           "description": ""
         },
         {
@@ -328,10 +324,6 @@
         {
           "name": "label",
           "description": ""
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         },
         {
           "name": "tag",

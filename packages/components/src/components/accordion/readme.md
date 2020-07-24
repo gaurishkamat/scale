@@ -9,8 +9,7 @@
 
 | Property    | Attribute   | Description | Type      | Default     |
 | ----------- | ----------- | ----------- | --------- | ----------- |
-| `dependend` | `dependend` |             | `boolean` | `false`     |
-| `headline`  | `headline`  |             | `string`  | `undefined` |
+| `dependent` | `dependent` |             | `boolean` | `false`     |
 | `styles`    | `styles`    |             | `any`     | `undefined` |
 
 
