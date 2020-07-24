@@ -1,0 +1,101 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleBreadcrumb from './ScaleBreadcrumb.vue';
+import description from './breadcrumb.md';
+
+
+<Meta
+  title='Components/Breadcrumb'
+  component={ScaleBreadcrumb}
+  argTypes={{
+    separator: {
+      control: { type: "text" }
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleBreadcrumb },
+  props: {
+    label: String,
+    ...ScaleBreadcrumb.props
+  },
+  template: `
+    <scale-breadcrumb
+      :separator="separator"
+      :styles="styles"
+    >
+      <a href="#1">First link</a>
+      <a href="#2">Second link</a>
+      <a href="#3">Third link</a>
+      <template v-if="separator === true" #separator>
+        <span slot="separator">
+          <scale-icon
+            size="18"
+            path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z"
+          />
+        </span>
+      </template>
+    </scale-breadcrumb>
+  `
+})
+
+<Description>{description}</Description>
+
+<Preview>
+  <Story
+    name='Standard'
+    args={{}}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story='Standard' />
+
+## With custom separator
+
+<Preview>
+  <Story
+    name='WithCustomSeparator'
+    args={{
+      separator: '---',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-breadcrumb :separator="---">
+  <a href="#1">First link</a>
+  <a href="#2">Second link</a>
+  <a href="#3">Third link</a>
+</scale-breadcrumb>
+```
+
+## WithCustomSeparatorElement
+
+<Preview>
+  <Story
+    name='WithCustomSeparatorElement'
+    args={{
+      separator: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-breadcrumb>
+  <a href="#1">First link</a>
+  <a href="#2">Second link</a>
+  <a href="#3">Third link</a>
+  <span slot="separator">
+    <scale-icon
+      size="18"
+      path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z"
+    />
+  </span>
+</scale-breadcrumb>
+```
