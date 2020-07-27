@@ -27,12 +27,12 @@
 
 ### Depends on
 
-- [app-icon](../app-icon)
+- [scale-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  app-navigation-main-mobile --> app-icon
+  app-navigation-main-mobile --> scale-icon
   scale-app-header --> app-navigation-main-mobile
   style app-navigation-main-mobile fill:#f9f,stroke:#333,stroke-width:4px
 ```

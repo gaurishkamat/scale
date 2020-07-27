@@ -8,11 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
 import { StyleSheet } from "jss";
 export namespace Components {
-    interface AppIcon {
-        "fill"?: string;
-        "name": string;
-        "size": number;
-    }
     interface AppLogo {
         "claim": boolean;
         "color": string;
@@ -225,23 +220,19 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
-          * (optional) Tag class
+          * (optional) Tag custom class
          */
         "customClass"?: string;
+        "fill"?: string;
         "focusable"?: boolean;
-        "height"?: number;
-        /**
-          * (optional) Tag theme
-         */
         "name"?: string;
-        "path": string;
+        "path"?: string;
         "size"?: number;
+        "stroke"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "viewBox"?: string;
-        "width"?: number;
     }
     interface ScaleInput {
         /**
@@ -791,12 +782,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLAppIconElement extends Components.AppIcon, HTMLStencilElement {
-    }
-    var HTMLAppIconElement: {
-        prototype: HTMLAppIconElement;
-        new (): HTMLAppIconElement;
-    };
     interface HTMLAppLogoElement extends Components.AppLogo, HTMLStencilElement {
     }
     var HTMLAppLogoElement: {
@@ -1002,7 +987,6 @@ declare global {
         new (): HTMLScaleToastElement;
     };
     interface HTMLElementTagNameMap {
-        "app-icon": HTMLAppIconElement;
         "app-logo": HTMLAppLogoElement;
         "app-mega-menu": HTMLAppMegaMenuElement;
         "app-navigation-main-mobile": HTMLAppNavigationMainMobileElement;
@@ -1040,11 +1024,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface AppIcon {
-        "fill"?: string;
-        "name"?: string;
-        "size"?: number;
-    }
     interface AppLogo {
         "claim"?: boolean;
         "color"?: string;
@@ -1246,23 +1225,19 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
-          * (optional) Tag class
+          * (optional) Tag custom class
          */
         "customClass"?: string;
+        "fill"?: string;
         "focusable"?: boolean;
-        "height"?: number;
-        /**
-          * (optional) Tag theme
-         */
         "name"?: string;
         "path"?: string;
         "size"?: number;
+        "stroke"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "viewBox"?: string;
-        "width"?: number;
     }
     interface ScaleInput {
         /**
@@ -1832,7 +1807,6 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
-        "app-icon": AppIcon;
         "app-logo": AppLogo;
         "app-mega-menu": AppMegaMenu;
         "app-navigation-main-mobile": AppNavigationMainMobile;
@@ -1873,7 +1847,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-icon": LocalJSX.AppIcon & JSXBase.HTMLAttributes<HTMLAppIconElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-mega-menu": LocalJSX.AppMegaMenu & JSXBase.HTMLAttributes<HTMLAppMegaMenuElement>;
             "app-navigation-main-mobile": LocalJSX.AppNavigationMainMobile & JSXBase.HTMLAttributes<HTMLAppNavigationMainMobileElement>;

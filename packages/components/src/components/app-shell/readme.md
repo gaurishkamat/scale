@@ -27,11 +27,11 @@
 graph TD;
   scale-app-shell --> scale-app-header
   scale-app-header --> app-mega-menu
-  scale-app-header --> app-icon
+  scale-app-header --> scale-icon
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
-  app-navigation-main-mobile --> app-icon
+  app-navigation-main-mobile --> scale-icon
   style scale-app-shell fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

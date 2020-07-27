@@ -8,7 +8,6 @@ import { JSX } from '@scaleds/components-telekom';
 import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
 applyPolyfills().then(() => defineCustomElements());
-export const AppIcon = /*@__PURE__*/createReactComponent<JSX.AppIcon, HTMLAppIconElement>('app-icon');
 export const AppLogo = /*@__PURE__*/createReactComponent<JSX.AppLogo, HTMLAppLogoElement>('app-logo');
 export const AppMegaMenu = /*@__PURE__*/createReactComponent<JSX.AppMegaMenu, HTMLAppMegaMenuElement>('app-mega-menu');
 export const AppNavigationMainMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationMainMobile, HTMLAppNavigationMainMobileElement>('app-navigation-main-mobile');
@@ -36,6 +35,9 @@ export const ScaleSidebarNavItem = /*@__PURE__*/createReactComponent<JSX.ScaleSi
 export const ScaleSlider = /*@__PURE__*/createReactComponent<JSX.ScaleSlider, HTMLScaleSliderElement>('scale-slider');
 export const ScaleSsrSlotFix = /*@__PURE__*/createReactComponent<JSX.ScaleSsrSlotFix, HTMLScaleSsrSlotFixElement>('scale-ssr-slot-fix');
 export const ScaleSwitch = /*@__PURE__*/createReactComponent<JSX.ScaleSwitch, HTMLScaleSwitchElement>('scale-switch');
+export const ScaleTabHeader = /*@__PURE__*/createReactComponent<JSX.ScaleTabHeader, HTMLScaleTabHeaderElement>('scale-tab-header');
+export const ScaleTabNav = /*@__PURE__*/createReactComponent<JSX.ScaleTabNav, HTMLScaleTabNavElement>('scale-tab-nav');
+export const ScaleTabPanel = /*@__PURE__*/createReactComponent<JSX.ScaleTabPanel, HTMLScaleTabPanelElement>('scale-tab-panel');
 export const ScaleTable = /*@__PURE__*/createReactComponent<JSX.ScaleTable, HTMLScaleTableElement>('scale-table');
 export const ScaleTag = /*@__PURE__*/createReactComponent<JSX.ScaleTag, HTMLScaleTagElement>('scale-tag');
 export const ScaleText = /*@__PURE__*/createReactComponent<JSX.ScaleText, HTMLScaleTextElement>('scale-text');

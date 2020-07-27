@@ -79,7 +79,7 @@ export class MainNavigationMobile {
         >
           <div class="main-navigation-mobile__child-menu-current-item">
             <div class="main-navigation-mobile__child-menu-current-wrapper">
-              <app-icon name="back"></app-icon>
+              <scale-icon name="back"></scale-icon>
               <div>{section.name}</div>
             </div>
           </div>
@@ -132,7 +132,7 @@ export class MainNavigationMobile {
               <li class="main-navigation-mobile__item">
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
-                  <app-icon name="ahead"></app-icon>
+                  <scale-icon name="ahead"></scale-icon>
                 </div>
               </li>
             </a>

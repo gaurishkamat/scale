@@ -10,7 +10,6 @@ import { Components } from '@scaleds/components-telekom';
 
 
 const customElementTags: string[] = [
- 'app-icon',
  'app-logo',
  'app-mega-menu',
  'app-navigation-main-mobile',
@@ -38,25 +37,15 @@ const customElementTags: string[] = [
  'scale-slider',
  'scale-ssr-slot-fix',
  'scale-switch',
+ 'scale-tab-header',
+ 'scale-tab-nav',
+ 'scale-tab-panel',
  'scale-table',
  'scale-tag',
  'scale-text',
  'scale-toast',
 ];
 Vue.config.ignoredElements = [...Vue.config.ignoredElements, ...customElementTags];
-
-
-export const AppIcon = /*@__PURE__*/ Vue.extend({
-
-  props: {
-    name: {} as PropOptions<Components.AppIcon['name']>,
-    size: {} as PropOptions<Components.AppIcon['size']>,
-    fill: {} as PropOptions<Components.AppIcon['fill']>,
-  },
-
-
-  render: createCommonRender('app-icon', []),
-});
 
 
 export const AppLogo = /*@__PURE__*/ Vue.extend({
@@ -284,9 +273,8 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     name: {} as PropOptions<Components.ScaleIcon['name']>,
     path: {} as PropOptions<Components.ScaleIcon['path']>,
     size: {} as PropOptions<Components.ScaleIcon['size']>,
-    height: {} as PropOptions<Components.ScaleIcon['height']>,
-    width: {} as PropOptions<Components.ScaleIcon['width']>,
-    viewBox: {} as PropOptions<Components.ScaleIcon['viewBox']>,
+    fill: {} as PropOptions<Components.ScaleIcon['fill']>,
+    stroke: {} as PropOptions<Components.ScaleIcon['stroke']>,
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
     styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
@@ -507,6 +495,48 @@ export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-switch', []),
+});
+
+
+export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
+    label: {} as PropOptions<Components.ScaleTabHeader['label']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabHeader['ariaLabel']>,
+    identifier: {} as PropOptions<Components.ScaleTabHeader['identifier']>,
+    selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
+    icon: {} as PropOptions<Components.ScaleTabHeader['icon']>,
+    iconSize: {} as PropOptions<Components.ScaleTabHeader['iconSize']>,
+  },
+
+
+  render: createCommonRender('scale-tab-header', ['tabclick']),
+});
+
+
+export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabNav['styles']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabNav['ariaLabel']>,
+  },
+
+
+  render: createCommonRender('scale-tab-nav', []),
+});
+
+
+export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleTabPanel['styles']>,
+    ariaLabel: {} as PropOptions<Components.ScaleTabPanel['ariaLabel']>,
+    identifier: {} as PropOptions<Components.ScaleTabPanel['identifier']>,
+  },
+
+
+  render: createCommonRender('scale-tab-panel', []),
 });
 
 

@@ -141,7 +141,7 @@ export class Input implements Base {
                 tabIndex={1}
               ></span>
               {!!this.checked && !!this.icon && (
-                <scale-icon path={this.icon}></scale-icon>
+                <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
             <label class="input__label" htmlFor={this.inputId}>
