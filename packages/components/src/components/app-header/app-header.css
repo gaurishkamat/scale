@@ -120,7 +120,9 @@
     line-height: 12px;
     flex-direction: column;
   }
-  .header .meta-navigation .meta-navigation__item-link app-icon {
+  /* TODO remove ... app-icon line  */
+  .header .meta-navigation .meta-navigation__item-link app-icon,
+  .header .meta-navigation .meta-navigation__item-link scale-icon {
     width: 18px;
     height: 18px;
     margin-bottom: 4px;
@@ -268,7 +270,9 @@
     font-size: 12px;
     line-height: 16px;
   }
-  .header .meta-navigation .meta-navigation__item-link app-icon {
+  /* TODO remove ... app-icon line  */
+  .header .meta-navigation .meta-navigation__item-link app-icon,
+  .header .meta-navigation .meta-navigation__item-link scale-icon {
     margin-right: 6px;
   }
   .header .main-navigation .main-navigation__item {

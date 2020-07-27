@@ -8,18 +8,17 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-icon',
-  shadow: true,
+  // shadow: true,
 })
 export class Icon implements Base {
-  /** (optional) Tag class */
+  /** (optional) Tag custom class */
   @Prop() customClass?: string = '';
-  /** (optional) Tag theme */
+
   @Prop() name?: string;
-  @Prop() path: string;
-  @Prop() size?: number;
-  @Prop() height?: number = 24;
-  @Prop() width?: number = 24;
-  @Prop() viewBox?: string;
+  @Prop() path?: string;
+  @Prop() size?: number = 24;
+  @Prop() fill?: string = 'var(--icon-color, currentColor)';
+  @Prop() stroke?: string = 'transparent';
   @Prop() focusable?: boolean = false;
 
   /** (optional) Injected jss styles */
@@ -31,33 +30,26 @@ export class Icon implements Base {
   componentDidUnload() {}
 
   render() {
-    const hostStyles = `
-:host {
-  height: auto;
-  width: auto;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-path {
-  transition: all .2s ease-in-out;
-}
-`;
+    const pathAttributes = {
+      fill: this.fill,
+      stroke: this.stroke,
+    };
 
     return (
-      <Host>
-        <style>
-          {hostStyles}
-          {this.stylesheet.toString()}
-        </style>
+      <Host style={{ display: 'inline-flex' }}>
         <svg
+          xmlns="http://www.w3.org/2000/svg"
           {...(this.focusable ? { tabindex: 0 } : {})}
           class={this.getCssClassMap()}
-          width={this.size || this.width}
-          height={this.size || this.height}
-          viewBox={`0 0 26 26`}
+          width={this.size}
+          height={this.size}
+          viewBox="0 0 24 24"
         >
-          <path d={this.path} stroke="transparent" fill="transparent" />
+          {this.path ? (
+            <path d={this.path} {...pathAttributes} />
+          ) : (
+            <use xlinkHref={`#icon-${this.name}`} {...pathAttributes} />
+          )}
         </svg>
       </Host>
     );

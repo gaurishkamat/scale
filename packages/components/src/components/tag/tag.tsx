@@ -69,7 +69,11 @@ export class Tag implements Base {
         <Element class={this.getCssClassMap()} {...linkProps}>
           <slot />
           {this.dismissable && (
-            <scale-icon size={16} path={icons.close} {...iconProps} />
+            <scale-icon
+              size={this.size === 'small' ? 12 : 16}
+              path={icons.close}
+              {...iconProps}
+            />
           )}
         </Element>
       </Host>

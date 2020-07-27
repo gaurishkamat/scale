@@ -8,7 +8,6 @@ import { JSX } from '@scaleds/components-telekom';
 import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
 applyPolyfills().then(() => defineCustomElements());
-export const AppIcon = /*@__PURE__*/createReactComponent<JSX.AppIcon, HTMLAppIconElement>('app-icon');
 export const AppLogo = /*@__PURE__*/createReactComponent<JSX.AppLogo, HTMLAppLogoElement>('app-logo');
 export const AppMegaMenu = /*@__PURE__*/createReactComponent<JSX.AppMegaMenu, HTMLAppMegaMenuElement>('app-mega-menu');
 export const AppNavigationMainMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationMainMobile, HTMLAppNavigationMainMobileElement>('app-navigation-main-mobile');

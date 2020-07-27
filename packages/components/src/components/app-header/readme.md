@@ -26,7 +26,7 @@
 ### Depends on
 
 - [app-mega-menu](../app-mega-menu)
-- [app-icon](../app-icon)
+- [scale-icon](../icon)
 - [app-logo](../app-logo)
 - [app-navigation-sector-mobile](../app-navigation-sector-mobile)
 - [app-navigation-main-mobile](../app-navigation-main-mobile)
@@ -35,11 +35,11 @@
 ```mermaid
 graph TD;
   scale-app-header --> app-mega-menu
-  scale-app-header --> app-icon
+  scale-app-header --> scale-icon
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
-  app-navigation-main-mobile --> app-icon
+  app-navigation-main-mobile --> scale-icon
   scale-app-shell --> scale-app-header
   style scale-app-header fill:#f9f,stroke:#333,stroke-width:4px
 ```

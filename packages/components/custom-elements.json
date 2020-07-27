@@ -2,27 +2,6 @@
   "version": 1.1,
   "tags": [
     {
-      "name": "app-icon",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [
-        {
-          "name": "fill",
-          "description": ""
-        },
-        {
-          "name": "name",
-          "description": ""
-        },
-        {
-          "name": "size",
-          "description": ""
-        }
-      ]
-    },
-    {
       "name": "app-logo",
       "description": {
         "kind": "markdown",
@@ -365,19 +344,19 @@
       "attributes": [
         {
           "name": "custom-class",
-          "description": "(optional) Tag class"
+          "description": "(optional) Tag custom class"
+        },
+        {
+          "name": "fill",
+          "description": ""
         },
         {
           "name": "focusable",
           "description": ""
         },
         {
-          "name": "height",
-          "description": ""
-        },
-        {
           "name": "name",
-          "description": "(optional) Tag theme"
+          "description": ""
         },
         {
           "name": "path",
@@ -388,16 +367,12 @@
           "description": ""
         },
         {
+          "name": "stroke",
+          "description": ""
+        },
+        {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "view-box",
-          "description": ""
-        },
-        {
-          "name": "width",
-          "description": ""
         }
       ]
     },

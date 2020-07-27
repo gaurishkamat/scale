@@ -10,7 +10,6 @@ import { Components } from '@scaleds/components-telekom';
 
 
 const customElementTags: string[] = [
- 'app-icon',
  'app-logo',
  'app-mega-menu',
  'app-navigation-main-mobile',
@@ -47,19 +46,6 @@ const customElementTags: string[] = [
  'scale-toast',
 ];
 Vue.config.ignoredElements = [...Vue.config.ignoredElements, ...customElementTags];
-
-
-export const AppIcon = /*@__PURE__*/ Vue.extend({
-
-  props: {
-    name: {} as PropOptions<Components.AppIcon['name']>,
-    size: {} as PropOptions<Components.AppIcon['size']>,
-    fill: {} as PropOptions<Components.AppIcon['fill']>,
-  },
-
-
-  render: createCommonRender('app-icon', []),
-});
 
 
 export const AppLogo = /*@__PURE__*/ Vue.extend({
@@ -286,9 +272,8 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     name: {} as PropOptions<Components.ScaleIcon['name']>,
     path: {} as PropOptions<Components.ScaleIcon['path']>,
     size: {} as PropOptions<Components.ScaleIcon['size']>,
-    height: {} as PropOptions<Components.ScaleIcon['height']>,
-    width: {} as PropOptions<Components.ScaleIcon['width']>,
-    viewBox: {} as PropOptions<Components.ScaleIcon['viewBox']>,
+    fill: {} as PropOptions<Components.ScaleIcon['fill']>,
+    stroke: {} as PropOptions<Components.ScaleIcon['stroke']>,
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
     styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
