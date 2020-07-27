@@ -1,0 +1,106 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleList from './ScaleList.vue';
+import description from './list.md';
+const ICON = "M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z";
+
+<Meta
+    title="Components/List"
+    component={ScaleList}
+    argTypes={{
+        label: {
+            control: {type: 'text'}
+        },
+        styles: {
+            control: {disable: true}
+        }
+    }}
+/>
+
+export const Template = (args, {argTypes}) => ({
+    components: {ScaleList},
+    props: {
+        label: String,
+        ...ScaleList.props
+    },
+    template: `
+        <scale-list-item
+        :icon="icon"
+        :icon-size="iconSize"
+        :type="type">
+            {{label}}
+        </scale-list-item>
+        <scale-list-item
+        :icon="icon"
+        :icon-size="iconSize"
+        :type="type">
+            {{label}}
+        </scale-list-item>
+        <scale-list-item
+        :icon="icon"
+        :icon-size="iconSize"
+        :type="type">
+            {{label}}
+        </scale-list-item>
+    `
+})
+
+<Description>{description}</Description>
+
+<Preview>
+    <Story
+    name="Standard"
+    args={{
+        label: 'Standard',
+        type: 'upper-alpha'
+    }}>
+    {Template.bind({})}
+    </Story>
+</Preview>
+
+<Props story="Standard"/>
+
+<Preview>
+    <Story
+    name="Type Circle"
+    args={{
+        label: 'Type Circle',
+        type: 'circle'
+    }}>
+    {Template.bind({})}
+    </Story>
+</Preview>
+
+
+```html
+<scale-list><scale-list-item type="circle">Label </scale-list-item></scale-list>
+```
+
+<Preview>
+    <Story
+    name="Type Decimal"
+    args={{
+        label: 'Type Decimal',
+        type: 'decimal'
+    }}>
+    {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-list><scale-list-item type="decimal">Label </scale-list-item></scale-list>
+```
+
+<Preview>
+    <Story
+    name="Type Icon"
+    args={{
+        label: 'Type Icon',
+        icon: ICON
+    }}>
+    {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-list><scale-list-item icon="SGV-PATH">Label </scale-list-item></scale-list>
+```
