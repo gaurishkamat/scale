@@ -6,7 +6,6 @@ export const styles: JssStyle = {
     color: '#333',
     background: '#fff',
     width: '100%',
-    maxWidth: 400,
     transition: 'all .2s ease-in-out',
     borderRadius: 8,
     boxShadow: [
