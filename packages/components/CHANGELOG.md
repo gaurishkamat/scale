@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.13...v1.1.0) (2020-07-28)
+
+
+### Bug Fixes
+
+* add cloneNodeFix ([2d56242](https://gitlab.com/scale-ds/scale-telekom/commit/2d5624248f9b3f16351fe8195cad8a4642191e99))
+* apparently resolve issue with duplication of slots within header-nav ([0b51e22](https://gitlab.com/scale-ds/scale-telekom/commit/0b51e22b130a39722aa3cd6974490de03e5b4317))
+* button visual tests ([8490e94](https://gitlab.com/scale-ds/scale-telekom/commit/8490e9484efe74767fc5ff407a42ac43ceeb0101))
+* correct condition ([7ac220f](https://gitlab.com/scale-ds/scale-telekom/commit/7ac220fa880a56e797be328c988c4768a2204db3))
+* do not polyfill animations while SSR ([bff7bed](https://gitlab.com/scale-ds/scale-telekom/commit/bff7bed588d4c67e0dd0c277c530801001076bd7))
+* do not polyfill web animations SSR ([e67a028](https://gitlab.com/scale-ds/scale-telekom/commit/e67a02823bbcb30b919ac2874b8f663c4250f5d3))
+* downgrade storybook ([d125629](https://gitlab.com/scale-ds/scale-telekom/commit/d1256299c1c7db6093ba4a6f47c95ad590488e4f))
+* Duplicate function implementation ([1377800](https://gitlab.com/scale-ds/scale-telekom/commit/1377800ae1b37de733339335a7787d55a33b653c))
+* fixes underline prop with stringify trick. feat: adds different sections for setup and styling documentation. chore: renames stories and stories folder structure for arrangement of the different sections ([fb4763b](https://gitlab.com/scale-ds/scale-telekom/commit/fb4763b544a2901a335a5dc28d0ecf20818a75ef))
+* flip condition ([9d75df5](https://gitlab.com/scale-ds/scale-telekom/commit/9d75df58859bc3822798eadba4140cfff8ef6ebd))
+* format ([4e01365](https://gitlab.com/scale-ds/scale-telekom/commit/4e01365dc4ec741456369e74877ec7c65cd9d90c))
+* format ([faf8646](https://gitlab.com/scale-ds/scale-telekom/commit/faf8646b547fc98a95bf52198d798148c16492c0))
+* make sure jss callbacks are executed before adding to SheetRegistry ([d7e5c62](https://gitlab.com/scale-ds/scale-telekom/commit/d7e5c62d113eaccb792b0409a4672f4e3b77922a))
+* move storybook a11y addon config to preview.js ([a313200](https://gitlab.com/scale-ds/scale-telekom/commit/a3132009373d539dade997ae3a7b9c6bff516370))
+* remove addRule and use style resize ([6005c02](https://gitlab.com/scale-ds/scale-telekom/commit/6005c021d323c5b8a544fccc1492049ba408481e))
+* rollup version issue ([6829cb1](https://gitlab.com/scale-ds/scale-telekom/commit/6829cb162806ffc585cb447e880e811313c83ea1))
+* safe-guard require statement ([e7bd178](https://gitlab.com/scale-ds/scale-telekom/commit/e7bd1787c0de0b2d826cac0392ad731b22a66fc1))
+* typo ([0361ff8](https://gitlab.com/scale-ds/scale-telekom/commit/0361ff8a62732202b7cce6b967c060599d5991e1))
+* use id in <label> for attribute in the input of type checkbox ([db26980](https://gitlab.com/scale-ds/scale-telekom/commit/db26980afac0e01108d74b6c65f59691bce1a9cd))
+
+
+### Features
+
+* add stories for input component ([5e00a6f](https://gitlab.com/scale-ds/scale-telekom/commit/5e00a6f970c5fd87805eb41e925f30c1c5276384))
+* adds docs addon. exclude animation components from vue proxie build. WIP fixing MDX issue ([cd2ed65](https://gitlab.com/scale-ds/scale-telekom/commit/cd2ed65f1e1a61d5726ec114214cb60f8779a31a))
+* adds logic for tabs ([105006d](https://gitlab.com/scale-ds/scale-telekom/commit/105006d913f0fc1777d4f559dcc46a51b9edf5d5))
+* adds logic for tabs ([a43ec6a](https://gitlab.com/scale-ds/scale-telekom/commit/a43ec6a531a102e298a55228a41410dff8cdf37e))
+* Adds Storybook to the project. Adds Button Stories ([82a1d3d](https://gitlab.com/scale-ds/scale-telekom/commit/82a1d3d92e59bc44ae0a1c26bce7fee226d0c84f))
+* cleans up lerna.json and package.json to consider anything inside the packages folder a package. Also upgrades storybook version to rc5. Adds configuration to stencil.config.js to generate the customelements.json file needed in storybook for controls and automatic props table generation to work. ([2782667](https://gitlab.com/scale-ds/scale-telekom/commit/2782667955d683d9af0fd58fd2b06bd380c5b8c5))
+* create render-icon utility to handle conditional rendering ([463fcfa](https://gitlab.com/scale-ds/scale-telekom/commit/463fcfa812a1a44e32a028d2c1bb95ff9abc268d))
+* create stories for card ([ed16458](https://gitlab.com/scale-ds/scale-telekom/commit/ed16458219eb4451f87a2baa481e970f313559b5))
+* fonts in theme ([5677a64](https://gitlab.com/scale-ds/scale-telekom/commit/5677a64569ccbd97e2ec185ab8787fc68fe6e2fb))
+* implement accordion and collapsible ([126917d](https://gitlab.com/scale-ds/scale-telekom/commit/126917ddab122b53cffb6ca29b2b6878e35b274f))
+* implement progress bar component ([2f724e8](https://gitlab.com/scale-ds/scale-telekom/commit/2f724e87c297a3b32f2fd195a46b494cd9db1730))
+* implement select box ([62b6d73](https://gitlab.com/scale-ds/scale-telekom/commit/62b6d73256b39967c28e36945ccaea425913828c))
+* improve scale-icon, remove app-icon ([9e90150](https://gitlab.com/scale-ds/scale-telekom/commit/9e90150385faa4acd69c2d69b4fd6bad1eb9cc7e))
+* modal ([4beae35](https://gitlab.com/scale-ds/scale-telekom/commit/4beae35ea0128c697ef7d2027ba98c2ba1ee99d8))
+* polyfill animations ([a328947](https://gitlab.com/scale-ds/scale-telekom/commit/a328947b78b181fe5ea1bf0b5c3b0f21d2b600ec))
+* pumps up storybook and addons version to 6rc3 ([9ab4b0a](https://gitlab.com/scale-ds/scale-telekom/commit/9ab4b0a293ef5d2cf404117085714ebb2b832b18))
+* start work on story for scale-input ([2fe6bab](https://gitlab.com/scale-ds/scale-telekom/commit/2fe6babbc3b3f11b39d74d862401cfc0b5eccd09))
+* stories for collapsible ([7b9a110](https://gitlab.com/scale-ds/scale-telekom/commit/7b9a110b211eeaecc4ce3b9dfbaff86f85da20bd))
+
+
+### Reverts
+
+* Revert "fix: use scale button and disable shadow dom  of button component" ([0de27a9](https://gitlab.com/scale-ds/scale-telekom/commit/0de27a9fe0ed5e3025469f6b44096698128a56a8))
+* Revert "fix: use scale button and disable shadow dom  of button component" ([30f314b](https://gitlab.com/scale-ds/scale-telekom/commit/30f314b2fc0bc8c6e26fa12f9f2c7aa1bf98ff51))
+
+
+
+
+
 ## [0.1.15](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.14...v0.1.15) (2020-07-06)
 
 
