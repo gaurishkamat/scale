@@ -1,0 +1,167 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleProgressBar from './ScaleProgressBar.vue';
+import description from './progress-bar.md';
+import { action } from "@storybook/addon-actions";
+export const ICON = 'M8,0.666666667 C12.05,0.666666667 15.3333333,3.95 15.3333333,8 C15.3333333,12.05 12.05,15.3333333 8,15.3333333 C3.95,15.3333333 0.666666667,12.05 0.666666667,8 C0.666666667,3.95 3.95,0.666666667 8,0.666666667 Z M8,1.66666667 C4.50766667,1.66666667 1.66666667,4.50766667 1.66666667,8 C1.66666667,11.4923333 4.50766667,14.3333333 8,14.3333333 C11.4923333,14.3333333 14.3333333,11.4923333 14.3333333,8 C14.3333333,4.50766667 11.4923333,1.66666667 8,1.66666667 Z M10.7107867,5.28921328 C10.8882978,5.46672432 10.9044351,5.74450011 10.7591988,5.9402411 L10.7107867,5.99632006 L8.70666667,7.99966667 L10.7107867,10.0036799 C10.9060489,10.1989421 10.9060489,10.5155246 10.7107867,10.7107867 C10.5332757,10.8882978 10.2554999,10.9044351 10.0597589,10.7591988 L10.0036799,10.7107867 L7.99966667,8.70666667 L5.99645339,10.7106534 C5.80119124,10.9059155 5.48460876,10.9059155 5.28934661,10.7106534 C5.11183557,10.5331423 5.0956982,10.2553666 5.24093451,10.0596256 L5.28934661,10.0035466 L7.29266667,7.99966667 L5.28934661,5.99645339 C5.09408446,5.80119124 5.09408446,5.48460876 5.28934661,5.28934661 C5.46685765,5.11183557 5.74463344,5.0956982 5.94037444,5.24093451 L5.99645339,5.28934661 L7.99966667,7.29266667 L10.0036799,5.28921328 C10.1989421,5.09395113 10.5155246,5.09395113 10.7107867,5.28921328 Z';
+
+<Meta
+  title="Components/ProgressBar"
+  component={ScaleProgressBar}
+  argTypes={{}}
+/>
+
+export const Template = (args, {argTypes}) => ({
+  components:{ ScaleProgressBar },
+  props: {
+    ...ScaleProgressBar.props
+  },
+  template: `
+  <scale-progress-bar
+    :icon="icon"
+    :custom-class="customClass"
+    :custom-color="customColor"
+    :disabled="disabled"
+    :has-error="hasError"
+    :status-inside="statusInside"
+    :status-description="statusDescription"
+    :show-status="showStatus"
+    :stroke-width="strokeWidth"
+    :percentage="percentage"
+    :styles="styles"
+  >
+  </scale-progress-bar>
+  `
+})
+
+<Description>{description}</Description>
+
+<Preview>
+  <Story
+    name="Standard"
+    args={{
+      percentage: 20,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story='Standard' />
+
+
+## ProgressBar Track Small
+
+<Preview>
+  <Story
+    name="ProgressBar Track Small"
+    args={{
+      percentage: 20,
+      strokeWidth: 2,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="20" :track-height="2"></scale-progress-bar>
+```
+
+
+## ProgressBar With Custom Color
+
+<Preview>
+  <Story
+    name="ProgressBar With Custom Color"
+    args={{
+      percentage: 20,
+      customColor: "#009DE0"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="20" :custom-color="#009DE0"></scale-progress-bar>
+```
+
+
+## Disabled ProgressBar
+
+<Preview>
+  <Story
+    name="Disabled ProgressBar"
+    args={{
+      percentage: 40,
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="40" :disabled="true"></scale-progress-bar>
+```
+
+
+## Progress Percentage Inside Bar
+
+<Preview>
+  <Story
+    name="Progress Percentage Inside Bar"
+    args={{
+      percentage: 40,
+      strokeWidth: 10,
+      statusInside: true,
+      showStatus: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="40" :stroke-width="10" :status-inside="true" :show-status="false"></scale-progress-bar>
+```
+
+
+## ProgressBar With Description
+
+<Preview>
+  <Story
+    name="ProgressBar With Description"
+    args={{
+      percentage: 40,
+      statusDescription: 'ProgressBar status description text'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="40" :stroke-width="40" :status-description="ProgressBar status description text"></scale-progress-bar>
+```
+
+
+## ProgressBar With Error and Icon
+
+<Preview>
+  <Story
+    name="ProgressBar With Error and Icon"
+    args={{
+      percentage: 40,
+      hasError: true,
+      showStatus: false,
+      icon: ICON,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar :percentage="40" :has-error="true" :icon="SVG-PATH" :show-status="false"></scale-progress-bar>
+```
