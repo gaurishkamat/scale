@@ -104,13 +104,14 @@ export const Template = (args, { argTypes }) => ({
 <Props story='Standard' />
 
 
-## WithoutHeader
+## Without Header
 
 <Preview>
   <Story
-    name='WithoutHeader'
+    name='Without Header'
     args={{
-      opened: false,}}
+      opened: false,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -133,7 +134,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" :size="small" @scaleClose="scaleClose">
+<scale-modal :opened="opened" :size="small" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <slot><p>Hello. Welcome.</p></slot>
 </scale-modal>
@@ -156,18 +157,18 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" :size="large" @scaleClose="scaleClose">
+<scale-modal :opened="opened" :size="large" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <slot><p>Hello. Welcome.</p></slot>
 </scale-modal>
 ```
 
 
-## WithCustomCloseElement
+## With Custom Close Element
 
 <Preview>
   <Story
-    name='WithCustomCloseElement'
+    name='With Custom Close Element'
     args={{
       opened: false,
       header: 'Header',
@@ -179,7 +180,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" @scaleClose="scaleClose">
+<scale-modal :opened="opened" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <span slot="close">Close!</span>
   <slot><p>Hello. Welcome.</p></slot>
@@ -187,11 +188,11 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## WithActions
+## With Actions
 
 <Preview>
   <Story
-    name='WithActions'
+    name='With Actions'
     args={{
       opened: false,
       header: 'Header',
@@ -203,19 +204,24 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" @scaleClose="scaleClose">
-  <span slot="modal-actions">
-    <scale-button
-      variant="secondary"
-      style="margin-right: 8px"
-      @click="scaleClose"
-    >
-      cancel
-    </scale-button>
-    <scale-button @click="scaleClose">
-      submit
-    </scale-button>
-  </span>
-  <slot><p>Hello. Welcome.</p></slot>
-</scale-modal>
+<div>
+  <scale-modal :opened="opened" @scaleClose="opened = false">
+    <span slot="modal-actions">
+      <scale-button
+        variant="secondary"
+        style="margin-right: 8px"
+        @click="opened = false"
+      >
+        cancel
+      </scale-button>
+      <scale-button @click="opened = false">
+        submit
+      </scale-button>
+    </span>
+    <slot><p>Hello. Welcome.</p></slot>
+  </scale-modal>
+  <scale-button @click="opened = true">
+    Open Modal
+  </scale-button>
+</div
 ```
