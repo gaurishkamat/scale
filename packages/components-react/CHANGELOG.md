@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.13...v1.1.0) (2020-07-28)
+
+
+### Bug Fixes
+
+* apparently resolve issue with duplication of slots within header-nav ([0b51e22](https://gitlab.com/scale-ds/scale-telekom/commit/0b51e22b130a39722aa3cd6974490de03e5b4317))
+* corrects package name to follow naming convention ([8eeb758](https://gitlab.com/scale-ds/scale-telekom/commit/8eeb758966ccf110f8757737ea5e6f81a7ea108d))
+
+
+### Features
+
+* Adds Storybook to the project. Adds Button Stories ([82a1d3d](https://gitlab.com/scale-ds/scale-telekom/commit/82a1d3d92e59bc44ae0a1c26bce7fee226d0c84f))
+* implement accordion and collapsible ([126917d](https://gitlab.com/scale-ds/scale-telekom/commit/126917ddab122b53cffb6ca29b2b6878e35b274f))
+* improve scale-icon, remove app-icon ([9e90150](https://gitlab.com/scale-ds/scale-telekom/commit/9e90150385faa4acd69c2d69b4fd6bad1eb9cc7e))
+
+
+
+
+
 ## [0.1.15](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.14...v0.1.15) (2020-07-06)
 
 

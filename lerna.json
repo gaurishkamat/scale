@@ -3,9 +3,11 @@
     "packages/*"
   ],
   "npmClient": "yarn",
-  "npmClientArgs": ["--pure-lockfile"],
+  "npmClientArgs": [
+    "--pure-lockfile"
+  ],
   "useWorkspaces": true,
-  "version": "0.1.15",
+  "version": "1.1.0",
   "command": {
     "version": {
       "allowBranch": "master"
