@@ -348,7 +348,7 @@
         },
         {
           "name": "fill",
-          "description": ""
+          "description": "The SVG `fill` attribute"
         },
         {
           "name": "focusable",
@@ -356,19 +356,19 @@
         },
         {
           "name": "name",
-          "description": ""
+          "description": "A name that will be used to reference an SVG object defined elsewhere,\nvia `<use xlink:href=\"\">`. `icon-` will be prepended to the name, so if\nyou pass `circle`, it will look for for the `icon-circle` id\ne.g. `<use xlink:href=\"#icon-circle\">`.\nIf there is no element in the document with the id by the name provided,\nthis component will render empty."
         },
         {
           "name": "path",
-          "description": ""
+          "description": "A path shape to be used in the `d` attribute of a path element."
         },
         {
           "name": "size",
-          "description": ""
+          "description": "Will be used for both `width` and `height`, all icons are square.\nKeep in mind the `viewBox` attribute is set to \"0 0 24 24\"."
         },
         {
           "name": "stroke",
-          "description": ""
+          "description": "The SVG `stroke` attribute"
         },
         {
           "name": "styles",

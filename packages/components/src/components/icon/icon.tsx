@@ -14,10 +14,27 @@ export class Icon implements Base {
   /** (optional) Tag custom class */
   @Prop() customClass?: string = '';
 
+  /**
+   * A name that will be used to reference an SVG object defined elsewhere,
+   * via `<use xlink:href="">`. `icon-` will be prepended to the name, so if
+   * you pass `circle`, it will look for for the `icon-circle` id
+   * e.g. `<use xlink:href="#icon-circle">`.
+   * If there is no element in the document with the id by the name provided,
+   * this component will render empty.
+   */
   @Prop() name?: string;
+  /**
+   * A path shape to be used in the `d` attribute of a path element.
+   */
   @Prop() path?: string;
+  /**
+   * Will be used for both `width` and `height`, all icons are square.
+   * Keep in mind the `viewBox` attribute is set to "0 0 24 24".
+   */
   @Prop() size?: number = 24;
+  /** The SVG `fill` attribute */
   @Prop() fill?: string = 'var(--icon-color, currentColor)';
+  /** The SVG `stroke` attribute */
   @Prop() stroke?: string = 'transparent';
   @Prop() focusable?: boolean = false;
 

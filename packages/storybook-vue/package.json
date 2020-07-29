@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@scaleds/components-telekom": "^1.2.0",
-    "@scaleds/components-telekom-vue": "^1.1.0"
+    "@scaleds/components-vue-telekom": "^1.2.0"
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",
