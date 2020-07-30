@@ -1,6 +1,5 @@
 .DS_Store
 .idea
-.vscode-test
 node_modules
 dist/
 yarn.lock
