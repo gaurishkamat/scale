@@ -24,7 +24,7 @@ export const styles: JssStyle = {
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
-    padding: '0.25rem 1rem',
+    padding: '1px 16px',
     boxShadow: 'none',
     textDecoration: 'none',
     fontFamily: 'TeleNeoWeb-Bold',
@@ -33,7 +33,7 @@ export const styles: JssStyle = {
     paddingTop: 8,
     paddingBottom: 8,
     height: 'unset',
-    minHeight: 42,
+    minHeight: 40,
     lineHeight: '24px',
     whiteSpace: 'nowrap',
     '&:before': {
@@ -67,10 +67,10 @@ export const styles: JssStyle = {
   'button--disabled': {
     '&, &:hover': {
       cursor: 'not-allowed',
-      background: '#CDCDCD',
-      border: '1px solid #CDCDCD',
-      color: '#999999',
-      '--icon-color': '#999999',
+      background: '#D0D0D0',
+      border: '1px solid #D0D0D0',
+      color: '#A4A4A4',
+      '--icon-color': '#A4A4A4',
       opacity: 1,
     },
     '&$button--variant-secondary, &$button--variant-secondary:hover': {
