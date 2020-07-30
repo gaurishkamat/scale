@@ -51,7 +51,7 @@ export const Template = (args, { argTypes }) => ({
 
 <Description>{description}</Description>
 
-<Preview>
+<Preview withSource="none">
   <Story name="Standard">{Template.bind({})}</Story>
 </Preview>
 
@@ -59,7 +59,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Dependent
 
-<Preview>
+<Preview withSource="none">
   <Story
     name="Dependent"
     args={{
