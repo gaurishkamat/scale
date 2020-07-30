@@ -9,16 +9,13 @@
       "path": "./components"
     },
     {
-      "path": "./docs"
-    },
-    {
-      "path": "./generator-sketch"
-    },
-    {
-      "path": "./html-to-sketch"
-    },
-    {
       "path": "./components-react"
+    },
+    {
+      "path": "./components-vue"
+    },
+    {
+      "path": "./components-sketch"
     }
   ]
 }
