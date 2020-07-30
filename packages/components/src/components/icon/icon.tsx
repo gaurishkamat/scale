@@ -54,6 +54,7 @@ export class Icon implements Base {
 
     return (
       <Host style={{ display: 'inline-flex' }}>
+        <style>{this.stylesheet.toString()}</style>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           {...(this.focusable ? { tabindex: 0 } : {})}

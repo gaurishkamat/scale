@@ -174,7 +174,7 @@ export const defaultTheme: Theme = {
     },
   },
   shape: {
-    borderRadius: 4,
+    borderRadius: 8,
   },
   transitions: {
     easing: {
