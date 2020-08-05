@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabHeaderg should match snapshot 1`] = `
+<scale-tab-header class="tab-wrapper-0-0-1" role="tab" tabindex="0">
+  <div class="tab-header-0-0-3">
+    <span>
+      Label
+    </span>
+  </div>
+  <div class="tab-header__underline--transparent-0-0-6 tab-header__underline-0-0-5"></div>
+</scale-tab-header>
+`;

@@ -85,6 +85,12 @@ exports[`Text should match snapshot 1`] = `
   letter-spacing: 0.02857em;
   text-transform: none;
 }
+.text--variant-collapsible-0-0-14 {
+  font-size: 1.25rem;
+  font-family: TeleNeoWeb-ExtraBold;
+  margin-bottom: 0;
+  text-transform: none;
+}
     </style>
     <p class="text--variant-body-0-0-9 text-0-0-2">
       <slot></slot>
