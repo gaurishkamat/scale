@@ -12,7 +12,7 @@ exports[`ListItem should match snapshot 1`] = `
   display: flex;
   list-style: none !important;
   align-items: center;
-  margin-left: -1.5rem;
+  margin-left: -0.5rem;
 }
     </style>
     <li class="list-item-0-0-4">

@@ -9,7 +9,6 @@ exports[`Card should match snapshot 1`] = `
   width: 100%;
   border: none;
   overflow: hidden;
-  max-width: 400px;
   background: #fff;
   box-shadow: 0 19px 18px 0 rgba(0,0,0, 0.05), 0 8px 12px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.04), 0 0 2px 0 rgba(0,0,0, 0.03);
   box-sizing: border-box;
