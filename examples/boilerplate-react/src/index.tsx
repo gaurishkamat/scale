@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { defineCustomElements } from '@scaleds/components-telekom/loader';
 import App from './App';
+import '@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css';
 import './index.css';
 
 defineCustomElements(window)
