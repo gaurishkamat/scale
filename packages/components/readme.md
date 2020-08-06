@@ -10,15 +10,9 @@ yarn
 yarn build
 
 # start development mode
-yarn develop
-```
-and then in a new terminal session
-```bash
-yarn storybook
-```
+yarn start
 
 ## Component development
-
 
 ### Useful commands
 See the `scripts` section inside `package.json` for a list of all available commands
