@@ -22,8 +22,6 @@
     "build:theme": "rimraf build && rollup -c",
     "prebuild": "yarn build:theme",
     "build": "stencil build --docs",
-    "prebuild:prod": "yarn build:theme",
-    "build:prod": "stencil build --prod",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e --max-workers=2",
     "test:watch": "stencil test --spec --e2e --watchAll",
@@ -35,7 +33,11 @@
     "lint:types": "tsc --noEmit",
     "lint:style": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "verify": "yarn format && yarn lint:fix"
+    "verify": "yarn format && yarn lint:fix",
+    "predevelop": "yarn build:theme",
+    "develop": "stencil build --docs --watch",
+    "storybook": "start-storybook -p 6006 -s ./build",
+    "build-storybook": "build-storybook -s ./build"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
