@@ -10,7 +10,7 @@ export const styles: JssStyle = {
     backgroundColor: 'transparent',
   },
   'tab-header': {
-    padding: '.5rem 1.75rem .5rem 1.5rem',
+    padding: '.5rem 1.75rem .25rem 1.5rem',
     // backgroundColor: '#f4f4f4',
     transition: 'all 0.2s ease-in-out',
     display: 'inline-flex',
@@ -36,6 +36,7 @@ export const styles: JssStyle = {
     backgroundColor: '#E20074',
     borderRadius: '8px 8px 0 0',
     opacity: 1,
+    transition: 'all 0.2s ease-in-out',
   },
   'tab-header__underline--transparent': {
     opacity: 0,

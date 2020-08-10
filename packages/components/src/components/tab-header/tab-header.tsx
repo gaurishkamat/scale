@@ -25,11 +25,10 @@ export class TabHeader implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('TabHeader', styles) stylesheet: StyleSheet;
   @Prop() label: string = 'Label';
-  @Prop() ariaLabel?: string;
-  @Prop() identifier?: string;
   @Prop() selected?: boolean;
   @Prop() icon?: string;
   @Prop() iconSize?: number = 16;
+  @Prop() iconOnly?: boolean;
 
   @Event({ eventName: 'tabclick' }) tabClick: EventEmitter;
   componentWillLoad() {}
@@ -68,12 +67,12 @@ export class TabHeader implements Base {
         >
           {this.icon ? (
             <scale-icon
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: this.iconOnly ? '' : '8px' }}
               path={this.icon}
               size={this.iconSize}
             />
           ) : null}
-          <span>{this.label}</span>
+          {this.iconOnly ? null : <span>{this.label}</span>}
         </div>
 
         <div class={underlineClassMap}></div>

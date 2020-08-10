@@ -1,18 +1,25 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  Description,
+} from "@storybook/addon-docs/blocks";
 import ScaleInput from "./ScaleInput.vue";
-import description from './input.md'
+import description from "./input.md";
 import { action } from "@storybook/addon-actions";
-export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+export const ICON =
+  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
-  title='Components/Input'
+  title="Components/Input"
   component={ScaleInput}
   argTypes={{
     resize: {
       control: {
         type: "select",
-        options: ["unset", "none", "vertical", "horizontal"]
-      }
+        options: ["unset", "none", "vertical", "horizontal"],
+      },
     },
     type: {
       control: {
@@ -28,13 +35,13 @@ export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
           "radio",
           "select",
           "textarea",
-          "url"
-        ]
-      }
+          "url",
+        ],
+      },
     },
     variant: {
-      control: { type: "select", options: ["animated", "static"] }
-    }
+      control: { type: "select", options: ["animated", "static"] },
+    },
   }}
 />
 
@@ -42,7 +49,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleInput },
   props: {
     label: String,
-    ...ScaleInput.props
+    ...ScaleInput.props,
   },
   template: `
     <scale-input
@@ -80,36 +87,35 @@ export const Template = (args, { argTypes }) => ({
     </scale-input>
   `,
   methods: {
-    scaleChange: action('scaleChange'),
-    scaleFocus: action('scaleFocus'),
-    scaleBlur: action('scaleBlur'),
-    scaleKeyDown: action('scaleKeyDown'),
-  }
-})
+    scaleChange: action("scaleChange"),
+    scaleFocus: action("scaleFocus"),
+    scaleBlur: action("scaleBlur"),
+    scaleKeyDown: action("scaleKeyDown"),
+  },
+});
 
 <Description>{description}</Description>
 
 <Preview withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
-      label: 'An input'
+      label: "An input",
     }}
   >
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props story='Standard' />
-
+<Props story="Standard" />
 
 ## Text With Events
 
 <Preview withSource="none">
   <Story
-    name='Text With Events'
+    name="Text With Events"
     args={{
-      label: 'Text With Events',
+      label: "Text With Events",
     }}
   >
     {Template.bind({})}
@@ -117,18 +123,23 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="text" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDow="handleKeyDown"></scale-input>
+<scale-input
+  :type="text"
+  @scaleChange="handleChange"
+  @scaleBlur="handleBlur"
+  @scaleFocus="handleFocus"
+  @scaleKeyDow="handleKeyDown"
+></scale-input>
 ```
-
 
 ## Placeholder
 
 <Preview withSource="none">
   <Story
-    name='Placeholder'
+    name="Placeholder"
     args={{
-      label: 'Placeholder',
-      placeholder: 'this is the placeholder',
+      label: "Placeholder",
+      placeholder: "this is the placeholder",
     }}
   >
     {Template.bind({})}
@@ -139,15 +150,14 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="text" :placeholder="this is the placeholder"></scale-input>
 ```
 
-
 ## Static
 
 <Preview withSource="none">
   <Story
-    name='Static'
+    name="Static"
     args={{
-      label: 'Static',
-      variant: 'static',
+      label: "Static",
+      variant: "static",
     }}
   >
     {Template.bind({})}
@@ -158,15 +168,14 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="text" :variant="static"></scale-input>
 ```
 
-
 ## Animated
 
 <Preview withSource="none">
   <Story
-    name='Animated'
+    name="Animated"
     args={{
-      label: 'Animated',
-      variant: 'animated',
+      label: "Animated",
+      variant: "animated",
     }}
   >
     {Template.bind({})}
@@ -181,11 +190,11 @@ export const Template = (args, { argTypes }) => ({
 
 <Preview withSource="none">
   <Story
-    name='With Error'
+    name="With Error"
     args={{
-      label: 'With Error',
-      status: 'error',
-      helperText: 'something is wrong'
+      label: "With Error",
+      status: "error",
+      helperText: "something is wrong",
     }}
   >
     {Template.bind({})}
@@ -193,17 +202,20 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="text" :helper-text="something is wrong" :status="error"></scale-input>
+<scale-input
+  :type="text"
+  :helper-text="something is wrong"
+  :status="error"
+></scale-input>
 ```
-
 
 ## Disabled
 
 <Preview withSource="none">
   <Story
-    name='Disabled'
+    name="Disabled"
     args={{
-      label: 'Disabled',
+      label: "Disabled",
       disabled: true,
     }}
   >
@@ -215,14 +227,13 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :disabled="true"></scale-input>
 ```
 
-
 ## Max Length With Counter
 
 <Preview withSource="none">
   <Story
-    name='Max Length With Counter'
+    name="Max Length With Counter"
     args={{
-      label: 'Max Length With Counter',
+      label: "Max Length With Counter",
       maxLength: 10,
       counter: true,
     }}
@@ -232,18 +243,17 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :label={label} :max-length="10" :counter="true"></scale-input>
+<scale-input :label="{label}" :max-length="10" :counter="true"></scale-input>
 ```
-
 
 ## Checkbox
 
 <Preview withSource="none">
   <Story
-    name='Checkbox'
+    name="Checkbox"
     args={{
-      label: 'Checkbox',
-      type: 'checkbox'
+      label: "Checkbox",
+      type: "checkbox",
     }}
   >
     {Template.bind({})}
@@ -254,16 +264,15 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="checkbox"></scale-input>
 ```
 
-
 ## Checkbox With Custom Icon
 
 <Preview withSource="none">
   <Story
-    name='Checkbox With Custom Icon'
+    name="Checkbox With Custom Icon"
     args={{
-      label: 'Checkbox With Custom Icon',
-      type: 'checkbox',
-      icon: ICON
+      label: "Checkbox With Custom Icon",
+      type: "checkbox",
+      icon: ICON,
     }}
   >
     {Template.bind({})}
@@ -274,15 +283,14 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="checkbox" :icon="SVG-PATH"></scale-input>
 ```
 
-
 ## Radio
 
 <Preview withSource="none">
   <Story
-    name='Radio'
+    name="Radio"
     args={{
-      label: 'Radio',
-      type: 'radio'
+      label: "Radio",
+      type: "radio",
     }}
   >
     {Template.bind({})}
@@ -293,16 +301,15 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="radio"></scale-input>
 ```
 
-
 ## Radio Pre-checked
 
 <Preview withSource="none">
   <Story
-    name='Radio Pre-checked'
+    name="Radio Pre-checked"
     args={{
-      label: 'Radio Pre-checked',
-      type: 'radio',
-      preChecked: true
+      label: "Radio Pre-checked",
+      type: "radio",
+      preChecked: true,
     }}
   >
     {Template.bind({})}
@@ -313,15 +320,14 @@ export const Template = (args, { argTypes }) => ({
 <scale-input :type="radio" :pre-checked="true"></scale-input>
 ```
 
-
 ## Select
 
 <Preview withSource="none">
   <Story
-    name='Select'
+    name="Select"
     args={{
-      label: 'Select',
-      type: 'select',
+      label: "Select",
+      type: "select",
     }}
   >
     {Template.bind({})}
@@ -336,17 +342,16 @@ export const Template = (args, { argTypes }) => ({
 </scale-input>
 ```
 
-
 ## Textarea
 
 <Preview withSource="none">
   <Story
-    name='Textarea'
+    name="Textarea"
     args={{
-      label: 'Textarea',
-      type: 'textarea',
+      label: "Textarea",
+      type: "textarea",
       rows: 3,
-      resize: 'vertical'
+      resize: "vertical",
     }}
   >
     {Template.bind({})}

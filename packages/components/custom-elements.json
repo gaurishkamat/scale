@@ -916,19 +916,15 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": ""
-        },
-        {
           "name": "icon",
           "description": ""
         },
         {
-          "name": "icon-size",
+          "name": "icon-only",
           "description": ""
         },
         {
-          "name": "identifier",
+          "name": "icon-size",
           "description": ""
         },
         {

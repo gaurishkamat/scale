@@ -1,0 +1,105 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import ScaleTabNav from "./ScaleTabNav.vue";
+import description from "./tab-navigation.md";
+export const ICON =
+  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
+import { action } from "@storybook/addon-actions";
+
+<Meta title="Components/Tab-Navigation" component={ScaleTabNav} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTabNav },
+  props: {
+    ...ScaleTabNav.props,
+  },
+  template: `
+  <scale-tab-nav :icon-only="iconOnly" :label1="label1" :icon1="icon1" :label2="label2" :icon2="icon2">
+  </scale-tab-nav>
+  `,
+});
+
+<Description>{description}</Description>
+
+<Preview withSource="none">
+  <Story name="Standard">{Template.bind({})}</Story>
+</Preview>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header slot="headings" label="Foo"></scale-tab-header>
+  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
+  <scale-tab-header slot="headings" label="bar"></scale-tab-header>
+  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+</scale-tab-nav>
+```
+
+<Props story="Standard" />
+
+## With Icons
+
+<Preview withSource="none">
+  <Story
+    name="With Icons"
+    args={{
+      icon1: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
+      icon2: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header
+    slot="headings"
+    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    label="Foo"
+  ></scale-tab-header>
+  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    label="bar"
+  ></scale-tab-header>
+  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Only Icons
+
+<Preview withSource="none">
+  <Story
+    name="Only Icons"
+    args={{
+      icon1: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
+      icon2: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
+      iconOnly: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header
+    slot="headings"
+    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    icon-only="true"
+  ></scale-tab-header>
+  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    icon-only="true"
+  ></scale-tab-header>
+  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+</scale-tab-nav>
+```
