@@ -55,7 +55,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Standard"
         args={{
-            value: "20"
+            value: 20
         }}
         >
         {Template.bind({})}
@@ -70,15 +70,15 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Slider track small"
         args={{
-            value:"20",
-            trackHeight: "2",
+            value: 20,
+            trackHeight: 2,
         }}>
         {Template.bind({})}
     </Story>
 </Preview>
 
 ```html
-<scale-slider :value="20" :track-height="2"></scale-slider>
+<scale-slider value="20" track-height="2"></scale-slider>
 ```
 
 ## Slider with custom color
@@ -87,7 +87,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Slider with custom color"
         args={{
-            value: "20",
+            value: 20,
             customColor: "#009DE0"
         }}
         >
@@ -96,7 +96,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider :value="20" :custom-color="#009DE0"></scale-slider>
+<scale-slider value="20" custom-color="#009DE0"></scale-slider>
 ```
 
 ## Disabled slider
@@ -105,7 +105,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Disabled Slider"
         args={{
-            value: "40",
+            value: 40,
             disabled: true
         }}>
         {Template.bind({})}
@@ -113,5 +113,5 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider :value="40" :disabled="true"></scale-slider>
+<scale-slider value="40" disabled></scale-slider>
 ```

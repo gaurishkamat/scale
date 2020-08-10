@@ -35,12 +35,17 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-collapsible
-    :styles="styles"
-    :isExpanded="isExpanded"
-    @scaleClick="scaleClick"
-    @scaleKeyDown="scaleKeyDown">
-      <template #headline><scale-text slot="headline" variant="collapsible">{{ headline }}</scale-text></template>
-      <template #content><p slot="content">{{ content }}</p></template>
+      :styles="styles"
+      :is-expanded="isExpanded"
+      @scaleClick="scaleClick"
+      @scaleKeyDown="scaleKeyDown"
+    >
+      <template #headline>
+        <scale-text slot="headline" variant="collapsible">{{ headline }}</scale-text>
+      </template>
+      <template #content>
+        <p slot="content">{{ content }}</p>
+      </template>
     </scale-collapsible>
   `,
   methods: {
@@ -65,8 +70,8 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-collapsible>
-  <foo slot="headline">This is the headline</foo>
-  <bar slot="content">This is the content</bar>
+  <scale-text slot="headline" variant="collapsible">A collapsible</foo>
+  <p slot="content">A content</p>
 </scale-collapsible>
 ```
 

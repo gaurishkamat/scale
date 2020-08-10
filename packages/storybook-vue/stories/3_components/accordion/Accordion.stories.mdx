@@ -29,22 +29,20 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-accordion
-    :styles="styles"
-    :dependent="JSON.stringify(dependent)"
+      :styles="styles"
+      :dependent="JSON.stringify(dependent)"
     >
-    <template>
-    <scale-collapsible>
-      <scale-text slot="headline" variant="collapsible">This is one headline</scale-text>
-      <p slot="content">This is one content</p>
-    </scale-collapsible>
-    <scale-collapsible>
-      <scale-text slot="headline" variant="collapsible">This is another headline</scale-text>
+      <scale-collapsible>
+        <scale-text slot="headline" variant="collapsible">This is one headline</scale-text>
+        <p slot="content">This is one content</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <scale-text slot="headline" variant="collapsible">This is another headline</scale-text>
         <div slot="content">
-          <scale-text variant="h3">more info</scale-text>
+          <scale-text variant="h3">More info</scale-text>
           <scale-text variant="body">Collapsibles can contain several nodes</scale-text>
         </div>
-    </scale-collapsible>
-    </template>
+      </scale-collapsible>
     </scale-accordion>
   `,
 });
@@ -73,12 +71,15 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-accordion dependent>
   <scale-collapsible>
-    <foo slot="headline">This is one headline</foo>
-    <bar slot="content">This is one content</bar>
+    <scale-text slot="headline" variant="collapsible">This is one headline</scale-text>
+    <p slot="content">This is one content</p>
   </scale-collapsible>
   <scale-collapsible>
-    <foo slot="headline">This is another headline</foo>
-    <bar slot="content">This is another content</bar>
+    <scale-text slot="headline" variant="collapsible">This is another headline</scale-text>
+    <div slot="content">
+      <scale-text variant="h3">More info</scale-text>
+      <scale-text variant="body">Collapsibles can contain several nodes</scale-text>
+    </div>
   </scale-collapsible>
 </scale-accordion>
 ```

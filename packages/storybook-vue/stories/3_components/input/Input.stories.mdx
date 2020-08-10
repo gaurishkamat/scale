@@ -123,13 +123,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input
-  :type="text"
-  @scaleChange="handleChange"
-  @scaleBlur="handleBlur"
-  @scaleFocus="handleFocus"
-  @scaleKeyDow="handleKeyDown"
-></scale-input>
+<scale-input type="text" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDow="handleKeyDown"></scale-input>
 ```
 
 ## Placeholder
@@ -147,7 +141,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="text" :placeholder="this is the placeholder"></scale-input>
+<scale-input type="text" placeholder="this is the placeholder"></scale-input>
 ```
 
 ## Static
@@ -165,7 +159,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="text" :variant="static"></scale-input>
+<scale-input type="text" variant="static"></scale-input>
 ```
 
 ## Animated
@@ -183,7 +177,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="text" :variant="animated"></scale-input>
+<scale-input type="text" variant="animated"></scale-input>
 ```
 
 ## With Error
@@ -202,11 +196,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input
-  :type="text"
-  :helper-text="something is wrong"
-  :status="error"
-></scale-input>
+<scale-input type="text" helper-text="something is wrong" status="error"></scale-input>
 ```
 
 ## Disabled
@@ -224,7 +214,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :disabled="true"></scale-input>
+<scale-input disabled></scale-input>
 ```
 
 ## Max Length With Counter
@@ -243,7 +233,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :label="{label}" :max-length="10" :counter="true"></scale-input>
+<scale-input label={label} max-length="10" counter></scale-input>
 ```
 
 ## Checkbox
@@ -261,7 +251,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="checkbox"></scale-input>
+<scale-input type="checkbox"></scale-input>
 ```
 
 ## Checkbox With Custom Icon
@@ -280,7 +270,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="checkbox" :icon="SVG-PATH"></scale-input>
+<scale-input type="checkbox" icon="SVG-PATH"></scale-input>
 ```
 
 ## Radio
@@ -298,7 +288,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="radio"></scale-input>
+<scale-input type="radio"></scale-input>
 ```
 
 ## Radio Pre-checked
@@ -317,7 +307,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="radio" :pre-checked="true"></scale-input>
+<scale-input type="radio" pre-checked></scale-input>
 ```
 
 ## Select
@@ -335,7 +325,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="select">
+<scale-input type="select">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -359,5 +349,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input :type="textarea" :rows="3" :resize="vertical"></scale-input>
+<scale-input type="textarea" rows="3" resize="vertical"></scale-input>
 ```
