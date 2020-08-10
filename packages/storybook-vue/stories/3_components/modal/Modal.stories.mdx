@@ -134,7 +134,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" :size="small" @scaleClose="opened = false">
+<scale-modal opened="opened" size="small" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <slot><p>Hello. Welcome.</p></slot>
 </scale-modal>
@@ -157,7 +157,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" :size="large" @scaleClose="opened = false">
+<scale-modal opened="opened" size="large" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <slot><p>Hello. Welcome.</p></slot>
 </scale-modal>
@@ -180,7 +180,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal :opened="opened" @scaleClose="opened = false">
+<scale-modal opened="opened" @scaleClose="opened = false">
   <span slot="header">Header</span>
   <span slot="close">Close!</span>
   <slot><p>Hello. Welcome.</p></slot>
@@ -205,7 +205,7 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <div>
-  <scale-modal :opened="opened" @scaleClose="opened = false">
+  <scale-modal opened="opened" @scaleClose="opened = false">
     <span slot="modal-actions">
       <scale-button
         variant="secondary"

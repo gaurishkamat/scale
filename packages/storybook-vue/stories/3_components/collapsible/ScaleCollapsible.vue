@@ -1,7 +1,7 @@
 <template>
   <scale-collapsible
     :styles="styles"
-    :isExpanded="JSON.stringify(isExpanded)"
+    :is-expanded="isExpanded"
     @scaleClick="scaleClick"
     @scaleKeyDown="scaleKeyDown"
   >
@@ -18,6 +18,7 @@ export default {
     styles: { type: Object },
     isExpanded: { type: Boolean },
   },
+  // TODO make sure this is working
   methods: {
     scaleClick($event) {
       action("scaleClick");
