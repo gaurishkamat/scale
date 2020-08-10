@@ -1,0 +1,152 @@
+import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import ScaleSidebarNav from './SidebarNav.vue';
+import description from './sidebar-nav.md';
+
+<Meta
+  title='Components/Sidebar Nav'
+  component={ScaleSidebarNav}
+  argTypes={{
+    width: {
+      control: {
+        type: 'radio',
+        options: ['256px', '25rem', '100%']
+      },
+      defaultValue: '25rem',
+      description: 'Example width for wrapper element'
+    },
+    styles: {
+      control: { disable: true }
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSidebarNav },
+  props: {
+    width: { type: String },
+    ...ScaleSidebarNav.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        width: this.width
+      }
+    }
+  },
+  template: `
+    <div :style="wrapperStyles">
+      <scale-sidebar-nav
+        :styles="styles"
+      >
+        <scale-sidebar-nav-item bold>
+          <a href="#">Overview</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-collapsible label="Reference" bold>
+          <scale-sidebar-nav-collapsible label="Function A" condensed>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed is-current>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-collapsible label="Function B" condensed>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item condensed>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-collapsible label="Etcetera" bold>
+          <scale-sidebar-nav-item>
+            <a href="#">Some foo</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">More bar</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Links baz</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-item bold>
+          <a href="#">Console</a>
+        </scale-sidebar-nav-item>
+      </scale-sidebar-nav>
+    </div>
+  `
+})
+
+<Description>{description}</Description>
+
+<Preview withSource="none">
+  <Story name='Standard'>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story='Standard' />
+
+```html
+<scale-sidebar-nav aria-label="primary">
+  <scale-sidebar-nav-item bold>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" bold>
+    <scale-sidebar-nav-collapsible label="Function A" condensed>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 1</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed is-current>
+        <a href="#">Endpoint 2</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 3</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+    <scale-sidebar-nav-collapsible label="Function B" condensed>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 1</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 2</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 3</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+    <scale-sidebar-nav-collapsible label="Function C" condensed>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 1</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 2</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item condensed>
+        <a href="#">Endpoint 3</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-collapsible label="Etcetera" bold>
+    <scale-sidebar-nav-item>
+      <a href="#">Some foo</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">More bar</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">Links baz</a>
+    </scale-sidebar-nav-item>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item bold>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
