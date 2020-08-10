@@ -8,13 +8,13 @@ The `scale` library offers a set of customizable UI components written in `TypeS
 
 ![Scale badge](https://img.shields.io/badge/telekom-scale-%23e20074.svg) ![GitHub License](https://img.shields.io/github/license/telekom/scale.svg?style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/telekom/scale.svg?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/telekom/scale.svg?style=flat-square)
 
-## Scale Monorepo
+# Scale Monorepo
 
-### Setting things up
+## Setting things up
 
 This repository uses `lerna` and `typescript`
 
-#### Package overview
+### Package overview
 |Package name       |Description|
 |---                |---|
 |components         |Stencil components|
@@ -25,9 +25,9 @@ This repository uses `lerna` and `typescript`
 |nuxt-module        |Plugin to enable SSR for Nuxt apps|
 |storybook-vue      |Vue version of scale's storybook and docs|
 
-### Running locally
+## Running locally
 
-#### 1. Clone this repository to a local folder of your choice
+### 1. Clone this repository to a local folder of your choice
 
 ```bash
 cd path-to/folder-name
@@ -35,7 +35,7 @@ git clone git@github.com:telekom/scale.git
 cd scale
 ```
 
-#### 2. Install dependencies
+### 2. Install dependencies
 
 Before you install any packages, make sure you are logged into your npm account locally.
 You will also need to be part of the scaleds organization on npm.
@@ -52,28 +52,48 @@ This repository uses `yarn lerna`, for the symlinks to work correctly we use `ya
 yarn bootstrap
 ```
 
-#### 3. Build packages
+### 3. Build packages
 
 ```bash
 # build
 yarn build
 ```
 
-### Contributing
+## Contributing
 
-#### Pull requests
+### Pull requests
 
 When opening a new MR it is advised to branch off the latest `master` branch. We loosely follow the `Git flow` standards for branch naming e.g. `feat|feature`, `fix`, `chore`, `test` etc. All pull requests are then merged into `master` and released through the `CI` pipeline via the `release` branch.
 
-#### Tests
+### Tests
 
 When developing new features or components it is required to provide `unit tests` and `end to end` tests if appropriate and aim at 100% test coverage. In addition we use `screenshot tests` for components via `jest-image-snapshot`. Stencil uses `Jest` as the testing framework, please take a look at the existing components as an example or visit the official documentation:
 
 - https://stenciljs.com/docs/testing-overview
 - https://jestjs.io/
 
-#### Development Tooling
+### Development Tooling
 
 We strongly recommend you use the `VSCode text editor` since most of our code is written in `Typescript` and it offers amazing support for the language.
 
+## Package publishing (releases)
 
+Currently there's no CI in place to manage publishing packages to the `npm` registry. We need to do it manually.
+
+> Heads-up: You need either `maintainer` or `owner` rights in the GitLab repository in order to push directly to `master`.
+
+Make sure all tests pass and there are no formatting/linting errors.
+
+### Step 1
+
+- In the `master` branch, run `yarn new-version` at the root of the project. [Lerna](https://github.com/lerna/lerna/tree/master/commands/version#lernaversion) will take care of automatically bumping versions for all packages.
+- Push.
+
+### Step 2
+
+Build (`yarn build`) and publish (`npm publish`), in that order, all packages individually:
+
+- packages/components
+- packages/components-react
+- packages/components-vue
+- packages/gatsby-plugin
