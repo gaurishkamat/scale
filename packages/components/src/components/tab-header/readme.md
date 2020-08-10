@@ -7,15 +7,14 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                    | Type                                     | Default     |
-| ------------ | ------------ | ------------------------------ | ---------------------------------------- | ----------- |
-| `ariaLabel`  | `aria-label` |                                | `string`                                 | `undefined` |
-| `icon`       | `icon`       |                                | `string`                                 | `undefined` |
-| `iconSize`   | `icon-size`  |                                | `number`                                 | `16`        |
-| `identifier` | `identifier` |                                | `string`                                 | `undefined` |
-| `label`      | `label`      |                                | `string`                                 | `'Label'`   |
-| `selected`   | `selected`   |                                | `boolean`                                | `undefined` |
-| `styles`     | --           | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property   | Attribute   | Description                    | Type                                     | Default     |
+| ---------- | ----------- | ------------------------------ | ---------------------------------------- | ----------- |
+| `icon`     | `icon`      |                                | `string`                                 | `undefined` |
+| `iconOnly` | `icon-only` |                                | `boolean`                                | `undefined` |
+| `iconSize` | `icon-size` |                                | `number`                                 | `16`        |
+| `label`    | `label`     |                                | `string`                                 | `'Label'`   |
+| `selected` | `selected`  |                                | `boolean`                                | `undefined` |
+| `styles`   | --          | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 
 ## Events

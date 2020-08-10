@@ -502,11 +502,10 @@ export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
   props: {
     styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
     label: {} as PropOptions<Components.ScaleTabHeader['label']>,
-    ariaLabel: {} as PropOptions<Components.ScaleTabHeader['ariaLabel']>,
-    identifier: {} as PropOptions<Components.ScaleTabHeader['identifier']>,
     selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
     icon: {} as PropOptions<Components.ScaleTabHeader['icon']>,
     iconSize: {} as PropOptions<Components.ScaleTabHeader['iconSize']>,
+    iconOnly: {} as PropOptions<Components.ScaleTabHeader['iconOnly']>,
   },
 
 

@@ -648,10 +648,9 @@ export namespace Components {
         "textOn"?: string;
     }
     interface ScaleTabHeader {
-        "ariaLabel"?: string;
         "icon"?: string;
+        "iconOnly"?: boolean;
         "iconSize"?: number;
-        "identifier"?: string;
         "label": string;
         "selected"?: boolean;
         /**
@@ -1687,10 +1686,9 @@ declare namespace LocalJSX {
         "textOn"?: string;
     }
     interface ScaleTabHeader {
-        "ariaLabel"?: string;
         "icon"?: string;
+        "iconOnly"?: boolean;
         "iconSize"?: number;
-        "identifier"?: string;
         "label"?: string;
         "onTabclick"?: (event: CustomEvent<any>) => void;
         "selected"?: boolean;
