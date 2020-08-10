@@ -1,0 +1,79 @@
+{{#* inline "icon"}}m12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11-11-4.9-11-11 4.9-11 11-11zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zm-4.05 5.45c.3-.3.75-.3 1.05 0l3 3 3-3c.3-.3.75-.3 1.05 0s.3.75 0 1.05l-3 3 3 3c.3.3.3.75 0 1.05s-.75.3-1.05 0l-3-3-3 3c-.3.3-.75.3-1.05 0s-.3-.75 0-1.05l3-3-3-3c-.3-.3-.3-.75 0-1.05z{{/inline}}
+
+<div data-sketch-artboard="Card Interactive" class="artboard" style="width: 1810px">
+    <h1 class="title--artboard">Card Interactive</h1>
+    
+    <h2 class="title--artboard-section">Padding on</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:enabled</p>
+            <scale-card interactive>
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:hover</p>
+            <scale-card interactive data-sketch-state="hover">
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:focus</p>
+            <scale-card interactive data-sketch-state="focus">
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:active/:selected</p>
+            <scale-card interactive data-sketch-state="active">
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:disabled</p>
+            <scale-card interactive disabled="true">
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Padding off</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:enabled</p>
+            <scale-card data-no-padding interactive>
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:hover</p>
+            <scale-card data-no-padding interactive data-sketch-state="hover">
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:focus</p>
+            <scale-card data-no-padding interactive data-sketch-state="focus">
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:active/:selected</p>
+            <scale-card data-no-padding interactive data-sketch-state="active">
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:disabled</p>
+            <scale-card data-no-padding interactive disabled="true">
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+        </div>
+        <script>
+            Array.from(document.querySelectorAll('[data-no-padding]'))
+                .forEach(el => {
+                    el.styles = { card__body: { padding: 0 } }
+                })
+        </script>
+    </div>
+</div>

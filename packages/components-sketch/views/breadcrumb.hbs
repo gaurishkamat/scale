@@ -1,0 +1,87 @@
+{{#* inline "icon"}}m7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 0 1 -.1-1.05c.25-.3.75-.4 1.05-.1l10.2 8.05-10.25 8.1c-.3.25-.8.2-1.05-.15z{{/inline}}
+
+<div data-sketch-artboard="Breadcrumb" class="artboard">
+    <h1 class="title--artboard">Breadcrumb</h1>
+    
+    <h2 class="title--artboard-section">Current Page</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:available</p>
+            <scale-breadcrumb>
+                <span is-current>Current Page</span>
+            </scale-breadcrumb>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:hover</p>
+            —
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:focus</p>
+            –
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:active/:selected</p>
+            –
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:disabled</p>
+            –
+        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Previous Page</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:available</p>
+            <scale-breadcrumb>
+                <a href="#">Previous Page</a>
+            </scale-breadcrumb>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:hover</p>
+            <scale-breadcrumb data-sketch-state="hover">
+                <a href="#">Previous Page</a>
+            </scale-breadcrumb>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:focus</p>
+            <scale-breadcrumb data-sketch-state="focus">
+                <a href="#">Previous Page</a>
+            </scale-breadcrumb>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:active/:selected</p>
+            <scale-breadcrumb data-sketch-state="active">
+                <a href="#">Previous Page</a>
+            </scale-breadcrumb>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:disabled</p>
+            –
+        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Separator</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:available</p>
+            <scale-icon path="{{>icon}}"></scale-icon>
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:hover</p>
+            –
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:focus</p>
+            –
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:active/:selected</p>
+            –
+        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">:disabled</p>
+            –
+        </div>
+    </div>
+</div>
