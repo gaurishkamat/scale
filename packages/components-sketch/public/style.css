@@ -20,6 +20,11 @@ body {
     background: #fff;
 }
 
+.artboard--dark {
+    color: #fff;
+    background: #000;
+}
+
 .title--artboard {
     font-size: 48px;
     line-height: 58px;
@@ -37,6 +42,10 @@ body {
     margin-top: 0;
 }
 
+.artboard--dark .title--artboard-section {
+    border-color: #D8D8D8;
+}
+
 .title--artboard-section {
     font-size: 24px;
     line-height: 32px;
@@ -46,6 +55,7 @@ body {
 .agent-states--grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
     margin-bottom: 94px;
 }
 

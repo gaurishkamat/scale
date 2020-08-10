@@ -1,0 +1,27 @@
+<div data-sketch-artboard="Card Static" class="artboard">
+    <h1 class="title--artboard">Card Static</h1>
+    
+    <h2 class="title--artboard-section">Padding on</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:enabled</p>
+            <scale-card>
+                <img src="/placeholder.svg" alt="">
+            </scale-card>
+        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Padding off</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:enabled</p>
+            <scale-card data-no-padding>
+                <img src="/placeholder.svg" alt="" style="display: block">
+            </scale-card>
+            <script>
+                /* I couldn't find a way to do this with "theming" */
+                document.querySelector('[data-no-padding]').styles = { card__body: { padding: 0 } };
+            </script>
+        </div>
+    </div>
+</div>
