@@ -41,6 +41,6 @@ export const styles: JssStyle = {
     },
   },
   current: {
-    fontWeight: ({ typography }) => typography.fontWeightBold,
+    fontFamily: 'TeleNeoWeb-Bold',
   },
 };
