@@ -78,7 +78,8 @@ export const styles: JssStyle = {
     },
   },
   'sidebar-nav-collapsible__button--bold': {
-    fontWeight: ({ typography }) => typography.fontWeightBold,
+    // fontWeight: ({ typography }) => typography.fontWeightBold,
+    fontFamily: 'TeleNeoWeb-Bold',
   },
   // List
   'sidebar-nav-collapsible__list': {

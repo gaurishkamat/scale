@@ -14,6 +14,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-vue": "^2.0.2",
     "copy-webpack-plugin": "^6.0.3",
+    "http-server": "^0.12.3",
     "react": "^16.13.1",
     "react-is": "^16.13.1",
     "vue": "^2.6.11",
@@ -26,6 +27,8 @@
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",
-    "build": "build-storybook"
+    "build": "build-storybook -s ./public",
+    "preserve": "yarn build",
+    "serve": "http-server storybook-static"
   }
 }
