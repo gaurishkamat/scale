@@ -1,5 +1,5 @@
 describe("List", () => {
-  test.each([["standard"], ["type-circle"], ["type-decimal"], ["type-icon"]])(
+  test.each([["standard"], ["with-custom-type"], ["with-custom-icon"]])(
     "matches snapshot",
     async variant => {
       await global.page.goto(
