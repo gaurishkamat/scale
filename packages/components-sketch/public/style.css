@@ -52,6 +52,23 @@ body {
     font-family: "TeleNeoWeb-ExtraBold";
 }
 
+.agent-states--fullwidth {
+    display: block;
+    justify-content: center;
+    margin: 94px;
+}
+
+.agent-states--fullwidth.vertical {
+    display: flex;
+    justify-content: center;
+    margin: 94px;
+    min-height: 94px;
+}
+
+.agent-states--fullwidth.vertical scale-divider {
+  height: 228px;
+}
+
 .agent-states--grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
