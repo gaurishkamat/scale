@@ -1,0 +1,110 @@
+import { Meta, Story, Props, Preview, Description } from "@storybook/addon-docs/blocks";
+import ScaleCheckbox from "./ScaleCheckbox.vue";
+import description from "./checkbox.md"
+import { action } from "@storybook/addon-actions";
+export const ICON = "M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z";
+
+<Meta
+  title="Components/Checkbox"
+  component={ScaleCheckbox}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleCheckbox },
+  props: {
+    label: String,
+    ...ScaleCheckbox.props
+  },
+  template: `
+    <scale-input
+      :name="name"
+      :type="type"
+      :label="label"
+      :disabled="disabled"
+      :pre-checked="preChecked"
+      :value="value"
+      :input-id="inputId"
+      :icon="icon"
+      @scaleChange="scaleChange"
+    ></scale-input>
+  `,
+  methods: {
+    scaleChange: action("scaleChange"),
+  }
+})
+
+<Description>{description}</Description>
+
+<Preview withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: "Checkbox",
+      type: "checkbox"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story="Standard" />
+
+## Custom Icon
+
+<Preview withSource="none">
+  <Story
+    name="Custom Icon"
+    args={{
+      label: "Custom Icon",
+      type: "checkbox",
+      icon: ICON
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH"></scale-input>
+```
+
+## Pre-Checked
+
+<Preview withSource="none">
+  <Story
+    name="Pre-Checked"
+    args={{
+      label: "Pre-Checked",
+      type: "checkbox",
+      icon: ICON,
+      preChecked: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH" pre-checked></scale-input>
+```
+
+## Disabled
+
+<Preview withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: "Disabled",
+      type: "checkbox",
+      icon: ICON,
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH" disabled></scale-input>
+```

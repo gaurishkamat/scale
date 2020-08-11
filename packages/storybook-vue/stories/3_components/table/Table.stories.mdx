@@ -34,7 +34,7 @@ export const Template = (args, { argTypes }) => ({
         <thead>
           <tr>
             <th aria-sort="descending" class="title" @click="sortTable('title')">Title</th>
-            <th aria-disabled="true" class="tags" @click="sortTable('tags')">Tags</th>
+            <th aria-disabled class="tags" @click="sortTable('tags')">Tags</th>
             <th @click="sortTable('stats')" class="stats">Stats</th>
             <th @click="sortTable('time')" class="time" style="text-align: right;">Time</th>
             <th @click="sortTable('euros')" class="euros" style="text-align: right;">
@@ -264,7 +264,7 @@ Please switch to the Canvas view for a working example
         <!-- aria-sort can be descending or ascending -->
         <th aria-sort="descending" @click="sortTable('title')" id="title">Title</th>
         <!-- aria-disabled disables sorting -->
-        <th aria-disabled="true" @click="sortTable('tags')" id="tags">Tags</th>
+        <th aria-disabled @click="sortTable('tags')" id="tags">Tags</th>
         <th @click="sortTable('stats')" id="stats">Stats</th>
         <th @click="sortTable('time')" id="time">Time</th>
         <th @click="sortTable('euros')" id="euros">
