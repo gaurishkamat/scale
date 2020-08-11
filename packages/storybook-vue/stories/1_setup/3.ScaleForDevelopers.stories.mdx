@@ -1,8 +1,15 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  Description,
+} from "@storybook/addon-docs/blocks";
 
-<Meta title="Setup/Npm"/>
+<Meta title="Getting Started/Scale for Developers" />
 
 # Setting things up
+
 As stated in the Getting Started section you need to be part of the @scaleds
 organization on npm (npmjs.org) in order to be able to install and use our packages.
 
@@ -12,22 +19,26 @@ e-mail requesting an invitation. egor.kirpichev@telekom.de
 Thank you.
 
 ## Local Development
+
 For local development the only thing you need to be able to use the packages
 is to be logged in on npm via terminal.
 
 To log in please issue the following command:
+
 ```bash
 npm login
 ```
+
 and follow the prompt's instructions.
 
-If all went well, you should be able to install any @scaleds/* package.
+If all went well, you should be able to install any @scaleds/\* package.
 
 ## CI
-Regardless of what CI platform / tech / service you use, the system will also
-need to be able to access the @scaleds/* packages used in your application.
 
-For this you will need three things. 
+Regardless of what CI platform / tech / service you use, the system will also
+need to be able to access the @scaleds/\* packages used in your application.
+
+For this you will need three things.
 
 1. Be part of the @scaleds organization on npm.
 2. An authorization token issued by one of the @scalds organization's owners.
@@ -36,10 +47,11 @@ For this you will need three things.
 > INFO: This may vary depending on your CI Pipeline
 
 ### .npmrc
+
 This file is used to easily constrain a set of npm related configurations to a project.
 In this case we use it to set up the authorisation token so the system can access the packages without a particular user having to be logged in.
 
-*Example:*
+_Example:_
 
 ```bash
 # CI $ENV
@@ -64,5 +76,3 @@ registry=https://registry.npmjs.org/
 
 With this setup the system will be able to login itself to npm and gain access to the packages.
 In case you need any help, dont't hesitate in contacting us.
-
-
