@@ -77,7 +77,7 @@ body {
 }
 
 .agent-states--item {
-
+	width: fit-content;
 }
 
 .agent-states--label {
