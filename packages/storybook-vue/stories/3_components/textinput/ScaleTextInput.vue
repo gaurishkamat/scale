@@ -12,6 +12,7 @@
     :disabled="disabled"
     :required="required"
     :counter="counter"
+    :size="size"
     :value="value"
     :input-id="inputId"
     @scaleChange="scaleChange"
@@ -40,6 +41,7 @@ export default {
     disabled: { type: Boolean },
     required: { type: Boolean },
     counter: { type: Boolean },
+    size: { type: String },
     value: { type: String },
     inputId: { type: String },
     styles: { type: String }

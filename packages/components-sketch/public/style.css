@@ -86,3 +86,8 @@ body {
     font-family: "TeleNeoWeb-Bold";
     margin-bottom: 30px;
 }
+
+scale-input[type="select"] {
+  width: 198px;
+  display: block;
+}

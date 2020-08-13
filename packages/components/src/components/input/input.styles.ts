@@ -190,6 +190,9 @@ export const styles: JssStyle = {
     '& .input__input': {
       height: input.small.height,
     },
+    '& .input__select': {
+      height: input.small.height,
+    },
     '& .input__label': {
       position: 'absolute',
       pointerEvents: 'none',
