@@ -8,7 +8,7 @@ With switches, users can easily toggle between the on and off state of a setting
 
 Switches are only used for binary actions that occur immediately after the user “flips” the switch. They are commonly used for “on/off” switches.
 
-![Elements](/assets/3_components/switch/image-20200810093225678.png)
+![Image Name](/assets/3_components/switch/image-20200810093225678.png)
 
 ## Elemets
 
