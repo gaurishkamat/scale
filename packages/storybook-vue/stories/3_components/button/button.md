@@ -24,13 +24,13 @@ Each viewport should have one primary button, and any remaining calls to action 
 
 For the most important call to action on the page. Primary buttons should only appear once per screen (not including the application header or in a modal dialog). They are used for the actions most relevant to the user. The primary button must not be used for negative actions such as "delete".
 
-![Elements](/assets/3_components/button/image-20200811084641163.png)
+![Image Name](/assets/3_components/button/image-20200811084641163.png)
 
 ### Secondary
 
 The secondary button is less prominent than the call to action and used for all other actions a user might want to perform.
 
-![Elements](/assets/3_components/button/image-20200811084705104.png)
+![Image Name](/assets/3_components/button/image-20200811084705104.png)
 
 ## Variants
 
@@ -38,19 +38,19 @@ The secondary button is less prominent than the call to action and used for all 
 
 For most use cases, buttons with text provide the best guidance.
 
-![Elements](/assets/3_components/button/image-20200811084641163.png)
+![Image Name](/assets/3_components/button/image-20200811084641163.png)
 
 ### Text & Icon
 
 An icon can be added to further increase the user's recognition of the action the button will execute.
 
-![Elements](/assets/3_components/button/image-20200811084650281.png)
+![Image Name](/assets/3_components/button/image-20200811084650281.png)
 
 ### Icon Only
 
 When space is limited — e.g. in function bars or contextual interactions — buttons with only an icon can be used. Note that the icon must clearly and unambiguously describe the functionality (e.g. trash bin for "delete").
 
-![Elements](/assets/3_components/button/image-20200811084711769.png)
+![Image Name](/assets/3_components/button/image-20200811084711769.png)
 
 ## Sizes
 
@@ -58,13 +58,13 @@ When space is limited — e.g. in function bars or contextual interactions — b
 
 Use the large button as a default.
 
-![Elements](/assets/3_components/button/image-20200811084641163.png)
+![Image Name](/assets/3_components/button/image-20200811084641163.png)
 
 ### Small
 
 Use when there is not enough vertical space for the large button.
 
-![Elements](/assets/3_components/button/image-20200811084657346.png)
+![Image Name](/assets/3_components/button/image-20200811084657346.png)
 
 ## Elements
 

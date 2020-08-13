@@ -12,7 +12,7 @@ Accordions make it easy for users to get an overview of page content and expand 
 
 ## Elements
 
-![Elements](/assets/3_components/accordion/image-20200810110853155.png)
+![Image Name](/assets/3_components/accordion/image-20200810110853155.png)
 
 ### Title (1)
 

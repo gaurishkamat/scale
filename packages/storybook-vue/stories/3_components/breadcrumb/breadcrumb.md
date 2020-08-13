@@ -4,7 +4,7 @@ Breadcrumbs help users find their current position in the information architectu
 
 ## Elements
 
-![Elements](/assets/3_components/breadcrumb/image-20200812110334888.png)
+![Image Name](/assets/3_components/breadcrumb/image-20200812110334888.png)
 
 ### Current Page (1)
 
