@@ -1,0 +1,43 @@
+<div data-sketch-artboard="Accordion" class="artboard">
+    <h1 class="title--artboard">Accordion</h1>
+
+    <h2 class="title--artboard-section">Agent States</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+          <p class="agent-states--label">:available</p>
+          <scale-accordion>
+            <scale-collapsible>
+              <scale-text slot="headline" variant="collapsible">Type something 1</scale-text>
+            </scale-collapsible>
+          </scale-accordion>
+        </div>
+        <div class="agent-states--item">
+          <p class="agent-states--label">:hover</p>
+          <scale-accordion data-sketch-state="hover">
+            <scale-collapsible is-expanded>
+              <scale-text slot="headline" variant="collapsible">Type something 2</scale-text>
+            </scale-collapsible>
+          </scale-accordion>
+        </div>
+        <div class="agent-states--item">
+          <p class="agent-states--label">:focus</p>
+          <scale-accordion data-sketch-state="focus">
+            <scale-collapsible is-expanded>
+              <scale-text slot="headline" variant="collapsible">Type something 3</scale-text>
+            </scale-collapsible>
+          </scale-accordion>
+        </div>
+        <div class="agent-states--item">
+          <p class="agent-states--label">:pressed</p>
+          <scale-accordion data-sketch-state="active">
+            <scale-collapsible is-expanded>
+              <scale-text slot="headline" variant="collapsible">Type something 4</scale-text>
+            </scale-collapsible>
+          </scale-accordion>
+        </div>
+        <div class="agent-states--item">
+          <p class="agent-states--label">:disabled</p>
+          –
+        </div>
+    </div>
+</div>
