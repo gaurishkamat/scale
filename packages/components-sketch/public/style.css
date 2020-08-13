@@ -76,6 +76,14 @@ body {
     margin-bottom: 94px;
 }
 
+.agent-states--vertical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 94px;
+    align-items: center;
+}
+
 .agent-states--item {
 	width: fit-content;
 }
