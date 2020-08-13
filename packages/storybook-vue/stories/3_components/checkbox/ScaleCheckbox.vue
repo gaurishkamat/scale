@@ -6,6 +6,7 @@
     :disabled="disabled"
     :pre-checked="preChecked"
     :value="value"
+    :status="status"
     :input-id="inputId"
     :icon="icon"
     @scaleChange="scaleChange"
@@ -25,6 +26,7 @@ export default {
     disabled: { type: Boolean },
     preChecked: { type: Boolean },
     value: { type: String },
+    status: { type: String },
     inputId: { type: String },
     icon: { type: String },
     styles: { type: String }
