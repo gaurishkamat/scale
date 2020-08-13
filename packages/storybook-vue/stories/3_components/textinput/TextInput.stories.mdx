@@ -58,6 +58,7 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :required="required"
       :counter="counter"
+      :size="size"
       :value="value"
       :input-id="inputId"
       @scaleChange="scaleChange"
@@ -123,7 +124,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" placeholder="this is the placeholder"></scale-input>
+<scale-input type="text" label="Placeholder" placeholder="this is the placeholder"></scale-input>
 ```
 
 
@@ -142,7 +143,27 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" :variant="static"></scale-input>
+<scale-input type="text" label="Static" variant="static"></scale-input>
+```
+
+
+## Small
+
+<Preview withSource="none">
+  <Story
+    name="Small"
+    args={{
+      label: "Small",
+      size: 'small',
+      variant: 'animated'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="text" label="Small" size="small"></scale-input>
 ```
 
 
@@ -161,7 +182,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" variant="animated"></scale-input>
+<scale-input type="text" label="Animated" variant="animated"></scale-input>
 ```
 
 ## With Error
@@ -180,7 +201,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" helper-text="something is wrong" status="error"></scale-input>
+<scale-input type="text" label="With Error" helper-text="something is wrong" status="error"></scale-input>
 ```
 
 
@@ -199,7 +220,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input disabled></scale-input>
+<scale-input label="Disabled" disabled></scale-input>
 ```
 
 
@@ -219,5 +240,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input label={label} max-length="10" counter></scale-input>
+<scale-input label="Max Length With Counter" max-length="10" counter></scale-input>
 ```

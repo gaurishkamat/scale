@@ -7,7 +7,9 @@
     :helper-text="helperText"
     :status="status"
     :disabled="disabled"
+    :placeholder="placeholder"
     :required="required"
+    :size="size"
     :value="value"
     :input-id="inputId"
     :visible-size="visibleSize"
@@ -31,8 +33,10 @@ export default {
     label: { type: String },
     helperText: { type: String },
     status: { type: String },
+    placeholder: { type: Boolean },
     disabled: { type: Boolean },
     required: { type: Boolean },
+    size: { type: String },
     value: { type: String },
     inputId: { type: String },
     visibleSize: { type: Number },
