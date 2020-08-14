@@ -1,0 +1,99 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Description,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import {
+  mainNavigation,
+  iconNavigation,
+  addonNavigation,
+  sectorNavigation
+} from './fixtures'
+import AppShell from './AppShell.vue';
+import description from './brand-header.md';
+
+<Meta
+  title='Components/BrandHeader'
+  component={AppShell}
+  argTypes={{
+    mainNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'JSON.stringified array'
+    },
+    iconNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'JSON.stringified array'
+    },
+    sectorNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'JSON.stringified array'
+    },
+    addonNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'JSON.stringified array'
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { AppShell },
+  props: AppShell.props,
+  template: `
+    <div style="margin: -1rem;">
+      <scale-app-shell
+        :main-navigation="mainNavigation"
+        :icon-navigation="iconNavigation"
+        :sector-navigation="sectorNavigation"
+        :addon-navigation="addonNavigation"
+        :custom-class="customClass"
+      >
+        <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+        <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+      </scale-app-shell>
+    </div>
+  `
+})
+
+<Description>{description}</Description>
+
+<Canvas withSource="none">
+  <Story
+    name='Standard'
+    inline={false}
+    height={500}
+    args={{
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story='Standard' />
+
+
+```html
+<scale-app-shell
+  :main-navigation="mainNavigation"
+  :icon-navigation="iconNavigation"
+  :sector-navigation="sectorNavigation"
+  :addon-navigation="addonNavigation"
+  :custom-class="customClass"
+>
+  <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+  <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+</scale-app-shell>
+```

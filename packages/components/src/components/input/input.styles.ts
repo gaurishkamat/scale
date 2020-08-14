@@ -190,6 +190,9 @@ export const styles: JssStyle = {
     '& .input__input': {
       height: input.small.height,
     },
+    '& .input__select': {
+      height: input.small.height,
+    },
     '& .input__label': {
       position: 'absolute',
       pointerEvents: 'none',
@@ -238,10 +241,12 @@ export const styles: JssStyle = {
         position: 'absolute',
       },
       '& .input__checkbox-placeholder': {
+        boxSizing: 'border-box',
         height: checkBox.height,
         width: checkBox.height,
         border: '1px solid #cecece',
         margin: checkBox.margin,
+        marginLeft: 4,
         borderRadius: 4,
       },
     },

@@ -76,8 +76,16 @@ body {
     margin-bottom: 94px;
 }
 
-.agent-states--item {
+.agent-states--vertical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 94px;
+    align-items: center;
+}
 
+.agent-states--item {
+	width: fit-content;
 }
 
 .agent-states--label {
@@ -85,4 +93,15 @@ body {
     line-height: 16px;
     font-family: "TeleNeoWeb-Bold";
     margin-bottom: 30px;
+}
+
+scale-input[type="select"] {
+  width: 198px;
+  display: block;
+}
+
+.switch-wrapper {
+  display: flex;
+  min-width: 96px;
+  justify-content: space-between;
 }

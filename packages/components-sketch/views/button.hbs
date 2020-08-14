@@ -4,7 +4,7 @@
     <h1 class="title--artboard">Button Large</h1>
     
     <h2 class="title--artboard-section">Primary – Text Only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Text only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary">Primary Btn</scale-button>
@@ -28,7 +28,7 @@
     </div>
     
     <h2 class="title--artboard-section">Primary – Icon + Text</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon + Text">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary" icon-before="{{>icon}}">Primary Btn</scale-button>
@@ -52,7 +52,7 @@
     </div>
     
     <h2 class="title--artboard-section">Primary – Icon only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary" icon="{{>icon}}">Primary Btn</scale-button>
@@ -76,7 +76,7 @@
     </div>
 
     <h2 class="title--artboard-section">Secondary – Text Only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Text only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary">Secondary Btn</scale-button>
@@ -100,7 +100,7 @@
     </div>
 
     <h2 class="title--artboard-section">Secondary – Icon + Text</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon + Text">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary" icon-before="{{>icon}}">Secondary Btn</scale-button>
@@ -124,7 +124,7 @@
     </div>
     
     <h2 class="title--artboard-section">Secondary – Icon only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary" icon="{{>icon}}">Secondary Btn</scale-button>
@@ -152,7 +152,7 @@
     <h1 class="title--artboard">Button Small</h1>
     
     <h2 class="title--artboard-section">Primary – Text Only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Text only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary" size="small">Primary Btn</scale-button>
@@ -176,7 +176,7 @@
     </div>
     
     <h2 class="title--artboard-section">Primary – Icon + Text</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon + Text">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary" size="small" icon-before="{{>icon}}">Primary Btn</scale-button>
@@ -200,7 +200,7 @@
     </div>
     
     <h2 class="title--artboard-section">Primary – Icon only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="primary" size="small" icon="{{>icon}}">Primary Btn</scale-button>
@@ -224,7 +224,7 @@
     </div>
 
     <h2 class="title--artboard-section">Secondary – Text Only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Text only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary" size="small">Secondary Btn</scale-button>
@@ -248,7 +248,7 @@
     </div>
 
     <h2 class="title--artboard-section">Secondary – Icon + Text</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon + Text">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary" size="small" icon-size="16" icon-before="{{>icon}}">Secondary Btn</scale-button>
@@ -272,7 +272,7 @@
     </div>
     
     <h2 class="title--artboard-section">Secondary – Icon only</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Icon only">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-button variant="secondary" size="small" icon-size="16" icon="{{>icon}}">Secondary Btn</scale-button>
@@ -294,4 +294,55 @@
             <scale-button variant="secondary" size="small" icon-size="16" icon="{{>icon}}" disabled="true">Secondary Btn</scale-button>
         </div>
     </div>
+
 </div>
+
+<script>
+	function getCategoryName(btn) {
+		while (btn && (!btn.dataset || !btn.dataset.category)) {
+			btn = btn.parentNode;
+		}
+		return (btn && btn.dataset && btn.dataset.category) || "Default";
+	}
+
+	function capitalize(s) {
+		return s.slice(0,1).toUpperCase() + s.slice(1);
+	}
+
+	const orderings = {};
+	function order(category, title) {
+		if (!orderings[category]) orderings[category] = [];
+		if (orderings[category].indexOf(title) === -1) orderings[category].push(title);
+		return (orderings[category].indexOf(title) + 1).toString().padStart(2, '0') + ' ' + title;
+	}
+
+	function getStateName(btn) {
+		if (btn.getAttribute("disabled") == "true") {
+			return "Disabled";
+		} else if (btn.dataset.sketchState) {
+			return capitalize(btn.dataset.sketchState);
+		} else {
+			return "Available";
+		}
+	}
+
+	function getSizeName(btn) {
+		if (btn.getAttribute("size") === "small") {
+			return "Small";
+		} else {
+			return "Large";
+		}
+	}
+
+	[].forEach.call(document.querySelectorAll("scale-button"), function(btn) {
+		btn.dataset.sketchSymbol = `Button / ${
+				order(1, getSizeName(btn))
+			} / ${
+				order(2, capitalize(btn.getAttribute("variant")))
+			} / ${
+				order(3, getCategoryName(btn))
+			} / ${
+				order(4, getStateName(btn))
+			}`;
+	});
+</script>

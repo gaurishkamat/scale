@@ -24,6 +24,7 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :pre-checked="preChecked"
       :value="value"
+      :status="status"
       :input-id="inputId"
       :icon="icon"
       @scaleChange="scaleChange"
@@ -107,4 +108,24 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-input type="checkbox" icon="SVG-PATH" disabled></scale-input>
+```
+
+## Error
+
+<Preview withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: "Error",
+      type: "checkbox",
+      icon: ICON,
+      status: "error"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH" status="error"></scale-input>
 ```

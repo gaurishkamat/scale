@@ -20,4 +20,8 @@ extraStyles.innerHTML = `
   .sidebar-header {
     max-width: 9.5rem;
   }
+  iframe#storybook-preview-iframe {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 `;

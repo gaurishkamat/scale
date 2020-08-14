@@ -73,11 +73,11 @@ export namespace Components {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "customClass"?: string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
-        "sectorNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
+        "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -1099,11 +1099,11 @@ declare namespace LocalJSX {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "customClass"?: string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
-        "sectorNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
+        "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;

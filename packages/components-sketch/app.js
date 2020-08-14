@@ -18,12 +18,7 @@ app.get('/', (req, res) => {
 
 app.get('/:component', (req, res) => {
     try {
-        res.render(req.params.component, {}, (error) => {
-            if (error) {
-                return res.render('error', {error: error.message} )
-            }
-            return res.render(req.params.component)
-        })
+        res.render(req.params.component, { title: req.params.component.replace(/^./, c => c.toUpperCase()) });
     } catch (error) {
         res.render('error', {error: error.message} );
     }

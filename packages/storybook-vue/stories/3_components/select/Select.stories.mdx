@@ -26,6 +26,8 @@ export const Template = (args, { argTypes }) => ({
       :status="status"
       :disabled="disabled"
       :required="required"
+      :placeholder="placeholder"
+      :size="size"
       :value="value"
       :input-id="inputId"
       :visible-size="visibleSize"
@@ -34,9 +36,13 @@ export const Template = (args, { argTypes }) => ({
       @scaleBlur="scaleBlur"
       @scaleKeyDown="scaleKeyDown"
     >
-      <option value="1">item 1</option>
-      <option value="2" selected>item 2</option>
-      <option value="3">item 3</option>
+      <option value="A">Category 1</option>
+      <optgroup label="Category Group">
+        <option value="A">Category 2</option>
+      </optgroup>
+      <optgroup label="Category Group 2">
+        <option value="A">Category 3</option>
+      </optgroup>
     </scale-input>
   `,
   methods: {
@@ -64,7 +70,34 @@ export const Template = (args, { argTypes }) => ({
 <Props story='Standard' />
 
 ```html
-<scale-input type="select">
+<scale-input type="select" label="select">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-input>
+```
+
+
+## Small
+
+<Preview withSource="none">
+  <Story
+    name='Small'
+    args={{
+      label: 'Small',
+      type: 'select',
+      size: 'small',
+      variant: 'animated',
+      placeholder: 'Small'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+
+```html
+<scale-input type="select" label="Small" size="small" variant="animated" placeholder="Small" disabled>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -89,7 +122,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input type="select" disabled>
+<scale-input type="select" label="Disabled" disabled>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -115,7 +148,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input type="select" status="error" helper-text="Something went wrong...">
+<scale-input type="select" label="Error" status="error" helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>

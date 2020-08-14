@@ -129,7 +129,23 @@
       },
       "attributes": [
         {
+          "name": "addon-navigation",
+          "description": ""
+        },
+        {
           "name": "custom-class",
+          "description": ""
+        },
+        {
+          "name": "icon-navigation",
+          "description": ""
+        },
+        {
+          "name": "main-navigation",
+          "description": ""
+        },
+        {
+          "name": "sector-navigation",
           "description": ""
         }
       ]
