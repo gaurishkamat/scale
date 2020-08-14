@@ -1,8 +1,15 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
-import ScaleList from './ScaleList.vue';
-import ScaleListItem from './ScaleListItem.vue';
-import description from './list.md';
-const ICON = "M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z";
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import ScaleList from "./ScaleList.vue";
+import ScaleListItem from "./ScaleListItem.vue";
+import description from "./list.md";
+const ICON =
+  "M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z";
 
 <Meta
   title="Components/List"
@@ -10,22 +17,22 @@ const ICON = "M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 
   subcomponents={{ ScaleListItem }}
   argTypes={{
     variant: {
-      control: { type: 'radio', options: ['unordered', 'ordered'] }
+      control: { type: "radio", options: ["unordered", "ordered"] },
     },
     styles: {
-      control: { disable: true }
-    }
+      control: { disable: true },
+    },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleList },
   props: {
-      label: String,
-      icon: String,
-      iconSize: Number,
-      type: String,
-      ...ScaleList.props
+    label: String,
+    icon: String,
+    iconSize: Number,
+    type: String,
+    ...ScaleList.props,
   },
   template: `
     <scale-list :variant="variant">
@@ -33,21 +40,18 @@ export const Template = (args, { argTypes }) => ({
       <scale-list-item :type="type" :icon="icon" :icon-size="iconSize">Zwei</scale-list-item>
       <scale-list-item :type="type" :icon="icon" :icon-size="iconSize">Drei</scale-list-item>
     </scale-list>
-  `
-})
+  `,
+});
 
 <Description>{description}</Description>
 
 <Preview withSource="none">
-  <Story
-    name="Standard"
-    args={{ variant: 'unordered' }}
-  >
+  <Story name="Standard" args={{ variant: "unordered" }}>
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props story="Standard"/>
+<Props story="Standard" />
 
 ```html
 <scale-list variant="unordered">
@@ -63,7 +67,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="With Custom Type"
     args={{
-      type: 'lower-roman'
+      type: "lower-roman",
     }}
   >
     {Template.bind({})}
@@ -85,7 +89,7 @@ export const Template = (args, { argTypes }) => ({
     name="With Custom Icon"
     args={{
       icon: ICON,
-      iconSize: 16
+      iconSize: 16,
     }}
   >
     {Template.bind({})}

@@ -5,6 +5,7 @@ import {
   Preview,
   Description,
 } from "@storybook/addon-docs/blocks";
+import LinkTo from "@storybook/addon-links/react";
 
 <Meta title="Getting Started/Scale for Developers" />
 
@@ -19,15 +20,16 @@ Adopting the Scale design system enables developers to use consistent markup, st
 This repository uses `lerna` and `typescript`
 
 ### Package Overview
-|Package Name       |Description|
-|---                |---|
-|components         |Stencil components|
-|components-react   |Component proxies for React (auto-generated)|
-|components-vue     |Component proxies for Vue|
-|config             |Shared configuration across packages|
-|gatsby-plugin      |Plugin to enable SSR for Gatsby apps|
-|nuxt-module        |Plugin to enable SSR for Nuxt apps|
-|storybook-vue      |Vue version of scale's storybook and docs|
+
+| Package Name     | Description                                  |
+| ---------------- | -------------------------------------------- |
+| components       | Stencil components                           |
+| components-react | Component proxies for React (auto-generated) |
+| components-vue   | Component proxies for Vue                    |
+| config           | Shared configuration across packages         |
+| gatsby-plugin    | Plugin to enable SSR for Gatsby apps         |
+| nuxt-module      | Plugin to enable SSR for Nuxt apps           |
+| storybook-vue    | Vue version of scale's storybook and docs    |
 
 ## Running Locally
 
@@ -44,6 +46,7 @@ cd scale
 Before you install any packages, make sure you are logged into your npm account locally. You will also need to be part of the scaleds organization on npm. (If you need an invitation please send an email to Egor egor.kirpichev@telekom.de.)
 
 To login to npm use the following command and follow the instructions:
+
 ```
 npm login
 ```
@@ -85,7 +88,7 @@ If all went well, you should be able to install any @scaleds/\* package into you
 
 ## CI
 
-RRegardless of what CI platform / tech / service you use, the system must be able to access the @scaleds/* packages used in your application.
+RRegardless of what CI platform / tech / service you use, the system must be able to access the @scaleds/\* packages used in your application.
 
 Therefore, you will need the following three things:
 
