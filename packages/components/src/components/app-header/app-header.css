@@ -20,6 +20,7 @@
   align-items: center;
 }
 .header .header__nav {
+  box-sizing: border-box;
   color: #333;
   display: flex;
   background: #fff;
