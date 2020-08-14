@@ -2,8 +2,14 @@ import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
 import { CssClassMap } from '../../utils/utils';
 
-const levelEnhancer = (data, i = 0) =>
-  data.reduce((previous, current) => {
+const levelEnhancer = (data, i = 0) => {
+  let parsedData;
+  try {
+    parsedData = JSON.parse(data);
+  } catch (error) {
+    parsedData = data;
+  }
+  return parsedData.reduce((previous, current) => {
     // console.log('reducing');
     const reducer = (prev, curr, level) => [...prev, { ...curr, level }];
     if (current.children) {
@@ -15,6 +21,7 @@ const levelEnhancer = (data, i = 0) =>
     }
     return reducer(previous, current, i + 1);
   }, []);
+};
 
 @Component({
   tag: 'scale-app-shell',
@@ -22,10 +29,10 @@ const levelEnhancer = (data, i = 0) =>
   shadow: true,
 })
 export class Shell {
-  @Prop() mainNavigation?: any[] = [];
-  @Prop() iconNavigation?: any[] = [];
-  @Prop() sectorNavigation?: any[] = [];
-  @Prop() addonNavigation?: any[] = [];
+  @Prop() mainNavigation?: any = [];
+  @Prop() iconNavigation?: any = [];
+  @Prop() sectorNavigation?: any = [];
+  @Prop() addonNavigation?: any = [];
   @Prop() customClass?: string = '';
   @State() scrolled: boolean = false;
 
