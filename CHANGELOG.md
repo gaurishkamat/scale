@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.3.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* add missing image ([63585a3](https://gitlab.com/scale-ds/scale-telekom/commit/63585a3b56df5453865fec0e8a0e639665306647))
+* **storybook-vue:** polish snippets ([bd40c44](https://gitlab.com/scale-ds/scale-telekom/commit/bd40c440cd750957c92f7ab6a2025bce509efa74))
+* remove build:prod script in package.json ([fd18384](https://gitlab.com/scale-ds/scale-telekom/commit/fd18384e16bd06db607d37eb4e3358c5c58d84b5))
+* **components:** styles for current state in breadcrumb component ([d23dedf](https://gitlab.com/scale-ds/scale-telekom/commit/d23dedf9dff9a645d5bd59866b68184f2f635a9d))
+* **storybook-vue:** remove "show code" button via withSource prop in Preview ([4c2c598](https://gitlab.com/scale-ds/scale-telekom/commit/4c2c5988378aa739feee61408a92d1c383288acd))
+* button story names ([6184069](https://gitlab.com/scale-ds/scale-telekom/commit/61840690b96e89420a888033d41099be261d8443))
+
+
+### Features
+
+* add sidebar-nav stories, fix bold styles in component ([f603c4d](https://gitlab.com/scale-ds/scale-telekom/commit/f603c4d363c1ff3dcd62f420b95ec0b50e6b69ca))
+* add textarea sketch examples ([be6f0ef](https://gitlab.com/scale-ds/scale-telekom/commit/be6f0efdb062bbbeb28bdfde2072674068861108))
+* adds stories for Tab-navigation: default, with icon, icon only; minor style fixes in tab header ([bada7d5](https://gitlab.com/scale-ds/scale-telekom/commit/bada7d5511a1e581b24aa750739570bf436a4942))
+* divider sketch export ([c9d10a2](https://gitlab.com/scale-ds/scale-telekom/commit/c9d10a2b5e2a958275b97adc4c9c19a0b57934bc))
+* radio sketch ([8df541a](https://gitlab.com/scale-ds/scale-telekom/commit/8df541adf089993c4d29f56012c49c39f5619e6d))
+* sketch accordion ([abe09ec](https://gitlab.com/scale-ds/scale-telekom/commit/abe09ecc16b1ec59b5f56e23a8ce801c85eb2bef))
+* sketch lists ([c34098d](https://gitlab.com/scale-ds/scale-telekom/commit/c34098db1ac1171484f9e834d9363a77b0941727))
+* slider sketch templates ([53879d1](https://gitlab.com/scale-ds/scale-telekom/commit/53879d1ed8a8e85ae028d5c3901382a999d2b959))
+* split input stories ([0543572](https://gitlab.com/scale-ds/scale-telekom/commit/0543572fb9bf86e6e66ccba98ab36ef5e0abb72e))
+* **components-sketch:** add components layouts ([0e996a7](https://gitlab.com/scale-ds/scale-telekom/commit/0e996a7797ba2a92e593944b7c5a2e34c8e2db99))
+* **storybook-vue:** create custom theme ([567a97c](https://gitlab.com/scale-ds/scale-telekom/commit/567a97c79afc5170a1cee2d2746a49492a23d4b1))
+* stories for icon and improved inline docs ([f66335f](https://gitlab.com/scale-ds/scale-telekom/commit/f66335fc2c759155699a677e3f35e74996ccb53b))
+
+
+
+
+
 # [1.2.0](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.13...v1.2.0) (2020-07-29)
 
 

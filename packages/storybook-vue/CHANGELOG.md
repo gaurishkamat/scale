@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.3.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* add missing image ([63585a3](https://gitlab.com/scale-ds/scale-telekom/commit/63585a3b56df5453865fec0e8a0e639665306647))
+* **storybook-vue:** polish snippets ([bd40c44](https://gitlab.com/scale-ds/scale-telekom/commit/bd40c440cd750957c92f7ab6a2025bce509efa74))
+* remove build:prod script in package.json ([fd18384](https://gitlab.com/scale-ds/scale-telekom/commit/fd18384e16bd06db607d37eb4e3358c5c58d84b5))
+* **storybook-vue:** remove "show code" button via withSource prop in Preview ([4c2c598](https://gitlab.com/scale-ds/scale-telekom/commit/4c2c5988378aa739feee61408a92d1c383288acd))
+* button story names ([6184069](https://gitlab.com/scale-ds/scale-telekom/commit/61840690b96e89420a888033d41099be261d8443))
+
+
+### Features
+
+* add sidebar-nav stories, fix bold styles in component ([f603c4d](https://gitlab.com/scale-ds/scale-telekom/commit/f603c4d363c1ff3dcd62f420b95ec0b50e6b69ca))
+* adds stories for Tab-navigation: default, with icon, icon only; minor style fixes in tab header ([bada7d5](https://gitlab.com/scale-ds/scale-telekom/commit/bada7d5511a1e581b24aa750739570bf436a4942))
+* split input stories ([0543572](https://gitlab.com/scale-ds/scale-telekom/commit/0543572fb9bf86e6e66ccba98ab36ef5e0abb72e))
+* **storybook-vue:** create custom theme ([567a97c](https://gitlab.com/scale-ds/scale-telekom/commit/567a97c79afc5170a1cee2d2746a49492a23d4b1))
+* stories for icon and improved inline docs ([f66335f](https://gitlab.com/scale-ds/scale-telekom/commit/f66335fc2c759155699a677e3f35e74996ccb53b))
+
+
+
+
+
 # [1.2.0](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.13...v1.2.0) (2020-07-29)
 
 
