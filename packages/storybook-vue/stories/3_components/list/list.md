@@ -28,7 +28,7 @@ Use definition lists to display terms along with their definition.
 
 ![Image Name](/assets/3_components/text-list/image-20200807134929248.png)
 
-## Related Components
+## Code
 
 
 

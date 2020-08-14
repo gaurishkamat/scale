@@ -18,7 +18,7 @@ These are links that point to the respective page.
 
 This element visually separates the individual pages.
 
-## Related Components
+## Code
 
 
 

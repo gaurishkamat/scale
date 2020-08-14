@@ -47,3 +47,5 @@ The card component intentionally gives you flexibility to develop your headers, 
 ## Related Components
 
 Divider, Data Table
+
+## Code

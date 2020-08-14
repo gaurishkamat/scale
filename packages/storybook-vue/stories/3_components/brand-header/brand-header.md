@@ -91,5 +91,5 @@ All mobile navigation sits inside a "menu" drawer and contains all elements from
 
 Blue categories display the unterlying navigation hierarchy, but never link to a page. A clear division between the functions "category" and "link" enables consistent behavior throughout all responsive breakpoints and keeps navigation consistent for the user at all times.
 
-## Related Components
+## Code
 

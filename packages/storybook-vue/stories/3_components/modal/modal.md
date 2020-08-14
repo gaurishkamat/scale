@@ -61,3 +61,5 @@ Select the modal size that best fits your use case and amount of content.
 ## Related Components
 
 Alertbox, Global Notification
+
+## Code
