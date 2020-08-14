@@ -79,6 +79,16 @@
     url("fonts/TeleNeoWeb-ThinItalic.woff2") format("woff2");
 }
 
+p,
+h1,
+h2,
+li {
+  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+}
+
 a {
-  color: red;
+  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  color: #00a6f0 !important;
 }
