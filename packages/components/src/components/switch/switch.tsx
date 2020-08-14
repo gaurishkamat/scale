@@ -47,7 +47,11 @@ export class Switch implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()} onClick={this.toggleSwitch} tabindex="0">
+        <div
+          class={this.getCssClassMap()}
+          onClick={this.toggleSwitch}
+          tabindex="0"
+        >
           {this.active && (!!this.iconOn || !!this.textOn) && (
             <span class="switch--on">
               {!!this.iconOn && (
