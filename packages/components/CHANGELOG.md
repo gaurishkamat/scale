@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.3.0...v1.4.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* collapsible styles ([98c70e1](https://gitlab.com/scale-ds/scale-telekom/commit/98c70e11456b7dd5d9190ed2572ca48526efc6b6))
+
+
+
+
+
 # [1.3.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.3.0) (2020-08-14)
 
 

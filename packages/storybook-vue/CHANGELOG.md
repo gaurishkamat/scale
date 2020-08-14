@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.3.0...v1.4.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* Typescale adjusted ([a8c2204](https://gitlab.com/scale-ds/scale-telekom/commit/a8c2204a6e3a0eb4b142cd9820204690fe8a4886))
+
+
+### Features
+
+* add images; upgrade storybook ([4dc5d6e](https://gitlab.com/scale-ds/scale-telekom/commit/4dc5d6e411fcefd097d52bf81d243a9a5f0e3cfa))
+* adds internal links ([b82deda](https://gitlab.com/scale-ds/scale-telekom/commit/b82dedaffc37be41b89a48652e4f7a6ebafe91de))
+* adds new structure and contents; Pictures are missing ([42abb84](https://gitlab.com/scale-ds/scale-telekom/commit/42abb8485b759d0d3c788e9eea2828e67c5a40c4))
+* implements font styles for documentation texts ([66846d7](https://gitlab.com/scale-ds/scale-telekom/commit/66846d7c07b627b3d8116b7eca8bf68272e6a158))
+
+
+
+
+
 # [1.3.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.3.0) (2020-08-14)
 
 
