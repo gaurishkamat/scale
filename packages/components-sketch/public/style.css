@@ -99,3 +99,9 @@ scale-input[type="select"] {
   width: 198px;
   display: block;
 }
+
+.switch-wrapper {
+  display: flex;
+  min-width: 96px;
+  justify-content: space-between;
+}
