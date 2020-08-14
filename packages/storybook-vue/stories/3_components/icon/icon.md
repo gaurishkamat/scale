@@ -46,4 +46,4 @@ An icon must always have a description so that it can be read out by screen read
 
 ![Image Name](/assets/3_components/icon/image-20200810101102823.png)
 
-## Related Components
+## Code

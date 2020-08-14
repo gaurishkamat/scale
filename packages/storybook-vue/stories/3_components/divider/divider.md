@@ -26,4 +26,4 @@ Dividers should only be used if separating elements through white space is not e
 
 Use dividers sparingly, to create groupings rather than separate items.
 
-## Related Components
+## Code

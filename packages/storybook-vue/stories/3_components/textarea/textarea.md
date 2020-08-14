@@ -45,3 +45,5 @@ With this element, the user can adjust the size of the text field to make the en
 ## Related Components
 
 Input Field
+
+## Code

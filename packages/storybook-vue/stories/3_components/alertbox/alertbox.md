@@ -73,4 +73,4 @@ Due to poor legibility, use the small size in exceptional cases only.
 
 The content can consist of almost all types of elements e.g. links, pictures. However, keep complexity limited in order to ensure good comprehensibility.
 
-## Related Components
+## Code

@@ -20,3 +20,5 @@ Clearly label the switch so users know what setting they are manipulating e.g. "
 
 Checkbox, Select Box, Radio Button
 
+## Code
+

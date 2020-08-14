@@ -51,4 +51,4 @@ Choose the size according to the body copy you are using.
 
 ![Image Name](/assets/3_components/links/image-20200810095443120.png)
 
-## Related Components
+## Code
