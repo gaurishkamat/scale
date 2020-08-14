@@ -196,7 +196,7 @@ export namespace Components {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "tag"?: string;
     }
     interface ScaleDivider {
@@ -1214,7 +1214,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Injected jss styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: any;
         "tag"?: string;
     }
     interface ScaleDivider {
