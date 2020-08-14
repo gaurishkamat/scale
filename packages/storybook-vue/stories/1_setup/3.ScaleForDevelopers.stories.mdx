@@ -9,16 +9,17 @@ import {
 <Meta title="Getting Started/Scale for Developers" />
 
 ![Scale for Developers](/assets/1_setup/3_scale-for-developers/Scale-for-developers.png)
-Scale provides front-end developers & engineers a collection of reusable web components to build websites and user interfaces in major frontend frameworks like Vue, React, Angular and HTML.
 
-Adopting the Scale design system enables developers to use consistent markup, styles, and behavior in prototype and production work.
+Scale provides frontend developers and engineers with a collection of reusable web components to build websites and user interfaces in major frontend frameworks like Vue, React, Angular and HTML.
 
-## Setting things up
+Adopting the Scale design system enables developers to use consistent markup, styles and behavior in prototype and production work.
+
+## Setting Things Up
 
 This repository uses `lerna` and `typescript`
 
-### Package overview
-|Package name       |Description|
+### Package Overview
+|Package Name       |Description|
 |---                |---|
 |components         |Stencil components|
 |components-react   |Component proxies for React (auto-generated)|
@@ -28,9 +29,9 @@ This repository uses `lerna` and `typescript`
 |nuxt-module        |Plugin to enable SSR for Nuxt apps|
 |storybook-vue      |Vue version of scale's storybook and docs|
 
-## Running locally
+## Running Locally
 
-### 1. Clone this repository to a local folder of your choice
+### 1. Clone This Repository to a Local Folder of Your Choice
 
 ```bash
 cd path-to/folder-name
@@ -38,13 +39,11 @@ git clone git@github.com:telekom/scale.git
 cd scale
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
-Before you install any packages, make sure you are logged into your npm account locally.
-You will also need to be part of the scaleds organization on npm.
-(if you need an invitation please send an email to Egor egor.kirpichev@telekom.de)
+Before you install any packages, make sure you are logged into your npm account locally. You will also need to be part of the scaleds organization on npm. (If you need an invitation please send an email to Egor egor.kirpichev@telekom.de.)
 
-To login to npm use the following command and follow the instructions.
+To login to npm use the following command and follow the instructions:
 ```
 npm login
 ```
@@ -55,7 +54,7 @@ This repository uses `yarn lerna`, for the symlinks to work correctly we use `ya
 yarn bootstrap
 ```
 
-### 3. Build packages
+### 3. Build Packages
 
 ```bash
 # build
@@ -64,17 +63,15 @@ yarn build
 
 ## NPM Registry
 
-As stated above you need to be part of the @scaleds
-organization on npm (npmjs.org) in order to be able to install and use our packages.
+As stated above, you need to be part of the @scaleds organization on npm (npmjs.org) in order to be able to install and use our packages.
 
-If you are not part of the @scaleds organization on npm, please send Egor an
-e-mail requesting an invitation. egor.kirpichev@telekom.de
+If you are not yet part of if, please send Egor an e-mail requesting an invitation. egor.kirpichev@telekom.de
 
 Thank you.
 
 ## App Development
 
-For App development using the Scale components, the only thing you need is to be logged in on npm via the terminal.
+When using the Scale components for app development, the only thing you need is to be logged in on npm via the terminal.
 
 To log in please issue the following command:
 
@@ -88,10 +85,9 @@ If all went well, you should be able to install any @scaleds/\* package into you
 
 ## CI
 
-Regardless of what CI platform / tech / service you use, the system will also
-need to be able to access the @scaleds/\* packages used in your application.
+RRegardless of what CI platform / tech / service you use, the system must be able to access the @scaleds/* packages used in your application.
 
-For this you will need three things.
+Therefore, you will need the following three things:
 
 1. Be part of the @scaleds organization on npm.
 2. An authorization token issued by one of the @scalds organization's owners.
@@ -101,8 +97,7 @@ For this you will need three things.
 
 ### .npmrc
 
-This file is used to easily constrain a set of npm related configurations to a project.
-In this case we use it to set up the authorisation token so the system can access the packages without a particular user having to be logged in.
+This file is used to easily constrain a set of npm-related configurations to a project. In this case, we use it to set up the authorization token so the system can access the packages without requiring a particular user to be logged in.
 
 _Example:_
 
@@ -127,5 +122,4 @@ registry=https://registry.npmjs.org/
 
 > WARNING: The use of an ENV variable is indispensable since you don't want any sensitive information stored inside the .npmrc file which could be accidentally pushed to the repository for others to see!
 
-With this setup the system will be able to login itself to npm and gain access to the packages.
-In case you need any help, dont't hesitate in contacting us.
+With this setup the system will be able to login itself to npm and gain access to the packages. In case you need any help, do not hesitate to contact us.
