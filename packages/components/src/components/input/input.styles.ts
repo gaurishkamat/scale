@@ -61,7 +61,7 @@ export const styles: JssStyle = {
       display: 'flex',
       width: '100%',
       borderRadius: 4,
-      border: '1px solid #cecece',
+      border: '1px solid #000',
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
       fontSize: 16,
       fontFamily: 'inherit',
@@ -76,7 +76,7 @@ export const styles: JssStyle = {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
       fontSize: 16,
       borderRadius: 4,
-      border: '1px solid #cecece',
+      border: '1px solid #000',
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
@@ -91,7 +91,7 @@ export const styles: JssStyle = {
       position: 'relative',
       '& scale-icon': {
         position: 'absolute',
-        right: 0,
+        right: 12,
         top: '50%',
         transform: 'translateY(-50%)',
       },
@@ -253,7 +253,7 @@ export const styles: JssStyle = {
     '&:not($input--disabled)': {
       '& .input__checkbox-container': {
         '& .input__checkbox-placeholder': {
-          border: '1px solid #cecece',
+          border: '1px solid #000',
           backgroundColor: '#ffffff',
         },
         '&:hover': {
@@ -321,7 +321,7 @@ export const styles: JssStyle = {
       height: 16,
       width: 16,
       backgroundColor: '#ffffff',
-      border: '1px solid #cecece',
+      border: '1px solid #000',
       borderRadius: '50%',
       marginRight: 10,
       '&:checked, &:focus': {
