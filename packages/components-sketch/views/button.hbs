@@ -297,52 +297,17 @@
 
 </div>
 
+<script src="/symbol_names.js"></script>
 <script>
-	function getCategoryName(btn) {
-		while (btn && (!btn.dataset || !btn.dataset.category)) {
-			btn = btn.parentNode;
-		}
-		return (btn && btn.dataset && btn.dataset.category) || "Default";
-	}
-
-	function capitalize(s) {
-		return s.slice(0,1).toUpperCase() + s.slice(1);
-	}
-
-	const orderings = {};
-	function order(category, title) {
-		if (!orderings[category]) orderings[category] = [];
-		if (orderings[category].indexOf(title) === -1) orderings[category].push(title);
-		return (orderings[category].indexOf(title) + 1).toString().padStart(2, '0') + ' ' + title;
-	}
-
-	function getStateName(btn) {
-		if (btn.getAttribute("disabled") == "true") {
-			return "Disabled";
-		} else if (btn.dataset.sketchState) {
-			return capitalize(btn.dataset.sketchState);
-		} else {
-			return "Available";
-		}
-	}
-
-	function getSizeName(btn) {
-		if (btn.getAttribute("size") === "small") {
-			return "Small";
-		} else {
-			return "Large";
-		}
-	}
-
-	[].forEach.call(document.querySelectorAll("scale-button"), function(btn) {
-		btn.dataset.sketchSymbol = `Button / ${
-				order(1, getSizeName(btn))
-			} / ${
-				order(2, capitalize(btn.getAttribute("variant")))
-			} / ${
-				order(3, getCategoryName(btn))
-			} / ${
-				order(4, getStateName(btn))
-			}`;
-	});
+    Array.from(document.querySelectorAll("scale-button")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Button / ${
+                order(1, getSizeName(btn))
+            } / ${
+                order(2, capitalize(btn.getAttribute("variant")))
+            } / ${
+                order(3, getCategoryName(btn))
+            } / ${
+                order(4, getStateName(btn))
+            }`;
+    });
 </script>

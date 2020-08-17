@@ -77,3 +77,15 @@
         </script>
     </div>
 </div>
+
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-card")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Card / 02 Interactive / ${
+                order(2, 'Padding ' + (btn.dataset.noPadding == null ? 'on' : 'off'))
+            } / ${
+                order(4, getStateName(btn))
+            }`;
+    });
+</script>

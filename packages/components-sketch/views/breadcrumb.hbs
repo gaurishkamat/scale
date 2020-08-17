@@ -85,3 +85,19 @@
         </div>
     </div>
 </div>
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-breadcrumb")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Breadcrumb / ${
+                order(1, btn.firstElementChild.hasAttribute("is-current") ? 'Current Page' : 'Previous Page')
+            }${
+                btn.firstElementChild.hasAttribute("is-current") 
+                ? ""
+                : " / " + order(4, getStateName(btn))
+            }`;
+    });
+    Array.from(document.querySelectorAll("scale-icon")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Breadcrumb / 03 Separator`;
+    });
+</script>
