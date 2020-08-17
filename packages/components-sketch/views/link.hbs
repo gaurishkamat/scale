@@ -4,7 +4,7 @@
     <h1 class="title--artboard">Link</h1>
     
     <h2 class="title--artboard-section">Link</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Not Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-link href="#">Lorem ipsum dolor sit</scale-link>
@@ -28,7 +28,7 @@
     </div>
     
     <h2 class="title--artboard-section">Link :visited</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-link href="/link">Lorem ipsum dolor sit</scale-link>
@@ -52,7 +52,7 @@
     </div>
 
     <h2 class="title--artboard-section">Link with icon</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Not Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-link icon="{{>icon}}" href="#">Lorem ipsum dolor</scale-link>
@@ -76,7 +76,7 @@
     </div>
 
     <h2 class="title--artboard-section">Link with icon :visited</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-link icon="{{>icon}}" href="/link">Lorem ipsum dolor</scale-link>
@@ -99,3 +99,16 @@
         </div>
     </div>
 </div>
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-link")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Link / ${
+                order(1, getCategoryName(btn))
+            } / ${
+                order(2, btn.getAttribute('icon') ? 'With Icon' : 'Without Icon')
+            } / ${
+                order(4, getStateName(btn))
+            }`;
+    });
+</script>

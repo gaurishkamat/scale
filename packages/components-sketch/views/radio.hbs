@@ -70,3 +70,17 @@
     </div>
   </div>
 </div>
+
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Radio Button / ${
+                order(1, btn.hasAttribute('pre-checked') ? 'Selected' : 'Default')
+            } / ${
+                order(2, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
+            } / ${
+                order(4, getStateName(btn))
+            }`;
+    });
+</script>

@@ -27,3 +27,17 @@
         </div>
     </div>
 </div>
+
+<script src="/symbol_names.js"></script>
+<script>
+    const sizeNames = {
+        48: 'Large',
+        24: 'Medium',
+        16: 'Small'
+    };
+    Array.from(document.querySelectorAll("scale-icon")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Icon / 01 Static / ${
+                order(2, sizeNames[btn.getAttribute('size')])
+            }`;
+    });
+</script>

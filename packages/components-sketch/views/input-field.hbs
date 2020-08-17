@@ -549,3 +549,22 @@
     </div>
   </div>
 </div>
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Inputfield / ${
+                order(1, getSizeName(btn))
+            } / ${
+                order(2, btn.hasAttribute('helper-text') ? 'Info On' : 'Info Off')
+            } / ${
+                order(3, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
+            } / ${
+                order(4, btn.getAttribute('counter') === 'true' ? 'Character Count On' : 'Character Count Off')
+            } / ${
+                order(5, btn.hasAttribute('value') ? 'Has Input Value' : 'Has No Input Value')
+            } / ${
+                order(6, getStateName(btn))
+            }`;
+    });
+</script>
