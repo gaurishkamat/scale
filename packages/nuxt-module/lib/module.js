@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { Transform } = require("stream");
-const { THEME_MAGIC_STRING } = require("@scaleds/components/dist/theme");
+const { THEME_MAGIC_STRING } = require("@scaleds/components-telekom/dist/theme");
 
 const transformedHydrateFilePath = path.join(__dirname, "/hydrate.js");
 
@@ -27,7 +27,7 @@ function getTransformer(theme) {
 
 function decorateStoreWithUserTheme(transformer) {
   return new Promise((resolve, reject) => {
-    fs.createReadStream(require.resolve("@scaleds/components/hydrate/index.js"))
+    fs.createReadStream(require.resolve("@scaleds/components-telekom/hydrate/index.js"))
       .pipe(transformer)
       .pipe(fs.createWriteStream(transformedHydrateFilePath))
       .on("finish", resolve)
