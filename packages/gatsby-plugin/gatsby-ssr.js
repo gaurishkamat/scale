@@ -1,5 +1,5 @@
 const React = require("react")
-const { useTheme } = require("@scaleds/components/dist/theme");
+const { useTheme } = require("@scaleds/components-telekom/dist/theme");
 const jss = require('jss').default
 const jssPluginGlobal = require('jss-plugin-global').default
 const jssPluginCamelCase = require('jss-plugin-camel-case').default

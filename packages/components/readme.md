@@ -254,7 +254,7 @@ The default theme can be found under `src/theme/defaultTheme.ts`
 Modifying existing theme, preferrably in `index.(jsx|tsx)`
 
 ```tsx
-const { useTheme } = require('@scaleds/components/dist/theme')
+const { useTheme } = require('@scaleds/components-telekom/dist/theme')
 
 useTheme({
   shape: {
@@ -276,7 +276,7 @@ Using current theme values
 import React from 'react';
 import { ScaleButton } from '@scaleds/components-react';
 
-const { colors } = require('@scaleds/components/dist/theme').getTheme()
+const { colors } = require('@scaleds/components-telekom/dist/theme').getTheme()
 
 const App: React.FC = () => (
   <div className="app">
@@ -293,7 +293,7 @@ const App: React.FC = () => (
 Modifying existing theme, preferrably in `main.ts`
 
 ```tsx
-const { useTheme } = require('@scaleds/components/dist/theme')
+const { useTheme } = require('@scaleds/components-telekom/dist/theme')
 
 useTheme({
   shape: {
@@ -315,7 +315,7 @@ Using current theme values
 
 ```ts
 import { Component } from '@angular/core';
-const { colors } = require('@scaleds/components/dist/theme').getTheme()
+const { colors } = require('@scaleds/components-telekom/dist/theme').getTheme()
 
 @Component({
   selector: 'app-root',
@@ -343,7 +343,7 @@ export class AppComponent {
 Modifying existing theme, preferrably in `main.ts`
 
 ```tsx
-const { useTheme } = require('@scaleds/components/dist/theme.esm.js')
+const { useTheme } = require('@scaleds/components-telekom/dist/theme.esm.js')
 
 useTheme({
   shape: {
@@ -375,7 +375,7 @@ Using current theme values
 
 <script lang="ts">
 import Vue from "vue";
-const { colors } = require('@scaleds/components/dist/theme.esm.js').getTheme()
+const { colors } = require('@scaleds/components-telekom/dist/theme.esm.js').getTheme()
 
 export default Vue.extend({
   name: "app",
