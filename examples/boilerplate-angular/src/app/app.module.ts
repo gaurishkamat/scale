@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ComponentLibraryModule } from '@scaleds/components-angular-telekom';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -8,7 +10,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    FormsModule,
+    BrowserModule,
+    ComponentLibraryModule
   ],
   providers: [],
   bootstrap: [AppComponent],

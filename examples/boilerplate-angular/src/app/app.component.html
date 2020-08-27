@@ -6,4 +6,8 @@
     <scale-button>Click!</scale-button>
     <h3>Card</h3>
     <scale-card>A title</scale-card>
+    <scale-slider [(ngModel)]="testValue"></scale-slider>
+    <scale-input [(ngModel)]="testText" label="Text"></scale-input>
+    <p>Message: {{testText}}</p>
+    <p>Value: {{testValue}}</p>
 </div>

@@ -195,10 +195,6 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
     styles: {} as PropOptions<Components.ScaleButton['styles']>,
   },
 
-  model: {
-    prop: '',
-    event: 'click'
-  },
 
   methods: {
     disable: createCommonMethod('disable') as Components.ScaleButton['disable'],
@@ -320,10 +316,10 @@ export const ScaleInput = /*@__PURE__*/ Vue.extend({
 
   model: {
     prop: 'value',
-    event: 'inputChange'
+    event: 'scaleChange'
   },
 
-  render: createCommonRender('scale-input', ['scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
+  render: createCommonRender('scale-input', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 
@@ -470,8 +466,12 @@ export const ScaleSlider = /*@__PURE__*/ Vue.extend({
     styles: {} as PropOptions<Components.ScaleSlider['styles']>,
   },
 
+  model: {
+    prop: 'value',
+    event: 'scaleChange'
+  },
 
-  render: createCommonRender('scale-slider', []),
+  render: createCommonRender('scale-slider', ['scaleChange']),
 });
 
 
