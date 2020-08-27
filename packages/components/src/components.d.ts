@@ -14,9 +14,12 @@ export namespace Components {
         "href": string;
     }
     interface AppMegaMenu {
+        "activeRoute": string;
+        "hide": () => void;
         "navigation": MenuItem[];
     }
     interface AppNavigationMainMobile {
+        "activeRoute": string;
         "navigation": MenuItem[];
     }
     interface AppNavigationSectorMobile {
@@ -65,6 +68,7 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleAppHeader {
+        "activeRoute": string;
         "addonNavigation"?: any[];
         "customClass"?: string;
         "iconNavigation"?: any[];
@@ -73,6 +77,7 @@ export namespace Components {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
+        "activeRoute"?: string;
         "addonNavigation"?: any;
         "customClass"?: string;
         "iconNavigation"?: any;
@@ -1043,9 +1048,12 @@ declare namespace LocalJSX {
         "href"?: string;
     }
     interface AppMegaMenu {
+        "activeRoute"?: string;
+        "hide"?: () => void;
         "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {
+        "activeRoute"?: string;
         "navigation"?: MenuItem[];
         "onCloseMenu"?: (event: CustomEvent<any>) => void;
     }
@@ -1091,6 +1099,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleAppHeader {
+        "activeRoute"?: string;
         "addonNavigation"?: any[];
         "customClass"?: string;
         "iconNavigation"?: any[];
@@ -1099,6 +1108,7 @@ declare namespace LocalJSX {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
+        "activeRoute"?: string;
         "addonNavigation"?: any;
         "customClass"?: string;
         "iconNavigation"?: any;

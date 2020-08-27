@@ -28,7 +28,12 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": []
+      "attributes": [
+        {
+          "name": "active-route",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "app-navigation-main-mobile",
@@ -36,7 +41,12 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": []
+      "attributes": [
+        {
+          "name": "active-route",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "app-navigation-sector-mobile",
@@ -112,6 +122,10 @@
       },
       "attributes": [
         {
+          "name": "active-route",
+          "description": ""
+        },
+        {
           "name": "custom-class",
           "description": ""
         },
@@ -128,6 +142,10 @@
         "value": ""
       },
       "attributes": [
+        {
+          "name": "active-route",
+          "description": ""
+        },
         {
           "name": "addon-navigation",
           "description": ""

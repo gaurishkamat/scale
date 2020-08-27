@@ -34,6 +34,7 @@
   transition: all 0.15s ease-in-out;
 }
 
+.mega-menu__row-item.active,
 .mega-menu__row-item:hover {
   color: #e20074;
 }

@@ -7,6 +7,8 @@ import { MenuItem } from '../app-interfaces';
 })
 export class MegaMenu {
   @Prop() navigation: MenuItem[];
+  @Prop() hide: () => void;
+  @Prop() activeRoute: string;
 
   render() {
     return (
@@ -19,7 +21,18 @@ export class MegaMenu {
                 child.children.length > 0 &&
                 child.children.map(menuItem => (
                   <div>
-                    <a class="mega-menu__row-item" href={menuItem.href}>
+                    <a
+                      class={`mega-menu__row-item ${
+                        this.activeRoute === menuItem.href ? 'active' : ''
+                      }`}
+                      href={menuItem.href}
+                      onClick={event => {
+                        this.hide();
+                        if (typeof menuItem.onClick === 'function') {
+                          menuItem.onClick(event);
+                        }
+                      }}
+                    >
                       {menuItem.name}
                     </a>
                   </div>

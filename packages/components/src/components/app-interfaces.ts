@@ -4,4 +4,5 @@ export interface MenuItem {
   children?: MenuItem[];
   icon?: string;
   level: number;
+  onClick?: (event: MouseEvent) => void;
 }

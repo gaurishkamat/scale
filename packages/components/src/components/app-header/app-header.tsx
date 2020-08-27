@@ -2,6 +2,7 @@ import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
 import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
+import { findRootNode } from '../../utils/menu-utils';
 
 @Component({
   tag: 'scale-app-header',
@@ -13,9 +14,11 @@ export class Header {
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
+  @Prop() activeRoute: string;
   @Prop({ reflect: true }) scrolled: boolean = false;
   @State() activeSegment: any = this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
+  @State() visibleMegaMenu: string = '';
 
   @Listen('closeMenu')
   handleCloseMenu() {
@@ -36,12 +39,44 @@ export class Header {
     return (
       <ul class="main-navigation">
         {this.mainNavigation.map(item => (
-          <li class="main-navigation__item">
-            <a class="main-navigation__item-link" href={item.href}>
-              {item.name}
+          <li
+            class={`main-navigation__item ${
+              this.visibleMegaMenu === item.name ? 'mega-menu--visible' : ''
+            }
+
+            ${
+              findRootNode(this.mainNavigation, this.activeRoute)?.href ===
+                item.href && !this.visibleMegaMenu
+                ? 'active'
+                : ''
+            }`}
+            onMouseEnter={() => {
+              this.visibleMegaMenu = item.name;
+            }}
+            onMouseLeave={() => {
+              this.visibleMegaMenu = '';
+            }}
+          >
+            <a
+              class="main-navigation__item-link"
+              href={item.href}
+              onClick={event => {
+                this.visibleMegaMenu = '';
+                if (typeof item.onClick === 'function') {
+                  item.onClick(event);
+                }
+              }}
+            >
+              <span class="main-navigation__item-link-text">{item.name}</span>
             </a>
             {item.children && item.children.length > 0 && (
-              <app-mega-menu navigation={item.children}></app-mega-menu>
+              <app-mega-menu
+                navigation={item.children}
+                hide={() => {
+                  this.visibleMegaMenu = '';
+                }}
+                activeRoute={this.activeRoute}
+              ></app-mega-menu>
             )}
           </li>
         ))}
@@ -205,6 +240,7 @@ export class Header {
             ></app-navigation-sector-mobile>
             <app-navigation-main-mobile
               navigation={this.mainNavigation}
+              activeRoute={this.activeRoute}
             ></app-navigation-main-mobile>
           </div>
         </div>
