@@ -9,6 +9,7 @@
 
 | Property           | Attribute           | Description | Type     | Default |
 | ------------------ | ------------------- | ----------- | -------- | ------- |
+| `activeRoute`      | `active-route`      |             | `string` | `''`    |
 | `addonNavigation`  | `addon-navigation`  |             | `any`    | `[]`    |
 | `customClass`      | `custom-class`      |             | `string` | `''`    |
 | `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |

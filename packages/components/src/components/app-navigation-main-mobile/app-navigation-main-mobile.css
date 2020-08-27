@@ -97,6 +97,10 @@ svg path {
   color: #000;
 }
 
+.main-navigation-mobile__child-menu-item-link.selected {
+  color: #e20074;
+}
+
 .main-navigation-mobile__child-menu-item {
   font-size: 24px;
   line-height: 60px;

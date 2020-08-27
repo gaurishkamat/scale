@@ -1,5 +1,3 @@
-/* https://github.com/ionic-team/stencil-ds-output-targets/blob/master/packages/example-project/component-library-vue/src/vue-component-lib/utils.ts */
-
 import Vue, { VNode, CreateElement } from 'vue';
 
 export const createCommonRender = (tagName: string, eventNames: string[] = []) =>
@@ -10,7 +8,7 @@ export const createCommonRender = (tagName: string, eventNames: string[] = []) =
         ...listeners,
         [eventName]: (event: CustomEvent<any>) => {
           let emittedValue = event.detail;
-          if (event.detail.value) {
+          if (event.detail?.value) {
             emittedValue = event.detail.value;
           }
           vueElement.$emit(eventName, emittedValue);
@@ -22,7 +20,7 @@ export const createCommonRender = (tagName: string, eventNames: string[] = []) =
       tagName,
       {
         ref: 'wc',
-        domProps: vueElement.$props,
+        domProps: Vue.observable(vueElement.$props),
         on: allListeners,
       },
       [vueElement.$slots.default],

@@ -281,10 +281,36 @@
     padding-left: 16px;
     padding-right: 16px;
   }
+  .header
+    .main-navigation
+    .main-navigation__item.active
+    .main-navigation__item-link,
+  .header
+    .main-navigation
+    .main-navigation__item:hover
+    .main-navigation__item-link {
+    border-bottom: 2px #e20074 solid;
+    box-sizing: border-box;
+    transition: none;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item.active
+    .main-navigation__item-link-text,
+  .header
+    .main-navigation
+    .main-navigation__item:hover
+    .main-navigation__item-link-text {
+    margin-top: 2px;
+  }
+
   .header .main-navigation .main-navigation__item:first-child {
     padding-left: 0;
   }
-  .header .main-navigation .main-navigation__item:hover .mega-menu {
+  .header
+    .main-navigation
+    .main-navigation__item.mega-menu--visible
+    .mega-menu {
     opacity: 1;
     pointer-events: visible;
   }
@@ -301,10 +327,15 @@
   }
   .header
     .main-navigation
-    .main-navigation__item
-    .main-navigation__item-link:hover {
+    .main-navigation__item.active
+    .main-navigation__item-link,
+  .header
+    .main-navigation
+    .main-navigation__item:hover
+    .main-navigation__item-link {
     color: #e20074;
   }
+
   .header .header__brand-content .header__brand-branding {
     width: 100%;
     display: flex;

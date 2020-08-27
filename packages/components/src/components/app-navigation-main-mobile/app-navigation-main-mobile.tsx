@@ -1,5 +1,6 @@
 import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
+import { findSelected } from '../../utils/menu-utils';
 
 @Component({
   tag: 'app-navigation-main-mobile',
@@ -7,9 +8,9 @@ import { MenuItem } from '../app-interfaces';
 })
 export class MainNavigationMobile {
   @Prop() navigation: MenuItem[];
-  @State() prevSelected: MenuItem = undefined;
+  @Prop() activeRoute: string;
   @State() selected: MenuItem = undefined;
-  @State() pageStack: any = {};
+  @State() parent: MenuItem = undefined;
   @Event({
     eventName: 'closeMenu',
     composed: true,
@@ -18,63 +19,57 @@ export class MainNavigationMobile {
   })
   closeMenu: EventEmitter;
 
+  componentWillLoad() {
+    this.selected = findSelected(
+      this.navigation,
+      this.activeRoute,
+      null
+    ).selected;
+    this.parent = findSelected(this.navigation, this.activeRoute).parent;
+  }
+
   closeMenuHandler() {
     this.closeMenu.emit();
   }
 
-  handlePrevSelected(event) {
+  handlePrevSelected(event, item) {
     event.preventDefault();
-    if (this.prevSelected) {
-      this.selected = this.prevSelected;
-      this.prevSelected = undefined;
-    } else {
-      this.selected = undefined;
-    }
+
+    const selected = findSelected(this.navigation, item.href).parent;
+    this.selected = selected;
+    this.parent = selected;
   }
 
-  handleStack(event, item) {
+  handleSelect(event, item) {
     event.preventDefault();
-    if (!item) {
-      return (this.pageStack = {});
-    }
-    const keys = Object.keys(this.pageStack);
-    if (item.children) {
-      this.pageStack[item.level] = item;
-      if (keys.length > item.level) {
-        keys.map(key => {
-          if (key > item.level) {
-            delete this.pageStack[key];
-          }
-        });
-      }
-    }
-  }
 
-  handleSelected(event, item) {
-    event.preventDefault();
-    if (this.selected) {
-      if (this.selected.children && this.selected.children.length > 0) {
-        this.prevSelected = this.selected;
-      } else {
-        this.prevSelected = undefined;
-      }
+    const { selected, parent } = findSelected(this.navigation, item.href);
+    this.selected = selected;
+    this.parent = parent;
+
+    if (typeof item.onClick === 'function') {
+      item.onClick(event);
     }
-    this.selected = item;
-    if (!item.children || item.children.length === 0) {
-      this.prevSelected = undefined;
+
+    if (!selected.children) {
       this.closeMenuHandler();
     }
   }
 
-  childMenuPage(section) {
+  childMenuPage() {
+    const section =
+      this.selected && this.selected.children ? this.selected : this.parent;
+
+    if (!section) {
+      return <div></div>;
+    }
     return (
       <div class="main-navigation-mobile__child-menu">
         <a
           class="main-navigation-mobile__child-menu-current"
           href={section.href}
           onClick={event => {
-            this.handlePrevSelected(event);
-            this.handleStack(event, this.selected);
+            this.handlePrevSelected(event, section);
           }}
         >
           <div class="main-navigation-mobile__child-menu-current-item">
@@ -87,14 +82,15 @@ export class MainNavigationMobile {
         <ul class="main-navigation-mobile__child-menu-items">
           {section.children.map(child => (
             <a
-              class="main-navigation-mobile__child-menu-item-link"
+              class={`main-navigation-mobile__child-menu-item-link ${
+                child.href === this.selected.href ? 'selected' : ''
+              }`}
               href={child.href}
             >
               <li
                 class="main-navigation-mobile__child-menu-item"
                 onClick={event => {
-                  this.handleSelected(event, child);
-                  this.handleStack(event, child);
+                  this.handleSelect(event, child);
                 }}
               >
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
@@ -111,10 +107,7 @@ export class MainNavigationMobile {
   render() {
     return (
       <div class="main-navigation-mobile">
-        {this.selected &&
-          this.selected.children &&
-          this.selected.children.length > 0 &&
-          this.childMenuPage(this.selected)}
+        {this.childMenuPage()}
         <ul class="main-navigation-mobile__main-menu">
           {this.navigation.map(item => (
             <a
@@ -125,8 +118,7 @@ export class MainNavigationMobile {
               }`}
               href={item.href}
               onClick={event => {
-                this.handleSelected(event, item);
-                this.handleStack(event, item);
+                this.handleSelect(event, item);
               }}
             >
               <li class="main-navigation-mobile__item">

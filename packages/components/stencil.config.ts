@@ -1,6 +1,6 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
-import { vueOutputTarget, ComponentModelConfig } from '@stencil/vue-output-target';
+import { vueOutputTarget, ComponentModelConfig } from '@nowseemee/vue-output-target';
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
