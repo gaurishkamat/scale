@@ -22,6 +22,13 @@
 | `value`       | `value`        | (optional) the display value of the slider                            | `number`  | `undefined` |
 
 
+## Events
+
+| Event         | Description | Type                  |
+| ------------- | ----------- | --------------------- |
+| `scaleChange` |             | `CustomEvent<number>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,6 +1,12 @@
 import { combineObjects } from '../utils/utils';
 import { defaultTheme } from './defaultTheme';
 
+declare global {
+  interface Window {
+    Audio: any;
+  }
+}
+
 export const THEME_MAGIC_STRING = 'ʕ•ᴥ•ʔ theme store magic placeholder ʕ•ᴥ•ʔ';
 const store =
   typeof window !== 'undefined' && typeof window.Audio !== 'undefined'

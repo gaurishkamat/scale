@@ -1,4 +1,13 @@
-import { Component, h, State, Prop, Host } from '@stencil/core';
+import {
+  Component,
+  h,
+  State,
+  Prop,
+  Host,
+  Watch,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './slider.styles';
@@ -11,6 +20,8 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class Slider implements Base {
+  sliderTrack?: HTMLDivElement;
+
   /** (optional) Slider class */
   @Prop() customClass?: string = '';
   /** (optional) the display value of the slider */
@@ -43,7 +54,12 @@ export class Slider implements Base {
   @State() startPosition: number;
   @State() newPosition: number;
 
-  sliderTrack?: HTMLDivElement;
+  @Event() scaleChange: EventEmitter<number>;
+
+  @Watch('value')
+  valueChanged() {
+    this.scaleChange.emit(Math.abs(this.value));
+  }
 
   componentWillLoad() {}
   componentWillUpdate() {}

@@ -32,7 +32,9 @@ exports[`SidebarNavItem should match snapshot 1`] = `
 .sidebar-nav-item--current-0-0-2 {
   color: #E20074;
 }
-.sidebar-nav-item--bold-0-0-3 {}
+.sidebar-nav-item--bold-0-0-3 {
+  font-family: TeleNeoWeb-Bold;
+}
 .sidebar-nav-item--condensed-0-0-4 {
   border-bottom-width: 0;
 }

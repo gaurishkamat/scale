@@ -6,6 +6,7 @@ import {
   EventEmitter,
   Host,
   State,
+  Watch,
 } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -13,6 +14,10 @@ import { styles } from './input.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+
+export interface InputChangeEventDetail {
+  value: string | number | boolean | undefined | null;
+}
 
 @Component({
   tag: 'scale-input',
@@ -67,7 +72,7 @@ export class Input implements Base {
   /** (optional) textarea resize */
   @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal';
   /** (optional) Input value */
-  @Prop({ mutable: true }) value?: string;
+  @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
   /** (optional) Input checkbox checked icon */
@@ -78,19 +83,22 @@ export class Input implements Base {
   @Prop() visibleSize?: number;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
-  /** (optional) Input text event changed */
-  @Event() scaleChange: EventEmitter<InputEvent>;
-  /** (optional) Input focus event */
-  @Event() scaleFocus: EventEmitter<FocusEvent>;
-  /** (optional) Input blur event */
-  @Event() scaleBlur: EventEmitter<FocusEvent>;
-  /** (optional) Input keyDown event */
-  @Event() scaleKeyDown: EventEmitter<KeyboardEvent>;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Input', styles) stylesheet: StyleSheet;
+
+  /** Emitted when a keyboard input occurred. */
+  @Event() scaleInput!: EventEmitter<KeyboardEvent>;
+  /** Emitted when the value has changed. */
+  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  /** Emitted when the input has focus. */
+  @Event() scaleFocus!: EventEmitter<void>;
+  /** Emitted when the input loses focus. */
+  @Event() scaleBlur!: EventEmitter<void>;
+  /** Emitted on keydown. */
+  @Event() scaleKeyDown!: EventEmitter<KeyboardEvent>;
 
   /** (optional) Input checkbox checked */
   @State() checked?: boolean = this.preChecked;
@@ -101,21 +109,45 @@ export class Input implements Base {
   componentDidLoad() {}
   componentDidUnload() {}
 
-  handleChange(event) {
-    this.value = event.target ? event.target.value : this.value;
-    this.checked = event.target.checked;
-    this.scaleChange.emit(event);
+  @Watch('value')
+  valueChanged() {
+    this.scaleChange.emit({
+      value: this.value == null ? this.value : this.value.toString(),
+    });
   }
 
-  handleFocus(event) {
-    this.scaleFocus.emit(event);
+  @Watch('checked')
+  checkedChanged() {
+    this.scaleChange.emit({ value: this.checked });
   }
 
-  handleBlur(event) {
-    this.scaleBlur.emit(event);
-  }
+  handleInput = (event: Event) => {
+    const target = event.target as HTMLInputElement | null;
+    if (target) {
+      this.value = target.value || '';
+    }
+    this.scaleInput.emit(event as KeyboardEvent);
+  };
 
-  handleKeyDown(event) {
+  handleChange = (event: Event) => {
+    const target = event.target as HTMLInputElement | null;
+    if (target) {
+      this.value = target.value || '';
+    }
+    if (this.type === 'radio' || this.type === 'checkbox') {
+      this.checked = target.checked;
+    }
+  };
+
+  handleFocus = () => {
+    this.scaleFocus.emit();
+  };
+
+  handleBlur = () => {
+    this.scaleBlur.emit();
+  };
+
+  handleKeyDown(event: KeyboardEvent) {
     this.scaleKeyDown.emit(event);
   }
 
@@ -123,7 +155,6 @@ export class Input implements Base {
     if (this.type === 'checkbox') {
       return (
         <Host>
-          <style>{this.stylesheet.toString()}</style>
           <div class={this.getCssClassMap()}>
             <div class={classNames('input__checkbox-container')}>
               <input
@@ -131,7 +162,7 @@ export class Input implements Base {
                 name={this.name}
                 class={classNames('input__checkbox')}
                 id={this.inputId}
-                onChange={event => this.handleChange(event)}
+                onChange={this.handleChange}
                 value={this.value}
                 checked={this.checked}
                 disabled={this.disabled}
@@ -155,14 +186,13 @@ export class Input implements Base {
     if (this.type === 'radio') {
       return (
         <Host>
-          <style>{this.stylesheet.toString()}</style>
           <div class={this.getCssClassMap()}>
             <input
               type="radio"
               name={this.name}
               class={classNames('input__radio')}
               id={this.inputId}
-              onChange={event => this.handleChange(event)}
+              onChange={this.handleChange}
               value={this.value}
               checked={this.preChecked}
               disabled={this.disabled}
@@ -178,7 +208,6 @@ export class Input implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
           {this.variant === 'static' && (
             <label class="input__label" htmlFor={this.inputId}>
@@ -189,7 +218,9 @@ export class Input implements Base {
             <div class="input__select-wrapper">
               <select
                 class={classNames('input__select')}
-                onChange={event => this.handleChange(event)}
+                onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
                 disabled={this.disabled}
                 required={this.required}
                 multiple={this.multiple}
@@ -214,10 +245,10 @@ export class Input implements Base {
               minLength={this.minLength}
               maxLength={this.maxLength}
               id={this.inputId}
-              onInput={event => this.handleChange(event)}
-              onFocus={event => this.handleFocus(event)}
-              onBlur={event => this.handleBlur(event)}
-              onKeyDown={event => this.handleKeyDown(event)}
+              onInput={this.handleInput}
+              onChange={this.handleChange}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
               {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
               disabled={this.disabled}
               {...(!!this.rows ? { rows: this.rows } : {})}
@@ -237,7 +268,8 @@ export class Input implements Base {
               )}
               {this.counter && (
                 <div class="input__counter">
-                  {!!this.value ? this.value.length : 0} / {this.maxLength}
+                  {!!this.value ? String(this.value).length : 0} /{' '}
+                  {this.maxLength}
                 </div>
               )}
             </div>

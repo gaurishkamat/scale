@@ -234,9 +234,6 @@ export default Vue.extend({
 </script>
 
 <style>
-:root {
-}
-
 html {
   margin: 0;
   padding: 0;

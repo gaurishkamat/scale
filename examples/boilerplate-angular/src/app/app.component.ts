@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'boilerplate-angular';
+
+  testValue = 10;
+  testText: string = 'OK';
 }

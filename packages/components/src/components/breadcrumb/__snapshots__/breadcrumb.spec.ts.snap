@@ -43,7 +43,9 @@ exports[`Breadcrumb should match snapshot 1`] = `
   outline: none;
   border-color: #009DE0;
 }
-.current-0-0-5 {}
+.current-0-0-5 {
+  font-family: TeleNeoWeb-Bold;
+}
     </style>
     <nav aria-label="Breadcrumb" class="breadcrumb-0-0-1">
       <ol></ol>

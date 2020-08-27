@@ -31,19 +31,20 @@
 | `styles`      | `styles`       | (optional) Injected jss styles                                      | `any`                                                                                                                          | `undefined` |
 | `transparent` | `transparent`  | (optional) input background transparent                             | `boolean`                                                                                                                      | `undefined` |
 | `type`        | `type`         | (optional) Input type                                               | `"checkbox" \| "email" \| "hidden" \| "number" \| "password" \| "radio" \| "select" \| "tel" \| "text" \| "textarea" \| "url"` | `'text'`    |
-| `value`       | `value`        | (optional) Input value                                              | `string`                                                                                                                       | `undefined` |
+| `value`       | `value`        | (optional) Input value                                              | `number \| string`                                                                                                             | `''`        |
 | `variant`     | `variant`      | (optional) Input label variant                                      | `"animated" \| "static"`                                                                                                       | `'static'`  |
 | `visibleSize` | `visible-size` | (optional) the number of visible options in a select drop-down list | `number`                                                                                                                       | `undefined` |
 
 
 ## Events
 
-| Event          | Description                         | Type                         |
-| -------------- | ----------------------------------- | ---------------------------- |
-| `scaleBlur`    | (optional) Input blur event         | `CustomEvent<FocusEvent>`    |
-| `scaleChange`  | (optional) Input text event changed | `CustomEvent<InputEvent>`    |
-| `scaleFocus`   | (optional) Input focus event        | `CustomEvent<FocusEvent>`    |
-| `scaleKeyDown` | (optional) Input keyDown event      | `CustomEvent<KeyboardEvent>` |
+| Event          | Description                             | Type                                  |
+| -------------- | --------------------------------------- | ------------------------------------- |
+| `scaleBlur`    | Emitted when the input loses focus.     | `CustomEvent<void>`                   |
+| `scaleChange`  | Emitted when the value has changed.     | `CustomEvent<InputChangeEventDetail>` |
+| `scaleFocus`   | Emitted when the input has focus.       | `CustomEvent<void>`                   |
+| `scaleInput`   | Emitted when a keyboard input occurred. | `CustomEvent<KeyboardEvent>`          |
+| `scaleKeyDown` | Emitted on keydown.                     | `CustomEvent<KeyboardEvent>`          |
 
 
 ## Dependencies

@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
+import { InputChangeEventDetail } from "./components/input/input";
 import { StyleSheet } from "jss";
 export namespace Components {
     interface AppLogo {
@@ -355,7 +356,7 @@ export namespace Components {
         /**
           * (optional) Input value
          */
-        "value"?: string;
+        "value"?: string | number | null;
         /**
           * (optional) Input label variant
          */
@@ -1326,19 +1327,23 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * (optional) Input blur event
+          * Emitted when the input loses focus.
          */
-        "onScaleBlur"?: (event: CustomEvent<FocusEvent>) => void;
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
         /**
-          * (optional) Input text event changed
+          * Emitted when the value has changed.
          */
-        "onScaleChange"?: (event: CustomEvent<InputEvent>) => void;
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
         /**
-          * (optional) Input focus event
+          * Emitted when the input has focus.
          */
-        "onScaleFocus"?: (event: CustomEvent<FocusEvent>) => void;
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
         /**
-          * (optional) Input keyDown event
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
          */
         "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
         /**
@@ -1394,7 +1399,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input value
          */
-        "value"?: string;
+        "value"?: string | number | null;
         /**
           * (optional) Input label variant
          */
@@ -1634,6 +1639,7 @@ declare namespace LocalJSX {
           * t(optional) he minimal value of the slider
          */
         "min"?: number;
+        "onScaleChange"?: (event: CustomEvent<number>) => void;
         /**
           * (optional) slider display value
          */
