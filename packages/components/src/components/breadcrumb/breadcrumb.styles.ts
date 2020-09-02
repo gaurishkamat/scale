@@ -27,7 +27,7 @@ export const styles: JssStyle = {
     textDecoration: 'none',
     padding: ({ spacings }) => spacings.pointFour,
     borderRadius: ({ shape }) => shape.borderRadius,
-    border: ({ outlines }) => outlines.focus,
+    border: '2px solid transparent',
     color: ({ palette }) => palette.gray,
     '&:hover': {
       color: ({ palette }) => palette.magentaHover,

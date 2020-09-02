@@ -68,14 +68,14 @@ export const styles: JssStyle = {
     '&, &:hover': {
       cursor: 'not-allowed',
       background: ({ palette }) => palette.grayDisabledBackground,
-      border: ({ outlines }) => outlines.disabled,
+      border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
       color: ({ palette }) => palette.grayDisabled,
       '--icon-color': ({ palette }) => palette.grayDisabled,
       opacity: 1,
     },
     '&$button--variant-secondary, &$button--variant-secondary:hover': {
       background: 'none',
-      border: ({ outlines }) => outlines.disabled,
+      border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
       color: ({ palette }) => palette.grayDisabled,
       '--icon-color': ({ palette }) => palette.grayDisabled,
     },
