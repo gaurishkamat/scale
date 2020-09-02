@@ -1,14 +1,31 @@
 import { Theme } from './interfaces';
 
-// const palette = {
-//   primary: {
-//     gray: '#262626',
-//     magenta: '#E20074',
-//     white: '#FFFFFF',
-//   },
-//
-// };
+const palette = {
+  gray: '#262626',
+  magenta: '#E20074',
+  magentaHover: '#F90984',
+  magentaActive: '#CB0068',
+  borderActive: '#009DE0',
+};
+
+const outlines = {
+  focus: '2px solid transparent',
+};
+
+const spacings = {
+  minusPointFour: '-0.4em',
+  pointFour: '0.4em',
+};
+
+const shape = {
+  borderRadius: 8,
+};
+
 export const defaultTheme: Theme = {
+  spacings,
+  outlines,
+  palette,
+  shape,
   colors: {
     common: {
       black: '#000',
@@ -180,9 +197,6 @@ export const defaultTheme: Theme = {
         textTransform: 'none',
       },
     },
-  },
-  shape: {
-    borderRadius: 8,
   },
   transitions: {
     easing: {

@@ -24,9 +24,9 @@ export const Template = (args, { argTypes }) => ({
       :separator="separator"
       :styles="styles"
     >
-      <a href="#1">First link</a>
-      <a href="#2">Second link</a>
-      <a href="#3">Third link</a>
+      <a href="#1">First Entry</a>
+      <a href="#2">Second Entry</a>
+      <a href="#3">Active Page</a>
       <template v-if="separator === true" #separator>
         <span slot="separator">
           <scale-icon
@@ -51,19 +51,6 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 <Props story='Standard' />
-
-## With Custom Separator
-
-<Preview withSource="none">
-  <Story
-    name='With Custom Separator'
-    args={{
-      separator: '---',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
 
 ```html
 <scale-breadcrumb separator="---">
