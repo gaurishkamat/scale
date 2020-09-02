@@ -14,14 +14,14 @@ export const styles: JssStyle = {
     padding: 0,
     fontSize: 16,
     fontWeight: 500,
-    color: '#007DB3',
-    '--icon-color': '#007DB3',
+    color: ({ palette }) => palette.helperText,
+    '--icon-color': ({ palette }) => palette.helperText,
     '& scale-icon': {
       marginLeft: 4,
     },
     '&:hover&:not($link--disabled)': {
-      color: '#007DB3',
-      '--icon-color': '#007DB3',
+      color: ({ palette }) => palette.helperText,
+      '--icon-color': ({ palette }) => palette.helperText,
     },
     '&:visited&:not($link--disabled)': {
       color: ({ palette }) => palette.secondary,
@@ -31,10 +31,10 @@ export const styles: JssStyle = {
   'link--underline': {
     '&:hover:not($link--disabled)': {
       textDecoration: 'none',
-      borderBottom: `1px solid #007DB3`,
+      borderBottom: ({ palette }) => `1px solid ${palette.helperText}`,
     },
     '&:focus:not($link--disabled)': {
-      borderBottom: `2px solid #007DB3`,
+      borderBottom: ({ palette }) => `2px solid ${palette.helperText}`,
     },
   },
   'link--disabled': {

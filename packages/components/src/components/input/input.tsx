@@ -166,6 +166,7 @@ export class Input implements Base {
                 value={this.value}
                 checked={this.checked}
                 disabled={this.disabled}
+                tabindex="0"
               />
               <span
                 class={classNames('input__checkbox-placeholder')}
