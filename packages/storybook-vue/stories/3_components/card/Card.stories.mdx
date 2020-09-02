@@ -46,7 +46,7 @@ export const Template = (args, { argTypes }) => ({
       :target="target"
       :interactive="interactive"
       :disabled="disabled"
-      :styles="styles"
+      :styles="JSON.stringify(styles)"
     >
       {{ label }}
     </scale-card>
@@ -59,8 +59,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Standard'
     args={{
-      label: 'A card'
-    }} 
+      label: 'A card',
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -77,7 +77,7 @@ export const Template = (args, { argTypes }) => ({
       label: 'A card with a link to example.com',
       href: 'https://example.com',
       target: '_blank'
-    }} 
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -85,6 +85,27 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-card href="https://example.com" target="_blank">A card with a link to example.com</scale-card>
+```
+
+
+## Padding Off
+
+<Preview withSource="none">
+  <Story
+    name='Padding Off'
+    args={{
+      label: 'A card with a link to example.com',
+      styles: {
+        card__body: { padding: 0 }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-card href="https://example.com" target="_blank" :styles={{ card__body: { padding: 0 } }}>A card with a link to example.com</scale-card>
 ```
 
 ## Interactive
@@ -95,7 +116,29 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'A card, interactive, no link',
       interactive: true
-    }} 
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-card interactive>A card, interactive, no link</scale-card>
+```
+
+
+## Interactive Padding Off
+
+<Preview withSource="none">
+  <Story
+    name='Interactive Padding Off'
+    args={{
+      label: 'A card, interactive, no link',
+      interactive: true,
+      styles: {
+        card__body: { padding: 0 }
+      }
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -113,7 +156,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'A card, disabled',
       disabled: true
-    }} 
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -130,7 +173,7 @@ export const Template = (args, { argTypes }) => ({
     name='Long text'
     args={{
       label: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }} 
+    }}
   >
     {Template.bind({})}
   </Story>

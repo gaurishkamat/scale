@@ -11,11 +11,6 @@ const palette = {
   white: '#FFF',
 };
 
-const outlines = {
-  focus: '2px solid transparent',
-  disabled: `1px solid ${palette.grayDisabledBackground}`,
-};
-
 const spacings = {
   minusPointFour: '-0.4em',
   pointFour: '0.4em',
@@ -27,7 +22,6 @@ const shape = {
 
 export const defaultTheme: Theme = {
   spacings,
-  outlines,
   palette,
   shape,
   colors: {
