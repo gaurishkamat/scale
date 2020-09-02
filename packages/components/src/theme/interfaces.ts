@@ -14,8 +14,8 @@ interface Transitions {
 }
 
 export interface Theme {
-  spacings: { [key: string]: any }
-  palette: { [key: string]: any }
+  spacings: { [key: string]: any };
+  palette: { [key: string]: any };
   components: {
     [key: string]: {
       styles?: any;
