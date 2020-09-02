@@ -2,6 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   link: {
+    fontFamily: 'TeleNeoWeb-Medium',
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -13,26 +14,32 @@ export const styles: JssStyle = {
     padding: 0,
     fontSize: 16,
     fontWeight: 500,
-    transition: 'all .2s ease-in-out',
-    color: '#00A6F0',
-    '--icon-color': '#00A6F0',
+    color: '#007DB3',
+    '--icon-color': '#007DB3',
     '& scale-icon': {
       marginLeft: 4,
     },
     '&:hover&:not($link--disabled)': {
-      color: 'black',
-      '--icon-color': 'black',
+      color: '#007DB3',
+      '--icon-color': '#007DB3',
+    },
+    '&:visited&:not($link--disabled)': {
+      color: '#00739F',
+      '--icon-color': '#00739F',
     },
   },
   'link--underline': {
     '&:hover:not($link--disabled)': {
       textDecoration: 'none',
-      borderBottom: '1px solid #00A6F0',
+      borderBottom: `1px solid #007DB3`,
+    },
+    '&:focus:not($link--disabled)': {
+      borderBottom: `2px solid #007DB3`,
     },
   },
   'link--disabled': {
     cursor: 'not-allowed',
-    opacity: 0.5,
+    color: ({ palette }) => palette.grayDisabledText,
   },
   'link--block': {
     display: 'flex',

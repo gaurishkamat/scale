@@ -3,11 +3,12 @@ import { Theme } from './interfaces';
 const palette = {
   gray: '#262626',
   grayDisabledBackground: '#D0D0D0',
+  grayDisabledText: '#7C7C7C',
   grayDisabled: '#A4A4A4',
   magenta: '#E20074',
   magentaHover: '#F90984',
   magentaActive: '#CB0068',
-  borderActive: '#009DE0',
+  active: '#009DE0',
   white: '#FFF',
 };
 

@@ -36,7 +36,7 @@ export const styles: JssStyle = {
       color: ({ palette }) => palette.magentaActive,
     },
     '&:focus': {
-      borderColor: ({ palette }) => palette.borderActive,
+      borderColor: ({ palette }) => palette.active,
       outline: 'none',
     },
   },
