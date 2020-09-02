@@ -9,6 +9,7 @@ const palette = {
   magentaHover: '#F90984',
   magentaActive: '#CB0068',
   active: '#009DE0',
+  secondary: '#00739F',
   white: '#FFF',
 };
 

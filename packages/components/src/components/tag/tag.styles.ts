@@ -1,10 +1,5 @@
 import { JssStyle } from 'jss';
 
-const tagSecondary = {
-  background: '#00739F',
-  border: '1px solid #00739F',
-};
-
 export const styles: JssStyle = {
   tag: {
     display: 'inline-flex',
@@ -18,9 +13,9 @@ export const styles: JssStyle = {
     verticalAlign: 'baseline',
     borderRadius: 4,
     transition: 'all 0.15s ease-in-out',
-    background: '#343a40',
-    color: ' #fff',
-    '--icon-color': '#fff',
+    background: ({ palette }) => palette.gray,
+    color: ({ palette }) => palette.white,
+    '--icon-color': ({ palette }) => palette.white,
     padding: '4px 10px',
     fontFamily: 'TeleNeoWeb-Bold',
     '& scale-icon': {
@@ -29,7 +24,7 @@ export const styles: JssStyle = {
     '&:not($tag--disabled)': {
       '& scale-icon': {
         '&:hover': {
-          '--icon-color': 'red',
+          '--icon-color': ({ palette }) => palette.magentaActive,
         },
       },
     },
@@ -48,17 +43,36 @@ export const styles: JssStyle = {
       paddingRight: 4,
     },
   },
-  'tag--variant-secondary': tagSecondary,
+  'tag--variant-secondary': {
+    background: ({ palette }) => palette.secondary,
+    border: ({ palette }) => `1px solid ${palette.secondary}`,
+    '&$tag--disabled': {
+      background: ({ palette }) => palette.secondary,
+      color: ({ palette }) => palette.white,
+      '--icon-color': ({ palette }) => palette.white,
+      border: 'none',
+      opacity: '0.5',
+    },
+  },
   'tag--link': {
     textDecoration: 'none',
     '&$tag--variant-secondary': {
-      ...tagSecondary,
-      '&:hover': tagSecondary,
-      '&:focus': tagSecondary,
+      background: ({ palette }) => palette.secondary,
+      border: ({ palette }) => `1px solid ${palette.secondary}`,
+      '&:hover': {
+        background: ({ palette }) => palette.secondary,
+        border: ({ palette }) => `1px solid ${palette.secondary}`,
+      },
+      '&:focus': {
+        background: ({ palette }) => palette.secondary,
+        border: ({ palette }) => `1px solid ${palette.secondary}`,
+      },
     },
   },
   'tag--disabled': {
-    opacity: 0.5,
+    color: ({ palette }) => palette.grayDisabledText,
+    background: ({ palette }) => palette.grayDisabledBackground,
+    '--icon-color': ({ palette }) => palette.grayDisabledText,
     cursor: 'not-allowed',
   },
 };

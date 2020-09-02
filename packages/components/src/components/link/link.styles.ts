@@ -24,8 +24,8 @@ export const styles: JssStyle = {
       '--icon-color': '#007DB3',
     },
     '&:visited&:not($link--disabled)': {
-      color: '#00739F',
-      '--icon-color': '#00739F',
+      color: ({ palette }) => palette.secondary,
+      '--icon-color': ({ palette }) => palette.secondary,
     },
   },
   'link--underline': {
