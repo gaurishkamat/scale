@@ -1,5 +1,13 @@
 import { Theme } from './interfaces';
 
+// const palette = {
+//   primary: {
+//     gray: '#262626',
+//     magenta: '#E20074',
+//     white: '#FFFFFF',
+//   },
+//
+// };
 export const defaultTheme: Theme = {
   colors: {
     common: {
