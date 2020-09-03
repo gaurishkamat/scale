@@ -7,15 +7,15 @@ import { MenuItem } from '../app-interfaces';
 })
 export class NavigationSectorMobile {
   @Prop() navigation: MenuItem[];
-  @Prop() activeSectorName?: string;
+  @Prop() activeSectorId?: string;
   @State() selected: MenuItem =
-    this.navigation.find(({ name }) => name === this.activeSectorName) ||
+    this.navigation.find(({ id }) => id === this.activeSectorId) ||
     this.navigation[0];
 
-  @Watch('activeSectorName')
+  @Watch('activeSectorId')
   handleActiveSegment(newValue) {
     this.selected =
-      this.navigation.find(({ href }) => href === newValue) ||
+      this.navigation.find(({ id }) => id === newValue) ||
       this.navigation[0];
   }
 
@@ -33,7 +33,7 @@ export class NavigationSectorMobile {
           <li class="sector-navigation-mobile__item">
             <a
               class={`sector-navigation-mobile__item-link${
-                this.selected.href === item.href
+                this.selected.id === item.id
                   ? ' sector-navigation-mobile__item-link--selected'
                   : ''
               }`}

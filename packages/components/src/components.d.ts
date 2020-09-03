@@ -15,16 +15,16 @@ export namespace Components {
         "href": string;
     }
     interface AppMegaMenu {
-        "activeRouteHref": string;
+        "activeRouteId": string;
         "hide": () => void;
         "navigation": MenuItem[];
     }
     interface AppNavigationMainMobile {
-        "activeRouteHref": string;
+        "activeRouteId": string;
         "navigation": MenuItem[];
     }
     interface AppNavigationSectorMobile {
-        "activeSectorName"?: string;
+        "activeSectorId"?: string;
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
@@ -70,8 +70,8 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleAppHeader {
-        "activeRouteHref": string;
-        "activeSectorName"?: string;
+        "activeRouteId": string;
+        "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "customClass"?: string;
         "iconNavigation"?: any[];
@@ -80,8 +80,8 @@ export namespace Components {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
-        "activeRouteHref"?: string;
-        "activeSectorName"?: string;
+        "activeRouteId"?: string;
+        "activeSectorId"?: string;
         "addonNavigation"?: any;
         "customClass"?: string;
         "iconNavigation"?: any;
@@ -1052,17 +1052,17 @@ declare namespace LocalJSX {
         "href"?: string;
     }
     interface AppMegaMenu {
-        "activeRouteHref"?: string;
+        "activeRouteId"?: string;
         "hide"?: () => void;
         "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {
-        "activeRouteHref"?: string;
+        "activeRouteId"?: string;
         "navigation"?: MenuItem[];
         "onCloseMenu"?: (event: CustomEvent<any>) => void;
     }
     interface AppNavigationSectorMobile {
-        "activeSectorName"?: string;
+        "activeSectorId"?: string;
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {
@@ -1104,8 +1104,8 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleAppHeader {
-        "activeRouteHref"?: string;
-        "activeSectorName"?: string;
+        "activeRouteId"?: string;
+        "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "customClass"?: string;
         "iconNavigation"?: any[];
@@ -1114,8 +1114,8 @@ declare namespace LocalJSX {
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
-        "activeRouteHref"?: string;
-        "activeSectorName"?: string;
+        "activeRouteId"?: string;
+        "activeSectorId"?: string;
         "addonNavigation"?: any;
         "customClass"?: string;
         "iconNavigation"?: any;

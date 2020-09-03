@@ -37,7 +37,7 @@ app-navigation-main-mobile {
 
 .main-navigation-mobile__item-link {
   text-decoration: none;
-  color: #000;
+  color: #262626;
   transition: var(--transition-in);
 }
 
@@ -94,7 +94,7 @@ svg path {
 
 .main-navigation-mobile__child-menu-item-link {
   text-decoration: none;
-  color: #000;
+  color: #262626;
 }
 
 .main-navigation-mobile__child-menu-item-link.selected {

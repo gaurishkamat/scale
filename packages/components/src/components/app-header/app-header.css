@@ -158,7 +158,7 @@
   }
 }
 .header .meta-navigation .meta-navigation__item-link {
-  color: #000;
+  color: #262626;
   display: flex;
   transition: all 0.2s ease-in-out;
   align-items: center;
@@ -317,7 +317,7 @@
     pointer-events: visible;
   }
   .header .main-navigation .main-navigation__item .main-navigation__item-link {
-    color: #000;
+    color: #262626;
     height: 100%;
     display: flex;
     font-size: 20px;

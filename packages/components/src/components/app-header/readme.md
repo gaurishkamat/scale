@@ -10,7 +10,7 @@
 | Property           | Attribute            | Description | Type      | Default     |
 | ------------------ | -------------------- | ----------- | --------- | ----------- |
 | `activeRoute`      | `active-route`       |             | `string`  | `undefined` |
-| `activeSectorName` | `active-sector-name` |             | `string`  | `undefined` |
+| `activeSectorId` | `active-sector-name` |             | `string`  | `undefined` |
 | `addonNavigation`  | --                   |             | `any[]`   | `[]`        |
 | `customClass`      | `custom-class`       |             | `string`  | `''`        |
 | `iconNavigation`   | --                   |             | `any[]`   | `[]`        |

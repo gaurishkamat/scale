@@ -2,21 +2,21 @@ import { MenuItem } from '../components/app-interfaces';
 
 export const findSelected = (
   structure: MenuItem[],
-  href: string,
+  id: string,
   parent?: MenuItem
 ) =>
   structure.reduce(
     (acc, item) => {
-      if (item.href === href) {
+      if (item.id === id) {
         return { selected: item, parent };
       }
 
       if (
         item.children &&
         item.children.length &&
-        !!findSelected(item.children, href, item).selected
+        !!findSelected(item.children, id, item).selected
       ) {
-        return findSelected(item.children, href, item);
+        return findSelected(item.children, id, item);
       }
 
       return acc;
@@ -24,10 +24,10 @@ export const findSelected = (
     { selected: null, parent: null }
   );
 
-export const findRootNode = (structure: MenuItem[], href: string) => {
-  let result = findSelected(structure, href);
+export const findRootNode = (structure: MenuItem[], id: string) => {
+  let result = findSelected(structure, id);
   while (result.parent) {
-    result = findSelected(structure, result.parent.href);
+    result = findSelected(structure, result.parent.id);
   }
   return result.selected;
 };

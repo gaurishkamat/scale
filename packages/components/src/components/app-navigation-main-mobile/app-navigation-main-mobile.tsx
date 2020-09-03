@@ -16,7 +16,7 @@ import { findSelected } from '../../utils/menu-utils';
 })
 export class MainNavigationMobile {
   @Prop() navigation: MenuItem[];
-  @Prop() activeRouteHref: string;
+  @Prop() activeRouteId: string;
   @State() selected: MenuItem = undefined;
   @State() parent: MenuItem = undefined;
   @Event({
@@ -26,7 +26,7 @@ export class MainNavigationMobile {
     bubbles: true,
   })
   closeMenu: EventEmitter;
-  @Watch('activeRouteHref')
+  @Watch('activeRouteId')
   handleActiveRoute(newValue) {
     this.selected = findSelected(this.navigation, newValue, null).selected;
     this.parent = findSelected(this.navigation, newValue).parent;
@@ -35,10 +35,10 @@ export class MainNavigationMobile {
   componentWillLoad() {
     this.selected = findSelected(
       this.navigation,
-      this.activeRouteHref,
+      this.activeRouteId,
       null
     ).selected;
-    this.parent = findSelected(this.navigation, this.activeRouteHref).parent;
+    this.parent = findSelected(this.navigation, this.activeRouteId).parent;
   }
 
   closeMenuHandler() {
@@ -48,7 +48,7 @@ export class MainNavigationMobile {
   handlePrevSelected(event, item) {
     event.preventDefault();
 
-    const selected = findSelected(this.navigation, item.href).parent;
+    const selected = findSelected(this.navigation, item.id).parent;
     this.selected = selected;
     this.parent = selected;
   }
@@ -56,7 +56,7 @@ export class MainNavigationMobile {
   handleSelect(event, item) {
     event.preventDefault();
 
-    const { selected, parent } = findSelected(this.navigation, item.href);
+    const { selected, parent } = findSelected(this.navigation, item.id);
     this.selected = selected;
     this.parent = parent;
 
@@ -96,7 +96,7 @@ export class MainNavigationMobile {
           {section.children.map(child => (
             <a
               class={`main-navigation-mobile__child-menu-item-link ${
-                child.href === this.selected.href ? 'selected' : ''
+                child.id === this.selected.id ? 'selected' : ''
               }`}
               href={child.href}
             >
@@ -125,7 +125,7 @@ export class MainNavigationMobile {
           {this.navigation.map(item => (
             <a
               class={`main-navigation-mobile__item-link${
-                this.selected && this.selected.href === item.href
+                this.selected && this.selected.id === item.id
                   ? ' main-navigation-mobile__item-link--selected'
                   : ''
               }`}

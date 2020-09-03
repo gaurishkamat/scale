@@ -14,11 +14,11 @@ export class Header {
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
-  @Prop() activeRouteHref: string;
-  @Prop() activeSectorName?: string;
+  @Prop() activeRouteId: string;
+  @Prop() activeSectorId?: string;
   @Prop({ reflect: true }) scrolled: boolean = false;
   @State() activeSegment: any =
-    this.sectorNavigation.find(({ name }) => name === this.activeSectorName) ||
+    this.sectorNavigation.find(({ name }) => name === this.activeSectorId) ||
     this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
@@ -28,7 +28,7 @@ export class Header {
     this.mobileMenu = false;
   }
 
-  @Watch('activeSectorName')
+  @Watch('activeSectorId')
   handleActiveSegment(newValue) {
     this.activeSegment =
       this.sectorNavigation.find(({ href }) => href === newValue) || {};
@@ -56,8 +56,8 @@ export class Header {
             }
 
             ${
-              findRootNode(this.mainNavigation, this.activeRouteHref)?.href ===
-                item.href && !this.visibleMegaMenu
+              findRootNode(this.mainNavigation, this.activeRouteId)?.id ===
+                item.id && !this.visibleMegaMenu
                 ? 'active'
                 : ''
             }`}
@@ -86,7 +86,7 @@ export class Header {
                 hide={() => {
                   this.visibleMegaMenu = '';
                 }}
-                activeRouteHref={this.activeRouteHref}
+                activeRouteId={this.activeRouteId}
               ></app-mega-menu>
             )}
           </li>
@@ -131,7 +131,7 @@ export class Header {
             <a
               onClick={event => this.handleSelectedSegment(event, item)}
               class={`segment-navigation__item-link${
-                this.activeSegment.href === item.href ? ' is-active' : ''
+                this.activeSegment.id === item.id ? ' is-active' : ''
               }`}
               href={item.href}
             >
@@ -248,11 +248,11 @@ export class Header {
           >
             <app-navigation-sector-mobile
               navigation={this.sectorNavigation}
-              activeSectorName={this.activeSectorName}
+              activeSectorId={this.activeSectorId}
             ></app-navigation-sector-mobile>
             <app-navigation-main-mobile
               navigation={this.mainNavigation}
-              activeRouteHref={this.activeRouteHref}
+              activeRouteId={this.activeRouteId}
             ></app-navigation-main-mobile>
           </div>
         </div>

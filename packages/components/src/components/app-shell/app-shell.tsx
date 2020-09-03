@@ -34,8 +34,8 @@ export class Shell {
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
   @Prop() customClass?: string = '';
-  @Prop() activeRouteHref?: string = '';
-  @Prop() activeSectorName?: string = '';
+  @Prop() activeRouteId?: string = '';
+  @Prop() activeSectorId?: string = '';
   @State() scrolled: boolean = false;
 
   @Listen('scroll', { target: 'window' })
@@ -57,8 +57,8 @@ export class Shell {
             iconNavigation={levelEnhancer(this.iconNavigation)}
             sectorNavigation={levelEnhancer(this.sectorNavigation)}
             addonNavigation={levelEnhancer(this.addonNavigation)}
-            activeRouteHref={this.activeRouteHref}
-            activeSectorName={this.activeSectorName}
+            activeRouteId={this.activeRouteId}
+            activeSectorId={this.activeSectorId}
           ></scale-app-header>
           <div class="content">
             <slot></slot>

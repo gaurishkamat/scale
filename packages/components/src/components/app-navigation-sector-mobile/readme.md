@@ -9,7 +9,7 @@
 
 | Property           | Attribute            | Description | Type         | Default     |
 | ------------------ | -------------------- | ----------- | ------------ | ----------- |
-| `activeSectorName` | `active-sector-name` |             | `string`     | `undefined` |
+| `activeSectorId` | `active-sector-name` |             | `string`     | `undefined` |
 | `navigation`       | --                   |             | `MenuItem[]` | `undefined` |
 
 
