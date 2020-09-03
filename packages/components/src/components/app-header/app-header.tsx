@@ -18,7 +18,7 @@ export class Header {
   @Prop() activeSectorId?: string;
   @Prop({ reflect: true }) scrolled: boolean = false;
   @State() activeSegment: any =
-    this.sectorNavigation.find(({ name }) => name === this.activeSectorId) ||
+    this.sectorNavigation.find(({ id }) => id === this.activeSectorId) ||
     this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
@@ -31,7 +31,7 @@ export class Header {
   @Watch('activeSectorId')
   handleActiveSegment(newValue) {
     this.activeSegment =
-      this.sectorNavigation.find(({ href }) => href === newValue) || {};
+      this.sectorNavigation.find(({ id }) => id === newValue) || {};
   }
 
   handleMobileMenu(event) {
