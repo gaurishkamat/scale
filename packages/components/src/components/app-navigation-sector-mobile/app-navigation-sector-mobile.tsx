@@ -15,8 +15,7 @@ export class NavigationSectorMobile {
   @Watch('activeSectorId')
   handleActiveSegment(newValue) {
     this.selected =
-      this.navigation.find(({ id }) => id === newValue) ||
-      this.navigation[0];
+      this.navigation.find(({ id }) => id === newValue) || this.navigation[0];
   }
 
   handleSelected(event, item) {

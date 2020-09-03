@@ -8,7 +8,7 @@ import {
   Watch,
 } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
-import { findSelected } from '../../utils/menu-utils';
+import { findSelected, findRootNode } from '../../utils/menu-utils';
 
 @Component({
   tag: 'app-navigation-main-mobile',
@@ -54,8 +54,6 @@ export class MainNavigationMobile {
   }
 
   handleSelect(event, item) {
-    event.preventDefault();
-
     const { selected, parent } = findSelected(this.navigation, item.id);
     this.selected = selected;
     this.parent = parent;
@@ -72,6 +70,11 @@ export class MainNavigationMobile {
   childMenuPage() {
     const section =
       this.selected && this.selected.children ? this.selected : this.parent;
+
+    const { selected, parent } = findSelected(
+      this.navigation,
+      this.activeRouteId
+    );
 
     if (!section) {
       return <div></div>;
@@ -96,7 +99,10 @@ export class MainNavigationMobile {
           {section.children.map(child => (
             <a
               class={`main-navigation-mobile__child-menu-item-link ${
-                child.id === this.selected.id ? 'selected' : ''
+                (selected && child.id === selected.id) ||
+                (parent && parent.id === child.id)
+                  ? 'selected'
+                  : ''
               }`}
               href={child.href}
             >
@@ -118,6 +124,8 @@ export class MainNavigationMobile {
   }
 
   render() {
+    const { selected } = findSelected(this.navigation, this.activeRouteId);
+    const rootNode = selected && findRootNode(this.navigation, selected.id);
     return (
       <div class="main-navigation-mobile">
         {this.childMenuPage()}
@@ -125,7 +133,7 @@ export class MainNavigationMobile {
           {this.navigation.map(item => (
             <a
               class={`main-navigation-mobile__item-link${
-                this.selected && this.selected.id === item.id
+                rootNode && rootNode.id === item.id
                   ? ' main-navigation-mobile__item-link--selected'
                   : ''
               }`}
