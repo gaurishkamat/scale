@@ -12,7 +12,7 @@
 }
 .mega-menu__wrapper {
   padding: 34px 1rem;
-  background: #FFF;
+  background: #fff;
   pointer-events: none;
   border-bottom-left-radius: var(--header-border-radius);
   border-bottom-right-radius: var(--header-border-radius);
