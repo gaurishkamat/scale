@@ -17,6 +17,7 @@ app-navigation-main-mobile {
   list-style: none;
   padding: 0;
   margin: 0;
+  min-height: var(--main-navigation-mobile-height);
 }
 
 .main-navigation-mobile__item {
@@ -33,6 +34,10 @@ app-navigation-main-mobile {
   border-bottom: 1px solid #efefef;
   padding-right: 34px;
   align-items: center;
+}
+
+.main-navigation-mobile__item-wrapper scale-icon {
+  margin-right: 40px;
 }
 
 .main-navigation-mobile__item-link {
@@ -114,4 +119,8 @@ svg path {
   align-items: center;
   border-bottom: 1px solid #efefef;
   margin-left: 64px;
+}
+
+.main-navigation-mobile__child-menu-item-wrapper scale-icon {
+  margin-right: 40px;
 }

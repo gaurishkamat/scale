@@ -47,22 +47,22 @@ export class Header {
   }
 
   menuMain() {
+    const rootNode = findRootNode(this.mainNavigation, this.activeRouteId);
     return (
       <ul class="main-navigation">
         {this.mainNavigation.map(item => (
           <li
-            class={`main-navigation__item ${
-              this.visibleMegaMenu === item.name ? 'mega-menu--visible' : ''
-            }
-
-            ${
-              findRootNode(this.mainNavigation, this.activeRouteId)?.id ===
-                item.id && !this.visibleMegaMenu
-                ? 'active'
-                : ''
-            }`}
+            class={classNames(
+              'main-navigation__item',
+              this.visibleMegaMenu === item.name && 'mega-menu--visible',
+              rootNode &&
+                rootNode.id === item.id &&
+                !this.visibleMegaMenu &&
+                this.visibleMegaMenu !== null &&
+                'active'
+            )}
             onMouseEnter={() => {
-              this.visibleMegaMenu = item.name;
+              this.visibleMegaMenu = item.children ? item.name : null;
             }}
             onMouseLeave={() => {
               this.visibleMegaMenu = '';
@@ -96,17 +96,27 @@ export class Header {
   }
 
   menuMeta() {
+    const { defaultName, openedName } = this.iconNavigation.find(
+      ({ id }) => id === 'menu'
+    ) || { defaultName: 'Menu', openedName: 'Close' };
     return (
       <ul class="meta-navigation">
-        {this.iconNavigation.map(item => (
-          <li class="meta-navigation__item">
-            <a class="meta-navigation__item-link" href={item.href}>
-              {renderIcon(item.icon, 'meta-navigation__item-link')}
-              <span class="meta-navigation__item-label">{item.name}</span>
-            </a>
-          </li>
-        ))}
-        <li class="meta-navigation__item mobile-menu">
+        {this.iconNavigation
+          .filter(({ id }) => id !== 'menu')
+          .map(item => (
+            <li class="meta-navigation__item">
+              <a class="meta-navigation__item-link" href={item.href}>
+                {renderIcon(item.icon, 'meta-navigation__item-link')}
+                <span class="meta-navigation__item-label">{item.name}</span>
+              </a>
+            </li>
+          ))}
+        <li
+          class={classNames(
+            'meta-navigation__item mobile-menu',
+            this.mobileMenu && 'open'
+          )}
+        >
           <div
             class="meta-navigation__item-link"
             onClick={event => this.handleMobileMenu(event)}
@@ -115,7 +125,7 @@ export class Header {
               name={this.mobileMenu ? 'menu-close' : 'menu'}
             ></scale-icon>
             <span class="meta-navigation__item-label">
-              {this.mobileMenu ? 'Close' : 'Menu'}
+              {this.mobileMenu ? openedName : defaultName}
             </span>
           </div>
         </li>
@@ -264,7 +274,8 @@ export class Header {
     return classNames(
       'header',
       this.customClass && this.customClass,
-      this.scrolled && 'sticky'
+      this.scrolled && 'sticky',
+      this.visibleMegaMenu && 'visible-mega-menu'
     );
   }
 }
