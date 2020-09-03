@@ -123,8 +123,6 @@
     line-height: 12px;
     flex-direction: column;
   }
-  /* TODO remove ... app-icon line  */
-  .header .meta-navigation .meta-navigation__item-link app-icon,
   .header .meta-navigation .meta-navigation__item-link scale-icon {
     width: 18px;
     height: 18px;
@@ -202,6 +200,10 @@
     margin-right: 1rem;
     pointer-events: none;
   }
+  .header.sticky .header__nav-logo {
+    margin-right: 32px;
+  }
+
   .header .main-navigation {
     height: var(--header-nav-height);
     margin: 0;
@@ -249,7 +251,6 @@
     text-decoration: none;
   }
   .header .addon-navigation .addon-navigation__item-link:hover {
-    transition: all 0.2s ease-in-out;
     border-bottom: 1px solid #fff;
   }
   .header .segment-navigation .segment-navigation__item-link {
@@ -268,13 +269,14 @@
     transition: all 0.2s ease-in-out;
     border-bottom: 1px solid #fff;
   }
+  .header .meta-navigation .meta-navigation__item-link:hover {
+    color: #f90984;
+  }
   .header .meta-navigation .meta-navigation__item-link {
     margin: 0 0 0 16px;
     font-size: 12px;
     line-height: 16px;
   }
-  /* TODO remove ... app-icon line  */
-  .header .meta-navigation .meta-navigation__item-link app-icon,
   .header .meta-navigation .meta-navigation__item-link scale-icon {
     margin-right: 6px;
   }
@@ -304,6 +306,9 @@
     .main-navigation__item:hover
     .main-navigation__item-link-text {
     margin-top: 2px;
+  }
+  .main-navigation__item-link-text {
+    white-space: nowrap;
   }
 
   .header .main-navigation .main-navigation__item:first-child {

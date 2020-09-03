@@ -113,7 +113,8 @@ export class MainNavigationMobile {
                 }}
               >
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
-                  {child.name}
+                  <span>{child.name}</span>
+                  {child.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>
             </a>
@@ -145,7 +146,7 @@ export class MainNavigationMobile {
               <li class="main-navigation-mobile__item">
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
-                  <scale-icon name="ahead"></scale-icon>
+                  {item.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>
             </a>

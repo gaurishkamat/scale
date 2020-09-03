@@ -110,6 +110,7 @@ svg path {
 .main-navigation-mobile__child-menu-item-wrapper {
   width: calc(100% - 64px);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #efefef;
   margin-left: 64px;
