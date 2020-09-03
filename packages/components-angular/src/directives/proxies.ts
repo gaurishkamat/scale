@@ -27,13 +27,13 @@ export class AppLogo {
 
 export declare interface AppMegaMenu extends Components.AppMegaMenu {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'navigation']
 })
 @Component({
   selector: 'app-mega-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'navigation']
 })
 export class AppMegaMenu {
   protected el: HTMLElement;
@@ -46,13 +46,13 @@ export class AppMegaMenu {
 import { MainNavigationMobile as IMainNavigationMobile } from '@scaleds/components-telekom/dist/types/components/app-navigation-main-mobile/app-navigation-main-mobile';
 export declare interface AppNavigationMainMobile extends Components.AppNavigationMainMobile {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'navigation']
+  inputs: ['activeRouteId', 'navigation']
 })
 @Component({
   selector: 'app-navigation-main-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'navigation'],
+  inputs: ['activeRouteId', 'navigation'],
   outputs: ['closeMenu']
 })
 export class AppNavigationMainMobile {
@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;

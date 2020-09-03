@@ -66,7 +66,7 @@ export const AppMegaMenu = /*@__PURE__*/ Vue.extend({
   props: {
     navigation: {} as PropOptions<Components.AppMegaMenu['navigation']>,
     hide: {} as PropOptions<Components.AppMegaMenu['hide']>,
-    activeRoute: {} as PropOptions<Components.AppMegaMenu['activeRoute']>,
+    activeRouteId: {} as PropOptions<Components.AppMegaMenu['activeRouteId']>,
   },
 
 
@@ -78,7 +78,7 @@ export const AppNavigationMainMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
     navigation: {} as PropOptions<Components.AppNavigationMainMobile['navigation']>,
-    activeRoute: {} as PropOptions<Components.AppNavigationMainMobile['activeRoute']>,
+    activeRouteId: {} as PropOptions<Components.AppNavigationMainMobile['activeRouteId']>,
   },
 
 
@@ -139,7 +139,7 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppHeader['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppHeader['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppHeader['addonNavigation']>,
-    activeRoute: {} as PropOptions<Components.ScaleAppHeader['activeRoute']>,
+    activeRouteId: {} as PropOptions<Components.ScaleAppHeader['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppHeader['activeSectorId']>,
     scrolled: {} as PropOptions<Components.ScaleAppHeader['scrolled']>,
   },
@@ -157,7 +157,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
     customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
-    activeRoute: {} as PropOptions<Components.ScaleAppShell['activeRoute']>,
+    activeRouteId: {} as PropOptions<Components.ScaleAppShell['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppShell['activeSectorId']>,
   },
 

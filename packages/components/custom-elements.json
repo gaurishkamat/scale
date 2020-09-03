@@ -30,7 +30,7 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         }
       ]
@@ -43,7 +43,7 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         }
       ]
@@ -56,7 +56,7 @@
       },
       "attributes": [
         {
-          "name": "active-sector-name",
+          "name": "active-sector-id",
           "description": ""
         }
       ]
@@ -127,11 +127,11 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         },
         {
-          "name": "active-sector-name",
+          "name": "active-sector-id",
           "description": ""
         },
         {
@@ -152,11 +152,11 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         },
         {
-          "name": "active-sector-name",
+          "name": "active-sector-id",
           "description": ""
         },
         {
