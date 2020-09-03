@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute | Description | Type         | Default     |
-| ------------ | --------- | ----------- | ------------ | ----------- |
-| `navigation` | --        |             | `MenuItem[]` | `undefined` |
+| Property           | Attribute            | Description | Type         | Default     |
+| ------------------ | -------------------- | ----------- | ------------ | ----------- |
+| `activeSectorName` | `active-sector-name` |             | `string`     | `undefined` |
+| `navigation`       | --                   |             | `MenuItem[]` | `undefined` |
 
 
 ## Dependencies

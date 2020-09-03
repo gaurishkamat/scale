@@ -8,7 +8,7 @@ import { MenuItem } from '../app-interfaces';
 export class MegaMenu {
   @Prop() navigation: MenuItem[];
   @Prop() hide: () => void;
-  @Prop() activeRoute: string;
+  @Prop() activeRouteHref: string;
 
   render() {
     return (
@@ -23,7 +23,7 @@ export class MegaMenu {
                   <div>
                     <a
                       class={`mega-menu__row-item ${
-                        this.activeRoute === menuItem.href ? 'active' : ''
+                        this.activeRouteHref === menuItem.href ? 'active' : ''
                       }`}
                       href={menuItem.href}
                       onClick={event => {

@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
 
 @Component({
@@ -7,11 +7,23 @@ import { MenuItem } from '../app-interfaces';
 })
 export class NavigationSectorMobile {
   @Prop() navigation: MenuItem[];
-  @State() selected: MenuItem = this.navigation[0];
+  @Prop() activeSectorName?: string;
+  @State() selected: MenuItem =
+    this.navigation.find(({ name }) => name === this.activeSectorName) ||
+    this.navigation[0];
+
+  @Watch('activeSectorName')
+  handleActiveSegment(newValue) {
+    this.selected =
+      this.navigation.find(({ href }) => href === newValue) ||
+      this.navigation[0];
+  }
 
   handleSelected(event, item) {
-    event.preventDefault();
     this.selected = item;
+    if (typeof item.onClick === 'function') {
+      item.onClick(event);
+    }
   }
 
   render() {

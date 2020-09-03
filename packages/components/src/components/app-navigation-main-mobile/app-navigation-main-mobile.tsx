@@ -1,4 +1,12 @@
-import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  State,
+  Event,
+  EventEmitter,
+  Watch,
+} from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
 import { findSelected } from '../../utils/menu-utils';
 
@@ -8,7 +16,7 @@ import { findSelected } from '../../utils/menu-utils';
 })
 export class MainNavigationMobile {
   @Prop() navigation: MenuItem[];
-  @Prop() activeRoute: string;
+  @Prop() activeRouteHref: string;
   @State() selected: MenuItem = undefined;
   @State() parent: MenuItem = undefined;
   @Event({
@@ -18,14 +26,19 @@ export class MainNavigationMobile {
     bubbles: true,
   })
   closeMenu: EventEmitter;
+  @Watch('activeRouteHref')
+  handleActiveRoute(newValue) {
+    this.selected = findSelected(this.navigation, newValue, null).selected;
+    this.parent = findSelected(this.navigation, newValue).parent;
+  }
 
   componentWillLoad() {
     this.selected = findSelected(
       this.navigation,
-      this.activeRoute,
+      this.activeRouteHref,
       null
     ).selected;
-    this.parent = findSelected(this.navigation, this.activeRoute).parent;
+    this.parent = findSelected(this.navigation, this.activeRouteHref).parent;
   }
 
   closeMenuHandler() {

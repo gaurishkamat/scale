@@ -7,14 +7,15 @@
 
 ## Properties
 
-| Property           | Attribute           | Description | Type     | Default |
-| ------------------ | ------------------- | ----------- | -------- | ------- |
-| `activeRoute`      | `active-route`      |             | `string` | `''`    |
-| `addonNavigation`  | `addon-navigation`  |             | `any`    | `[]`    |
-| `customClass`      | `custom-class`      |             | `string` | `''`    |
-| `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |
-| `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`    |
-| `sectorNavigation` | `sector-navigation` |             | `any`    | `[]`    |
+| Property           | Attribute            | Description | Type     | Default |
+| ------------------ | -------------------- | ----------- | -------- | ------- |
+| `activeRoute`      | `active-route`       |             | `string` | `''`    |
+| `activeSectorName` | `active-sector-name` |             | `string` | `''`    |
+| `addonNavigation`  | `addon-navigation`   |             | `any`    | `[]`    |
+| `customClass`      | `custom-class`       |             | `string` | `''`    |
+| `iconNavigation`   | `icon-navigation`    |             | `any`    | `[]`    |
+| `mainNavigation`   | `main-navigation`    |             | `any`    | `[]`    |
+| `sectorNavigation` | `sector-navigation`  |             | `any`    | `[]`    |
 
 
 ## Dependencies

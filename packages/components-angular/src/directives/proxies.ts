@@ -69,13 +69,13 @@ export class AppNavigationMainMobile {
 
 export declare interface AppNavigationSectorMobile extends Components.AppNavigationSectorMobile {}
 @ProxyCmp({
-  inputs: ['navigation']
+  inputs: ['activeSectorName', 'navigation']
 })
 @Component({
   selector: 'app-navigation-sector-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['navigation']
+  inputs: ['activeSectorName', 'navigation']
 })
 export class AppNavigationSectorMobile {
   protected el: HTMLElement;
@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRoute', 'activeSectorName', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRoute', 'activeSectorName', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRoute', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRoute', 'activeSectorName', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRoute', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRoute', 'activeSectorName', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;

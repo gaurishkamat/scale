@@ -54,7 +54,12 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": []
+      "attributes": [
+        {
+          "name": "active-sector-name",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "scale-accordion",
@@ -126,6 +131,10 @@
           "description": ""
         },
         {
+          "name": "active-sector-name",
+          "description": ""
+        },
+        {
           "name": "custom-class",
           "description": ""
         },
@@ -144,6 +153,10 @@
       "attributes": [
         {
           "name": "active-route",
+          "description": ""
+        },
+        {
+          "name": "active-sector-name",
           "description": ""
         },
         {

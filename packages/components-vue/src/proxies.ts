@@ -90,6 +90,7 @@ export const AppNavigationSectorMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
     navigation: {} as PropOptions<Components.AppNavigationSectorMobile['navigation']>,
+    activeSectorName: {} as PropOptions<Components.AppNavigationSectorMobile['activeSectorName']>,
   },
 
 
@@ -139,6 +140,7 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
     sectorNavigation: {} as PropOptions<Components.ScaleAppHeader['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppHeader['addonNavigation']>,
     activeRoute: {} as PropOptions<Components.ScaleAppHeader['activeRoute']>,
+    activeSectorName: {} as PropOptions<Components.ScaleAppHeader['activeSectorName']>,
     scrolled: {} as PropOptions<Components.ScaleAppHeader['scrolled']>,
   },
 
@@ -156,6 +158,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
     customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
     activeRoute: {} as PropOptions<Components.ScaleAppShell['activeRoute']>,
+    activeSectorName: {} as PropOptions<Components.ScaleAppShell['activeSectorName']>,
   },
 
 

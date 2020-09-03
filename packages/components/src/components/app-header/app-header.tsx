@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
+import { Component, h, Prop, Host, State, Listen, Watch } from '@stencil/core';
 import classNames from 'classnames';
 import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
@@ -14,9 +14,12 @@ export class Header {
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
-  @Prop() activeRoute: string;
+  @Prop() activeRouteHref: string;
+  @Prop() activeSectorName?: string;
   @Prop({ reflect: true }) scrolled: boolean = false;
-  @State() activeSegment: any = this.sectorNavigation[0];
+  @State() activeSegment: any =
+    this.sectorNavigation.find(({ name }) => name === this.activeSectorName) ||
+    this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
 
@@ -25,14 +28,22 @@ export class Header {
     this.mobileMenu = false;
   }
 
+  @Watch('activeSectorName')
+  handleActiveSegment(newValue) {
+    this.activeSegment =
+      this.sectorNavigation.find(({ href }) => href === newValue) || {};
+  }
+
   handleMobileMenu(event) {
     event.preventDefault();
     this.mobileMenu = !this.mobileMenu;
   }
 
   handleSelectedSegment(event, item) {
-    event.preventDefault();
     this.activeSegment = item;
+    if (typeof item.onClick === 'function') {
+      item.onClick(event);
+    }
   }
 
   menuMain() {
@@ -45,7 +56,7 @@ export class Header {
             }
 
             ${
-              findRootNode(this.mainNavigation, this.activeRoute)?.href ===
+              findRootNode(this.mainNavigation, this.activeRouteHref)?.href ===
                 item.href && !this.visibleMegaMenu
                 ? 'active'
                 : ''
@@ -75,7 +86,7 @@ export class Header {
                 hide={() => {
                   this.visibleMegaMenu = '';
                 }}
-                activeRoute={this.activeRoute}
+                activeRouteHref={this.activeRouteHref}
               ></app-mega-menu>
             )}
           </li>
@@ -237,10 +248,11 @@ export class Header {
           >
             <app-navigation-sector-mobile
               navigation={this.sectorNavigation}
+              activeSectorName={this.activeSectorName}
             ></app-navigation-sector-mobile>
             <app-navigation-main-mobile
               navigation={this.mainNavigation}
-              activeRoute={this.activeRoute}
+              activeRouteHref={this.activeRouteHref}
             ></app-navigation-main-mobile>
           </div>
         </div>

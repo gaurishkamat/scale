@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description | Type         | Default     |
 | ------------- | -------------- | ----------- | ------------ | ----------- |
-| `activeRoute` | `active-route` |             | `string`     | `undefined` |
+| `activeRouteHref` | `active-route` |             | `string`     | `undefined` |
 | `navigation`  | --             |             | `MenuItem[]` | `undefined` |
 
 
