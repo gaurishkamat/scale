@@ -72,7 +72,9 @@ export class Header {
               class="main-navigation__item-link"
               href={item.href}
               onClick={event => {
-                this.visibleMegaMenu = '';
+                if (item.href) {
+                  this.visibleMegaMenu = '';
+                }
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
@@ -158,7 +160,15 @@ export class Header {
       <ul class="addon-navigation">
         {this.addonNavigation.map(item => (
           <li class="addon-navigation__item">
-            <a class="addon-navigation__item-link" href={item.href}>
+            <a
+              class="addon-navigation__item-link"
+              href={item.href}
+              onClick={event => {
+                if (typeof item.onClick === 'function') {
+                  item.onClick(event);
+                }
+              }}
+            >
               {item.name}
             </a>
           </li>
