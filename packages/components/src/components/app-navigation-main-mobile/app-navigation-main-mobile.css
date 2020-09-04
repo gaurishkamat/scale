@@ -27,6 +27,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__item-wrapper {
+  box-sizing: border-box;
   width: calc(100% - 34px);
   display: flex;
   justify-content: space-between;
@@ -34,10 +35,6 @@ app-navigation-main-mobile {
   border-bottom: 1px solid #efefef;
   padding-right: 34px;
   align-items: center;
-}
-
-.main-navigation-mobile__item-wrapper scale-icon {
-  margin-right: 40px;
 }
 
 .main-navigation-mobile__item-link {
@@ -62,6 +59,11 @@ app-navigation-main-mobile {
 
 .main-navigation-mobile__child-menu-current-item {
   line-height: 80px;
+}
+
+.main-navigation-mobile__child-menu-current-item scale-icon {
+  margin-right: 6px;
+  margin-top: -4px;
 }
 
 .main-navigation-mobile__child-menu-current {

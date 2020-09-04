@@ -59,7 +59,7 @@ export class Header {
                 rootNode.id === item.id &&
                 !this.visibleMegaMenu &&
                 this.visibleMegaMenu !== null &&
-                'active'
+                'selected'
             )}
             onMouseEnter={() => {
               this.visibleMegaMenu = item.children ? item.name : null;
@@ -142,9 +142,10 @@ export class Header {
           <li class="segment-navigation__item">
             <a
               onClick={event => this.handleSelectedSegment(event, item)}
-              class={`segment-navigation__item-link${
-                this.activeSegment.id === item.id ? ' is-active' : ''
-              }`}
+              class={classNames(
+                'segment-navigation__item-link',
+                this.activeSegment.id === item.id && 'active'
+              )}
               href={item.href}
             >
               {item.name}
@@ -285,7 +286,7 @@ export class Header {
       'header',
       this.customClass && this.customClass,
       this.scrolled && 'sticky',
-      this.visibleMegaMenu && 'visible-mega-menu'
+      (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }
 }
