@@ -5,36 +5,43 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
   font-size: 16px;
-  transition: all .2s ease-in-out;
   align-items: center;
+  font-family: TeleNeoWeb-Medium;
   font-weight: 500;
-  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
+  color: #007DB3;
+  --icon-color: #007DB3;
 }
 .link-0-0-10 scale-icon {
   margin-left: 4px;
 }
 .link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: black;
-  --icon-color: black;
+  color: #007DB3;
+  --icon-color: #007DB3;
+}
+.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
+  color: #00739F;
+  --icon-color: #00739F;
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  border-bottom: 1px solid #00A6F0;
   text-decoration: none;
+  border-bottom: 1px solid #007DB3;
+}
+.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
+  border-bottom: 2px solid #007DB3;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;
-  opacity: 0.5;
+  color: #7C7C7C;
 }
 .link--block-0-0-13 {
   display: flex;
@@ -60,7 +67,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" target="_self">
+    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" tabindex="0" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -73,36 +80,43 @@ exports[`Link should have link href value when href value is set 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
   font-size: 16px;
-  transition: all .2s ease-in-out;
   align-items: center;
+  font-family: TeleNeoWeb-Medium;
   font-weight: 500;
-  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
+  color: #007DB3;
+  --icon-color: #007DB3;
 }
 .link-0-0-10 scale-icon {
   margin-left: 4px;
 }
 .link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: black;
-  --icon-color: black;
+  color: #007DB3;
+  --icon-color: #007DB3;
+}
+.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
+  color: #00739F;
+  --icon-color: #00739F;
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  border-bottom: 1px solid #00A6F0;
   text-decoration: none;
+  border-bottom: 1px solid #007DB3;
+}
+.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
+  border-bottom: 2px solid #007DB3;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;
-  opacity: 0.5;
+  color: #7C7C7C;
 }
 .link--block-0-0-13 {
   display: flex;
@@ -128,7 +142,7 @@ exports[`Link should have link href value when href value is set 1`] = `
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" target="_self">
+    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" tabindex="0" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -141,36 +155,43 @@ exports[`Link should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .link-0-0-10 {
-  color: #00A6F0;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
   font-size: 16px;
-  transition: all .2s ease-in-out;
   align-items: center;
+  font-family: TeleNeoWeb-Medium;
   font-weight: 500;
-  --icon-color: #00A6F0;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
+  color: #007DB3;
+  --icon-color: #007DB3;
 }
 .link-0-0-10 scale-icon {
   margin-left: 4px;
 }
 .link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: black;
-  --icon-color: black;
+  color: #007DB3;
+  --icon-color: #007DB3;
+}
+.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
+  color: #00739F;
+  --icon-color: #00739F;
 }
 .link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  border-bottom: 1px solid #00A6F0;
   text-decoration: none;
+  border-bottom: 1px solid #007DB3;
+}
+.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
+  border-bottom: 2px solid #007DB3;
 }
 .link--disabled-0-0-12 {
   cursor: not-allowed;
-  opacity: 0.5;
+  color: #7C7C7C;
 }
 .link--block-0-0-13 {
   display: flex;
@@ -196,7 +217,7 @@ exports[`Link should match snapshot 1`] = `
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" target="_self">
+    <a class="link--underline-0-0-11 link-0-0-10" tabindex="0" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
