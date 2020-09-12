@@ -158,7 +158,8 @@
         24: 'Medium',
         16: 'Small'
     };
-    Array.from(document.querySelectorAll("scale-button")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-button")).forEach((btn,i) => {
+        btn.dataset.sketchKey = `icon-interactive-${i}`;
         btn.dataset.sketchSymbol = `Icon / 02 Interactive / ${
                 order(2, getCategoryName(btn))
             } / ${

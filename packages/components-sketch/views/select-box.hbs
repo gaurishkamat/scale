@@ -1239,7 +1239,8 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-input")).forEach((btn,i) => {
+        btn.dataset.sketchKey = `select-box-${i}`;
         btn.dataset.sketchSymbol = `Select Box / ${
                 order(0, btn.hasAttribute('placeholder') ? 'Input' : 'Dropdown')
             } / ${

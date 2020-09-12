@@ -299,7 +299,8 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-button")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-button")).forEach((btn,i) => {
+        btn.dataset.sketchKey = `button-${i}`;
         btn.dataset.sketchSymbol = `Button / ${
                 order(1, getSizeName(btn))
             } / ${

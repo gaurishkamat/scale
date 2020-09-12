@@ -552,7 +552,8 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-input")).forEach((btn,i) => {
+        btn.dataset.sketchKey = `input-field-${i}`;
         btn.dataset.sketchSymbol = `Inputfield / ${
                 order(1, getSizeName(btn))
             } / ${

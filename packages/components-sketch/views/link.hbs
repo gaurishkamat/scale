@@ -102,7 +102,8 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-link")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-link")).forEach((btn,i) => {
+        btn.dataset.sketchKey = `link-${i}`;
         btn.dataset.sketchSymbol = `Link / ${
                 order(1, getCategoryName(btn))
             } / ${
