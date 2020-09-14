@@ -1,293 +1,440 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-  />
-  <title>Stencil Component Starter</title>
-  <script type="module" src="/build/scale-components.esm.js"></script>
-  <script nomodule src="/build/scale-components.js"></script>
-  <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
-  <style>
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
 
-    html,
-    body {
-      padding: 0;
-      margin: 0;
-      /* height: 100%;
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        /* height: 100%;
       width: 100%; */
-    }
-    .block {
-      height: 800px;
-      border-bottom: 1px solid #dfdfdf;
-    }
-  </style>
-</head>
+      }
+      .block {
+        height: 800px;
+        border-bottom: 1px solid #dfdfdf;
+      }
+    </style>
+  </head>
 
-<body>
-<scale-app-shell id="app">
-  <div class="block">One</div>
-  <div class="block">Two</div>
-</scale-app-shell>
-<script>
-  const app = document.getElementById('app');
-  app.activeRoute = '#bazooka'
-  app.mainNavigation = [
-    {
-      name: 'Mobilfunk Menu',
-      href: '#mobilfunk',
-      children: [
+  <body>
+    <scale-app-shell id="app">
+      <div class="block">
+        <button id="change-button" style="margin: 1em;">change sector</button>
+      </div>
+      <div class="block">Two</div>
+    </scale-app-shell>
+
+    <script>
+      const changeButton = document.getElementById('change-button');
+      changeButton.addEventListener('click', () => {
+        app.activeSectorId =
+          app.activeSectorId === 'Privatkunden'
+            ? 'Geschäftskunden'
+            : 'Privatkunden';
+      });
+      const app = document.getElementById('app');
+      app.activeRouteId = 'Smartphone-Tarife';
+      app.activeSectorId = 'Privatkunden';
+      app.mainNavigation = [
         {
-          name: 'Tarife & Optionen',
-          href: '#tarife-optionen',
+          name: 'Mobilfunk Menu',
+          id: 'Mobilfunk Menu',
           children: [
             {
-              name: 'Smartphone-Tarife',
-              href: '#smartphone-tarife',
+              name: 'Tarife & Optionen',
+              id: 'Tarife & Optionen',
+              children: [
+                {
+                  name: 'Smartphone-Tarife',
+                  id: 'Smartphone-Tarife',
+                  href: '#smartphone-tarife',
+                  onClick: () => {
+                    app.activeRouteId = 'Smartphone-Tarife';
+                  },
+                },
+                {
+                  name: 'Prepaid-Tarife',
+                  id: 'Prepaid-Tarife',
+                  href: '#prepaid-tarife',
+                  onClick: () => {
+                    app.activeRouteId = 'Prepaid-Tarife';
+                  },
+                },
+                {
+                  name: 'Young-Tarife',
+                  id: 'Young-Tarife',
+                  href: '#young-tarife',
+                  onClick: () => {
+                    app.activeRouteId = 'Young-Tarife';
+                  },
+                },
+                {
+                  name: 'Daten-Tarife',
+                  id: 'Daten-Tarife',
+                  href: '#daten-tarife',
+                  onClick: () => {
+                    app.activeRouteId = 'Daten-Tarife';
+                  },
+                },
+                {
+                  name: 'Zweitkarten',
+                  id: 'Zweitkarten',
+                  href: '#zweitkarten',
+                  onClick: () => {
+                    app.activeRouteId = 'Zweitkarten';
+                  },
+                },
+                {
+                  name: 'Vertrag verlängern',
+                  id: 'Vertrag verlängern',
+                  href: '#vertrag-verlaengern',
+                  onClick: () => {
+                    app.activeRouteId = 'Vertrag verlängern';
+                  },
+                },
+                {
+                  name: 'Zubuchoptionen',
+                  id: 'Zubuchoptionen',
+                  href: '#zubuchoptionen',
+                  onClick: () => {
+                    app.activeRouteId = 'Zubuchoptionen';
+                  },
+                },
+              ],
             },
             {
-              name: 'Prepaid-Tarife',
-              href: '#prepaid-tarife',
+              name: 'Geräte',
+              id: 'Geräte',
+              children: [
+                {
+                  name: 'Smartphones',
+                  id: 'Smartphones',
+                  href: '#smartphones',
+                  onClick: () => {
+                    app.activeRouteId = 'Smartphones';
+                  },
+                },
+                {
+                  name: 'Tablets',
+                  id: 'Tablets',
+                  href: '#tablets',
+                  onClick: () => {
+                    app.activeRouteId = 'Tablets';
+                  },
+                },
+                {
+                  name: 'Smartwatches',
+                  id: 'Smartwatches',
+                  href: '#smartwatches',
+                  onClick: () => {
+                    app.activeRouteId = 'Smartwatches';
+                  },
+                },
+                {
+                  name: 'Handys ohne Vertrag',
+                  id: 'Handys ohne Vertrag',
+                  href: '#handys-ohne-vertrag',
+                  onClick: () => {
+                    app.activeRouteId = 'Handys ohne Vertrag';
+                  },
+                },
+                {
+                  name: 'Surfsticks & Router',
+                  id: 'Surfsticks & Router',
+                  href: '#surfsticks-router',
+                  onClick: () => {
+                    app.activeRouteId = 'Surfsticks & Router';
+                  },
+                },
+                {
+                  name: 'Smart Connect',
+                  id: 'Smart Connect',
+                  href: '#smart-connect',
+                  onClick: () => {
+                    app.activeRouteId = 'Smart Connect';
+                  },
+                },
+                {
+                  name: 'Alle Geräte',
+                  id: 'Alle Geräte',
+                  href: '#alle-geraete',
+                  onClick: () => {
+                    app.activeRouteId = 'Alle Geräte';
+                  },
+                },
+              ],
             },
             {
-              name: 'Young-Tarife',
-              href: '#young-tarife',
+              name: 'Zubehör',
+              id: 'Zubehör',
+              children: [
+                {
+                  name: 'Taschen & Hüllen',
+                  id: 'Taschen & Hüllen',
+                  href: '#taschen-huellen',
+                  onClick: () => {
+                    app.activeRouteId = 'Taschen & Hüllen';
+                  },
+                },
+                {
+                  name: 'Kopfhörer',
+                  id: 'Kopfhörer',
+                  href: '#kopfhoerer',
+                  onClick: () => {
+                    app.activeRouteId = 'Kopfhörer';
+                  },
+                },
+                {
+                  name: 'Autozubehör',
+                  id: 'Autozubehör',
+                  href: '#autozubehoer',
+                  onClick: () => {
+                    app.activeRouteId = 'Autozubehör';
+                  },
+                },
+                {
+                  name: 'Virtual Reality',
+                  id: 'Virtual Reality',
+                  href: '#virtual-reality',
+                  onClick: () => {
+                    app.activeRouteId = 'Virtual Reality';
+                  },
+                },
+                {
+                  name: 'Lautsprecher',
+                  id: 'Lautsprecher',
+                  href: '#lautsprecher',
+                  onClick: () => {
+                    app.activeRouteId = 'Lautsprecher';
+                  },
+                },
+                {
+                  name: 'Lader, Kabel, Adapter',
+                  id: 'Lader, Kabel, Adapter',
+                  href: '#lader-kabel-adapter',
+                  onClick: () => {
+                    app.activeRouteId = 'Lader, Kabel, Adapter';
+                  },
+                },
+                {
+                  name: 'Alle Zubehörartikel',
+                  id: 'Alle Zubehörartikel',
+                  href: '#alle-zubehoerartikel',
+                  onClick: () => {
+                    app.activeRouteId = 'Alle Zubehörartikel';
+                  },
+                },
+              ],
             },
             {
-              name: 'Daten-Tarife',
-              href: '#daten-tarife',
+              name: 'Apps & Dienste',
+              id: 'Apps & Dienste',
+              children: [
+                {
+                  name: 'MeinMagenta App',
+                  id: 'MeinMagenta App',
+                  href: '#meinmagenta-app',
+                  onClick: () => {
+                    app.activeRouteId = 'MeinMagenta App';
+                  },
+                },
+                {
+                  name: 'Sicherheit & Cloud',
+                  id: 'Sicherheit & Cloud',
+                  href: '#sicherheit-cloud',
+                  onClick: () => {
+                    app.activeRouteId = 'Sicherheit & Cloud';
+                  },
+                },
+                {
+                  name: 'Kommunikation',
+                  id: 'Kommunikation',
+                  href: '#kommunikation',
+                  onClick: () => {
+                    app.activeRouteId = 'Kommunikation';
+                  },
+                },
+                {
+                  name: 'Konnektivität',
+                  id: 'Konnektivität',
+                  href: '#konnektivitaet',
+                  onClick: () => {
+                    app.activeRouteId = 'Konnektivität';
+                  },
+                },
+                {
+                  name: 'Musik & Videos',
+                  id: 'Musik & Videos',
+                  href: '#musik-videos',
+                  onClick: () => {
+                    app.activeRouteId = 'Musik & Videos';
+                  },
+                },
+                {
+                  name: 'StreamOn',
+                  id: 'StreamOn',
+                  href: '#stream-on',
+                  onClick: () => {
+                    app.activeRouteId = 'StreamOn';
+                  },
+                },
+              ],
             },
             {
-              name: 'Zweitkarten',
-              href: '#zweitkarten',
-            },
-            {
-              name: 'Vertrag verlängern',
-              href: '#vertrag-verlaengern',
-            },
-            {
-              name: 'Zubuchoptionen',
-              href: '#zubuchoptionen',
+              name: 'Was ist 5G',
+              id: 'Was ist 5G',
+              href: '#wasist5g',
             },
           ],
         },
         {
-          name: 'Geräte',
-          href: '#geraete',
+          name: 'Festnetz & Internet',
+          id: 'Festnetz & Internet',
           children: [
             {
-              name: 'Smartphones',
-              href: '#smartphones',
+              name: 'First',
+              id: 'First',
+              children: [
+                {
+                  name: 'FirstOne',
+                  id: 'FirstOne',
+                  href: '#first-one',
+                  onClick: () => {
+                    app.activeRouteId = 'FirstOne';
+                  },
+                },
+                {
+                  name: 'One',
+                  id: 'One',
+                  href: '#one',
+                  onClick: () => {
+                    app.activeRouteId = 'One';
+                  },
+                },
+              ],
             },
             {
-              name: 'Tablets',
-              href: '#tablets',
-            },
-            {
-              name: 'Smartwatches',
-              href: '#smartwatches',
-            },
-            {
-              name: 'Handys ohne Vertrag',
-              href: '#handys-ohne-vertrag',
-            },
-            {
-              name: 'Surfsticks & Router',
-              href: '#surfsticks-router',
-            },
-            {
-              name: 'Smart Connect',
-              href: '#smart-connect',
-            },
-            {
-              name: 'Alle Geräte',
-              href: '#alle-geraete',
+              name: 'Second',
+              id: 'Second',
+              children: [
+                {
+                  name: 'SecondOne',
+                  id: 'SecondOne',
+                  href: '#second-one',
+                  onClick: () => {
+                    app.activeRouteId = 'SecondOne';
+                  },
+                },
+              ],
             },
           ],
         },
         {
-          name: 'Zubehör',
-          href: '#zubehoer',
-          children: [
-            {
-              name: 'Taschen & Hüllen',
-              href: '#taschen-huellen',
-            },
-            {
-              name: 'Kopfhörer',
-              href: '#kopfhoerer',
-            },
-            {
-              name: 'Autozubehör',
-              href: '#autozubehoer',
-            },
-            {
-              name: 'Virtual Reality',
-              href: '#virtual-reality',
-            },
-            {
-              name: 'Lautsprecher',
-              href: '#lautsprecher',
-            },
-            {
-              name: 'Lader, Kabel, Adapter',
-              href: '#lader-kabel-adapter',
-            },
-            {
-              name: 'Alle Zubehörartikel',
-              href: '#alle-zubehoerartikel',
-            },
-          ],
+          name: 'TV',
+          id: 'TV',
+          href: '#tv',
+          onClick: () => {
+            app.activeRouteId = 'TV';
+          },
         },
         {
-          name: 'Apps & Dienste',
-          href: '#apps-dienste',
-          children: [
-            {
-              name: 'MeinMagenta App',
-              href: '#meinmagenta-app',
-            },
-            {
-              name: 'Sicherheit & Cloud',
-              href: '#sicherheit-cloud',
-            },
-            {
-              name: 'Kommunikation',
-              href: '#kommunikation',
-            },
-            {
-              name: 'Konnektivität',
-              href: '#konnektivitaet',
-            },
-            {
-              name: 'Musik & Videos',
-              href: '#musik-videos',
-            },
-            {
-              name: 'StreamOn',
-              href: '#stream-on',
-            },
-          ],
+          name: 'MagentaEINS',
+          id: 'MagentaEINS',
+          href: '#magentaeins',
+          onClick: () => {
+            app.activeRouteId = 'MagentaEINS';
+          },
         },
         {
-          name: 'Was ist 5G',
-          href: '#was-ist-5g',
-          children: [
-            {
-              name: '5G Mobilfunk',
-              href: '#5g-mobilfunk',
-            },
-            {
-              name: '5G-fähige Mobilfunktarife',
-              href: '#5g-faehige-mobilfunktarife',
-            },
-            {
-              name: '5G Cloud Gaming',
-              href: '#5g-cloud-gaming',
-            },
-            {
-              name: '5G Augmented & Virtual Reality',
-              href: '#5g-augmented-virtual-reality',
-            },
-            {
-              name: '5G Smart City',
-              href: '#5g-smart-city',
-            },
-          ],
+          name: 'Service',
+          id: 'Service',
+          href: '#service',
+          onClick: () => {
+            app.activeRouteId = 'Service';
+          },
         },
-      ],
-    },
-    {
-      name: 'Festnetz & Internet',
-      href: '#festnetz-internet',
-      children: [
+      ];
+      app.iconNavigation = [
         {
-          name: 'First',
-          href: '#first',
-          children: [
-            {
-              name: 'FirstOne',
-              href: '#first/one',
-            },
-            {
-              name: 'One',
-              href: '#one',
-            },
-          ],
+          name: 'Suche',
+          id: 'Suche',
+          href: '#suche',
+          onClick: () => {
+            app.activeRouteId = 'Suche';
+          },
+          icon: 'search',
         },
         {
-          name: 'Second',
-          href: '#second',
-          children: [
-            {
-              name: 'SecondOne',
-              href: '#second-one',
-            },
-          ],
+          name: 'Warenkorb',
+          id: 'Warenkorb',
+          href: '#warenkorb',
+          onClick: () => {
+            app.activeRouteId = 'Warenkorb';
+          },
+          icon: 'shopping-bag',
         },
-      ],
-    },
-    {
-      name: 'TV',
-      href: '#tv',
-    },
-    {
-      name: 'MagentaEINS',
-      href: '#magentaeins',
-    },
-    {
-      name: 'Smart Produkte',
-      href: '#smart-produkte',
-    },
-    {
-      name: 'Service',
-      href: '#service',
-    },
-  ];
-  app.iconNavigation = [
-    {
-      name: 'Suche',
-      href: '#suche',
-      icon: 'search',
-    },
-    {
-      name: 'Warenkorb',
-      href: '#warenkorb',
-      icon: 'shopping-bag',
-    },
-    {
-      name: 'Login',
-      href: '#login',
-      icon: 'profile',
-    },
-  ];
-  app.sectorNavigation = [
-    {
-      name: 'Privatkunden',
-      href: '#privatkunden',
-    },
-    {
-      name: 'Geschäftskunden',
-      href: '#geschaeftskunden',
-    },
-  ];
-  app.addonNavigation = [
-    {
-      name: 'Telekom Shops',
-      href: '#telekom-shops',
-    },
-    {
-      name: 'Kontakt',
-      href: '#kontakt',
-    },
-  ];
-</script>
-</body>
+        {
+          name: 'Login',
+          id: 'Login',
+          href: '#login',
+          onClick: () => {
+            app.activeRouteId = 'Login';
+          },
+          icon: 'profile',
+        },
+        {
+          id: 'menu',
+          defaultName: 'Menü',
+          openedName: 'Schließen',
+        },
+      ];
+      app.sectorNavigation = [
+        {
+          name: 'Privatkunden',
+          id: 'Privatkunden',
+          href: '/',
+          onClick: event => {
+            event.preventDefault();
+            app.activeSectorId = 'Privatkunden';
+          },
+        },
+        {
+          name: 'Geschäftskunden',
+          id: 'Geschäftskunden',
+          href: '/',
+          onClick: event => {
+            event.preventDefault();
+            app.activeSectorId = 'Geschäftskunden';
+          },
+        },
+      ];
+      app.addonNavigation = [
+        {
+          name: 'Telekom Shops',
+          id: 'Telekom Shops',
+          href: '#telekom-shops',
+        },
+        {
+          name: 'Kontakt',
+          id: 'Kontakt',
+          href: '#kontakt',
+        },
+      ];
+    </script>
+  </body>
 </html>

@@ -1,6 +1,14 @@
-import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  State,
+  Event,
+  EventEmitter,
+  Watch,
+} from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
-import { findSelected } from '../../utils/menu-utils';
+import { findSelected, findRootNode } from '../../utils/menu-utils';
 
 @Component({
   tag: 'app-navigation-main-mobile',
@@ -8,7 +16,7 @@ import { findSelected } from '../../utils/menu-utils';
 })
 export class MainNavigationMobile {
   @Prop() navigation: MenuItem[];
-  @Prop() activeRoute: string;
+  @Prop() activeRouteId: string;
   @State() selected: MenuItem = undefined;
   @State() parent: MenuItem = undefined;
   @Event({
@@ -18,14 +26,19 @@ export class MainNavigationMobile {
     bubbles: true,
   })
   closeMenu: EventEmitter;
+  @Watch('activeRouteId')
+  handleActiveRoute(newValue) {
+    this.selected = findSelected(this.navigation, newValue, null).selected;
+    this.parent = findSelected(this.navigation, newValue).parent;
+  }
 
   componentWillLoad() {
     this.selected = findSelected(
       this.navigation,
-      this.activeRoute,
+      this.activeRouteId,
       null
     ).selected;
-    this.parent = findSelected(this.navigation, this.activeRoute).parent;
+    this.parent = findSelected(this.navigation, this.activeRouteId).parent;
   }
 
   closeMenuHandler() {
@@ -35,15 +48,13 @@ export class MainNavigationMobile {
   handlePrevSelected(event, item) {
     event.preventDefault();
 
-    const selected = findSelected(this.navigation, item.href).parent;
+    const selected = findSelected(this.navigation, item.id).parent;
     this.selected = selected;
     this.parent = selected;
   }
 
   handleSelect(event, item) {
-    event.preventDefault();
-
-    const { selected, parent } = findSelected(this.navigation, item.href);
+    const { selected, parent } = findSelected(this.navigation, item.id);
     this.selected = selected;
     this.parent = parent;
 
@@ -59,6 +70,11 @@ export class MainNavigationMobile {
   childMenuPage() {
     const section =
       this.selected && this.selected.children ? this.selected : this.parent;
+
+    const { selected, parent } = findSelected(
+      this.navigation,
+      this.activeRouteId
+    );
 
     if (!section) {
       return <div></div>;
@@ -83,7 +99,10 @@ export class MainNavigationMobile {
           {section.children.map(child => (
             <a
               class={`main-navigation-mobile__child-menu-item-link ${
-                child.href === this.selected.href ? 'selected' : ''
+                (selected && child.id === selected.id) ||
+                (parent && parent.id === child.id)
+                  ? 'selected'
+                  : ''
               }`}
               href={child.href}
             >
@@ -94,7 +113,8 @@ export class MainNavigationMobile {
                 }}
               >
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
-                  {child.name}
+                  <span>{child.name}</span>
+                  {child.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>
             </a>
@@ -105,6 +125,8 @@ export class MainNavigationMobile {
   }
 
   render() {
+    const { selected } = findSelected(this.navigation, this.activeRouteId);
+    const rootNode = selected && findRootNode(this.navigation, selected.id);
     return (
       <div class="main-navigation-mobile">
         {this.childMenuPage()}
@@ -112,7 +134,7 @@ export class MainNavigationMobile {
           {this.navigation.map(item => (
             <a
               class={`main-navigation-mobile__item-link${
-                this.selected && this.selected.href === item.href
+                rootNode && rootNode.id === item.id
                   ? ' main-navigation-mobile__item-link--selected'
                   : ''
               }`}
@@ -124,7 +146,7 @@ export class MainNavigationMobile {
               <li class="main-navigation-mobile__item">
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
-                  <scale-icon name="ahead"></scale-icon>
+                  {item.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>
             </a>

@@ -5,7 +5,8 @@
     :sector-navigation="sectorNavigation"
     :addon-navigation="addonNavigation"
     :custom-class="customClass"
-    :active-route="activeRoute"
+    :active-route-id="activeRouteId"
+    :active-sector-id="activeRouteId"
   >
     <slot></slot>
   </scale-app-shell>
@@ -19,7 +20,8 @@ export default {
     sectorNavigation: String,
     addonNavigation: String,
     customClass: String,
-    activeRoute: String,
+    activeRouteId: String,
+    activeSectorId: String,
   }
 };
 </script>

@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
+import { Component, h, Prop, Host, State, Listen, Watch } from '@stencil/core';
 import classNames from 'classnames';
 import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
@@ -14,9 +14,12 @@ export class Header {
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
   @Prop() addonNavigation?: any[] = [];
-  @Prop() activeRoute: string;
+  @Prop() activeRouteId: string;
+  @Prop() activeSectorId?: string;
   @Prop({ reflect: true }) scrolled: boolean = false;
-  @State() activeSegment: any = this.sectorNavigation[0];
+  @State() activeSegment: any =
+    this.sectorNavigation.find(({ id }) => id === this.activeSectorId) ||
+    this.sectorNavigation[0];
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
 
@@ -25,33 +28,41 @@ export class Header {
     this.mobileMenu = false;
   }
 
+  @Watch('activeSectorId')
+  handleActiveSegment(newValue) {
+    this.activeSegment =
+      this.sectorNavigation.find(({ id }) => id === newValue) || {};
+  }
+
   handleMobileMenu(event) {
     event.preventDefault();
     this.mobileMenu = !this.mobileMenu;
   }
 
   handleSelectedSegment(event, item) {
-    event.preventDefault();
     this.activeSegment = item;
+    if (typeof item.onClick === 'function') {
+      item.onClick(event);
+    }
   }
 
   menuMain() {
+    const rootNode = findRootNode(this.mainNavigation, this.activeRouteId);
     return (
       <ul class="main-navigation">
         {this.mainNavigation.map(item => (
           <li
-            class={`main-navigation__item ${
-              this.visibleMegaMenu === item.name ? 'mega-menu--visible' : ''
-            }
-
-            ${
-              findRootNode(this.mainNavigation, this.activeRoute)?.href ===
-                item.href && !this.visibleMegaMenu
-                ? 'active'
-                : ''
-            }`}
+            class={classNames(
+              'main-navigation__item',
+              this.visibleMegaMenu === item.name && 'mega-menu--visible',
+              rootNode &&
+                rootNode.id === item.id &&
+                !this.visibleMegaMenu &&
+                this.visibleMegaMenu !== null &&
+                'selected'
+            )}
             onMouseEnter={() => {
-              this.visibleMegaMenu = item.name;
+              this.visibleMegaMenu = item.children ? item.name : null;
             }}
             onMouseLeave={() => {
               this.visibleMegaMenu = '';
@@ -61,7 +72,9 @@ export class Header {
               class="main-navigation__item-link"
               href={item.href}
               onClick={event => {
-                this.visibleMegaMenu = '';
+                if (item.href) {
+                  this.visibleMegaMenu = '';
+                }
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
@@ -75,7 +88,7 @@ export class Header {
                 hide={() => {
                   this.visibleMegaMenu = '';
                 }}
-                activeRoute={this.activeRoute}
+                activeRouteId={this.activeRouteId}
               ></app-mega-menu>
             )}
           </li>
@@ -85,17 +98,27 @@ export class Header {
   }
 
   menuMeta() {
+    const { defaultName, openedName } = this.iconNavigation.find(
+      ({ id }) => id === 'menu'
+    ) || { defaultName: 'Menu', openedName: 'Close' };
     return (
       <ul class="meta-navigation">
-        {this.iconNavigation.map(item => (
-          <li class="meta-navigation__item">
-            <a class="meta-navigation__item-link" href={item.href}>
-              {renderIcon(item.icon, 'meta-navigation__item-link')}
-              <span class="meta-navigation__item-label">{item.name}</span>
-            </a>
-          </li>
-        ))}
-        <li class="meta-navigation__item mobile-menu">
+        {this.iconNavigation
+          .filter(({ id }) => id !== 'menu')
+          .map(item => (
+            <li class="meta-navigation__item">
+              <a class="meta-navigation__item-link" href={item.href}>
+                {renderIcon(item.icon, 'meta-navigation__item-link')}
+                <span class="meta-navigation__item-label">{item.name}</span>
+              </a>
+            </li>
+          ))}
+        <li
+          class={classNames(
+            'meta-navigation__item mobile-menu',
+            this.mobileMenu && 'open'
+          )}
+        >
           <div
             class="meta-navigation__item-link"
             onClick={event => this.handleMobileMenu(event)}
@@ -104,7 +127,7 @@ export class Header {
               name={this.mobileMenu ? 'menu-close' : 'menu'}
             ></scale-icon>
             <span class="meta-navigation__item-label">
-              {this.mobileMenu ? 'Close' : 'Menu'}
+              {this.mobileMenu ? openedName : defaultName}
             </span>
           </div>
         </li>
@@ -119,9 +142,10 @@ export class Header {
           <li class="segment-navigation__item">
             <a
               onClick={event => this.handleSelectedSegment(event, item)}
-              class={`segment-navigation__item-link${
-                this.activeSegment.href === item.href ? ' is-active' : ''
-              }`}
+              class={classNames(
+                'segment-navigation__item-link',
+                this.activeSegment.id === item.id && 'active'
+              )}
               href={item.href}
             >
               {item.name}
@@ -137,7 +161,15 @@ export class Header {
       <ul class="addon-navigation">
         {this.addonNavigation.map(item => (
           <li class="addon-navigation__item">
-            <a class="addon-navigation__item-link" href={item.href}>
+            <a
+              class="addon-navigation__item-link"
+              href={item.href}
+              onClick={event => {
+                if (typeof item.onClick === 'function') {
+                  item.onClick(event);
+                }
+              }}
+            >
               {item.name}
             </a>
           </li>
@@ -237,10 +269,11 @@ export class Header {
           >
             <app-navigation-sector-mobile
               navigation={this.sectorNavigation}
+              activeSectorId={this.activeSectorId}
             ></app-navigation-sector-mobile>
             <app-navigation-main-mobile
               navigation={this.mainNavigation}
-              activeRoute={this.activeRoute}
+              activeRouteId={this.activeRouteId}
             ></app-navigation-main-mobile>
           </div>
         </div>
@@ -252,7 +285,8 @@ export class Header {
     return classNames(
       'header',
       this.customClass && this.customClass,
-      this.scrolled && 'sticky'
+      this.scrolled && 'sticky',
+      (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }
 }

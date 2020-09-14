@@ -1,13 +1,16 @@
 <template>
-  <ScaleAppShell :mainNavigation="mainNavigation" :active-route="$route.path">
+  <ScaleAppShell
+    :mainNavigation="mainNavigation"
+    :active-route-id="$route.name"
+  >
     <router-view class="view"></router-view>
   </ScaleAppShell>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 import { ScaleAppShell } from "@scaleds/components-vue-telekom";
-
+// @ts-ignore
 export default Vue.extend({
   name: "app",
   components: { ScaleAppShell },
@@ -16,170 +19,353 @@ export default Vue.extend({
       mainNavigation: [
         {
           name: "Mobilfunk Menu",
+          id: "Mobilfunk Menu",
+          href: "/",
+          onClick: (event: MouseEvent) => {
+            event.preventDefault();
+            this.$router.push("/");
+          },
           children: [
             {
               name: "Tarife & Optionen",
-              href: "#tarife-optionen",
+              id: "Tarife & Optionen",
+              href: "/tarife-optionen",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/tarife-optionen");
+              },
               children: [
                 {
                   name: "Smartphone-Tarife",
-                  href: "/",
+                  id: "Smartphone-Tarife",
+                  href: "/smartphone-tarife",
                   onClick: (event: MouseEvent) => {
                     event.preventDefault();
-                    this.$router.push("/");
+                    this.$router.push("/smartphone-tarife");
                   }
                 },
                 {
                   name: "Prepaid-Tarife",
-                  href: "/about",
+                  id: "Prepaid-Tarife",
+                  href: "/prepaid-tarife",
                   onClick: (event: MouseEvent) => {
                     event.preventDefault();
-                    this.$router.push("/about");
+                    this.$router.push("/prepaid-tarife");
                   }
                 },
                 {
                   name: "Young-Tarife",
-                  href: "#young-tarife"
+                  id: "Young-Tarife",
+                  href: "/young-tarife",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/young-tarife");
+                  }
                 },
                 {
                   name: "Daten-Tarife",
-                  href: "#daten-tarife"
+                  id: "Daten-Tarife",
+                  href: "/daten-tarife",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/daten-tarife");
+                  }
                 },
                 {
                   name: "Zweitkarten",
-                  href: "#zweitkarten"
+                  id: "Zweitkarten",
+                  href: "/zweitkarten",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/zweitkarten");
+                  }
                 },
                 {
                   name: "Vertrag verlängern",
-                  href: "#vertrag-verlaengern"
+                  id: "Vertrag verlängern",
+                  href: "/vertrag-verlaengern",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/vertrag-verlaengern");
+                  }
                 },
                 {
                   name: "Zubuchoptionen",
-                  href: "#zubuchoptionen"
+                  id: "Zubuchoptionen",
+                  href: "/zubuchoptionen",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/zubuchoptionen");
+                  }
                 }
               ]
             },
             {
               name: "Geräte",
-              href: "#geraete",
+              id: "Geräte",
+              href: "/geraete",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/geraete");
+              },
               children: [
                 {
                   name: "Smartphones",
-                  href: "#smartphones"
+                  id: "Smartphones",
+                  href: "/smartphones",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/smartphones");
+                  }
                 },
                 {
                   name: "Tablets",
-                  href: "#tablets"
+                  id: "Tablets",
+                  href: "/tablets",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/tablets");
+                  }
                 },
                 {
                   name: "Smartwatches",
-                  href: "#smartwatches"
+                  id: "Smartwatches",
+                  href: "/smartwatches",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/smartwatches");
+                  }
                 },
                 {
                   name: "Handys ohne Vertrag",
-                  href: "#handys-ohne-vertrag"
+                  id: "Handys ohne Vertrag",
+                  href: "/handys-ohne-vertrag",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/handys-ohne-vertrag");
+                  }
                 },
                 {
                   name: "Surfsticks & Router",
-                  href: "#surfsticks-router"
+                  id: "Surfsticks & Router",
+                  href: "/surfsticks-router",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/surfsticks-router");
+                  }
                 },
                 {
                   name: "Smart Connect",
-                  href: "#smart-connect"
+                  id: "Smart Connect",
+                  href: "/smart-connect",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/smart-connect");
+                  }
                 },
                 {
                   name: "Alle Geräte",
-                  href: "#alle-geraete"
+                  id: "Alle Geräte",
+                  href: "/alle-geraete",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/alle-geraete");
+                  }
                 }
               ]
             },
             {
               name: "Zubehör",
-              href: "#zubehoer",
+              id: "Zubehör",
+              href: "/zubehoer",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/zubehoer");
+              },
               children: [
                 {
                   name: "Taschen & Hüllen",
-                  href: "#taschen-huellen"
+                  id: "Taschen & Hüllen",
+                  href: "/taschen-huellen",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/taschen-huellen");
+                  }
                 },
                 {
                   name: "Kopfhörer",
-                  href: "#kopfhoerer"
+                  id: "Kopfhörer",
+                  href: "/kopfhoerer",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/kopfhoerer");
+                  }
                 },
                 {
                   name: "Autozubehör",
-                  href: "#autozubehoer"
+                  id: "Autozubehör",
+                  href: "/autozubehoer",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/autozubehoer");
+                  }
                 },
                 {
                   name: "Virtual Reality",
-                  href: "#virtual-reality"
+                  id: "Virtual Reality",
+                  href: "/virtual-reality",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/virtual-reality");
+                  }
                 },
                 {
                   name: "Lautsprecher",
-                  href: "#lautsprecher"
+                  id: "Lautsprecher",
+                  href: "/lautsprecher",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/lautsprecher");
+                  }
                 },
                 {
                   name: "Lader, Kabel, Adapter",
-                  href: "#lader-kabel-adapter"
+                  id: "Lader, Kabel, Adapter",
+                  href: "/lader-kabel-adapter",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/lader-kabel-adapter");
+                  }
                 },
                 {
                   name: "Alle Zubehörartikel",
-                  href: "#alle-zubehoerartikel"
+                  id: "Alle Zubehörartikel",
+                  href: "/alle-zubehoerartikel",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/alle-zubehoerartikel");
+                  }
                 }
               ]
             },
             {
               name: "Apps & Dienste",
-              href: "#apps-dienste",
+              id: "Apps & Dienste",
+              href: "/apps-dienste",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/apps-dienste");
+              },
               children: [
                 {
                   name: "MeinMagenta App",
-                  href: "#meinmagenta-app"
+                  id: "MeinMagenta App",
+                  href: "/meinmagenta-app",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/meinmagenta-app");
+                  }
                 },
                 {
                   name: "Sicherheit & Cloud",
-                  href: "#sicherheit-cloud"
+                  id: "Sicherheit & Cloud",
+                  href: "/sicherheit-cloud",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/sicherheit-cloud");
+                  }
                 },
                 {
                   name: "Kommunikation",
-                  href: "#kommunikation"
+                  id: "Kommunikation",
+                  href: "/kommunikation",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/kommunikation");
+                  }
                 },
                 {
                   name: "Konnektivität",
-                  href: "#konnektivitaet"
+                  id: "Konnektivität",
+                  href: "/konnektivitaet",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/konnektivitaet");
+                  }
                 },
                 {
                   name: "Musik & Videos",
-                  href: "#musik-videos"
+                  id: "Musik & Videos",
+                  href: "/musik-videos",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/musik-videos");
+                  }
                 },
                 {
                   name: "StreamOn",
-                  href: "#stream-on"
+                  id: "StreamOn",
+                  href: "/stream-on",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/stream-on");
+                  }
                 }
               ]
             },
             {
               name: "Was ist 5G",
-              href: "#was-ist-5g",
+              id: "Was ist 5G",
+              href: "/was-ist-5g",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/was-ist-5g");
+              },
               children: [
                 {
                   name: "5G Mobilfunk",
-                  href: "#5g-mobilfunk"
+                  id: "5G Mobilfunk",
+                  href: "/5g-mobilfunk",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/5g-mobilfunk");
+                  }
                 },
                 {
                   name: "5G-fähige Mobilfunktarife",
-                  href: "#5g-faehige-mobilfunktarife"
+                  id: "5G-fähige Mobilfunktarife",
+                  href: "/5g-faehige-mobilfunktarife",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/5g-faehige-mobilfunktarife");
+                  }
                 },
                 {
                   name: "5G Cloud Gaming",
-                  href: "#5g-cloud-gaming"
+                  id: "5G Cloud Gaming",
+                  href: "/5g-cloud-gaming",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/5g-cloud-gaming");
+                  }
                 },
                 {
                   name: "5G Augmented & Virtual Reality",
-                  href: "#5g-augmented-virtual-reality"
+                  id: "5G Augmented & Virtual Reality",
+                  href: "/5g-augmented-virtual-reality",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/5g-augmented-virtual-reality");
+                  }
                 },
                 {
                   name: "5G Smart City",
-                  href: "#5g-smart-city"
+                  id: "5G Smart City",
+                  href: "/5g-smart-city",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/5g-smart-city");
+                  }
                 }
               ]
             }
@@ -187,29 +373,59 @@ export default Vue.extend({
         },
         {
           name: "Festnetz & Internet",
-          href: "#festnetz-internet",
+          id: "Festnetz & Internet",
+          href: "/festnetz-internet",
+          onClick: (event: MouseEvent) => {
+            event.preventDefault();
+            this.$router.push("/festnetz-internet");
+          },
           children: [
             {
               name: "First",
-              href: "#first",
+              id: "First",
+              href: "/first",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/first");
+              },
               children: [
                 {
                   name: "One",
-                  href: "#first/one"
+                  id: "FirstOne",
+                  href: "/first-one",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/first-one");
+                  }
                 },
                 {
                   name: "One",
-                  href: "#one"
+                  id: "One",
+                  href: "/one",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/one");
+                  }
                 }
               ]
             },
             {
               name: "Second",
-              href: "#second",
+              id: "Second",
+              href: "/second",
+              onClick: (event: MouseEvent) => {
+                event.preventDefault();
+                this.$router.push("/second");
+              },
               children: [
                 {
                   name: "One",
-                  href: "#one"
+                  id: "SecondOne",
+                  href: "/second-one",
+                  onClick: (event: MouseEvent) => {
+                    event.preventDefault();
+                    this.$router.push("/second-one");
+                  }
                 }
               ]
             }
@@ -217,15 +433,30 @@ export default Vue.extend({
         },
         {
           name: "TV",
-          href: "#tv"
+          id: "TV",
+          href: "/tv",
+          onClick: (event: MouseEvent) => {
+            event.preventDefault();
+            this.$router.push("/tv");
+          }
         },
         {
           name: "MagentaEINS",
-          href: "#magentaeins"
+          id: "MagentaEINS",
+          href: "/magentaeins",
+          onClick: (event: MouseEvent) => {
+            event.preventDefault();
+            this.$router.push("/magentaeins");
+          }
         },
         {
           name: "Service",
-          href: "#service"
+          id: "Service",
+          href: "/service",
+          onClick: (event: MouseEvent) => {
+            event.preventDefault();
+            this.$router.push("/service");
+          }
         }
       ]
     };

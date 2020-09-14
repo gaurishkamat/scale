@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type         | Default     |
-| ------------- | -------------- | ----------- | ------------ | ----------- |
-| `activeRoute` | `active-route` |             | `string`     | `undefined` |
-| `hide`        | --             |             | `() => void` | `undefined` |
-| `navigation`  | --             |             | `MenuItem[]` | `undefined` |
+| Property        | Attribute         | Description | Type         | Default     |
+| --------------- | ----------------- | ----------- | ------------ | ----------- |
+| `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
+| `hide`          | --                |             | `() => void` | `undefined` |
+| `navigation`    | --                |             | `MenuItem[]` | `undefined` |
 
 
 ## Dependencies

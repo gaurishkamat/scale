@@ -48,6 +48,7 @@ export class Link implements Base {
           class={this.getCssClassMap()}
           {...(!this.disabled ? { href: this.href } : {})}
           {...(!this.disabled ? { target: this.target } : {})}
+          tabindex="0"
         >
           <slot />
           {this.icon && this.icon !== '' && (

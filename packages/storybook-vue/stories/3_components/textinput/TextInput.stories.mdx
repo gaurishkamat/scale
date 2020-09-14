@@ -128,6 +128,25 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
+## Helper Text
+
+<Preview withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: "Helper Text",
+      helperText: "Make sure to fill this",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="text" label="Helper Text" helperText="Make sure to fill this"></scale-input>
+```
+
+
 ## Static
 
 <Preview withSource="none">

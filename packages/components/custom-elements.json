@@ -30,7 +30,7 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         }
       ]
@@ -43,7 +43,7 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
           "description": ""
         }
       ]
@@ -54,7 +54,12 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": []
+      "attributes": [
+        {
+          "name": "active-sector-id",
+          "description": ""
+        }
+      ]
     },
     {
       "name": "scale-accordion",
@@ -122,7 +127,11 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
+          "description": ""
+        },
+        {
+          "name": "active-sector-id",
           "description": ""
         },
         {
@@ -143,7 +152,11 @@
       },
       "attributes": [
         {
-          "name": "active-route",
+          "name": "active-route-id",
+          "description": ""
+        },
+        {
+          "name": "active-sector-id",
           "description": ""
         },
         {

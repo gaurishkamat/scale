@@ -37,7 +37,7 @@ const defaultTransition = 'all 0.2s ease-in-out';
 const animated = (size: string) => ({
   start: {
     fontSize: 16,
-    color: '#6c6c6c',
+    color: '#6C6C6C',
     transform: `translate(${input[size].paddingX + 1}px, ${(input[size].height -
       input[size].fontSize) /
       2}px)`,
@@ -47,7 +47,7 @@ const animated = (size: string) => ({
   end: {
     fontSize: 10,
     transform: `translate(${input[size].paddingX}px, ${input[size].labelTop}px)`,
-    color: ({ colors }) => colors.primary.default,
+    color: '#6C6C6C',
     transition: defaultTransition,
     fontWeight: 700,
   },
@@ -61,7 +61,7 @@ export const styles: JssStyle = {
       display: 'flex',
       width: '100%',
       borderRadius: 4,
-      border: '1px solid #000',
+      border: ({ palette }) => `1px solid ${palette.gray}`,
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
       fontSize: 16,
       fontFamily: 'inherit',
@@ -76,7 +76,7 @@ export const styles: JssStyle = {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
       fontSize: 16,
       borderRadius: 4,
-      border: '1px solid #000',
+      border: ({ palette }) => `1px solid ${palette.gray}`,
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
@@ -101,11 +101,12 @@ export const styles: JssStyle = {
       justifyContent: 'flex-end',
       fontSize: 12,
       marginLeft: 'auto',
-      color: '#333',
+      color: ({ palette }) => palette.gray,
       transition: defaultTransition,
     },
     '& .input__helper-text': {
       fontSize: 12,
+      color: ({ palette }) => palette.helperText,
       transition: defaultTransition,
     },
     '& .input__meta': {
@@ -115,19 +116,19 @@ export const styles: JssStyle = {
     '&:not($input--disabled)': {
       '& .input__input, & .input__select, & .input__textarea': {
         '&:hover, &:focus': {
-          borderColor: ({ colors }) => colors.primary.default,
+          borderColor: ({ palette }) => palette.magentaHover,
         },
       },
       '& .input__checkbox-container': {
         '&:hover, &:focus': {
           '& .input__checkbox-placeholder': {
-            borderColor: ({ colors }) => colors.primary.default,
+            borderColor: ({ palette }) => palette.magentaHover,
           },
         },
       },
       '& .input__radio': {
         '&:hover, &:focus': {
-          borderColor: ({ colors }) => colors.primary.default,
+          borderColor: ({ palette }) => palette.magentaHover,
         },
       },
     },
@@ -135,6 +136,7 @@ export const styles: JssStyle = {
   'input--variant-static': {
     '& .input__label': {
       display: 'flex',
+      color: '#6C6C6C',
     },
   },
   'input--variant-animated': {
@@ -168,22 +170,22 @@ export const styles: JssStyle = {
   },
   'input--status-error': {
     '&.animated .input__label, & label': {
-      color: ({ colors }) => `${colors.error.default} !important`,
+      color: ({ palette }) => `${palette.error} !important`,
     },
     '& .input__input:focus + .input__label, & .input__textarea:focus + .input__label': {
-      color: ({ colors }) => `${colors.error.default} !important`,
+      color: ({ palette }) => `${palette.error} !important`,
     },
     '& .input__input:focus + .input__label': {
-      color: ({ colors }) => `${colors.error.default} !important`,
+      color: ({ palette }) => `${palette.error} !important`,
     },
     '& .input__input': {
-      border: ({ colors }) => `1px solid ${colors.error.default}`,
+      border: ({ palette }) => `1px solid ${palette.error}`,
     },
     '& .input__helper-text': {
-      color: ({ colors }) => `${colors.error.default}`,
+      color: ({ palette }) => `${palette.error}`,
     },
     '& .input__counter': {
-      color: ({ colors }) => `${colors.error.default}`,
+      color: ({ palette }) => `${palette.error}`,
     },
   },
   'input--size-small': {
@@ -253,13 +255,13 @@ export const styles: JssStyle = {
     '&:not($input--disabled)': {
       '& .input__checkbox-container': {
         '& .input__checkbox-placeholder': {
-          border: '1px solid #000',
-          backgroundColor: '#ffffff',
+          border: ({ palette }) => `1px solid ${palette.gray}`,
+          backgroundColor: ({ palette }) => palette.white,
         },
         '&:hover': {
           '& .input__checkbox-placeholder': {
-            border: ({ colors }) => `1px solid ${colors.primary.default}`,
-            backgroundColor: '#ffffff',
+            border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+            backgroundColor: ({ palette }) => palette.white,
           },
         },
       },
@@ -283,20 +285,20 @@ export const styles: JssStyle = {
     },
     '&$input--disabled': {
       '& .input__checkbox-placeholder': {
-        backgroundColor: '#cdcdcd',
+        backgroundColor: ({ palette }) => palette.grayDisabledBackground,
       },
     },
     '&:not($input--disabled)': {
       '& .input__checkbox-container': {
         '& .input__checkbox-placeholder': {
-          border: ({ colors }) => `1px solid ${colors.primary.default}`,
-          backgroundColor: ({ colors }) => colors.primary.default,
+          border: ({ palette }) => `1px solid ${palette.magenta}`,
+          backgroundColor: ({ palette }) => palette.magenta,
           transition: defaultTransition,
         },
         '&:hover': {
           '& .input__checkbox-placeholder': {
-            border: ({ colors }) => `1px solid ${colors.primary.default}`,
-            backgroundColor: '#F90984',
+            border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+            backgroundColor: ({ palette }) => palette.magentaHover,
             transition: defaultTransition,
           },
         },
@@ -304,12 +306,12 @@ export const styles: JssStyle = {
       '&$input--transparent': {
         '& .input__checkbox-container': {
           '& .input__checkbox-placeholder': {
-            backgroundColor: ({ colors }) => colors.primary.default,
+            backgroundColor: ({ palette }) => palette.magenta,
           },
         },
       },
       '& scale-icon': {
-        '--icon-color': '#ffffff',
+        '--icon-color': ({ palette }) => palette.white,
       },
     },
   },
@@ -320,12 +322,12 @@ export const styles: JssStyle = {
       appearance: 'none',
       height: 16,
       width: 16,
-      backgroundColor: '#ffffff',
-      border: '1px solid #000',
+      backgroundColor: ({ palette }) => palette.white,
+      border: ({ palette }) => `1px solid ${palette.gray}`,
       borderRadius: '50%',
       marginRight: 10,
       '&:checked, &:focus': {
-        border: ({ colors }) => `6px solid ${colors.primary.default}`,
+        border: ({ palette }) => `6px solid ${palette.magentaActive}`,
         transition: defaultTransition,
         outline: 'none',
       },
@@ -333,8 +335,8 @@ export const styles: JssStyle = {
     '&$input--disabled': {
       '& .input__radio': {
         '&:checked': {
-          border: '6px solid #cdcdcd',
-          backgroundColor: '#979797',
+          border: ({ palette }) => `6px solid ${palette.grayDisabledText}`,
+          backgroundColor: ({ palette }) => palette.grayDisabledBackground,
         },
       },
     },

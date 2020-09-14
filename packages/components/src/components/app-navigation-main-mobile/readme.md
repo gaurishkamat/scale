@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type         | Default     |
-| ------------- | -------------- | ----------- | ------------ | ----------- |
-| `activeRoute` | `active-route` |             | `string`     | `undefined` |
-| `navigation`  | --             |             | `MenuItem[]` | `undefined` |
+| Property        | Attribute         | Description | Type         | Default     |
+| --------------- | ----------------- | ----------- | ------------ | ----------- |
+| `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
+| `navigation`    | --                |             | `MenuItem[]` | `undefined` |
 
 
 ## Events

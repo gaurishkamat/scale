@@ -166,6 +166,24 @@ export const Template = (args, { argTypes }) => ({
 <scale-input type="textarea" variant="animated"></scale-input>
 ```
 
+## Helper Text
+
+<Preview withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      type: "textarea",
+      helperText: "Make sure to fill this",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="textarea" helperText="Make sure to fill this"></scale-input>
+```
+
 ## With Error
 
 <Preview withSource="none">

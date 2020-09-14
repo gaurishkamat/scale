@@ -1,17 +1,22 @@
 .mega-menu {
   width: 100%;
-  background-color: #fff;
   position: absolute;
-  top: 56px;
+  top: calc(var(--header-brand-height) * -1);
   left: 0;
   border-radius: 0 0 8px 8px;
-  padding: 34px 1rem;
-  border-top: 1px solid #dfdfdf;
+  padding-top: calc(var(--header-nav-height) + var(--header-brand-height));
   opacity: 0;
   pointer-events: none;
   transition: none;
+  box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 }
-
+.mega-menu__wrapper {
+  padding: 34px 1rem;
+  background: #fff;
+  pointer-events: none;
+  border-bottom-left-radius: var(--header-border-radius);
+  border-bottom-right-radius: var(--header-border-radius);
+}
 .mega-menu__container {
   max-width: 1168px;
   margin: 0 auto;
@@ -21,17 +26,19 @@
 
 .mega-menu__row-title {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   font-family: 'TeleNeoWeb-ExtraBold';
 }
 
 .mega-menu__row-item {
   font-size: 16px;
   line-height: 24px;
-  font-family: 'TeleNeoWeb-Regular';
-  color: #000;
+  font-family: 'TeleNeoWeb-Medium';
+  color: #262626;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .mega-menu__row-item.active,

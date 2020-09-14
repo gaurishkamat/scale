@@ -2,6 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   link: {
+    fontFamily: 'TeleNeoWeb-Medium',
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -13,26 +14,32 @@ export const styles: JssStyle = {
     padding: 0,
     fontSize: 16,
     fontWeight: 500,
-    transition: 'all .2s ease-in-out',
-    color: '#00A6F0',
-    '--icon-color': '#00A6F0',
+    color: ({ palette }) => palette.helperText,
+    '--icon-color': ({ palette }) => palette.helperText,
     '& scale-icon': {
       marginLeft: 4,
     },
     '&:hover&:not($link--disabled)': {
-      color: 'black',
-      '--icon-color': 'black',
+      color: ({ palette }) => palette.helperText,
+      '--icon-color': ({ palette }) => palette.helperText,
+    },
+    '&:visited&:not($link--disabled)': {
+      color: ({ palette }) => palette.secondary,
+      '--icon-color': ({ palette }) => palette.secondary,
     },
   },
   'link--underline': {
     '&:hover:not($link--disabled)': {
       textDecoration: 'none',
-      borderBottom: '1px solid #00A6F0',
+      borderBottom: ({ palette }) => `1px solid ${palette.helperText}`,
+    },
+    '&:focus:not($link--disabled)': {
+      borderBottom: ({ palette }) => `2px solid ${palette.helperText}`,
     },
   },
   'link--disabled': {
     cursor: 'not-allowed',
-    opacity: 0.5,
+    color: ({ palette }) => palette.grayDisabledText,
   },
   'link--block': {
     display: 'flex',

@@ -38,6 +38,7 @@ export const Template = (args, { argTypes }) => ({
       :iconSize="iconSize"
       :href="href"
       :role="role"
+      :size="size"
       :target="target"
       :variant="variant"
       @click="click"
@@ -77,8 +78,22 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Preview>
 
+## Secondary Disabled
+
+<Preview withSource="none">
+  <Story
+    name='Secondary Disabled'
+    args={{
+      variant: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
 ```html
-<scale-button variant="secondary">Label</scale-button>
+<scale-button variant="secondary" disabled>Label</scale-button>
 ```
 
 
@@ -97,6 +112,24 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-button disabled>Label</scale-button>
+```
+
+
+## Small
+
+<Preview withSource="none">
+  <Story
+    name='Small'
+    args={{
+      size: 'small',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="small">Label</scale-button>
 ```
 
 

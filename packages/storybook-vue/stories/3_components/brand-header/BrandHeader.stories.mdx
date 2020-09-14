@@ -56,7 +56,8 @@ export const Template = (args, { argTypes }) => ({
         :sector-navigation="sectorNavigation"
         :addon-navigation="addonNavigation"
         :custom-class="customClass"
-        :active-route="activeRoute"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
       >
         <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
         <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -77,7 +78,8 @@ export const Template = (args, { argTypes }) => ({
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRoute: '#young-tarife',
+      activeRouteId: 'Kommunikation',
+      activeSectorId: 'Geschäftskunden',
     }}
   >
     {Template.bind({})}
@@ -94,7 +96,8 @@ export const Template = (args, { argTypes }) => ({
   :sector-navigation="sectorNavigation"
   :addon-navigation="addonNavigation"
   :custom-class="customClass"
-  active-route="#young-tarife"
+  active-route-id="Kommunikation"
+  active-sector-id="Geschäftskunden"
 >
   <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
   <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>

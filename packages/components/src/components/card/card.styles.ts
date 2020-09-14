@@ -3,8 +3,7 @@ export const styles: JssStyle = {
   card: {
     boxSizing: 'border-box',
     overflow: 'hidden',
-    color: '#333',
-    background: '#fff',
+    background: ({ palette }) => palette.white,
     width: '100%',
     transition: 'all .2s ease-in-out',
     borderRadius: 8,
