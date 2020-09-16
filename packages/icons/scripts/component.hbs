@@ -1,0 +1,20 @@
+import { Component, Prop, h } from '@stencil/core';
+
+@Component({
+  tag: '{{tagName}}'
+})
+export class {{className}} {
+  @Prop() size: number = 24;
+  @Prop() color: string = 'currentColor'; 
+  @Prop() selected: boolean = false;
+
+  render() {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="0 0 24 24">
+        <g fill={this.color}>
+          {this.selected ? (<g>{{{markup.selected}}}</g>) : (<g>{{{markup.default}}}</g>)}
+        </g>
+      </svg>
+    );
+  }
+}
