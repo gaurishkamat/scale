@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-      "storm-angular-example": {
+      "scaleds-boilerplate-angular": {
         "root": "",
         "sourceRoot": "src",
         "projectType": "application",
@@ -13,7 +13,7 @@
           "build": {
             "builder": "@angular-devkit/build-angular:browser",
             "options": {
-              "outputPath": "dist/storm-angular-example",
+              "outputPath": "dist/scaleds-boilerplate-angular",
               "index": "src/index.html",
               "main": "src/main.ts",
               "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
           "serve": {
             "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
-              "browserTarget": "storm-angular-example:build"
+              "browserTarget": "scaleds-boilerplate-angular:build"
             },
             "configurations": {
               "production": {
-                "browserTarget": "storm-angular-example:build:production"
+                "browserTarget": "scaleds-boilerplate-angular:build:production"
               }
             }
           },
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "storm-angular-example:build"
+              "browserTarget": "scaleds-boilerplate-angular:build"
             }
           },
           "test": {
@@ -104,7 +104,7 @@
           }
         }
       },
-      "storm-angular-example-e2e": {
+      "scaleds-boilerplate-angular-e2e": {
         "root": "e2e/",
         "projectType": "application",
         "prefix": "",
@@ -113,11 +113,11 @@
             "builder": "@angular-devkit/build-angular:protractor",
             "options": {
               "protractorConfig": "e2e/protractor.conf.js",
-              "devServerTarget": "storm-angular-example:serve"
+              "devServerTarget": "scaleds-boilerplate-angular:serve"
             },
             "configurations": {
               "production": {
-                "devServerTarget": "storm-angular-example:serve:production"
+                "devServerTarget": "scaleds-boilerplate-angular:serve:production"
               }
             }
           },
@@ -133,5 +133,5 @@
         }
       }
     },
-    "defaultProject": "storm-angular-example"
+    "defaultProject": "scaleds-boilerplate-angular"
   }
