@@ -39,26 +39,42 @@ const SPACING_9 = 5; // 80px
 
 /* Shadows */
 
-const SHADOW_LEVEL_0 = '0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_1 = '0 4px 16px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_1_HOVER = '0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_1_ACTIVE = '0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_2 = '0 8px 32px 0 rgba(0,0,0,0.10), 0 4px 8px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_2_HOVER = '0 10px 40px 0 rgba(0,0,0,0.10), 0 5px 10px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_2_ACTIVE = '0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_3 = '0 12px 48px 0 rgba(0,0,0,0.10), 0 6px 12px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_3_HOVER = '0 14px 56px 0 rgba(0,0,0,0.10), 0 7px 14px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_3_ACTIVE = '0 10px 40px 0 rgba(0,0,0,0.10), 0 5px 10px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_4 = '0 16px 64px 0 rgba(0,0,0,0.10), 0 8px 16px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_4_HOVER = '0 18px 72px 0 rgba(0,0,0,0.10), 0 9px 18px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_4_ACTIVE = '0 14px 56px 0 rgba(0,0,0,0.10), 0 7px 14px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_5 = '0 20px 80px 0 rgba(0,0,0,0.10), 0 10px 20px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_5_HOVER = '0 22px 88px 0 rgba(0,0,0,0.10), 0 11px 22px 0 rgba(0,0,0,0.10)';
-const SHADOW_LEVEL_5_ACTIVE = '0 18px 72px 0 rgba(0,0,0,0.10), 0 9px 18px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_0 =
+  '0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_1 =
+  '0 4px 16px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_1_HOVER =
+  '0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_1_ACTIVE =
+  '0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_2 =
+  '0 8px 32px 0 rgba(0,0,0,0.10), 0 4px 8px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_2_HOVER =
+  '0 10px 40px 0 rgba(0,0,0,0.10), 0 5px 10px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_2_ACTIVE =
+  '0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_3 =
+  '0 12px 48px 0 rgba(0,0,0,0.10), 0 6px 12px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_3_HOVER =
+  '0 14px 56px 0 rgba(0,0,0,0.10), 0 7px 14px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_3_ACTIVE =
+  '0 10px 40px 0 rgba(0,0,0,0.10), 0 5px 10px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_4 =
+  '0 16px 64px 0 rgba(0,0,0,0.10), 0 8px 16px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_4_HOVER =
+  '0 18px 72px 0 rgba(0,0,0,0.10), 0 9px 18px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_4_ACTIVE =
+  '0 14px 56px 0 rgba(0,0,0,0.10), 0 7px 14px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_5 =
+  '0 20px 80px 0 rgba(0,0,0,0.10), 0 10px 20px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_5_HOVER =
+  '0 22px 88px 0 rgba(0,0,0,0.10), 0 11px 22px 0 rgba(0,0,0,0.10)';
+const SHADOW_LEVEL_5_ACTIVE =
+  '0 18px 72px 0 rgba(0,0,0,0.10), 0 9px 18px 0 rgba(0,0,0,0.10)';
 
 /* Helpers */
 
-const rem = (x: number) => `${x}rem`
+const rem = (x: number) => `${x}rem`;
 
 // ACTUAL TOKENS
 
@@ -167,11 +183,11 @@ const radii = {
 };
 
 const opacity = {
-  disabled: 0.5
+  disabled: 0.5,
 };
 
 const transition = {
-  generic: 'all .2s ease-in-out'
+  generic: 'all .2s ease-in-out',
 };
 
 export const tokens = {

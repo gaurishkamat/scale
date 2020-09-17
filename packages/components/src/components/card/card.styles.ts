@@ -31,7 +31,8 @@ export const styles: JssStyle = {
       boxShadow: ({ tokens }) => tokens.shadow.card_hover,
     },
     '&:focus': {
-      boxShadow: ({ tokens }) => `${tokens.shadow.card_hover},0 0 0 ${tokens.width.border_focus} ${tokens.color.focus}`,
+      boxShadow: ({ tokens }) =>
+        `${tokens.shadow.card_hover},0 0 0 ${tokens.width.border_focus} ${tokens.color.focus}`,
     },
     '&:active': {
       border: 'none',
