@@ -3,51 +3,39 @@ export const styles: JssStyle = {
   card: {
     boxSizing: 'border-box',
     overflow: 'hidden',
-    background: ({ palette }) => palette.white,
+    background: ({ tokens }) => tokens.color.white,
     width: '100%',
-    transition: 'all .2s ease-in-out',
-    borderRadius: 8,
-    boxShadow: [
-      [0, 19, 18, 0, 'rgba(0,0,0, 0.05)'],
-      [0, 8, 12, 0, 'rgba(0,0,0, 0.05)'],
-      [0, 1, 5, 0, 'rgba(0,0,0, 0.04)'],
-      [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
-    ],
+    transition: ({ tokens }) => tokens.transition.generic,
+    borderRadius: ({ tokens }) => tokens.radii.card,
+    boxShadow: ({ tokens }) => tokens.shadow.card,
     border: 'none',
   },
   card__body: {
-    padding: 24,
+    padding: ({ tokens }) => tokens.spacing.box,
     '& ::slotted(*)': {
       margin: 0,
     },
   },
+  'card--no-padding': {
+    '& $card__body': {
+      padding: 0,
+    },
+  },
   'card--interactive': {
+    color: 'inherit',
     textDecoration: 'none',
     cursor: 'pointer',
     display: 'block',
+    outline: 'none',
     '&:hover': {
-      boxShadow: [
-        [0, 24, 18, 0, 'rgba(0,0,0, 0.05)'],
-        [0, 8, 12, 0, 'rgba(0,0,0, 0.05)'],
-        [0, 1, 5, 0, 'rgba(0,0,0, 0.24)'],
-        [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
-      ],
+      boxShadow: ({ tokens }) => tokens.shadow.card_hover,
     },
     '&:focus': {
-      boxShadow: [
-        [0, 19, 18, 0, 'rgba(0,0,0, 0.10)'],
-        [0, 8, 12, 0, 'rgba(0,0,0, 0.10)'],
-        [0, 1, 5, 0, 'rgba(0,0,0, 0.08)'],
-        [0, 0, 2, 0, 'rgba(0,0,0, 0.06)'],
-      ],
+      boxShadow: ({ tokens }) => `${tokens.shadow.card_hover},0 0 0 ${tokens.width.border_focus} ${tokens.color.focus}`,
     },
     '&:active': {
       border: 'none',
-      boxShadow: [
-        [0, 8, 18, 0, 'rgba(0,0,0, 0.05)'],
-        [0, 1, 5, 0, 'rgba(0,0,0, 0.04)'],
-        [0, 0, 2, 0, 'rgba(0,0,0, 0.03)'],
-      ],
+      boxShadow: ({ tokens }) => tokens.shadow.card_active,
     },
     '& $card__body ::slotted(*)': {
       margin: 0,
@@ -55,9 +43,8 @@ export const styles: JssStyle = {
   },
   'card--disabled': {
     '&, &:hover, &:focus, &:active': {
-      opacity: 0.5,
+      opacity: ({ tokens }) => tokens.opacity.disabled,
       cursor: 'not-allowed',
-      boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.12)',
       outline: 'none',
     },
   },

@@ -7,7 +7,7 @@ const MAGENTA_HOVER = '#F90984';
 const MAGENTA_ACTIVE = '#CB0068';
 const WHITE = '#FFFFF';
 const RED_FUNCTIONAL = '#D90000';
-const GREEN_FUNCTIONAL = '#46A800';
+// const GREEN_FUNCTIONAL = '#46A800';
 const BLUE = '#007DB3';
 const BLUE_FUNCTIONAL = '#009DE0';
 const BLUE_DARK = '#0070A0';
@@ -15,14 +15,14 @@ const BLUE_DARK = '#0070A0';
 /* Grays */
 
 const GRAY_1 = '#262626';
-const GRAY_2 = '#383838';
+// const GRAY_2 = '#383838';
 const GRAY_3 = '#6C6C6C';
 const GRAY_4 = '#7C7C7C';
 // not AA on white background
 const GRAY_5_DECORATIVE = '#A4A4A4';
 const GRAY_6_DECORATIVE = '#D0D0D0';
 const GRAY_7_DECORATIVE = '#DCDCDC';
-const GRAY_8_DECORATIVE = '#EDEDED';
+// const GRAY_8_DECORATIVE = '#EDEDED';
 const GRAY_9_DECORATIVE = '#F4F4F4';
 
 /* Spacing, in rem units */
@@ -87,6 +87,7 @@ const background = {
   action_hover: MAGENTA_HOVER,
   action_active: MAGENTA_ACTIVE,
   disabled: GRAY_6_DECORATIVE,
+  card: WHITE,
 };
 
 const spacing = {
@@ -114,6 +115,8 @@ const spacing = {
 };
 
 const width = {
+  border_input: '1px',
+  border_focus: '2px',
   modal_narrow: rem(31),
   modal: rem(44),
   modal_wide: rem(64),
@@ -143,9 +146,9 @@ const shadow = {
   dropdown: SHADOW_LEVEL_2,
   dropdown_hover: SHADOW_LEVEL_2_HOVER,
   dropdown_active: SHADOW_LEVEL_2_ACTIVE,
-  alerts: SHADOW_LEVEL_3,
-  alerts_hover: SHADOW_LEVEL_3_HOVER,
-  alerts_active: SHADOW_LEVEL_3_ACTIVE,
+  notification: SHADOW_LEVEL_3,
+  notification_hover: SHADOW_LEVEL_3_HOVER,
+  notification_active: SHADOW_LEVEL_3_ACTIVE,
   navigation: SHADOW_LEVEL_4,
   navigation_hover: SHADOW_LEVEL_4_HOVER,
   navigation_active: SHADOW_LEVEL_4_ACTIVE,
@@ -161,7 +164,15 @@ const radii = {
   chip: rem(SPACING_1),
   button: rem(SPACING_2),
   card: rem(SPACING_2),
-}
+};
+
+const opacity = {
+  disabled: 0.5
+};
+
+const transition = {
+  generic: 'all .2s ease-in-out'
+};
 
 export const tokens = {
   color,
@@ -169,5 +180,7 @@ export const tokens = {
   spacing,
   width,
   shadow,
-  radii
+  radii,
+  opacity,
+  transition,
 };

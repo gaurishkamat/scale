@@ -174,6 +174,10 @@ export namespace Components {
          */
         "interactive"?: boolean;
         /**
+          * (optional) Padding off
+         */
+        "noPadding"?: boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
@@ -1199,6 +1203,10 @@ declare namespace LocalJSX {
           * (optional) Link interactive
          */
         "interactive"?: boolean;
+        /**
+          * (optional) Padding off
+         */
+        "noPadding"?: boolean;
         /**
           * (optional) Injected jss styles
          */
