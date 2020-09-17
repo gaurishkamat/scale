@@ -147,9 +147,9 @@ export class Input implements Base {
     this.scaleBlur.emit();
   };
 
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown = (event: KeyboardEvent) => {
     this.scaleKeyDown.emit(event);
-  }
+  };
 
   render() {
     if (this.type === 'checkbox') {
@@ -222,6 +222,7 @@ export class Input implements Base {
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
+                onKeyDown={this.handleKeyDown}
                 disabled={this.disabled}
                 required={this.required}
                 multiple={this.multiple}
@@ -250,6 +251,7 @@ export class Input implements Base {
               onChange={this.handleChange}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
+              onKeyDown={this.handleKeyDown}
               {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
               disabled={this.disabled}
               {...(!!this.rows ? { rows: this.rows } : {})}
