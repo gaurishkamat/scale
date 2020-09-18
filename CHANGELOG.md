@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.5.1...v1.6.0) (2020-09-18)
+
+
+### Bug Fixes
+
+* adjusts fontsizes in docs ([479ac62](https://gitlab.com/scale-ds/scale-telekom/commit/479ac62f4335624bdbe50b9f267cc6e9282e618e))
+* adjusts fontsizes in manager ([f8cf5cc](https://gitlab.com/scale-ds/scale-telekom/commit/f8cf5cc83a682fe60ab18c6d255616466c96edfe))
+* emit scaleKeyDown event in scale-input ([37fa86c](https://gitlab.com/scale-ds/scale-telekom/commit/37fa86c3088eb7702261892203dd7dc0c45a917b))
+* removes ngcc prepublish script ([fbdf314](https://gitlab.com/scale-ds/scale-telekom/commit/fbdf3140030b71dfebdb7adabd1c1e0313240c2f))
+
+
+### Features
+
+* **header:** add documentation ([efcb338](https://gitlab.com/scale-ds/scale-telekom/commit/efcb3384205730705b494603e558cbddce603443))
+* **header:** arrows for items with children only ([adbb28f](https://gitlab.com/scale-ds/scale-telekom/commit/adbb28f5065f69b7fc544d2f41d9e612f4aedc4f))
+* **header:** better click behaviour ([395b12c](https://gitlab.com/scale-ds/scale-telekom/commit/395b12cb440ea19efb23c3400b5fa6100f93edfd))
+* **header:** box shadow, cosmetics ([a8bdc9d](https://gitlab.com/scale-ds/scale-telekom/commit/a8bdc9d9f40055a41718d547ab518fc469574205))
+* **header:** build ([893ad9e](https://gitlab.com/scale-ds/scale-telekom/commit/893ad9eaba7eaca27b650fda44b4e2b2172c8a1b))
+* **header:** extend example ([1b3e4df](https://gitlab.com/scale-ds/scale-telekom/commit/1b3e4df8b452fe4596a54d26f10590831e517520))
+* **header:** make active sector configurable ([540e77f](https://gitlab.com/scale-ds/scale-telekom/commit/540e77f0a12b9c1b12d5cbc07d3f7517995fa4a3))
+* **header:** more styles ([c027e67](https://gitlab.com/scale-ds/scale-telekom/commit/c027e67363dcece30516f3700f329d96e988dd5e))
+* **header:** prettify ([eaf6f0c](https://gitlab.com/scale-ds/scale-telekom/commit/eaf6f0ccb0f77fe98b1f1173886fb70abfb37643))
+* **header:** update story ([8cba990](https://gitlab.com/scale-ds/scale-telekom/commit/8cba99098d50ac14e13887b57c3416b8f2949198))
+* **header:** use new svg ([8b91ef8](https://gitlab.com/scale-ds/scale-telekom/commit/8b91ef8b0b54eeb365dd0c107bf728a9a2ebc638))
+* **header:** vue example ([eec5eb0](https://gitlab.com/scale-ds/scale-telekom/commit/eec5eb0345f2b43301bf3778d7c50f961a00bf60))
+* breadcrumb ([b634153](https://gitlab.com/scale-ds/scale-telekom/commit/b6341537166da2b5b9f47da65c3c52682b5c1ec0))
+* button ([4ed65a8](https://gitlab.com/scale-ds/scale-telekom/commit/4ed65a855fe3326961be55ec2eb23e56cddb1e8e))
+* card ([b8ce119](https://gitlab.com/scale-ds/scale-telekom/commit/b8ce11952786835b6d11ee716023cbfe28a032b3))
+* custom header slot ([f51a0ea](https://gitlab.com/scale-ds/scale-telekom/commit/f51a0ea7f9ea2501fb1871a9fb8476a58a8cda42))
+* input ([0cb26ca](https://gitlab.com/scale-ds/scale-telekom/commit/0cb26cab8b191a5a79ef0c54d6123a4f482ab1a7))
+* link ([a33cff7](https://gitlab.com/scale-ds/scale-telekom/commit/a33cff7312706bff0aea1053367cb104aa218f70))
+* tag ([0f8898b](https://gitlab.com/scale-ds/scale-telekom/commit/0f8898b8d633fba844bab2b37c0db6a9f66d18ba))
+
+
+
+
+
 ## [1.5.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.5.0...v1.5.1) (2020-09-03)
 
 **Note:** Version bump only for package scaleds

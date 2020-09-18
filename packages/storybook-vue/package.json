@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/storybook-vue",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -23,8 +23,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "@scaleds/components-telekom": "^1.5.1",
-    "@scaleds/components-vue-telekom": "^1.5.1"
+    "@scaleds/components-telekom": "^1.6.0",
+    "@scaleds/components-vue-telekom": "^1.6.0"
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",

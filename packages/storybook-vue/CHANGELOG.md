@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.5.1...v1.6.0) (2020-09-18)
+
+
+### Bug Fixes
+
+* adjusts fontsizes in docs ([479ac62](https://gitlab.com/scale-ds/scale-telekom/commit/479ac62f4335624bdbe50b9f267cc6e9282e618e))
+* adjusts fontsizes in manager ([f8cf5cc](https://gitlab.com/scale-ds/scale-telekom/commit/f8cf5cc83a682fe60ab18c6d255616466c96edfe))
+
+
+### Features
+
+* **header:** make active sector configurable ([540e77f](https://gitlab.com/scale-ds/scale-telekom/commit/540e77f0a12b9c1b12d5cbc07d3f7517995fa4a3))
+* **header:** update story ([8cba990](https://gitlab.com/scale-ds/scale-telekom/commit/8cba99098d50ac14e13887b57c3416b8f2949198))
+* breadcrumb ([b634153](https://gitlab.com/scale-ds/scale-telekom/commit/b6341537166da2b5b9f47da65c3c52682b5c1ec0))
+* button ([4ed65a8](https://gitlab.com/scale-ds/scale-telekom/commit/4ed65a855fe3326961be55ec2eb23e56cddb1e8e))
+* card ([b8ce119](https://gitlab.com/scale-ds/scale-telekom/commit/b8ce11952786835b6d11ee716023cbfe28a032b3))
+* input ([0cb26ca](https://gitlab.com/scale-ds/scale-telekom/commit/0cb26cab8b191a5a79ef0c54d6123a4f482ab1a7))
+* tag ([0f8898b](https://gitlab.com/scale-ds/scale-telekom/commit/0f8898b8d633fba844bab2b37c0db6a9f66d18ba))
+
+
+
+
+
 ## [1.5.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.5.0...v1.5.1) (2020-09-03)
 
 **Note:** Version bump only for package @scaleds/storybook-vue
