@@ -2,7 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   breadcrumb: {
-    marginLeft: ({ spacings }) => spacings.minusPointFour,
+    marginLeft: ({ spacing }) => `-${spacing['2']}`,
     '& ol': {
       listStyle: 'none',
       paddingLeft: 0,
@@ -13,34 +13,32 @@ export const styles: JssStyle = {
     '& li': {
       display: 'inline-flex',
       alignItems: 'center',
-      marginRight: '0.125ch',
     },
   },
   separator: {
     display: 'flex',
-    marginLeft: '0.125ch',
   },
   item: {
-    padding: ({ spacings }) => spacings.pointFour,
+    padding: ({ spacing }) => `${spacing['1']} ${spacing['2']}`,
   },
   link: {
+    color: ({ color }) => color.text,
     textDecoration: 'none',
-    padding: ({ spacings }) => spacings.pointFour,
-    borderRadius: ({ shape }) => shape.borderRadius,
-    border: '2px solid transparent',
-    color: ({ palette }) => palette.gray,
+    padding: ({ spacing }) => `${spacing['1']} ${spacing['2']}`,
+    borderRadius: ({ radii }) => radii.medium,
     '&:hover': {
-      color: ({ palette }) => palette.magentaHover,
+      color: ({ color }) => color.primary_hover,
     },
     '&:active': {
-      color: ({ palette }) => palette.magentaActive,
+      color: ({ color }) => color.primary_active,
     },
     '&:focus': {
-      borderColor: ({ palette }) => palette.active,
+      boxShadow: ({ size, color }) =>
+        `0 0 0 ${size.border_focus} ${color.focus}`,
       outline: 'none',
     },
   },
   current: {
-    fontFamily: 'TeleNeoWeb-ExtraBold',
+    fontFamily: 'TeleNeoWeb-ExtraBold', // TODO token
   },
 };

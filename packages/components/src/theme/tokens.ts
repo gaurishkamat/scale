@@ -130,7 +130,7 @@ const spacing = {
   gutter: rem(SPACING_6),
 };
 
-const width = {
+const size = {
   border_input: '1px',
   border_focus: '2px',
   modal_narrow: rem(31),
@@ -174,8 +174,8 @@ const shadow = {
 };
 
 const radii = {
-  // small: rem(SPACING_1),
-  // medium: rem(SPACING_2),
+  small: rem(SPACING_1),
+  medium: rem(SPACING_2),
   input: rem(SPACING_1),
   chip: rem(SPACING_1),
   button: rem(SPACING_2),
@@ -194,7 +194,7 @@ export const tokens = {
   color,
   background,
   spacing,
-  width,
+  size,
   shadow,
   radii,
   opacity,

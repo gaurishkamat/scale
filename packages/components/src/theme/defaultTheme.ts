@@ -1,4 +1,4 @@
-import { Theme } from './interfaces';
+// import { Theme } from './interfaces';
 import { tokens } from './tokens';
 
 const palette = {
@@ -24,8 +24,9 @@ const shape = {
   borderRadius: 8,
 };
 
-export const defaultTheme: Theme = {
-  tokens,
+export const defaultTheme  = {
+  ...tokens,
+
   spacings,
   palette,
   shape,

@@ -3,15 +3,15 @@ export const styles: JssStyle = {
   card: {
     boxSizing: 'border-box',
     overflow: 'hidden',
-    background: ({ tokens }) => tokens.color.white,
+    background: ({ color }) => color.white,
     width: '100%',
-    transition: ({ tokens }) => tokens.transition.generic,
-    borderRadius: ({ tokens }) => tokens.radii.card,
-    boxShadow: ({ tokens }) => tokens.shadow.card,
+    transition: ({ transition }) => transition.generic,
+    borderRadius: ({ radii }) => radii.card,
+    boxShadow: ({ shadow }) => shadow.card,
     border: 'none',
   },
   card__body: {
-    padding: ({ tokens }) => tokens.spacing.box,
+    padding: ({ spacing }) => spacing.box,
     '& ::slotted(*)': {
       margin: 0,
     },
@@ -28,15 +28,15 @@ export const styles: JssStyle = {
     display: 'block',
     outline: 'none',
     '&:hover': {
-      boxShadow: ({ tokens }) => tokens.shadow.card_hover,
+      boxShadow: ({ shadow }) => shadow.card_hover,
     },
     '&:focus': {
-      boxShadow: ({ tokens }) =>
-        `${tokens.shadow.card_hover},0 0 0 ${tokens.width.border_focus} ${tokens.color.focus}`,
+      boxShadow: ({ shadow, size, color }) =>
+        `${shadow.card_hover},0 0 0 ${size.border_focus} ${color.focus}`,
     },
     '&:active': {
       border: 'none',
-      boxShadow: ({ tokens }) => tokens.shadow.card_active,
+      boxShadow: ({ shadow }) => shadow.card_active,
     },
     '& $card__body ::slotted(*)': {
       margin: 0,
@@ -44,7 +44,7 @@ export const styles: JssStyle = {
   },
   'card--disabled': {
     '&, &:hover, &:focus, &:active': {
-      opacity: ({ tokens }) => tokens.opacity.disabled,
+      opacity: ({ opacity }) => opacity.disabled,
       cursor: 'not-allowed',
       outline: 'none',
     },
