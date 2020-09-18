@@ -24,7 +24,7 @@ const shape = {
   borderRadius: 8,
 };
 
-export const defaultTheme  = {
+export const defaultTheme = {
   ...tokens,
 
   spacings,
