@@ -302,6 +302,10 @@
           "description": "(optional) Link interactive"
         },
         {
+          "name": "no-padding",
+          "description": "(optional) Padding off"
+        },
+        {
           "name": "styles",
           "description": "(optional) Injected jss styles"
         },

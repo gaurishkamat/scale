@@ -1,4 +1,7 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
+// @ts-ignore
+import { ScaleIconNavigationRight } from '@scaleds/icons-telekom/dist/custom-elements';
+
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './breadcrumb.styles';
@@ -17,7 +20,7 @@ import Base from '../../utils/base-interface';
 export class Breadcrumb implements Base {
   @Element() hostElement: HTMLElement;
 
-  @Prop() separator?: string = '\\';
+  @Prop() separator?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -63,7 +66,11 @@ export class Breadcrumb implements Base {
                     innerHTML={this.separatorSlot.innerHTML}
                   />
                 ) : (
-                  <span class={classes.separator}>{this.separator}</span>
+                  <span class={classes.separator}>
+                    {this.separator || (
+                      <scale-icon-navigation-right size={16} />
+                    )}
+                  </span>
                 );
               return (
                 <li>
