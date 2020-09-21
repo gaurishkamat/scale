@@ -90,7 +90,7 @@ const color = {
   disabled: GRAY_5_DECORATIVE,
   error: RED_FUNCTIONAL,
   focus: BLUE_FUNCTIONAL,
-  divider: BLUE_FUNCTIONAL,
+  divider: GRAY_6_DECORATIVE,
   tableLine: GRAY_6_DECORATIVE,
   border_slider_thumb: GRAY_3,
   slider_track: GRAY_4,
@@ -131,6 +131,7 @@ const spacing = {
 };
 
 const size = {
+  divider: '1px',
   border_input: '1px',
   border_focus: '2px',
   modal_narrow: rem(31),
