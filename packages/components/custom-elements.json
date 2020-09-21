@@ -637,10 +637,6 @@
           "description": "(optional) Link open a new tag"
         },
         {
-          "name": "underline",
-          "description": "(optional) Link underline"
-        },
-        {
           "name": "variant",
           "description": "(optional) Link variant"
         }

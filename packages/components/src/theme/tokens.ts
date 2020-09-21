@@ -19,7 +19,7 @@ const GRAY_1 = '#262626';
 const GRAY_3 = '#6C6C6C';
 const GRAY_4 = '#7C7C7C';
 // not AA on white background
-const GRAY_5_DECORATIVE = '#A4A4A4';
+// const GRAY_5_DECORATIVE = '#A4A4A4';
 const GRAY_6_DECORATIVE = '#D0D0D0';
 const GRAY_7_DECORATIVE = '#DCDCDC';
 // const GRAY_8_DECORATIVE = '#EDEDED';
@@ -87,7 +87,8 @@ const color = {
   link: BLUE,
   link_hover: BLUE,
   link_active: BLUE_DARK,
-  disabled: GRAY_5_DECORATIVE,
+  link_visited: BLUE_DARK,
+  disabled: GRAY_4,
   error: RED_FUNCTIONAL,
   focus: BLUE_FUNCTIONAL,
   divider: GRAY_6_DECORATIVE,
@@ -126,12 +127,14 @@ const spacing = {
   inline: rem(SPACING_2),
   box: rem(SPACING_5),
   flow: rem(SPACING_5),
+  char: rem(SPACING_1),
   y_outer: rem(SPACING_9),
   gutter: rem(SPACING_6),
 };
 
 const size = {
   divider: '1px',
+  underline: '1px',
   border_input: '1px',
   border_focus: '2px',
   modal_narrow: rem(31),

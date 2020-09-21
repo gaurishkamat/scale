@@ -407,10 +407,6 @@ export namespace Components {
          */
         "target"?: string;
         /**
-          * (optional) Link underline
-         */
-        "underline"?: boolean;
-        /**
           * (optional) Link variant
          */
         "variant"?: string;
@@ -1456,10 +1452,6 @@ declare namespace LocalJSX {
           * (optional) Link open a new tag
          */
         "target"?: string;
-        /**
-          * (optional) Link underline
-         */
-        "underline"?: boolean;
         /**
           * (optional) Link variant
          */
