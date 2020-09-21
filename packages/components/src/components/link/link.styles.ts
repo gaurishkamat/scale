@@ -20,7 +20,7 @@ export const styles: JssStyle = {
       color: ({ color }) => color.link_visited,
     },
   },
-  'link__wrapper': {
+  link__wrapper: {
     display: 'inline-flex',
     alignItems: 'center',
     '& > *:not(:first-child)': {
@@ -33,5 +33,5 @@ export const styles: JssStyle = {
   'link--disabled': {
     cursor: 'not-allowed',
     color: ({ color }) => color.disabled,
-  }
+  },
 };

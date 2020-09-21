@@ -16,6 +16,6 @@ export const styles: JssStyle = {
       content: 'counter(scale-counter) "."',
       fontFamily: 'TeleNeoWeb-Bold', // TODO use token (`weight` directly)
       paddingRight: ({ spacing }) => spacing.inline,
-    }
+    },
   },
 };

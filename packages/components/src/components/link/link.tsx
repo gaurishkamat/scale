@@ -69,7 +69,7 @@ export class Link implements Base {
       this.customClass && this.customClass,
       this.variant && classes[`link--variant-${this.variant}`],
       this.disabled && classes[`link--disabled`],
-      this.block && classes[`link--block`],
+      this.block && classes[`link--block`]
       // this.underline && classes[`link--underline`]
     );
   }
