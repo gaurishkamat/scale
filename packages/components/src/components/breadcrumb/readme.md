@@ -13,6 +13,19 @@
 | `styles`    | `styles`    | (optional) Injected jss styles | `any`    | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- scale-icon-navigation-right
+
+### Graph
+```mermaid
+graph TD;
+  scale-breadcrumb --> scale-icon-navigation-right
+  style scale-breadcrumb fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

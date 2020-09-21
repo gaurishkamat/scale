@@ -1,5 +1,4 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
-// @ts-ignore
 import { ScaleIconNavigationRight } from '@scaleds/icons-telekom/dist/custom-elements';
 
 import { CssClassMap } from '../../utils/utils';
@@ -29,6 +28,12 @@ export class Breadcrumb implements Base {
 
   @State() linksArray = [];
   @State() separatorSlot: HTMLElement = null;
+
+  connectedCallback() {
+    if (customElements.get('scale-icon-navigation-right') == null) {
+      customElements.define('scale-icon-navigation-right', ScaleIconNavigationRight);
+    }
+  }
 
   componentWillLoad() {
     if (this.linksArray.length === 0) {
