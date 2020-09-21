@@ -31,7 +31,10 @@ export class Breadcrumb implements Base {
 
   connectedCallback() {
     if (customElements.get('scale-icon-navigation-right') == null) {
-      customElements.define('scale-icon-navigation-right', ScaleIconNavigationRight);
+      customElements.define(
+        'scale-icon-navigation-right',
+        ScaleIconNavigationRight
+      );
     }
   }
 
