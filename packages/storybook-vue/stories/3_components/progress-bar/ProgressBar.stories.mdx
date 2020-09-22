@@ -37,7 +37,7 @@ export const Template = (args, {argTypes}) => ({
 
 <Preview withSource="none">
   <Story
-    name="Standard"
+    name="Determinate"
     args={{
       percentage: 20,
     }}
@@ -46,33 +46,14 @@ export const Template = (args, {argTypes}) => ({
   </Story>
 </Preview>
 
-<Props story='Standard' />
+<Props story='Determinate' />
 
 
-## ProgressBar Track Small
-
-<Preview withSource="none">
-  <Story
-    name="ProgressBar Track Small"
-    args={{
-      percentage: 20,
-      strokeWidth: 2,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-progress-bar percentage="20" track-height="2"></scale-progress-bar>
-```
-
-
-## ProgressBar With Custom Color
+## Progress custom
 
 <Preview withSource="none">
   <Story
-    name="ProgressBar With Custom Color"
+    name="Progress custom"
     args={{
       percentage: 20,
       customColor: "#009DE0"
@@ -87,14 +68,14 @@ export const Template = (args, {argTypes}) => ({
 ```
 
 
-## Disabled ProgressBar
+## Progress with description
 
 <Preview withSource="none">
   <Story
-    name="Disabled ProgressBar"
+    name="Progress with description"
     args={{
       percentage: 40,
-      disabled: true
+      statusDescription: 'Progress status description text'
     }}
   >
     {Template.bind({})}
@@ -102,20 +83,20 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" disabled></scale-progress-bar>
+<scale-progress-bar percentage="40" stroke-width="40" status-description="Progress status description text"></scale-progress-bar>
 ```
 
 
-## Progress Percentage Inside Bar
+## Complete default
 
 <Preview withSource="none">
   <Story
-    name="Progress Percentage Inside Bar"
+    name="Complete default"
     args={{
-      percentage: 40,
-      strokeWidth: 10,
-      statusInside: true,
+      percentage: 100,
       showStatus: false,
+      icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
+      statusDescription: 'Upload complete'
     }}
   >
     {Template.bind({})}
@@ -123,18 +104,21 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" stroke-width="10" status-inside show-status="false"></scale-progress-bar>
+<scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete"></scale-progress-bar>
 ```
 
 
-## ProgressBar With Description
+## Complete green
 
 <Preview withSource="none">
   <Story
-    name="ProgressBar With Description"
+    name="Complete green"
     args={{
-      percentage: 40,
-      statusDescription: 'ProgressBar status description text'
+      percentage: 100,
+      showStatus: false,
+      icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
+      statusDescription: 'Upload complete',
+      customColor: "#67c23a"
     }}
   >
     {Template.bind({})}
@@ -142,20 +126,21 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" stroke-width="40" status-description="ProgressBar status description text"></scale-progress-bar>
+<scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" custom-color="#67c23a"></scale-progress-bar>
 ```
 
 
-## ProgressBar With Error and Icon
+## Complete error
 
 <Preview withSource="none">
   <Story
-    name="ProgressBar With Error and Icon"
+    name="Complete error"
     args={{
-      percentage: 40,
+      percentage: 0,
       hasError: true,
       showStatus: false,
       icon: ICON,
+      statusDescription: 'Upload fail'
     }}
   >
     {Template.bind({})}
@@ -163,5 +148,5 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false"></scale-progress-bar>
+<scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail"></scale-progress-bar>
 ```

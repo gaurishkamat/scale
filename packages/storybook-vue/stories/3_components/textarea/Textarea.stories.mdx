@@ -1,12 +1,12 @@
 import { Meta, Story, Props, Preview, Description } from "@storybook/addon-docs/blocks";
-import ScaleInput from "../input/ScaleInput.vue";
+import ScaleTextarea from "./ScaleTextarea.vue";
 import description from "./textarea.md"
 import { action } from "@storybook/addon-actions";
 export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
   title="Components/Textarea"
-  component={ScaleInput}
+  component={ScaleTextarea}
   argTypes={{
     resize: {
       control: {
@@ -39,10 +39,10 @@ export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleInput },
+  components: { ScaleTextarea },
   props: {
     label: String,
-    ...ScaleInput.props
+    ...ScaleTextarea.props
   },
   template: `
     <scale-input
@@ -92,7 +92,8 @@ export const Template = (args, { argTypes }) => ({
       label: "Textarea",
       type: "textarea",
       rows: 3,
-      resize: "vertical"
+      resize: "vertical",
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -102,7 +103,7 @@ export const Template = (args, { argTypes }) => ({
 <Props story="Standard" />
 
 ```html
-<scale-input type="textarea" rows="3" resize="vertical"></scale-input>
+<scale-input variant="animated" label="Textarea" type="textarea" rows="3" resize="vertical"></scale-input>
 ```
 
 
@@ -116,6 +117,7 @@ export const Template = (args, { argTypes }) => ({
       type: "textarea",
       label: "Placeholder",
       placeholder: "this is the placeholder",
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -123,48 +125,9 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" :placeholder="this is the placeholder"></scale-input>
+<scale-input variant="animated" label="Placeholder" type="textarea" :placeholder="this is the placeholder"></scale-input>
 ```
 
-
-## Static
-
-<Preview withSource="none">
-  <Story
-    name="Static"
-    args={{
-      type: "textarea",
-      label: "Static",
-      variant: "static",
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-input type="textarea" variant="static"></scale-input>
-```
-
-
-## Animated
-
-<Preview withSource="none">
-  <Story
-    name="Animated"
-    args={{
-      type: "textarea",
-      label: "Animated",
-      variant: "animated",
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-input type="textarea" variant="animated"></scale-input>
-```
 
 ## Helper Text
 
@@ -174,6 +137,8 @@ export const Template = (args, { argTypes }) => ({
     args={{
       type: "textarea",
       helperText: "Make sure to fill this",
+      label: "Helper Text",
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -181,7 +146,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" helperText="Make sure to fill this"></scale-input>
+<scale-input variant="animated" type="textarea" label="Helper Text" helperText="Make sure to fill this"></scale-input>
 ```
 
 ## With Error
@@ -193,7 +158,8 @@ export const Template = (args, { argTypes }) => ({
       type: "textarea",
       label: "With Error",
       status: "error",
-      helperText: "something is wrong"
+      helperText: "something is wrong",
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -201,7 +167,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" helper-text="something is wrong" status="error"></scale-input>
+<scale-input variant="animated" type="textarea" label="With Error" helper-text="something is wrong" status="error"></scale-input>
 ```
 
 
@@ -214,6 +180,7 @@ export const Template = (args, { argTypes }) => ({
       type: "textarea",
       label: "Disabled",
       disabled: true,
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -221,7 +188,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" disabled></scale-input>
+<scale-input variant="animated" type="textarea" label="Disabled" disabled></scale-input>
 ```
 
 
@@ -234,7 +201,8 @@ export const Template = (args, { argTypes }) => ({
       label: "Max Length With Counter",
       maxLength: 10,
       counter: true,
-      type: "textarea"
+      type: "textarea",
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -242,7 +210,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" label="Max Length With Counter" max-length="10" counter></scale-input>
+<scale-input variant="animated" type="textarea" label="Max Length With Counter" max-length="10" counter></scale-input>
 ```
 
 
@@ -255,6 +223,7 @@ export const Template = (args, { argTypes }) => ({
       label: "More rows",
       type: "textarea",
       rows: 10,
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -262,5 +231,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="textarea" label="More rows" rows="10"></scale-input>
+<scale-input variant="animated" type="textarea" label="More rows" rows="10"></scale-input>
 ```

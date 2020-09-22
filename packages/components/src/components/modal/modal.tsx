@@ -207,9 +207,11 @@ export class Modal implements Base {
                 </div>
               </div>
 
-              <div class={classes.modal__actions}>
-                <slot name="modal-actions" />
-              </div>
+              {this.hasSlotActions && (
+                <div class={classes.modal__actions}>
+                  <slot name="modal-actions" />
+                </div>
+              )}
             </div>
           </div>
         </animatable-component>

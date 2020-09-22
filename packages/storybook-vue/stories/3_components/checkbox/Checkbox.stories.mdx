@@ -42,22 +42,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Checkbox",
-      type: "checkbox"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-<Props story="Standard" />
-
-## Custom Icon
-
-<Preview withSource="none">
-  <Story
-    name="Custom Icon"
-    args={{
-      label: "Custom Icon",
       type: "checkbox",
       icon: ICON
     }}
@@ -66,17 +50,15 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Preview>
 
-```html
-<scale-input type="checkbox" icon="SVG-PATH"></scale-input>
-```
+<Props story="Standard" icon="SVG-PATH" />
 
-## Pre-Checked
+## Selected
 
 <Preview withSource="none">
   <Story
-    name="Pre-Checked"
+    name="Selected"
     args={{
-      label: "Pre-Checked",
+      label: "Selected",
       type: "checkbox",
       icon: ICON,
       preChecked: true

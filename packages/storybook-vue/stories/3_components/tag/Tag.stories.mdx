@@ -52,42 +52,6 @@ export const Template = (args, { argTypes }) => ({
 
 <Props story="Standard"/>
 
-## A tag with a link
-
-<Preview withSource="none">
-    <Story
-    name="With link"
-    args={{
-        href: 'https://www.example.com',
-        label: 'A tag with a link'
-    }}
-    >
-    {Template.bind({})}
-    </Story>
-</Preview>
-
-```html
-<scale-tag href="https://www.example.com">Label</scale-tag>
-```
-
-## A tag with link target blank
-
-<Preview withSource="none">
-    <Story
-    name="With link target blank"
-    args={{
-        href: 'https://www.example.com',
-        label: 'A tag with a link target blank',
-        target: '_blank'
-    }}
-    >
-        {Template.bind({})}
-    </Story>
-</Preview>
-
-```html
-<scale-tag href="https://www.example.com" target="_blank">A tag with a link target blank</scale-tag>
-```
 
 ## A dissmisable tag
 

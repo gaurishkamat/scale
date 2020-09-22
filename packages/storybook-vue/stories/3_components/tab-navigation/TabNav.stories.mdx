@@ -15,40 +15,44 @@ import { action } from "@storybook/addon-actions";
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
-  props: {
-    ...ScaleTabNav.props,
-  },
+  props: ScaleTabNav.props,
   template: `
-  <scale-tab-nav :icon-only="iconOnly" :label1="label1" :icon1="icon1" :label2="label2" :icon2="icon2">
-  </scale-tab-nav>
+    <scale-tab-nav :icon-only="iconOnly" :label1="label1" :icon1="icon1" :label2="label2" :icon2="icon2" :label3="label3" :icon3="icon3" :label4="label4" :icon4="icon4">
+    </scale-tab-nav>
   `,
 });
 
 <Description>{description}</Description>
 
 <Preview withSource="none">
-  <Story name="Standard">{Template.bind({})}</Story>
+  <Story name="Text only">{Template.bind({})}</Story>
 </Preview>
 
 ```html
 <scale-tab-nav>
-  <scale-tab-header slot="headings" label="Foo"></scale-tab-header>
-  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
-  <scale-tab-header slot="headings" label="bar"></scale-tab-header>
-  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+  <scale-tab-header slot="headings" label="General"></scale-tab-header>
+  <scale-tab-panel slot="content">This is General</scale-tab-panel>
+  <scale-tab-header slot="headings" label="Usage"></scale-tab-header>
+  <scale-tab-panel slot="content">This is Usage</scale-tab-panel>
+  <scale-tab-header slot="headings" label="Style"></scale-tab-header>
+  <scale-tab-panel slot="content">This is Style</scale-tab-panel>
+  <scale-tab-header slot="headings" label="Code"></scale-tab-header>
+  <scale-tab-panel slot="content">This is Code</scale-tab-panel>
 </scale-tab-nav>
 ```
 
 <Props story="Standard" />
 
-## With Icons
+## Text & Icon
 
 <Preview withSource="none">
   <Story
-    name="With Icons"
+    name="Text and Icon"
     args={{
-      icon1: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
-      icon2: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
+      icon1: "M12 5.11l7.75 7.75V19a2.245 2.245 0 01-2.25 2.25h-4.75v-4.5a.75.75 0 10-1.5 0v4.5H6.5A2.245 2.245 0 014.25 19v-6.14zm0-4.24l11.565 11.565-1.06 1.06L12 2.99 1.495 13.495l-1.06-1.06z",
+      icon2: "m20.5 1v17l-5 5h-10c-1.65 0-3-1.35-3-3v-19zm-1.5 1.5h-15v17.5c0 .85.65 1.5 1.5 1.5h9v-3c0-.85.65-1.5 1.5-1.5h3zm-2.85 4.75c.25-.3.75-.3 1.05-.05s.3.75.05 1.05l-4.45 5.05-3-2.5-2.95 3.45c-.15.15-.35.25-.55.25-.15 0-.35-.05-.45-.2-.35-.25-.35-.75-.1-1.05l3.95-4.55 3 2.5z",
+      icon3: "M23.55 9.4c-.25-.7-.85-1.2-1.6-1.25l-6-.45-2.25-5.55C13.4 1.45 12.75 1 12 1s-1.4.45-1.7 1.15L8 7.75 2 8.2c-.75.05-1.35.55-1.6 1.25s0 1.45.55 1.95l4.6 3.9-1.4 5.8c-.15.7.1 1.45.7 1.9.3.25.7.35 1.05.35s.65-.1.95-.25L12 19.9l5.1 3.2c.65.4 1.4.35 2-.05.6-.45.85-1.2.7-1.9l-1.45-5.85 4.6-3.9c.6-.55.85-1.3.6-2zm-1.5.8l-5.3 4.5 1.65 6.75c.05.2-.05.3-.1.35s-.2.1-.35 0L12 18.1l-5.9 3.65c-.15.1-.3.05-.35 0s-.15-.15-.1-.35l1.65-6.75-5.3-4.5c-.15-.1-.1-.25-.1-.35 0-.05.1-.2.25-.2l6.95-.5 2.65-6.45c.05-.15.15-.15.25-.15s.2.05.3.2l2.65 6.45 6.95.5c.2 0 .25.15.25.2 0 .1 0 .25-.1.35z",
+      icon4: "M14 1l.5 2.75c.15.75.95 1.05 1.55.65l2.3-1.6 2.85 2.85-1.6 2.3c-.4.6-.05 1.4.65 1.55L23 10v4l-2.75.5a.994.994 0 00-.65 1.55l1.6 2.3-2.85 2.85-2.3-1.6c-.6-.4-1.4-.05-1.55.65L14 23h-4l-.5-2.75c-.15-.7-.95-1.05-1.55-.65l-2.3 1.6-2.85-2.85 1.6-2.3c.4-.6.05-1.4-.65-1.55L1 14v-4l2.75-.5a.994.994 0 00.65-1.55l-1.6-2.3L5.65 2.8l2.3 1.6c.6.4 1.4.05 1.55-.65L10 1h4zm-1.25 1.5h-1.5l-.3 1.5c-.2 1.2-1.25 2.05-2.45 2.05-.5 0-1-.15-1.4-.45l-1.3-.9-1.05 1.05.9 1.3c.5.7.6 1.6.25 2.4-.3.8-1 1.35-1.85 1.5l-1.55.3v1.5l1.55.25c.85.15 1.5.7 1.85 1.5.35.8.25 1.7-.25 2.4l-.9 1.3 1.05 1.05 1.3-.9c.4-.3.9-.45 1.4-.45 1.2 0 2.25.85 2.45 2.05l.3 1.55h1.5l.3-1.55c.2-1.2 1.25-2.05 2.45-2.05.5 0 1 .15 1.4.45l1.3.9 1.05-1.05-.9-1.3c-.5-.7-.55-1.6-.25-2.3.3-.8 1-1.35 1.85-1.5l1.55-.3v-1.5l-1.55-.3c-.85-.15-1.5-.7-1.85-1.5-.35-.8-.25-1.7.25-2.4l.9-1.3-1.05-1.05-1.3.9c-.4.3-.9.45-1.4.45-1.2 0-2.25-.85-2.45-2.05l-.3-1.55zM12 9a3 3 0 110 6 3 3 0 010-6z",
     }}
   >
     {Template.bind({})}
@@ -59,47 +63,82 @@ export const Template = (args, { argTypes }) => ({
 <scale-tab-nav>
   <scale-tab-header
     slot="headings"
-    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
-    label="Foo"
+    icon="svg-path"
+    label="General"
   ></scale-tab-header>
-  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
+  <scale-tab-panel
+    slot="content">This is General</scale-tab-panel>
   <scale-tab-header
     slot="headings"
-    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
-    label="bar"
+    icon="svg-path"
+    label="Usage"
   ></scale-tab-header>
-  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+  <scale-tab-panel
+    slot="content">This is Usage</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="svg-path"
+    label="Style"
+  ></scale-tab-header>
+  <scale-tab-panel
+    slot="content">This is Style</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="svg-path"
+    label="Code"
+  ></scale-tab-header>
+  <scale-tab-panel
+    slot="content">This is Code</scale-tab-panel>
 </scale-tab-nav>
 ```
 
-## Only Icons
+## Icon only
 
 <Preview withSource="none">
   <Story
-    name="Only Icons"
+    name="Icon only"
     args={{
-      icon1: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
-      icon2: "M24,0 L0,0 L0,24 L24,24 L24,0 Z",
-      iconOnly: true,
+      icon1: "M12 5.11l7.75 7.75V19a2.245 2.245 0 01-2.25 2.25h-4.75v-4.5a.75.75 0 10-1.5 0v4.5H6.5A2.245 2.245 0 014.25 19v-6.14zm0-4.24l11.565 11.565-1.06 1.06L12 2.99 1.495 13.495l-1.06-1.06z",
+      icon2: "m20.5 1v17l-5 5h-10c-1.65 0-3-1.35-3-3v-19zm-1.5 1.5h-15v17.5c0 .85.65 1.5 1.5 1.5h9v-3c0-.85.65-1.5 1.5-1.5h3zm-2.85 4.75c.25-.3.75-.3 1.05-.05s.3.75.05 1.05l-4.45 5.05-3-2.5-2.95 3.45c-.15.15-.35.25-.55.25-.15 0-.35-.05-.45-.2-.35-.25-.35-.75-.1-1.05l3.95-4.55 3 2.5z",
+      icon3: "M23.55 9.4c-.25-.7-.85-1.2-1.6-1.25l-6-.45-2.25-5.55C13.4 1.45 12.75 1 12 1s-1.4.45-1.7 1.15L8 7.75 2 8.2c-.75.05-1.35.55-1.6 1.25s0 1.45.55 1.95l4.6 3.9-1.4 5.8c-.15.7.1 1.45.7 1.9.3.25.7.35 1.05.35s.65-.1.95-.25L12 19.9l5.1 3.2c.65.4 1.4.35 2-.05.6-.45.85-1.2.7-1.9l-1.45-5.85 4.6-3.9c.6-.55.85-1.3.6-2zm-1.5.8l-5.3 4.5 1.65 6.75c.05.2-.05.3-.1.35s-.2.1-.35 0L12 18.1l-5.9 3.65c-.15.1-.3.05-.35 0s-.15-.15-.1-.35l1.65-6.75-5.3-4.5c-.15-.1-.1-.25-.1-.35 0-.05.1-.2.25-.2l6.95-.5 2.65-6.45c.05-.15.15-.15.25-.15s.2.05.3.2l2.65 6.45 6.95.5c.2 0 .25.15.25.2 0 .1 0 .25-.1.35z",
+      icon4: "M14 1l.5 2.75c.15.75.95 1.05 1.55.65l2.3-1.6 2.85 2.85-1.6 2.3c-.4.6-.05 1.4.65 1.55L23 10v4l-2.75.5a.994.994 0 00-.65 1.55l1.6 2.3-2.85 2.85-2.3-1.6c-.6-.4-1.4-.05-1.55.65L14 23h-4l-.5-2.75c-.15-.7-.95-1.05-1.55-.65l-2.3 1.6-2.85-2.85 1.6-2.3c.4-.6.05-1.4-.65-1.55L1 14v-4l2.75-.5a.994.994 0 00.65-1.55l-1.6-2.3L5.65 2.8l2.3 1.6c.6.4 1.4.05 1.55-.65L10 1h4zm-1.25 1.5h-1.5l-.3 1.5c-.2 1.2-1.25 2.05-2.45 2.05-.5 0-1-.15-1.4-.45l-1.3-.9-1.05 1.05.9 1.3c.5.7.6 1.6.25 2.4-.3.8-1 1.35-1.85 1.5l-1.55.3v1.5l1.55.25c.85.15 1.5.7 1.85 1.5.35.8.25 1.7-.25 2.4l-.9 1.3 1.05 1.05 1.3-.9c.4-.3.9-.45 1.4-.45 1.2 0 2.25.85 2.45 2.05l.3 1.55h1.5l.3-1.55c.2-1.2 1.25-2.05 2.45-2.05.5 0 1 .15 1.4.45l1.3.9 1.05-1.05-.9-1.3c-.5-.7-.55-1.6-.25-2.3.3-.8 1-1.35 1.85-1.5l1.55-.3v-1.5l-1.55-.3c-.85-.15-1.5-.7-1.85-1.5-.35-.8-.25-1.7.25-2.4l.9-1.3-1.05-1.05-1.3.9c-.4.3-.9.45-1.4.45-1.2 0-2.25-.85-2.45-2.05l-.3-1.55zM12 9a3 3 0 110 6 3 3 0 010-6z",
+      iconOnly: true
     }}
   >
     {Template.bind({})}
   </Story>
 </Preview>
 
+
 ```html
 <scale-tab-nav>
   <scale-tab-header
     slot="headings"
-    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    icon="svg-path"
     icon-only
   ></scale-tab-header>
-  <scale-tab-panel slot="content">This is FOO</scale-tab-panel>
+  <scale-tab-panel
+    slot="content">This is General</scale-tab-panel>
   <scale-tab-header
     slot="headings"
-    icon="M24,0 L0,0 L0,24 L24,24 L24,0 Z"
+    icon="svg-path"
     icon-only
   ></scale-tab-header>
-  <scale-tab-panel slot="content">This is BAR</scale-tab-panel>
+  <scale-tab-panel
+    slot="content">This is Usage</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="svg-path"
+    icon-only
+  ></scale-tab-header>
+  <scale-tab-panel
+    slot="content">This is Style</scale-tab-panel>
+  <scale-tab-header
+    slot="headings"
+    icon="svg-path"
+    icon-only
+  ></scale-tab-header>
+  <scale-tab-panel
+    slot="content">This is Code</scale-tab-panel>
 </scale-tab-nav>
 ```

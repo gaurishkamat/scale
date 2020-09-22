@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@scaleds/components-telekom": "^1.6.1",
-    "@scaleds/components-vue-telekom": "^1.6.1"
+    "@scaleds/components-vue-telekom": "^1.6.1",
+    "@scaleds/icons-telekom": "^1.6.1"
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",
