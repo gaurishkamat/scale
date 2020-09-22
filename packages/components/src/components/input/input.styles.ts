@@ -208,12 +208,6 @@ export const styles: JssStyle = {
       'small'
     ).end,
   },
-  'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select, & .input__textarea': {
-      opacity: '0.5',
-      cursor: 'not-allowed!important',
-    },
-  },
   'input--transparent': {
     '& .input__input, & .input__textarea, &$input--type-radio .input__radio, & .input__select': {
       backgroundColor: 'transparent',
@@ -222,13 +216,16 @@ export const styles: JssStyle = {
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
+    '& .input__label': {
+      color: '#262626',
+    },
     '& .input__checkbox-container': {
       height: 24,
       width: 24,
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
-      marginRight: 10,
+      marginRight: ({ spacing }) => spacing.inline,
       '& .input__checkbox': {
         // define a default checkbox
         top: 0,
@@ -339,6 +336,13 @@ export const styles: JssStyle = {
           backgroundColor: ({ palette }) => palette.grayDisabledBackground,
         },
       },
+    },
+  },
+  'input--disabled': {
+    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select, & .input__textarea': {
+      // opacity: '0.5',
+      color: ({ color }) => color.disabled,
+      cursor: 'not-allowed!important',
     },
   },
 };
