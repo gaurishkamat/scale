@@ -202,7 +202,6 @@ export namespace Components {
     }
     interface ScaleCollapsible {
         "close": () => Promise<void>;
-        "iconSize": number;
         "isExpanded"?: boolean;
         "label": string;
         "setFocus": () => Promise<void>;
@@ -1227,7 +1226,6 @@ declare namespace LocalJSX {
         "vertical"?: boolean;
     }
     interface ScaleCollapsible {
-        "iconSize"?: number;
         "isExpanded"?: boolean;
         "label"?: string;
         "onToggleHead"?: (event: CustomEvent<any>) => void;

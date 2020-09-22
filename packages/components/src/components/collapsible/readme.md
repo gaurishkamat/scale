@@ -9,7 +9,6 @@
 
 | Property     | Attribute     | Description                    | Type      | Default     |
 | ------------ | ------------- | ------------------------------ | --------- | ----------- |
-| `iconSize`   | `icon-size`   |                                | `number`  | `16`        |
 | `isExpanded` | `is-expanded` |                                | `boolean` | `undefined` |
 | `label`      | `label`       |                                | `string`  | `'label'`   |
 | `styles`     | `styles`      | (optional) Injected jss styles | `any`     | `undefined` |

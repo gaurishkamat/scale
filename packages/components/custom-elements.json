@@ -344,10 +344,6 @@
       },
       "attributes": [
         {
-          "name": "icon-size",
-          "description": ""
-        },
-        {
           "name": "is-expanded",
           "description": ""
         },
