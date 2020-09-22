@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.1...v1.7.0) (2020-09-22)
+
+
+### Bug Fixes
+
+* **components:** a bit of QA for Input (radio) ([931a775](https://gitlab.com/scale-ds/scale-telekom/commit/931a77514e753fa7df0705d137e4596702b3be88))
+* **components:** adjust styles for Checkbox (QA), improve clicking-on-label ([ad21a69](https://gitlab.com/scale-ds/scale-telekom/commit/ad21a69d0ddb487915ded75fb7a440abffe479dc))
+* **components:** apply QA in Button, no full tokens yet ([d7f5155](https://gitlab.com/scale-ds/scale-telekom/commit/d7f51552d4f9af0a60c584a5a7043a15ff67e2b9))
+* **components:** try and improve how icons get imported and used (WIP) ([2f7a1b9](https://gitlab.com/scale-ds/scale-telekom/commit/2f7a1b9295a64580c236d77bd54cf81fe91bfcd8))
+* **components|storybook-vue:** a bit of theming QA for Sidebar nav ([6e2fe79](https://gitlab.com/scale-ds/scale-telekom/commit/6e2fe79ff85c62a7a6786e20f42b4b8b68a77d04))
+* prevent jump on hover in firefox ([dd82c27](https://gitlab.com/scale-ds/scale-telekom/commit/dd82c27a040bd149fcea2e3f80f5514d5e2fa57d))
+
+
+### Features
+
+* **components:** add first batch of tokens in theme/tokens.ts, fonts missing (wip) ([a7ca221](https://gitlab.com/scale-ds/scale-telekom/commit/a7ca221e06a5c919edbaa8c5968fbaddab14df0f))
+* **components:** apply some theming QA to Modal (wip) ([fdc64f1](https://gitlab.com/scale-ds/scale-telekom/commit/fdc64f14aad658c9d37ed4e9f3e704a289721838))
+* **components:** apply some theming QA to Progress ([4f1d293](https://gitlab.com/scale-ds/scale-telekom/commit/4f1d293b9af54d61b0a2b1665ea2335379412295))
+* **components:** improve theming (QA) for Input (text) ([25ae22b](https://gitlab.com/scale-ds/scale-telekom/commit/25ae22b846185a6735131da50b6e72272f52c00b))
+* **components:** use icon from library as default separator in Breadcrumb ([7bec92b](https://gitlab.com/scale-ds/scale-telekom/commit/7bec92b1fe991d9566fcfa48cffb3f0a67c2dbd9))
+* **components:** use tokens in Accordion/Collapsible ([f10856b](https://gitlab.com/scale-ds/scale-telekom/commit/f10856be0266ea77945aaba38988e749cdc8989a))
+* **components:** use tokens in Breadcrumb ([4210f5b](https://gitlab.com/scale-ds/scale-telekom/commit/4210f5bb01d8d6548cacd3ed2e5408e721836463))
+* **components:** use tokens in Card, fix focus outline and add no-padding attr ([f7c70ea](https://gitlab.com/scale-ds/scale-telekom/commit/f7c70ea691512256f193dda1732a48fa05d0eba3))
+* **components:** use tokens in Divider ([5e91700](https://gitlab.com/scale-ds/scale-telekom/commit/5e9170086d5b2e6be32da5a37fa36963aa62b3b8))
+* **components:** use tokens in Link ([5c8185c](https://gitlab.com/scale-ds/scale-telekom/commit/5c8185c5cc974fa7672de3d6941f5a7c6fc8abc0))
+* **components:** use tokens in List (WIP) ([1a8d5b2](https://gitlab.com/scale-ds/scale-telekom/commit/1a8d5b2a5eb72a6f7ba71a2f18048aebf6a8562d))
+
+
+
+
+
 ## [1.6.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.0...v1.6.1) (2020-09-20)
 
 **Note:** Version bump only for package @scaleds/components-telekom

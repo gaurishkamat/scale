@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.1...v1.7.0) (2020-09-22)
+
+
+### Features
+
+* **components:** use tokens in Card, fix focus outline and add no-padding attr ([f7c70ea](https://gitlab.com/scale-ds/scale-telekom/commit/f7c70ea691512256f193dda1732a48fa05d0eba3))
+* **components:** use tokens in Link ([5c8185c](https://gitlab.com/scale-ds/scale-telekom/commit/5c8185c5cc974fa7672de3d6941f5a7c6fc8abc0))
+
+
+
+
+
 ## [1.6.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.0...v1.6.1) (2020-09-20)
 
 **Note:** Version bump only for package @scaleds/storybook-vue
