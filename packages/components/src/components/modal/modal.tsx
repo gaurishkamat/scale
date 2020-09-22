@@ -30,6 +30,7 @@ export class Modal implements Base {
   combinedTransitions: any;
 
   @Element() hostElement: HTMLStencilElement;
+  @Element() scrollContainer: HTMLElement;
   /** (optional) Transition overrides */
   @Prop() transitions?: any;
   /** (optional) Modal class */
@@ -84,6 +85,9 @@ export class Modal implements Base {
     const modalHeader = this.hostElement.shadowRoot.querySelector(
       `.${this.stylesheet.classes.modal__header}`
     );
+    const modalActions = this.hostElement.shadowRoot.querySelector(
+      `.${this.stylesheet.classes.modal__actions}`
+    );
     setTimeout(() => {
       const hasVerticalScrollbar =
         scrollContainer.scrollHeight > scrollContainer.clientHeight;
@@ -92,6 +96,11 @@ export class Modal implements Base {
         modalHeader.classList.add(
           this.stylesheet.classes['modal__header-scroll']
         );
+        if (modalActions) {
+          modalActions.classList.add(
+            this.stylesheet.classes['modal__actions-scroll']
+          );
+        }
       }
     });
   }
@@ -195,7 +204,8 @@ export class Modal implements Base {
                         <slot name="close" />
                       </div>
                     ) : (
-                      'x'
+                      /* TODO use icon from library? */
+                      <scale-icon path="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zM7.95 7.95c.3-.3.75-.3 1.05 0l3 3 3-3c.3-.3.75-.3 1.05 0s.3.75 0 1.05l-3 3 3 3c.3.3.3.75 0 1.05s-.75.3-1.05 0l-3-3-3 3c-.3.3-.75.3-1.05 0s-.3-.75 0-1.05l3-3-3-3c-.3-.3-.3-.75 0-1.05z" />
                     )}
                   </a>
                 </div>
@@ -207,9 +217,11 @@ export class Modal implements Base {
                 </div>
               </div>
 
-              <div class={classes.modal__actions}>
-                <slot name="modal-actions" />
-              </div>
+              {this.hasSlotActions && (
+                <div class={classes.modal__actions}>
+                  <slot name="modal-actions" />
+                </div>
+              )}
             </div>
           </div>
         </animatable-component>

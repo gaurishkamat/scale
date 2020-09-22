@@ -20,10 +20,9 @@ export const styles: JssStyle = {
   },
   modal__content: {
     background: '#FFFFFF',
-    color: '#161616',
+    // color: '#262626',
     borderRadius: '8px',
-    boxShadow:
-      '0 19px 18px 0 rgba(0,0,0,0.05), 0 8px 12px 0 rgba(0,0,0,0.05), 0 1px 5px 0 rgba(0,0,0,0.04), 0 0 2px 0 rgba(0,0,0,0.03)',
+    boxShadow: ({ shadow }) => shadow.modal,
     maxHeight: '100%',
     width: '100%',
     display: 'flex',
@@ -48,7 +47,7 @@ export const styles: JssStyle = {
 
   modal__header: {
     fontSize: '1.25rem',
-    color: '#161616',
+    // color: '#161616',
     margin: '0 1.5rem',
     padding: '1.5rem 0',
     lineHeight: '24px',
@@ -56,9 +55,10 @@ export const styles: JssStyle = {
     justifyContent: 'space-between',
     '& ::slotted(*)': {
       fontSize: '1.25rem',
-      color: '#161616',
+      // color: '#161616',
       margin: 0,
-      fontWeight: 'bold',
+      // fontWeight: 'bold',
+      fontFamily: 'TeleNeoWeb-ExtraBold',
     },
   },
   'modal__header-scroll': {
@@ -67,6 +67,9 @@ export const styles: JssStyle = {
   modal__body: {
     padding: '1.5rem',
     lineHeight: '1.5',
+    '& ::slotted(*)': {
+      margin: 0,
+    },
   },
   modal__close: {
     height: '24px',
@@ -77,8 +80,10 @@ export const styles: JssStyle = {
     display: 'flex',
     justifyContent: 'flex-end',
     padding: '1.5rem',
-    background: '#F4F4F4',
     borderRadius: '0 0 8px 8px',
+  },
+  'modal__actions-scroll': {
+    background: ({ background }) => background.light,
   },
   modal__backdrop: {
     position: 'fixed',
@@ -86,6 +91,6 @@ export const styles: JssStyle = {
     left: 0,
     width: '100%',
     height: '100vh',
-    background: 'rgba(35,0,18,0.67)',
+    background: 'rgba(108, 108, 108, 0.7)', // 'rgba(35,0,18,0.67)',
   },
 };
