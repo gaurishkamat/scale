@@ -302,6 +302,10 @@
           "description": "(optional) Link interactive"
         },
         {
+          "name": "no-padding",
+          "description": "(optional) Padding off"
+        },
+        {
           "name": "styles",
           "description": "(optional) Injected jss styles"
         },
@@ -339,10 +343,6 @@
         "value": ""
       },
       "attributes": [
-        {
-          "name": "icon-size",
-          "description": ""
-        },
         {
           "name": "is-expanded",
           "description": ""
@@ -631,10 +631,6 @@
         {
           "name": "target",
           "description": "(optional) Link open a new tag"
-        },
-        {
-          "name": "underline",
-          "description": "(optional) Link underline"
         },
         {
           "name": "variant",

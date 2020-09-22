@@ -72,22 +72,19 @@ export class Accordion implements Base {
   componentDidLoad() {}
   componentDidUnload() {}
   componentWillUpdate() {}
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(classes['accordion']);
-  }
 
   render() {
-    const { classes } = this.stylesheet;
-
     return (
       <Host>
-        <div class={classes.accordionContainer}>
-          <div class="accordion-container">
-            <slot />
-          </div>
+        <div class={this.getCssClassMap()}>
+          <slot />
         </div>
       </Host>
     );
+  }
+
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+    return classNames(classes['accordion']);
   }
 }

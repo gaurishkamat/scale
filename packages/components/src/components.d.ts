@@ -174,6 +174,10 @@ export namespace Components {
          */
         "interactive"?: boolean;
         /**
+          * (optional) Padding off
+         */
+        "noPadding"?: boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
@@ -198,7 +202,6 @@ export namespace Components {
     }
     interface ScaleCollapsible {
         "close": () => Promise<void>;
-        "iconSize": number;
         "isExpanded"?: boolean;
         "label": string;
         "setFocus": () => Promise<void>;
@@ -402,10 +405,6 @@ export namespace Components {
           * (optional) Link open a new tag
          */
         "target"?: string;
-        /**
-          * (optional) Link underline
-         */
-        "underline"?: boolean;
         /**
           * (optional) Link variant
          */
@@ -1200,6 +1199,10 @@ declare namespace LocalJSX {
          */
         "interactive"?: boolean;
         /**
+          * (optional) Padding off
+         */
+        "noPadding"?: boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
@@ -1223,7 +1226,6 @@ declare namespace LocalJSX {
         "vertical"?: boolean;
     }
     interface ScaleCollapsible {
-        "iconSize"?: number;
         "isExpanded"?: boolean;
         "label"?: string;
         "onToggleHead"?: (event: CustomEvent<any>) => void;
@@ -1448,10 +1450,6 @@ declare namespace LocalJSX {
           * (optional) Link open a new tag
          */
         "target"?: string;
-        /**
-          * (optional) Link underline
-         */
-        "underline"?: boolean;
         /**
           * (optional) Link variant
          */

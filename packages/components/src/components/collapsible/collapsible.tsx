@@ -30,7 +30,6 @@ export class Collapsible implements Base {
   @Prop() tag?: string = 'li';
   @Prop() label: string = 'label';
   @Prop() isExpanded?: boolean;
-  @Prop() iconSize: number = 16;
 
   @State() expanded: boolean = false;
 
@@ -74,40 +73,34 @@ export class Collapsible implements Base {
 
   render() {
     const { classes } = this.stylesheet;
-    const wrapperClassMap = classNames(classes['collapsible__wrapper']);
-    const buttonClassMap = classNames(classes['collapsible__button']);
-    const contentClassMap = classNames(classes['collapsible__content']);
 
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          <div class={wrapperClassMap}>
+          <div class={classes['collapsible__wrapper']}>
             <button
-              id="button"
-              class={buttonClassMap}
+              class={classes['collapsible__button']}
               onClick={this.handleClick.bind(this)}
               onKeyDown={this.handleKeyDown.bind(this)}
               aria-expanded={this.expanded ? 'true' : 'false'}
             >
+              {/* TODO use scale-icon */}
               <svg
-                width={this.iconSize}
-                height={this.iconSize}
-                viewBox="0 0 26 26"
+                height="16"
+                width="16"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke="currentColor"
-                  d="M4 9l9 9.5L22 9Z"
+                  d="m20.65 7.4c-.3-.3-.75-.3-1.05 0l-7.6 7.6-7.6-7.6c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l8.65 8.65 8.65-8.65c.3-.25.3-.75 0-1.05z"
                   fill="currentColor"
                   fill-rule="evenodd"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
                 />
               </svg>
               <slot name="headline" />
             </button>
           </div>
-          <div hidden={!this.expanded} class={contentClassMap}>
+          <div hidden={!this.expanded} class={classes['collapsible__content']}>
             <slot name="content" />
           </div>
         </div>
@@ -117,6 +110,9 @@ export class Collapsible implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes['collapsible']);
+    return classNames(
+      classes['collapsible'],
+      this.expanded && classes['collapsible--expanded']
+    );
   }
 }

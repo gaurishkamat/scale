@@ -6,14 +6,16 @@ export const styles: JssStyle = {
     height: '100%',
   },
   divider: {
+    padding: ({ spacing }) => spacing['3'],
     '& hr': {
       border: '0',
-      borderTop: '1px solid #dfdfdf',
+      borderTop: ({ color, size }) => `${size.divider} solid ${color.divider}`,
+      margin: 0,
     },
   },
   divider__vertical: {
-    borderLeft: '1px solid #dfdfdf',
-    minHeight: '1rem',
+    borderLeft: ({ color, size }) => `${size.divider} solid ${color.divider}`,
+    minHeight: ({ spacing }) => spacing.flow,
   },
   'divider--vertical': {
     '&, divider__vertical': {

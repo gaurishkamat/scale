@@ -29,11 +29,13 @@
 ### Depends on
 
 - animatable-component
+- [scale-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-modal --> animatable-component
+  scale-modal --> scale-icon
   style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

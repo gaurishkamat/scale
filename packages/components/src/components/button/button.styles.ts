@@ -6,8 +6,9 @@ export const styles: JssStyle = {
     color: ({ colors }) => colors.common.black,
     '--icon-color': ({ colors }) => colors.common.black,
     background: ({ colors }) => colors.grey[300],
-    border: ({ colors }) => `1px solid ${colors.grey[300]}`,
-    borderRadius: ({ shape }) => shape.borderRadius,
+    border: 'none',
+    borderRadius: 8,
+    outline: 'none',
     fontSize: ({ typography }) => typography.variants.button.fontSize,
     fontWeight: ({ typography }) =>
       typography.variants.button.fontWeightRegular,
@@ -24,12 +25,12 @@ export const styles: JssStyle = {
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
-    padding: '1px 16px',
+    // padding: '1px 16px',
     boxShadow: 'none',
     textDecoration: 'none',
     fontFamily: 'TeleNeoWeb-Bold',
-    paddingLeft: 22,
-    paddingRight: 22,
+    paddingLeft: 24,
+    paddingRight: 24,
     paddingTop: 8,
     paddingBottom: 8,
     height: 'unset',
@@ -57,6 +58,10 @@ export const styles: JssStyle = {
       color: ({ palette }) => palette.white,
       '--icon-color': ({ palette }) => palette.white,
     },
+    '&:focus': {
+      boxShadow: ({ size, color }) =>
+        `0 0 0 ${size.border_focus} ${color.focus}`,
+    },
     '&:active, &.selected': {
       borderColor: ({ palette }) => palette.magentaActive,
       background: ({ palette }) => palette.magentaActive,
@@ -67,17 +72,17 @@ export const styles: JssStyle = {
   'button--disabled': {
     '&, &:hover': {
       cursor: 'not-allowed',
-      background: ({ palette }) => palette.grayDisabledBackground,
-      border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
-      color: ({ palette }) => palette.grayDisabledText,
-      '--icon-color': ({ palette }) => palette.grayDisabledText,
+      background: ({ background }) => background.disabled,
+      // border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
+      color: ({ color }) => color.disabled,
+      '--icon-color': ({ color }) => color.disabled,
       opacity: 1,
     },
     '&$button--variant-secondary, &$button--variant-secondary:hover': {
       background: 'none',
-      border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
-      color: ({ palette }) => palette.grayDisabledText,
-      '--icon-color': ({ palette }) => palette.grayDisabledText,
+      border: ({ background }) => `1px solid ${background.disabled}`,
+      color: ({ color }) => color.disabled,
+      '--icon-color': ({ color }) => color.disabled,
     },
   },
   button__before: {
@@ -91,13 +96,11 @@ export const styles: JssStyle = {
     alignItems: 'center',
   },
   'button--icon-only': {
-    height: 42,
-    width: 42,
-    padding: 0,
+    padding: 8,
   },
   'button--variant-secondary': {
     '&, &:focus, &.focus': {
-      borderColor: ({ palette }) => palette.gray,
+      border: ({ palette }) => `1px solid ${palette.gray}`,
       background: 'none',
       color: ({ palette }) => palette.gray,
       '--icon-color': ({ palette }) => palette.gray,
@@ -116,17 +119,11 @@ export const styles: JssStyle = {
     },
   },
   'button--size-small': {
-    minHeight: 32,
     fontSize: 12,
-    paddingLeft: 14,
-    paddingRight: 14,
-    paddingTop: 4,
-    paddingBottom: 4,
     lineHeight: '16px',
     '&$button--icon-only': {
-      height: 32,
-      width: 32,
-      padding: 0,
+      minWidth: 32,
+      minHeight: 32,
     },
   },
 };

@@ -21,6 +21,8 @@ export class Card implements Base {
   @Prop() interactive?: boolean = false;
   /** (optional) Link disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) Padding off */
+  @Prop() noPadding?: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -57,7 +59,8 @@ export class Card implements Base {
       classes.card,
       this.customClass && this.customClass,
       (!!this.href || this.interactive) && classes[`card--interactive`],
-      this.disabled && classes['card--disabled']
+      this.disabled && classes['card--disabled'],
+      this.noPadding && classes['card--no-padding']
     );
   }
 }

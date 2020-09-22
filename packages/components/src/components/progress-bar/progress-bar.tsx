@@ -92,6 +92,7 @@ export class ProgressBar implements Base {
               <scale-icon
                 class={classes['progress-bar__status']}
                 path={this.icon}
+                size={16}
               ></scale-icon>
             )}
           </div>

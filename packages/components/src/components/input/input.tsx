@@ -19,6 +19,8 @@ export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
+let i = 0;
+
 @Component({
   tag: 'scale-input',
   shadow: false,
@@ -104,7 +106,12 @@ export class Input implements Base {
   @State() checked?: boolean = this.preChecked;
   @State() customResize?: any;
 
-  componentWillLoad() {}
+  componentWillLoad() {
+    if (this.inputId == null) {
+      this.inputId = 'input-' + i++;
+    }
+  }
+
   componentWillUpdate() {}
   componentDidLoad() {}
   componentDidUnload() {}

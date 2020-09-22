@@ -20,7 +20,7 @@ export class Link implements Base {
   /** (optional) Block link */
   @Prop() block?: boolean = false;
   /** (optional) Link underline */
-  @Prop() underline?: boolean = true;
+  // @Prop() underline?: boolean = true;
   /** (optional) Link open a new tag */
   @Prop() target?: string = '_self';
   /** (optional) Link variant */
@@ -39,7 +39,8 @@ export class Link implements Base {
   componentDidUnload() {}
 
   render() {
-    const Tag = !this.disabled ? 'a' : 'div';
+    const Tag = !this.disabled ? 'a' : 'span';
+    const { classes } = this.stylesheet;
 
     return (
       <Host>
@@ -50,10 +51,12 @@ export class Link implements Base {
           {...(!this.disabled ? { target: this.target } : {})}
           tabindex="0"
         >
-          <slot />
-          {this.icon && this.icon !== '' && (
-            <scale-icon path={this.icon} size={this.iconSize} />
-          )}
+          <span class={classes['link__wrapper']}>
+            <slot />
+            {this.icon && this.icon !== '' && (
+              <scale-icon path={this.icon} size={this.iconSize} />
+            )}
+          </span>
         </Tag>
       </Host>
     );
@@ -66,8 +69,8 @@ export class Link implements Base {
       this.customClass && this.customClass,
       this.variant && classes[`link--variant-${this.variant}`],
       this.disabled && classes[`link--disabled`],
-      this.block && classes[`link--block`],
-      this.underline && classes[`link--underline`]
+      this.block && classes[`link--block`]
+      // this.underline && classes[`link--underline`]
     );
   }
 }

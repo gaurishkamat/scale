@@ -45,6 +45,7 @@ export const Template = (args, { argTypes }) => ({
       :href="href"
       :target="target"
       :interactive="interactive"
+      :no-padding="noPadding"
       :disabled="disabled"
       :styles="JSON.stringify(styles)"
     >
@@ -95,9 +96,7 @@ export const Template = (args, { argTypes }) => ({
     name='Padding Off'
     args={{
       label: 'A card with a link to example.com',
-      styles: {
-        card__body: { padding: 0 }
-      }
+      noPadding: true
     }}
   >
     {Template.bind({})}
@@ -105,7 +104,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card href="https://example.com" target="_blank" :styles={{ card__body: { padding: 0 } }}>A card with a link to example.com</scale-card>
+<scale-card href="https://example.com" target="_blank" no-padding>A card with a link to example.com</scale-card>
 ```
 
 ## Interactive
@@ -135,9 +134,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'A card, interactive, no link',
       interactive: true,
-      styles: {
-        card__body: { padding: 0 }
-      }
+      noPadding: true
     }}
   >
     {Template.bind({})}
@@ -145,7 +142,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card interactive>A card, interactive, no link</scale-card>
+<scale-card interactive no-padding>A card, interactive, no link</scale-card>
 ```
 
 ## Disabled

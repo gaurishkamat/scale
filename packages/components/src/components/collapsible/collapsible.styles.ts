@@ -3,10 +3,10 @@ import { JssStyle } from 'jss';
 export const styles: JssStyle = {
   // Wrapper li
   collapsible: {
-    margin: '1rem 0',
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'transparent',
+    margin: ({ spacing }) => `calc(0.5 * ${spacing['5']}) 0`,
+  },
+  'collapsible--expanded': {
+    marginBottom: 0,
   },
 
   // Button
@@ -14,38 +14,34 @@ export const styles: JssStyle = {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start',
     backgroundColor: 'transparent',
-    paddingTop: '0rem',
-    paddingRight: '0rem',
-    paddingBottom: '0rem',
-    paddingLeft: '0rem',
     textAlign: 'left',
-    borderWidth: 2,
+    borderWidth: ({ size }) => size.border_focus,
     borderStyle: 'solid',
     borderColor: 'transparent',
-    borderRadius: 4,
+    borderRadius: ({ radii }) => radii.chip,
     color: 'currentColor',
     '&:hover': {
-      color: '#E20074',
-      backgroundColor: '#f4f4f4',
+      color: ({ color }) => color.primary,
+      backgroundColor: ({ background }) => background.light,
       cursor: 'pointer',
     },
     '&:active': {
-      color: '#CB0068',
+      color: ({ color }) => color.primary_active,
     },
     '&:focus': {
       outline: 'none',
-      borderColor: '#009DE0',
+      borderColor: ({ color }) => color.focus,
     },
     '&[aria-expanded="true"] svg': {
       transform: 'rotate(0deg)',
     },
     '& svg': {
-      marginRight: '1rem',
+      flexShrink: '0',
+      marginRight: ({ spacing }) => spacing.inline,
       transform: 'rotate(270deg)',
       transition: ({ transitions }) =>
-        `opacity ${transitions.duration.shortest}ms`,
+        `opacity ${transitions.duration.shortest}ms`, // TODO use token
     },
   },
 
@@ -53,6 +49,13 @@ export const styles: JssStyle = {
   collapsible__content: {
     marginTop: 0,
     marginBottom: 0,
-    padding: '1rem 2rem 1.5rem 2rem',
+    paddingTop: ({ spacing }) => spacing['4'],
+    paddingRight: ({ spacing }) => spacing['7'],
+    paddingBottom: ({ spacing }) => `calc(0.5 * ${spacing['5']})`,
+    paddingLeft: ({ spacing }) => spacing['6'],
+    '& ::slotted(*)': {
+      marginTop: 0,
+      marginBottom: 0,
+    },
   },
 };
