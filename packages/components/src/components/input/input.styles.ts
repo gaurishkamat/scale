@@ -318,6 +318,9 @@ export const styles: JssStyle = {
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
+    '& .input__label': {
+      color: '#262626',
+    },
     '& .input__radio': {
       appearance: 'none',
       height: 16,
@@ -325,7 +328,7 @@ export const styles: JssStyle = {
       backgroundColor: ({ palette }) => palette.white,
       border: ({ palette }) => `1px solid ${palette.gray}`,
       borderRadius: '50%',
-      marginRight: 10,
+      marginRight: ({ spacing }) => spacing.inline,
       '&:checked, &:focus': {
         border: ({ palette }) => `6px solid ${palette.magentaActive}`,
         transition: defaultTransition,
