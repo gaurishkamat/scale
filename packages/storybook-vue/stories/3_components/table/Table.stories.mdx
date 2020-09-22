@@ -28,9 +28,6 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
     >
       <table id="sortable-table">
-        <div style="padding: 20px 8px 0px 8px;">
-          <scale-text variant="h5">Table title</scale-text>
-        </div>
         <thead>
           <tr>
             <th aria-sort="descending" class="title" @click="sortTable('title')">Title</th>

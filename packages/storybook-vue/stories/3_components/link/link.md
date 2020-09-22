@@ -27,13 +27,13 @@ We recommend links with three words or less. Because links take users to a new l
 
 Links need to be clear enough for the user to understand, but short enough to avoid that the text wraps onto the next line — unless it is an inline link.
 
-![Image Name](/assets/3_components/links/image-20200810095435628.png)
+![Image Name](/assets/3_components/link/image-20200810095435628.png)
 
 ### Text & Icons
 
 Icons can be added to links in order to highlight certain categories, e.g. links to external sites, to documents, to downloads etc. Make sure to use link icons consistently throughout your product.
 
-![Image Name](/assets/3_components/links/image-20200810095443120.png)
+![Image Name](/assets/3_components/link/image-20200810095443120.png)
 
 ## Sizes
 
@@ -43,12 +43,12 @@ Choose the size according to the body copy you are using.
 
 20px
 
-![Image Name](/assets/3_components/links/image-20200810095449927.png)
+![Image Name](/assets/3_components/link/image-20200810095449927.png)
 
 ### Small
 
 16px
 
-![Image Name](/assets/3_components/links/image-20200810095443120.png)
+![Image Name](/assets/3_components/link/image-20200810095443120.png)
 
 ## Code

@@ -81,7 +81,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "An input"
+      label: "An input",
+      variant: "animated"
     }}
   >
     {Template.bind({})}
@@ -98,6 +99,7 @@ export const Template = (args, { argTypes }) => ({
     name="Text With Events"
     args={{
       label: "Text With Events",
+      variant: "animated"
     }}
   >
     {Template.bind({})}
@@ -105,7 +107,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-input>
+<scale-input type="text" variant="animated" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-input>
 ```
 
 
@@ -117,6 +119,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Placeholder",
       placeholder: "this is the placeholder",
+      variant: "animated"
     }}
   >
     {Template.bind({})}
@@ -124,7 +127,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" label="Placeholder" placeholder="this is the placeholder"></scale-input>
+<scale-input variant="animated" type="text" label="Placeholder" placeholder="this is the placeholder"></scale-input>
 ```
 
 
@@ -136,6 +139,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Helper Text",
       helperText: "Make sure to fill this",
+      variant: "animated"
     }}
   >
     {Template.bind({})}
@@ -143,26 +147,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" label="Helper Text" helperText="Make sure to fill this"></scale-input>
-```
-
-
-## Static
-
-<Preview withSource="none">
-  <Story
-    name="Static"
-    args={{
-      label: "Static",
-      variant: "static",
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-input type="text" label="Static" variant="static"></scale-input>
+<scale-input variant="animated" type="text" label="Helper Text" helperText="Make sure to fill this"></scale-input>
 ```
 
 
@@ -182,7 +167,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" label="Small" size="small"></scale-input>
+<scale-input variant="animated" type="text" label="Small" size="small"></scale-input>
 ```
 
 
@@ -212,7 +197,8 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "With Error",
       status: "error",
-      helperText: "something is wrong"
+      helperText: "something is wrong",
+      variant: "animated"
     }}
   >
     {Template.bind({})}
@@ -220,7 +206,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="text" label="With Error" helper-text="something is wrong" status="error"></scale-input>
+<scale-input variant="animated" type="text" label="With Error" helper-text="something is wrong" status="error"></scale-input>
 ```
 
 
@@ -232,6 +218,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Disabled",
       disabled: true,
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -239,7 +226,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input label="Disabled" disabled></scale-input>
+<scale-input variant="animated" label="Disabled" disabled></scale-input>
 ```
 
 
@@ -252,6 +239,7 @@ export const Template = (args, { argTypes }) => ({
       label: "Max Length With Counter",
       maxLength: 10,
       counter: true,
+      variant: 'animated'
     }}
   >
     {Template.bind({})}
@@ -259,5 +247,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input label="Max Length With Counter" max-length="10" counter></scale-input>
+<scale-input variant="animated" label="Max Length With Counter" max-length="10" counter></scale-input>
 ```
