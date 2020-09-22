@@ -27,6 +27,7 @@
   align-items: center;
   border-top-left-radius: var(--header-border-radius);
   border-top-right-radius: var(--header-border-radius);
+  border-bottom: 1px solid transparent;
 }
 .header.menu--open .header__nav,
 .header.sticky .header__nav {
