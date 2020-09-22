@@ -9,7 +9,7 @@ export const styles: JssStyle = {
     borderBottomColor: ({ colors }) => colors.grey['300'],
     '& ::slotted(a)': {
       display: 'block',
-      textDecoration: `none`,
+      textDecoration: 'none',
       color: 'currentColor',
       borderRadius: 2,
       ...padding.normal,
