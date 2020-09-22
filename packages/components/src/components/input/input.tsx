@@ -108,7 +108,7 @@ export class Input implements Base {
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = String(i++);
+      this.inputId = 'input-' + i++;
     }
   }
 

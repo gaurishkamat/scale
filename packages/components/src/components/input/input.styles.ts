@@ -70,6 +70,7 @@ export const styles: JssStyle = {
       margin: '6px 0',
       height: input.large.height,
       transition: defaultTransition,
+      outline: 'none',
     },
     '& .input__textarea': {
       display: 'flex',
@@ -117,6 +118,8 @@ export const styles: JssStyle = {
       '& .input__input, & .input__select, & .input__textarea': {
         '&:hover, &:focus': {
           borderColor: ({ palette }) => palette.magentaHover,
+          boxShadow: ({ size, color }) =>
+            `0 0 0 ${size.border_focus} ${color.focus}`,
         },
       },
       '& .input__checkbox-container': {
