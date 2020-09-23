@@ -2,18 +2,21 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   'tab-wrapper': {
-    backgroundColor: '#f4f4f4',
-    margin: '0 4px',
+    backgroundColor: ({ background }) => background.light,
+    marginRight: 8,
     borderRadius: '8px 8px 0 0',
   },
   'tab-wrapper--selected': {
     backgroundColor: 'transparent',
   },
   'tab-header': {
-    padding: '.5rem 1.75rem .25rem 1.5rem',
+    padding: '.75rem 1.5rem .5rem 1.5rem',
     // backgroundColor: '#f4f4f4',
     transition: 'all 0.2s ease-in-out',
     display: 'inline-flex',
+    alignItems: 'center',
+    fontFamily: 'TeleNeoWeb-Bold',
+    color: ({ color }) => color.text,
     '&:hover': {
       '--icon-color': '#F90984',
       color: '#F90984',

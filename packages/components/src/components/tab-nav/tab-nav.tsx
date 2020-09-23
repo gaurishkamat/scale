@@ -96,15 +96,8 @@ export class TabNav implements Base {
   render() {
     return (
       <Host>
-        <nav>
-          <ul
-            style={{
-              display: 'flex',
-              borderBottom: `1px solid #f4f4f4`,
-              margin: '0',
-              padding: '0',
-            }}
-          >
+        <nav class={this.getCssClassMap()}>
+          <ul class="tab-nav__list">
             <slot name="headings"></slot>
           </ul>
         </nav>
