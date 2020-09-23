@@ -76,13 +76,13 @@ export const styles: JssStyle = {
     },
     '& .slider--bar': {
       height: 3,
-    }
+    },
   },
   'slider--thumb-large': {
     '& .slider--thumb': {
       width: 24,
       height: 24,
-    }
+    },
   },
   'slider--disabled': {
     '& .slider--track-wrapper': {

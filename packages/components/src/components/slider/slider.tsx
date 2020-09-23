@@ -171,7 +171,7 @@ export class Slider implements Base {
       this.customClass && this.customClass,
       this.disabled && classes[`slider--disabled`],
       this.trackSmall && classes[`slider--track-small`],
-      this.thumbLarge && classes[`slider--thumb-large`],
+      this.thumbLarge && classes[`slider--thumb-large`]
     );
   }
 }
