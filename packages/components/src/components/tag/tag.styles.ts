@@ -67,9 +67,9 @@ export const styles: JssStyle = {
     },
   },
   'tag--disabled': {
-    color: ({ palette }) => palette.grayDisabledText,
+    color: '#A4A4A4',
     background: ({ palette }) => palette.grayDisabledBackground,
-    '--icon-color': ({ palette }) => palette.grayDisabledText,
+    '--icon-color': '#A4A4A4',
     cursor: 'not-allowed',
   },
 };
