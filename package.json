@@ -9,6 +9,7 @@
     "scripts": {
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
+        "build:storybook:staging": "./scripts/storybook-staging-build.sh",
         "build:components": "yarn workspace @scaleds/components-telekom build",
         "watch:components": "yarn workspace @scaleds/components-telekom start",
         "bootstrap": "lerna bootstrap",
