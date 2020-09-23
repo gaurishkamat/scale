@@ -31,7 +31,6 @@
  - [scale-list-item](../list/listItem)
  - [scale-modal](../modal)
  - [scale-progress-bar](../progress-bar)
- - [scale-switch](../switch)
  - [scale-tab-header](../tab-header)
  - [scale-tag](../tag)
 
@@ -46,7 +45,6 @@ graph TD;
   scale-list-item --> scale-icon
   scale-modal --> scale-icon
   scale-progress-bar --> scale-icon
-  scale-switch --> scale-icon
   scale-tab-header --> scale-icon
   scale-tag --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px

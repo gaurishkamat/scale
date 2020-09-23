@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './switch.styles';
@@ -8,72 +8,48 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-switch',
-  shadow: true,
+  shadow: false,
 })
 export class Switch implements Base {
   /** (optional) Switch class */
   @Prop() customClass?: string = '';
   /** (optional) Active switch */
-  @Prop() active?: boolean = false;
+  @Prop() checked?: boolean = false;
   /** (optional) Disabled switch */
   @Prop() disabled?: boolean = false;
-  /** (optional) icon when switch is on */
-  @Prop() iconOn?: string;
-  /** (optional) icon when switch is off */
-  @Prop() iconOff?: string;
-  /** (optional)  Icon size */
-  @Prop() iconSize?: number = 16;
-  /** (optional) List item icon */
-  @Prop() textOn?: string;
-  /** (optional) list Icon size */
-  @Prop() textOff?: string;
-
+  /** (optional) Input id */
+  @Prop() inputId?: string;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Switch', styles) stylesheet: StyleSheet;
 
+  /** Emitted when the switch was clicked */
+  @Event() scaleChange!: EventEmitter<void>;
+
   componentWillUpdate() {}
   componentDidUnload() {}
 
-  toggleSwitch = () => {
-    if (this.disabled) {
-      return;
+  handleChange = e => {
+    if (!this.disabled) {
+      this.scaleChange.emit(e);
     }
-    this.active = !this.active;
   };
 
   render() {
     return (
-      <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <div
-          class={this.getCssClassMap()}
-          onClick={this.toggleSwitch}
-          tabindex="0"
-        >
-          {this.active && (!!this.iconOn || !!this.textOn) && (
-            <span class="switch--on">
-              {!!this.iconOn && (
-                <scale-icon
-                  path={this.iconOn}
-                  size={this.iconSize}
-                ></scale-icon>
-              )}
-              {this.textOn && this.textOn}
-            </span>
-          )}
-          {!this.active && (!!this.iconOff || !!this.textOff) && (
-            <span class="switch--off">
-              {!!this.iconOff && (
-                <scale-icon
-                  path={this.iconOff}
-                  size={this.iconSize}
-                ></scale-icon>
-              )}
-              {this.textOff && this.textOff}
-            </span>
-          )}
+      <Host onClick={this.handleChange} checked={this.checked}>
+        <div class={this.getCssClassMap()}>
+          <input
+            type="checkbox"
+            checked={this.checked}
+            disabled={this.disabled}
+            id={this.inputId}
+          />
+          <div class="container">
+            <div class="toggle" />
+            <div class="text" />
+          </div>
         </div>
       </Host>
     );
@@ -81,11 +57,6 @@ export class Switch implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(
-      classes.switch,
-      this.customClass && this.customClass,
-      this.active && classes[`switch--active`],
-      this.disabled && classes[`switch--disabled`]
-    );
+    return classNames(classes.switch, this.customClass && this.customClass);
   }
 }

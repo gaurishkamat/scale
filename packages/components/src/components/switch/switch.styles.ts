@@ -1,126 +1,139 @@
 import { JssStyle } from 'jss';
-
 export const styles: JssStyle = {
   switch: {
-    margin: 0,
-    width: 34,
-    height: 14,
-    padding: 2,
-    display: 'inline-flex',
-    position: 'relative',
-    border: '1px solid #000',
-    borderRadius: 10,
-    backgroundColor: '#fff',
-    cursor: 'pointer',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    '&:after': {
-      content: '""',
+    '& input': {
       position: 'absolute',
-      top: 1,
-      left: 1,
-      borderRadius: '100%',
-      width: 16,
-      height: 16,
-      backgroundColor: '#000',
+      opacity: 0,
+      height: 0,
+      width: 0,
     },
-    '& .switch--off': {
-      color: '#000',
+    // Checked Off - available
+    '& .container': {
+      position: 'relative',
       display: 'inline-flex',
+      justifyContent: 'flex-end',
       alignItems: 'center',
-      width: 17,
-      justifyContent: 'center',
-    },
-    '&:hover': {
-      border: '1px solid #e20074',
-      '&:after': {
-        backgroundColor: '#e20074',
+      width: 34,
+      height: 14,
+      padding: 2,
+      borderRadius: 10,
+      cursor: 'pointer',
+      border: ({ color }) => `1px solid ${color.text}`,
+      backgroundColor: ({ color }) => color.text_contrast,
+      '& .toggle': {
+        position: 'absolute',
+        top: 1,
+        left: 1,
+        right: 'auto',
+        borderRadius: '100%',
+        width: 16,
+        height: 16,
+        backgroundColor: ({ color }) => color.text,
+      },
+      '& .text': {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        width: '100%',
+        padding: '0 4px 0 8px',
+        '&:before': {
+          content: '"O"',
+        },
       },
     },
-    ' &:focus': {
-      outline: 'none',
-      boxShadow: '0 0 0 2px #0081cb',
-    },
-    ' &:active': {
-      background: '#CB0068',
-      border: '1px solid #CB0068',
-      color: '#fff',
-      '&:after': {
-        backgroundColor: '#fff',
-      },
-      '& .switch--off': {
-        color: '#fff',
+    // Checked Off - hover
+    '& .container:hover': {
+      border: ({ color }) => `1px solid ${color.primary_hover}`,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.primary_hover,
       },
     },
-    ' &:active:hover': {
-      background: '#CB0068',
-      border: '1px solid #CB0068',
-      color: '#fff',
-      '&:after': {
-        backgroundColor: '#fff',
-      },
-      '& .switch--off': {
-        color: '#fff',
+    // Checked Off - focus
+    '& input:focus ~ .container': {
+      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.text,
       },
     },
-  },
-
-  'switch--active': {
-    borderColor: '#e20074',
-    backgroundColor: '#e20074',
-    justifyContent: 'flex-start',
-    '&:hover': {
-      borderColor: '#F90984',
-      backgroundColor: '#F90984',
-      '&:after': {
-        backgroundColor: '#fff',
+    // Checked Off - pressed
+    '& input:not([disabled]) ~ .container:active': {
+      background: ({ color }) => color.primary_active,
+      border: ({ color }) => `1px solid ${color.primary_active}`,
+      color: ({ color }) => color.text_contrast,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.text_contrast,
+        left: 'auto',
+        right: 1,
+      },
+      '& .text': {
+        justifyContent: 'flex-start',
+        '&:before': {
+          content: '"I"',
+        },
       },
     },
-    ' &:focus': {
-      outline: 'none',
-      borderColor: '#CB0068',
-      backgroundColor: '#CB0068',
-      boxShadow: '0 0 0 2px #0081cb',
-    },
-    '&:after': {
-      left: 'auto',
-      right: 1,
-      backgroundColor: '#fff',
-    },
-    '& .switch--on': {
-      color: '#fff',
-      display: 'inline-flex',
-      alignItems: 'center',
-      width: 17,
-      justifyContent: 'center',
-    },
-    ' &:active': {
-      background: '#fff',
-      color: '#CB0068',
-      '&:after': {
-        backgroundColor: '#CB0068',
-      },
-      '& .switch--on': {
-        color: '#CB0068',
+    // Checked Off - disabled
+    '& input:disabled ~ .container': {
+      cursor: 'not-allowed',
+      border: ({ background }) => `1px solid ${background.disabled}`,
+      color: ({ background }) => background.disabled,
+      '& .toggle': {
+        backgroundColor: ({ background }) => background.disabled,
       },
     },
-    ' &:active:hover': {
-      background: '#fff',
-      color: '#CB0068',
-      '&:after': {
-        backgroundColor: '#CB0068',
+    // Checked On - available
+    '& input:checked ~ .container': {
+      border: ({ color }) => `1px solid ${color.primary}`,
+      color: ({ color }) => color.text_contrast,
+      backgroundColor: ({ color }) => color.primary,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.text_contrast,
+        left: 'auto',
+        right: 1,
       },
-      '& .switch--on': {
-        color: '#CB0068',
+      '& .text': {
+        justifyContent: 'flex-start',
+        '&:before': {
+          content: '"I"',
+        },
       },
     },
-
-    '& scale-icon': {
-      '--icon-color': '#fff',
+    // Checked On - hover
+    '& input:checked ~ .container:hover': {
+      border: ({ color }) => `1px solid ${color.primary_hover}`,
+      backgroundColor: ({ color }) => color.primary_hover,
     },
-  },
-  'switch--disabled': {
-    cursor: 'not-allowed',
-    opacity: 0.5,
+    // Checked On - focus
+    '& input:checked:focus ~ .container': {
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.text_contrast,
+      },
+    },
+    // Checked On - pressed
+    '& input:checked:not([disabled]) ~ .container:active': {
+      background: ({ color }) => color.text_contrast,
+      border: ({ color }) => `1px solid ${color.primary_active}`,
+      color: ({ color }) => color.text,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.primary_active,
+        left: 1,
+        right: 'auto',
+      },
+      '& .text': {
+        justifyContent: 'flex-end',
+        '&:before': {
+          content: '"O"',
+        },
+      },
+    },
+    // Checked Off - disabled
+    '& input:checked:disabled ~ .container': {
+      cursor: 'not-allowed',
+      border: ({ background }) => `1px solid ${background.disabled}`,
+      color: ({ background }) => background.disabled,
+      background: ({ background }) => background.disabled,
+      '& .toggle': {
+        backgroundColor: ({ color }) => color.text_contrast,
+      },
+    },
   },
 };
