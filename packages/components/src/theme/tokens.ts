@@ -5,7 +5,7 @@
 const MAGENTA = '#E20074';
 const MAGENTA_HOVER = '#F90984';
 const MAGENTA_ACTIVE = '#CB0068';
-const WHITE = '#FFFFF';
+const WHITE = '#FFFFFF';
 const RED_FUNCTIONAL = '#D90000';
 // const GREEN_FUNCTIONAL = '#46A800';
 const BLUE = '#007DB3';
