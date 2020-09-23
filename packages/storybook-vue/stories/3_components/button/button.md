@@ -1,94 +1,99 @@
 # Button
 
-Buttons allow the user to identify and execute actions on a page.
+Buttons offer the most important interaction options on the user interface. The user clicks to take the corresponding action.
 
 ## General
 
-Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+We provide two button types to support a clear visual hierarchy. Using icons creates an additional point of emphasis. Select the button type and variant based on the context.
 
-### When to Use
+![Image Name](/assets/3_components/button/Button_BasicTypes.png)
 
-Use buttons to communicate the most important actions a user can take.
+### When to use
 
-### When Not to Use
+Use a button if users can perform an action or navigate to an important page (e.g., a landing page). Each viewport should contain no more than one primary button to communicate the most important action and provide orientation. For less important actions, use a secondary button.
 
-Do not use buttons for navigation. Instead, use links when the desired action is to take the user to a new page.
+### When not to use
 
-Only use buttons as navigational elemens if navigation is the single most important use case, like the link to a product landing page.
+We usually don't use buttons as navigation elements. For leading the user to a new page, use a text link instead.
 
-## Basic Types
+## Basic types
 
-Each viewport should have one primary button, and any remaining calls to action should be displayed as lower emphasis buttons.
+The primary and secondary buttons are our basic types.
 
 ### Primary
 
-For the most important call to action on the page. Primary buttons should only appear once per screen (not including the application header or in a modal dialog). They are used for the actions most relevant to the user. The primary button must not be used for negative actions such as "delete".
+The primary button is a core element for brand recognition. We recommend using it only for the main call to action on a page to strengthen the visual hierarchy of the content and functionality (except in the app header or a modal dialog).
 
-![Image Name](/assets/3_components/button/image-20200811084641163.png)
+![Image Name](/assets/3_components/button/Button_Primary.png)
 
 ### Secondary
 
-The secondary button is less prominent than the call to action and used for all other actions a user might want to perform.
+The secondary button has less emphasis than the main call to action. Use it for all other actions a user might want to perform. With its outline and transparent background, it is suitable for colorful backgrounds.
 
-![Image Name](/assets/3_components/button/image-20200811084705104.png)
+![Image Name](/assets/3_components/button/Button_Secondary.png)
 
 ## Variants
 
-### Text Only
+### Text only
 
-For most use cases, buttons with text provide the best guidance.
+In most cases, buttons with text provide the best guidance.
 
-![Image Name](/assets/3_components/button/image-20200811084641163.png)
+![Image Name](/assets/3_components/button/Button_Textonly.png)
 
-### Text & Icon
+### Text & icon
 
-An icon can be added to further increase the user's recognition of the action the button will execute.
+Add an icon to clarify and highlight the button's action.
 
-![Image Name](/assets/3_components/button/image-20200811084650281.png)
+![Image Name](/assets/3_components/button/Button_Icon-Text.png)
 
-### Icon Only
+### Icon only
 
-When space is limited — e.g. in function bars or contextual interactions — buttons with only an icon can be used. Note that the icon must clearly and unambiguously describe the functionality (e.g. trash bin for "delete").
+In certain cases, you can also use an icon without text, for example when space is limited and an icon unmistakably communicates the button's action. If you use an icon only button, always provide a text label for screen readers.
 
-![Image Name](/assets/3_components/button/image-20200811084711769.png)
+![Image Name](/assets/3_components/button/Button_Icon-only.png)
 
-## Sizes
+## Button sizes
 
-### Large
+We typically use the large button to ensure a good visual balance between the content and button. In special cases, you might not have enough space, so we also offer a smaller variant.
 
-Use the large button as a default.
+![Image Name](/assets/3_components/button/Button_Sizes.png)
 
-![Image Name](/assets/3_components/button/image-20200811084641163.png)
+## Disabled state
 
-### Small
+When disabled, the interactive function of the button is removed. Use this state if an interaction is not allowed due to permissions or dependencies.
 
-Use when there is not enough vertical space for the large button.
-
-![Image Name](/assets/3_components/button/image-20200811084657346.png)
+![Image Name](/assets/3_components/button/Button_Disabled.png)
 
 ## Elements
 
-### Label
+### Button label
 
-The text label of a button is its most important element, as it communicates the action that will be performed when the user interacts with it. Buttons need to be clear and predictable. Therefore, button labels should unambiguously indicate the action of the button. To provide enough context, use the {verb} + {noun} content formula on buttons except in the case of common actions like “Done”, “Close”, “Cancel”, “Add”, or “Delete.”
+The button label communicates a clear request. It explicitly describes the action a user takes when clicking. The button label contains at most three words. To provide a clear context, use a verb plus noun. To increase the motivation to subscribe or register, and similar cases, we add the word “now”. You can find more information in the guideline Button Texts and Text Links in Brand & Design.
 
-Even for icon-only buttons, always provide a label to use in screen readers.
+![Image Name](/assets/3_components/button/Button_Label.png)
 
 ### Icon
 
-Use an icon to facilitate grasping the button function or for design reasons. Make sure you use icons consistently in the interface.
+To learn more about the usage and construction of our interface icons, read our guideline Icons for User Interfaces.
 
-## Best Practice
+![Image Name](/assets/3_components/button/Button_Icons.png)
 
-### Combining Buttons
+## Best practice
 
-Button groups are a useful way of aligning buttons that have a relationship. Group the buttons logically into sets based on usage and importance. When combining buttons, use no more than one call to action in the group.
+### Button groups
 
-### Alignment
+If buttons are directly related to each other, align them as a group. Use only one primary button for each button group.
+In processes and modal dialogs, buttons are aligned to the right to indicate progress. The button farthest to the right is the primary button; the secondary button is placed on the left. In forms, we align buttons to the left side of the form content. The primary button is placed on the left and the secondary button on the right.
 
-In single page forms, buttons are left-aligned with the form content. The button most to the left can be a call to action. In processes and on modals, buttons are right-aligned. The one most to the right can be a call to action.
+![Image Name](/assets/3_components/button/Button_Group.png)
 
-## Related Components
+### Icon & text label
+
+Icons make it easier to grasp information when positioned in the right place. Following the direction of reading, we place icons to the left of the text label. However, there is one exception: a Next button with an arrow. In this case, we place the icon on the right side to help people process the information intuitively.
+
+![Image Name](/assets/3_components/button/Button_Icon_position.png)
+
+## Related components
 
 Link, Icon, Toggle
 
