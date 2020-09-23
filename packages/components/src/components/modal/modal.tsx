@@ -30,7 +30,6 @@ export class Modal implements Base {
   combinedTransitions: any;
 
   @Element() hostElement: HTMLStencilElement;
-  @Element() scrollContainer: HTMLElement;
   /** (optional) Transition overrides */
   @Prop() transitions?: any;
   /** (optional) Modal class */
