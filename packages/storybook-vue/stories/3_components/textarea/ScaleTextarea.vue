@@ -4,6 +4,7 @@
     :variant="variant"
     :type="type"
     :label="label"
+    :size="size"
     :rows="rows"
     :cols="cols"
     :helper-text="helperText"
@@ -17,6 +18,7 @@
     :resize="resize"
     :value="value"
     :input-id="inputId"
+    :transparent="transparent"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -35,6 +37,7 @@ export default {
     variant: { type: String },
     type: { type: String },
     label: { type: String },
+    size: { type: String },
     rows: { type: Number },
     cols: { type: Number },
     helperText: { type: String },
@@ -48,6 +51,7 @@ export default {
     resize: { type: String },
     value: { type: String },
     inputId: { type: String },
+    transparent: { type: Boolean },
     styles: { type: String }
   },
   methods: {
