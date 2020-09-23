@@ -607,9 +607,13 @@ export namespace Components {
          */
         "styles"?: any;
         /**
-          * (optional) the height of slider track
+          * (optional) larger thumb
          */
-        "trackHeight"?: number;
+        "thumbLarge"?: boolean;
+        /**
+          * (optional) smaller track
+         */
+        "trackSmall"?: boolean;
         /**
           * (optional) the display value of the slider
          */
@@ -1657,9 +1661,13 @@ declare namespace LocalJSX {
          */
         "styles"?: any;
         /**
-          * (optional) the height of slider track
+          * (optional) larger thumb
          */
-        "trackHeight"?: number;
+        "thumbLarge"?: boolean;
+        /**
+          * (optional) smaller track
+         */
+        "trackSmall"?: boolean;
         /**
           * (optional) the display value of the slider
          */

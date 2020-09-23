@@ -7,8 +7,9 @@
     :max="max"
     :min="min"
     :show-value="showValue"
+    :track-small="trackSmall"
+    :thumb-large="thumbLarge"
     :step="step"
-    :track-height="trackHeight"
     :value="value"
     >
     </scale-slider>
@@ -24,8 +25,9 @@ export default {
         max: {type: Number, default: 100},
         min: {type: Number, default: 0},
         showValue: {type: Boolean, default: true},
+        trackSmall: {type: Boolean, default: false},
+        thumbLarge: {type: Boolean, default: false},
         step: {type: Number, default: 1},
-        trackHeight: Number,
         value: Number
     }
 }
