@@ -21,10 +21,11 @@ export const styles: JssStyle = {
       alignItems: 'center',
     },
     '& .slider--bar': {
-      height: 4,
+      height: 6,
       backgroundColor: ({ color }) => color.primary,
       borderRadius: '100px',
       position: 'absolute',
+      zIndex: -1,
     },
     '& .slider--thumb-wrapper': {
       height: 32,
@@ -46,6 +47,7 @@ export const styles: JssStyle = {
       },
     },
     '& .slider--thumb': {
+      boxSizing: 'border-box',
       width: 16,
       height: 16,
       border: '1px solid',
@@ -76,6 +78,7 @@ export const styles: JssStyle = {
     },
     '& .slider--bar': {
       height: 3,
+      zIndex: 1,
     },
   },
   'slider--thumb-large': {
