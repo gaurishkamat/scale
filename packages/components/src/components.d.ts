@@ -625,7 +625,7 @@ export namespace Components {
         /**
           * (optional) Active switch
          */
-        "active"?: boolean;
+        "checked"?: boolean;
         /**
           * (optional) Switch class
          */
@@ -635,29 +635,13 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
-          * (optional) icon when switch is off
+          * (optional) Input id
          */
-        "iconOff"?: string;
-        /**
-          * (optional) icon when switch is on
-         */
-        "iconOn"?: string;
-        /**
-          * (optional)  Icon size
-         */
-        "iconSize"?: number;
+        "inputId"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) list Icon size
-         */
-        "textOff"?: string;
-        /**
-          * (optional) List item icon
-         */
-        "textOn"?: string;
     }
     interface ScaleTabHeader {
         "icon"?: string;
@@ -1679,7 +1663,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Active switch
          */
-        "active"?: boolean;
+        "checked"?: boolean;
         /**
           * (optional) Switch class
          */
@@ -1689,29 +1673,17 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * (optional) icon when switch is off
+          * (optional) Input id
          */
-        "iconOff"?: string;
+        "inputId"?: string;
         /**
-          * (optional) icon when switch is on
+          * Emitted when the switch was clicked
          */
-        "iconOn"?: string;
-        /**
-          * (optional)  Icon size
-         */
-        "iconSize"?: number;
+        "onScaleChange"?: (event: CustomEvent<void>) => void;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) list Icon size
-         */
-        "textOff"?: string;
-        /**
-          * (optional) List item icon
-         */
-        "textOn"?: string;
     }
     interface ScaleTabHeader {
         "icon"?: string;

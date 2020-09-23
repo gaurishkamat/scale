@@ -7,7 +7,7 @@ export const styles: JssStyle = {
     justifyContent: 'center',
     fontSize: 16,
     fontWeight: 400,
-    lineHeight: 1,
+    lineHeight: '24px',
     textAlign: 'center',
     whiteSpace: 'nowrap',
     verticalAlign: 'baseline',
@@ -16,10 +16,10 @@ export const styles: JssStyle = {
     background: ({ palette }) => palette.gray,
     color: ({ palette }) => palette.white,
     '--icon-color': ({ palette }) => palette.white,
-    padding: '4px 10px',
+    padding: '0px 10px',
     fontFamily: 'TeleNeoWeb-Bold',
     '& scale-icon': {
-      marginLeft: 5,
+      marginLeft: 2,
     },
     '&:not($tag--disabled)': {
       '& scale-icon': {
@@ -30,7 +30,7 @@ export const styles: JssStyle = {
     },
   },
   'tag--dismissable': {
-    paddingRight: 6,
+    paddingRight: 2,
   },
   'tag--size-small': {
     padding: '4px 8px',

@@ -70,7 +70,7 @@ export class Tag implements Base {
           <slot />
           {this.dismissable && (
             <scale-icon
-              size={this.size === 'small' ? 12 : 16}
+              size={this.size === 'small' ? 12 : 22}
               path={icons.close}
               {...iconProps}
             />
