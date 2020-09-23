@@ -1,28 +1,29 @@
 <template>
-    <scale-switch
-    :active="active"
+  <scale-switch
     :custom-class="customClass"
     :disabled="disabled"
-    :icon-off="iconOff"
-    :icon-on="iconOn"
-    :icon-size="iconSize"
-    :text-off="textOff"
-    :text-on="textOn"
-    >
-    </scale-switch>
+    :input-id="inputId"
+    :checked="checked"
+    @scaleChange="scaleChange"
+  >
+  </scale-switch>
 </template>
 
 <script>
+import { action } from "@storybook/addon-actions";
+
 export default {
-    props: {
-        active: {type: Boolean, default: false},
-        customClass: String,
-        disabled: {type: Boolean, default: false},
-        iconOff: String,
-        iconOn: String,
-        iconSize: {type: Number, default: 16},
-        textOff: String,
-        textOn: String
+  props: {
+    customClass: String,
+    disabled: { type: Boolean, default: false },
+    inputId: { type: String },
+    checked: { type: Boolean, default: false }
+  },
+  methods: {
+    scaleChange($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
     }
-}
+  }
+};
 </script>

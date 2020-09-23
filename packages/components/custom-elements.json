@@ -922,7 +922,7 @@
       },
       "attributes": [
         {
-          "name": "active",
+          "name": "checked",
           "description": "(optional) Active switch"
         },
         {
@@ -934,28 +934,12 @@
           "description": "(optional) Disabled switch"
         },
         {
-          "name": "icon-off",
-          "description": "(optional) icon when switch is off"
-        },
-        {
-          "name": "icon-on",
-          "description": "(optional) icon when switch is on"
-        },
-        {
-          "name": "icon-size",
-          "description": "(optional)  Icon size"
+          "name": "input-id",
+          "description": "(optional) Input id"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "text-off",
-          "description": "(optional) list Icon size"
-        },
-        {
-          "name": "text-on",
-          "description": "(optional) List item icon"
         }
       ]
     },
