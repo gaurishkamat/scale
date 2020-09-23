@@ -16,7 +16,7 @@ export const styles: JssStyle = {
     background: ({ palette }) => palette.gray,
     color: ({ palette }) => palette.white,
     '--icon-color': ({ palette }) => palette.white,
-    padding: '0px 10px',
+    padding: '0 10px',
     fontFamily: 'TeleNeoWeb-Bold',
     '& scale-icon': {
       marginLeft: 2,
@@ -33,14 +33,11 @@ export const styles: JssStyle = {
     paddingRight: 2,
   },
   'tag--size-small': {
-    padding: '4px 8px',
+    padding: '0 8px',
     fontSize: 12,
-    '& scale-icon': {
-      height: 12,
-      width: 12,
-    },
+    lineHeight: '20px',
     '&$tag--dismissable': {
-      paddingRight: 4,
+      paddingRight: 2,
     },
   },
   'tag--variant-secondary': {
