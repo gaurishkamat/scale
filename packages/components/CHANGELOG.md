@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.0...v1.7.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* remove duplicate Element() in Modal ([2670943](https://gitlab.com/scale-ds/scale-telekom/commit/267094345b5d80665fc69009b3188bd10df47c22))
+
+
+
+
+
 # [1.7.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.1...v1.7.0) (2020-09-22)
 
 
