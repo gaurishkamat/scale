@@ -10,61 +10,89 @@ export const styles: JssStyle = {
       alignItems: 'center',
     },
     '& .slider--track': {
-      width: '400px', // slider track size should have a fix number not percentage otherwise when dragging, the track flickers
-      height: 8,
+      boxSizing: 'border-box',
+      width: '303px', // slider track size should have a fix number not percentage otherwise when dragging, the track flickers
+      height: 6,
       margin: '16px 0',
-      backgroundColor: '#ebeef5',
-      borderRadius: 3,
+      border: '1px solid #6c6c6c',
+      borderRadius: '100px',
       position: 'relative',
       display: 'flex',
       alignItems: 'center',
     },
     '& .slider--bar': {
-      height: 8,
-      backgroundColor: ({ colors }) => colors.primary.default,
-      borderTopLeftRadius: 3,
-      borderBottomLeftRadius: 3,
+      height: 6,
+      backgroundColor: ({ color }) => color.primary,
+      borderRadius: '100px',
       position: 'absolute',
+      zIndex: -1,
     },
     '& .slider--thumb-wrapper': {
-      height: 36,
-      width: 36,
+      height: 32,
+      width: 32,
       position: 'absolute',
       zIndex: 100,
-      marginLeft: -4,
+      marginLeft: -16,
       backgroundColor: 'transparent',
       textAlign: 'center',
       userSelect: 'none',
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
       '&:hover': {
         cursor: 'grab',
       },
+      '&:active': {
+        cursor: 'grabbing',
+      },
     },
     '& .slider--thumb': {
+      boxSizing: 'border-box',
       width: 16,
       height: 16,
-      border: '2px solid',
-      borderColor: ({ colors }) => colors.primary.default,
+      border: '1px solid',
+      borderColor: '#6c6c6c',
       backgroundColor: '#fff',
       borderRadius: '50%',
-      transition: 'all 0.2s',
       userSelect: 'none',
+      boxShadow: ({ shadow }) => shadow.ground,
       '&:hover': {
-        transform: 'scale(1.2)',
+        borderColor: ({ color }) => color.primary_hover,
+      },
+      '&:active': {
+        borderColor: ({ color }) => color.primary_active,
       },
     },
     '& .slider--display-value': {
       marginLeft: 24,
+      fontFamily: 'TeleNeoWeb-Bold',
+      fontSize: 12,
+      color: '#6c6c6c',
+    },
+  },
+  'slider--track-small': {
+    '& .slider--track': {
+      height: 1,
+      border: 'none',
+      backgroundColor: '#7c7c7c',
+    },
+    '& .slider--bar': {
+      height: 3,
+      zIndex: 1,
+    },
+  },
+  'slider--thumb-large': {
+    '& .slider--thumb': {
+      width: 24,
+      height: 24,
     },
   },
   'slider--disabled': {
     '& .slider--track-wrapper': {
-      opacity: 0.4,
       cursor: 'not-allowed',
     },
     '& .slider--bar': {
-      backgroundColor: 'grey',
+      backgroundColor: '#7c7c7c',
     },
     '& .slider--thumb': {
       display: 'none',

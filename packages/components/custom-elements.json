@@ -893,8 +893,12 @@
           "description": "(optional) Injected jss styles"
         },
         {
-          "name": "track-height",
-          "description": "(optional) the height of slider track"
+          "name": "thumb-large",
+          "description": "(optional) larger thumb"
+        },
+        {
+          "name": "track-small",
+          "description": "(optional) smaller track"
         },
         {
           "name": "value",

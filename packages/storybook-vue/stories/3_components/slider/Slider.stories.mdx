@@ -27,8 +27,9 @@ export const Template = (args, {argTypes}) => ({
         :max="max"
         :min="min"
         :show-value="showValue"
+        :track-small="trackSmall"
+        :thumb-large="thumbLarge"
         :step="step"
-        :track-height="trackHeight"
         :value="value"
         @scaleButtonDown="scaleButtonDown"
         @scaleDragStart="scaleDragStart"
@@ -71,14 +72,31 @@ export const Template = (args, {argTypes}) => ({
         name="Slider track small"
         args={{
             value: 20,
-            trackHeight: 2,
+            trackSmall: true,
         }}>
         {Template.bind({})}
     </Story>
 </Preview>
 
 ```html
-<scale-slider value="20" track-height="2"></scale-slider>
+<scale-slider value="20" track-small></scale-slider>
+```
+
+## Slider thumb large
+
+<Preview withSource="none">
+    <Story
+        name="Slider thumb large"
+        args={{
+            value: 20,
+            thumbLarge: true,
+        }}>
+        {Template.bind({})}
+    </Story>
+</Preview>
+
+```html
+<scale-slider value="20" thumb-large></scale-slider>
 ```
 
 ## Slider with custom color

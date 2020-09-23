@@ -32,8 +32,6 @@ export class Slider implements Base {
   @Prop() max?: number = 100;
   /** (optional) the step size to increase or decrease when dragging slider */
   @Prop() step?: number = 1;
-  /** (optional) the height of slider track */
-  @Prop() trackHeight?: number;
   /** (optional) slider label */
   @Prop() label?: string;
   /** (optional) slider display value */
@@ -42,6 +40,11 @@ export class Slider implements Base {
   @Prop() customColor?: string = '';
   /** (optional) disabled  */
   @Prop() disabled?: boolean = false;
+
+  /** (optional) smaller track */
+  @Prop() trackSmall?: boolean = false;
+  /** (optional) larger thumb */
+  @Prop() thumbLarge?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -135,16 +138,12 @@ export class Slider implements Base {
           <div class="slider--track-wrapper">
             <div
               class="slider--track"
-              style={{
-                height: `${this.trackHeight}px`,
-              }}
               ref={el => (this.sliderTrack = el as HTMLDivElement)}
             >
               <div
                 class="slider--bar"
                 style={{
                   width: `${this.value}%`,
-                  height: `${this.trackHeight}px`,
                   backgroundColor: this.customColor,
                 }}
               ></div>
@@ -153,14 +152,11 @@ export class Slider implements Base {
                 style={{ left: `${this.value}%` }}
                 onMouseDown={this.onButtonDown}
               >
-                <div
-                  class="slider--thumb"
-                  style={{ borderColor: this.customColor }}
-                />
+                <div class="slider--thumb" />
               </div>
             </div>
             {this.showValue && (
-              <div class="slider--display-value">{this.value}</div>
+              <div class="slider--display-value">{this.value}%</div>
             )}
           </div>
         </div>
@@ -173,7 +169,9 @@ export class Slider implements Base {
     return classNames(
       classes.slider,
       this.customClass && this.customClass,
-      this.disabled && classes[`slider--disabled`]
+      this.disabled && classes[`slider--disabled`],
+      this.trackSmall && classes[`slider--track-small`],
+      this.thumbLarge && classes[`slider--thumb-large`]
     );
   }
 }
