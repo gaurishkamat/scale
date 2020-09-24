@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* add missing method ([8a11f12](https://gitlab.com/scale-ds/scale-telekom/commit/8a11f12500b7b72f0dfc82b53f0b0273ed5d654b))
+* use correct props for Textarea stories ([4f0c790](https://gitlab.com/scale-ds/scale-telekom/commit/4f0c790e61e11c2b317be47635b10cbcedba4d78))
+
+
+### Features
+
+* **components|storybook-vue:** apply theming QA to Slider ([2f2639b](https://gitlab.com/scale-ds/scale-telekom/commit/2f2639b6db37a00c2b0cce661e6217d9edfa6c39))
+
+
+
+
+
 ## [1.7.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.0...v1.7.1) (2020-09-23)
 
 

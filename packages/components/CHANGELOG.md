@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* adjust some values in Slider (QA) ([7d8fc07](https://gitlab.com/scale-ds/scale-telekom/commit/7d8fc0773f53becaa8ce855cbcdf51c0508a2e0d))
+* white color definition ([cb71d77](https://gitlab.com/scale-ds/scale-telekom/commit/cb71d776ba6ac3ffae4b1d61075bb4658168481e))
+
+
+### Features
+
+* **components:** apply theming QA to Tab nav ([d116552](https://gitlab.com/scale-ds/scale-telekom/commit/d116552d1f1b52a552401dcdf35af4e8205c07f8))
+* **components|storybook-vue:** apply theming QA to Slider ([2f2639b](https://gitlab.com/scale-ds/scale-telekom/commit/2f2639b6db37a00c2b0cce661e6217d9edfa6c39))
+
+
+
+
+
 ## [1.7.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.0...v1.7.1) (2020-09-23)
 
 

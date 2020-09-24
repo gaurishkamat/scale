@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* add missing method ([8a11f12](https://gitlab.com/scale-ds/scale-telekom/commit/8a11f12500b7b72f0dfc82b53f0b0273ed5d654b))
+* adjust some values in Slider (QA) ([7d8fc07](https://gitlab.com/scale-ds/scale-telekom/commit/7d8fc0773f53becaa8ce855cbcdf51c0508a2e0d))
+* use correct props for Textarea stories ([4f0c790](https://gitlab.com/scale-ds/scale-telekom/commit/4f0c790e61e11c2b317be47635b10cbcedba4d78))
+* white color definition ([cb71d77](https://gitlab.com/scale-ds/scale-telekom/commit/cb71d776ba6ac3ffae4b1d61075bb4658168481e))
+
+
+### Features
+
+* **components:** apply theming QA to Tab nav ([d116552](https://gitlab.com/scale-ds/scale-telekom/commit/d116552d1f1b52a552401dcdf35af4e8205c07f8))
+* **components|storybook-vue:** apply theming QA to Slider ([2f2639b](https://gitlab.com/scale-ds/scale-telekom/commit/2f2639b6db37a00c2b0cce661e6217d9edfa6c39))
+* create temporary global script for building staging Storybook ([6021068](https://gitlab.com/scale-ds/scale-telekom/commit/602106899292e526de48cf6522f9e7fc3258c926))
+
+
+
+
+
 ## [1.7.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.0...v1.7.1) (2020-09-23)
 
 
