@@ -58,7 +58,7 @@ The primary navigation contains all items from the first navigation level.
 
 #### Meta navigation (2)
 
-The meta navigation contains the core or global functions for the website, e.g., search, shopping cart, or login.
+The meta navigation contains the core or global functions for the website, e.g., search, shopping cart, or login. The login is always on the right side.
 
 ## Navigation types
 
