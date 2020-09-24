@@ -1,4 +1,5 @@
 import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { action } from "@storybook/addon-actions";
 import ScaleSwitch from './ScaleSwitch.vue';
 import description from './switch.md';
 
@@ -24,7 +25,10 @@ export const Template = (args, {argTypes}) => ({
       @scaleChange="scaleChange"
     >
     </scale-switch>
-  `
+  `,
+   methods: {
+     scaleChange: action("scaleChange"),
+   }
 })
 
 <Description>{description}</Description>
