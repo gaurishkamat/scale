@@ -122,13 +122,6 @@ export const styles: JssStyle = {
             `0 0 0 ${size.border_focus} ${color.focus}`,
         },
       },
-      '& .input__checkbox-container': {
-        '&:hover, &:focus': {
-          '& .input__checkbox-placeholder': {
-            borderColor: ({ palette }) => palette.magentaHover,
-          },
-        },
-      },
       '& .input__radio': {
         '&:hover, &:focus': {
           borderColor: ({ palette }) => palette.magentaHover,
@@ -172,7 +165,7 @@ export const styles: JssStyle = {
     },
   },
   'input--status-error': {
-    '&.animated .input__label, & label': {
+    '&.animated .input__label': {
       color: ({ palette }) => `${palette.error} !important`,
     },
     '& .input__input:focus + .input__label, & .input__textarea:focus + .input__label': {
@@ -219,7 +212,26 @@ export const styles: JssStyle = {
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
-    '& .input__label': {
+    '& input': {
+      position: 'absolute',
+      opacity: 0,
+      height: 0,
+      width: 0,
+    },
+
+    // Error
+    '&$input--status-error': {
+      '& input ~ .checkbox__label': {
+        color: ({ palette }) => `${palette.error}`,
+      },
+      // Pressed Error
+      '& input:not([disabled]):active ~ .checkbox__label': {
+        color: ({ palette }) => `${palette.gray}`,
+      },
+    },
+
+    // Checked Off - Available
+    '& .checkbox__label': {
       color: '#262626',
     },
     '& .input__checkbox-container': {
@@ -229,92 +241,106 @@ export const styles: JssStyle = {
       alignItems: 'center',
       position: 'relative',
       marginRight: ({ spacing }) => spacing.inline,
-      '& .input__checkbox': {
-        // define a default checkbox
-        top: 0,
-        left: 0,
-        width: '100%',
-        cursor: 'inherit',
-        height: '100%',
-        margin: 0,
-        opacity: 0,
-        padding: 0,
-        zIndex: 1,
-        position: 'absolute',
-      },
       '& .input__checkbox-placeholder': {
         boxSizing: 'border-box',
         height: checkBox.height,
-        width: checkBox.height,
-        border: '1px solid #cecece',
+        width: checkBox.width,
         margin: checkBox.margin,
         marginLeft: 4,
         borderRadius: 4,
+        border: ({ palette }) => `1px solid ${palette.gray}`,
+        background: ({ palette }) => palette.white,
+        transition: defaultTransition,
+      },
+      '& scale-icon': {
+        height: checkBoxCheckedIcon.height,
+        width: checkBoxCheckedIcon.width,
+        userSelect: 'none',
+        position: 'absolute',
+        left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+        top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+        '--icon-color': ({ palette }) => palette.white,
       },
     },
-    '&:not($input--disabled)': {
-      '& .input__checkbox-container': {
-        '& .input__checkbox-placeholder': {
-          border: ({ palette }) => `1px solid ${palette.gray}`,
-          backgroundColor: ({ palette }) => palette.white,
-        },
-        '&:hover': {
-          '& .input__checkbox-placeholder': {
-            border: ({ palette }) => `1px solid ${palette.magentaHover}`,
-            backgroundColor: ({ palette }) => palette.white,
-          },
-        },
-      },
-      '&$input--transparent': {
-        '& .input__checkbox-container': {
-          '& .input__checkbox-placeholder': {
-            backgroundColor: 'transparent',
-          },
-        },
-      },
-    },
-  },
-  'input--checked': {
-    '& scale-icon': {
-      height: checkBoxCheckedIcon.height,
-      width: checkBoxCheckedIcon.width,
-      userSelect: 'none',
-      position: 'absolute',
-      left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
-      top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
-    },
-    '&$input--disabled': {
+
+    // Checked Off - Pressed
+    '& input:not([disabled]):active ~ .input__checkbox-container, & input:not([disabled]) ~ .input__checkbox-container:active': {
       '& .input__checkbox-placeholder': {
-        backgroundColor: ({ palette }) => palette.grayDisabledBackground,
+        borderColor: ({ palette }) => palette.magentaActive,
+        background: ({ palette }) => palette.magentaActive,
+      },
+      '& scale-icon': {
+        '--icon-color': ({ palette }) => palette.magentaActive,
       },
     },
-    '&:not($input--disabled)': {
-      '& .input__checkbox-container': {
-        '& .input__checkbox-placeholder': {
-          border: ({ palette }) => `1px solid ${palette.magenta}`,
-          backgroundColor: ({ palette }) => palette.magenta,
-          transition: defaultTransition,
-        },
-        '&:hover': {
-          '& .input__checkbox-placeholder': {
-            border: ({ palette }) => `1px solid ${palette.magentaHover}`,
-            backgroundColor: ({ palette }) => palette.magentaHover,
-            transition: defaultTransition,
-          },
-        },
+
+    // Checked Off - Hover
+    '& input:not([disabled]):hover ~ .input__checkbox-container, & input:not([disabled]) ~ .input__checkbox-container:hover': {
+      '& .input__checkbox-placeholder': {
+        boxShadow: 'none',
+        borderColor: ({ palette }) => palette.magentaHover,
       },
-      '&$input--transparent': {
-        '& .input__checkbox-container': {
-          '& .input__checkbox-placeholder': {
-            backgroundColor: ({ palette }) => palette.magenta,
-          },
-        },
+    },
+
+    // Checked Off - Focus
+    '& input:focus ~ .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+      },
+    },
+
+    // Checked Off - Disabled
+    '& input:disabled ~ .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        borderColor: ({ palette }) => palette.grayDisabledBackground,
+      },
+    },
+    '& input:disabled ~ .checkbox__label': {
+      color: ({ palette }) => palette.grayDisabledBackground,
+    },
+
+    // Checked On - Available
+    '& input:checked:not([disabled]) ~ .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        border: ({ palette }) => `1px solid ${palette.magenta}`,
+        background: ({ palette }) => palette.magenta,
+      },
+    },
+
+    // Checked On - Pressed
+    '& input:checked:not([disabled]):active ~ .input__checkbox-container, & input:checked:not([disabled]) ~ .input__checkbox-container:active': {
+      '& .input__checkbox-placeholder': {
+        borderColor: ({ palette }) => palette.magentaActive,
+        background: ({ palette }) => palette.magentaActive,
       },
       '& scale-icon': {
         '--icon-color': ({ palette }) => palette.white,
       },
     },
+
+    // Checked On - Hover
+    '& input:checked:not([disabled]):hover ~ .input__checkbox-container, & input:checked:not([disabled]) ~ .input__checkbox-container:hover': {
+      '& .input__checkbox-placeholder': {
+        boxShadow: 'none',
+        borderColor: ({ palette }) => palette.magentaHover,
+        background: ({ palette }) => palette.magentaHover,
+      },
+    },
+
+    // Checked On - Disabled
+    '& input:checked:disabled ~ .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        background: ({ palette }) => palette.grayDisabledBackground,
+      },
+      '& scale-icon': {
+        '--icon-color': '#A4A4A4',
+      },
+    },
+    '& input:checked:disabled ~ .checkbox__label': {
+      color: '#A4A4A4',
+    },
   },
+
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
