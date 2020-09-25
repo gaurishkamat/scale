@@ -21,14 +21,25 @@ export const Template = (args, {argTypes}) => ({
       :custom-class="customClass"
       :disabled="disabled"
       :input-id="inputId"
-      :checked="checked"
+      :checked="isChecked"
       @scaleChange="scaleChange"
     >
     </scale-switch>
   `,
-   methods: {
-     scaleChange: action("scaleChange"),
-   }
+  methods: {
+    scaleChange: function() {
+      this.isChecked=!this.isChecked;
+      action('scaleChange')();
+    },
+  },
+  data: function() {
+    return { isChecked: this.checked }
+  },
+  watch: {
+    checked: function (newChecked) {
+      this.isChecked = newChecked;
+    }
+  },
 })
 
 <Description>{description}</Description>
@@ -58,7 +69,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-switch disabled></scale-switch>
+<scale-switch disabled @scaleChange="handleChange"></scale-switch>
 ```
 
 
@@ -76,7 +87,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-switch checked></scale-switch>
+<scale-switch checked @scaleChange="handleChange"></scale-switch>
 ```
 
 
@@ -95,5 +106,5 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-switch disabled checked></scale-switch>
+<scale-switch disabled checked @scaleChange="handleChange"></scale-switch>
 ```
