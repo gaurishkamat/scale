@@ -127,9 +127,16 @@ h6 {
 
 a {
   font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   text-decoration: none !important;
-  color: #00a6f0 !important;
+  /* #00a6f0 fails :) https://colorable.jxnblk.com/00a6f0/ffffff  */
+  color: #007DB3 !important;
+}
+
+scale-sidebar-nav a,
+scale-sidebar-nav-item a {
+  font-family: inherit !important;
+  color: black !important;
 }
 
 p {
