@@ -29,7 +29,6 @@
  - [scale-input](../input)
  - [scale-link](../link)
  - [scale-list-item](../list/listItem)
- - [scale-modal](../modal)
  - [scale-progress-bar](../progress-bar)
  - [scale-tab-header](../tab-header)
  - [scale-tag](../tag)
@@ -43,7 +42,6 @@ graph TD;
   scale-input --> scale-icon
   scale-link --> scale-icon
   scale-list-item --> scale-icon
-  scale-modal --> scale-icon
   scale-progress-bar --> scale-icon
   scale-tab-header --> scale-icon
   scale-tag --> scale-icon
