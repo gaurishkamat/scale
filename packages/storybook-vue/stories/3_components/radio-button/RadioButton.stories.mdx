@@ -18,11 +18,12 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-input
+      :status="status"
       :name="name"
       :type="type"
       :label="label"
       :disabled="disabled"
-      :pre-checked="preChecked"
+      :checked="checked"
       :value="value"
       :input-id="inputId"
       @scaleChange="scaleChange"
@@ -50,33 +51,13 @@ export const Template = (args, { argTypes }) => ({
 <Props story="Standard" />
 
 
-## Selected
+## Standard Disabled
 
 <Preview withSource="none">
   <Story
-    name="Selected"
+    name="Standard Disabled"
     args={{
-      label: "Selected",
-      type: "radio",
-      preChecked: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-input type="radio" pre-checked></scale-input>
-```
-
-
-## Disabled
-
-<Preview withSource="none">
-  <Story
-    name="Disabled"
-    args={{
-      label: "Disabled",
+      label: "Standard Disabled",
       type: "radio",
       disabled: true
     }}
@@ -86,5 +67,66 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="radio" disabled></scale-input>
+<scale-input type="radio" disabled @scaleChange="handleChange"></scale-input>
+```
+
+
+## Selected
+
+<Preview withSource="none">
+  <Story
+    name="Selected"
+    args={{
+      label: "Selected",
+      type: "radio",
+      checked: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="radio" checked @scaleChange="handleChange"></scale-input>
+```
+
+
+## Selected Disabled
+
+<Preview withSource="none">
+  <Story
+    name="Selected Disabled"
+    args={{
+      label: "Selected Disabled",
+      type: "radio",
+      checked: true,
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="radio" checked disabled @scaleChange="handleChange"></scale-input>
+```
+
+
+## Error
+
+<Preview withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: "Error",
+      type: "radio",
+      status: "error"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="radio" status="error" @scaleChange="handleChange"></scale-input>
 ```

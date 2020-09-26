@@ -1,10 +1,11 @@
 <template>
   <scale-input
     :name="name"
+    :status="status"
     :type="type"
     :label="label"
     :disabled="disabled"
-    :pre-checked="preChecked"
+    :checked="checked"
     :value="value"
     :input-id="inputId"
     @scaleChange="scaleChange"
@@ -18,11 +19,12 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
+    status: { type: String },
     name: { type: String },
     type: { type: String },
     label: { type: String },
     disabled: { type: Boolean },
-    preChecked: { type: Boolean },
+    checked: { type: Boolean },
     value: { type: String },
     inputId: { type: String },
     styles: { type: String }

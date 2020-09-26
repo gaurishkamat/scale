@@ -70,7 +70,7 @@ export class Input implements Base {
   /** (optional) Input counter */
   @Prop() counter?: boolean;
   /** (optional) Active switch */
-  @Prop() checked?: boolean = false;
+  @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) textarea resize */
   @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal';
   /** (optional) Input value */
@@ -141,9 +141,6 @@ export class Input implements Base {
     if (target) {
       this.value = target.value || '';
     }
-    if (this.type === 'radio' || this.type === 'checkbox') {
-      this.checked = target.checked;
-    }
   };
 
   handleFocus = () => {
@@ -180,9 +177,7 @@ export class Input implements Base {
                 <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
-            <label class="checkbox__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
+            <label htmlFor={this.inputId}>{this.label}</label>
           </div>
         </Host>
       );
@@ -195,16 +190,13 @@ export class Input implements Base {
             <input
               type="radio"
               name={this.name}
-              class={classNames('input__radio')}
               id={this.inputId}
-              onChange={this.handleChange}
+              onChange={this.checkedChanged}
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
             />
-            <label class="input__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
+            <label htmlFor={this.inputId}>{this.label}</label>
           </div>
         </Host>
       );

@@ -122,11 +122,6 @@ export const styles: JssStyle = {
             `0 0 0 ${size.border_focus} ${color.focus}`,
         },
       },
-      '& .input__radio': {
-        '&:hover, &:focus': {
-          borderColor: ({ palette }) => palette.magentaHover,
-        },
-      },
     },
   },
   'input--variant-static': {
@@ -221,17 +216,17 @@ export const styles: JssStyle = {
 
     // Error
     '&$input--status-error': {
-      '& input ~ .checkbox__label': {
+      '& input ~ label': {
         color: ({ palette }) => `${palette.error}`,
       },
       // Pressed Error
-      '& input:not([disabled]):active ~ .checkbox__label': {
+      '& input:not([disabled]):active ~ label': {
         color: ({ palette }) => `${palette.gray}`,
       },
     },
 
     // Checked Off - Available
-    '& .checkbox__label': {
+    '& label': {
       color: '#262626',
     },
     '& .input__checkbox-container': {
@@ -295,7 +290,7 @@ export const styles: JssStyle = {
         borderColor: ({ palette }) => palette.grayDisabledBackground,
       },
     },
-    '& input:disabled ~ .checkbox__label': {
+    '& input:disabled ~ label': {
       color: ({ palette }) => palette.grayDisabledBackground,
     },
 
@@ -336,7 +331,7 @@ export const styles: JssStyle = {
         '--icon-color': '#A4A4A4',
       },
     },
-    '& input:checked:disabled ~ .checkbox__label': {
+    '& input:checked:disabled ~ label': {
       color: '#A4A4A4',
     },
   },
@@ -344,35 +339,77 @@ export const styles: JssStyle = {
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
-    '& .input__label': {
+    // Checked Off - Available
+    '& label': {
       color: '#262626',
     },
-    '& .input__radio': {
+    '& input': {
       appearance: 'none',
       height: 16,
       width: 16,
       backgroundColor: ({ palette }) => palette.white,
       border: ({ palette }) => `1px solid ${palette.gray}`,
       borderRadius: '50%',
-      marginRight: ({ spacing }) => spacing.inline,
-      '&:checked, &:focus': {
-        border: ({ palette }) => `6px solid ${palette.magentaActive}`,
-        transition: defaultTransition,
-        outline: 'none',
+      margin: ({ spacing }) => `0 ${spacing.inline} 0 0`,
+    },
+    // Checked Off - Focus
+    '& input:focus': {
+      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+      outline: 'none',
+    },
+
+    // Checked Off - Hover
+    '& input:hover': {
+      border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+      boxShadow: 'none',
+    },
+
+    // Checked Off - Pressed
+    '& input:active': {
+      border: ({ palette }) => `8px solid ${palette.magentaActive}`,
+    },
+
+    // Checked Off - Disabled
+    '& input:disabled': {
+      border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
+    },
+    '& input:disabled ~ label': {
+      color: ({ palette }) => palette.grayDisabledBackground,
+    },
+
+    // Checked Off - Error
+    '&$input--status-error': {
+      '& label': {
+        color: ({ palette }) => palette.error,
+      },
+      // Checked Off - Error Pressed
+      '& input:active ~ label': {
+        color: ({ palette }) => palette.gray,
       },
     },
-    '&$input--disabled': {
-      '& .input__radio': {
-        '&:checked': {
-          border: ({ palette }) => `6px solid ${palette.grayDisabledText}`,
-          backgroundColor: ({ palette }) => palette.grayDisabledBackground,
-        },
-      },
+
+    // Checked On - Available
+    '& input:checked': {
+      border: ({ palette }) => `6px solid ${palette.magenta}`,
+    },
+
+    // Checked On - Pressed
+    '& input:checked:active': {
+      border: ({ palette }) => `6px solid ${palette.magentaActive}`,
+    },
+
+    // Checked On - Disabled
+    '& input:checked:disabled': {
+      border: ({ palette }) => `6px solid ${palette.grayDisabledBackground}`,
+      background: '#A4A4A4',
+    },
+    '& input:checked:disabled ~ label': {
+      color: '#A4A4A4',
     },
   },
+
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select, & .input__textarea': {
-      // opacity: '0.5',
+    '& .input__label, & .input__input, & .input__select, & .input__textarea': {
       color: ({ color }) => color.disabled,
       cursor: 'not-allowed!important',
     },
