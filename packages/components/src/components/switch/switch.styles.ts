@@ -34,9 +34,10 @@ export const styles: JssStyle = {
         display: 'flex',
         justifyContent: 'flex-end',
         width: '100%',
-        padding: '0 4px 0 8px',
+        padding: '0 6px 0 8px',
         '&:before': {
-          content: '"O"',
+          fontSize: 12,
+          content: '"0"',
         },
       },
     },
@@ -67,6 +68,7 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-start',
         '&:before': {
+          fontSize: 12,
           content: '"I"',
         },
       },
@@ -75,7 +77,7 @@ export const styles: JssStyle = {
     '& input:disabled ~ .container': {
       cursor: 'not-allowed',
       border: ({ background }) => `1px solid ${background.disabled}`,
-      color: ({ background }) => background.disabled,
+      color: ({ color }) => color.text_contrast,
       '& .toggle': {
         backgroundColor: ({ background }) => background.disabled,
       },
@@ -93,6 +95,7 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-start',
         '&:before': {
+          fontSize: 12,
           content: '"I"',
         },
       },
@@ -121,11 +124,12 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-end',
         '&:before': {
-          content: '"O"',
+          fontSize: 12,
+          content: '"0"',
         },
       },
     },
-    // Checked Off - disabled
+    // Checked On - disabled
     '& input:checked:disabled ~ .container': {
       cursor: 'not-allowed',
       border: ({ background }) => `1px solid ${background.disabled}`,
