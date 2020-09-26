@@ -161,7 +161,7 @@ export class Input implements Base {
   render() {
     if (this.type === 'checkbox') {
       return (
-        <Host>
+        <Host checked={this.checked}>
           <div class={this.getCssClassMap()}>
             <input
               type="checkbox"
