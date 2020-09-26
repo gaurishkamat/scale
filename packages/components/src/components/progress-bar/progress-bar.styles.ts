@@ -7,13 +7,13 @@ export const styles: JssStyle = {
   },
   'progress-bar--has-error': {
     '& $progress-bar__outer': {
-      border: ({ colors }) => `1px solid ${colors.error.default}`,
+      border: ({ color }) => `1px solid ${color.error}`,
     },
     '& $progress-bar__status-description': {
-      color: ({ colors }) => `${colors.error.default}`,
+      color: ({ color }) => `${color.error}`,
     },
     '& scale-icon': {
-      '--icon-color': ({ colors }) => `${colors.error.default}`,
+      '--icon-color': ({ color }) => `${color.error}`,
     },
   },
   'progress-bar--disabled': {
