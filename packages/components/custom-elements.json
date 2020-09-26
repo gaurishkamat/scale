@@ -435,6 +435,10 @@
       },
       "attributes": [
         {
+          "name": "checked",
+          "description": "(optional) Active switch"
+        },
+        {
           "name": "cols",
           "description": "(optional) textarea column"
         },
@@ -485,10 +489,6 @@
         {
           "name": "placeholder",
           "description": "(optional) Input placeHolder"
-        },
-        {
-          "name": "pre-checked",
-          "description": "(optional) radio checked value"
         },
         {
           "name": "required",

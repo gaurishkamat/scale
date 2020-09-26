@@ -3,9 +3,9 @@
 exports[`Input should match snapshot 1`] = `
 <scale-input>
   <!---->
-  <div class="input--variant-static-0-0-12 input-0-0-11">
-    <label class="input__label"></label>
-    <input class="input__input" type="text" value="">
+  <div class="input--variant-static-0-0-11 input-0-0-10">
+    <label class="input__label" htmlfor="input-0"></label>
+    <input class="input__input" id="input-0" type="text" value="">
   </div>
 </scale-input>
 `;

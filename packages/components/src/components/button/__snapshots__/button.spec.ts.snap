@@ -5,10 +5,11 @@ exports[`Button should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .button-0-0-8 {
+  border: none;
   cursor: pointer;
   height: unset;
   display: inline-flex;
-  padding: 1px 16px;
+  outline: none;
   position: relative;
   box-shadow: none;
   box-sizing: border-box;
@@ -21,8 +22,9 @@ exports[`Button should match snapshot 1`] = `
   padding-top: 8px;
   user-select: none;
   white-space: nowrap;
-  padding-left: 22px;
-  padding-right: 22px;
+  padding-left: 24px;
+  border-radius: 8px;
+  padding-right: 24px;
   padding-bottom: 8px;
   vertical-align: middle;
   justify-content: center;
@@ -30,8 +32,6 @@ exports[`Button should match snapshot 1`] = `
   color: #000;
   --icon-color: #000;
   background: #E0E0E0;
-  border: 1px solid #E0E0E0;
-  border-radius: 8px;
   font-size: 1rem;
   text-transform: none;
   letter-spacing: 0.02857em;
@@ -58,6 +58,9 @@ exports[`Button should match snapshot 1`] = `
   color: #FFF;
   --icon-color: #FFF;
 }
+.button-0-0-8:focus {
+  box-shadow: 0 0 0 2px #009DE0;
+}
 .button-0-0-8:active, .button-0-0-8.selected {
   border-color: #CB0068;
   background: #CB0068;
@@ -69,7 +72,6 @@ exports[`Button should match snapshot 1`] = `
   cursor: not-allowed;
   opacity: 1;
   background: #D0D0D0;
-  border: 1px solid #D0D0D0;
   color: #7C7C7C;
   --icon-color: #7C7C7C;
 }
@@ -90,14 +92,15 @@ exports[`Button should match snapshot 1`] = `
   margin-left: .5rem;
 }
 .button--icon-only-0-0-12 {
-  width: 42px;
-  height: 42px;
-  padding: 0;
+  padding: 8px;
 }
-.button--variant-secondary-0-0-13 {}
+.button--variant-secondary-0-0-13 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
 .button--variant-secondary-0-0-13, .button--variant-secondary-0-0-13:focus, .button--variant-secondary-0-0-13.focus {
   background: none;
-  border-color: #262626;
+  border: 1px solid #262626;
   color: #262626;
   --icon-color: #262626;
 }
@@ -117,15 +120,10 @@ exports[`Button should match snapshot 1`] = `
   font-size: 12px;
   min-height: 32px;
   line-height: 16px;
-  padding-top: 4px;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-bottom: 4px;
 }
 .button--size-small-0-0-14.button--icon-only-0-0-12 {
-  width: 32px;
-  height: 32px;
-  padding: 0;
+  min-width: 32px;
+  min-height: 32px;
 }
     </style>
     <button class="button-0-0-8" tabindex="0">
