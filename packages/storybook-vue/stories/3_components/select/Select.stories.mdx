@@ -29,6 +29,7 @@ export const Template = (args, { argTypes }) => ({
       :placeholder="placeholder"
       :size="size"
       :value="value"
+      :icon="icon"
       :input-id="inputId"
       :visible-size="visibleSize"
       @scaleChange="scaleChange"
@@ -61,6 +62,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'Select',
       type: 'select',
+      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -70,7 +72,7 @@ export const Template = (args, { argTypes }) => ({
 <Props story='Standard' />
 
 ```html
-<scale-input type="select" label="select">
+<scale-input icon="SVG-PATH" type="select" label="select">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -88,7 +90,7 @@ export const Template = (args, { argTypes }) => ({
       type: 'select',
       size: 'small',
       variant: 'animated',
-      placeholder: 'Small'
+      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -97,7 +99,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input type="select" label="Small" size="small" variant="animated" placeholder="Small" disabled>
+<scale-input icon="SVG-PATH" type="select" label="Small" size="small" variant="animated" placeholder="Small">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -113,7 +115,8 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'Disabled',
       type: 'select',
-      disabled: true
+      disabled: true,
+      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -122,7 +125,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input type="select" label="Disabled" disabled>
+<scale-input icon="SVG-PATH" type="select" label="Disabled" disabled>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -140,6 +143,7 @@ export const Template = (args, { argTypes }) => ({
       type: 'select',
       status: 'error',
       helperText: 'Something went wrong...',
+      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -148,7 +152,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input type="select" label="Error" status="error" helper-text="Something went wrong...">
+<scale-input icon="SVG-PATH" type="select" label="Error" status="error" helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
