@@ -38,14 +38,13 @@ export const styles: JssStyle = {
         outline: 'none',
         borderRadius: 4,
         '&:hover': {
-          background: 'black'
+          background: 'black',
         },
         '&:focus': {
           boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
-          background: 'black'
+          background: 'black',
         },
       },
-
     },
   },
   'tag--size-small': {

@@ -23,6 +23,5 @@ describe('Switch', () => {
   it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
-
   });
 });
