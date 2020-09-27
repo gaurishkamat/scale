@@ -58,6 +58,11 @@ export class TabHeader implements Base {
       <Host
         class={wrapperClassMap}
         onclick={() => this.handleClick()}
+        onKeyPress={event => {
+          if (['Enter', 'Space'].includes(event.code)) {
+            this.handleClick();
+          }
+        }}
         role="tab"
         tabindex="0"
       >
