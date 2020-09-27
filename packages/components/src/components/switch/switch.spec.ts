@@ -5,6 +5,7 @@ import jss from 'jss';
 
 describe('Switch', () => {
   let element;
+  // @ts-ignore
   let stylesheet;
   beforeEach(async () => {
     element = new Switch();
@@ -22,5 +23,6 @@ describe('Switch', () => {
   it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
+
   });
 });

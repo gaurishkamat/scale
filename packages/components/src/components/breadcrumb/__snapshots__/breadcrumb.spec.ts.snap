@@ -5,7 +5,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .breadcrumb-0-0-1 {
-  margin-left: -0.4em;
+  margin-left: -0.5rem;
 }
 .breadcrumb-0-0-1 ol {
   display: flex;
@@ -17,21 +17,18 @@ exports[`Breadcrumb should match snapshot 1`] = `
 .breadcrumb-0-0-1 li {
   display: inline-flex;
   align-items: center;
-  margin-right: 0.125ch;
 }
 .separator-0-0-2 {
   display: flex;
-  margin-left: 0.125ch;
 }
 .item-0-0-3 {
-  padding: 0.4em;
+  padding: 0.25rem 0.5rem;
 }
 .link-0-0-4 {
-  border: 2px solid transparent;
   text-decoration: none;
-  padding: 0.4em;
-  border-radius: 8px;
   color: #262626;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
 }
 .link-0-0-4:hover {
   color: #F90984;
@@ -41,7 +38,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
 }
 .link-0-0-4:focus {
   outline: none;
-  border-color: #009DE0;
+  box-shadow: 0 0 0 2px #009DE0;
 }
 .current-0-0-5 {
   font-family: TeleNeoWeb-ExtraBold;

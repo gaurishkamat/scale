@@ -48,6 +48,7 @@ exports[`Slider should match snapshot 1`] = `
   width: 16px;
   border: 1px solid;
   height: 16px;
+  outline: none;
   box-sizing: border-box;
   user-select: none;
   border-color: #6c6c6c;
@@ -66,6 +67,9 @@ exports[`Slider should match snapshot 1`] = `
 }
 .slider-0-0-5 .slider--thumb:active {
   border-color: #CB0068;
+}
+.slider-0-0-5 .slider--thumb:focus {
+  box-shadow: 0 0 0 2px #009DE0;
 }
 .slider-0-0-5 .slider--thumb-wrapper:hover {
   cursor: grab;
@@ -108,7 +112,7 @@ exports[`Slider should match snapshot 1`] = `
         <div class="slider--track">
           <div class="slider--bar" style="width: undefined%;"></div>
           <div class="slider--thumb-wrapper" style="left: undefined%;">
-            <div class="slider--thumb"></div>
+            <div class="slider--thumb" tabindex="0"></div>
           </div>
         </div>
         <div class="slider--display-value">
