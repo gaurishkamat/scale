@@ -896,6 +896,11 @@
           }
         }
       }
+      function handleKeyDown(e, th) {
+        if (['Space', 'Enter'].includes(e.code)) {
+          sortTable(th);
+        }
+      }
     </script>
 
     <scale-table size="small" show-sort="true">
@@ -905,11 +910,38 @@
         </div>
         <thead>
           <tr>
-            <th aria-sort="descending" onclick="sortTable(this)">Title</th>
-            <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
-            <th onclick="sortTable(this)">Stats</th>
-            <th onclick="sortTable(this)" style="text-align: right;">Time</th>
-            <th onclick="sortTable(this)" style="text-align: right;">
+            <th
+              aria-sort="descending"
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              tabindex="0"
+            >
+              Title
+            </th>
+            <th aria-disabled="true">
+              Tags
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              tabindex="0"
+            >
+              Stats
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              style="text-align: right;"
+              tabindex="0"
+            >
+              Time
+            </th>
+            <th
+              onclick="sortTable(this)"
+              onkeydown="handleKeyDown(event, this)"
+              style="text-align: right;"
+              tabindex="0"
+            >
               Euros
             </th>
           </tr>
