@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
+
+
+### Bug Fixes
+
+* **components:** remove icon package import and dep ([aa2fd02](https://gitlab.com/scale-ds/scale-telekom/commit/aa2fd025b01348b60f82d4649781d2d8a941ceca))
+* table QA again ([75084a0](https://gitlab.com/scale-ds/scale-telekom/commit/75084a09ab8deeaebf25246817107c8c0eba3a2c))
+* table QA again ([18389c1](https://gitlab.com/scale-ds/scale-telekom/commit/18389c1dcf9b3a6cb289e61a749673cc50408eb1))
+
+
+### Features
+
+* button QA ([00e0a9a](https://gitlab.com/scale-ds/scale-telekom/commit/00e0a9acb542e48557043b968e757a20c34d3b04))
+* checkbox checked state ([455667d](https://gitlab.com/scale-ds/scale-telekom/commit/455667d2e2752d29eefe5a053ff2aed0003bf655))
+* checkbox QA ([8505222](https://gitlab.com/scale-ds/scale-telekom/commit/8505222ebf16677b6173173a68767be7a1a239e3))
+* load icons properly in global.ts, no more funky proxies ([834f81a](https://gitlab.com/scale-ds/scale-telekom/commit/834f81a0e279c905e306f7395d1421e2b49136af))
+* modal QA ([c41f677](https://gitlab.com/scale-ds/scale-telekom/commit/c41f677e0b78695de4e4e756831f2b0da5bcf3b8))
+* progress-bar QA ([cb767a8](https://gitlab.com/scale-ds/scale-telekom/commit/cb767a8849bda848c990c079a16f7437922ea5ee))
+* radio & checkbox QA ([378b286](https://gitlab.com/scale-ds/scale-telekom/commit/378b286419e937ae60ab0fa021bc08b44a657b5e))
+* slider QA ([f29abdc](https://gitlab.com/scale-ds/scale-telekom/commit/f29abdc8ede7e3c609686f9ad59e9382ab200172))
+* switch QA ([47bc972](https://gitlab.com/scale-ds/scale-telekom/commit/47bc9725c6c42204f72bf9c42d84a9bd2e0951d8))
+* switch QA ([aa0b4de](https://gitlab.com/scale-ds/scale-telekom/commit/aa0b4dea0effeefce23765f1d38ca1f8128083ca))
+* tab header QA ([fb9b8de](https://gitlab.com/scale-ds/scale-telekom/commit/fb9b8deb6289bf6c2cdcac1d6cbcb8940ad73b88))
+* table QA ([7e88139](https://gitlab.com/scale-ds/scale-telekom/commit/7e881397730cb01abe53c65aed3704a9dbd27fb2))
+* tag QA ([3e4a408](https://gitlab.com/scale-ds/scale-telekom/commit/3e4a408341a0b10cb8f420a323ff1071d4c97bbb))
+
+
+
+
+
 # [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
 
 

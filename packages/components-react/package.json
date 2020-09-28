@@ -4,7 +4,7 @@
     "access": "restricted"
   },
   "sideEffects": false,
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "React proxy for @scaleds/components",
   "scripts": {
     "build": "yarn clean && yarn compile",

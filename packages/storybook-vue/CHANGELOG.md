@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
+
+
+### Bug Fixes
+
+* commit yarn.lock again (temporary fix build error in components-angular) ([b412352](https://gitlab.com/scale-ds/scale-telekom/commit/b4123524e5fe542d314d6cdd3cceb8a19927e015))
+* table QA again ([18389c1](https://gitlab.com/scale-ds/scale-telekom/commit/18389c1dcf9b3a6cb289e61a749673cc50408eb1))
+* **storybook-vue:** rehack global styles for links to _fix_ Sidebar nav ([ad02196](https://gitlab.com/scale-ds/scale-telekom/commit/ad0219685feecc00675cd55fe51cd4a6bb49b834))
+
+
+### Features
+
+* button QA ([00e0a9a](https://gitlab.com/scale-ds/scale-telekom/commit/00e0a9acb542e48557043b968e757a20c34d3b04))
+* checkbox QA ([8505222](https://gitlab.com/scale-ds/scale-telekom/commit/8505222ebf16677b6173173a68767be7a1a239e3))
+* modal QA ([c41f677](https://gitlab.com/scale-ds/scale-telekom/commit/c41f677e0b78695de4e4e756831f2b0da5bcf3b8))
+* radio & checkbox QA ([378b286](https://gitlab.com/scale-ds/scale-telekom/commit/378b286419e937ae60ab0fa021bc08b44a657b5e))
+* slider QA ([f29abdc](https://gitlab.com/scale-ds/scale-telekom/commit/f29abdc8ede7e3c609686f9ad59e9382ab200172))
+* some select QA ([c358f41](https://gitlab.com/scale-ds/scale-telekom/commit/c358f41054e1fe4052ed2e6a3fefdd77e5a8a96f))
+* switch QA ([aa0b4de](https://gitlab.com/scale-ds/scale-telekom/commit/aa0b4dea0effeefce23765f1d38ca1f8128083ca))
+* table QA ([7e88139](https://gitlab.com/scale-ds/scale-telekom/commit/7e881397730cb01abe53c65aed3704a9dbd27fb2))
+
+
+
+
+
 # [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
 
 

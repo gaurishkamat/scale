@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
+
+
+### Bug Fixes
+
+* **components:** remove icon package import and dep ([aa2fd02](https://gitlab.com/scale-ds/scale-telekom/commit/aa2fd025b01348b60f82d4649781d2d8a941ceca))
+
+
+
+
+
 # [1.8.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.7.1...v1.8.0) (2020-09-24)
 
 **Note:** Version bump only for package @scaleds/components-vue-telekom
