@@ -85,6 +85,16 @@ export const styles: JssStyle = {
       transition: 'border-color 0.2s ease-in-out',
       width: '100%',
     },
+    [`
+      & .input__input, 
+      & .input__select, 
+      & .input__textarea
+    `]: {
+      '&::placeholder': {
+        transition: defaultTransition,
+        color: 'transparent',
+      },
+    },
     '& .input__select': {
       appearance: 'none',
     },
@@ -104,11 +114,13 @@ export const styles: JssStyle = {
       marginLeft: 'auto',
       color: ({ palette }) => palette.gray,
       transition: defaultTransition,
+      paddingRight: 12,
     },
     '& .input__helper-text': {
       fontSize: 12,
       color: ({ palette }) => palette.helperText,
       transition: defaultTransition,
+      paddingLeft: 12,
     },
     '& .input__meta': {
       display: 'flex',
@@ -118,8 +130,14 @@ export const styles: JssStyle = {
       '& .input__input, & .input__select, & .input__textarea': {
         '&:hover, &:focus': {
           borderColor: ({ palette }) => palette.magentaHover,
+        },
+        '&:focus': {
           boxShadow: ({ size, color }) =>
             `0 0 0 ${size.border_focus} ${color.focus}`,
+          '&::placeholder': {
+            transition: defaultTransition,
+            color: '#6C6C6C',
+          },
         },
       },
     },
@@ -131,10 +149,6 @@ export const styles: JssStyle = {
     },
   },
   'input--variant-animated': {
-    '& .input__input:focus + .input__label, &.animated .input__label': {
-      ...bold,
-      ...animated('large').end,
-    },
     '& .input__input, & .input__select': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
@@ -151,24 +165,17 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('large').start,
     },
-    '& .input__input:focus + .input__label, & .input__select:focus + .input__label, &.animated .input__label': animated(
-      'large'
-    ).end,
-    '& .input__textarea:focus + .input__label, &.animated .input__label': {
+    [`
+      & .input__input:focus + .input__label, 
+      & .input__select:focus + .input__label, 
+      & .input__textarea:focus + .input__label, 
+      &.animated .input__label
+    `]: {
       ...animated('large').end,
       ...bold,
     },
   },
   'input--status-error': {
-    '&.animated .input__label': {
-      color: ({ palette }) => `${palette.error} !important`,
-    },
-    '& .input__input:focus + .input__label, & .input__textarea:focus + .input__label': {
-      color: ({ palette }) => `${palette.error} !important`,
-    },
-    '& .input__input:focus + .input__label': {
-      color: ({ palette }) => `${palette.error} !important`,
-    },
     '& .input__input': {
       border: ({ palette }) => `1px solid ${palette.error}`,
     },
@@ -409,7 +416,15 @@ export const styles: JssStyle = {
   },
 
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__select, & .input__textarea': {
+    [`
+      & .input__label, 
+      & .input__input, 
+      & .input__checkbox-container, 
+      & .input__radio, 
+      & .input__select, 
+      & .input__textarea
+    `]: {
+      borderColor: '#D0D0D0',
       color: ({ color }) => color.disabled,
       cursor: 'not-allowed!important',
     },
