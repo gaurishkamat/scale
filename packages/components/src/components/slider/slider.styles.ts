@@ -55,12 +55,16 @@ export const styles: JssStyle = {
       backgroundColor: '#fff',
       borderRadius: '50%',
       userSelect: 'none',
+      outline: 'none',
       boxShadow: ({ shadow }) => shadow.ground,
       '&:hover': {
         borderColor: ({ color }) => color.primary_hover,
       },
       '&:active': {
         borderColor: ({ color }) => color.primary_active,
+      },
+      '&:focus': {
+        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
       },
     },
     '& .slider--display-value': {

@@ -2,6 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   tag: {
+    outline: 'none',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,39 +31,51 @@ export const styles: JssStyle = {
     },
   },
   'tag--dismissable': {
-    paddingRight: 2,
+    paddingRight: 0,
+    '& scale-icon': {
+      cursor: 'pointer',
+      '& svg': {
+        outline: 'none',
+        borderRadius: 4,
+        '&:hover': {
+          background: 'black',
+        },
+        '&:focus': {
+          boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+          background: 'black',
+        },
+      },
+    },
   },
   'tag--size-small': {
     padding: '0 8px',
     fontSize: 12,
     lineHeight: '20px',
     '&$tag--dismissable': {
-      paddingRight: 2,
+      paddingRight: 0,
     },
   },
   'tag--variant-secondary': {
     background: ({ palette }) => palette.secondary,
-    border: ({ palette }) => `1px solid ${palette.secondary}`,
     '&$tag--disabled': {
       background: ({ palette }) => palette.secondary,
       color: ({ palette }) => palette.white,
       '--icon-color': ({ palette }) => palette.white,
-      border: 'none',
       opacity: '0.5',
     },
   },
   'tag--link': {
     textDecoration: 'none',
+    '&:focus': {
+      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+    },
     '&$tag--variant-secondary': {
       background: ({ palette }) => palette.secondary,
-      border: ({ palette }) => `1px solid ${palette.secondary}`,
       '&:hover': {
         background: ({ palette }) => palette.secondary,
-        border: ({ palette }) => `1px solid ${palette.secondary}`,
       },
       '&:focus': {
         background: ({ palette }) => palette.secondary,
-        border: ({ palette }) => `1px solid ${palette.secondary}`,
       },
     },
   },

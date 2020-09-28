@@ -39,7 +39,6 @@ export const Template = (args, { argTypes }) => ({
         @scaleClose="scaleClose"
       >
         <template #header v-if="!!header"><span slot="header">{{header}}</span></template>
-        <template #close v-if="!!close"><span slot="close"><scale-icon-action-circle-close></scale-icon-action-circle-close></span></template>
         <template #modal-actions v-if="close === 'showActions'">
           <span slot="modal-actions">
             <scale-button
@@ -106,8 +105,7 @@ export const Template = (args, { argTypes }) => ({
     name='Standard L / 8 Columns'
     args={{
       opened: false,
-      header: 'Header',
-      close: true
+      header: 'Header'
     }}
   >
     {Template.bind({})}
@@ -125,8 +123,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: false,
       header: 'Header',
-      size: 'small',
-      close: true
+      size: 'small'
     }}
   >
     {Template.bind({})}
@@ -136,7 +133,6 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-modal opened="opened" size="small" @scaleClose="opened = false">
   <span slot="header">Header</span>
-    <span slot="close"><scale-icon-action-circle-close></scale-icon-action-circle-close></span>
   <slot>
   <p>Hello. Welcome.</p>
    <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
@@ -164,8 +160,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: false,
       header: 'Header',
-      size: 'large',
-      close: true
+      size: 'large'
     }}
   >
     {Template.bind({})}
@@ -175,7 +170,6 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-modal opened="opened" size="large" @scaleClose="opened = false">
   <span slot="header">Header</span>
-    <span slot="close"><scale-icon-action-circle-close></scale-icon-action-circle-close></span>
   <slot>
     <p>Hello. Welcome.</p>
     <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">

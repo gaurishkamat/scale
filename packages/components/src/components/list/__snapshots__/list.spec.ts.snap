@@ -4,11 +4,20 @@ exports[`List should match snapshot 1`] = `
 <scale-list>
   <mock:shadow-root>
     <style>
-      .list-0-0-2 {
+      .list-0-0-3 {
   padding-left: 1.5rem;
 }
+.list--variant-ordered-0-0-4 {}
+.list--variant-ordered-0-0-4 ::slotted(li) {
+  counter-increment: scale-counter;
+}
+.list--variant-ordered-0-0-4 ::slotted(li)::before {
+  content: counter(scale-counter) ".";
+  font-family: TeleNeoWeb-Bold;
+  padding-right: 0.5rem;
+}
     </style>
-    <ul class="list-0-0-2">
+    <ul class="list-0-0-3">
       <slot></slot>
     </ul>
   </mock:shadow-root>

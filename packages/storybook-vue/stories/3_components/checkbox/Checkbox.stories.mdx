@@ -22,7 +22,7 @@ export const Template = (args, { argTypes }) => ({
       :type="type"
       :label="label"
       :disabled="disabled"
-      :pre-checked="preChecked"
+      :checked="isChecked"
       :value="value"
       :status="status"
       :input-id="inputId"
@@ -31,8 +31,19 @@ export const Template = (args, { argTypes }) => ({
     ></scale-input>
   `,
   methods: {
-    scaleChange: action("scaleChange"),
-  }
+    scaleChange: function() {
+      this.isChecked=!this.isChecked;
+      action('scaleChange')();
+    },
+  },
+  data: function() {
+    return { isChecked: this.checked }
+  },
+  watch: {
+    checked: function (newChecked) {
+      this.isChecked = newChecked;
+    }
+  },
 })
 
 <Description>{description}</Description>
@@ -52,33 +63,14 @@ export const Template = (args, { argTypes }) => ({
 
 <Props story="Standard" icon="SVG-PATH" />
 
-## Selected
+
+## Standard Disabled
 
 <Preview withSource="none">
   <Story
-    name="Selected"
+    name="Standard Disabled"
     args={{
-      label: "Selected",
-      type: "checkbox",
-      icon: ICON,
-      preChecked: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-input type="checkbox" icon="SVG-PATH" pre-checked></scale-input>
-```
-
-## Disabled
-
-<Preview withSource="none">
-  <Story
-    name="Disabled"
-    args={{
-      label: "Disabled",
+      label: "Standard Disabled",
       type: "checkbox",
       icon: ICON,
       disabled: true
@@ -89,8 +81,50 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" disabled></scale-input>
+<scale-input type="checkbox" icon="SVG-PATH" disabled @scaleChange="handleChange"></scale-input>
 ```
+
+## Selected
+
+<Preview withSource="none">
+  <Story
+    name="Selected"
+    args={{
+      label: "Selected",
+      type: "checkbox",
+      icon: ICON,
+      checked: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH" checked @scaleChange="handleChange"></scale-input>
+```
+
+## Selected Disabled
+
+<Preview withSource="none">
+  <Story
+    name="Selected Disabled"
+    args={{
+      label: "Selected Disabled",
+      type: "checkbox",
+      icon: ICON,
+      checked: true,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="checkbox" icon="SVG-PATH" checked disabled @scaleChange="handleChange"></scale-input>
+```
+
 
 ## Error
 
@@ -109,5 +143,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" status="error"></scale-input>
+<scale-input type="checkbox" icon="SVG-PATH" status="error" @scaleChange="handleChange"></scale-input>
 ```

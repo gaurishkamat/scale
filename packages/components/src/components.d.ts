@@ -262,6 +262,10 @@ export namespace Components {
     }
     interface ScaleInput {
         /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
           * (optional) textarea column
          */
         "cols"?: number;
@@ -313,10 +317,6 @@ export namespace Components {
           * (optional) Input placeHolder
          */
         "placeholder"?: string;
-        /**
-          * (optional) radio checked value
-         */
-        "preChecked"?: boolean;
         /**
           * (optional) Input required
          */
@@ -1275,6 +1275,10 @@ declare namespace LocalJSX {
     }
     interface ScaleInput {
         /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
           * (optional) textarea column
          */
         "cols"?: number;
@@ -1346,10 +1350,6 @@ declare namespace LocalJSX {
           * (optional) Input placeHolder
          */
         "placeholder"?: string;
-        /**
-          * (optional) radio checked value
-         */
-        "preChecked"?: boolean;
         /**
           * (optional) Input required
          */
@@ -1476,7 +1476,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Callback fired when the component requests to be closed.
          */
-        "onScaleClose"?: (event: CustomEvent<MouseEvent>) => void;
+        "onScaleClose"?: (event: CustomEvent<MouseEvent | KeyboardEvent>) => void;
         /**
           * (optional) If true, the Modal is open.
          */

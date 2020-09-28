@@ -47,7 +47,7 @@ export class Modal implements Base {
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
   /** (optional) Callback fired when the component requests to be closed. */
-  @Event() scaleClose?: EventEmitter<MouseEvent>;
+  @Event() scaleClose?: EventEmitter<MouseEvent | KeyboardEvent>;
 
   constructor() {
     this.close = this.close.bind(this);
@@ -60,7 +60,7 @@ export class Modal implements Base {
     await this.animateComponent();
   }
 
-  async close(event?: MouseEvent) {
+  async close(event?: MouseEvent | KeyboardEvent) {
     this.scaleClose.emit(event);
   }
 
@@ -197,14 +197,17 @@ export class Modal implements Base {
               {this.hasSlotHeader && (
                 <div class={classes.modal__header}>
                   <slot name="header" />
-                  <a class={classes.modal__close} onClick={this.close}>
+                  <a
+                    class={classes.modal__close}
+                    onClick={this.close}
+                    onKeyPress={this.close}
+                  >
                     {this.hasSlotClose ? (
                       <div class={classes['modal__close-icon']}>
                         <slot name="close" />
                       </div>
                     ) : (
-                      /* TODO use icon from library? */
-                      <scale-icon path="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zM7.95 7.95c.3-.3.75-.3 1.05 0l3 3 3-3c.3-.3.75-.3 1.05 0s.3.75 0 1.05l-3 3 3 3c.3.3.3.75 0 1.05s-.75.3-1.05 0l-3-3-3 3c-.3.3-.75.3-1.05 0s-.3-.75 0-1.05l3-3-3-3c-.3-.3-.3-.75 0-1.05z" />
+                      <scale-icon-action-circle-close tabindex="0"></scale-icon-action-circle-close>
                     )}
                   </a>
                 </div>

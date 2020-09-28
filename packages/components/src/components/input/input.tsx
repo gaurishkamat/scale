@@ -69,8 +69,8 @@ export class Input implements Base {
   @Prop() required?: boolean;
   /** (optional) Input counter */
   @Prop() counter?: boolean;
-  /** (optional) radio checked value */
-  @Prop() preChecked?: boolean;
+  /** (optional) Active switch */
+  @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) textarea resize */
   @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal';
   /** (optional) Input value */
@@ -103,7 +103,6 @@ export class Input implements Base {
   @Event() scaleKeyDown!: EventEmitter<KeyboardEvent>;
 
   /** (optional) Input checkbox checked */
-  @State() checked?: boolean = this.preChecked;
   @State() customResize?: any;
 
   componentWillLoad() {
@@ -123,10 +122,11 @@ export class Input implements Base {
     });
   }
 
-  @Watch('checked')
-  checkedChanged() {
-    this.scaleChange.emit({ value: this.checked });
-  }
+  checkedChanged = event => {
+    if (!this.disabled) {
+      this.scaleChange.emit(event);
+    }
+  };
 
   handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
@@ -140,9 +140,6 @@ export class Input implements Base {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value || '';
-    }
-    if (this.type === 'radio' || this.type === 'checkbox') {
-      this.checked = target.checked;
     }
   };
 
@@ -161,31 +158,26 @@ export class Input implements Base {
   render() {
     if (this.type === 'checkbox') {
       return (
-        <Host>
+        <Host checked={this.checked}>
           <div class={this.getCssClassMap()}>
-            <div class={classNames('input__checkbox-container')}>
-              <input
-                type="checkbox"
-                name={this.name}
-                class={classNames('input__checkbox')}
-                id={this.inputId}
-                onChange={this.handleChange}
-                value={this.value}
-                checked={this.checked}
-                disabled={this.disabled}
-                tabindex="0"
-              />
-              <span
-                class={classNames('input__checkbox-placeholder')}
-                tabIndex={1}
-              ></span>
-              {!!this.checked && !!this.icon && (
+            <input
+              type="checkbox"
+              name={this.name}
+              id={this.inputId}
+              checked={this.checked}
+              disabled={this.disabled}
+              onClick={this.checkedChanged}
+            />
+            <div
+              class={classNames('input__checkbox-container')}
+              onClick={this.checkedChanged}
+            >
+              <span class={classNames('input__checkbox-placeholder')}></span>
+              {!!this.icon && (
                 <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
-            <label class="input__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
+            <label htmlFor={this.inputId}>{this.label}</label>
           </div>
         </Host>
       );
@@ -198,16 +190,13 @@ export class Input implements Base {
             <input
               type="radio"
               name={this.name}
-              class={classNames('input__radio')}
               id={this.inputId}
-              onChange={this.handleChange}
+              onChange={this.checkedChanged}
               value={this.value}
-              checked={this.preChecked}
+              checked={this.checked}
               disabled={this.disabled}
             />
-            <label class="input__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
+            <label htmlFor={this.inputId}>{this.label}</label>
           </div>
         </Host>
       );

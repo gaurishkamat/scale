@@ -30,11 +30,11 @@ export const Template = (args, { argTypes }) => ({
       <table id="sortable-table">
         <thead>
           <tr>
-            <th aria-sort="descending" class="title" @click="sortTable('title')">Title</th>
-            <th aria-disabled class="tags" @click="sortTable('tags')">Tags</th>
-            <th @click="sortTable('stats')" class="stats">Stats</th>
-            <th @click="sortTable('time')" class="time" style="text-align: right;">Time</th>
-            <th @click="sortTable('euros')" class="euros" style="text-align: right;">
+            <th width="40%" tabindex="showSort ? 1 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th width="20%" aria-disabled class="tags">Tags</th>
+            <th width="20%" tabindex="showSort ? 1 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th width="10%" tabindex="showSort ? 1 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th width="10%" tabindex="showSort ? 1 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
               Euros
             </th>
           </tr>
@@ -53,8 +53,9 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
+                  custom-color="#000"
                   variant="info"
-                  style="max-width: 120px;"
+                  style="width: 120px;"
                   stroke-width="6"
                   percentage="90"
                 />
@@ -76,10 +77,11 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
+                  custom-color="#000"
                   variant="info"
-                  style="max-width: 120px;"
+                  style="width: 120px;"
                   stroke-width="6"
-                  percentage="90"
+                  percentage="30"
                 />
               </div>
             </td>
@@ -99,10 +101,11 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
+                  custom-color="#000"
                   variant="info"
-                  style="max-width: 120px;"
+                  style="width: 120px;"
                   stroke-width="6"
-                  percentage="90"
+                  percentage="60"
                 />
               </div>
             </td>
@@ -123,6 +126,11 @@ export const Template = (args, { argTypes }) => ({
     </scale-table>
   `,
   methods: {
+    handleKeyUp: function (e, th) {
+      if (['Space', 'Enter'].includes(e.code)) {
+        this.sortTable(th);
+      }
+    },
     sortTable: function(className) {
       const getNextSort = sort => {
         if (!sort || ['none', 'other'].includes(sort)) {
@@ -259,12 +267,12 @@ Please switch to the Canvas view for a working example
     <thead>
       <tr>
         <!-- aria-sort can be descending or ascending -->
-        <th aria-sort="descending" @click="sortTable('title')" id="title">Title</th>
+        <th tabindex="0" aria-sort="descending" @keyup="handleKeyUp($event, 'title')" @click="sortTable('title')" id="title">Title</th>
         <!-- aria-disabled disables sorting -->
-        <th aria-disabled @click="sortTable('tags')" id="tags">Tags</th>
-        <th @click="sortTable('stats')" id="stats">Stats</th>
-        <th @click="sortTable('time')" id="time">Time</th>
-        <th @click="sortTable('euros')" id="euros">
+        <th aria-disabled>Tags</th>
+        <th tabindex="0" @keyup="handleKeyUp($event, 'stats')" @click="sortTable('stats')" id="stats">Stats</th>
+        <th tabindex="0" @keyup="handleKeyUp($event, 'time')" @click="sortTable('time')" id="time">Time</th>
+        <th tabindex="0" @keyup="handleKeyUp($event, 'euros')" @click="sortTable('euros')" id="euros">
           Euros
         </th>
       </tr>

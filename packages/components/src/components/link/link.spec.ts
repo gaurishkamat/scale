@@ -50,11 +50,5 @@ describe('Link', () => {
     expect(element.getCssClassMap()).toContain(
       stylesheet.classes['link--disabled']
     );
-
-    element.underline = true;
-    stylesheet.addRule('link--underline', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['link--underline']
-    );
   });
 });

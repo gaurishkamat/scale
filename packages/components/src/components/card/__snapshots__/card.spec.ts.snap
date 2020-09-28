@@ -4,50 +4,54 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card-0-0-5 {
+      .card-0-0-6 {
   width: 100%;
   border: none;
   overflow: hidden;
-  box-shadow: 0 19px 18px 0 rgba(0,0,0, 0.05), 0 8px 12px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.04), 0 0 2px 0 rgba(0,0,0, 0.03);
   box-sizing: border-box;
   transition: all .2s ease-in-out;
-  border-radius: 8px;
-  background: #FFF;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
 }
-.card__body-0-0-6 {
-  padding: 24px;
+.card__body-0-0-7 {
+  padding: 1.5rem;
 }
-.card__body-0-0-6 ::slotted(*) {
+.card__body-0-0-7 ::slotted(*) {
   margin: 0;
 }
-.card--interactive-0-0-7 {
+.card--no-padding-0-0-8 {}
+.card--no-padding-0-0-8 .card__body-0-0-7 {
+  padding: 0;
+}
+.card--interactive-0-0-9 {
+  color: inherit;
   cursor: pointer;
   display: block;
+  outline: none;
   text-decoration: none;
 }
-.card--interactive-0-0-7:hover {
-  box-shadow: 0 24px 18px 0 rgba(0,0,0, 0.05), 0 8px 12px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.24), 0 0 2px 0 rgba(0,0,0, 0.03);
+.card--interactive-0-0-9:hover {
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-7:focus {
-  box-shadow: 0 19px 18px 0 rgba(0,0,0, 0.10), 0 8px 12px 0 rgba(0,0,0, 0.10), 0 1px 5px 0 rgba(0,0,0, 0.08), 0 0 2px 0 rgba(0,0,0, 0.06);
+.card--interactive-0-0-9:focus {
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10),0 0 0 2px #009DE0;
 }
-.card--interactive-0-0-7:active {
+.card--interactive-0-0-9:active {
   border: none;
-  box-shadow: 0 8px 18px 0 rgba(0,0,0, 0.05), 0 1px 5px 0 rgba(0,0,0, 0.04), 0 0 2px 0 rgba(0,0,0, 0.03);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-7 .card__body-0-0-6 ::slotted(*) {
+.card--interactive-0-0-9 .card__body-0-0-7 ::slotted(*) {
   margin: 0;
 }
-.card--disabled-0-0-8 {}
-.card--disabled-0-0-8, .card--disabled-0-0-8:hover, .card--disabled-0-0-8:focus, .card--disabled-0-0-8:active {
+.card--disabled-0-0-10 {}
+.card--disabled-0-0-10, .card--disabled-0-0-10:hover, .card--disabled-0-0-10:focus, .card--disabled-0-0-10:active {
   cursor: not-allowed;
-  opacity: 0.5;
   outline: none;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  opacity: 0.5;
 }
     </style>
-    <div class="card-0-0-5">
-      <div class="card__body-0-0-6">
+    <div class="card-0-0-6">
+      <div class="card__body-0-0-7">
         <slot></slot>
       </div>
     </div>

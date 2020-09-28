@@ -6,14 +6,15 @@ exports[`Tag should have a link 1`] = `
     <style>
       .tag-0-0-7 {
   display: inline-flex;
-  padding: 4px 10px;
+  outline: none;
+  padding: 0 10px;
   font-size: 16px;
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
   font-family: TeleNeoWeb-Bold;
   font-weight: 400;
-  line-height: 1;
+  line-height: 24px;
   white-space: nowrap;
   border-radius: 4px;
   vertical-align: baseline;
@@ -23,7 +24,7 @@ exports[`Tag should have a link 1`] = `
   --icon-color: #FFF;
 }
 .tag-0-0-7 scale-icon {
-  margin-left: 5px;
+  margin-left: 2px;
 }
 .tag-0-0-7:not(.tag--disabled-0-0-12) {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon {}
@@ -31,25 +32,34 @@ exports[`Tag should have a link 1`] = `
   --icon-color: #CB0068;
 }
 .tag--dismissable-0-0-8 {
-  padding-right: 6px;
+  padding-right: 0;
+}
+.tag--dismissable-0-0-8 scale-icon {
+  cursor: pointer;
+}
+.tag--dismissable-0-0-8 scale-icon svg {
+  outline: none;
+  border-radius: 4px;
+}
+.tag--dismissable-0-0-8 scale-icon svg:hover {
+  background: black;
+}
+.tag--dismissable-0-0-8 scale-icon svg:focus {
+  background: black;
+  box-shadow: 0 0 0 2px #009DE0;
 }
 .tag--size-small-0-0-9 {
-  padding: 4px 8px;
+  padding: 0 8px;
   font-size: 12px;
-}
-.tag--size-small-0-0-9 scale-icon {
-  width: 12px;
-  height: 12px;
+  line-height: 20px;
 }
 .tag--size-small-0-0-9.tag--dismissable-0-0-8 {
-  padding-right: 4px;
+  padding-right: 0;
 }
 .tag--variant-secondary-0-0-10 {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--variant-secondary-0-0-10.tag--disabled-0-0-12 {
-  border: none;
   opacity: 0.5;
   background: #00739F;
   color: #FFF;
@@ -58,23 +68,23 @@ exports[`Tag should have a link 1`] = `
 .tag--link-0-0-11 {
   text-decoration: none;
 }
+.tag--link-0-0-11:focus {
+  box-shadow: 0 0 0 2px #009DE0;
+}
 .tag--link-0-0-11.tag--variant-secondary-0-0-10 {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:hover {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:focus {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--disabled-0-0-12 {
+  color: #A4A4A4;
   cursor: not-allowed;
-  color: #7C7C7C;
+  --icon-color: #A4A4A4;
   background: #D0D0D0;
-  --icon-color: #7C7C7C;
 }
     </style>
     <a class="tag--link-0-0-11 tag-0-0-7" href="#" target="_self">
@@ -91,14 +101,15 @@ exports[`Tag should match snapshot 1`] = `
     <style>
       .tag-0-0-7 {
   display: inline-flex;
-  padding: 4px 10px;
+  outline: none;
+  padding: 0 10px;
   font-size: 16px;
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
   font-family: TeleNeoWeb-Bold;
   font-weight: 400;
-  line-height: 1;
+  line-height: 24px;
   white-space: nowrap;
   border-radius: 4px;
   vertical-align: baseline;
@@ -108,7 +119,7 @@ exports[`Tag should match snapshot 1`] = `
   --icon-color: #FFF;
 }
 .tag-0-0-7 scale-icon {
-  margin-left: 5px;
+  margin-left: 2px;
 }
 .tag-0-0-7:not(.tag--disabled-0-0-12) {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon {}
@@ -116,25 +127,34 @@ exports[`Tag should match snapshot 1`] = `
   --icon-color: #CB0068;
 }
 .tag--dismissable-0-0-8 {
-  padding-right: 6px;
+  padding-right: 0;
+}
+.tag--dismissable-0-0-8 scale-icon {
+  cursor: pointer;
+}
+.tag--dismissable-0-0-8 scale-icon svg {
+  outline: none;
+  border-radius: 4px;
+}
+.tag--dismissable-0-0-8 scale-icon svg:hover {
+  background: black;
+}
+.tag--dismissable-0-0-8 scale-icon svg:focus {
+  background: black;
+  box-shadow: 0 0 0 2px #009DE0;
 }
 .tag--size-small-0-0-9 {
-  padding: 4px 8px;
+  padding: 0 8px;
   font-size: 12px;
-}
-.tag--size-small-0-0-9 scale-icon {
-  width: 12px;
-  height: 12px;
+  line-height: 20px;
 }
 .tag--size-small-0-0-9.tag--dismissable-0-0-8 {
-  padding-right: 4px;
+  padding-right: 0;
 }
 .tag--variant-secondary-0-0-10 {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--variant-secondary-0-0-10.tag--disabled-0-0-12 {
-  border: none;
   opacity: 0.5;
   background: #00739F;
   color: #FFF;
@@ -143,23 +163,23 @@ exports[`Tag should match snapshot 1`] = `
 .tag--link-0-0-11 {
   text-decoration: none;
 }
+.tag--link-0-0-11:focus {
+  box-shadow: 0 0 0 2px #009DE0;
+}
 .tag--link-0-0-11.tag--variant-secondary-0-0-10 {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:hover {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:focus {
   background: #00739F;
-  border: 1px solid #00739F;
 }
 .tag--disabled-0-0-12 {
+  color: #A4A4A4;
   cursor: not-allowed;
-  color: #7C7C7C;
+  --icon-color: #A4A4A4;
   background: #D0D0D0;
-  --icon-color: #7C7C7C;
 }
     </style>
     <span class="tag-0-0-7">

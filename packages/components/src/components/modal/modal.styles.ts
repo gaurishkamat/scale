@@ -75,6 +75,21 @@ export const styles: JssStyle = {
     height: '24px',
     display: 'block',
     cursor: 'pointer',
+    '& scale-icon-action-circle-close': {
+      outline: 'none',
+      borderRadius: '8px',
+      padding: '10px',
+      margin: '-10px',
+      '&:hover': {
+        color: ({ color }) => color.primary_hover,
+      },
+      '&:active': {
+        color: ({ color }) => color.primary_active,
+      },
+      '&:focus': {
+        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+      },
+    },
   },
   modal__actions: {
     display: 'flex',

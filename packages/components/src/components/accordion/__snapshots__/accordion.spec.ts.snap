@@ -3,10 +3,8 @@
 exports[`Accordion should match snapshot 1`] = `
 <scale-accordion>
   <mock:shadow-root>
-    <div class="accordionContainer-0-0-2">
-      <div class="accordion-container">
-        <slot></slot>
-      </div>
+    <div class="accordion-0-0-1">
+      <slot></slot>
     </div>
   </mock:shadow-root>
 </scale-accordion>

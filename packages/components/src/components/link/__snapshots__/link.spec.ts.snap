@@ -4,71 +4,44 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
     <style>
-      .link-0-0-10 {
+      .link-0-0-5 {
   cursor: pointer;
-  display: inline-flex;
   outline: none;
-  padding: 0;
-  position: relative;
-  font-size: 16px;
+  text-decoration: none;
+  color: #007DB3;
+}
+.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #007DB3;
+  border-bottom: 1px solid currentColor;
+}
+.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+  border-bottom: 2px solid currentColor;
+}
+.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link__wrapper-0-0-6 {
+  display: inline-flex;
   align-items: center;
-  font-family: TeleNeoWeb-Medium;
-  font-weight: 500;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-  color: #007DB3;
-  --icon-color: #007DB3;
 }
-.link-0-0-10 scale-icon {
-  margin-left: 4px;
+.link__wrapper-0-0-6 > *:not(:first-child) {
+  margin-inline-start: 0.25rem;
 }
-.link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #007DB3;
-  --icon-color: #007DB3;
+.link--block-0-0-7 {
+  display: block;
 }
-.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #00739F;
-  --icon-color: #00739F;
-}
-.link--underline-0-0-11 {}
-.link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: none;
-  border-bottom: 1px solid #007DB3;
-}
-.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
-  border-bottom: 2px solid #007DB3;
-}
-.link--disabled-0-0-12 {
+.link--disabled-0-0-8 {
   cursor: not-allowed;
   color: #7C7C7C;
 }
-.link--block-0-0-13 {
-  display: flex;
-}
-.link--variant-primary-0-0-14 {
-  color: #409eff;
-  --icon-color: #409eff;
-}
-.link--variant-success-0-0-15 {
-  color: #67c23a;
-  --icon-color: #67c23a;
-}
-.link--variant-warning-0-0-16 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
-}
-.link--variant-danger-0-0-17 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
-}
-.link--variant-info-0-0-18 {
-  color: #909399;
-  --icon-color: #909399;
-}
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" tabindex="0" target="_self">
-      <slot></slot>
+    <a class="link-0-0-5" href="http://example.com" tabindex="0" target="_self">
+      <span class="link__wrapper-0-0-6">
+        <slot></slot>
+      </span>
     </a>
   </mock:shadow-root>
   Label
@@ -79,71 +52,44 @@ exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
   <mock:shadow-root>
     <style>
-      .link-0-0-10 {
+      .link-0-0-5 {
   cursor: pointer;
-  display: inline-flex;
   outline: none;
-  padding: 0;
-  position: relative;
-  font-size: 16px;
+  text-decoration: none;
+  color: #007DB3;
+}
+.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #007DB3;
+  border-bottom: 1px solid currentColor;
+}
+.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+  border-bottom: 2px solid currentColor;
+}
+.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link__wrapper-0-0-6 {
+  display: inline-flex;
   align-items: center;
-  font-family: TeleNeoWeb-Medium;
-  font-weight: 500;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-  color: #007DB3;
-  --icon-color: #007DB3;
 }
-.link-0-0-10 scale-icon {
-  margin-left: 4px;
+.link__wrapper-0-0-6 > *:not(:first-child) {
+  margin-inline-start: 0.25rem;
 }
-.link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #007DB3;
-  --icon-color: #007DB3;
+.link--block-0-0-7 {
+  display: block;
 }
-.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #00739F;
-  --icon-color: #00739F;
-}
-.link--underline-0-0-11 {}
-.link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: none;
-  border-bottom: 1px solid #007DB3;
-}
-.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
-  border-bottom: 2px solid #007DB3;
-}
-.link--disabled-0-0-12 {
+.link--disabled-0-0-8 {
   cursor: not-allowed;
   color: #7C7C7C;
 }
-.link--block-0-0-13 {
-  display: flex;
-}
-.link--variant-primary-0-0-14 {
-  color: #409eff;
-  --icon-color: #409eff;
-}
-.link--variant-success-0-0-15 {
-  color: #67c23a;
-  --icon-color: #67c23a;
-}
-.link--variant-warning-0-0-16 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
-}
-.link--variant-danger-0-0-17 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
-}
-.link--variant-info-0-0-18 {
-  color: #909399;
-  --icon-color: #909399;
-}
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" href="http://example.com" tabindex="0" target="_self">
-      <slot></slot>
+    <a class="link-0-0-5" href="http://example.com" tabindex="0" target="_self">
+      <span class="link__wrapper-0-0-6">
+        <slot></slot>
+      </span>
     </a>
   </mock:shadow-root>
   Label
@@ -154,71 +100,44 @@ exports[`Link should match snapshot 1`] = `
 <scale-link>
   <mock:shadow-root>
     <style>
-      .link-0-0-10 {
+      .link-0-0-5 {
   cursor: pointer;
-  display: inline-flex;
   outline: none;
-  padding: 0;
-  position: relative;
-  font-size: 16px;
+  text-decoration: none;
+  color: #007DB3;
+}
+.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #007DB3;
+  border-bottom: 1px solid currentColor;
+}
+.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+  border-bottom: 2px solid currentColor;
+}
+.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+  color: #0070A0;
+}
+.link__wrapper-0-0-6 {
+  display: inline-flex;
   align-items: center;
-  font-family: TeleNeoWeb-Medium;
-  font-weight: 500;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-  color: #007DB3;
-  --icon-color: #007DB3;
 }
-.link-0-0-10 scale-icon {
-  margin-left: 4px;
+.link__wrapper-0-0-6 > *:not(:first-child) {
+  margin-inline-start: 0.25rem;
 }
-.link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #007DB3;
-  --icon-color: #007DB3;
+.link--block-0-0-7 {
+  display: block;
 }
-.link-0-0-10:visited.link-0-0-10:not(.link--disabled-0-0-12) {
-  color: #00739F;
-  --icon-color: #00739F;
-}
-.link--underline-0-0-11 {}
-.link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
-  text-decoration: none;
-  border-bottom: 1px solid #007DB3;
-}
-.link--underline-0-0-11:focus:not(.link--disabled-0-0-12) {
-  border-bottom: 2px solid #007DB3;
-}
-.link--disabled-0-0-12 {
+.link--disabled-0-0-8 {
   cursor: not-allowed;
   color: #7C7C7C;
 }
-.link--block-0-0-13 {
-  display: flex;
-}
-.link--variant-primary-0-0-14 {
-  color: #409eff;
-  --icon-color: #409eff;
-}
-.link--variant-success-0-0-15 {
-  color: #67c23a;
-  --icon-color: #67c23a;
-}
-.link--variant-warning-0-0-16 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
-}
-.link--variant-danger-0-0-17 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
-}
-.link--variant-info-0-0-18 {
-  color: #909399;
-  --icon-color: #909399;
-}
     </style>
-    <a class="link--underline-0-0-11 link-0-0-10" tabindex="0" target="_self">
-      <slot></slot>
+    <a class="link-0-0-5" tabindex="0" target="_self">
+      <span class="link__wrapper-0-0-6">
+        <slot></slot>
+      </span>
     </a>
   </mock:shadow-root>
   default

@@ -6,16 +6,17 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
     <style>
       .progress-bar-0-0-10 {
   width: 100%;
+  max-width: 30rem;
 }
 .progress-bar--has-error-0-0-11 {}
 .progress-bar--has-error-0-0-11 .progress-bar__outer-0-0-14 {
-  border: 1px solid #f50057;
+  border: 1px solid #D90000;
 }
 .progress-bar--has-error-0-0-11 .progress-bar__status-description-0-0-18 {
-  color: #f50057;
+  color: #D90000;
 }
 .progress-bar--has-error-0-0-11 scale-icon {
-  --icon-color: #f50057;
+  --icon-color: #D90000;
 }
 .progress-bar--disabled-0-0-12 {
   cursor: not-allowed;
@@ -27,17 +28,15 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-13 scale-icon {
-  margin-top: 12px;
-}
+.progress-bar-wrapper-0-0-13 scale-icon {}
 .progress-bar__outer-0-0-14 {
   width: 100%;
   height: 8px;
-  margin: 12px 12px 12px 0;
+  margin: 8px 8px 8px 0;
   overflow: hidden;
   position: relative;
-  background: #ebeef5;
   border-radius: 100px;
+  border: 1px solid #6c6c6c;
 }
 .progress-bar__inner-0-0-15 {
   top: 0;
@@ -47,7 +46,6 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   position: absolute;
   align-items: center;
   white-space: nowrap;
-  border-radius: 100px;
   justify-content: flex-end;
   animation-fill-mode: both;
   background: #e20074;
@@ -58,13 +56,14 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   font-size: 12px;
 }
 .progress-bar__status-0-0-17 {
-  color: #606266;
   display: inline-block;
   font-size: 12px;
+  font-family: TeleNeoWeb-ExtraBold;
 }
 .progress-bar__status-description-0-0-18 {
-  color: #606266;
+  color: #6c6c6c;
   font-size: 12px;
+  font-family: TeleNeoWeb-Bold;
 }
     </style>
     <style>
@@ -95,16 +94,17 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
     <style>
       .progress-bar-0-0-10 {
   width: 100%;
+  max-width: 30rem;
 }
 .progress-bar--has-error-0-0-11 {}
 .progress-bar--has-error-0-0-11 .progress-bar__outer-0-0-14 {
-  border: 1px solid #f50057;
+  border: 1px solid #D90000;
 }
 .progress-bar--has-error-0-0-11 .progress-bar__status-description-0-0-18 {
-  color: #f50057;
+  color: #D90000;
 }
 .progress-bar--has-error-0-0-11 scale-icon {
-  --icon-color: #f50057;
+  --icon-color: #D90000;
 }
 .progress-bar--disabled-0-0-12 {
   cursor: not-allowed;
@@ -116,17 +116,15 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-13 scale-icon {
-  margin-top: 12px;
-}
+.progress-bar-wrapper-0-0-13 scale-icon {}
 .progress-bar__outer-0-0-14 {
   width: 100%;
   height: 8px;
-  margin: 12px 12px 12px 0;
+  margin: 8px 8px 8px 0;
   overflow: hidden;
   position: relative;
-  background: #ebeef5;
   border-radius: 100px;
+  border: 1px solid #6c6c6c;
 }
 .progress-bar__inner-0-0-15 {
   top: 0;
@@ -136,7 +134,6 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   position: absolute;
   align-items: center;
   white-space: nowrap;
-  border-radius: 100px;
   justify-content: flex-end;
   animation-fill-mode: both;
   background: #e20074;
@@ -147,13 +144,14 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   font-size: 12px;
 }
 .progress-bar__status-0-0-17 {
-  color: #606266;
   display: inline-block;
   font-size: 12px;
+  font-family: TeleNeoWeb-ExtraBold;
 }
 .progress-bar__status-description-0-0-18 {
-  color: #606266;
+  color: #6c6c6c;
   font-size: 12px;
+  font-family: TeleNeoWeb-Bold;
 }
     </style>
     <style>
@@ -187,16 +185,17 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
     <style>
       .progress-bar-0-0-10 {
   width: 100%;
+  max-width: 30rem;
 }
 .progress-bar--has-error-0-0-11 {}
 .progress-bar--has-error-0-0-11 .progress-bar__outer-0-0-14 {
-  border: 1px solid #f50057;
+  border: 1px solid #D90000;
 }
 .progress-bar--has-error-0-0-11 .progress-bar__status-description-0-0-18 {
-  color: #f50057;
+  color: #D90000;
 }
 .progress-bar--has-error-0-0-11 scale-icon {
-  --icon-color: #f50057;
+  --icon-color: #D90000;
 }
 .progress-bar--disabled-0-0-12 {
   cursor: not-allowed;
@@ -208,17 +207,15 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-13 scale-icon {
-  margin-top: 12px;
-}
+.progress-bar-wrapper-0-0-13 scale-icon {}
 .progress-bar__outer-0-0-14 {
   width: 100%;
   height: 8px;
-  margin: 12px 12px 12px 0;
+  margin: 8px 8px 8px 0;
   overflow: hidden;
   position: relative;
-  background: #ebeef5;
   border-radius: 100px;
+  border: 1px solid #6c6c6c;
 }
 .progress-bar__inner-0-0-15 {
   top: 0;
@@ -228,7 +225,6 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   position: absolute;
   align-items: center;
   white-space: nowrap;
-  border-radius: 100px;
   justify-content: flex-end;
   animation-fill-mode: both;
   background: #e20074;
@@ -239,13 +235,14 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   font-size: 12px;
 }
 .progress-bar__status-0-0-17 {
-  color: #606266;
   display: inline-block;
   font-size: 12px;
+  font-family: TeleNeoWeb-ExtraBold;
 }
 .progress-bar__status-description-0-0-18 {
-  color: #606266;
+  color: #6c6c6c;
   font-size: 12px;
+  font-family: TeleNeoWeb-Bold;
 }
     </style>
     <style>
@@ -276,16 +273,17 @@ exports[`ProgressBar should match snapshot 1`] = `
     <style>
       .progress-bar-0-0-10 {
   width: 100%;
+  max-width: 30rem;
 }
 .progress-bar--has-error-0-0-11 {}
 .progress-bar--has-error-0-0-11 .progress-bar__outer-0-0-14 {
-  border: 1px solid #f50057;
+  border: 1px solid #D90000;
 }
 .progress-bar--has-error-0-0-11 .progress-bar__status-description-0-0-18 {
-  color: #f50057;
+  color: #D90000;
 }
 .progress-bar--has-error-0-0-11 scale-icon {
-  --icon-color: #f50057;
+  --icon-color: #D90000;
 }
 .progress-bar--disabled-0-0-12 {
   cursor: not-allowed;
@@ -297,17 +295,15 @@ exports[`ProgressBar should match snapshot 1`] = `
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-13 scale-icon {
-  margin-top: 12px;
-}
+.progress-bar-wrapper-0-0-13 scale-icon {}
 .progress-bar__outer-0-0-14 {
   width: 100%;
   height: 8px;
-  margin: 12px 12px 12px 0;
+  margin: 8px 8px 8px 0;
   overflow: hidden;
   position: relative;
-  background: #ebeef5;
   border-radius: 100px;
+  border: 1px solid #6c6c6c;
 }
 .progress-bar__inner-0-0-15 {
   top: 0;
@@ -317,7 +313,6 @@ exports[`ProgressBar should match snapshot 1`] = `
   position: absolute;
   align-items: center;
   white-space: nowrap;
-  border-radius: 100px;
   justify-content: flex-end;
   animation-fill-mode: both;
   background: #e20074;
@@ -328,13 +323,14 @@ exports[`ProgressBar should match snapshot 1`] = `
   font-size: 12px;
 }
 .progress-bar__status-0-0-17 {
-  color: #606266;
   display: inline-block;
   font-size: 12px;
+  font-family: TeleNeoWeb-ExtraBold;
 }
 .progress-bar__status-description-0-0-18 {
-  color: #606266;
+  color: #6c6c6c;
   font-size: 12px;
+  font-family: TeleNeoWeb-Bold;
 }
     </style>
     <style>

@@ -4,88 +4,120 @@ exports[`Slider should match snapshot 1`] = `
 <scale-slider>
   <mock:shadow-root>
     <style>
-      .slider-0-0-3 {
+      .slider-0-0-5 {
   width: 100%;
   display: block;
   align-items: center;
 }
-.slider-0-0-3 .slider--track-wrapper {
+.slider-0-0-5 .slider--track-wrapper {
   display: flex;
   align-items: center;
 }
-.slider-0-0-3 .slider--track {
-  width: 400px;
-  height: 8px;
+.slider-0-0-5 .slider--track {
+  width: 303px;
+  border: 1px solid #6c6c6c;
+  height: 6px;
   margin: 16px 0;
   display: flex;
   position: relative;
+  box-sizing: border-box;
   align-items: center;
-  border-radius: 3px;
-  background-color: #ebeef5;
+  border-radius: 100px;
 }
-.slider-0-0-3 .slider--bar {
-  height: 8px;
+.slider-0-0-5 .slider--bar {
+  height: 6px;
+  z-index: -1;
   position: absolute;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  background-color: #e20074;
+  border-radius: 100px;
+  background-color: #E20074;
 }
-.slider-0-0-3 .slider--thumb-wrapper {
-  width: 36px;
-  height: 36px;
+.slider-0-0-5 .slider--thumb-wrapper {
+  width: 32px;
+  height: 32px;
   display: flex;
   z-index: 100;
   position: absolute;
   text-align: center;
   align-items: center;
-  margin-left: -4px;
+  margin-left: -16px;
   user-select: none;
+  justify-content: center;
   background-color: transparent;
 }
-.slider-0-0-3 .slider--thumb {
+.slider-0-0-5 .slider--thumb {
   width: 16px;
-  border: 2px solid;
+  border: 1px solid;
   height: 16px;
-  transition: all 0.2s;
+  outline: none;
+  box-sizing: border-box;
   user-select: none;
+  border-color: #6c6c6c;
   border-radius: 50%;
   background-color: #fff;
-  border-color: #e20074;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10);
 }
-.slider-0-0-3 .slider--display-value {
+.slider-0-0-5 .slider--display-value {
+  color: #6c6c6c;
+  font-size: 12px;
+  font-family: TeleNeoWeb-Bold;
   margin-left: 24px;
 }
-.slider-0-0-3 .slider--thumb:hover {
-  transform: scale(1.2);
+.slider-0-0-5 .slider--thumb:hover {
+  border-color: #F90984;
 }
-.slider-0-0-3 .slider--thumb-wrapper:hover {
+.slider-0-0-5 .slider--thumb:active {
+  border-color: #CB0068;
+}
+.slider-0-0-5 .slider--thumb:focus {
+  box-shadow: 0 0 0 2px #009DE0;
+}
+.slider-0-0-5 .slider--thumb-wrapper:hover {
   cursor: grab;
 }
-.slider--disabled-0-0-4 {}
-.slider--disabled-0-0-4 .slider--track-wrapper {
+.slider-0-0-5 .slider--thumb-wrapper:active {
+  cursor: grabbing;
+}
+.slider--track-small-0-0-6 {}
+.slider--track-small-0-0-6 .slider--track {
+  border: none;
+  height: 1px;
+  background-color: #7c7c7c;
+}
+.slider--track-small-0-0-6 .slider--bar {
+  height: 3px;
+  z-index: 1;
+}
+.slider--thumb-large-0-0-7 {}
+.slider--thumb-large-0-0-7 .slider--thumb {
+  width: 24px;
+  height: 24px;
+}
+.slider--disabled-0-0-8 {}
+.slider--disabled-0-0-8 .slider--track-wrapper {
   cursor: not-allowed;
-  opacity: 0.4;
 }
-.slider--disabled-0-0-4 .slider--bar {
-  background-color: grey;
+.slider--disabled-0-0-8 .slider--bar {
+  background-color: #7c7c7c;
 }
-.slider--disabled-0-0-4 .slider--thumb {
+.slider--disabled-0-0-8 .slider--thumb {
   display: none;
 }
-.slider--disabled-0-0-4 .slider--thumb-wrapper {}
-.slider--disabled-0-0-4 .slider--thumb-wrapper:hover {
+.slider--disabled-0-0-8 .slider--thumb-wrapper {}
+.slider--disabled-0-0-8 .slider--thumb-wrapper:hover {
   cursor: not-allowed;
 }
     </style>
-    <div class="slider-0-0-3">
+    <div class="slider-0-0-5">
       <div class="slider--track-wrapper">
-        <div class="slider--track" style="height: undefinedpx;">
-          <div class="slider--bar" style="width: undefined%; height: undefinedpx;"></div>
+        <div class="slider--track">
+          <div class="slider--bar" style="width: undefined%;"></div>
           <div class="slider--thumb-wrapper" style="left: undefined%;">
-            <div class="slider--thumb"></div>
+            <div class="slider--thumb" tabindex="0"></div>
           </div>
         </div>
-        <div class="slider--display-value"></div>
+        <div class="slider--display-value">
+          %
+        </div>
       </div>
     </div>
   </mock:shadow-root>

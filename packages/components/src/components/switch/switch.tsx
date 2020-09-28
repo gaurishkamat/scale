@@ -6,6 +6,8 @@ import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+let i = 0;
+
 @Component({
   tag: 'scale-switch',
   shadow: false,
@@ -26,6 +28,12 @@ export class Switch implements Base {
 
   /** Emitted when the switch was clicked */
   @Event() scaleChange!: EventEmitter<void>;
+
+  componentWillLoad() {
+    if (this.inputId == null) {
+      this.inputId = 'input-' + i++;
+    }
+  }
 
   componentWillUpdate() {}
   componentDidUnload() {}

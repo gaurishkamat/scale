@@ -19,9 +19,9 @@
 
 ## Events
 
-| Event        | Description                                                         | Type                      |
-| ------------ | ------------------------------------------------------------------- | ------------------------- |
-| `scaleClose` | (optional) Callback fired when the component requests to be closed. | `CustomEvent<MouseEvent>` |
+| Event        | Description                                                         | Type                                       |
+| ------------ | ------------------------------------------------------------------- | ------------------------------------------ |
+| `scaleClose` | (optional) Callback fired when the component requests to be closed. | `CustomEvent<KeyboardEvent \| MouseEvent>` |
 
 
 ## Dependencies
@@ -29,13 +29,13 @@
 ### Depends on
 
 - animatable-component
-- [scale-icon](../icon)
+- scale-icon-action-circle-close
 
 ### Graph
 ```mermaid
 graph TD;
   scale-modal --> animatable-component
-  scale-modal --> scale-icon
+  scale-modal --> scale-icon-action-circle-close
   style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

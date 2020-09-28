@@ -5,6 +5,7 @@ import jss from 'jss';
 
 describe('Switch', () => {
   let element;
+  // @ts-ignore
   let stylesheet;
   beforeEach(async () => {
     element = new Switch();
@@ -19,25 +20,8 @@ describe('Switch', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should have toggle active state', () => {
-    element.disabled = false;
-    element.active = true;
-    element.toggleSwitch();
-    expect(element.active).toBe(false);
-  });
-
   it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
-
-    element.active = true;
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['switch--active']
-    );
-
-    element.disabled = true;
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['switch--disabled']
-    );
   });
 });

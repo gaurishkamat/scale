@@ -29,6 +29,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-button
+      :alt="alt"
       :ariaLabel="ariaLabel"
       :disabled="disabled"
       :focusable="focusable"
@@ -53,7 +54,7 @@ export const Template = (args, { argTypes }) => ({
 
 <Preview withSource="none">
   <Story
-    name='Large'
+    name='Large Standard'
     args={{
       label: 'A button'
     }}
@@ -65,11 +66,11 @@ export const Template = (args, { argTypes }) => ({
 <Props story='Large' />
 
 
-## Secondary
+## Large Secondary
 
 <Preview withSource="none">
   <Story
-    name='Secondary'
+    name='Large Secondary'
     args={{
       variant: 'secondary',
     }}
@@ -78,11 +79,11 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Preview>
 
-## Secondary Disabled
+## Large Secondary Disabled
 
 <Preview withSource="none">
   <Story
-    name='Secondary Disabled'
+    name='Large Secondary Disabled'
     args={{
       variant: 'secondary',
       disabled: true,
@@ -97,11 +98,11 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## Disabled
+## Large Disabled
 
 <Preview withSource="none">
   <Story
-    name='Disabled'
+    name='Large Disabled'
     args={{
       disabled: true,
     }}
@@ -115,29 +116,11 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## Small
+## Large With Icon Before
 
 <Preview withSource="none">
   <Story
-    name='Small'
-    args={{
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-button size="small">Label</scale-button>
-```
-
-
-## With Icon Before
-
-<Preview withSource="none">
-  <Story
-    name='With Icon Before'
+    name='Large With Icon Before'
     args={{
       iconBefore: ICON,
     }}
@@ -151,11 +134,11 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## With Icon After
+## Large With Icon After
 
 <Preview withSource="none">
   <Story
-    name='With Icon After'
+    name='Large With Icon After'
     args={{
       iconAfter: "M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z",
     }}
@@ -169,13 +152,14 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## Icon Only
+## Large Icon Only
 
 <Preview withSource="none">
   <Story
-    name='Icon Only'
+    name='Large Icon Only'
     args={{
       icon: ICON,
+      alt: 'Search'
     }}
   >
     {Template.bind({})}
@@ -187,11 +171,11 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
-## Link
+## Large Link
 
 <Preview withSource="none">
   <Story
-    name='Link'
+    name='Large Link'
     args={{
       href: 'https://example.com',
       target: '_blank'
@@ -203,4 +187,166 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-button href="https://example.com" target="_blank">Label</scale-button>
+```
+
+
+<Preview withSource="none">
+  <Story
+    name='Small Standard'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      label: 'A button'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+
+```html
+<scale-button size="large">Label</scale-button>
+```
+
+
+## Small Secondary
+
+<Preview withSource="none">
+  <Story
+    name='Small Secondary'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      variant: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+
+```html
+<scale-button size="large" variant="secondary">Label</scale-button>
+```
+
+## Small Secondary Disabled
+
+<Preview withSource="none">
+  <Story
+    name='Small Secondary Disabled'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      variant: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" variant="secondary" disabled>Label</scale-button>
+```
+
+
+## Small Disabled
+
+<Preview withSource="none">
+  <Story
+    name='Small Disabled'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" disabled>Label</scale-button>
+```
+
+
+## Small With Icon Before
+
+<Preview withSource="none">
+  <Story
+    name='Small With Icon Before'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      iconBefore: ICON,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" icon-size="16" icon-before="SVG-PATH">Label</scale-button>
+```
+
+
+## Small With Icon After
+
+<Preview withSource="none">
+  <Story
+    name='Small With Icon After'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      iconAfter: "M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" icon-size="16" icon-after="SVG-PATH">Label</scale-button>
+```
+
+
+## Small Icon Only
+
+<Preview withSource="none">
+  <Story
+    name='Small Icon Only'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      icon: ICON,
+      alt: 'Search'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" icon-size="16" icon="SVG-PATH">Label</scale-button>
+```
+
+
+## Small Link
+
+<Preview withSource="none">
+  <Story
+    name='Small Link'
+    args={{
+      size: 'small',
+      iconSize: 16,
+      href: 'https://example.com',
+      target: '_blank'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-button size="large" href="https://example.com" target="_blank">Label</scale-button>
 ```

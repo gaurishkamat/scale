@@ -4,7 +4,7 @@
     :type="type"
     :label="label"
     :disabled="disabled"
-    :pre-checked="preChecked"
+    :checked="checked"
     :value="value"
     :status="status"
     :input-id="inputId"
@@ -24,7 +24,7 @@ export default {
     type: { type: String },
     label: { type: String },
     disabled: { type: Boolean },
-    preChecked: { type: Boolean },
+    checked: { type: Boolean },
     value: { type: String },
     status: { type: String },
     inputId: { type: String },

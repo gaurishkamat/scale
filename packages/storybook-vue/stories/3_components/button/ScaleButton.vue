@@ -1,5 +1,6 @@
 <template>
   <scale-button
+    :alt="alt"
     :ariaLabel="ariaLabel"
     :disabled="disabled"
     :focusable="focusable"
@@ -24,6 +25,7 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
+    alt: String,
     ariaLabel: String,
     disabled: Boolean,
     focusable: Boolean,

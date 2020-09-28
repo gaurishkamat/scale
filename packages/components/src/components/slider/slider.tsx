@@ -88,7 +88,7 @@ export class Slider implements Base {
   };
 
   onDragging = (event: any) => {
-    const { dragging, startX, startPosition, newPosition } = this;
+    const { dragging, startX, startPosition } = this;
 
     if (dragging) {
       this.currentX = event.clientX;
@@ -98,7 +98,7 @@ export class Slider implements Base {
       diff = ((this.currentX - startX) / this.sliderTrack.offsetWidth) * 100;
 
       this.newPosition = startPosition + diff;
-      this.setPosition(newPosition);
+      this.setPosition(this.newPosition);
     }
   };
 
@@ -110,6 +110,14 @@ export class Slider implements Base {
     this.setPosition(newPosition || this.startPosition);
     window.removeEventListener('mousemove', this.onDragging.bind(this));
     window.removeEventListener('mouseup', this.onDragEnd.bind(this));
+  };
+
+  onKeyDown = event => {
+    if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
+      this.setPosition(
+        this.value + (event.key === 'ArrowRight' ? this.step : -this.step)
+      );
+    }
   };
 
   setPosition = (newPosition: number) => {
@@ -152,7 +160,11 @@ export class Slider implements Base {
                 style={{ left: `${this.value}%` }}
                 onMouseDown={this.onButtonDown}
               >
-                <div class="slider--thumb" />
+                <div
+                  class="slider--thumb"
+                  tabindex="0"
+                  onKeyDown={this.onKeyDown}
+                />
               </div>
             </div>
             {this.showValue && (

@@ -99,6 +99,8 @@ export const styles: JssStyle = {
     padding: 8,
   },
   'button--variant-secondary': {
+    paddingTop: 7,
+    paddingBottom: 7,
     '&, &:focus, &.focus': {
       border: ({ palette }) => `1px solid ${palette.gray}`,
       background: 'none',
@@ -121,6 +123,7 @@ export const styles: JssStyle = {
   'button--size-small': {
     fontSize: 12,
     lineHeight: '16px',
+    minHeight: 32,
     '&$button--icon-only': {
       minWidth: 32,
       minHeight: 32,
