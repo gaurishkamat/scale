@@ -21,6 +21,9 @@ export const styles: JssStyle = {
       fontSize: 12,
       textAlign: 'left',
       userSelect: 'none',
+      '&:focus': {
+        outline: 'none',
+      },
     },
     '& th, td': {
       padding: '0 8px',
@@ -64,7 +67,6 @@ export const styles: JssStyle = {
   'table--sortable': {
     '& th': {
       cursor: 'pointer',
-      outline: 'none',
       borderRadius: '4px 4px 0 0',
       '&:hover': {
         background: '#EDEDED',
