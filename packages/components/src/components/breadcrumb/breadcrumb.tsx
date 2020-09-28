@@ -1,5 +1,4 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
-import { ScaleIconNavigationRight } from '@scaleds/icons-telekom/dist/custom-elements';
 
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -29,15 +28,6 @@ export class Breadcrumb implements Base {
   @State() linksArray = [];
   @State() separatorSlot: HTMLElement = null;
 
-  connectedCallback() {
-    if (customElements.get('scale-icon-navigation-right') == null) {
-      customElements.define(
-        'scale-icon-navigation-right',
-        ScaleIconNavigationRight
-      );
-    }
-  }
-
   componentWillLoad() {
     if (this.linksArray.length === 0) {
       this.setLinksArray();
@@ -51,6 +41,24 @@ export class Breadcrumb implements Base {
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
       element => element.slot === ''
+    );
+  }
+
+  tmpDefaultIcon(size: number) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        style={{ display: 'inline-flex' }}
+      >
+        <path
+          d="M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z"
+          fill-rule="evenodd"
+          fill="currentColor"
+        ></path>
+      </svg>
     );
   }
 
@@ -75,9 +83,7 @@ export class Breadcrumb implements Base {
                   />
                 ) : (
                   <span class={classes.separator}>
-                    {this.separator || (
-                      <scale-icon-navigation-right size={16} />
-                    )}
+                    {this.separator || this.tmpDefaultIcon(16)}
                   </span>
                 );
               return (
