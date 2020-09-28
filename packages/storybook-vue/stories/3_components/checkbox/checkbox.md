@@ -35,6 +35,6 @@ When checking a box is required, use this flag to display the corresponding info
 
 ## Related Components
 
-Switch, Select Box, Radio Button
+Select Box, Switch, Radio Button
 
 ## Code
