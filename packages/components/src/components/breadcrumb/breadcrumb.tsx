@@ -83,7 +83,9 @@ export class Breadcrumb implements Base {
                   />
                 ) : (
                   <span class={classes.separator}>
-                    {this.separator || this.tmpDefaultIcon(16)}
+                    {this.separator || (
+                      <scale-icon-navigation-right size={16} />
+                    )}
                   </span>
                 );
               return (
