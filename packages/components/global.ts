@@ -1,3 +1,5 @@
+import { defineCustomElements } from '@scaleds/icons-telekom/loader';
+
 if (
   typeof window !== 'undefined' &&
   typeof window.Audio !== 'undefined' &&
@@ -7,4 +9,6 @@ if (
   require('web-animations-js');
 }
 
-export default () => null;
+export default () => {
+  defineCustomElements();
+};
