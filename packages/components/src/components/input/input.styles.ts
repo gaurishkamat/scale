@@ -88,7 +88,7 @@ export const styles: JssStyle = {
     [`
       & .input__input, 
       & .input__select, 
-      & .input__textarea
+      & .input__textarea,
     `]: {
       '&::placeholder': {
         transition: defaultTransition,
