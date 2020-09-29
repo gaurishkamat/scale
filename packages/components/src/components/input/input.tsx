@@ -7,6 +7,7 @@ import {
   Host,
   State,
   Watch,
+  Element,
 } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -26,6 +27,7 @@ let i = 0;
   shadow: false,
 })
 export class Input implements Base {
+  @Element() el: HTMLElement;
   /** (optional) Input text class */
   @Prop() customClass?: string = '';
   /** (optional) Input type */
@@ -112,7 +114,13 @@ export class Input implements Base {
   }
 
   componentWillUpdate() {}
-  componentDidLoad() {}
+  componentDidLoad() {
+    if (this.type === 'select') {
+      const select = this.el.querySelector('select');
+      const selectedValue = select.options[select.selectedIndex].value;
+      this.value = selectedValue;
+    }
+  }
   componentDidUnload() {}
 
   @Watch('value')
@@ -201,7 +209,7 @@ export class Input implements Base {
         </Host>
       );
     }
-    const Element = this.type === 'textarea' ? 'textarea' : 'input';
+    const Tag = this.type === 'textarea' ? 'textarea' : 'input';
 
     return (
       <Host>
@@ -230,7 +238,7 @@ export class Input implements Base {
               {!!this.icon && <scale-icon path={this.icon}></scale-icon>}
             </div>
           ) : (
-            <Element
+            <Tag
               type={this.type}
               class={classNames(
                 `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
