@@ -1,39 +1,52 @@
 # Checkbox
 
-With checkboxes, users select and deselect single options in a form.
+With Checkboxes, users toggle options on or off. They can answer simple yes-no questions in this way. Furthermore, users can select one or more options from a number of choices.
 
 ## General
 
-Checkboxes are used for multiple choice situations. Each checkbox works independently of the other checkboxes, therefore checking an additional checkbox does not affect other selections. Checkboxes can be selected and deselected by clicking either the box or the corresponding label.
+A checkbox is a selection control that allows users to choose between two states. It consists of a control box and a corresponding label. Activating a checkbox does not affect other selections. It is considered to be selected when the control box has a checkmark. In the initial state, a checkbox can switch on or off.
 
-![Image Name](/assets/3_components/checkbox/image-20200810103827627.png)
+![Image Name](/assets/3_components/checkbox/checkbox.png)
 
-### When to Use
+### When to use
 
-**Forms**<br>
-Checkboxes can be used in forms on a full page, in modals or on side panels.
+There are two main use cases for checkboxes:
 
-**Filtering and Batch Action**<br>
-They can be used to filter data either on a page, in a menu or within a component.
+* Single: Use a stand-alone checkbox if users are to turn an option on or off. For instance, this could be a request in a form or the agreement of general terms and conditions before buying a product.
+* Multiple: Use a number of checkboxes if users are to select one or more options from a list. For instance, this could be a filter panel in a shop, a collection of settings, or a list of items to edit.
 
-**Terms and Conditions**<br>
-Selecting or deselecting the checkbox can indicate whether you agree to the terms.
+### When not to use
 
-### When Not to Use
+* When states are mutually exclusive, use radio buttons instead.
 
-If you want the user to choose only one mandatory option from a list, use radio buttons instead.
+## Checkbox label
 
-## Elements
+The label explicitly describes what happens when users select or deselect a checkbox. It should convey two opposite states. Always formulate the label positively to avoid double negatives.
 
-### Label
+![Image Name](/assets/3_components/checkbox/checkbox_label.png)
 
-Give checkboxes clear labels so users know what they are selecting or deselecting e.g. "Sign up for the Newsletter".
+## Disabled state
 
-### Required Input / Improve
+Disable the checkbox if:
 
-When checking a box is required, use this flag to display the corresponding information and validate the form accordingly.
+* another action has to take place before the checkbox is usable or
+* the option needs to be listed but is currently unavailable.
 
-## Related Components
+![Image Name](/assets/3_components/checkbox/checkbox_disabled.png)
+
+## Nested groups of checkboxes
+
+When checkboxes are related to a parent checkbox, you can nest them. Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
+
+![Image Name](/assets/3_components/checkbox/checkbox_nesting.png)
+
+### Required input
+
+When checking a box is required, use an asterisk (*) in the text label.
+
+![Image Name](/assets/3_components/checkbox/checkbox_required_input.png)
+
+## Related components
 
 Select Box, Switch, Radio Button
 
