@@ -22,6 +22,7 @@ const customElementTags: string[] = [
  'scale-button',
  'scale-card',
  'scale-carousel',
+ 'scale-chart-stack-card',
  'scale-collapsible',
  'scale-divider',
  'scale-icon',
@@ -234,6 +235,20 @@ export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-carousel', []),
+});
+
+
+export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    customClass: {} as PropOptions<Components.ScaleChartStackCard['customClass']>,
+    data: {} as PropOptions<Components.ScaleChartStackCard['data']>,
+    heading: {} as PropOptions<Components.ScaleChartStackCard['heading']>,
+    styles: {} as PropOptions<Components.ScaleChartStackCard['styles']>,
+  },
+
+
+  render: createCommonRender('scale-chart-stack-card', []),
 });
 
 

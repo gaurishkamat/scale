@@ -38,6 +38,19 @@
 | `target`      | `target`       | (optional) Link card target    | `string`  | `'_self'`   |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-chart-stack-card](../chart-stack-card)
+
+### Graph
+```mermaid
+graph TD;
+  scale-chart-stack-card --> scale-card
+  style scale-card fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

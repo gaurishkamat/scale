@@ -200,6 +200,24 @@ export namespace Components {
          */
         "vertical"?: boolean;
     }
+    interface ScaleChartStackCard {
+        /**
+          * (optional) Custom class
+         */
+        "customClass"?: string;
+        /**
+          * Chart Data
+         */
+        "data": string | Array<Record<'type' | 'value' | 'percentage', string>>;
+        /**
+          * Chart Title
+         */
+        "heading": string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
+    }
     interface ScaleCollapsible {
         "close": () => Promise<void>;
         "isExpanded"?: boolean;
@@ -863,6 +881,12 @@ declare global {
         prototype: HTMLScaleCarouselElement;
         new (): HTMLScaleCarouselElement;
     };
+    interface HTMLScaleChartStackCardElement extends Components.ScaleChartStackCard, HTMLStencilElement {
+    }
+    var HTMLScaleChartStackCardElement: {
+        prototype: HTMLScaleChartStackCardElement;
+        new (): HTMLScaleChartStackCardElement;
+    };
     interface HTMLScaleCollapsibleElement extends Components.ScaleCollapsible, HTMLStencilElement {
     }
     var HTMLScaleCollapsibleElement: {
@@ -1008,6 +1032,7 @@ declare global {
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
+        "scale-chart-stack-card": HTMLScaleChartStackCardElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
@@ -1212,6 +1237,24 @@ declare namespace LocalJSX {
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
+    }
+    interface ScaleChartStackCard {
+        /**
+          * (optional) Custom class
+         */
+        "customClass"?: string;
+        /**
+          * Chart Data
+         */
+        "data"?: string | Array<Record<'type' | 'value' | 'percentage', string>>;
+        /**
+          * Chart Title
+         */
+        "heading"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleCollapsible {
         "isExpanded"?: boolean;
@@ -1845,6 +1888,7 @@ declare namespace LocalJSX {
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
+        "scale-chart-stack-card": ScaleChartStackCard;
         "scale-collapsible": ScaleCollapsible;
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
@@ -1885,6 +1929,7 @@ declare module "@stencil/core" {
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
+            "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
