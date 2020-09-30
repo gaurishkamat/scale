@@ -1,0 +1,39 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import index from '@scaleds/icons-telekom/dist/collection/index.json';
+
+<Meta title="Guidelines/Icons" />
+
+# Icons
+
+[TODO]
+
+```html
+<scale-icon-{CATEGORY}-{NAME} selected color="#262626" size="24" />
+```
+
+<div>
+  {index.map(category => {
+    return (
+      <div key={category.category}>
+        <h2>{category.label}</h2>
+        <div style={{ marginTop: 32 }}>
+          {category.items.map(item => {
+            let markup = () => ({
+              __html: `<scale-icon-${category.category}-${item} />`
+            })
+            return (
+              <div key={item}>
+                <span>
+                  <span style={{ color: '#7C7C7C' }}>scale-icon-{category.category}-</span>{item}
+                </span>
+                <Canvas mdxSource={markup().__html}>
+                  <span dangerouslySetInnerHTML={markup()}></span>
+                </Canvas>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  })}
+</div>
