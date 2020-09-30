@@ -32,7 +32,6 @@ export const styles: JssStyle = {
       display: 'flex',
       flexDirection: 'column',
       height: '161px',
-      overflow: 'auto',
       '& .spacer': {
         padding: '0 0.5rem',
       },
