@@ -7,6 +7,7 @@ import {
   ScaleTable,
   ScaleInput,
   ScaleText,
+  ScaleChartStackCard
 } from "@scaleds/components-react-telekom"
 import { Link } from "gatsby"
 import { useTable, useSortBy } from "react-table"
@@ -15,7 +16,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -28,6 +28,15 @@ const IndexPage = () => {
       </ScaleLink>
       <h3>Button</h3>
       <ScaleButton variant="primary">Click!</ScaleButton>
+      <h3>ChartStackCard</h3>
+      <ScaleChartStackCard
+        heading="Operating Systems"
+        data={[
+          { type: "Android", value: "55.000", percentage: "55" },
+          { type: "IOS", value: "35.000", percentage: "35" },
+          { type: "Other", value: "10.000", percentage: "10" }
+        ]}
+      />
       <h3>Card</h3>
       <ScaleCard>A title</ScaleCard>
       <h3>Tag</h3>
@@ -40,7 +49,6 @@ const IndexPage = () => {
         value="initial value"
         onScaleChange={console.log}
       />
-      
     </Layout>
   )
 }

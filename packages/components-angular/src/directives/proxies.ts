@@ -239,6 +239,25 @@ export class ScaleCarousel {
   }
 }
 
+
+export declare interface ScaleChartStackCard extends Components.ScaleChartStackCard {}
+@ProxyCmp({
+  inputs: ['customClass', 'data', 'heading', 'styles']
+})
+@Component({
+  selector: 'scale-chart-stack-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['customClass', 'data', 'heading', 'styles']
+})
+export class ScaleChartStackCard {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
 import { Collapsible as ICollapsible } from '@scaleds/components-telekom/dist/types/components/collapsible/collapsible';
 export declare interface ScaleCollapsible extends Components.ScaleCollapsible {}
 @ProxyCmp({

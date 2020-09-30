@@ -337,6 +337,36 @@
       ]
     },
     {
+      "name": "scale-chart-stack-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "custom-class",
+          "description": "(optional) Custom class"
+        },
+        {
+          "name": "data",
+          "description": "Chart Data",
+          "values": [
+            {
+              "name": "value"
+            }
+          ]
+        },
+        {
+          "name": "heading",
+          "description": "Chart Title"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
       "name": "scale-collapsible",
       "description": {
         "kind": "markdown",
