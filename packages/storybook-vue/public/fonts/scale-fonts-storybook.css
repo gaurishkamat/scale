@@ -101,7 +101,7 @@ h6 {
 
 h1 {
   font-size: 56px !important;
-  line-height: 64px !important !important;
+  line-height: 64px !important;
 }
 h2 {
   font-size: 32px !important;
@@ -127,7 +127,6 @@ h6 {
 
 a {
   font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  font-size: 16px !important;
   text-decoration: none !important;
   /* #00a6f0 fails :) https://colorable.jxnblk.com/00a6f0/ffffff  */
   color: #007DB3 !important;
@@ -139,7 +138,7 @@ scale-sidebar-nav-item a {
   color: black !important;
 }
 
-p {
+p, ul, li, a {
   font-size: 16px !important;
   line-height: 24px !important;
 }
