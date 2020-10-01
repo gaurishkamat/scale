@@ -25,6 +25,16 @@ const GRAY_7_DECORATIVE = '#DCDCDC';
 // const GRAY_8_DECORATIVE = '#EDEDED';
 const GRAY_9_DECORATIVE = '#F4F4F4';
 
+/* Typography */
+
+const FONT_FAMILY = 'TeleNeoWeb';
+
+const FONT_WEIGHT_THIN = 100;
+const FONT_WEIGHT_REGULAR = 400;
+const FONT_WEIGHT_MEDIUM = 500;
+const FONT_WEIGHT_BOLD = 700;
+const FONT_WEIGHT_EXTRABOLD = 800;
+
 /* Spacing, in rem units */
 
 const SPACING_1 = 0.25; // 4px
@@ -105,6 +115,16 @@ const background = {
   action_active: MAGENTA_ACTIVE,
   disabled: GRAY_6_DECORATIVE,
   card: WHITE,
+};
+
+const font = {
+  family: FONT_FAMILY,
+  weight_thin: FONT_WEIGHT_THIN,
+  weight_regular: FONT_WEIGHT_REGULAR,
+  weight_medium: FONT_WEIGHT_MEDIUM,
+  weight_bold: FONT_WEIGHT_BOLD,
+  weight_extrabold: FONT_WEIGHT_EXTRABOLD,
+  weight_button: FONT_WEIGHT_BOLD,
 };
 
 const spacing = {
@@ -197,6 +217,7 @@ const transition = {
 export const tokens = {
   color,
   background,
+  font,
   spacing,
   size,
   shadow,

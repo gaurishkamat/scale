@@ -6,7 +6,8 @@ export const styles: JssStyle = {
     '& .header': {
       height: '24px',
       fontSize: '24px',
-      fontFamily: 'TeleNeoWeb-ExtraBold',
+      // fontFamily: 'TeleNeoWeb-ExtraBold',
+      fontWeight: ({ font }) => font.weight_extrabold,
       lineHeight: '26px',
       marginBottom: '24px',
     },
@@ -55,7 +56,8 @@ export const styles: JssStyle = {
         margin: '0 6px 1px 0',
       },
       '& .legend__label': {
-        fontFamily: 'TeleNeoWeb-Bold',
+        // fontFamily: 'TeleNeoWeb-Bold',
+        fontWeight: ({ font }) => font.weight_bold,
         fontSize: '17px',
         lineHeight: '32px',
       },
