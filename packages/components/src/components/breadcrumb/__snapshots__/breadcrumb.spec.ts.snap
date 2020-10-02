@@ -41,7 +41,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
   box-shadow: 0 0 0 2px #009DE0;
 }
 .current-0-0-5 {
-  font-family: TeleNeoWeb-ExtraBold;
+  font-weight: 800;
 }
     </style>
     <nav aria-label="Breadcrumb" class="breadcrumb-0-0-1">

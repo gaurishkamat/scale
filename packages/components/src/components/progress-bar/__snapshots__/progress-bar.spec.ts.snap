@@ -58,12 +58,12 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
 .progress-bar__status-0-0-17 {
   display: inline-block;
   font-size: 12px;
-  font-family: TeleNeoWeb-ExtraBold;
+  font-weight: 800;
 }
 .progress-bar__status-description-0-0-18 {
   color: #6c6c6c;
   font-size: 12px;
-  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
 }
     </style>
     <style>
@@ -146,12 +146,12 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
 .progress-bar__status-0-0-17 {
   display: inline-block;
   font-size: 12px;
-  font-family: TeleNeoWeb-ExtraBold;
+  font-weight: 800;
 }
 .progress-bar__status-description-0-0-18 {
   color: #6c6c6c;
   font-size: 12px;
-  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
 }
     </style>
     <style>
@@ -237,12 +237,12 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
 .progress-bar__status-0-0-17 {
   display: inline-block;
   font-size: 12px;
-  font-family: TeleNeoWeb-ExtraBold;
+  font-weight: 800;
 }
 .progress-bar__status-description-0-0-18 {
   color: #6c6c6c;
   font-size: 12px;
-  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
 }
     </style>
     <style>
@@ -325,12 +325,12 @@ exports[`ProgressBar should match snapshot 1`] = `
 .progress-bar__status-0-0-17 {
   display: inline-block;
   font-size: 12px;
-  font-family: TeleNeoWeb-ExtraBold;
+  font-weight: 800;
 }
 .progress-bar__status-description-0-0-18 {
   color: #6c6c6c;
   font-size: 12px;
-  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
 }
     </style>
     <style>
