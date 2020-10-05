@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.10.0) (2020-10-05)
+
+
+### Bug Fixes
+
+* add missing image ([63585a3](https://gitlab.com/scale-ds/scale-telekom/commit/63585a3b56df5453865fec0e8a0e639665306647))
+* commit yarn.lock again (temporary fix build error in components-angular) ([b412352](https://gitlab.com/scale-ds/scale-telekom/commit/b4123524e5fe542d314d6cdd3cceb8a19927e015))
+* table QA again ([18389c1](https://gitlab.com/scale-ds/scale-telekom/commit/18389c1dcf9b3a6cb289e61a749673cc50408eb1))
+* **storybook-vue:** rehack global styles for links to _fix_ Sidebar nav ([ad02196](https://gitlab.com/scale-ds/scale-telekom/commit/ad0219685feecc00675cd55fe51cd4a6bb49b834))
+* add missing method ([8a11f12](https://gitlab.com/scale-ds/scale-telekom/commit/8a11f12500b7b72f0dfc82b53f0b0273ed5d654b))
+* button story names ([6184069](https://gitlab.com/scale-ds/scale-telekom/commit/61840690b96e89420a888033d41099be261d8443))
+* fixes path in scale-fonts-storybook.css ([e8ccf20](https://gitlab.com/scale-ds/scale-telekom/commit/e8ccf20b75b347cd01f352466ee3b556c971d2ce))
+* remove build:prod script in package.json ([fd18384](https://gitlab.com/scale-ds/scale-telekom/commit/fd18384e16bd06db607d37eb4e3358c5c58d84b5))
+* Typescale adjusted ([a8c2204](https://gitlab.com/scale-ds/scale-telekom/commit/a8c2204a6e3a0eb4b142cd9820204690fe8a4886))
+* use correct package name ([baf8857](https://gitlab.com/scale-ds/scale-telekom/commit/baf8857417200b324e8589c5091a324e8a8f1182))
+* use correct props for Textarea stories ([4f0c790](https://gitlab.com/scale-ds/scale-telekom/commit/4f0c790e61e11c2b317be47635b10cbcedba4d78))
+* **storybook-vue:** update error icon in Progress stories ([f0fb08d](https://gitlab.com/scale-ds/scale-telekom/commit/f0fb08da727d1fc2d0e6a554e9e4667d35a0c590))
+* adjusts fontsizes in docs ([479ac62](https://gitlab.com/scale-ds/scale-telekom/commit/479ac62f4335624bdbe50b9f267cc6e9282e618e))
+* adjusts fontsizes in manager ([f8cf5cc](https://gitlab.com/scale-ds/scale-telekom/commit/f8cf5cc83a682fe60ab18c6d255616466c96edfe))
+* imports fonts for compoenents with webpack ([623f620](https://gitlab.com/scale-ds/scale-telekom/commit/623f6206dbeb6e24ca22f712f36a93843ce03066))
+* **storybook-vue:** polish snippets ([bd40c44](https://gitlab.com/scale-ds/scale-telekom/commit/bd40c440cd750957c92f7ab6a2025bce509efa74))
+* **storybook-vue:** remove "show code" button via withSource prop in Preview ([4c2c598](https://gitlab.com/scale-ds/scale-telekom/commit/4c2c5988378aa739feee61408a92d1c383288acd))
+
+
+### Features
+
+* add images; upgrade storybook ([4dc5d6e](https://gitlab.com/scale-ds/scale-telekom/commit/4dc5d6e411fcefd097d52bf81d243a9a5f0e3cfa))
+* add sidebar-nav stories, fix bold styles in component ([f603c4d](https://gitlab.com/scale-ds/scale-telekom/commit/f603c4d363c1ff3dcd62f420b95ec0b50e6b69ca))
+* adds internal links ([b82deda](https://gitlab.com/scale-ds/scale-telekom/commit/b82dedaffc37be41b89a48652e4f7a6ebafe91de))
+* adds new structure and contents; Pictures are missing ([42abb84](https://gitlab.com/scale-ds/scale-telekom/commit/42abb8485b759d0d3c788e9eea2828e67c5a40c4))
+* adds stories for Tab-navigation: default, with icon, icon only; minor style fixes in tab header ([bada7d5](https://gitlab.com/scale-ds/scale-telekom/commit/bada7d5511a1e581b24aa750739570bf436a4942))
+* breadcrumb ([b634153](https://gitlab.com/scale-ds/scale-telekom/commit/b6341537166da2b5b9f47da65c3c52682b5c1ec0))
+* button ([4ed65a8](https://gitlab.com/scale-ds/scale-telekom/commit/4ed65a855fe3326961be55ec2eb23e56cddb1e8e))
+* button QA ([00e0a9a](https://gitlab.com/scale-ds/scale-telekom/commit/00e0a9acb542e48557043b968e757a20c34d3b04))
+* card ([b8ce119](https://gitlab.com/scale-ds/scale-telekom/commit/b8ce11952786835b6d11ee716023cbfe28a032b3))
+* checkbox QA ([8505222](https://gitlab.com/scale-ds/scale-telekom/commit/8505222ebf16677b6173173a68767be7a1a239e3))
+* implements font styles for documentation texts ([66846d7](https://gitlab.com/scale-ds/scale-telekom/commit/66846d7c07b627b3d8116b7eca8bf68272e6a158))
+* input ([0cb26ca](https://gitlab.com/scale-ds/scale-telekom/commit/0cb26cab8b191a5a79ef0c54d6123a4f482ab1a7))
+* modal QA ([c41f677](https://gitlab.com/scale-ds/scale-telekom/commit/c41f677e0b78695de4e4e756831f2b0da5bcf3b8))
+* radio & checkbox QA ([378b286](https://gitlab.com/scale-ds/scale-telekom/commit/378b286419e937ae60ab0fa021bc08b44a657b5e))
+* slider QA ([f29abdc](https://gitlab.com/scale-ds/scale-telekom/commit/f29abdc8ede7e3c609686f9ad59e9382ab200172))
+* some select QA ([c358f41](https://gitlab.com/scale-ds/scale-telekom/commit/c358f41054e1fe4052ed2e6a3fefdd77e5a8a96f))
+* switch QA ([aa0b4de](https://gitlab.com/scale-ds/scale-telekom/commit/aa0b4dea0effeefce23765f1d38ca1f8128083ca))
+* table QA ([7e88139](https://gitlab.com/scale-ds/scale-telekom/commit/7e881397730cb01abe53c65aed3704a9dbd27fb2))
+* **components:** use tokens in Card, fix focus outline and add no-padding attr ([f7c70ea](https://gitlab.com/scale-ds/scale-telekom/commit/f7c70ea691512256f193dda1732a48fa05d0eba3))
+* **components:** use tokens in Link ([5c8185c](https://gitlab.com/scale-ds/scale-telekom/commit/5c8185c5cc974fa7672de3d6941f5a7c6fc8abc0))
+* **components|storybook-vue:** apply theming QA to Slider ([2f2639b](https://gitlab.com/scale-ds/scale-telekom/commit/2f2639b6db37a00c2b0cce661e6217d9edfa6c39))
+* **header:** make active sector configurable ([540e77f](https://gitlab.com/scale-ds/scale-telekom/commit/540e77f0a12b9c1b12d5cbc07d3f7517995fa4a3))
+* **header:** update story ([8cba990](https://gitlab.com/scale-ds/scale-telekom/commit/8cba99098d50ac14e13887b57c3416b8f2949198))
+* split input stories ([0543572](https://gitlab.com/scale-ds/scale-telekom/commit/0543572fb9bf86e6e66ccba98ab36ef5e0abb72e))
+* stories for icon and improved inline docs ([f66335f](https://gitlab.com/scale-ds/scale-telekom/commit/f66335fc2c759155699a677e3f35e74996ccb53b))
+* tag ([0f8898b](https://gitlab.com/scale-ds/scale-telekom/commit/0f8898b8d633fba844bab2b37c0db6a9f66d18ba))
+* vue routing example ([93fb02d](https://gitlab.com/scale-ds/scale-telekom/commit/93fb02d25a6d450b47cd43147d18eb7ef2ec496a))
+* **storybook-vue:** create custom theme ([567a97c](https://gitlab.com/scale-ds/scale-telekom/commit/567a97c79afc5170a1cee2d2746a49492a23d4b1))
+
+
+
+
+
 # [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
 
 

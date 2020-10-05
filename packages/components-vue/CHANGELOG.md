@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.10.0) (2020-10-05)
+
+
+### Bug Fixes
+
+* **components:** remove icon package import and dep ([aa2fd02](https://gitlab.com/scale-ds/scale-telekom/commit/aa2fd025b01348b60f82d4649781d2d8a941ceca))
+
+
+### Features
+
+* **header:** build ([893ad9e](https://gitlab.com/scale-ds/scale-telekom/commit/893ad9eaba7eaca27b650fda44b4e2b2172c8a1b))
+* **header:** make active sector configurable ([540e77f](https://gitlab.com/scale-ds/scale-telekom/commit/540e77f0a12b9c1b12d5cbc07d3f7517995fa4a3))
+* adds stories for Tab-navigation: default, with icon, icon only; minor style fixes in tab header ([bada7d5](https://gitlab.com/scale-ds/scale-telekom/commit/bada7d5511a1e581b24aa750739570bf436a4942))
+* vue routing example ([93fb02d](https://gitlab.com/scale-ds/scale-telekom/commit/93fb02d25a6d450b47cd43147d18eb7ef2ec496a))
+
+
+
+
+
 # [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
 
 

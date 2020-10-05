@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.10.0) (2020-10-05)
+
+
+### Bug Fixes
+
+* **icons:** add display: inline-flex to Host ([72fd8c7](https://gitlab.com/scale-ds/scale-telekom/commit/72fd8c7317c08fd34da9cc4b69636d84ec6eb8aa))
+
+
+### Features
+
+* **storybook-vue:** create custom theme ([567a97c](https://gitlab.com/scale-ds/scale-telekom/commit/567a97c79afc5170a1cee2d2746a49492a23d4b1))
+
+
+
+
+
 # [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
 
 **Note:** Version bump only for package @scaleds/icons-telekom
