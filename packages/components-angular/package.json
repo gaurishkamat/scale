@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/components-angular-telekom",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Angular specific wrapper for @scaleds/components-telekom",
   "scripts": {
     "build": "yarn build.ng",
@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "@ionic/angular": "^5.3.1",
-    "@scaleds/components-telekom": "^1.10.0",
+    "@scaleds/components-telekom": "^1.10.1",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {

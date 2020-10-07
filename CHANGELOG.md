@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.10.0...v1.10.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* **components:** checkbox not being checked when icon clicked ([97090f9](https://gitlab.com/scale-ds/scale-telekom/commit/97090f9e7b73b3713ffd1df410a0f6b2aca8a9ea))
+
+
+
+
+
 # [1.10.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.10.0) (2020-10-05)
 
 
