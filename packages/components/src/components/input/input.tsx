@@ -130,9 +130,20 @@ export class Input implements Base {
     });
   }
 
-  checkedChanged = event => {
+  @Watch('checked')
+  checkedChanged() {
+    this.scaleChange.emit({ value: this.checked });
+  }
+
+  // Handle checkbox/radio change (click on label)
+  handleCheckChange = event => {
+    this.checked = event.target.checked;
+  };
+
+  // Handle click on checkbox visual element
+  handleCheckboxClick = () => {
     if (!this.disabled) {
-      this.scaleChange.emit(event);
+      this.checked = !this.checked;
     }
   };
 
@@ -174,11 +185,11 @@ export class Input implements Base {
               id={this.inputId}
               checked={this.checked}
               disabled={this.disabled}
-              onClick={this.checkedChanged}
+              onChange={this.handleCheckChange}
             />
             <div
               class={classNames('input__checkbox-container')}
-              onClick={this.checkedChanged}
+              onClick={this.handleCheckboxClick}
             >
               <span class={classNames('input__checkbox-placeholder')}></span>
               {!!this.icon && (
@@ -199,7 +210,7 @@ export class Input implements Base {
               type="radio"
               name={this.name}
               id={this.inputId}
-              onChange={this.checkedChanged}
+              onChange={this.handleCheckChange}
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
