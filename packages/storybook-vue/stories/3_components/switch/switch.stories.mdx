@@ -21,24 +21,13 @@ export const Template = (args, {argTypes}) => ({
       :custom-class="customClass"
       :disabled="disabled"
       :input-id="inputId"
-      :checked="isChecked"
+      :checked="checked"
       @scaleChange="scaleChange"
     >
     </scale-switch>
   `,
   methods: {
-    scaleChange: function() {
-      this.isChecked=!this.isChecked;
-      action('scaleChange')();
-    },
-  },
-  data: function() {
-    return { isChecked: this.checked }
-  },
-  watch: {
-    checked: function (newChecked) {
-      this.isChecked = newChecked;
-    }
+    scaleChange: action('scaleChange'),
   },
 })
 
