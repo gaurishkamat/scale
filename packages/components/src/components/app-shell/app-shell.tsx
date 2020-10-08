@@ -29,6 +29,7 @@ const levelEnhancer = (data, i = 0) => {
   shadow: true,
 })
 export class Shell {
+  @Prop() brandTitle?: string = '';
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
@@ -53,6 +54,7 @@ export class Shell {
         <div class={this.getCssClassMap()}>
           <scale-app-header
             scrolled={this.scrolled}
+            brandTitle={this.brandTitle}
             mainNavigation={levelEnhancer(this.mainNavigation)}
             iconNavigation={levelEnhancer(this.iconNavigation)}
             sectorNavigation={levelEnhancer(this.sectorNavigation)}

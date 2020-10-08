@@ -271,6 +271,10 @@
   .header .addon-navigation .addon-navigation__item-link:hover {
     border-bottom: 1px solid #fff;
   }
+  .header .segment-navigation .segment-navigation__brand-title {
+    font-family: TeleNeoWeb-ExtraBold;
+    font-size: 20px;
+  }
   .header .segment-navigation .segment-navigation__item-link {
     color: #fff;
     margin: 0 7px;
