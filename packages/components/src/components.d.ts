@@ -1722,7 +1722,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the switch was clicked
          */
-        "onScaleChange"?: (event: CustomEvent<void>) => void;
+        "onScaleChange"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Injected jss styles
          */
