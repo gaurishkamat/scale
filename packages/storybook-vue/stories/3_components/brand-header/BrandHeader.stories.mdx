@@ -42,6 +42,12 @@ import description from './brand-header.md';
       },
       description: 'each item takes an optional onClick handler'
     },
+    brandTitle: {
+      control: {
+        type: 'text',
+      },
+      description: 'optionally replaces the sectorNavigation with a single bold title'
+    },
   }}
 />
 
@@ -51,6 +57,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="margin: -1rem;">
       <scale-app-shell
+        :brand-title="brandTitle"
         :main-navigation="mainNavigation"
         :icon-navigation="iconNavigation"
         :sector-navigation="sectorNavigation"
@@ -74,6 +81,7 @@ export const Template = (args, { argTypes }) => ({
     inline={false}
     height={500}
     args={{
+      brandTitle: '',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -91,6 +99,7 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-app-shell
+  :brand-title="brandTitle"
   :main-navigation="mainNavigation"
   :icon-navigation="iconNavigation"
   :sector-navigation="sectorNavigation"
