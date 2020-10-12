@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.0...v1.11.1) (2020-10-12)
+
+**Note:** Version bump only for package @scaleds/html-to-sketch
+
+
+
+
+
 ## [0.1.4](https://github.com/telekom/scale/compare/v0.1.3...v0.1.4) (2020-04-29)
 
 **Note:** Version bump only for package @scaleds/html-to-sketch
