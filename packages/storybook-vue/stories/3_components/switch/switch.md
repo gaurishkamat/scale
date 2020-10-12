@@ -1,22 +1,31 @@
 # Switch
 
-With switches, users can easily toggle between the on and off state of a setting.
+Switches allow users to quickly turn an item on or off. Like a physical light switch, they provide an immediate result.
 
 ## General
 
-### When to Use
+A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value. A solid Magenta color shows it is on, while a dark outline shows it is off.
 
-Switches are only used for binary actions that occur immediately after the user “flips” the switch. They are commonly used for “on/off” switches.
+![Image Name](/assets/3_components/switch/switch.png)
 
-![Image Name](/assets/3_components/switch/image-20200810093225678.png)
+### When to use
 
-## Elemets
+Use a switch whenever the user may want to immediately activate or deactivate something. It is commonly used as an on/off switch, e.g., to control preferences.
 
-### Label
+## When not to use
 
-Clearly label the switch so users know what setting they are manipulating e.g. "dark mode".
+Use radio buttons or a single checkbox if
 
-## Related Components
+* the user has to confirm by saving or submitting to apply the new state or
+* immediate results are not possible.
+
+## Label
+
+Clearly label the switch and keep it short. For some use cases, a single noun provides the best guidance.
+
+![Image Name](/assets/3_components/switch/switch_label.png)
+
+## Related components
 
 Checkbox, Select Box, Radio Button
 
