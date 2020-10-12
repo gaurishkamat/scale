@@ -89,14 +89,16 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       },
       ...args
     });
-    symbol.groupLayout = {
-      _class: "MSImmutableInferredGroupLayout",
-      axis: 0,
-      layoutAnchor: 0,
-      maxSize: 0,
-      minSize: 0
-    };
-    if (symbol.layers && symbol.layers[0]) {
+    if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
+      symbol.groupLayout = {
+        "_class": "MSImmutableInferredGroupLayout",
+        "axis": 0,
+        "layoutAnchor": 0,
+        "maxSize": 0,
+        "minSize": 0
+      };
+    }
+    if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
     }
     return symbol;
@@ -346,8 +348,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       });
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
-        symbol = symbolMaster({...enhanced});
-        symbol.name = getSymbolName(enhanced.name);
+        symbol = symbolMaster({...enhanced, name: getSymbolName(enhanced.name)});
         symbol.stableSymbolName = enhanced.stableSymbolName || symbol.name;
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
@@ -362,13 +363,15 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        symbol.groupLayout = {
-          "_class": "MSImmutableInferredGroupLayout",
-          "axis": 0,
-          "layoutAnchor": 0,
-          "maxSize": 0,
-          "minSize": 0
-        };
+        if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
+          symbol.groupLayout = {
+            "_class": "MSImmutableInferredGroupLayout",
+            "axis": 0,
+            "layoutAnchor": 0,
+            "maxSize": 0,
+            "minSize": 0
+          };
+        }
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
