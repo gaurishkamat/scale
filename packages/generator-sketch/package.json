@@ -9,7 +9,8 @@
     "inject": "node ./src/inject.js",
     "sketch.json": "node ./src/index.js",
     "sketch-dev": "yarn build && yarn sketch",
-    "sketch": "node ./src/sketch-cmd.js"
+    "sketch": "node ./src/sketch-cmd.js",
+    "build-scale": "node ./src/build-scale.js"
   },
   "license": "MIT",
   "devDependencies": {
