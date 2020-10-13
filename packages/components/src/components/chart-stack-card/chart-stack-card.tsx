@@ -52,7 +52,8 @@ export class ChartStackCard implements Base {
               '&:after': {
                 content: "''",
                 display: 'block',
-                background: 'linear-gradient(0deg, white, transparent)',
+                background:
+                  'linear-gradient(0deg, white, rgba(255,255,255, 0))',
                 height: '2rem',
                 marginTop: '-2rem',
                 position: 'relative',
