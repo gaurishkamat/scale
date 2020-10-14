@@ -1,4 +1,5 @@
 const cp = require("child_process");
+const { SIGKILL } = require("constants");
 
 // Starts the components-sketch server
 console.log("Starting dev server");
@@ -9,5 +10,5 @@ setTimeout(() => {
     console.log("Got URLs", urls);
     console.log("Generating Sketch document");
     cp.execFileSync("yarn", ["sketch", "scale-components-telekom", ...urls], {stdio: [0, 1, 2]});
-    server.kill();
+    server.kill(SIGKILL);
 }, 1000);

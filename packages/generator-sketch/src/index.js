@@ -97,6 +97,10 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         "maxSize": 0,
         "minSize": 0
       };
+    } else {
+      if (symbol.layers && symbol.layers[0]) {
+        symbol.layers[0].resizingConstraint = 45;
+      }
     }
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
@@ -363,20 +367,14 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
-          symbol.groupLayout = {
-            "_class": "MSImmutableInferredGroupLayout",
-            "axis": 0,
-            "layoutAnchor": 0,
-            "maxSize": 0,
-            "minSize": 0
-          };
-        }
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
+        if (/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
+          instance.resizingConstraint = 45;
+        }
       }
       return instance;
     }
@@ -384,9 +382,13 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   }
 
   function simplifyTree(node, parent) {
-    if (node.layers && !node.isSymbol) {
+    // todo merge text nodes with  parents so  that 
+    // text  overrides don't resize the container  boxes  in  a  most  annoying fashion
+    //  
+    // 
+    if (node.layers) {
       node.layers.forEach(l => simplifyTree(l, node));
-      if ((node.name == 'div' || node.layers.length == 1) && parent) {
+      if ((node.name == 'div' || node.layers.length == 1) && parent && !node.isSymbol) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
