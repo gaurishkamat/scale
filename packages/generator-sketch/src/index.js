@@ -382,10 +382,6 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   }
 
   function simplifyTree(node, parent) {
-    // todo merge text nodes with  parents so  that 
-    // text  overrides don't resize the container  boxes  in  a  most  annoying fashion
-    //  
-    // 
     if (node.layers) {
       node.layers.forEach(l => simplifyTree(l, node));
       if ((node.name == 'div' || node.layers.length == 1) && parent && !node.isSymbol) {

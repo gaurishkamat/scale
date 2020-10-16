@@ -190,9 +190,9 @@
             } / ${
                 order(2, btn.hasAttribute('label') ? 'Label On' : 'Label Off')
             } / ${
-                order(1, btn.hasAttribute('show-value') ? 'Counter On' : 'Counter Off')
+                order(1, btn.hasAttribute('show-value') ? 'Counter Off' : 'Counter On')
             } / ${
-                order(4, getStateName(btn))
+                order(4, btn.hasAttribute('disabled') ? 'Disabled' : (btn.hasAttribute('custom-color') ? 'Custom Color' : 'Normal'))
             }`;
     });
 </script>
