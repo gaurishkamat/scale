@@ -1,4 +1,3 @@
 import { JssStyle } from 'jss';
 
-export const styles: JssStyle = {
-};
+export const styles: JssStyle = {};

@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core'
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -7,15 +7,10 @@ import classNames from 'classnames';
   shadow: false,
 })
 export class ChartLine {
-  /** (optional) Custom class */
-
   /** Chart Data */
   @Prop() data: string | Array<Record<'type' | 'value' | 'percentage', string>>;
-  /** Chart Title */
-
   componentWillUpdate() {}
   componentDidUnload() {}
-
   readData = data => {
     try {
       return Array.isArray(JSON.parse(data)) ? JSON.parse(data) : [];
@@ -23,21 +18,11 @@ export class ChartLine {
       return Array.isArray(data) ? data : [];
     }
   };
-
-
-
   render() {
-    return (
-      <Host class={this.getCssClassMap()}>
-       
-       
-      </Host>
-    );
+    return <Host class={this.getCssClassMap()}></Host>;
   }
 
   getCssClassMap(): CssClassMap {
-    return classNames(
-      
-    );
+    return classNames();
   }
 }
