@@ -1,4 +1,4 @@
-<div data-sketch-artboard="Slider Track Small" class="artboard">
+<div data-sketch-artboard="Slider Track Small" class="artboard" data-category="Small">
     <h1 class="title--artboard">Slider Track Small</h1>
 
     <h2 class="title--artboard-section">Label On - Counter On</h2>
@@ -90,7 +90,7 @@
     </div>
 </div>
 
-<div data-sketch-artboard="Slider Track Large" class="artboard">
+<div data-sketch-artboard="Slider Track Large" class="artboard" data-category="Large">
     <h1 class="title--artboard">Slider Track Large</h1>
 
     <h2 class="title--artboard-section">Label On - Counter On</h2>
@@ -185,12 +185,14 @@
 <script src="/symbol_names.js"></script>
 <script>
     Array.from(document.querySelectorAll("scale-slider")).forEach(btn => {
-      /*
         btn.dataset.sketchSymbol = `Slider / ${
-                order(1, btn.hasAttribute('active') ? 'Selected On' : 'Selected Off')
+                order(0, getCategoryName(btn))
+            } / ${
+                order(2, btn.hasAttribute('label') ? 'Label On' : 'Label Off')
+            } / ${
+                order(1, btn.hasAttribute('show-value') ? 'Counter On' : 'Counter Off')
             } / ${
                 order(4, getStateName(btn))
             }`;
-      */
     });
 </script>
