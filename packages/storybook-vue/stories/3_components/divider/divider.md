@@ -1,6 +1,6 @@
 # Divider
 
-A divider is a thin line that separates content into groups. This way coherent content is more identifiable to the user.
+A divider is a thin line that helps to divide elements into groups. This makes it easy for users to identify different areas of the content.
 
 ## Variants
 
