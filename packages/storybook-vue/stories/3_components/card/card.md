@@ -4,7 +4,7 @@ Cards group related pieces of information together and represent one conceptiona
 
 ## General
 
-Cards can hold any kind of content in a flexibly sized container. One card communicates one message. A card stands on its own and requires no additional context.
+Cards can hold any kind of content in a flexibly sized container. One card communicates one message. A card is an independent piece of content that requires no additional context.
 
 ![Image Name](/assets/3_components/card/cards_general.png)
 
