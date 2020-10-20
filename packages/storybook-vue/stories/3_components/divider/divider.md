@@ -9,6 +9,7 @@ Dividers have a subtle visual effect – visible but never dominant.
 ### When to use
 
 Only use a divider when there is not enough whitespace to clearly form groups of content. For instance:
+
 *	when there are too many elements to group in the available whitespace or
 *	when there is almost no whitespace available to group content together.
 
