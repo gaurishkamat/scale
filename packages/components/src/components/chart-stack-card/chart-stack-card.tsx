@@ -35,9 +35,7 @@ export class ChartStackCard implements Base {
   };
 
   getOpacity(item, index) {
-    return JSON.stringify(
-      index === 0   ? 1 : +item.percentage/100     
-    );
+    return JSON.stringify(index === 0 ? 1 : +item.percentage / 100);
   }
 
   render() {
@@ -63,31 +61,30 @@ export class ChartStackCard implements Base {
         >
           <div class="header">{this.heading}</div>
           <div class="bar">
-            {this.readData(this.data).sort((a,b)=>b.percentage -a.percentage).map((item, index) => {
-              if(+item.percentage > 0){
-                return (
-          
-              <div
-                class="bar__item"
-                style={{
-                  opacity:this.getOpacity(item,index),
-                  flex: JSON.stringify(
-                    +item.percentage
-                  ),
-                }}
-              />
-            )}})}
+            {this.readData(this.data)
+              .sort((a, b) => b.percentage - a.percentage)
+              .map((item, index) => {
+                if (+item.percentage > 0) {
+                  return (
+                    <div
+                      class="bar__item"
+                      style={{
+                        opacity: this.getOpacity(item, index),
+                        flex: JSON.stringify(+item.percentage),
+                      }}
+                    />
+                  );
+                }
+              })}
           </div>
-          
+
           <div class="legend">
             {this.readData(this.data).map((item, index) => (
-              
               <div class="legend__row">
                 <div class="legend__row__item">
                   <div
-                    class="legend__item" 
+                    class="legend__item"
                     style={{
-                    
                       opacity: this.getOpacity(item, index),
                     }}
                   />
