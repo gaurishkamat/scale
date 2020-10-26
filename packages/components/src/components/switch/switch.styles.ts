@@ -36,7 +36,7 @@ export const styles: JssStyle = {
         width: '100%',
         padding: '0 6px 0 8px',
         '&:before': {
-          fontSize: 12,
+          fontSize: ({ type }) => type.size_2,
           content: '"0"',
         },
       },
@@ -68,7 +68,7 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-start',
         '&:before': {
-          fontSize: 12,
+          fontSize: ({ type }) => type.size_2,
           content: '"I"',
         },
       },
@@ -95,7 +95,7 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-start',
         '&:before': {
-          fontSize: 12,
+          fontSize: ({ type }) => type.size_2,
           content: '"I"',
         },
       },
@@ -124,7 +124,7 @@ export const styles: JssStyle = {
       '& .text': {
         justifyContent: 'flex-end',
         '&:before': {
-          fontSize: 12,
+          fontSize: ({ type }) => type.size_2,
           content: '"0"',
         },
       },

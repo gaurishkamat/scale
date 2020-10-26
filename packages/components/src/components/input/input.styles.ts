@@ -29,7 +29,7 @@ const checkBoxCheckedIcon = {
 };
 
 const bold = {
-  fontWeight: ({ font }) => font.weight_bold,
+  fontWeight: ({ type }) => type.weight_bold,
 };
 
 const defaultTransition = 'all 0.2s ease-in-out';

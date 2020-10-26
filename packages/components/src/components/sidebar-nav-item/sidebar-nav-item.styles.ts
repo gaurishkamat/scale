@@ -29,7 +29,7 @@ export const styles: JssStyle = {
     color: '#E20074',
   },
   'sidebar-nav-item--bold': {
-    fontWeight: ({ font }) => font.weight_bold,
+    fontWeight: ({ type }) => type.weight_bold,
   },
   'sidebar-nav-item--condensed': {
     borderBottomWidth: 0,

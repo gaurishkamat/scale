@@ -20,7 +20,7 @@ export const styles: JssStyle = {
   toast__header: {
     padding: '1rem',
     borderBottom: '1px solid #ccc',
-    fontSize: '1.25rem',
+    fontSize: ({ type }) => type.size_4,
     margin: 0,
     justifyContent: 'space-between',
     display: 'flex',
@@ -28,7 +28,7 @@ export const styles: JssStyle = {
       cursor: 'pointer',
     },
     '& small': {
-      fontSize: '0.8rem',
+      fontSize: ({ typeVariants }) => typeVariants.smaller.fontSize,
       marginLeft: '120px',
       marginTop: '5px',
     },

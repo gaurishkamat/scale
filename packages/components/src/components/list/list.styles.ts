@@ -14,7 +14,7 @@ export const styles: JssStyle = {
     },
     '& ::slotted(li)::before': {
       content: 'counter(scale-counter) "."',
-      fontWeight: ({ font }) => font.weight_bold,
+      fontWeight: ({ type }) => type.weight_bold,
       paddingRight: ({ spacing }) => spacing.inline,
     },
   },

@@ -39,6 +39,6 @@ export const styles: JssStyle = {
     },
   },
   current: {
-    fontWeight: ({ font }) => font.weight_extrabold,
+    fontWeight: ({ type }) => type.weight_extrabold,
   },
 };

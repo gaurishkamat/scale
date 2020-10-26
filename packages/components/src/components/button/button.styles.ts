@@ -9,11 +9,12 @@ export const styles: JssStyle = {
     border: 'none',
     borderRadius: 8,
     outline: 'none',
-    fontFamily: ({ font }) => font.family,
-    fontWeight: ({ font }) => font.weight_bold,
-    fontSize: '1rem',
+    fontFamily: ({ type }) => type.family,
+    fontWeight: ({ type }) => type.weight_bold,
+    fontSize: ({ type }) => type.size_3,
+    lineHeight: ({ type }) => type.leading_5,
     textTransform: 'none',
-    letterSpacing: '0.02857em',
+    letterSpacing: '0.02857em', // TODO probably remove
     transition: theme => getTransition(theme, 'all', 'shorter', 'easeInOut'),
     boxSizing: 'border-box',
     position: 'relative',
@@ -34,7 +35,6 @@ export const styles: JssStyle = {
     paddingBottom: 8,
     height: 'unset',
     minHeight: 40,
-    lineHeight: '24px',
     whiteSpace: 'nowrap',
     '&:before': {
       width: 0,
@@ -120,8 +120,8 @@ export const styles: JssStyle = {
     },
   },
   'button--size-small': {
-    fontSize: 12,
-    lineHeight: '16px',
+    fontSize: ({ typeVariants }) => typeVariants.smaller.fontSize,
+    lineHeight: ({ typeVariants }) => typeVariants.smaller.lineHeight,
     minHeight: 32,
     '&$button--icon-only': {
       minWidth: 32,
