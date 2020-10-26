@@ -28,12 +28,29 @@ const GRAY_9_DECORATIVE = '#F4F4F4';
 /* Typography */
 
 const FONT_FAMILY = 'TeleNeoWeb';
+const FONT_FAMILY_MONO = 'Office Code Pro D'; // https://github.com/nathco/Office-Code-Pro
 
 const FONT_WEIGHT_THIN = 100;
 const FONT_WEIGHT_REGULAR = 400;
 const FONT_WEIGHT_MEDIUM = 500;
 const FONT_WEIGHT_BOLD = 700;
 const FONT_WEIGHT_EXTRABOLD = 800;
+
+const FONT_SIZE_1 = 0.625; // 10px
+const FONT_SIZE_2 = 0.75; // 12px
+const FONT_SIZE_3 = 1; // 16px
+const FONT_SIZE_4 = 1.25; // 20px
+const FONT_SIZE_5 = 1.5; // 24px
+const FONT_SIZE_6 = 2; // 32px
+const FONT_SIZE_7 = 2.5; // 40px
+const FONT_SIZE_8 = 3.5; // 56px
+
+const LEADING_1 = 1.1428571429; // 64/56
+const LEADING_2 = 1.2; //  40/32, 48/40
+const LEADING_3 = 1.25; // 20/16, 25/20
+const LEADING_4 = 1.3333; // 16/12, 32/24
+const LEADING_5 = 1.5; // 24/16
+const LEADING_6 = 1.6; // 32/20, 25/20
 
 /* Spacing, in rem units */
 
@@ -86,6 +103,28 @@ const SHADOW_LEVEL_5_ACTIVE =
 
 const rem = (x: number) => `${x}rem`;
 
+export type FontVariant = {
+  fontFamily: string,
+  fontSize: string, // rem
+  lineHeight: number,
+  fontWeight: number,
+  letterSpacing: number
+}
+
+export const fontVariant = (
+  size: number = FONT_SIZE_3,
+  leading: number = LEADING_5,
+  weight: number = FONT_WEIGHT_MEDIUM,
+  family: string = '',
+  tracking: number = 0
+): FontVariant => ({
+  fontFamily: family,
+  fontSize: rem(size),
+  lineHeight: leading,
+  fontWeight: weight,
+  letterSpacing: tracking
+});
+
 // ACTUAL TOKENS
 
 const color = {
@@ -117,14 +156,60 @@ const background = {
   card: WHITE,
 };
 
-const font = {
+const type = { 
   family: FONT_FAMILY,
+  family_mono: FONT_FAMILY_MONO,
+  size_0: 0,
+  size_1: rem(FONT_SIZE_1),
+  size_2: rem(FONT_SIZE_2),
+  size_3: rem(FONT_SIZE_3),
+  size_4: rem(FONT_SIZE_4),
+  size_5: rem(FONT_SIZE_5),
+  size_6: rem(FONT_SIZE_6),
+  size_7: rem(FONT_SIZE_7),
+  size_8: rem(FONT_SIZE_8),
+  leading_1: LEADING_1,
+  leading_2: LEADING_2,
+  leading_3: LEADING_3,
+  leading_4: LEADING_4,
+  leading_5: LEADING_5,
+  leading_6: LEADING_6,
   weight_thin: FONT_WEIGHT_THIN,
   weight_regular: FONT_WEIGHT_REGULAR,
   weight_medium: FONT_WEIGHT_MEDIUM,
   weight_bold: FONT_WEIGHT_BOLD,
   weight_extrabold: FONT_WEIGHT_EXTRABOLD,
   weight_button: FONT_WEIGHT_BOLD,
+};
+
+const typeVariants = {
+  label: fontVariant(FONT_SIZE_2, LEADING_4),
+  label_floating: fontVariant(FONT_SIZE_1, LEADING_2),
+  code: fontVariant(FONT_SIZE_2, LEADING_4, FONT_WEIGHT_REGULAR),
+  caption: fontVariant(FONT_SIZE_2, LEADING_4),
+  helper_text: fontVariant(FONT_SIZE_2, LEADING_4),
+  smaller: fontVariant(FONT_SIZE_2, LEADING_4),
+  body: fontVariant(FONT_SIZE_3, LEADING_5),
+  body_long: fontVariant(FONT_SIZE_3, LEADING_5),
+  body_short: fontVariant(FONT_SIZE_3, LEADING_3),
+  body_large: fontVariant(FONT_SIZE_4, LEADING_6),
+  h6: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
+  h5: fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+  h4: fontVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
+  h3: fontVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h2: fontVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h1: fontVariant(FONT_SIZE_8, LEADING_1, FONT_WEIGHT_EXTRABOLD),
+  h6_mobile: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_BOLD),
+  h5_mobile: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
+  h4_mobile: fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+  h3_mobile: fontVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
+  h2_mobile: fontVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h1_mobile: fontVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  // TODO remove by removing scale-text from collapsible usage, and using plain span
+  collapsible: {
+    ...fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+    marginBottom: 0,
+  },
 };
 
 const spacing = {
@@ -214,10 +299,14 @@ const transition = {
   generic: 'all .2s ease-in-out',
 };
 
+/**
+ * @todo use types to document *all* tokens?
+ */
 export const tokens = {
   color,
   background,
-  font,
+  type,
+  typeVariants,
   spacing,
   size,
   shadow,
