@@ -45,3 +45,11 @@
 .mega-menu__row-item:hover {
   color: #e20074;
 }
+
+.mega-menu__row li {
+  list-style: none;
+}
+
+.mega-menu__row ul {
+  padding-inline-start: 0;
+}

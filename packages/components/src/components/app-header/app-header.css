@@ -310,7 +310,7 @@
     height: 100%;
     padding-left: 16px;
     padding-right: 16px;
-    cursor: default;
+    cursor: pointer;
   }
 
   .header .main-navigation .main-navigation__item:has(a[href]) {

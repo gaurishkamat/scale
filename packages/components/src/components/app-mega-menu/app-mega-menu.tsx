@@ -16,29 +16,38 @@ export class MegaMenu {
         <div class="mega-menu__wrapper">
           <div class="mega-menu__container">
             {this.navigation.map(child => (
-              <div class="mega-menu__row">
-                <div class="mega-menu__row-title">{child.name}</div>
-                {child.children &&
-                  child.children.length > 0 &&
-                  child.children.map(menuItem => (
-                    <div>
-                      <a
-                        class={`mega-menu__row-item ${
-                          this.activeRouteId === menuItem.id ? 'active' : ''
-                        }`}
-                        href={menuItem.href}
-                        onClick={event => {
-                          this.hide();
-                          if (typeof menuItem.onClick === 'function') {
-                            menuItem.onClick(event);
-                          }
-                        }}
-                      >
-                        {menuItem.name}
-                      </a>
-                    </div>
-                  ))}
-              </div>
+              <ul class="mega-menu__row">
+                <li class="mega-menu__row-title">{child.name}</li>
+                <ul>
+                  {child.children &&
+                    child.children.length > 0 &&
+                    child.children.map(menuItem => (
+                      <li>
+                        <a
+                          class={`mega-menu__row-item ${
+                            this.activeRouteId === menuItem.id ? 'active' : ''
+                          }`}
+                          aria-current={this.activeRouteId === menuItem.id}
+                          href={menuItem.href}
+                          tabIndex={0}
+                          onClick={event => {
+                            this.hide();
+                            if (typeof menuItem.onClick === 'function') {
+                              menuItem.onClick(event);
+                            }
+                          }}
+                          onKeyDown={event => {
+                            if (['Escape', 'Esc'].includes(event.key)) {
+                              this.hide();
+                            }
+                          }}
+                        >
+                          {menuItem.name}
+                        </a>
+                      </li>
+                    ))}
+                </ul>
+              </ul>
             ))}
           </div>
         </div>

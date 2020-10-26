@@ -49,21 +49,23 @@ export class Header {
 
   menuMain() {
     const rootNode = findRootNode(this.mainNavigation, this.activeRouteId);
+    const isActive = item =>
+      rootNode &&
+      rootNode.id === item.id &&
+      !this.visibleMegaMenu &&
+      this.visibleMegaMenu !== null;
     return (
       <ul class="main-navigation">
         {this.mainNavigation.map(item => (
           <li
             class={classNames(
               'main-navigation__item',
-              this.visibleMegaMenu === item.name && 'mega-menu--visible',
-              rootNode &&
-                rootNode.id === item.id &&
-                !this.visibleMegaMenu &&
-                this.visibleMegaMenu !== null &&
-                'selected'
+              this.visibleMegaMenu === item.id && 'mega-menu--visible',
+              isActive(item) && 'selected'
             )}
+            aria-current={isActive(item)}
             onMouseEnter={() => {
-              this.visibleMegaMenu = item.children ? item.name : null;
+              this.visibleMegaMenu = item.children ? item.id : null;
             }}
             onMouseLeave={() => {
               this.visibleMegaMenu = '';
@@ -80,18 +82,30 @@ export class Header {
                   item.onClick(event);
                 }
               }}
+              onKeyDown={event => {
+                if (event.key === 'Enter') {
+                  this.visibleMegaMenu =
+                    !this.visibleMegaMenu && item.children ? item.name : null;
+                }
+                if (['Escape', 'Esc'].includes(event.key)) {
+                  this.visibleMegaMenu = null;
+                }
+              }}
+              tabIndex={0}
             >
               <span class="main-navigation__item-link-text">{item.name}</span>
             </a>
-            {item.children && item.children.length > 0 && (
-              <app-mega-menu
-                navigation={item.children}
-                hide={() => {
-                  this.visibleMegaMenu = '';
-                }}
-                activeRouteId={this.activeRouteId}
-              ></app-mega-menu>
-            )}
+            {item.children &&
+              item.children.length > 0 &&
+              this.visibleMegaMenu === item.id && (
+                <app-mega-menu
+                  navigation={item.children}
+                  hide={() => {
+                    this.visibleMegaMenu = '';
+                  }}
+                  activeRouteId={this.activeRouteId}
+                ></app-mega-menu>
+              )}
           </li>
         ))}
       </ul>
