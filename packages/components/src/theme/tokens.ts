@@ -103,26 +103,26 @@ const SHADOW_LEVEL_5_ACTIVE =
 
 const rem = (x: number) => `${x}rem`;
 
-export type FontVariant = {
-  fontFamily: string,
-  fontSize: string, // rem
-  lineHeight: number,
-  fontWeight: number,
-  letterSpacing: number
+export interface FontVariant {
+  fontFamily: string;
+  fontSize: string; // rem
+  lineHeight: number;
+  fontWeight: number;
+  letterSpacing: number;
 }
 
 export const fontVariant = (
-  size: number = FONT_SIZE_3,
-  leading: number = LEADING_5,
-  weight: number = FONT_WEIGHT_MEDIUM,
-  family: string = '',
-  tracking: number = 0
+  fontSize: number = FONT_SIZE_3,
+  lineHeight: number = LEADING_5,
+  fontWeight: number = FONT_WEIGHT_MEDIUM,
+  fontFamily: string = '',
+  letterSpacing: number = 0
 ): FontVariant => ({
-  fontFamily: family,
-  fontSize: rem(size),
-  lineHeight: leading,
-  fontWeight: weight,
-  letterSpacing: tracking
+  fontFamily,
+  fontSize: rem(fontSize),
+  lineHeight,
+  fontWeight,
+  letterSpacing,
 });
 
 // ACTUAL TOKENS
@@ -156,7 +156,7 @@ const background = {
   card: WHITE,
 };
 
-const type = { 
+const type = {
   family: FONT_FAMILY,
   family_mono: FONT_FAMILY_MONO,
   size_0: 0,
