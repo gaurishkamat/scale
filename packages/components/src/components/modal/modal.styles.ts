@@ -57,8 +57,7 @@ export const styles: JssStyle = {
       fontSize: '1.25rem',
       // color: '#161616',
       margin: 0,
-      // fontWeight: 'bold',
-      fontFamily: 'TeleNeoWeb-ExtraBold',
+      fontWeight: ({ font }) => font.weight_extrabold,
     },
   },
   'modal__header-scroll': {

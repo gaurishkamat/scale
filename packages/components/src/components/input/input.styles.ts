@@ -29,7 +29,7 @@ const checkBoxCheckedIcon = {
 };
 
 const bold = {
-  fontFamily: 'TeleNeoWeb-Bold',
+  fontWeight: ({ font }) => font.weight_bold,
 };
 
 const defaultTransition = 'all 0.2s ease-in-out';

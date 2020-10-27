@@ -59,8 +59,8 @@ exports[`Slider should match snapshot 1`] = `
 .slider-0-0-5 .slider--display-value {
   color: #6c6c6c;
   font-size: 12px;
-  font-family: TeleNeoWeb-Bold;
   margin-left: 24px;
+  font-weight: 700;
 }
 .slider-0-0-5 .slider--thumb:hover {
   border-color: #F90984;

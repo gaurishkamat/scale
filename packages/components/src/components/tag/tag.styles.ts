@@ -7,7 +7,6 @@ export const styles: JssStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 16,
-    fontWeight: 400,
     lineHeight: '24px',
     textAlign: 'center',
     whiteSpace: 'nowrap',
@@ -18,7 +17,7 @@ export const styles: JssStyle = {
     color: ({ palette }) => palette.white,
     '--icon-color': ({ palette }) => palette.white,
     padding: '0 10px',
-    fontFamily: 'TeleNeoWeb-Bold',
+    fontWeight: ({ font }) => font.weight_bold,
     '& scale-icon': {
       marginLeft: 2,
     },

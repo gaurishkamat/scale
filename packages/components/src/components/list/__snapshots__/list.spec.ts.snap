@@ -13,7 +13,7 @@ exports[`List should match snapshot 1`] = `
 }
 .list--variant-ordered-0-0-4 ::slotted(li)::before {
   content: counter(scale-counter) ".";
-  font-family: TeleNeoWeb-Bold;
+  font-weight: 700;
   padding-right: 0.5rem;
 }
     </style>
