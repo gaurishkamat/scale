@@ -89,7 +89,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       },
       ...args
     });
-    if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
+    if (!/^(Icon|(Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
       symbol.groupLayout = {
         "_class": "MSImmutableInferredGroupLayout",
         "axis": 0,
@@ -101,6 +101,17 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       if (symbol.layers && symbol.layers[0]) {
         symbol.layers[0].resizingConstraint = 45;
       }
+    }
+    if (/^Card/.test(symbol.name)) {
+      symbol.layers[0].layers[1].resizingConstraint = 18;      
+    }
+    if (/^Radio|Checkbox/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
+      symbol.layers[0].layers[0].resizingConstraint = 9;
+      symbol.layers[0].layers[1].resizingConstraint = 11;
+    }
+    if (/^Button|Switch/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
     }
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
@@ -337,19 +348,22 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       // Try to create a symbol instance.
       // If the symbol is too different, we create a master symbol instead below.
       let instance;
-      let symbol = false && symbolArray.find(master => {
-        if (master.variant !== enhanced.variant) return false;
-        instance = master.createInstance({name: enhanced.name});
-        instance.frame = new Rect(enhanced.frame);
-        instance.style = new Style(enhanced.style);
-        try {
-          isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-          fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
-          return true;
-        } catch (err) {
-          return false;
-        }
-      });
+      let symbol = false;
+      
+      // && symbolArray.find(master => {
+      //   if (master.variant !== enhanced.variant) return false;
+      //   instance = master.createInstance({name: enhanced.name});
+      //   instance.frame = new Rect(enhanced.frame);
+      //   instance.style = new Style(enhanced.style);
+      //   try {
+      //     isSymbolInstanceOf(instance, master, enhanced, '', master.name);
+      //     fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
+      //     return true;
+      //   } catch (err) {
+      //     return false;
+      //   }
+      // });
+      
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
         symbol = symbolMaster({...enhanced, name: getSymbolName(enhanced.name)});
@@ -357,11 +371,11 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
         if (symbolNameToIdMap[symbol.stableSymbolName]) {
-          console.log("Reusing symbol ID:", symbol.stableSymbolName, '-', symbol.name, "-", symbolNameToIdMap[symbol.stableSymbolName].symbolID, "-", symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier);
+          // console.log("Reusing symbol ID:", symbol.stableSymbolName, '-', symbol.name, "-", symbolNameToIdMap[symbol.stableSymbolName].symbolID, "-", symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier);
           symbol.symbolID = symbolNameToIdMap[symbol.stableSymbolName].symbolID;
           symbol.changeIdentifier = (symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier || 0) + 1;
         } else {
-          console.log("Creating symbol ID:", symbol.stableSymbolName, symbol.changeIdentifier || 0);
+          // console.log("Creating symbol ID:", symbol.stableSymbolName, symbol.changeIdentifier || 0);
         }
         symbolNameToIdMap[symbol.stableSymbolName] = {symbolID: symbol.symbolID, changeIdentifier: symbol.changeIdentifier || 0};
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
@@ -372,7 +386,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
-        if (/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
+        if (/^(Icon|(Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
           instance.resizingConstraint = 45;
         }
       }
