@@ -49,5 +49,3 @@ When checking a box is required, use an asterisk (*) in the text label.
 ## Related components
 
 Select Box, Switch, Radio Button
-
-## Code

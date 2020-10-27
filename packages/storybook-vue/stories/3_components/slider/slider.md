@@ -42,5 +42,3 @@ Use the default color or assign a custom color. When customizing, use a color-co
 - Range values are used to describe the range in numbers.
 - Do not use for extremely large ranges i.e. 1-1000.
 - Do not use for extremely small ranges i.e. 1-3.
-
-## Code

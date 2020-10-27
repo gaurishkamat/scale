@@ -62,5 +62,3 @@ You can design cards for a variety of situations. The purpose of the card compon
 ## Related components
 
 Divider, Data Table
-
-## Code

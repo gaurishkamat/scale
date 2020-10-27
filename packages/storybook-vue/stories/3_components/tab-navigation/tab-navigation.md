@@ -55,5 +55,3 @@ Be aware that icons only may not clearly convey the tab content. Different users
 ## Related Components
 
 Icons
-
-## Code

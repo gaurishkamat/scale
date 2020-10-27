@@ -50,5 +50,3 @@ Use the default color or assign a custom color. When customizing, use a color-co
 #### Error
 
 ![Image Name](/assets/3_components/progress-bar/image-20200811100945283.png)
-
-## Code

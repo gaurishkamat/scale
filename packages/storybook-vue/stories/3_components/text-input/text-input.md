@@ -71,5 +71,3 @@ Use large fields as the default option.
 When space is limited, consistently use small size elements.
 
 ![Image Name](/assets/3_components/text-input/image-20200811100024147.png)
-
-## Code
