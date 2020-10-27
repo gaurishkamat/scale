@@ -46,13 +46,13 @@ export class AppMegaMenu {
 import { MainNavigationMobile as IMainNavigationMobile } from '@scaleds/components-telekom/dist/types/components/app-navigation-main-mobile/app-navigation-main-mobile';
 export declare interface AppNavigationMainMobile extends Components.AppNavigationMainMobile {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'navigation']
 })
 @Component({
   selector: 'app-navigation-main-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'navigation'],
+  inputs: ['activeRouteId', 'hide', 'navigation'],
   outputs: ['closeMenu']
 })
 export class AppNavigationMainMobile {
@@ -69,13 +69,13 @@ export class AppNavigationMainMobile {
 
 export declare interface AppNavigationSectorMobile extends Components.AppNavigationSectorMobile {}
 @ProxyCmp({
-  inputs: ['activeSectorId', 'navigation']
+  inputs: ['activeSectorId', 'hide', 'navigation']
 })
 @Component({
   selector: 'app-navigation-sector-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeSectorId', 'navigation']
+  inputs: ['activeSectorId', 'hide', 'navigation']
 })
 export class AppNavigationSectorMobile {
   protected el: HTMLElement;

@@ -21,10 +21,12 @@ export namespace Components {
     }
     interface AppNavigationMainMobile {
         "activeRouteId": string;
+        "hide": () => void;
         "navigation": MenuItem[];
     }
     interface AppNavigationSectorMobile {
         "activeSectorId"?: string;
+        "hide": () => void;
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
@@ -1072,11 +1074,13 @@ declare namespace LocalJSX {
     }
     interface AppNavigationMainMobile {
         "activeRouteId"?: string;
+        "hide"?: () => void;
         "navigation"?: MenuItem[];
         "onCloseMenu"?: (event: CustomEvent<any>) => void;
     }
     interface AppNavigationSectorMobile {
         "activeSectorId"?: string;
+        "hide"?: () => void;
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {

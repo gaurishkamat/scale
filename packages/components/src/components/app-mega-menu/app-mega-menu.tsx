@@ -28,7 +28,7 @@ export class MegaMenu {
                             this.activeRouteId === menuItem.id ? 'active' : ''
                           }`}
                           aria-current={this.activeRouteId === menuItem.id}
-                          href={menuItem.href}
+                          href={menuItem.href || 'javascript:void(0);'}
                           tabIndex={0}
                           onClick={event => {
                             this.hide();

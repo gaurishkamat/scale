@@ -62,9 +62,9 @@ export class Shell {
             activeRouteId={this.activeRouteId}
             activeSectorId={this.activeSectorId}
           ></scale-app-header>
-          <div class="content">
+          <main class="content">
             <slot></slot>
-          </div>
+          </main>
         </div>
       </Host>
     );

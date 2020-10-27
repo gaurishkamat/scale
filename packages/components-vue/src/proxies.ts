@@ -78,6 +78,7 @@ export const AppMegaMenu = /*@__PURE__*/ Vue.extend({
 export const AppNavigationMainMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
+    hide: {} as PropOptions<Components.AppNavigationMainMobile['hide']>,
     navigation: {} as PropOptions<Components.AppNavigationMainMobile['navigation']>,
     activeRouteId: {} as PropOptions<Components.AppNavigationMainMobile['activeRouteId']>,
   },
@@ -90,6 +91,7 @@ export const AppNavigationMainMobile = /*@__PURE__*/ Vue.extend({
 export const AppNavigationSectorMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
+    hide: {} as PropOptions<Components.AppNavigationSectorMobile['hide']>,
     navigation: {} as PropOptions<Components.AppNavigationSectorMobile['navigation']>,
     activeSectorId: {} as PropOptions<Components.AppNavigationSectorMobile['activeSectorId']>,
   },

@@ -6,6 +6,7 @@ import { MenuItem } from '../app-interfaces';
   styleUrl: 'app-navigation-sector-mobile.css',
 })
 export class NavigationSectorMobile {
+  @Prop() hide: () => void;
   @Prop() navigation: MenuItem[];
   @Prop() activeSectorId?: string;
   @State() selected: MenuItem =
@@ -36,8 +37,14 @@ export class NavigationSectorMobile {
                   ? ' sector-navigation-mobile__item-link--selected'
                   : ''
               }`}
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               onClick={event => this.handleSelected(event, item)}
+              onKeyDown={event => {
+                if (['Escape', 'Esc'].includes(event.key)) {
+                  this.hide();
+                }
+              }}
+              aria-current={this.selected.id === item.id}
             >
               {item.name}
             </a>
