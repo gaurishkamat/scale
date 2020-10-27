@@ -83,7 +83,7 @@ export class Header {
                 }
               }}
               onKeyDown={event => {
-                if (event.key === 'Enter') {
+                if (['Enter', 'Space'].includes(event.key)) {
                   this.visibleMegaMenu =
                     !this.visibleMegaMenu && item.children ? item.name : null;
                 }
