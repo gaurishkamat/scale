@@ -60,12 +60,12 @@ export const styles: JssStyle = {
   'progress-bar__status': {
     // color: '#606266',
     fontSize: '12px',
-    fontFamily: 'TeleNeoWeb-ExtraBold',
+    fontWeight: ({ font }) => font.weight_extrabold,
     display: 'inline-block',
   },
   'progress-bar__status-description': {
     color: '#6c6c6c',
     fontSize: '12px',
-    fontFamily: 'TeleNeoWeb-Bold',
+    fontWeight: ({ font }) => font.weight_bold,
   },
 };

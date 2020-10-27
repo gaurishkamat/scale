@@ -69,7 +69,7 @@ export const styles: JssStyle = {
     },
     '& .slider--display-value': {
       marginLeft: 24,
-      fontFamily: 'TeleNeoWeb-Bold',
+      fontWeight: ({ font }) => font.weight_bold,
       fontSize: 12,
       color: '#6c6c6c',
     },
