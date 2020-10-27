@@ -46,5 +46,3 @@ Display one option as a default selection to align with user expectations and re
 ## Related components
 
 Checkbox, Switch, Select Box
-
-## Code

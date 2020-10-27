@@ -28,6 +28,3 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 ## Related components
 
 Checkbox, Select Box, Radio Button
-
-## Code
-

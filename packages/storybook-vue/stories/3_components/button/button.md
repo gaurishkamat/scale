@@ -98,5 +98,3 @@ Icons make it easier to grasp information when positioned in the right place. Fo
 ## Related components
 
 Link, Icon, Toggle
-
-## Code

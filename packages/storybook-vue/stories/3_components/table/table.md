@@ -59,5 +59,3 @@ The content of the first column should always be left-aligned. Content within ot
 ## Related Components
 
 Divider
-
-## Code

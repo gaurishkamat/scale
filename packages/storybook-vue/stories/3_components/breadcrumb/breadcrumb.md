@@ -33,8 +33,3 @@ The arrow icon visually separates the individual pages.
 
 The current page is highlighted at the right end of the breadcrumb. It has no interactive functionality.
 
-
-## Code
-
-
-

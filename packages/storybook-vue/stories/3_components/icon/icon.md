@@ -59,5 +59,3 @@ Interactive icons without a text label must always have an alt-text which screen
 ## Icon construction
 
 If you want to learn more about creating Telekom icons, please read our guidline <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/?updatePreferredLanguage=1" target="_blank">Icons for User Interfaces</a>.
-
-## Code

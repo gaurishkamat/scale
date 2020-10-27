@@ -64,5 +64,3 @@ When users can manually remove tags or categories, an X - icon can be added to t
 ## Related Components
 
 Button, Toggle
-
-## Code

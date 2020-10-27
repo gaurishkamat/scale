@@ -53,5 +53,3 @@ When space is limited, consistently use the small size form elements.
 ## Related Components
 
 Checkbox, Switch, Radio Button
-
-## Code

@@ -111,7 +111,3 @@ Websites without subpages (only one page) do not have navigation. On these pages
 #### Navigation level 3 (4)
 
 Depending on how many levels of hierarchy there are, the user navigates through further lists to the desired content.
-
-
-## Code
-

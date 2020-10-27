@@ -67,10 +67,11 @@ Due to poor legibility, use the small size in exceptional cases only.
 ![Image Name](/assets/3_components/alertbox/image-20200811081353227.png)
 
 ### Title (1)
+
 ### Icon (2) (optional)
+
 ### Close Icon (3) (optional)
+
 ### Content (4) (optional)
 
 The content can consist of almost all types of elements e.g. links, pictures. However, keep complexity limited in order to ensure good comprehensibility.
-
-## Code

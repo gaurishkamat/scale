@@ -50,5 +50,3 @@ Choose the size according to the body copy you are using.
 16px
 
 ![Image Name](/assets/3_components/link/image-20200810095443120.png)
-
-## Code
