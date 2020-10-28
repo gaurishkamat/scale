@@ -80,24 +80,24 @@ export class ChartStackCard implements Base {
 
           <div class="legend">
             {this.readData(this.data)
-            .sort((a, b) => b.percentage - a.percentage)
-            .map((item, index) => (
-              <div class="legend__row">
-                <div class="legend__row__item">
-                  <div
-                    class="legend__item"
-                    style={{
-                      opacity: this.getOpacity(item, index),
-                    }}
-                  />
-                  <div class="legend__label spacer">{item.type}</div>
+              .sort((a, b) => b.percentage - a.percentage)
+              .map((item, index) => (
+                <div class="legend__row">
+                  <div class="legend__row__item">
+                    <div
+                      class="legend__item"
+                      style={{
+                        opacity: this.getOpacity(item, index),
+                      }}
+                    />
+                    <div class="legend__label spacer">{item.type}</div>
+                  </div>
+                  <div class="legend__row__item">
+                    <div class="spacer">{item.value}</div>
+                    <div class="spacer">{item.percentage}%</div>
+                  </div>
                 </div>
-                <div class="legend__row__item">
-                  <div class="spacer">{item.value}</div>
-                  <div class="spacer">{item.percentage}%</div>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </scale-card>
       </Host>
