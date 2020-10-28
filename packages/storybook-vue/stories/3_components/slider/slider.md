@@ -10,11 +10,11 @@ Sliders allow users to view and select a value from a given range along a bar. T
 
 ### Value
 
-![Image Name](/assets/3_components/slider/image-20200810093330831.png)
+![Image Name](assets/3_components/slider/image-20200810093330831.png)
 
 ### Range
 
-![Image Name](/assets/3_components/slider/image-20200810093342268.png)
+![Image Name](assets/3_components/slider/image-20200810093342268.png)
 
 ## Elements
 
@@ -24,17 +24,17 @@ In its basic form, the slider is accompanied by a label and a number displaying 
 
 Use the default color or assign a custom color. When customizing, use a color-coding scheme that is clear to the user and supports them in their use cases.
 
-![Image Name](/assets/3_components/slider/image-20200810093401089.png)
+![Image Name](assets/3_components/slider/image-20200810093401089.png)
 
 ## Sizes
 
 ### Large
 
-![Image Name](/assets/3_components/slider/image-20200810093350850.png)
+![Image Name](assets/3_components/slider/image-20200810093350850.png)
 
 ### Small
 
-![Image Name](/assets/3_components/slider/image-20200810093330831.png)
+![Image Name](assets/3_components/slider/image-20200810093330831.png)
 
 ## Best Practice
 

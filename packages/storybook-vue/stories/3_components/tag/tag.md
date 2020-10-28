@@ -16,13 +16,13 @@ Use chips when content is mapped to multiple categories and the user needs a way
 
 For display only.
 
-![Image Name](/assets/3_components/chip/image-20200810103235995.png)
+![Image Name](assets/3_components/chip/image-20200810103235995.png)
 
 ### Interactive
 
 Can be removed directly.
 
-![Image Name](/assets/3_components/chip/image-20200810103222682.png)
+![Image Name](assets/3_components/chip/image-20200810103222682.png)
 
 ## Colors
 
@@ -30,12 +30,12 @@ Use a default color or assign a custom color. When customizing, use a color-codi
 
 ### Default
 
-![Image Name](/assets/3_components/chip/image-20200810103222682.png)
+![Image Name](assets/3_components/chip/image-20200810103222682.png)
 ### Custom
 
 Consider accessibility / contrast in your color choice.
 
-![Image Name](/assets/3_components/chip/image-20200810103229377.png)
+![Image Name](assets/3_components/chip/image-20200810103229377.png)
 
 ## Sizes
 
@@ -43,13 +43,13 @@ Regular is the recommended size.
 
 ### Regular
 
-![Image Name](/assets/3_components/chip/image-20200810103222682.png)
+![Image Name](assets/3_components/chip/image-20200810103222682.png)
 
 ### Small
 
 Use the small size only in exceptional cases when space is limited.
 
-![Image Name](/assets/3_components/chip/image-20200810103241914.png)
+![Image Name](assets/3_components/chip/image-20200810103241914.png)
 
 ## Elements
 

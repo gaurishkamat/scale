@@ -6,7 +6,7 @@ Cards group related pieces of information together and represent one conceptiona
 
 Cards can hold any kind of content in a flexibly sized container. One card communicates one message. A card is an independent piece of content that requires no additional context.
 
-![Image Name](/assets/3_components/card/cards_general.png)
+![Image Name](assets/3_components/card/cards_general.png)
 
 ### When to use
 
@@ -29,13 +29,13 @@ Don't use cards:
 
 The card acts as a preview and point of entry for more detailed information. The card itself is the primary interaction area. Additional interaction elements are not needed. Including additional interactive elements, like buttons or text links, will generate a second action area.
 
-![Image Name](/assets/3_components/card/card-interactive.png)
+![Image Name](assets/3_components/card/card-interactive.png)
 
 ### Card with a static container
 
 A card with a static container also communicates one important message. Generally, no crucial information follows after the card. Although the container is not an interactive component, it can still contain interactive elements like functions or text links to related information.
 
-![Image Name](/assets/3_components/card/cards-static.png)
+![Image Name](assets/3_components/card/cards-static.png)
 
 ## Layout
 
@@ -43,7 +43,7 @@ A card with a static container also communicates one important message. Generall
 
 By default, cards have an inner padding to align typography and visual elements within the card. If you want to place images in the bleed, turn the padding off.
 
-![Image Name](/assets/3_components/card/cards-padding.png)
+![Image Name](assets/3_components/card/cards-padding.png)
 
 ## Best practice
 

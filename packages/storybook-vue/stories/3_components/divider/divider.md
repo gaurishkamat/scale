@@ -21,5 +21,5 @@ Only use a divider when really necessary. To avoid clutter and fragmentation, us
 
 ## Variants
 
-![Image Name](/assets/3_components/divider/divider.png)
+![Image Name](assets/3_components/divider/divider.png)
 
