@@ -79,7 +79,9 @@ export class ChartStackCard implements Base {
           </div>
 
           <div class="legend">
-            {this.readData(this.data).map((item, index) => (
+            {this.readData(this.data)
+            .sort((a, b) => b.percentage - a.percentage)
+            .map((item, index) => (
               <div class="legend__row">
                 <div class="legend__row__item">
                   <div

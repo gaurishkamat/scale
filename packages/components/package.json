@@ -74,8 +74,6 @@
     "@proyecto26/animatable-component": "^1.1.8",
     "@scaleds/icons-telekom": "^1.11.2",
     "classnames": "^2.2.6",
-    "d3": "^6.2.0",
-    "d3-selection": "^2.0.0",
     "web-animations-js": "^2.3.2"
   },
   "jest": {
