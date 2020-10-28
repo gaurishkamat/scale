@@ -17,7 +17,7 @@ Use a modal dialog to confirm user decisions. Clearly describe the action that i
 
 ## Elements
 
-![Image Name](/assets/3_components/modal/image-20200812105039304.png)
+![Image Name](assets/3_components/modal/image-20200812105039304.png)
 
 ### Title (1)
 
@@ -43,7 +43,7 @@ A click on the "close" icon will close the modal.
 
 In the case of scrolling or as a custom option, an overlay on the action bar can be activated.
 
-![Image Name](/assets/3_components/modal/image-20200812110102276.png)
+![Image Name](assets/3_components/modal/image-20200812110102276.png)
 
 ## Sizes
 
@@ -56,7 +56,7 @@ Select the modal size that best fits your use case and amount of content.
 #### Size XL / 12 Columns (3)
 ### Mobile / 4 Columns (4)
 
-![Image Name](/assets/3_components/modal/image-20200812212714272.png)
+![Image Name](assets/3_components/modal/image-20200812212714272.png)
 
 ## Related Components
 

@@ -14,7 +14,7 @@ For simple text input that does not require multiple lines, use an input filed i
 
 ## Elements
 
-![Image Name](/assets/3_components/text-area/image-20200811104309878.png)
+![Image Name](assets/3_components/text-area/image-20200811104309878.png)
 
 ### Label (1)
 

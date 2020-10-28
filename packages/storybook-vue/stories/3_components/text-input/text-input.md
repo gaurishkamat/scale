@@ -32,7 +32,7 @@ Use the type "password" for passwords and sensitive data. Password text will be 
 
 ## Elements
 
-![Image Name](/assets/3_components/text-input/image-20200811095946547.png)
+![Image Name](assets/3_components/text-input/image-20200811095946547.png)
 
 ### Label (1)
 
@@ -64,10 +64,10 @@ Important: Use either only small or only large elements within groups.
 
 Use large fields as the default option.
 
-![Image Name](/assets/3_components/text-input/image-20200811100017924.png)
+![Image Name](assets/3_components/text-input/image-20200811100017924.png)
 
 ### Small
 
 When space is limited, consistently use small size elements.
 
-![Image Name](/assets/3_components/text-input/image-20200811100024147.png)
+![Image Name](assets/3_components/text-input/image-20200811100024147.png)
