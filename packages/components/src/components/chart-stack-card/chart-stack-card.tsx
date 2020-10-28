@@ -35,12 +35,7 @@ export class ChartStackCard implements Base {
   };
 
   getOpacity(item, index) {
-    return JSON.stringify(
-      index === 0
-        ? 1
-        : (+item.percentage > 90 ? 50 : +item.percentage) / 100 +
-            (+item.percentage / 100 > 0 && +item.percentage / 100 < 1 ? 0.1 : 0)
-    );
+    return JSON.stringify(index === 0 ? 1 : +item.percentage / 100);
   }
 
   render() {
@@ -66,38 +61,43 @@ export class ChartStackCard implements Base {
         >
           <div class="header">{this.heading}</div>
           <div class="bar">
-            {this.readData(this.data).map((item, index) => (
-              <div
-                class="bar__item"
-                style={{
-                  opacity: this.getOpacity(item, index),
-                  flex: JSON.stringify(
-                    +item.percentage < 1 && +item.percentage > 0
-                      ? 2
-                      : +item.percentage
-                  ),
-                }}
-              />
-            ))}
+            {this.readData(this.data)
+              .sort((a, b) => b.percentage - a.percentage)
+              .map((item, index) => {
+                if (+item.percentage > 0) {
+                  return (
+                    <div
+                      class="bar__item"
+                      style={{
+                        opacity: this.getOpacity(item, index),
+                        flex: JSON.stringify(+item.percentage),
+                      }}
+                    />
+                  );
+                }
+              })}
           </div>
+
           <div class="legend">
-            {this.readData(this.data).map((item, index) => (
-              <div class="legend__row">
-                <div class="legend__row__item">
-                  <div
-                    class="legend__item"
-                    style={{
-                      opacity: this.getOpacity(item, index),
-                    }}
-                  />
-                  <div class="legend__label spacer">{item.type}</div>
+            {this.readData(this.data)
+              .sort((a, b) => b.percentage - a.percentage)
+              .map((item, index) => (
+                <div class="legend__row">
+                  <div class="legend__row__item">
+                    <div
+                      class="legend__item"
+                      style={{
+                        opacity: this.getOpacity(item, index),
+                      }}
+                    />
+                    <div class="legend__label spacer">{item.type}</div>
+                  </div>
+                  <div class="legend__row__item">
+                    <div class="spacer">{item.value}</div>
+                    <div class="spacer">{item.percentage}%</div>
+                  </div>
                 </div>
-                <div class="legend__row__item">
-                  <div class="spacer">{item.value}</div>
-                  <div class="spacer">{item.percentage}%</div>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </scale-card>
       </Host>
