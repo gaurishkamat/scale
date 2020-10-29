@@ -182,6 +182,7 @@ const type = {
   weight_button: FONT_WEIGHT_BOLD,
 };
 
+// tslint:disable-next-line
 const type_variants = {
   label: fontVariant(FONT_SIZE_2, LEADING_4),
   label_floating: fontVariant(FONT_SIZE_1, LEADING_2),
