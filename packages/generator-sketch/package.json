@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "global": "^4.4.0",
+    "handlebars": "^4.7.6",
     "puppeteer": "^1.19.0",
     "sqlite": "^4.0.14",
     "sqlite3": "^5.0.0",

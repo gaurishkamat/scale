@@ -548,8 +548,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   });
 
   rssBuilder.build(`./sketch/${documentName}.xml`, {
-    title: "Scale Telekom Components",
-    description: "Scale Telekom Components design library",
+    title: config.libraryTitle,
+    description: config.libraryDescription,
     url: `${serverPath}${documentName}.sketch`,
     version: version
   });
