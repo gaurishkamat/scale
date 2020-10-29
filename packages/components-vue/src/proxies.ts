@@ -55,6 +55,7 @@ export const AppLogo = /*@__PURE__*/ Vue.extend({
     href: {} as PropOptions<Components.AppLogo['href']>,
     color: {} as PropOptions<Components.AppLogo['color']>,
     claim: {} as PropOptions<Components.AppLogo['claim']>,
+    claimLang: {} as PropOptions<Components.AppLogo['claimLang']>,
   },
 
 
@@ -137,6 +138,7 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
+    claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
     customClass: {} as PropOptions<Components.ScaleAppHeader['customClass']>,
     brandTitle: {} as PropOptions<Components.ScaleAppHeader['brandTitle']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
@@ -157,6 +159,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
 
   props: {
     brandTitle: {} as PropOptions<Components.ScaleAppShell['brandTitle']>,
+    claimLang: {} as PropOptions<Components.ScaleAppShell['claimLang']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppShell['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,

@@ -30,6 +30,7 @@ const levelEnhancer = (data, i = 0) => {
 })
 export class Shell {
   @Prop() brandTitle?: string = '';
+  @Prop() claimLang?: string = 'de';
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
@@ -61,6 +62,7 @@ export class Shell {
             addonNavigation={levelEnhancer(this.addonNavigation)}
             activeRouteId={this.activeRouteId}
             activeSectorId={this.activeSectorId}
+            claimLang={this.claimLang}
           ></scale-app-header>
           <main class="content">
             <slot></slot>

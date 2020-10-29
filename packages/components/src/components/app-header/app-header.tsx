@@ -10,7 +10,7 @@ import { findRootNode } from '../../utils/menu-utils';
 })
 export class Header {
   mobileMenuToggle?: HTMLAnchorElement;
-
+  @Prop() claimLang: string;
   @Prop() customClass?: string = '';
   @Prop() brandTitle?: string = '';
   @Prop() mainNavigation?: any[] = [];
@@ -278,7 +278,7 @@ export class Header {
             <span class="header__brand-after"></span>
             <div class="header__brand-content">
               <div class="header__brand-branding">
-                <app-logo claim></app-logo>
+                <app-logo claim claimLang={this.claimLang}></app-logo>
               </div>
               <div class="header__brand-sector">{this.menuSegment()}</div>
               <div class="header__brand-meta">{this.menuAddon()}</div>

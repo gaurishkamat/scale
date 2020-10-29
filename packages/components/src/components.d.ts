@@ -11,6 +11,7 @@ import { StyleSheet } from "jss";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
+        "claimLang": string;
         "color": string;
         "href": string;
     }
@@ -76,6 +77,7 @@ export namespace Components {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "brandTitle"?: string;
+        "claimLang": string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -87,6 +89,7 @@ export namespace Components {
         "activeSectorId"?: string;
         "addonNavigation"?: any;
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
@@ -1064,6 +1067,7 @@ declare global {
 declare namespace LocalJSX {
     interface AppLogo {
         "claim"?: boolean;
+        "claimLang"?: string;
         "color"?: string;
         "href"?: string;
     }
@@ -1126,6 +1130,7 @@ declare namespace LocalJSX {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -1137,6 +1142,7 @@ declare namespace LocalJSX {
         "activeSectorId"?: string;
         "addonNavigation"?: any;
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
