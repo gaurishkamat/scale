@@ -10,6 +10,7 @@ import { findRootNode } from '../../utils/menu-utils';
 })
 export class Header {
   @Prop() customClass?: string = '';
+  @Prop() brandTitle?: string = '';
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
@@ -138,20 +139,24 @@ export class Header {
   menuSegment() {
     return (
       <ul class="segment-navigation">
-        {this.sectorNavigation.map(item => (
-          <li class="segment-navigation__item">
-            <a
-              onClick={event => this.handleSelectedSegment(event, item)}
-              class={classNames(
-                'segment-navigation__item-link',
-                this.activeSegment.id === item.id && 'active'
-              )}
-              href={item.href}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))}
+        {this.brandTitle ? (
+          <li class="segment-navigation__brand-title">{this.brandTitle}</li>
+        ) : (
+          this.sectorNavigation.map(item => (
+            <li class="segment-navigation__item">
+              <a
+                onClick={event => this.handleSelectedSegment(event, item)}
+                class={classNames(
+                  'segment-navigation__item-link',
+                  this.activeSegment.id === item.id && 'active'
+                )}
+                href={item.href}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        )}
       </ul>
     );
   }

@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;

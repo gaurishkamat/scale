@@ -1,34 +1,49 @@
 # Radio Button
 
-With radio buttons, users select one option from a group of options in a form.
+Radio buttons allow a user to only select one option from a collection of choices.
 
 ## General
 
-Radio buttons represent a group of mutually exclusive choices.
+A radio button is a selection control that consists of a circular button and a label. It is considered on with a filled circle and off with an empty circle.
 
-![Image Name](/assets/3_components/radio-button/image-20200810094044874.png)
+Radio buttons only appear in groups. Activating a radio button automatically deselects the previously selected option.
 
-### When  to Use
+![Image Name](/assets/3_components/radio-button/radiobuttons_general.png)
 
-Whenever only one selection of a group is allowed, use the radio button component.
+### When  to use
 
-### When Not to Use
+Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
 
-Whenever the user should be able to select several options at once, use checkboxes instead.
+### When not to use
 
-## Elements
+If the user needs to choose one or more options, use checkboxes.
+To initiate an action, use a button.
 
-### Label
+## Label
 
-Clearly label your radio buttons so users know what option they select e.g. "daily / weekly / monthly".
+The label clearly describes the effect of activating the radio button. Labels normally contain at most three words.
 
-## Best Practice
+![Image Name](/assets/3_components/radio-button/radiobuttons_label.png)
 
-### Default Selection
+## Disabled state
 
-On option within a set of radio buttons should be selected by default when the page is loaded. Never display a group of radio buttons without a default selection.
+Disable the radio button if:
 
-## Related Components
+* another action has to take place before the radio button is usable or
+*	the option needs to be listed but is currently unavailable.
+
+![Image Name](/assets/3_components/radio-button/disabled_radiobutton.png)
+
+## Headline and default selection
+
+Consider using a headline to provide more clarity to the user.
+
+Display one option as a default selection to align with user expectations and reduce the time and clicks needed. This is also a good way of making suggestions to the user. There are a few cases where you don't have to select a radio button by default, e.g., when selecting titles in a form (Mr., Ms., etc.).
+
+
+![Image Name](/assets/3_components/radio-button/radiobuttons_bestpractice.png)
+
+## Related components
 
 Checkbox, Switch, Select Box
 

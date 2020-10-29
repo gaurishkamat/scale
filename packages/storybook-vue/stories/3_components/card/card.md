@@ -1,50 +1,65 @@
 # Card
 
-Cards help users perceive and interact with groups of content elements. They contain content and actions about a single subject.
+Cards group related pieces of information together and represent one conceptional unit. They make it easier for users to quickly scan content and find relevant information.
 
-## Basic Types
+## General
 
-### Interactive Cards
+Cards can hold any kind of content in a flexibly sized container. One card communicates one message. A card is an independent piece of content that requires no additional context.
 
-Cards can be used as a single interactive entity. By clicking a card, the user activates a link.
+![Image Name](/assets/3_components/card/cards_general.png)
 
-![Image Name](/assets/3_components/card/image-20200811090126310.png)
+### When to use
 
-### Static Cards
+Cards are best suited to:
 
-Use static cards for the visual grouping of individual elements. Static cards are not interactive themselves, their content is.
+*	encourage and enable users to browse your content (e.g., shop, social media, etc.) or
+*	provide summaries of different kinds of content (e.g., dashboards).
 
-![Image Name](/assets/3_components/card/image-20200811122402802.png)
+### When not to use
 
-## Elements
+Don't use cards:
+
+*	solely for aesthetic reasons or
+*	as purely navigational elements.
+
+
+## Basic types
+
+### Card with an interactive container
+
+The card acts as a preview and point of entry for more detailed information. The card itself is the primary interaction area. Additional interaction elements are not needed. Including additional interactive elements, like buttons or text links, will generate a second action area.
+
+![Image Name](/assets/3_components/card/card-interactive.png)
+
+### Card with a static container
+
+A card with a static container also communicates one important message. Generally, no crucial information follows after the card. Although the container is not an interactive component, it can still contain interactive elements like functions or text links to related information.
+
+![Image Name](/assets/3_components/card/cards-static.png)
+
+## Layout
 
 ### Card Padding
 
-By default, cards have an inner layout padding for aligning typography and interactive elements within the card. If you want to use full bleed artwork, turn the padding off.
+By default, cards have an inner padding to align typography and visual elements within the card. If you want to place images in the bleed, turn the padding off.
 
-#### Padding Off
+![Image Name](/assets/3_components/card/cards-padding.png)
 
-![Image Name](/assets/3_components/card/image-20200811090126310.png)
+## Best practice
 
-#### Padding On
+### Decide on one type of card
 
-![Image Name](/assets/3_components/card/image-20200811090133760.png)
+Decide whether you want to use cards with an interactive or static container in your product or service. Never mix card types, because doing so is confusing for users.
 
-## Best Practice
+### Be consistent
 
-### Decide for One Type of Card
+Display content of the same type (e.g., blogposts, products, or cards) with a uniform structure. This provides a balanced appearance so users can easily compare content.
 
-Always only use one type of card in a given context, like a screen or a service — either interactive or static. Mixing card types confuses users and should therefore be avoided.
+### Design your own card
 
-### Keep Interactions Clear
+You can design cards for a variety of situations. The purpose of the card component is to give you the flexibility to build your card according to our principles – as best suits your particular use case.
 
-When choosing interactive cards, do not add additional interactive elements. Focus on the link functionality only.
-
-### Design Your Own
-
-The card component intentionally gives you flexibility to develop your headers, content and structure as they best fit your product use case.
-
-## Related Components
+## Related components
 
 Divider, Data Table
 

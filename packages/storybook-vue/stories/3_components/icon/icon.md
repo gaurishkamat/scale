@@ -1,49 +1,63 @@
 # Icon
 
-With icons our customers can easily find their way around our product or page and grasp content and functions quickly.
+Telekom icons seamlessly blend into the design of our websites and apps. They help identify functions quickly and provide a visual illustration of complex or abstract topics.
 
 ## General
 
-Our icons fit harmoniously into the design of our websites and apps. They illustrate abstract and complex topics. With our own icon style, we subtly convey the values of the Telekom brand.
+Deutsche Telekom has its own icon style to convey the brand’s values in a subtle yet essential way.
 
-## Basic Types
+![Image Name](/assets/3_components/icon/icons_general.png)
 
-### Static
+### When to use
 
-A static icon has no interactive functionality.
+Use icons to help our users grasp the core idea of content and functions quickly. Icons are meant to:
 
-![Image Name](/assets/3_components/icon/image-20200810101050303.png)
+* simplify the use of our products and services by drawing attention to important actions or content and
+* enhance the aesthetic appeal of our user interfaces.
 
-### Interactive
+### When not to use
 
-An interactive icon can have an assigned function.
+Don't use icons for solely aesthetic reasons. Users must immediately recognize the purpose of an icon, or else it will prevent them from completing the task at hand.
 
-![Image Name](/assets/3_components/icon/image-20200811094920205.png)
+## Icon variants
 
-## Elements
+By default, we use outline icons for our user interfaces. They are optimized for light and dark backgrounds. Solid icons emphasize an active status.
 
-### Description
+![Image Name](/assets/3_components/icon/icons_variants.png)
 
-An icon must always have a description so that it can be read out by screen readers. You may also display a tooltip.
+## Static and interactive icons
 
-## Sizes
+A static icon has no interactive functionality. An interactive icon can have an assigned function. If an icon is interactive, use the solid version of the icon for the active state.
 
-### Large
+![Image Name](/assets/3_components/icon/icon_interactive.png)
 
-48px
+## Icons and text label
 
-![Image Name](/assets/3_components/icon/image-20200810101050303.png)
+To ensure the best user experience, always provide icons with a text label. We maintain clearly defined icons and terms for our standard functions.
+To learn more about spelling and terminology for Telekom products, see our <a href="https://www.brand-design.telekom.com/en/downloads/glossary/" target="_blank">Glossary</a>.
 
-### Medium
+![Image Name](/assets/3_components/icon/icon_label.png)
 
-24px
+## Icon sizes
 
-![Image Name](/assets/3_components/icon/image-20200810101057046.png)
+Our standard icons sizes are large (48 px), medium (24 px), and small (16 px).
 
-### Small
+![Image Name](/assets/3_components/icon/icon_sizes_static.png)
 
-16px
+Static icon
 
-![Image Name](/assets/3_components/icon/image-20200810101102823.png)
+![Image Name](/assets/3_components/icon/icon_sizes_interactive.png)
+
+Interactive icon
+
+## Accessibility
+
+Interactive icons without a text label must always have an alt-text which screen readers can recognize (e.g., arrows in a pagination).
+
+![Image Name](/assets/3_components/icon/icon_accessibility.png)
+
+## Icon construction
+
+If you want to learn more about creating Telekom icons, please read our guidline <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/?updatePreferredLanguage=1" target="_blank">Icons for User Interfaces</a>.
 
 ## Code

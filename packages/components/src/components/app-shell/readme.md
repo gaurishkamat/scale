@@ -12,6 +12,7 @@
 | `activeRouteId`    | `active-route-id`   |             | `string` | `''`    |
 | `activeSectorId`   | `active-sector-id`  |             | `string` | `''`    |
 | `addonNavigation`  | `addon-navigation`  |             | `any`    | `[]`    |
+| `brandTitle`       | `brand-title`       |             | `string` | `''`    |
 | `customClass`      | `custom-class`      |             | `string` | `''`    |
 | `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |
 | `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`    |
