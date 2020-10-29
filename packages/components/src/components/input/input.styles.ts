@@ -5,14 +5,12 @@ const input = {
     paddingX: 12,
     paddingY: 8,
     height: 40,
-    fontSize: 16,
     labelTop: 4,
   },
   large: {
     paddingX: 12,
     paddingY: 12,
     height: 48,
-    fontSize: 16,
     labelTop: 8,
   },
 };
@@ -29,27 +27,28 @@ const checkBoxCheckedIcon = {
 };
 
 const bold = {
-  fontWeight: ({ font }) => font.weight_bold,
+  fontWeight: ({ type }) => type.weight_bold,
 };
 
 const defaultTransition = 'all 0.2s ease-in-out';
 
 const animated = (size: string) => ({
   start: {
-    fontSize: 16,
+    fontSize: ({ type }) => type.size_3,
     color: '#6C6C6C',
-    transform: `translate(${input[size].paddingX + 1}px, ${(input[size].height -
-      input[size].fontSize) /
-      2}px)`,
+    transform: ({ type }) =>
+      `translate(${input[size].paddingX + 1}px, calc((${
+        input[size].height
+      }px - ${type.size_3}) / 2))`,
     transition: defaultTransition,
-    fontWeight: 400,
+    fontWeight: ({ type }) => type.weight_medium,
   },
   end: {
-    fontSize: 10,
+    fontSize: ({ type_variants }) => type_variants.label_floating.size,
     transform: `translate(${input[size].paddingX}px, ${input[size].labelTop}px)`,
     color: '#6C6C6C',
     transition: defaultTransition,
-    fontWeight: 700,
+    fontWeight: ({ type_variants }) => type_variants.label_floating.weight,
   },
 });
 
@@ -63,7 +62,7 @@ export const styles: JssStyle = {
       borderRadius: 4,
       border: ({ palette }) => `1px solid ${palette.gray}`,
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
-      fontSize: 16,
+      fontSize: ({ type }) => type.size_3,
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
@@ -75,7 +74,7 @@ export const styles: JssStyle = {
     '& .input__textarea': {
       display: 'flex',
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
-      fontSize: 16,
+      fontSize: ({ type }) => type.size_3,
       borderRadius: 4,
       border: ({ palette }) => `1px solid ${palette.gray}`,
       fontFamily: 'inherit',
@@ -110,14 +109,16 @@ export const styles: JssStyle = {
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',
-      fontSize: 12,
+      fontSize: ({ type_variants }) => type_variants.helper_text.size,
+      lineHeight: ({ type_variants }) => type_variants.helper_text.leading,
       marginLeft: 'auto',
       color: ({ palette }) => palette.gray,
       transition: defaultTransition,
       paddingRight: 12,
     },
     '& .input__helper-text': {
-      fontSize: 12,
+      fontSize: ({ type_variants }) => type_variants.helper_text.size,
+      lineHeight: ({ type_variants }) => type_variants.helper_text.leading,
       color: ({ palette }) => palette.helperText,
       transition: defaultTransition,
       paddingLeft: 12,
@@ -145,6 +146,7 @@ export const styles: JssStyle = {
   'input--variant-static': {
     '& .input__label': {
       display: 'flex',
+      fontWeight: ({ type }) => type.weight_medium,
       color: '#6C6C6C',
     },
   },

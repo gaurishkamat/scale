@@ -78,7 +78,7 @@ export const styles: JssStyle = {
     },
   },
   'sidebar-nav-collapsible__button--bold': {
-    fontWeight: ({ font }) => font.weight_bold,
+    fontWeight: ({ type }) => type.weight_bold,
   },
   // List
   'sidebar-nav-collapsible__list': {

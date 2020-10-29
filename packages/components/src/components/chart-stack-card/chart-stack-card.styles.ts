@@ -7,7 +7,7 @@ export const styles: JssStyle = {
       height: '24px',
       fontSize: '24px',
       // fontFamily: 'TeleNeoWeb-ExtraBold',
-      fontWeight: ({ font }) => font.weight_extrabold,
+      fontWeight: ({ type }) => type.weight_extrabold,
       lineHeight: '26px',
       marginBottom: '24px',
     },
@@ -57,7 +57,7 @@ export const styles: JssStyle = {
       },
       '& .legend__label': {
         // fontFamily: 'TeleNeoWeb-Bold',
-        fontWeight: ({ font }) => font.weight_bold,
+        fontWeight: ({ type }) => type.weight_bold,
         fontSize: '17px',
         lineHeight: '32px',
       },

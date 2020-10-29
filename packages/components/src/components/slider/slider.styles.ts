@@ -69,8 +69,8 @@ export const styles: JssStyle = {
     },
     '& .slider--display-value': {
       marginLeft: 24,
-      fontWeight: ({ font }) => font.weight_bold,
-      fontSize: 12,
+      fontWeight: ({ type }) => type.weight_bold,
+      fontSize: ({ type }) => type.size_2,
       color: '#6c6c6c',
     },
   },

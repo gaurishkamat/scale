@@ -54,18 +54,18 @@ export const styles: JssStyle = {
   },
   'progress-bar__inner-status': {
     color: '#fff',
-    fontSize: '12px',
+    fontSize: ({ type }) => type.size_2,
     padding: '0 12px',
   },
   'progress-bar__status': {
     // color: '#606266',
-    fontSize: '12px',
-    fontWeight: ({ font }) => font.weight_extrabold,
+    fontSize: ({ type }) => type.size_2,
+    fontWeight: ({ type }) => type.weight_extrabold,
     display: 'inline-block',
   },
   'progress-bar__status-description': {
     color: '#6c6c6c',
-    fontSize: '12px',
-    fontWeight: ({ font }) => font.weight_bold,
+    fontSize: ({ type }) => type.size_2,
+    fontWeight: ({ type }) => type.weight_bold,
   },
 };

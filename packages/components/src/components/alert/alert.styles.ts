@@ -16,7 +16,7 @@ export const styles: JssStyle = {
     display: 'flex',
   },
   alert__headline: {
-    fontSize: '1rem',
+    fontSize: ({ type }) => type.size_3,
     color: 'white',
     margin: 0,
   },

@@ -21,6 +21,7 @@ export const styles: JssStyle = {
     borderColor: 'transparent',
     borderRadius: ({ radii }) => radii.chip,
     color: 'currentColor',
+    fontFamily: 'inherit',
     '&:hover': {
       color: ({ color }) => color.primary,
       backgroundColor: ({ background }) => background.light,
