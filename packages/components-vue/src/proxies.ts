@@ -69,6 +69,7 @@ export const AppMegaMenu = /*@__PURE__*/ Vue.extend({
     navigation: {} as PropOptions<Components.AppMegaMenu['navigation']>,
     hide: {} as PropOptions<Components.AppMegaMenu['hide']>,
     activeRouteId: {} as PropOptions<Components.AppMegaMenu['activeRouteId']>,
+    isActive: {} as PropOptions<Components.AppMegaMenu['isActive']>,
   },
 
 

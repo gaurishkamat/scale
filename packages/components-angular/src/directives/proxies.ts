@@ -27,13 +27,13 @@ export class AppLogo {
 
 export declare interface AppMegaMenu extends Components.AppMegaMenu {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'isActive', 'navigation']
 })
 @Component({
   selector: 'app-mega-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'isActive', 'navigation']
 })
 export class AppMegaMenu {
   protected el: HTMLElement;
