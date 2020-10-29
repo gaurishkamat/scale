@@ -16,7 +16,7 @@ const BLUE_DARK = '#0070A0';
 
 const GRAY_1 = '#262626';
 // const GRAY_2 = '#383838';
-const GRAY_3 = '#6C6C6C';
+const GRAY_3 = '#6B6B6B';
 const GRAY_4 = '#7C7C7C';
 // not AA on white background
 // const GRAY_5_DECORATIVE = '#A4A4A4';
