@@ -17,9 +17,12 @@ const uuid = require("uuid").v4;
 const crypto = require('crypto');
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
+const rssBuilder = require('./rss-builder');
 const config = require('./config');
 
 const documentName = process.argv[2] || "default";
+
+const serverPath = config.libraryServerPath;
 
 const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
@@ -31,7 +34,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   });
   await documentDB.exec(`CREATE TABLE IF NOT EXISTS document (
     document_id TEXT NOT NULL,
-    document_name TEXT PRIMARY KEY
+    document_name TEXT PRIMARY KEY,
+    document_version INTEGER NOT NULL DEFAULT 0
   )`);
   await documentDB.exec(`CREATE TABLE IF NOT EXISTS symbol (
     document_id TEXT NOT NULL,
@@ -44,11 +48,15 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         ON DELETE CASCADE
         ON UPDATE NO ACTION
   )`);
+  const rows = await documentDB.all('PRAGMA table_info(document)');
+  if (!rows.find(r => r.name === "document_version")) {
+    await documentDB.exec('ALTER TABLE document ADD COLUMN document_version INTEGER NOT NULL DEFAULT 0');
+  }
   const documentIDRow = await documentDB.get("SELECT document_id FROM document WHERE document_name = ?", [documentName]);
   const documentID = documentIDRow && documentIDRow.document_id;
   sketch.document.do_objectID = documentID || sketch.document.do_objectID;
   if (!documentID) {
-    await documentDB.run("REPLACE INTO document(document_name, document_id) VALUES (?, ?)", [documentName, sketch.document.do_objectID]);
+    await documentDB.run("REPLACE INTO document(document_name, document_id, document_version) VALUES (?, ?, ?)", [documentName, sketch.document.do_objectID, 0]);
   }
   const symbolIDs = await documentDB.all("SELECT symbol_name, symbol_id, symbol_change_id FROM symbol WHERE document_id = ?", [sketch.document.do_objectID]);
   const symbolNameToIdMap = {};
@@ -102,16 +110,79 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         symbol.layers[0].resizingConstraint = 45;
       }
     }
-    if (/^Card/.test(symbol.name)) {
+    if (/^(Card)/.test(symbol.name)) {
       symbol.layers[0].layers[1].resizingConstraint = 18;      
     }
-    if (/^Radio|Checkbox/.test(symbol.name)) {
+    if (/^(Radio|Checkbox)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
       symbol.layers[0].layers[0].resizingConstraint = 9;
       symbol.layers[0].layers[1].resizingConstraint = 11;
     }
-    if (/^Button|Switch/.test(symbol.name)) {
+    if (/^(Button|Switch|Tag)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
+    }
+    // Textarea & inputfield
+    // Deal with information text aligns (. = bottom left/right pin, ' = top left/right pin)
+    //
+    // Textarea pins:
+    //
+    // .Information notes    0 / 148.
+    //                       0 / 148.
+    // .Information notes
+    //
+    // Inputfield pins:
+    //
+    // 'Information notes    0 / 148'
+    //                       0 / 148'
+    // 'Information notes
+    if (/^(Text area)/.test(symbol.name)) {
+      if (symbol.layers[0].layers.length > 2) {
+        symbol.layers[0].layers[2].resizingConstraint = 11;
+        if (symbol.layers[0].layers[1].layers) {
+          symbol.layers[0].layers[1].resizingConstraint = 35;
+          symbol.layers[0].layers[1].layers[0].resizingConstraint = 35;
+          symbol.layers[0].layers[1].layers[1].resizingConstraint = 36;
+        } else {
+          if (symbol.layers[0].layers[1].name === '0 / 148') {
+            // If it's "0 / 148"
+            symbol.layers[0].layers[1].resizingConstraint = 36;
+          } else {
+            // If it's "Information notes"
+            symbol.layers[0].layers[1].resizingConstraint = 35;
+          }
+        }
+        symbol.layers[0].layers[1].resizingConstraint = 35;
+        symbol.layers[0].layers[0].resizingConstraint = 18;
+      } else {
+        symbol.layers[0].layers[1].resizingConstraint = 11;
+      }
+    }
+    if (/^(Inputfield)/.test(symbol.name)) {
+      if (symbol.layers[0].layers.length > 2) {
+        symbol.layers[0].layers[2].resizingConstraint = 11;
+        if (symbol.layers[0].layers[1].layers) {
+          symbol.layers[0].layers[1].resizingConstraint = 11;
+          symbol.layers[0].layers[1].layers[0].resizingConstraint = 11;
+          symbol.layers[0].layers[1].layers[1].resizingConstraint = 12;
+        } else {
+          if (symbol.layers[0].layers[1].name === '0 / 148') {
+            // If it's "0 / 148"
+            symbol.layers[0].layers[1].resizingConstraint = 12;
+          } else {
+            // If it's "Information notes"
+            symbol.layers[0].layers[1].resizingConstraint = 11;
+          }
+        }
+        symbol.layers[0].layers[0].resizingConstraint = 11;
+      } else {
+        symbol.layers[0].layers[1].resizingConstraint = 11;
+        symbol.layers[0].layers[0].resizingConstraint = 11;
+      }
+    }
+    if (/^(Select Box)/.test(symbol.name)) {
+        symbol.layers[0].resizingConstraint = 11;
+        symbol.layers[0].layers[0].layers[1].resizingConstraint = 12;
+        symbol.layers[0].layers[1].resizingConstraint = 11;
     }
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
@@ -466,9 +537,22 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     );
   }
   await Promise.all(queries);
+  let version = (await documentDB.get("SELECT document_version FROM document WHERE document_id = ?", [sketch.document.do_objectID])).document_version;
+  console.log(`Old document version`, version);
+  version++;
+  console.log(`New document version`, version);
+  await documentDB.run("UPDATE document SET document_version = ? WHERE document_id = ?", [version, sketch.document.do_objectID]);
 
   sketch.build(`./sketch/${documentName}.sketch`).then(() => {
     console.log(`Built ./sketch/${documentName}.sketch`);
   });
+
+  rssBuilder.build(`./sketch/${documentName}.xml`, {
+    title: "Scale Telekom Components",
+    description: "Scale Telekom Components design library",
+    url: `${serverPath}${documentName}.sketch`,
+    version: version
+  });
+  console.log(`Built ./sketch/${documentName}.xml`);
 
 })();

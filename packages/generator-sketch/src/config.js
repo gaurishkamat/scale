@@ -1,4 +1,5 @@
 module.exports = {
+  libraryServerPath: 'http://localhost:5000/',
   fontReplacer: function (jsonValue) {
     if (jsonValue === "system-ui") {
       return "TeleNeo";

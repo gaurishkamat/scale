@@ -3,7 +3,10 @@ const { SIGKILL } = require("constants");
 
 // Starts the components-sketch server
 console.log("Starting dev server");
-const server = cp.spawn("cd ../components-sketch && node app.js", {shell: true});
+const cwd = process.cwd();
+process.chdir("../components-sketch");
+const server = cp.execFile("node", ["app.js"]);
+process.chdir(cwd);
 setTimeout(() => {
     console.log("Scraping component page links");
     const urls = cp.execSync("sh scrape.sh").toString().trim().split("\n");
