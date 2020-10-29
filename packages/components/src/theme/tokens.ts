@@ -182,7 +182,7 @@ const type = {
   weight_button: FONT_WEIGHT_BOLD,
 };
 
-const typeVariants = {
+const type_variants = {
   label: fontVariant(FONT_SIZE_2, LEADING_4),
   label_floating: fontVariant(FONT_SIZE_1, LEADING_2),
   code: fontVariant(FONT_SIZE_2, LEADING_4, FONT_WEIGHT_REGULAR),
@@ -306,7 +306,7 @@ export const tokens = {
   color,
   background,
   type,
-  typeVariants,
+  type_variants,
   spacing,
   size,
   shadow,
