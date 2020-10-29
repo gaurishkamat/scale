@@ -120,8 +120,8 @@ export const styles: JssStyle = {
     },
   },
   'button--size-small': {
-    fontSize: ({ type_variants }) => type_variants.smaller.fontSize,
-    lineHeight: ({ type_variants }) => type_variants.smaller.lineHeight,
+    fontSize: ({ type_variants }) => type_variants.smaller.size,
+    lineHeight: ({ type_variants }) => type_variants.smaller.leading,
     minHeight: 32,
     '&$button--icon-only': {
       minWidth: 32,

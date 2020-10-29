@@ -103,26 +103,27 @@ const SHADOW_LEVEL_5_ACTIVE =
 
 const rem = (x: number) => `${x}rem`;
 
-export interface FontVariant {
-  fontFamily: string;
-  fontSize: string; // rem
-  lineHeight: number;
-  fontWeight: number;
-  letterSpacing: number;
+export interface TypeVariant {
+  family: string;
+  size: string; // rem
+  leading: number;
+  weight: number;
+  tracking: number;
 }
 
-export const fontVariant = (
-  fontSize: number = FONT_SIZE_3,
-  lineHeight: number = LEADING_5,
-  fontWeight: number = FONT_WEIGHT_MEDIUM,
-  fontFamily: string = '',
-  letterSpacing: number = 0
-): FontVariant => ({
-  fontFamily,
-  fontSize: rem(fontSize),
-  lineHeight,
-  fontWeight,
-  letterSpacing,
+export const typeVariant = (
+  // tslint:disable-next-line
+  size: number = FONT_SIZE_3,
+  leading: number = LEADING_5,
+  weight: number = FONT_WEIGHT_MEDIUM,
+  family: string = '',
+  tracking: number = 0
+): TypeVariant => ({
+  family,
+  size: rem(size),
+  leading,
+  weight,
+  tracking,
 });
 
 // ACTUAL TOKENS
@@ -184,31 +185,31 @@ const type = {
 
 // tslint:disable-next-line
 const type_variants = {
-  label: fontVariant(FONT_SIZE_2, LEADING_4),
-  label_floating: fontVariant(FONT_SIZE_1, LEADING_2),
-  code: fontVariant(FONT_SIZE_2, LEADING_4, FONT_WEIGHT_REGULAR),
-  caption: fontVariant(FONT_SIZE_2, LEADING_4),
-  helper_text: fontVariant(FONT_SIZE_2, LEADING_4),
-  smaller: fontVariant(FONT_SIZE_2, LEADING_4),
-  body: fontVariant(FONT_SIZE_3, LEADING_5),
-  body_long: fontVariant(FONT_SIZE_3, LEADING_5),
-  body_short: fontVariant(FONT_SIZE_3, LEADING_3),
-  body_large: fontVariant(FONT_SIZE_4, LEADING_6),
-  h6: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
-  h5: fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
-  h4: fontVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
-  h3: fontVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
-  h2: fontVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
-  h1: fontVariant(FONT_SIZE_8, LEADING_1, FONT_WEIGHT_EXTRABOLD),
-  h6_mobile: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_BOLD),
-  h5_mobile: fontVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
-  h4_mobile: fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
-  h3_mobile: fontVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
-  h2_mobile: fontVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
-  h1_mobile: fontVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  label: typeVariant(FONT_SIZE_2, LEADING_4),
+  label_floating: typeVariant(FONT_SIZE_1, LEADING_2),
+  code: typeVariant(FONT_SIZE_2, LEADING_4, FONT_WEIGHT_REGULAR),
+  caption: typeVariant(FONT_SIZE_2, LEADING_4),
+  helper_text: typeVariant(FONT_SIZE_2, LEADING_4),
+  smaller: typeVariant(FONT_SIZE_2, LEADING_4),
+  body: typeVariant(FONT_SIZE_3, LEADING_5),
+  body_long: typeVariant(FONT_SIZE_3, LEADING_5),
+  body_short: typeVariant(FONT_SIZE_3, LEADING_3),
+  body_large: typeVariant(FONT_SIZE_4, LEADING_6),
+  h6: typeVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
+  h5: typeVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+  h4: typeVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
+  h3: typeVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h2: typeVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h1: typeVariant(FONT_SIZE_8, LEADING_1, FONT_WEIGHT_EXTRABOLD),
+  h6_mobile: typeVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_BOLD),
+  h5_mobile: typeVariant(FONT_SIZE_3, LEADING_5, FONT_WEIGHT_EXTRABOLD),
+  h4_mobile: typeVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+  h3_mobile: typeVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
+  h2_mobile: typeVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
+  h1_mobile: typeVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
   // TODO remove by removing scale-text from collapsible usage, and using plain span
   collapsible: {
-    ...fontVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
+    ...typeVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
     marginBottom: 0,
   },
 };
