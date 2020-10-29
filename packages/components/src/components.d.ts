@@ -18,6 +18,7 @@ export namespace Components {
     interface AppMegaMenu {
         "activeRouteId": string;
         "hide": () => void;
+        "isActive": boolean;
         "navigation": MenuItem[];
     }
     interface AppNavigationMainMobile {
@@ -1074,6 +1075,7 @@ declare namespace LocalJSX {
     interface AppMegaMenu {
         "activeRouteId"?: string;
         "hide"?: () => void;
+        "isActive"?: boolean;
         "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {

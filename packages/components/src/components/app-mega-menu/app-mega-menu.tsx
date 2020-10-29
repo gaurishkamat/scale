@@ -9,6 +9,7 @@ export class MegaMenu {
   @Prop() navigation: MenuItem[];
   @Prop() hide: () => void;
   @Prop() activeRouteId: string;
+  @Prop() isActive: boolean;
 
   render() {
     return (
@@ -29,7 +30,7 @@ export class MegaMenu {
                           }`}
                           aria-current={this.activeRouteId === menuItem.id}
                           href={menuItem.href || 'javascript:void(0);'}
-                          tabIndex={0}
+                          tabIndex={this.isActive ? 0 : -1}
                           onClick={event => {
                             this.hide();
                             if (typeof menuItem.onClick === 'function') {

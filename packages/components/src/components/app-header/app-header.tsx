@@ -100,17 +100,16 @@ export class Header {
             >
               <span class="main-navigation__item-link-text">{item.name}</span>
             </a>
-            {item.children &&
-              item.children.length > 0 &&
-              this.visibleMegaMenu === item.id && (
-                <app-mega-menu
-                  navigation={item.children}
-                  hide={() => {
-                    this.visibleMegaMenu = '';
-                  }}
-                  activeRouteId={this.activeRouteId}
-                ></app-mega-menu>
-              )}
+            {item.children && item.children.length > 0 && (
+              <app-mega-menu
+                navigation={item.children}
+                hide={() => {
+                  this.visibleMegaMenu = '';
+                }}
+                activeRouteId={this.activeRouteId}
+                isActive={this.visibleMegaMenu === item.id}
+              ></app-mega-menu>
+            )}
           </li>
         ))}
       </ul>
