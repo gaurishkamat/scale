@@ -1,44 +1,50 @@
 # Slider
 
-Sliders provide a visual indication of adjustable content. The user can increase or decrease a value by moving the handle along a horizontal track.
+A slider lets users control a value or a range of values.
 
 ## General
 
-Sliders allow users to view and select a value from a given range along a bar. They are ideal for adjusting settings such as volume and brightness or for applying filters. Changes made with sliders are immediate, allowing users to make adjustments while determining their selection. Sliders should not be used for settings where user feedback comes with delay.
+A slider displays the current value or range of values by default. Users can increase or decrease the value or range of values by moving a handle along a bar. Using a slider usually triggers an immediate effect (e.g., adjusting a setting like volume or filtering data).
 
-## Basic Types
+### When to use
 
-### Value
+Use a slider when:
 
-![Image Name](assets/3_components/slider/image-20200810093330831.png)
+- users need to quickly adjust a value,
+- adjusting the value or range triggers an immediate effect, or
+- the input doesn’t have to be precise.
 
-### Range
+### When not to use
 
-![Image Name](assets/3_components/slider/image-20200810093342268.png)
+Don't use a slider when:
 
-## Elements
+- users might want to pick a precise value (here an input field is better),
+- there is no immediate effect,
+- the range is very large (e.g., more than 1-100), or
+- the range is very small (e.g., 1-3).
 
-In its basic form, the slider is accompanied by a label and a number displaying the current value.
+## Basic types
+
+Each slider needs a label which describes the value that is changing. Always display the current value by default.
+
+![Image Name](/assets/3_components/slider/slider_types.png)
 
 ## Colors
 
-Use the default color or assign a custom color. When customizing, use a color-coding scheme that is clear to the user and supports them in their use cases.
+Telekom sliders use Magenta as an accent color. If you need to apply a color code, you can either use colors from the Telekom color palette or create a custom one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
-![Image Name](assets/3_components/slider/image-20200810093401089.png)
+![Image Name](/assets/3_components/slider/slider_color.png)
 
 ## Sizes
 
-### Large
+![Image Name](/assets/3_components/slider/slider_sizes.png)
 
-![Image Name](assets/3_components/slider/image-20200810093350850.png)
+ ## Inactive slider
 
-### Small
+ Disable the slider if:
 
-![Image Name](assets/3_components/slider/image-20200810093330831.png)
+*	another action has to take place before the slider is usable or
+*	users cannot change the value at the moment.
 
-## Best Practice
+![Image Name](/assets/3_components/slider/slider_disabled.png)
 
-- The slider label should indicate what value the slider is changing.
-- Range values are used to describe the range in numbers.
-- Do not use for extremely large ranges i.e. 1-1000.
-- Do not use for extremely small ranges i.e. 1-3.
