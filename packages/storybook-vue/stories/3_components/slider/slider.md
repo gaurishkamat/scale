@@ -38,3 +38,13 @@ Telekom sliders use Magenta as an accent color. If you need to apply a color cod
 ## Sizes
 
 ![Image Name](/assets/3_components/slider/slider_sizes.png)
+
+ ## Inactive slider
+
+ Disable the slider if:
+
+*	another action has to take place before the slider is usable or
+*	users cannot change the value at the moment.
+
+![Image Name](/assets/3_components/slider/slider_disabled.png)
+
