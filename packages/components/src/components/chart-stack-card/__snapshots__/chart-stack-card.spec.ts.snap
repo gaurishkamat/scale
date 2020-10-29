@@ -8,8 +8,8 @@ exports[`ChartStack should match snapshot 1`] = `
     </div>
     <div class="bar">
       <div class="bar__item" style="opacity: 1; flex: 55;"></div>
-      <div class="bar__item" style="opacity: 0.44999999999999996; flex: 35;"></div>
-      <div class="bar__item" style="opacity: 0.2; flex: 10;"></div>
+      <div class="bar__item" style="opacity: 0.35; flex: 35;"></div>
+      <div class="bar__item" style="opacity: 0.1; flex: 10;"></div>
     </div>
     <div class="legend">
       <div class="legend__row">
@@ -30,7 +30,7 @@ exports[`ChartStack should match snapshot 1`] = `
       </div>
       <div class="legend__row">
         <div class="legend__row__item">
-          <div class="legend__item" style="opacity: 0.44999999999999996;"></div>
+          <div class="legend__item" style="opacity: 0.35;"></div>
           <div class="legend__label spacer">
             IOS
           </div>
@@ -46,7 +46,7 @@ exports[`ChartStack should match snapshot 1`] = `
       </div>
       <div class="legend__row">
         <div class="legend__row__item">
-          <div class="legend__item" style="opacity: 0.2;"></div>
+          <div class="legend__item" style="opacity: 0.1;"></div>
           <div class="legend__label spacer">
             Other
           </div>
