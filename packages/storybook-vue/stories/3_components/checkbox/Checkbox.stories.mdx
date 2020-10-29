@@ -22,7 +22,7 @@ export const Template = (args, { argTypes }) => ({
       :type="type"
       :label="label"
       :disabled="disabled"
-      :checked="isChecked"
+      :checked="checked"
       :value="value"
       :status="status"
       :input-id="inputId"
@@ -32,17 +32,8 @@ export const Template = (args, { argTypes }) => ({
   `,
   methods: {
     scaleChange: function() {
-      this.isChecked=!this.isChecked;
       action('scaleChange')();
     },
-  },
-  data: function() {
-    return { isChecked: this.checked }
-  },
-  watch: {
-    checked: function (newChecked) {
-      this.isChecked = newChecked;
-    }
   },
 })
 

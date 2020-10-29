@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.1...v1.11.2) (2020-10-20)
+
+**Note:** Version bump only for package @scaleds/visual-test
+
+
+
+
+
+## [1.11.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.0...v1.11.1) (2020-10-12)
+
+**Note:** Version bump only for package @scaleds/visual-test
+
+
+
+
+
+# [1.11.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.10.1...v1.11.0) (2020-10-08)
+
+**Note:** Version bump only for package @scaleds/visual-test
+
+
+
+
+
+## [1.10.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.10.0...v1.10.1) (2020-10-07)
+
+**Note:** Version bump only for package @scaleds/visual-test
+
+
+
+
+
+# [1.10.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v1.10.0) (2020-10-05)
+
+**Note:** Version bump only for package @scaleds/visual-test
+
+
+
+
+
 # [1.9.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.8.0...v1.9.0) (2020-09-28)
 
 **Note:** Version bump only for package @scaleds/visual-test

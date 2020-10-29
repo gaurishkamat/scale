@@ -73,6 +73,7 @@ export namespace Components {
         "activeRouteId": string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
+        "brandTitle"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -83,6 +84,7 @@ export namespace Components {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
+        "brandTitle"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
@@ -1119,6 +1121,7 @@ declare namespace LocalJSX {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
+        "brandTitle"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -1129,6 +1132,7 @@ declare namespace LocalJSX {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
+        "brandTitle"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
@@ -1722,7 +1726,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the switch was clicked
          */
-        "onScaleChange"?: (event: CustomEvent<void>) => void;
+        "onScaleChange"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Injected jss styles
          */

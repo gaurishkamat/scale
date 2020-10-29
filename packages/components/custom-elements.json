@@ -135,6 +135,10 @@
           "description": ""
         },
         {
+          "name": "brand-title",
+          "description": ""
+        },
+        {
           "name": "custom-class",
           "description": ""
         },
@@ -161,6 +165,10 @@
         },
         {
           "name": "addon-navigation",
+          "description": ""
+        },
+        {
+          "name": "brand-title",
           "description": ""
         },
         {

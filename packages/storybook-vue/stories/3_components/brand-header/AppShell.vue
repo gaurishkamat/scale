@@ -1,5 +1,6 @@
 <template>
   <scale-app-shell
+    :brand-title="brandTitle"
     :main-navigation="mainNavigation"
     :icon-navigation="iconNavigation"
     :sector-navigation="sectorNavigation"
@@ -15,13 +16,14 @@
 <script>
 export default {
   props: {
+    brandTitle: String,
     mainNavigation: String,
     iconNavigation: String,
     sectorNavigation: String,
     addonNavigation: String,
     customClass: String,
     activeRouteId: String,
-    activeSectorId: String,
+    activeSectorId: String
   }
 };
 </script>

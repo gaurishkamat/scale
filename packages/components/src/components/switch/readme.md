@@ -18,9 +18,9 @@
 
 ## Events
 
-| Event         | Description                         | Type                |
-| ------------- | ----------------------------------- | ------------------- |
-| `scaleChange` | Emitted when the switch was clicked | `CustomEvent<void>` |
+| Event         | Description                         | Type               |
+| ------------- | ----------------------------------- | ------------------ |
+| `scaleChange` | Emitted when the switch was clicked | `CustomEvent<any>` |
 
 
 ----------------------------------------------
