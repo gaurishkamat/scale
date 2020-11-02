@@ -178,7 +178,7 @@ export const styles: JssStyle = {
     },
   },
   'input--status-error': {
-    '& .input__input, & .input__textarea': {
+    '& .input__input, & .input__textarea, & .input__select': {
       border: ({ palette }) => `2px solid ${palette.error}`,
     },
     '& .input__helper-text': {
