@@ -178,8 +178,8 @@ export const styles: JssStyle = {
     },
   },
   'input--status-error': {
-    '& .input__input': {
-      border: ({ palette }) => `1px solid ${palette.error}`,
+    '& .input__input, & .input__textarea': {
+      border: ({ palette }) => `2px solid ${palette.error}`,
     },
     '& .input__helper-text': {
       color: ({ palette }) => `${palette.error}`,
