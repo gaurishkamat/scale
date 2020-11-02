@@ -264,8 +264,8 @@ export const styles: JssStyle = {
         '--icon-color': ({ palette }) => palette.white,
       },
       '& ~ label': {
-        transition: defaultTransition
-      }
+        transition: defaultTransition,
+      },
     },
 
     // Checked Off - Pressed
@@ -278,8 +278,8 @@ export const styles: JssStyle = {
         '--icon-color': ({ palette }) => palette.magentaActive,
       },
       '& ~ label': {
-        color: ({ color }) => color.primary_active
-      }
+        color: ({ color }) => color.primary_active,
+      },
     },
 
     // Checked Off - Hover
@@ -289,8 +289,8 @@ export const styles: JssStyle = {
         borderColor: ({ palette }) => palette.magentaHover,
       },
       '& ~ label': {
-        color: ({ color }) => color.primary_hover
-      }
+        color: ({ color }) => color.primary_hover,
+      },
     },
 
     // Checked Off - Focus
