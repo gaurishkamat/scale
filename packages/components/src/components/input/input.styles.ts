@@ -213,6 +213,7 @@ export const styles: JssStyle = {
       backgroundColor: 'transparent',
     },
   },
+
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
@@ -224,18 +225,15 @@ export const styles: JssStyle = {
     },
 
     // Error
-    '&$input--status-error': {
-      '& input ~ label': {
-        color: ({ palette }) => `${palette.error}`,
-      },
-      // Pressed Error
-      '& input:not([disabled]):active ~ label': {
-        color: ({ palette }) => `${palette.gray}`,
+    '&$input--status-error .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        border: ({ color }) => `2px solid ${color.error}`,
       },
     },
 
     // Checked Off - Available
     '& label': {
+      fontWeight: ({ type }) => type.weight_medium,
       color: '#262626',
     },
     '& .input__checkbox-container': {
@@ -265,6 +263,9 @@ export const styles: JssStyle = {
         top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
         '--icon-color': ({ palette }) => palette.white,
       },
+      '& ~ label': {
+        transition: defaultTransition
+      }
     },
 
     // Checked Off - Pressed
@@ -276,6 +277,9 @@ export const styles: JssStyle = {
       '& scale-icon': {
         '--icon-color': ({ palette }) => palette.magentaActive,
       },
+      '& ~ label': {
+        color: ({ color }) => color.primary_active
+      }
     },
 
     // Checked Off - Hover
@@ -284,6 +288,9 @@ export const styles: JssStyle = {
         boxShadow: 'none',
         borderColor: ({ palette }) => palette.magentaHover,
       },
+      '& ~ label': {
+        color: ({ color }) => color.primary_hover
+      }
     },
 
     // Checked Off - Focus
@@ -348,9 +355,12 @@ export const styles: JssStyle = {
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
+
     // Checked Off - Available
     '& label': {
+      fontWeight: ({ type }) => type.weight_medium,
       color: '#262626',
+      transition: defaultTransition,
     },
     '& input': {
       appearance: 'none',
@@ -360,6 +370,7 @@ export const styles: JssStyle = {
       border: ({ palette }) => `1px solid ${palette.gray}`,
       borderRadius: '50%',
       margin: ({ spacing }) => `0 ${spacing.inline} 0 0`,
+      transition: defaultTransition,
     },
     // Checked Off - Focus
     '& input:focus': {
@@ -368,14 +379,21 @@ export const styles: JssStyle = {
     },
 
     // Checked Off - Hover
-    '& input:hover': {
-      border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+    '&:hover input:not(:checked)': {
+      // border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+      borderColor: ({ color }) => color.primary_hover,
       boxShadow: 'none',
+    },
+    '&:hover input:not(:checked) ~ label': {
+      color: ({ color }) => color.primary_hover,
     },
 
     // Checked Off - Pressed
     '& input:active': {
       border: ({ palette }) => `8px solid ${palette.magentaActive}`,
+    },
+    '& input:not(:checked):active ~ label': {
+      color: ({ color }) => color.primary_active,
     },
 
     // Checked Off - Disabled
@@ -387,14 +405,8 @@ export const styles: JssStyle = {
     },
 
     // Checked Off - Error
-    '&$input--status-error': {
-      '& label': {
-        color: ({ palette }) => palette.error,
-      },
-      // Checked Off - Error Pressed
-      '& input:active ~ label': {
-        color: ({ palette }) => palette.gray,
-      },
+    '&$input--status-error input': {
+      border: ({ color }) => `2px solid ${color.error}`,
     },
 
     // Checked On - Available
