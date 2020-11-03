@@ -47,6 +47,12 @@ import AppShell from './AppShell.vue';
       },
       description: 'optionally replaces the sectorNavigation with a single bold title'
     },
+    claimLang: {
+      control: {
+        type: 'select',
+        options: ['en', 'de'],
+      },
+    },
   }}
 />
 
@@ -57,6 +63,7 @@ export const Template = (args, { argTypes }) => ({
     <div style="margin: -1rem;">
       <scale-app-shell
         :brand-title="brandTitle"
+        :claim-lang="claimLang"
         :main-navigation="mainNavigation"
         :icon-navigation="iconNavigation"
         :sector-navigation="sectorNavigation"
@@ -83,12 +90,13 @@ export const Template = (args, { argTypes }) => ({
     height={500}
     args={{
       brandTitle: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: 'Kommunikation',
-      activeSectorId: 'Geschäftskunden',
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {Template.bind({})}
@@ -100,14 +108,15 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-app-shell
+  claim-lang="en"
   :brand-title="brandTitle"
   :main-navigation="mainNavigation"
   :icon-navigation="iconNavigation"
   :sector-navigation="sectorNavigation"
   :addon-navigation="addonNavigation"
   :custom-class="customClass"
-  active-route-id="Kommunikation"
-  active-sector-id="Geschäftskunden"
+  active-route-id="Third Level 24"
+  active-sector-id="Personal38"
 >
   <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
   <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>

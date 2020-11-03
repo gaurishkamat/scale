@@ -13,6 +13,10 @@
           "description": ""
         },
         {
+          "name": "claim-lang",
+          "description": ""
+        },
+        {
           "name": "color",
           "description": ""
         },
@@ -31,6 +35,10 @@
       "attributes": [
         {
           "name": "active-route-id",
+          "description": ""
+        },
+        {
+          "name": "is-active",
           "description": ""
         }
       ]
@@ -139,6 +147,10 @@
           "description": ""
         },
         {
+          "name": "claim-lang",
+          "description": ""
+        },
+        {
           "name": "custom-class",
           "description": ""
         },
@@ -169,6 +181,10 @@
         },
         {
           "name": "brand-title",
+          "description": ""
+        },
+        {
+          "name": "claim-lang",
           "description": ""
         },
         {

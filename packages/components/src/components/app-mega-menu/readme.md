@@ -11,6 +11,7 @@
 | --------------- | ----------------- | ----------- | ------------ | ----------- |
 | `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
 | `hide`          | --                |             | `() => void` | `undefined` |
+| `isActive`      | `is-active`       |             | `boolean`    | `undefined` |
 | `navigation`    | --                |             | `MenuItem[]` | `undefined` |
 
 

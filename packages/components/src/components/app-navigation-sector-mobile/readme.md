@@ -10,6 +10,7 @@
 | Property         | Attribute          | Description | Type         | Default     |
 | ---------------- | ------------------ | ----------- | ------------ | ----------- |
 | `activeSectorId` | `active-sector-id` |             | `string`     | `undefined` |
+| `hide`           | --                 |             | `() => void` | `undefined` |
 | `navigation`     | --                 |             | `MenuItem[]` | `undefined` |
 
 
