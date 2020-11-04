@@ -438,6 +438,9 @@ export const styles: JssStyle = {
     height: ({ spacing }) => spacing[5],
     backgroundColor: ({ background }) => background.default,
     pointerEvents: 'none',
+    '$input--disabled &': {
+      backgroundColor: 'transparent',
+    },
   },
 
   'input--disabled': {
