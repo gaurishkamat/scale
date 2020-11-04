@@ -379,12 +379,12 @@ export const styles: JssStyle = {
     },
 
     // Checked Off - Hover
-    '&:hover input:not(:checked)': {
+    '&:hover input:not(:checked):not([disabled])': {
       // border: ({ palette }) => `1px solid ${palette.magentaHover}`,
       borderColor: ({ color }) => color.primary_hover,
       boxShadow: 'none',
     },
-    '&:hover input:not(:checked) ~ label': {
+    '&:hover input:not(:checked):not([disabled]) ~ label': {
       color: ({ color }) => color.primary_hover,
     },
 
@@ -392,7 +392,7 @@ export const styles: JssStyle = {
     '& input:active': {
       border: ({ palette }) => `8px solid ${palette.magentaActive}`,
     },
-    '& input:not(:checked):active ~ label': {
+    '& input:not(:checked):not([disabled]):active ~ label': {
       color: ({ color }) => color.primary_active,
     },
 
@@ -442,7 +442,9 @@ export const styles: JssStyle = {
 
   'input--disabled': {
     [`
-      & .input__label, 
+      & label,
+      & .input__label,
+      & input,
       & .input__input, 
       & .input__checkbox-container, 
       & .input__radio, 
@@ -451,7 +453,7 @@ export const styles: JssStyle = {
     `]: {
       borderColor: '#D0D0D0',
       color: ({ color }) => color.disabled,
-      cursor: 'not-allowed!important',
+      cursor: 'not-allowed',
     },
   },
 };
