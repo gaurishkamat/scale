@@ -192,7 +192,8 @@ export class Input implements Base {
               onClick={this.handleCheckboxClick}
             >
               <span class={classNames('input__checkbox-placeholder')}></span>
-              {!!this.icon && (
+              {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
+              {!!this.icon && this.checked && (
                 <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
