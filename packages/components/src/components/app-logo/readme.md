@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default  |
-| -------- | --------- | ----------- | --------- | -------- |
-| `claim`  | `claim`   |             | `boolean` | `false`  |
-| `color`  | `color`   |             | `string`  | `'#fff'` |
-| `href`   | `href`    |             | `string`  | `''`     |
+| Property    | Attribute    | Description | Type      | Default     |
+| ----------- | ------------ | ----------- | --------- | ----------- |
+| `claim`     | `claim`      |             | `boolean` | `false`     |
+| `claimLang` | `claim-lang` |             | `string`  | `undefined` |
+| `color`     | `color`      |             | `string`  | `'#fff'`    |
+| `href`      | `href`       |             | `string`  | `''`        |
 
 
 ## Dependencies

@@ -15,6 +15,9 @@ import { findSelected, findRootNode } from '../../utils/menu-utils';
   styleUrl: 'app-navigation-main-mobile.css',
 })
 export class MainNavigationMobile {
+  mainNavigationWrapper?: HTMLUListElement;
+  childrenWrapper?: HTMLUListElement;
+  @Prop() hide: () => void;
   @Prop() navigation: MenuItem[];
   @Prop() activeRouteId: string;
   @State() selected: MenuItem = undefined;
@@ -79,13 +82,31 @@ export class MainNavigationMobile {
     if (!section) {
       return <div></div>;
     }
+
+    const isActive = child =>
+      (selected && child.id === selected.id) ||
+      (parent && parent.id === child.id);
     return (
       <div class="main-navigation-mobile__child-menu">
         <a
           class="main-navigation-mobile__child-menu-current"
-          href={section.href}
+          href={section.href || 'javascript:void(0);'}
           onClick={event => {
             this.handlePrevSelected(event, section);
+          }}
+          tabIndex={0}
+          onKeyDown={event => {
+            if (['Enter', ' '].includes(event.key)) {
+              event.preventDefault();
+              this.handlePrevSelected(event, section);
+              if (!this.selected) {
+                // focus first main navigation item to ease tab navigation
+                this.mainNavigationWrapper.querySelector('a').focus();
+              }
+            }
+            if (['Escape', 'Esc'].includes(event.key)) {
+              this.hide();
+            }
           }}
         >
           <div class="main-navigation-mobile__child-menu-current-item">
@@ -95,23 +116,42 @@ export class MainNavigationMobile {
             </div>
           </div>
         </a>
-        <ul class="main-navigation-mobile__child-menu-items">
+        <ul
+          class="main-navigation-mobile__child-menu-items"
+          ref={el => {
+            this.childrenWrapper = el;
+          }}
+        >
           {section.children.map(child => (
             <a
               class={`main-navigation-mobile__child-menu-item-link ${
-                (selected && child.id === selected.id) ||
-                (parent && parent.id === child.id)
-                  ? 'selected'
-                  : ''
+                isActive(child) ? 'selected' : ''
               }`}
-              href={child.href}
-            >
-              <li
-                class="main-navigation-mobile__child-menu-item"
-                onClick={event => {
+              href={child.href || 'javascript:void(0);'}
+              tabIndex={0}
+              aria-current={isActive(child)}
+              onClick={event => {
+                this.handleSelect(event, child);
+              }}
+              onKeyDown={event => {
+                if (['Enter', ' '].includes(event.key)) {
                   this.handleSelect(event, child);
-                }}
-              >
+                  setTimeout(() => {
+                    // focus first child menu item link to ease tab navigation
+                    const firstChildren = this.childrenWrapper.querySelector(
+                      'a'
+                    );
+                    if (firstChildren) {
+                      this.childrenWrapper.querySelector('a').focus();
+                    }
+                  });
+                }
+                if (['Escape', 'Esc'].includes(event.key)) {
+                  this.hide();
+                }
+              }}
+            >
+              <li class="main-navigation-mobile__child-menu-item">
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
                   {child.children && <scale-icon name="ahead"></scale-icon>}
@@ -130,7 +170,12 @@ export class MainNavigationMobile {
     return (
       <div class="main-navigation-mobile">
         {this.childMenuPage()}
-        <ul class="main-navigation-mobile__main-menu">
+        <ul
+          class="main-navigation-mobile__main-menu"
+          ref={el => {
+            this.mainNavigationWrapper = el;
+          }}
+        >
           {this.navigation.map(item => (
             <a
               class={`main-navigation-mobile__item-link${
@@ -138,10 +183,29 @@ export class MainNavigationMobile {
                   ? ' main-navigation-mobile__item-link--selected'
                   : ''
               }`}
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               onClick={event => {
                 this.handleSelect(event, item);
               }}
+              onKeyDown={event => {
+                if (['Enter', ' '].includes(event.key)) {
+                  this.handleSelect(event, item);
+                  setTimeout(() => {
+                    // focus first child menu item link to ease tab navigation
+                    const firstChildren = this.childrenWrapper.querySelector(
+                      'a'
+                    );
+                    if (firstChildren) {
+                      this.childrenWrapper.querySelector('a').focus();
+                    }
+                  });
+                }
+                if (['Escape', 'Esc'].includes(event.key)) {
+                  this.hide();
+                }
+              }}
+              // hide from tab navigation when on childMenuPage
+              tabIndex={this.selected ? -1 : 0}
             >
               <li class="main-navigation-mobile__item">
                 <div class="main-navigation-mobile__item-wrapper">

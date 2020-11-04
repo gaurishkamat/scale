@@ -6,7 +6,7 @@ A breadcrumb is a secondary navigation element that provides additional orientat
 
 A breadcrumb reflects the information hierarchy of your product or service. The first entry is typically the site's homepage; the last entry is the current page.
 
-![Image Name](/assets/3_components/breadcrumb/breadcrumb-general.png)
+![Image Name](assets/3_components/breadcrumb/breadcrumb-general.png)
 
 ### When to use
 
@@ -19,7 +19,7 @@ If your product or service has a flat architecture with only one or two levels o
 
 ## Elements
 
-![Image Name](/assets/3_components/breadcrumb/elements.png)
+![Image Name](assets/3_components/breadcrumb/elements.png)
 
 ### Page links (1)
 
@@ -32,9 +32,4 @@ The arrow icon visually separates the individual pages.
 ### Current page (3)
 
 The current page is highlighted at the right end of the breadcrumb. It has no interactive functionality.
-
-
-## Code
-
-
 

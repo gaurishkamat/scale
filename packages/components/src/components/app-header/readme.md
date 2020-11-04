@@ -13,6 +13,7 @@
 | `activeSectorId`   | `active-sector-id` |             | `string`  | `undefined` |
 | `addonNavigation`  | --                 |             | `any[]`   | `[]`        |
 | `brandTitle`       | `brand-title`      |             | `string`  | `''`        |
+| `claimLang`        | `claim-lang`       |             | `string`  | `undefined` |
 | `customClass`      | `custom-class`     |             | `string`  | `''`        |
 | `iconNavigation`   | --                 |             | `any[]`   | `[]`        |
 | `mainNavigation`   | --                 |             | `any[]`   | `[]`        |

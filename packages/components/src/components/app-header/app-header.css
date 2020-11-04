@@ -125,8 +125,8 @@
   }
   .header .meta-navigation .meta-navigation__item-link {
     margin: 0 6px;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 0.625rem;
+    line-height: 1.2;
     flex-direction: column;
   }
   .header .meta-navigation .meta-navigation__item.mobile-menu {
@@ -261,10 +261,10 @@
     color: #fff;
     margin: 0 0 0 14px;
     padding: 4px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     transition: all 0.2s ease-in-out;
     font-weight: 800;
-    line-height: 16px;
+    line-height: 1.143;
     border-bottom: 1px solid transparent;
     text-decoration: none;
   }
@@ -273,16 +273,16 @@
   }
   .header .segment-navigation .segment-navigation__brand-title {
     font-family: TeleNeoWeb-ExtraBold;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .header .segment-navigation .segment-navigation__item-link {
     color: #fff;
     margin: 0 7px;
     padding: 4px 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     transition: all 0.2s ease-in-out;
     font-weight: 800;
-    line-height: 16px;
+    line-height: 1.143;
     border-bottom: 1px solid transparent;
     text-decoration: none;
   }
@@ -299,8 +299,8 @@
   }
   .header .meta-navigation .meta-navigation__item-link {
     margin: 0 0 0 16px;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.75rem;
+    line-height: 1.333;
   }
   .header .meta-navigation .meta-navigation__item-link scale-icon {
     margin-right: 6px;
@@ -310,7 +310,7 @@
     height: 100%;
     padding-left: 16px;
     padding-right: 16px;
-    cursor: default;
+    cursor: pointer;
   }
 
   .header .main-navigation .main-navigation__item:has(a[href]) {
@@ -340,11 +340,11 @@
     color: #262626;
     height: 100%;
     display: flex;
-    font-size: 20px;
+    font-size: 1.25rem;
     transition: all 0.2s ease-in-out;
     align-items: center;
     font-weight: 800;
-    line-height: 24px;
+    line-height: 1.2;
     text-decoration: none;
   }
 

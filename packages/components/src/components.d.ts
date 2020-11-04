@@ -11,20 +11,24 @@ import { StyleSheet } from "jss";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
+        "claimLang": string;
         "color": string;
         "href": string;
     }
     interface AppMegaMenu {
         "activeRouteId": string;
         "hide": () => void;
+        "isActive": boolean;
         "navigation": MenuItem[];
     }
     interface AppNavigationMainMobile {
         "activeRouteId": string;
+        "hide": () => void;
         "navigation": MenuItem[];
     }
     interface AppNavigationSectorMobile {
         "activeSectorId"?: string;
+        "hide": () => void;
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
@@ -74,6 +78,7 @@ export namespace Components {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "brandTitle"?: string;
+        "claimLang": string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -85,6 +90,7 @@ export namespace Components {
         "activeSectorId"?: string;
         "addonNavigation"?: any;
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
@@ -1062,21 +1068,25 @@ declare global {
 declare namespace LocalJSX {
     interface AppLogo {
         "claim"?: boolean;
+        "claimLang"?: string;
         "color"?: string;
         "href"?: string;
     }
     interface AppMegaMenu {
         "activeRouteId"?: string;
         "hide"?: () => void;
+        "isActive"?: boolean;
         "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {
         "activeRouteId"?: string;
+        "hide"?: () => void;
         "navigation"?: MenuItem[];
         "onCloseMenu"?: (event: CustomEvent<any>) => void;
     }
     interface AppNavigationSectorMobile {
         "activeSectorId"?: string;
+        "hide"?: () => void;
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {
@@ -1122,6 +1132,7 @@ declare namespace LocalJSX {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
@@ -1133,6 +1144,7 @@ declare namespace LocalJSX {
         "activeSectorId"?: string;
         "addonNavigation"?: any;
         "brandTitle"?: string;
+        "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;

@@ -8,13 +8,13 @@ import { Components } from '@scaleds/components-telekom';
 
 export declare interface AppLogo extends Components.AppLogo {}
 @ProxyCmp({
-  inputs: ['claim', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href']
 })
 @Component({
   selector: 'app-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claim', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href']
 })
 export class AppLogo {
   protected el: HTMLElement;
@@ -27,13 +27,13 @@ export class AppLogo {
 
 export declare interface AppMegaMenu extends Components.AppMegaMenu {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'isActive', 'navigation']
 })
 @Component({
   selector: 'app-mega-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'hide', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'isActive', 'navigation']
 })
 export class AppMegaMenu {
   protected el: HTMLElement;
@@ -46,13 +46,13 @@ export class AppMegaMenu {
 import { MainNavigationMobile as IMainNavigationMobile } from '@scaleds/components-telekom/dist/types/components/app-navigation-main-mobile/app-navigation-main-mobile';
 export declare interface AppNavigationMainMobile extends Components.AppNavigationMainMobile {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'navigation']
+  inputs: ['activeRouteId', 'hide', 'navigation']
 })
 @Component({
   selector: 'app-navigation-main-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'navigation'],
+  inputs: ['activeRouteId', 'hide', 'navigation'],
   outputs: ['closeMenu']
 })
 export class AppNavigationMainMobile {
@@ -69,13 +69,13 @@ export class AppNavigationMainMobile {
 
 export declare interface AppNavigationSectorMobile extends Components.AppNavigationSectorMobile {}
 @ProxyCmp({
-  inputs: ['activeSectorId', 'navigation']
+  inputs: ['activeSectorId', 'hide', 'navigation']
 })
 @Component({
   selector: 'app-navigation-sector-mobile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeSectorId', 'navigation']
+  inputs: ['activeSectorId', 'hide', 'navigation']
 })
 export class AppNavigationSectorMobile {
   protected el: HTMLElement;
@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'scrolled', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'sectorNavigation']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;

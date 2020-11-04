@@ -55,6 +55,7 @@ export const AppLogo = /*@__PURE__*/ Vue.extend({
     href: {} as PropOptions<Components.AppLogo['href']>,
     color: {} as PropOptions<Components.AppLogo['color']>,
     claim: {} as PropOptions<Components.AppLogo['claim']>,
+    claimLang: {} as PropOptions<Components.AppLogo['claimLang']>,
   },
 
 
@@ -68,6 +69,7 @@ export const AppMegaMenu = /*@__PURE__*/ Vue.extend({
     navigation: {} as PropOptions<Components.AppMegaMenu['navigation']>,
     hide: {} as PropOptions<Components.AppMegaMenu['hide']>,
     activeRouteId: {} as PropOptions<Components.AppMegaMenu['activeRouteId']>,
+    isActive: {} as PropOptions<Components.AppMegaMenu['isActive']>,
   },
 
 
@@ -78,6 +80,7 @@ export const AppMegaMenu = /*@__PURE__*/ Vue.extend({
 export const AppNavigationMainMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
+    hide: {} as PropOptions<Components.AppNavigationMainMobile['hide']>,
     navigation: {} as PropOptions<Components.AppNavigationMainMobile['navigation']>,
     activeRouteId: {} as PropOptions<Components.AppNavigationMainMobile['activeRouteId']>,
   },
@@ -90,6 +93,7 @@ export const AppNavigationMainMobile = /*@__PURE__*/ Vue.extend({
 export const AppNavigationSectorMobile = /*@__PURE__*/ Vue.extend({
 
   props: {
+    hide: {} as PropOptions<Components.AppNavigationSectorMobile['hide']>,
     navigation: {} as PropOptions<Components.AppNavigationSectorMobile['navigation']>,
     activeSectorId: {} as PropOptions<Components.AppNavigationSectorMobile['activeSectorId']>,
   },
@@ -135,6 +139,7 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
+    claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
     customClass: {} as PropOptions<Components.ScaleAppHeader['customClass']>,
     brandTitle: {} as PropOptions<Components.ScaleAppHeader['brandTitle']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
@@ -155,6 +160,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
 
   props: {
     brandTitle: {} as PropOptions<Components.ScaleAppShell['brandTitle']>,
+    claimLang: {} as PropOptions<Components.ScaleAppShell['claimLang']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppShell['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,

@@ -1,54 +1,55 @@
 # Link
 
-Links are used as navigational elements. They may appear on their own, within a sentence or paragraph or directly following content.
+A link is an interactive piece of text. It typically forwards users to another location or file.
 
 ## General
 
-Links provide a lightweight option for navigation. Like other interactive elements, too many links will clutter a page and make it difficult for users to identify their next steps. This holds especially true for inline links, which should be used sparingly.
+A link provides an additional option for navigation. It can appear alone as an independent element or exist within a larger piece of text, like a sentence or paragraph. Links have a particular color and style. Use links with a clear purpose; too many links can disorient users.
 
-### When to Use
+### When to use
 
-Use links when you want users to:
+Use links to:
 
-- Navigate to a different page within the application
-- Navigate to an entirely different site
-- Jump to an element on the same page
-- Link to emails or phone numbers
+- forward users to a different page (within your product/service or from an external site),
+- direct users to another section on the same page, or
+- make phone numbers or emails interactive.
 
-### When Not to Use:
+### When not to use:
 
-Whenever you want users to perform actions that will either change data or manipulate the way it is displayed, change a state or trigger an action, use a button instead.
+Use a button when you want users to perform a specific action.
 
 ## Variants
 
-### Text Only
+### Text only
 
-We recommend links with three words or less. Because links take users to a new location, it is important that their labels accurately reflect the content users will find there. Therefore, use meaningful labels and avoid terms like “click here” or the web address itself.
+A text-only link can appear alone, within a sentence or body of text, or directly following content.
 
-Links need to be clear enough for the user to understand, but short enough to avoid that the text wraps onto the next line — unless it is an inline link.
+![Image Name](/assets/3_components/link/text_only.png)
 
-![Image Name](/assets/3_components/link/image-20200810095435628.png)
+### Text and icon
 
-### Text & Icons
+Add an icon to label certain categories, e.g., links to external sites, documents, downloads, etc. Make sure to use icons consistently within your product or service.
 
-Icons can be added to links in order to highlight certain categories, e.g. links to external sites, to documents, to downloads etc. Make sure to use link icons consistently throughout your product.
+![Image Name](/assets/3_components/link/link_icon.png)
 
-![Image Name](/assets/3_components/link/image-20200810095443120.png)
+## Link text
+
+- Each link text should be unique to avoid problems with screen readers.
+- A link text should be as short as possible – typically one to three words. However, a link needs to be long enough to clearly convey its purpose. In certain cases, you can link a full sentence, but avoid longer links wherever possible.
+- A link text should make sense without any additional context. Using "more information" or "click here" can cause problems for people using screen readers.
 
 ## Sizes
 
-Choose the size according to the body copy you are using.
+Choose the size based on the body text you are using.
 
 ### Large
 
 20px
 
-![Image Name](/assets/3_components/link/image-20200810095449927.png)
+![Image Name](/assets/3_components/link/link_large.png)
 
 ### Small
 
 16px
 
-![Image Name](/assets/3_components/link/image-20200810095443120.png)
-
-## Code
+![Image Name](/assets/3_components/link/link_small.png)

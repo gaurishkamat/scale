@@ -12,7 +12,7 @@ Accordions make it easy for users to get an overview of page content and expand 
 
 ## Elements
 
-![Image Name](/assets/3_components/accordion/image-20200810110853155.png)
+![Image Name](assets/3_components/accordion/image-20200810110853155.png)
 
 ### Title (1)
 
@@ -29,8 +29,3 @@ Content inside of a section may be split into paragraphs and include sub-headers
 ## Related Components
 
 Tabs
-
-## Code
-
-
-

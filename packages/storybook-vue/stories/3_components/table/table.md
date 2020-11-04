@@ -14,7 +14,7 @@ Do not use tables to sort or display content other than data.
 
 ## Elements
 
-![Image Name](/assets/3_components/data-table/image-20200811091807192.png)
+![Image Name](assets/3_components/data-table/image-20200811091807192.png)
 
 ### Table Row (1)
 
@@ -48,7 +48,7 @@ With a sorting header, the objects in the table (organized in table rows) can be
 
 The table structure and presentation are similar on both desktop and mobile. On mobile, horizontal swiping allows for viewing the complete content.
 
-![Image Name](/assets/3_components/data-table/image-20200812204851349.png)
+![Image Name](assets/3_components/data-table/image-20200812204851349.png)
 
 ## Best Practice
 
@@ -59,5 +59,3 @@ The content of the first column should always be left-aligned. Content within ot
 ## Related Components
 
 Divider
-
-## Code

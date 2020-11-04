@@ -21,8 +21,8 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__item {
-  font-size: 24px;
-  line-height: 80px;
+  font-size: 1.5rem;
+  line-height: 3.333;
   font-weight: 800;
 }
 
@@ -58,7 +58,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current-item {
-  line-height: 80px;
+  line-height: 3.333;
 }
 
 .main-navigation-mobile__child-menu-current-item scale-icon {
@@ -67,7 +67,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #e20074;
   text-decoration: none;
@@ -109,8 +109,8 @@ svg path {
 }
 
 .main-navigation-mobile__child-menu-item {
-  font-size: 24px;
-  line-height: 60px;
+  font-size: 1.5rem;
+  line-height: 2.5;
   font-weight: 400;
 }
 
