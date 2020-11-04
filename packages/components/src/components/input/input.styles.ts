@@ -429,6 +429,17 @@ export const styles: JssStyle = {
     },
   },
 
+  'input__textarea-label-safety-background': {
+    position: 'absolute',
+    top: 2,
+    left: 2,
+    right: 2,
+    borderRadius: ({ radii }) => radii.input,
+    height: ({ spacing }) => spacing[5],
+    backgroundColor: ({ background }) => background.default,
+    pointerEvents: 'none',
+  },
+
   'input--disabled': {
     [`
       & .input__label, 

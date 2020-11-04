@@ -221,6 +221,7 @@ export class Input implements Base {
       );
     }
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
+    const { classes } = this.stylesheet;
 
     return (
       <Host>
@@ -278,6 +279,10 @@ export class Input implements Base {
             <label class="input__label" htmlFor={this.inputId}>
               {this.label}
             </label>
+          )}
+          {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
+          {(this.type === 'textarea' && this.variant === 'animated') && (
+            <span class={classes['input__textarea-label-safety-background']} aria-hidden="true" />
           )}
           {(!!this.helperText || !!this.counter) && (
             <div class="input__meta">
