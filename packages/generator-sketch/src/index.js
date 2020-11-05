@@ -26,6 +26,23 @@ const serverPath = config.libraryServerPath;
 
 const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
+
+function printSymbolStructure(symbol, indent = 0) {
+  console.log("".padStart(indent) + symbol.name);
+  if (symbol.layers) symbol.layers.forEach(s => printSymbolStructure(s, indent+2));
+}
+
+function findLayer(symbol, predicate) {
+  if (predicate(symbol)) return symbol;
+  if (symbol.layers) {
+    for (let i = 0; i < symbol.layers.length; i++) {
+      const result = findLayer(symbol.layers[i], predicate);
+      if (result) return result;
+    }
+  }
+  return undefined;
+}
+
 (async function() {
 
   const documentDB = await sqlite.open({
@@ -118,8 +135,35 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       symbol.layers[0].layers[0].resizingConstraint = 9;
       symbol.layers[0].layers[1].resizingConstraint = 11;
     }
-    if (/^(Button|Switch|Tag)/.test(symbol.name)) {
+    if (/^(Switch|Tag)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
+    }
+    if (/^(Button)/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 45;
+    }
+    if (/^Breadcrumb/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
+    }
+    if (/^Modal/.test(symbol.name)) {
+      symbol.layers[0].layers[1].resizingConstraint = 45;
+      //fitSymbolToContent(symbol);
+    }
+    if (/^Slider/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 10;
+
+      var track = findLayer(symbol, s => s.name === 'div.slider--track');
+      var count = findLayer(symbol, s => s.name === '40');
+      var label = findLayer(symbol, s => s.name === 'Slider Label');
+
+      if (label) label.resizingConstraint = 47;
+
+      if (count) {
+        count.resizingConstraint = 44;
+      }
+
+      track.resizingConstraint = 58;
+      track.layers[1].frame.width += 6;
+      track.layers[2].resizingConstraint = 45;
     }
     // Textarea & inputfield
     // Deal with information text aligns (. = bottom left/right pin, ' = top left/right pin)
@@ -183,6 +227,18 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         symbol.layers[0].resizingConstraint = 11;
         symbol.layers[0].layers[0].layers[1].resizingConstraint = 12;
         symbol.layers[0].layers[1].resizingConstraint = 11;
+    }
+    if (/^Link/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
+    }
+    if (/^Divider \/ \d+ Vertical/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 61;
+    }
+    if (/^Divider \/ \d+ Horizontal/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 47;
+    }
+    if (/^Accordion/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
     }
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
@@ -419,21 +475,19 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       // Try to create a symbol instance.
       // If the symbol is too different, we create a master symbol instead below.
       let instance;
-      let symbol = false;
-      
-      // && symbolArray.find(master => {
-      //   if (master.variant !== enhanced.variant) return false;
-      //   instance = master.createInstance({name: enhanced.name});
-      //   instance.frame = new Rect(enhanced.frame);
-      //   instance.style = new Style(enhanced.style);
-      //   try {
-      //     isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-      //     fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
-      //     return true;
-      //   } catch (err) {
-      //     return false;
-      //   }
-      // });
+      let symbol = false && symbolArray.find(master => {
+        if (master.variant !== enhanced.variant) return false;
+        instance = master.createInstance({name: enhanced.name});
+        instance.frame = new Rect(enhanced.frame);
+        instance.style = new Style(enhanced.style);
+        try {
+          isSymbolInstanceOf(instance, master, enhanced, '', master.name);
+          fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
+          return true;
+        } catch (err) {
+          return false;
+        }
+      });
       
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
@@ -457,8 +511,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
-        if (/^(Icon|(Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
-          instance.resizingConstraint = 45;
+        if (/^((Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
+          instance.name = 'Icon';
         }
       }
       return instance;
