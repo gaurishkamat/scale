@@ -29,30 +29,30 @@
         </div>
     </div>
 
-    <h2 class="title--artboard-section">Previous Page</h2>
+    <h2 class="title--artboard-section">Breadcrumb Label</h2>
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-1">
-                <a href="#">Previous Page</a>
+                <a href="#">Breadcrumb Label</a>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-2" data-sketch-state="hover">
-                <a href="#">Previous Page</a>
+                <a href="#">Breadcrumb Label</a>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-3" data-sketch-state="focus">
-                <a href="#">Previous Page</a>
+                <a href="#">Breadcrumb Label</a>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:active/:selected</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-4" data-sketch-state="active">
-                <a href="#">Previous Page</a>
+                <a href="#">Breadcrumb Label</a>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
@@ -90,7 +90,7 @@
 <script>
     Array.from(document.querySelectorAll("scale-breadcrumb")).forEach(btn => {
         btn.dataset.sketchSymbol = `Breadcrumb / ${
-                order(1, btn.firstElementChild.hasAttribute("is-current") ? 'Current Page' : 'Previous Page')
+                order(1, btn.firstElementChild.hasAttribute("is-current") ? 'Current Page' : 'Breadcrumb Label')
             }${
                 btn.firstElementChild.hasAttribute("is-current") 
                 ? ""
