@@ -4,29 +4,6 @@ import nodeToSketchLayers from './nodeToSketchLayers';
 import {isNodeVisible} from './helpers/visibility';
 import { removeJssNameFromClass } from './helpers/utils';
 
-// const materializeStyles = (node: Element) => {
-//   if (node.children) {
-//     Array.from(node.children).forEach(c => materializeStyles(c));
-//   }
-//   if (node && (node as HTMLElement).style) {
-//     const style = getComputedStyle(node);
-//     if (style) {
-//       Array.from(style).forEach(key => (node as HTMLElement).style.setProperty(key, style.getPropertyValue(key), style.getPropertyPriority(key)));
-//     }
-//   }
-//   return node;
-// }
-
-// // Adopt DOM to include slotted content (needed to get slot styles)
-// // This ain't gonna work, slot should rather descend into its assignedNodes()
-// const getAssignedNodes = (node: HTMLElement) => {
-//   if (node.nodeName === 'SLOT') {
-//     (node as HTMLSlotElement).assignedNodes()
-//       .forEach((slotNode: HTMLElement) => node.appendChild(materializeStyles(slotNode)));
-//   }
-//   return node
-// }
-
 export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   let bcr = node.getBoundingClientRect();
   if (bcr.width === 0 && bcr.height === 0) {
@@ -88,10 +65,6 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
           var cc = iframe.contentDocument.body.parentElement.offsetHeight;
           iframe.contentDocument.body.parentElement.dataset.height = String(cc);
 
-          // FIXME child symbols are not generated. No idea why. 
-          // Adding iframe body.children as nodeTreeToSketchGroups gets me
-          // the modal text but not the background colors and drop shadows. Again: Why?
-          // The modal divs don't show up but the text is in the right place and with the right style. Why?
           const iframeOptions = {...options, debugStyle: true};
           const children = Array.from(iframe.contentDocument.children)
             .filter(isNodeVisible)

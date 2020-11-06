@@ -9,7 +9,7 @@ function traverse(node: HTMLElement) {
     const attrVariant:string[] = [];
     for (let i = 0; i < node.attributes.length; i++) {
       const attr = node.attributes[i];
-      if (!/^class$|^data-|^variant$/.test(attr.name)) {
+      if (!/^class$|^data-|^variant|^display$/.test(attr.name)) {
         if (attr.value.length < 32) {
           attrVariant.push(`${attr.name}:${attr.value.slice(0,32)}`)
         } else {
