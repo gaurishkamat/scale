@@ -135,8 +135,12 @@ function findLayer(symbol, predicate) {
       symbol.layers[0].layers[0].resizingConstraint = 9;
       symbol.layers[0].layers[1].resizingConstraint = 11;
     }
-    if (/^(Switch|Tag)/.test(symbol.name)) {
+    if (/^Tag/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
+    }
+    if (/^Switch/.test(symbol.name)) {
+      symbol.layers[0].resizingConstraint = 9;
+      symbol.layers[1].resizingConstraint = 9;
     }
     if (/^(Button)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 45;
