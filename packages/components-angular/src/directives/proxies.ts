@@ -436,13 +436,13 @@ export class ScaleModal {
 
 export declare interface ScaleProgressBar extends Components.ScaleProgressBar {}
 @ProxyCmp({
-  inputs: ['customClass', 'customColor', 'disabled', 'hasError', 'icon', 'percentage', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 @Component({
   selector: 'scale-progress-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'customColor', 'disabled', 'hasError', 'icon', 'percentage', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 export class ScaleProgressBar {
   protected el: HTMLElement;
@@ -512,13 +512,13 @@ export class ScaleSidebarNavItem {
 import { Slider as ISlider } from '@scaleds/components-telekom/dist/types/components/slider/slider';
 export declare interface ScaleSlider extends Components.ScaleSlider {}
 @ProxyCmp({
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
+  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
 })
 @Component({
   selector: 'scale-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
+  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
   outputs: ['scaleChange']
 })
 export class ScaleSlider {
@@ -551,13 +551,13 @@ export class ScaleSsrSlotFix {
 import { Switch as ISwitch } from '@scaleds/components-telekom/dist/types/components/switch/switch';
 export declare interface ScaleSwitch extends Components.ScaleSwitch {}
 @ProxyCmp({
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'styles']
+  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles']
 })
 @Component({
   selector: 'scale-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'styles'],
+  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles'],
   outputs: ['scaleChange']
 })
 export class ScaleSwitch {

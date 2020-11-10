@@ -775,6 +775,10 @@
       },
       "attributes": [
         {
+          "name": "busy",
+          "description": "(optional) Progress bar busy switch"
+        },
+        {
           "name": "custom-class",
           "description": "(optional) Progress bar class"
         },
@@ -795,8 +799,16 @@
           "description": "(optional) Progress bar icon indicator"
         },
         {
+          "name": "label",
+          "description": "(optional) Progress bar label"
+        },
+        {
           "name": "percentage",
           "description": "(required) Progress bar percentage"
+        },
+        {
+          "name": "progress-bar-id",
+          "description": "(optional) Progress bar id"
         },
         {
           "name": "show-status",
@@ -939,6 +951,10 @@
           "description": "(optional) slider display value"
         },
         {
+          "name": "slider-id",
+          "description": "(optional) Slider id"
+        },
+        {
           "name": "step",
           "description": "(optional) the step size to increase or decrease when dragging slider"
         },
@@ -990,6 +1006,10 @@
         {
           "name": "input-id",
           "description": "(optional) Input id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) switch label"
         },
         {
           "name": "styles",
