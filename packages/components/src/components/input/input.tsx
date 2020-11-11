@@ -224,6 +224,10 @@ export class Input implements Base {
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
     const { classes } = this.stylesheet;
 
+    const ariaInvalidAttr = this.status === 'error' ? { 'aria-invalid': true } : {}
+    const helperTextId = `helper-message-${i}`
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId }
+
     return (
       <Host>
         <div class={this.getCssClassMap()}>
@@ -245,6 +249,8 @@ export class Input implements Base {
                 multiple={this.multiple}
                 id={this.inputId}
                 size={this.visibleSize}
+                {...ariaInvalidAttr}
+                {...ariaDescribedByAttr}
               >
                 <slot />
               </select>
@@ -273,6 +279,8 @@ export class Input implements Base {
               disabled={this.disabled}
               {...(!!this.rows ? { rows: this.rows } : {})}
               {...(!!this.cols ? { cols: this.cols } : {})}
+              {...ariaInvalidAttr}
+              {...ariaDescribedByAttr}
             />
           )}
 
@@ -289,7 +297,7 @@ export class Input implements Base {
             />
           )}
           {(!!this.helperText || !!this.counter) && (
-            <div class="input__meta">
+            <div class="input__meta" id={helperTextId} aria-live="polite" aria-relevant="additions removals">
               {!!this.helperText && (
                 <div class="input__helper-text">{this.helperText}</div>
               )}
