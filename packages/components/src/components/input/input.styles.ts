@@ -150,6 +150,7 @@ export const styles: JssStyle = {
       color: '#6C6C6C',
     },
   },
+  'input--has-focus': {},
   'input--variant-animated': {
     '& .input__input, & .input__select': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
@@ -167,12 +168,7 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('large').start,
     },
-    [`
-      & .input__input:focus + .input__label, 
-      & .input__select:focus + .input__label, 
-      & .input__textarea:focus + .input__label, 
-      &.animated .input__label
-    `]: {
+    '&$input--has-focus .input__label, &.animated .input__label': {
       ...animated('large').end,
       ...bold,
     },
@@ -204,7 +200,7 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('small').start,
     },
-    '& .input__input:focus + .input__label, &.animated .input__label': animated(
+    '&$input--has-focus .input__label, &.animated .input__label': animated(
       'small'
     ).end,
   },
