@@ -228,9 +228,10 @@ export class Input implements Base {
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
     const { classes } = this.stylesheet;
 
-    const ariaInvalidAttr = this.status === 'error' ? { 'aria-invalid': true } : {}
-    const helperTextId = `helper-message-${i}`
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId }
+    const ariaInvalidAttr =
+      this.status === 'error' ? { 'aria-invalid': true } : {};
+    const helperTextId = `helper-message-${i}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
       <Host>
@@ -295,7 +296,12 @@ export class Input implements Base {
             />
           )}
           {(!!this.helperText || !!this.counter) && (
-            <div class="input__meta" id={helperTextId} aria-live="polite" aria-relevant="additions removals">
+            <div
+              class="input__meta"
+              id={helperTextId}
+              aria-live="polite"
+              aria-relevant="additions removals"
+            >
               {!!this.helperText && (
                 <div class="input__helper-text">{this.helperText}</div>
               )}
