@@ -150,6 +150,7 @@ export const styles: JssStyle = {
       color: '#6C6C6C',
     },
   },
+  'input--has-focus': {},
   'input--variant-animated': {
     '& .input__input, & .input__select': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
@@ -167,19 +168,14 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('large').start,
     },
-    [`
-      & .input__input:focus + .input__label, 
-      & .input__select:focus + .input__label, 
-      & .input__textarea:focus + .input__label, 
-      &.animated .input__label
-    `]: {
+    '&$input--has-focus .input__label, &.animated .input__label': {
       ...animated('large').end,
       ...bold,
     },
   },
   'input--status-error': {
-    '& .input__input': {
-      border: ({ palette }) => `1px solid ${palette.error}`,
+    '& .input__input, & .input__textarea, & .input__select': {
+      border: ({ palette }) => `2px solid ${palette.error}`,
     },
     '& .input__helper-text': {
       color: ({ palette }) => `${palette.error}`,
@@ -204,7 +200,7 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('small').start,
     },
-    '& .input__input:focus + .input__label, &.animated .input__label': animated(
+    '&$input--has-focus .input__label, &.animated .input__label': animated(
       'small'
     ).end,
   },
@@ -213,6 +209,7 @@ export const styles: JssStyle = {
       backgroundColor: 'transparent',
     },
   },
+
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
@@ -224,18 +221,15 @@ export const styles: JssStyle = {
     },
 
     // Error
-    '&$input--status-error': {
-      '& input ~ label': {
-        color: ({ palette }) => `${palette.error}`,
-      },
-      // Pressed Error
-      '& input:not([disabled]):active ~ label': {
-        color: ({ palette }) => `${palette.gray}`,
+    '&$input--status-error .input__checkbox-container': {
+      '& .input__checkbox-placeholder': {
+        border: ({ color }) => `2px solid ${color.error}`,
       },
     },
 
     // Checked Off - Available
     '& label': {
+      fontWeight: ({ type }) => type.weight_medium,
       color: '#262626',
     },
     '& .input__checkbox-container': {
@@ -265,6 +259,9 @@ export const styles: JssStyle = {
         top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
         '--icon-color': ({ palette }) => palette.white,
       },
+      '& ~ label': {
+        transition: defaultTransition,
+      },
     },
 
     // Checked Off - Pressed
@@ -276,6 +273,9 @@ export const styles: JssStyle = {
       '& scale-icon': {
         '--icon-color': ({ palette }) => palette.magentaActive,
       },
+      '& ~ label': {
+        color: ({ color }) => color.primary_active,
+      },
     },
 
     // Checked Off - Hover
@@ -283,6 +283,9 @@ export const styles: JssStyle = {
       '& .input__checkbox-placeholder': {
         boxShadow: 'none',
         borderColor: ({ palette }) => palette.magentaHover,
+      },
+      '& ~ label': {
+        color: ({ color }) => color.primary_hover,
       },
     },
 
@@ -348,9 +351,12 @@ export const styles: JssStyle = {
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
+
     // Checked Off - Available
     '& label': {
+      fontWeight: ({ type }) => type.weight_medium,
       color: '#262626',
+      transition: defaultTransition,
     },
     '& input': {
       appearance: 'none',
@@ -360,6 +366,7 @@ export const styles: JssStyle = {
       border: ({ palette }) => `1px solid ${palette.gray}`,
       borderRadius: '50%',
       margin: ({ spacing }) => `0 ${spacing.inline} 0 0`,
+      transition: defaultTransition,
     },
     // Checked Off - Focus
     '& input:focus': {
@@ -368,14 +375,21 @@ export const styles: JssStyle = {
     },
 
     // Checked Off - Hover
-    '& input:hover': {
-      border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+    '&:hover input:not(:checked):not([disabled])': {
+      // border: ({ palette }) => `1px solid ${palette.magentaHover}`,
+      borderColor: ({ color }) => color.primary_hover,
       boxShadow: 'none',
+    },
+    '&:hover input:not(:checked):not([disabled]) ~ label': {
+      color: ({ color }) => color.primary_hover,
     },
 
     // Checked Off - Pressed
     '& input:active': {
       border: ({ palette }) => `8px solid ${palette.magentaActive}`,
+    },
+    '& input:not(:checked):not([disabled]):active ~ label': {
+      color: ({ color }) => color.primary_active,
     },
 
     // Checked Off - Disabled
@@ -387,14 +401,8 @@ export const styles: JssStyle = {
     },
 
     // Checked Off - Error
-    '&$input--status-error': {
-      '& label': {
-        color: ({ palette }) => palette.error,
-      },
-      // Checked Off - Error Pressed
-      '& input:active ~ label': {
-        color: ({ palette }) => palette.gray,
-      },
+    '&$input--status-error input': {
+      border: ({ color }) => `2px solid ${color.error}`,
     },
 
     // Checked On - Available
@@ -417,9 +425,25 @@ export const styles: JssStyle = {
     },
   },
 
+  'input__textarea-label-safety-background': {
+    position: 'absolute',
+    top: 2,
+    left: 2,
+    right: 2,
+    borderRadius: ({ radii }) => radii.input,
+    height: ({ spacing }) => spacing[5],
+    backgroundColor: ({ background }) => background.default,
+    pointerEvents: 'none',
+    '$input--disabled &': {
+      backgroundColor: 'transparent',
+    },
+  },
+
   'input--disabled': {
     [`
-      & .input__label, 
+      & label,
+      & .input__label,
+      & input,
       & .input__input, 
       & .input__checkbox-container, 
       & .input__radio, 
@@ -428,7 +452,7 @@ export const styles: JssStyle = {
     `]: {
       borderColor: '#D0D0D0',
       color: ({ color }) => color.disabled,
-      cursor: 'not-allowed!important',
+      cursor: 'not-allowed',
     },
   },
 };

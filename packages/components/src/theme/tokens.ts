@@ -148,6 +148,7 @@ const color = {
 };
 
 const background = {
+  default: WHITE,
   light: GRAY_9_DECORATIVE,
   dark: GRAY_7_DECORATIVE,
   action: MAGENTA,
