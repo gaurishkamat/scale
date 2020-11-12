@@ -187,9 +187,10 @@ export class Input implements Base {
               type="checkbox"
               name={this.name}
               id={this.inputId}
+              onChange={this.handleCheckChange}
+              value={this.value}
               checked={this.checked}
               disabled={this.disabled}
-              onChange={this.handleCheckChange}
             />
             <div
               class={classNames('input__checkbox-container')}

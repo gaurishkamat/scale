@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.2...v1.12.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* **components:** pass value to input checkbox, closes [#11](https://gitlab.com/scale-ds/scale-telekom/issues/11) ([b10c8e1](https://gitlab.com/scale-ds/scale-telekom/commit/b10c8e12ea6cde35082e31e80f1637db146a2dd8))
+* make logo responsive ([036eb98](https://gitlab.com/scale-ds/scale-telekom/commit/036eb983461c237faab510638a5b7fb7119c38c3))
+
+
+### Features
+
+* add claim lang usage example ([80b2afe](https://gitlab.com/scale-ds/scale-telekom/commit/80b2afe6617938ed28174773bc0179ce7dcf137e))
+* **brand-header:** add claimLang config property ([fb21d23](https://gitlab.com/scale-ds/scale-telekom/commit/fb21d23ed6da1aa5cd114088ec77a924d1e41fb0))
+
+
+
+
+
 ## [1.11.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.1...v1.11.2) (2020-10-20)
 
 
