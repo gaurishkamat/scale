@@ -25,14 +25,14 @@
 }
 
 .mega-menu__row-title {
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 18px;
   font-family: 'TeleNeoWeb-ExtraBold';
 }
 
 .mega-menu__row-item {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: 'TeleNeoWeb-Medium';
   color: #262626;
   text-decoration: none;
@@ -44,4 +44,12 @@
 .mega-menu__row-item.active,
 .mega-menu__row-item:hover {
   color: #e20074;
+}
+
+.mega-menu__row li {
+  list-style: none;
+}
+
+.mega-menu__row ul {
+  padding-inline-start: 0;
 }

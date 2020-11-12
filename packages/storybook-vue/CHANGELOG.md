@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.2...v1.12.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* the fixtures ([4f0392b](https://gitlab.com/scale-ds/scale-telekom/commit/4f0392bae59643a66129fed34db20c3ba1ec803b))
+
+
+### Features
+
+* **brand-header:** add claimLang config property ([fb21d23](https://gitlab.com/scale-ds/scale-telekom/commit/fb21d23ed6da1aa5cd114088ec77a924d1e41fb0))
+
+
+
+
+
+## [1.11.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.1...v1.11.2) (2020-10-20)
+
+**Note:** Version bump only for package @scaleds/storybook-vue
+
+
+
+
+
 ## [1.11.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.0...v1.11.1) (2020-10-12)
 
 **Note:** Version bump only for package @scaleds/storybook-vue

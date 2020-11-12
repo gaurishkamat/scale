@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.2...v1.12.0) (2020-11-12)
+
+
+### Features
+
+* **brand-header:** add claimLang config property ([fb21d23](https://gitlab.com/scale-ds/scale-telekom/commit/fb21d23ed6da1aa5cd114088ec77a924d1e41fb0))
+
+
+
+
+
+## [1.11.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.1...v1.11.2) (2020-10-20)
+
+
+### Bug Fixes
+
+* **components-angular:** add missing ScaleChartStackCard to component-library-module.ts ([ab93f16](https://gitlab.com/scale-ds/scale-telekom/commit/ab93f161732c60219f112b4ce7273554cf3cbab1))
+
+
+
+
+
 ## [1.11.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.0...v1.11.1) (2020-10-12)
 
 **Note:** Version bump only for package @scaleds/components-angular-telekom

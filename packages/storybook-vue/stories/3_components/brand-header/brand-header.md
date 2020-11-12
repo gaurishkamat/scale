@@ -9,7 +9,7 @@ The brand header is made up of the brand bar and the navigation bar. It is the c
 
 The brand bar contains our logo and slogan, metalinks, and other functions. When scrolling down the page on desktops, the brand bar reduces in size, leaving room for navigation and content. The logo changes position and appears in the navigation bar. The entire header remains fixed at the top of the screen. When scrolling back up, the initial state is restored. Minimizing the brand header is a typical feature and works the same way on all devices.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_brandbar.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_brandbar.png)
 
 #### Telekom logo and slogan (1)
 
@@ -33,24 +33,24 @@ With the language switch, users can select the desired language for the website.
 
 If there is enough space and only a few language versions, you can place the language options as side-by-side text links. The current language selection is not displayed.
 
-![Image Name](/assets/3_components/brand-header/EN-brandheader_language01.png)
+![Image Name](assets/3_components/brand-header/EN-brandheader_language01.png)
 
 ### Dropdown
 
 Use a dropdown with country code for more than four languages or if there is not enough space.
 
-![Image Name](/assets/3_components/brand-header/EN-brandheader_language02.png)
+![Image Name](assets/3_components/brand-header/EN-brandheader_language02.png)
 
 ### Portal name
 If you do not offer personal and business sections, you can display the portal name instead. This provides orientation for the user.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_portalname.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_portalname.png)
 
 ## Navigation bar
 
 The navigation bar is the central guiding element and point of orientation for our websites. On the left side, it includes the most important navigation items, from left to right. Product-specific core functions are on the right side. Each element in the navigation bar is a direct link to a new page or opens a dropdown.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_navbar.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_navbar.png)
 
 #### Primary navigation (1)
 
@@ -68,31 +68,31 @@ Decide on one navigation type which fits the complexity of the information archi
 
 The navigation items give the site structure and serve as jump labels.
 
-![Image Name](/assets/3_components/brand-header/EN-brandheader_nav1_onepage.png)
+![Image Name](assets/3_components/brand-header/EN-brandheader_nav1_onepage.png)
 
 ### Websites without a submenu
 
 For websites with only one level of hierarchy, the user clicks on a menu item to navigate directly to the content.
 
-![Image Name](/assets/3_components/brand-header/EN-brandheader_nav2_nosubmenu.png)
+![Image Name](assets/3_components/brand-header/EN-brandheader_nav2_nosubmenu.png)
 
 ### Dropdown
 
 The dropdown navigation can accommodate several levels of navigation and different depths within a navigation tree. As a general rule, the less levels the better.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_navi3_dropdown.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_navi3_dropdown.png)
 
 ### Mega menu
 
 The mega menu is suitable for a flat information architecture. It offers a good overview within a category, but the depth is limited to three levels.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_nav4_megamenu.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_nav4_megamenu.png)
 
 ## Mobile navigation
 
 To give the content more space, the navigation automatically minimizes after the user opens the website.
 
-![Image Name](/assets/3_components/brand-header/EN_brandheader_nav_mobile.png)
+![Image Name](assets/3_components/brand-header/EN_brandheader_nav_mobile.png)
 
 #### Initial navigation (1)
 
@@ -111,7 +111,3 @@ Websites without subpages (only one page) do not have navigation. On these pages
 #### Navigation level 3 (4)
 
 Depending on how many levels of hierarchy there are, the user navigates through further lists to the desired content.
-
-
-## Code
-

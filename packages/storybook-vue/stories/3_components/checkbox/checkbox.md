@@ -6,7 +6,7 @@ With Checkboxes, users toggle options on or off. They can answer simple yes-no q
 
 A checkbox is a selection control that allows users to choose between two states. It consists of a control box and a corresponding label. Activating a checkbox does not affect other selections. It is considered to be selected when the control box has a checkmark. In the initial state, a checkbox can switch on or off.
 
-![Image Name](/assets/3_components/checkbox/checkbox.png)
+![Image Name](assets/3_components/checkbox/checkbox.png)
 
 ### When to use
 
@@ -23,7 +23,7 @@ There are two main use cases for checkboxes:
 
 The label explicitly describes what happens when users select or deselect a checkbox. It should convey two opposite states. Always formulate the label positively to avoid double negatives.
 
-![Image Name](/assets/3_components/checkbox/checkbox_label.png)
+![Image Name](assets/3_components/checkbox/checkbox_label.png)
 
 ## Disabled state
 
@@ -32,22 +32,20 @@ Disable the checkbox if:
 * another action has to take place before the checkbox is usable or
 * the option needs to be listed but is currently unavailable.
 
-![Image Name](/assets/3_components/checkbox/checkbox_disabled.png)
+![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
 
 ## Nested groups of checkboxes
 
 When checkboxes are related to a parent checkbox, you can nest them. Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
 
-![Image Name](/assets/3_components/checkbox/checkbox_nesting.png)
+![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
 ### Required input
 
 When checking a box is required, use an asterisk (*) in the text label.
 
-![Image Name](/assets/3_components/checkbox/checkbox_required_input.png)
+![Image Name](assets/3_components/checkbox/checkbox_required_input.png)
 
 ## Related components
 
 Select Box, Switch, Radio Button
-
-## Code

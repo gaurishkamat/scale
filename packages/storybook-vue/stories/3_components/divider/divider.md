@@ -1,29 +1,25 @@
 # Divider
 
-A divider is a thin line that separates content into groups. This way coherent content is more identifiable to the user.
+A divider is a thin line that helps divide elements into groups. This makes it easy for users to identify content that belongs together.
+
+## General
+
+Dividers have a subtle visual effect – visible but never dominant.
+
+### When to use
+
+Only use a divider:
+
+*	when using whitespace is not sufficient to create a content group or
+*	when using whitespace is not possible, e.g., when there's not enough space.
+
+
+### When not to use
+
+Only use a divider when really necessary. To avoid clutter and fragmentation, use as few dividers as possible.
+
 
 ## Variants
 
-### Horizontal
+![Image Name](assets/3_components/divider/divider.png)
 
-![Image Name](/assets/3_components/divider/image-20200810102609486.png)
-
-### Vertical
-
-![Image Name](/assets/3_components/divider/image-20200810102617797.png)
-
-## Best Practice
-
-### Subtle
-
-Dividers should be noticeable in a layout, but not jarring.
-
-### Secondary
-
-Dividers should only be used if separating elements through white space is not enough.
-
-### Infrequent
-
-Use dividers sparingly, to create groupings rather than separate items.
-
-## Code

@@ -14,7 +14,7 @@ Never use select boxes for navigation purposes.
 
 ## Elements
 
-![Image Name](/assets/3_components/select-box/image-20200811101628432.png)
+![Image Name](assets/3_components/select-box/image-20200811101628432.png)
 
 ### Label (1)
 
@@ -42,16 +42,14 @@ Selectable options inside a select box e.g. "germany, france, belgium".
 
 Use large select boxes as the default option. Combine with other large form elements like input or button.
 
-![Image Name](/assets/3_components/select-box/image-20200811101326475.png)
+![Image Name](assets/3_components/select-box/image-20200811101326475.png)
 
 ### Small
 
 When space is limited, consistently use the small size form elements.
 
-![Image Name](/assets/3_components/select-box/image-20200811101332899.png)
+![Image Name](assets/3_components/select-box/image-20200811101332899.png)
 
 ## Related Components
 
 Checkbox, Switch, Radio Button
-
-## Code

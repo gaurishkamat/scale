@@ -8,7 +8,7 @@ A radio button is a selection control that consists of a circular button and a l
 
 Radio buttons only appear in groups. Activating a radio button automatically deselects the previously selected option.
 
-![Image Name](/assets/3_components/radio-button/radiobuttons_general.png)
+![Image Name](assets/3_components/radio-button/radiobuttons_general.png)
 
 ### When  to use
 
@@ -23,7 +23,7 @@ To initiate an action, use a button.
 
 The label clearly describes the effect of activating the radio button. Labels normally contain at most three words.
 
-![Image Name](/assets/3_components/radio-button/radiobuttons_label.png)
+![Image Name](assets/3_components/radio-button/radiobuttons_label.png)
 
 ## Disabled state
 
@@ -32,7 +32,7 @@ Disable the radio button if:
 * another action has to take place before the radio button is usable or
 *	the option needs to be listed but is currently unavailable.
 
-![Image Name](/assets/3_components/radio-button/disabled_radiobutton.png)
+![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
 
 ## Headline and default selection
 
@@ -41,10 +41,8 @@ Consider using a headline to provide more clarity to the user.
 Display one option as a default selection to align with user expectations and reduce the time and clicks needed. This is also a good way of making suggestions to the user. There are a few cases where you don't have to select a radio button by default, e.g., when selecting titles in a form (Mr., Ms., etc.).
 
 
-![Image Name](/assets/3_components/radio-button/radiobuttons_bestpractice.png)
+![Image Name](assets/3_components/radio-button/radiobuttons_bestpractice.png)
 
 ## Related components
 
 Checkbox, Switch, Select Box
-
-## Code

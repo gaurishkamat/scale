@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "Scale Components Telekom",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -72,7 +72,7 @@
   "license": "MIT",
   "dependencies": {
     "@proyecto26/animatable-component": "^1.1.8",
-    "@scaleds/icons-telekom": "^1.11.1",
+    "@scaleds/icons-telekom": "^1.12.0",
     "classnames": "^2.2.6",
     "web-animations-js": "^2.3.2"
   },

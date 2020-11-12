@@ -1,36 +1,45 @@
 # Accordion
 
-Accordions make it easy for users to get an overview of page content and expand the relevant topics for further exploration. Accordions can hold all types of content.
+Accordions help organize and present large amounts of content with an efficient use of space. They allow users to move through content and explore which topics to read.
 
 ## General
 
-### When to Use
+An accordion holds a list of headlines stacked vertically and offers a general overview of the content. Users can quickly scan all the headlines and decide which content to continue reading.
 
-- To organize related information.
-- To shorten pages and reduce scrolling when it is not crucial to read content in full.
-- When space is at a premium and long content cannot be displayed all at once, like on a mobile interface.
+### When to use
+
+Use an accordion to:
+
+*	help users find relevant content more quickly,
+*	organize a large amount of related content in a small space, or
+*	show content which users don't necessarily need to read all the way through.
+
+### When not to use
+
+Bear in mind that accordions require a great deal of interaction. Don't use an accordion when:
+
+*	users might need to open the majority of the subtopics,
+*	users might want to print out the entire page, or
+*	you're only trying to shorten the page.
 
 ## Elements
 
-![Image Name](/assets/3_components/accordion/image-20200810110853155.png)
+![Image Name](assets/3_components/accordion/accordion.png)
 
-### Title (1)
+#### Icon (1)
 
-The title should be as brief as possible while being clear and descriptive.
+The arrow icon indicates whether the panel is open or closed.
 
-#### Icon (2)
+#### Title (2)
 
-Indicates if the panel is open or closed.
+Choose a topic title which is as clear and descriptive as possible. Try to keep it short so users can grasp the content quickly.
 
-#### Body Copy (3)
+The title and icon are the control for opening the panel.
 
-Content inside of a section may be split into paragraphs and include sub-headers and images if needed. Excessive complexity should, however, be avoided.
+#### Body text (3)
 
-## Related Components
+You can add a simple body text or also insert headlines, split text into paragraphs, and add images or illustrations. Keep it as simple and clear as possible.
+
+## Related components
 
 Tabs
-
-## Code
-
-
-

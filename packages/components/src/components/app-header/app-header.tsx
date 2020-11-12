@@ -9,6 +9,8 @@ import { findRootNode } from '../../utils/menu-utils';
   styleUrl: 'app-header.css',
 })
 export class Header {
+  mobileMenuToggle?: HTMLAnchorElement;
+  @Prop() claimLang: string;
   @Prop() customClass?: string = '';
   @Prop() brandTitle?: string = '';
   @Prop() mainNavigation?: any[] = [];
@@ -35,8 +37,10 @@ export class Header {
       this.sectorNavigation.find(({ id }) => id === newValue) || {};
   }
 
-  handleMobileMenu(event) {
-    event.preventDefault();
+  handleMobileMenu(event?: KeyboardEvent | MouseEvent) {
+    if (event) {
+      event.preventDefault();
+    }
     this.mobileMenu = !this.mobileMenu;
   }
 
@@ -49,21 +53,23 @@ export class Header {
 
   menuMain() {
     const rootNode = findRootNode(this.mainNavigation, this.activeRouteId);
+    const isActive = item =>
+      rootNode &&
+      rootNode.id === item.id &&
+      !this.visibleMegaMenu &&
+      this.visibleMegaMenu !== null;
     return (
       <ul class="main-navigation">
         {this.mainNavigation.map(item => (
           <li
             class={classNames(
               'main-navigation__item',
-              this.visibleMegaMenu === item.name && 'mega-menu--visible',
-              rootNode &&
-                rootNode.id === item.id &&
-                !this.visibleMegaMenu &&
-                this.visibleMegaMenu !== null &&
-                'selected'
+              this.visibleMegaMenu === item.id && 'mega-menu--visible',
+              isActive(item) && 'selected'
             )}
+            aria-current={isActive(item)}
             onMouseEnter={() => {
-              this.visibleMegaMenu = item.children ? item.name : null;
+              this.visibleMegaMenu = item.children ? item.id : null;
             }}
             onMouseLeave={() => {
               this.visibleMegaMenu = '';
@@ -71,7 +77,7 @@ export class Header {
           >
             <a
               class="main-navigation__item-link"
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               onClick={event => {
                 if (item.href) {
                   this.visibleMegaMenu = '';
@@ -80,6 +86,17 @@ export class Header {
                   item.onClick(event);
                 }
               }}
+              onKeyDown={event => {
+                if (['Enter', ' '].includes(event.key)) {
+                  event.preventDefault();
+                  this.visibleMegaMenu =
+                    !this.visibleMegaMenu && item.children ? item.name : null;
+                }
+                if (['Escape', 'Esc'].includes(event.key)) {
+                  this.visibleMegaMenu = null;
+                }
+              }}
+              tabIndex={0}
             >
               <span class="main-navigation__item-link-text">{item.name}</span>
             </a>
@@ -90,6 +107,7 @@ export class Header {
                   this.visibleMegaMenu = '';
                 }}
                 activeRouteId={this.activeRouteId}
+                isActive={this.visibleMegaMenu === item.id}
               ></app-mega-menu>
             )}
           </li>
@@ -108,7 +126,10 @@ export class Header {
           .filter(({ id }) => id !== 'menu')
           .map(item => (
             <li class="meta-navigation__item">
-              <a class="meta-navigation__item-link" href={item.href}>
+              <a
+                class="meta-navigation__item-link"
+                href={item.href || 'javascript:void(0);'}
+              >
                 {renderIcon(item.icon, 'meta-navigation__item-link')}
                 <span class="meta-navigation__item-label">{item.name}</span>
               </a>
@@ -120,9 +141,17 @@ export class Header {
             this.mobileMenu && 'open'
           )}
         >
-          <div
+          <a
+            ref={el => (this.mobileMenuToggle = el)}
             class="meta-navigation__item-link"
             onClick={event => this.handleMobileMenu(event)}
+            tabIndex={0}
+            onKeyDown={event => {
+              if (['Enter', ' ', 'Escape', 'Esc'].includes(event.key)) {
+                event.preventDefault();
+                this.handleMobileMenu(event);
+              }
+            }}
           >
             <scale-icon
               name={this.mobileMenu ? 'menu-close' : 'menu'}
@@ -130,7 +159,7 @@ export class Header {
             <span class="meta-navigation__item-label">
               {this.mobileMenu ? openedName : defaultName}
             </span>
-          </div>
+          </a>
         </li>
       </ul>
     );
@@ -150,7 +179,7 @@ export class Header {
                   'segment-navigation__item-link',
                   this.activeSegment.id === item.id && 'active'
                 )}
-                href={item.href}
+                href={item.href || 'javascript:void(0);'}
               >
                 {item.name}
               </a>
@@ -168,7 +197,7 @@ export class Header {
           <li class="addon-navigation__item">
             <a
               class="addon-navigation__item-link"
-              href={item.href}
+              href={item.href || 'javascript:void(0);'}
               onClick={event => {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
@@ -241,20 +270,20 @@ export class Header {
   render() {
     return (
       <Host>
-        <div class={this.getCssClassMap()}>
+        <header class={this.getCssClassMap()}>
           {this.iconDefs()}
           <div class="header__brand">
             <span class="header__brand-before"></span>
             <span class="header__brand-after"></span>
             <div class="header__brand-content">
               <div class="header__brand-branding">
-                <app-logo claim></app-logo>
+                <app-logo claim claimLang={this.claimLang}></app-logo>
               </div>
               <div class="header__brand-sector">{this.menuSegment()}</div>
               <div class="header__brand-meta">{this.menuAddon()}</div>
             </div>
           </div>
-          <div class="header__nav">
+          <nav class="header__nav" aria-label="desktop navigation">
             <span class="header__nav-before"></span>
             <span class="header__nav-after"></span>
             <div class="header__nav-content">
@@ -266,22 +295,31 @@ export class Header {
                 <div class="header__nav-menu-right">{this.menuMeta()}</div>
               </div>
             </div>
-          </div>
-          <div
+          </nav>
+          <nav
             class={`header__nav__mobile-menu${
               this.mobileMenu ? ' header__nav__mobile-menu--opened' : ''
             }`}
+            aria-label="mobile navigation"
           >
             <app-navigation-sector-mobile
               navigation={this.sectorNavigation}
               activeSectorId={this.activeSectorId}
+              hide={() => {
+                this.handleMobileMenu();
+                this.mobileMenuToggle.focus();
+              }}
             ></app-navigation-sector-mobile>
             <app-navigation-main-mobile
               navigation={this.mainNavigation}
               activeRouteId={this.activeRouteId}
+              hide={() => {
+                this.handleMobileMenu();
+                this.mobileMenuToggle.focus();
+              }}
             ></app-navigation-main-mobile>
-          </div>
-        </div>
+          </nav>
+        </header>
       </Host>
     );
   }

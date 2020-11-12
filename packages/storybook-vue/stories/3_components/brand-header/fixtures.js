@@ -1,271 +1,235 @@
 export const addonNavigation = [
-  {
-    name: "Telekom Shops",
-    id: "Telekom Shops",
-    href: "#telekom-shops"
-  },
-  {
-    name: "Kontakt",
-    id: "Kontakt",
-    href: "#kontakt"
-  }
+  { name: "Telekom Shops", id: "Telekom Shops", href: "#telekom-shops" },
+  { name: "Contact", id: "Contact", href: "#contact" }
 ];
 
 export const mainNavigation = [
   {
-    name: "Mobilfunk Menu",
-    id: "Mobilfunk Menu",
+    name: "Topic One",
+    id: "Topic One",
     children: [
       {
-        name: "Tarife & Optionen",
-        id: "Tarife & Optionen",
+        name: "Second Level",
+        id: "Second Level 3",
         children: [
           {
-            name: "Smartphone-Tarife",
-            id: "Smartphone-Tarife",
-            href: "#smartphone-tarife"
+            name: "Third Level",
+            id: "Third Level 4",
+            href: "#third-level"
           },
           {
-            name: "Prepaid-Tarife",
-            id: "Prepaid-Tarife",
-            href: "#prepaid-tarife"
+            name: "Third Level",
+            id: "Third Level 5",
+            href: "#third-level"
           },
           {
-            name: "Young-Tarife",
-            id: "Young-Tarife",
-            href: "#young-tarife"
+            name: "Third Level",
+            id: "Third Level 6",
+            href: "#third-level"
           },
           {
-            name: "Daten-Tarife",
-            id: "Daten-Tarife",
-            href: "#daten-tarife"
+            name: "Third Level",
+            id: "Third Level 7",
+            href: "#third-level"
           },
           {
-            name: "Zweitkarten",
-            id: "Zweitkarten",
-            href: "#zweitkarten"
+            name: "Third Level",
+            id: "Third Level 8",
+            href: "#third-level"
           },
           {
-            name: "Vertrag verlängern",
-            id: "Vertrag verlängern",
-            href: "#vertrag-verlaengern"
+            name: "Third Level",
+            id: "Third Level 9",
+            href: "#third-level"
           },
           {
-            name: "Zubuchoptionen",
-            id: "Zubuchoptionen",
-            href: "#zubuchoptionen"
+            name: "Third Level",
+            id: "Third Level 10",
+            href: "#third-level"
           }
         ]
       },
       {
-        name: "Geräte",
-        id: "Geräte",
+        name: "Second Level",
+        id: "Second Level 4",
         children: [
           {
-            name: "Smartphones",
-            id: "Smartphones",
-            href: "#smartphones"
+            name: "Third Level",
+            id: "Third Level 11",
+            href: "#third-level"
           },
           {
-            name: "Tablets",
-            id: "Tablets",
-            href: "#tablets"
+            name: "Third Level",
+            id: "Third Level 12",
+            href: "#third-level"
           },
           {
-            name: "Smartwatches",
-            id: "Smartwatches",
-            href: "#smartwatches"
+            name: "Third Level",
+            id: "Third Level 13",
+            href: "#third-level"
           },
           {
-            name: "Handys ohne Vertrag",
-            id: "Handys ohne Vertrag",
-            href: "#handys-ohne-vertrag"
+            name: "Third Level",
+            id: "Third Level 14",
+            href: "#third-level"
           },
           {
-            name: "Surfsticks & Router",
-            id: "Surfsticks & Router",
-            href: "#surfsticks-router"
+            name: "Third Level",
+            id: "Third Level 15",
+            href: "#third-level"
           },
           {
-            name: "Smart Connect",
-            id: "Smart Connect",
-            href: "#smart-connect"
+            name: "Third Level",
+            id: "Third Level 16",
+            href: "#third-level"
           },
           {
-            name: "Alle Geräte",
-            id: "Alle Geräte",
-            href: "#alle-geraete"
+            name: "Third Level",
+            id: "Third Level 17",
+            href: "#third-level"
           }
         ]
       },
       {
-        name: "Zubehör",
-        id: "Zubehör",
+        name: "Second Level",
+        id: "Second Level 5",
         children: [
           {
-            name: "Taschen & Hüllen",
-            id: "Taschen & Hüllen",
-            href: "#taschen-huellen"
+            name: "Third Level",
+            id: "Third Level 18",
+            href: "#third-level"
           },
           {
-            name: "Kopfhörer",
-            id: "Kopfhörer",
-            href: "#kopfhoerer"
+            name: "Third Level",
+            id: "Third Level 19",
+            href: "#third-level"
           },
           {
-            name: "Autozubehör",
-            id: "Autozubehör",
-            href: "#autozubehoer"
+            name: "Third Level",
+            id: "Third Level 20",
+            href: "#third-level"
           },
           {
-            name: "Virtual Reality",
-            id: "Virtual Reality",
-            href: "#virtual-reality"
+            name: "Third Level",
+            id: "Third Level 21",
+            href: "#third-level"
           },
           {
-            name: "Lautsprecher",
-            id: "Lautsprecher",
-            href: "#lautsprecher"
+            name: "Third Level",
+            id: "Third Level 22",
+            href: "#third-level"
           },
           {
-            name: "Lader, Kabel, Adapter",
-            id: "Lader, Kabel, Adapter",
-            href: "#lader-kabel-adapter"
+            name: "Third Level",
+            id: "Third Level 23",
+            href: "#third-level"
           },
           {
-            name: "Alle Zubehörartikel",
-            id: "Alle Zubehörartikel",
-            href: "#alle-zubehoerartikel"
+            name: "Third Level",
+            id: "Third Level 24",
+            href: "#third-level"
           }
         ]
       },
       {
-        name: "Apps & Dienste",
-        id: "Apps & Dienste",
+        name: "Second Level",
+        id: "Second Level 6",
         children: [
           {
-            name: "MeinMagenta App",
-            id: "MeinMagenta App",
-            href: "#meinmagenta-app"
+            name: "Third Level",
+            id: "Third Level 25",
+            href: "#third-level"
           },
           {
-            name: "Sicherheit & Cloud",
-            id: "Sicherheit & Cloud",
-            href: "#sicherheit-cloud"
+            name: "Third Level",
+            id: "Third Level 26",
+            href: "#third-level"
           },
           {
-            name: "Kommunikation",
-            id: "Kommunikation",
-            href: "#kommunikation"
+            name: "Third Level",
+            id: "Third Level 27",
+            href: "#third-level"
           },
           {
-            name: "Konnektivität",
-            id: "Konnektivität",
-            href: "#konnektivitaet"
+            name: "Third Level",
+            id: "Third Level 28",
+            href: "#third-level"
           },
           {
-            name: "Musik & Videos",
-            id: "Musik & Videos",
-            href: "#musik-videos"
+            name: "Third Level",
+            id: "Third Level 29",
+            href: "#third-level"
           },
           {
-            name: "StreamOn",
-            id: "StreamOn",
-            href: "#stream-on"
+            name: "Third Level",
+            id: "Third Level 30",
+            href: "#third-level"
           }
         ]
       },
       {
-        name: "Was ist 5G",
-        id: "Was ist 5G",
-        href: "#was-ist-5g"
+        name: "Second Level",
+        id: "Second Level 7"
       }
     ]
   },
   {
-    name: "Festnetz & Internet",
-    id: "Festnetz & Internet",
+    name: "Topic Two",
+    id: "Topic Two",
     children: [
       {
-        name: "First",
-        id: "First",
+        name: "Second Level",
+        id: "Second Level 1",
         children: [
           {
-            name: "One",
-            id: "One",
-            href: "#first/one"
+            name: "Third Level",
+            id: "Third Level 1",
+            href: "#third-level"
           },
           {
-            name: "One",
-            id: "One",
-            href: "#one"
+            name: "Third Level",
+            id: "Third Level 2",
+            href: "#third-level"
           }
         ]
       },
       {
-        name: "Second",
-        id: "Second",
+        name: "Second Level",
+        id: "Second Level 2",
         children: [
           {
-            name: "One",
-            id: "One",
-            href: "#one"
+            name: "Third Level",
+            id: "Third Level 3",
+            href: "#third-level"
           }
         ]
       }
     ]
   },
   {
-    name: "TV",
-    id: "TV",
-    href: "#tv"
+    name: "Topic Three",
+    id: "Topic Three",
+    href: "#topic-three"
   },
   {
-    name: "MagentaEINS",
-    id: "MagentaEINS",
-    href: "#magentaeins"
+    name: "Topic Four",
+    id: "Topic Four",
+    href: "#topic-four"
   },
   {
-    name: "Service",
-    id: "Service",
-    href: "#service"
+    name: "Topic Five",
+    id: "Topic Five",
+    href: "#topic-five"
   }
 ];
 export const iconNavigation = [
-  {
-    name: "Suche",
-    id: "Suche",
-    href: "#suche",
-    icon: "search"
-  },
-  {
-    name: "Warenkorb",
-    id: "Warenkorb",
-    href: "#warenkorb",
-    icon: "shopping-bag"
-  },
-  {
-    name: "Login",
-    id: "Login",
-    href: "#login",
-    icon: "profile"
-  },
-  {
-    id: "menu",
-    defaultName: "Menü",
-    openedName: "Schließen"
-  }
+  { name: "Search", id: "Search35", href: "#search", icon: "search" },
+  { name: "Cart", id: "Cart36", href: "#cart", icon: "shopping-bag" },
+  { name: "Login", id: "Login37", href: "#login", icon: "profile" },
+  { id: "menu", defaultName: "Menu", openedName: "Close" }
 ];
 
 export const sectorNavigation = [
-  {
-    name: "Privatkunden",
-    id: "Privatkunden",
-    href: "#privatkunden"
-  },
-  {
-    name: "Geschäftskunden",
-    id: "Geschäftskunden",
-    href: "#geschaeftskunden"
-  }
+  { name: "Personal", id: "Personal38", href: "#personal" },
+  { name: "Business", id: "Business39", href: "#business" }
 ];
