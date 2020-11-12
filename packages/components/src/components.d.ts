@@ -489,6 +489,10 @@ export namespace Components {
     }
     interface ScaleProgressBar {
         /**
+          * (optional) Progress bar busy switch
+         */
+        "busy"?: boolean;
+        /**
           * (optional) Progress bar class
          */
         "customClass"?: string;
@@ -509,9 +513,17 @@ export namespace Components {
          */
         "icon"?: string;
         /**
+          * (optional) Progress bar label
+         */
+        "label"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage": number;
+        /**
+          * (optional) Progress bar id
+         */
+        "progressBarId"?: string;
         /**
           * (optional) Progress bar percentage text
          */
@@ -625,6 +637,10 @@ export namespace Components {
          */
         "showValue"?: boolean;
         /**
+          * (optional) Slider id
+         */
+        "sliderId"?: string;
+        /**
           * (optional) the step size to increase or decrease when dragging slider
          */
         "step"?: number;
@@ -664,6 +680,10 @@ export namespace Components {
           * (optional) Input id
          */
         "inputId"?: string;
+        /**
+          * (optional) switch label
+         */
+        "label"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -1559,6 +1579,10 @@ declare namespace LocalJSX {
     }
     interface ScaleProgressBar {
         /**
+          * (optional) Progress bar busy switch
+         */
+        "busy"?: boolean;
+        /**
           * (optional) Progress bar class
          */
         "customClass"?: string;
@@ -1579,9 +1603,17 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         /**
+          * (optional) Progress bar label
+         */
+        "label"?: string;
+        /**
           * (required) Progress bar percentage
          */
         "percentage"?: number;
+        /**
+          * (optional) Progress bar id
+         */
+        "progressBarId"?: string;
         /**
           * (optional) Progress bar percentage text
          */
@@ -1696,6 +1728,10 @@ declare namespace LocalJSX {
          */
         "showValue"?: boolean;
         /**
+          * (optional) Slider id
+         */
+        "sliderId"?: string;
+        /**
           * (optional) the step size to increase or decrease when dragging slider
          */
         "step"?: number;
@@ -1735,6 +1771,10 @@ declare namespace LocalJSX {
           * (optional) Input id
          */
         "inputId"?: string;
+        /**
+          * (optional) switch label
+         */
+        "label"?: string;
         /**
           * Emitted when the switch was clicked
          */

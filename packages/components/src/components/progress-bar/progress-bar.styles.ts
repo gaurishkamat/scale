@@ -19,6 +19,13 @@ export const styles: JssStyle = {
   'progress-bar--disabled': {
     cursor: 'not-allowed',
     opacity: 0.5,
+    '& .progress-bar__label': {
+      color: ({ color }) => color.disabled,
+    },
+  },
+  'progress-bar__label': {
+    display: 'block',
+    padding: '0.5rem 0',
   },
   'progress-bar-wrapper': {
     display: 'flex',
@@ -67,5 +74,15 @@ export const styles: JssStyle = {
     color: '#6c6c6c',
     fontSize: ({ type }) => type.size_2,
     fontWeight: ({ type }) => type.weight_bold,
+  },
+  'progress-bar__aria-live': {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    height: 1,
+    margin: -1,
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: 1,
   },
 };
