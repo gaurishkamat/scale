@@ -4,10 +4,14 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 const URL = require("url").URL;
-const DEBUG = false;
 const crypto = require("crypto");
 
 let server;
+
+const DEBUG = process.argv.includes("--debug");
+if (DEBUG) {
+  process.argv.splice(process.argv.indexOf("--debug"), 1);
+}
 
 if (process.argv.length > 2 && /^https?:/i.test(process.argv[2])) {
   server = {

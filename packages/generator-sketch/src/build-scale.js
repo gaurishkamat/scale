@@ -12,6 +12,6 @@ setTimeout(() => {
     const urls = cp.execSync("sh scrape.sh").toString().trim().split("\n");
     console.log("Got URLs", urls);
     console.log("Generating Sketch document");
-    cp.execFileSync("yarn", ["sketch", "scale-components-telekom", ...urls], {stdio: [0, 1, 2]});
+    cp.execFileSync("yarn", ["sketch", "scale-components-telekom", ...process.argv.slice(2), ...urls], {stdio: [0, 1, 2]});
     server.kill(SIGKILL);
 }, 1000);
