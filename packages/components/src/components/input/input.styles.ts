@@ -84,6 +84,7 @@ export const styles: JssStyle = {
       transition: 'border-color 0.2s ease-in-out',
       width: '100%',
       outline: 'none',
+      resize: 'vertical',
     },
     [`
       & .input__input, 
@@ -214,11 +215,20 @@ export const styles: JssStyle = {
   'input--type-checkbox': {
     display: 'flex',
     alignItems: 'center',
+    flexWrap: 'wrap',
     '& input': {
       position: 'absolute',
       opacity: 0,
       height: 0,
       width: 0,
+    },
+
+    // Helper text
+    '& .input__meta': {
+      width: '100%',
+    },
+    '& .input__helper-text': {
+      paddingLeft: ({ spacing }) => spacing[6],
     },
 
     // Error
@@ -352,6 +362,16 @@ export const styles: JssStyle = {
   'input--type-radio': {
     display: 'flex',
     alignItems: 'center',
+    flexWrap: 'wrap',
+
+    // Helper text
+    '& .input__meta': {
+      width: '100%',
+    },
+    '& .input__helper-text': {
+      marginTop: ({ spacing }) => spacing[1],
+      paddingLeft: ({ spacing }) => spacing[5],
+    },
 
     // Checked Off - Available
     '& label': {

@@ -126,9 +126,6 @@ export const styles: JssStyle = {
           content: '"I"',
         },
       },
-      '& $switch__label': {
-        color: ({ color }) => color.primary,
-      },
     },
     // Checked On - hover
     '& input:checked ~ $switch__wrapper:hover': {
