@@ -69,19 +69,20 @@ export const styles: JssStyle = {
     },
     '& .slider--display-value': {
       marginLeft: 24,
-      fontFamily: 'TeleNeoWeb-Bold',
-      fontSize: 12,
+      fontWeight: ({ type }) => type.weight_bold,
+      fontSize: ({ type }) => type.size_2,
       color: '#6c6c6c',
     },
   },
   'slider--track-small': {
     '& .slider--track': {
       height: 1,
-      border: 'none',
+      border: '1px solid transparent',
       backgroundColor: '#7c7c7c',
     },
     '& .slider--bar': {
       height: 3,
+      border: '1px solid transparent',
       zIndex: 1,
     },
   },
@@ -105,6 +106,9 @@ export const styles: JssStyle = {
       '&:hover': {
         cursor: 'not-allowed',
       },
+    },
+    '& .slider--label': {
+      color: ({ color }) => color.disabled,
     },
   },
 };

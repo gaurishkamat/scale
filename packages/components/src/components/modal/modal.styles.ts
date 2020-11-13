@@ -46,19 +46,18 @@ export const styles: JssStyle = {
   },
 
   modal__header: {
-    fontSize: '1.25rem',
+    fontSize: ({ type }) => type.size_4,
     // color: '#161616',
     margin: '0 1.5rem',
     padding: '1.5rem 0',
-    lineHeight: '24px',
+    lineHeight: ({ type }) => type.leading_2,
     display: 'flex',
     justifyContent: 'space-between',
     '& ::slotted(*)': {
-      fontSize: '1.25rem',
+      fontSize: ({ type }) => type.size_4,
       // color: '#161616',
       margin: 0,
-      // fontWeight: 'bold',
-      fontFamily: 'TeleNeoWeb-ExtraBold',
+      fontWeight: ({ type }) => type.weight_extrabold,
     },
   },
   'modal__header-scroll': {
@@ -66,7 +65,7 @@ export const styles: JssStyle = {
   },
   modal__body: {
     padding: '1.5rem',
-    lineHeight: '1.5',
+    lineHeight: ({ type }) => type.leading_5,
     '& ::slotted(*)': {
       margin: 0,
     },

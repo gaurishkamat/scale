@@ -5,7 +5,7 @@ import {
   Host,
   Event,
   EventEmitter,
-  Watch,
+  Listen,
 } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -13,6 +13,8 @@ import { styles } from './switch.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+
+let i = 0;
 
 @Component({
   tag: 'scale-switch',
@@ -27,6 +29,8 @@ export class Switch implements Base {
   @Prop() disabled?: boolean = false;
   /** (optional) Input id */
   @Prop() inputId?: string;
+  /** (optional) switch label */
+  @Prop() label?: string;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -35,38 +39,65 @@ export class Switch implements Base {
   /** Emitted when the switch was clicked */
   @Event() scaleChange!: EventEmitter;
 
-  componentWillUpdate() {}
-  componentDidUnload() {}
-
-  @Watch('checked')
-  checkedChanged() {
-    this.scaleChange.emit({ value: this.checked });
-  }
-
-  handleChange = () => {
+  @Listen('click', { capture: true })
+  handleClick() {
     if (!this.disabled) {
       this.checked = !this.checked;
     }
-  };
+  }
+
+  componentWillLoad() {
+    if (this.inputId == null) {
+      this.inputId = 'switch-' + i++;
+    }
+  }
+  componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;
     return (
       <Host>
-        {/* This needs a proper "text" label, either with aria-label, arial-labeledby or some text, otherwise is weird */}
-        <label class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()}>
           <input
             type="checkbox"
             checked={this.checked}
             disabled={this.disabled}
-            onChange={this.handleChange}
+            aria-pressed={this.checked}
+            aria-labelledby={`${this.inputId}-label`}
             id={this.inputId}
+            onChange={() => {
+              if (!this.disabled) {
+                this.scaleChange.emit({ value: this.checked });
+              }
+            }}
           />
-          <div class={classes['switch__container']}>
-            <div class={classes['switch__toggle']} />
-            <div class={classes['switch__text']} />
+          <div
+            class={classes['switch__wrapper']}
+            onClick={() => {
+              if (!this.disabled) {
+                this.scaleChange.emit({ value: this.checked });
+              }
+            }}
+          >
+            <div class={classes['switch__container']}>
+              <div class={classes['switch__toggle']} />
+              <div class={classes['switch__text']} />
+            </div>
+            {!!this.label && (
+              <label
+                class={classes['switch__label']}
+                id={`${this.inputId}-label`}
+                htmlFor={this.inputId}
+                onClick={event => {
+                  event.preventDefault();
+                }}
+              >
+                {this.label}
+              </label>
+            )}
           </div>
-        </label>
+        </div>
       </Host>
     );
   }

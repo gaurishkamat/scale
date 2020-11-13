@@ -15,6 +15,8 @@ import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+let i = 0;
+
 @Component({
   tag: 'scale-slider',
   shadow: true,
@@ -46,6 +48,9 @@ export class Slider implements Base {
   /** (optional) larger thumb */
   @Prop() thumbLarge?: boolean = false;
 
+  /** (optional) Slider id */
+  @Prop() sliderId?: string;
+
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -64,7 +69,11 @@ export class Slider implements Base {
     this.scaleChange.emit(Math.abs(this.value));
   }
 
-  componentWillLoad() {}
+  componentWillLoad() {
+    if (this.sliderId == null) {
+      this.sliderId = 'slider-' + i++;
+    }
+  }
   componentWillUpdate() {}
   componentDidUnload() {
     window.removeEventListener('mousemove', this.onDragging.bind(this));
@@ -118,6 +127,12 @@ export class Slider implements Base {
         this.value + (event.key === 'ArrowRight' ? this.step : -this.step)
       );
     }
+    if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
+      this.setPosition(
+        this.value +
+          (event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10)
+      );
+    }
   };
 
   setPosition = (newPosition: number) => {
@@ -142,7 +157,15 @@ export class Slider implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
-          {!!this.label && <div class="slider--label">{this.label}</div>}
+          {!!this.label && (
+            <label
+              class="slider--label"
+              id={`${this.sliderId}-label`}
+              htmlFor={this.sliderId}
+            >
+              {this.label}
+            </label>
+          )}
           <div class="slider--track-wrapper">
             <div
               class="slider--track"
@@ -163,6 +186,15 @@ export class Slider implements Base {
                 <div
                   class="slider--thumb"
                   tabindex="0"
+                  role="slider"
+                  id={this.sliderId}
+                  aria-valuemin={this.min}
+                  aria-valuenow={this.value}
+                  aria-valuemax={this.max}
+                  aria-valuetext={`${this.value}%`}
+                  aria-labelledby={`${this.sliderId}-label`}
+                  aria-orientation="horizontal"
+                  aria-disabled={this.disabled}
                   onKeyDown={this.onKeyDown}
                 />
               </div>

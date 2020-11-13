@@ -6,9 +6,8 @@ export const styles: JssStyle = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 16,
-    fontWeight: 400,
-    lineHeight: '24px',
+    fontSize: ({ type }) => type.size_3,
+    lineHeight: ({ type }) => type.leading_5,
     textAlign: 'center',
     whiteSpace: 'nowrap',
     verticalAlign: 'baseline',
@@ -18,7 +17,7 @@ export const styles: JssStyle = {
     color: ({ palette }) => palette.white,
     '--icon-color': ({ palette }) => palette.white,
     padding: '0 10px',
-    fontFamily: 'TeleNeoWeb-Bold',
+    fontWeight: ({ type }) => type.weight_bold,
     '& scale-icon': {
       marginLeft: 2,
     },
@@ -49,8 +48,8 @@ export const styles: JssStyle = {
   },
   'tag--size-small': {
     padding: '0 8px',
-    fontSize: 12,
-    lineHeight: '20px',
+    fontSize: ({ type }) => type.size_2,
+    lineHeight: ({ type }) => type.leading_6,
     '&$tag--dismissable': {
       paddingRight: 0,
     },

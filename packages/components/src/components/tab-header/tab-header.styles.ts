@@ -15,7 +15,7 @@ export const styles: JssStyle = {
     transition: 'all 0.2s ease-in-out',
     display: 'inline-flex',
     alignItems: 'center',
-    fontFamily: 'TeleNeoWeb-Bold',
+    fontWeight: ({ type }) => type.weight_bold,
     color: ({ color }) => color.text,
     '&:hover': {
       '--icon-color': '#F90984',

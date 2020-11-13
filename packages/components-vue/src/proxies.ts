@@ -414,6 +414,7 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 
   props: {
     customClass: {} as PropOptions<Components.ScaleProgressBar['customClass']>,
+    busy: {} as PropOptions<Components.ScaleProgressBar['busy']>,
     percentage: {} as PropOptions<Components.ScaleProgressBar['percentage']>,
     customColor: {} as PropOptions<Components.ScaleProgressBar['customColor']>,
     strokeWidth: {} as PropOptions<Components.ScaleProgressBar['strokeWidth']>,
@@ -423,6 +424,8 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
     statusInside: {} as PropOptions<Components.ScaleProgressBar['statusInside']>,
     hasError: {} as PropOptions<Components.ScaleProgressBar['hasError']>,
     disabled: {} as PropOptions<Components.ScaleProgressBar['disabled']>,
+    progressBarId: {} as PropOptions<Components.ScaleProgressBar['progressBarId']>,
+    label: {} as PropOptions<Components.ScaleProgressBar['label']>,
     styles: {} as PropOptions<Components.ScaleProgressBar['styles']>,
   },
 
@@ -489,6 +492,7 @@ export const ScaleSlider = /*@__PURE__*/ Vue.extend({
     disabled: {} as PropOptions<Components.ScaleSlider['disabled']>,
     trackSmall: {} as PropOptions<Components.ScaleSlider['trackSmall']>,
     thumbLarge: {} as PropOptions<Components.ScaleSlider['thumbLarge']>,
+    sliderId: {} as PropOptions<Components.ScaleSlider['sliderId']>,
     styles: {} as PropOptions<Components.ScaleSlider['styles']>,
   },
 
@@ -516,6 +520,7 @@ export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
     checked: {} as PropOptions<Components.ScaleSwitch['checked']>,
     disabled: {} as PropOptions<Components.ScaleSwitch['disabled']>,
     inputId: {} as PropOptions<Components.ScaleSwitch['inputId']>,
+    label: {} as PropOptions<Components.ScaleSwitch['label']>,
     styles: {} as PropOptions<Components.ScaleSwitch['styles']>,
   },
 

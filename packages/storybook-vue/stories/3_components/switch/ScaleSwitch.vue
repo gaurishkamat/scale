@@ -1,6 +1,7 @@
 <template>
   <scale-switch
     :custom-class="customClass"
+    :label="label"
     :disabled="disabled"
     :input-id="inputId"
     :checked="checked"
@@ -17,7 +18,8 @@ export default {
     customClass: String,
     disabled: { type: Boolean, default: false },
     inputId: { type: String },
-    checked: { type: Boolean, default: false }
+    checked: { type: Boolean, default: false },
+    label: String
   },
   methods: {
     scaleChange($event) {

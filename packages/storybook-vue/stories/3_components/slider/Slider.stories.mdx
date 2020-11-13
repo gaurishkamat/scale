@@ -57,6 +57,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Standard"
         args={{
+            label: 'Standard',
             value: 20
         }}
         >
@@ -72,6 +73,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Slider track small"
         args={{
+            label: 'Slider track small',
             value: 20,
             trackSmall: true,
         }}>
@@ -80,7 +82,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider value="20" track-small></scale-slider>
+<scale-slider label="Slider track small" value="20" track-small></scale-slider>
 ```
 
 ## Slider thumb large
@@ -89,6 +91,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Slider thumb large"
         args={{
+            label: 'Slider thumb large',
             value: 20,
             thumbLarge: true,
         }}>
@@ -97,7 +100,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider value="20" thumb-large></scale-slider>
+<scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
 ```
 
 ## Slider with custom color
@@ -106,6 +109,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Slider with custom color"
         args={{
+            label: 'Slider with custom color',
             value: 20,
             customColor: "#009DE0"
         }}
@@ -115,7 +119,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider value="20" custom-color="#009DE0"></scale-slider>
+<scale-slider label="Slider with custom color" value="20" custom-color="#009DE0"></scale-slider>
 ```
 
 ## Disabled slider
@@ -124,6 +128,7 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Disabled Slider"
         args={{
+            label: 'Disabled Slider',
             value: 40,
             disabled: true
         }}>
@@ -132,5 +137,5 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-slider value="40" disabled></scale-slider>
+<scale-slider label="Disabled Slider" value="40" disabled></scale-slider>
 ```

@@ -106,6 +106,8 @@ export class Input implements Base {
 
   /** (optional) Input checkbox checked */
   @State() customResize?: any;
+  /** Whether the input element has focus */
+  @State() hasFocus: boolean = false;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -164,10 +166,12 @@ export class Input implements Base {
 
   handleFocus = () => {
     this.scaleFocus.emit();
+    this.hasFocus = true;
   };
 
   handleBlur = () => {
     this.scaleBlur.emit();
+    this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
@@ -193,7 +197,8 @@ export class Input implements Base {
               onClick={this.handleCheckboxClick}
             >
               <span class={classNames('input__checkbox-placeholder')}></span>
-              {!!this.icon && (
+              {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
+              {!!this.icon && this.checked && (
                 <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
@@ -222,15 +227,20 @@ export class Input implements Base {
       );
     }
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
+    const { classes } = this.stylesheet;
+
+    const ariaInvalidAttr =
+      this.status === 'error' ? { 'aria-invalid': true } : {};
+    const helperTextId = `helper-message-${i}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          {this.variant === 'static' && (
-            <label class="input__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
-          )}
+          {/* Accessibility: label should be always *before* the actual input */}
+          <label class="input__label" htmlFor={this.inputId}>
+            {this.label}
+          </label>
           {this.type === 'select' ? (
             <div class="input__select-wrapper">
               <select
@@ -244,6 +254,8 @@ export class Input implements Base {
                 multiple={this.multiple}
                 id={this.inputId}
                 size={this.visibleSize}
+                {...ariaInvalidAttr}
+                {...ariaDescribedByAttr}
               >
                 <slot />
               </select>
@@ -272,16 +284,25 @@ export class Input implements Base {
               disabled={this.disabled}
               {...(!!this.rows ? { rows: this.rows } : {})}
               {...(!!this.cols ? { cols: this.cols } : {})}
+              {...ariaInvalidAttr}
+              {...ariaDescribedByAttr}
             />
           )}
 
-          {this.variant === 'animated' && (
-            <label class="input__label" htmlFor={this.inputId}>
-              {this.label}
-            </label>
+          {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
+          {this.type === 'textarea' && this.variant === 'animated' && (
+            <span
+              class={classes['input__textarea-label-safety-background']}
+              aria-hidden="true"
+            />
           )}
           {(!!this.helperText || !!this.counter) && (
-            <div class="input__meta">
+            <div
+              class="input__meta"
+              id={helperTextId}
+              aria-live="polite"
+              aria-relevant="additions removals"
+            >
               {!!this.helperText && (
                 <div class="input__helper-text">{this.helperText}</div>
               )}
@@ -305,6 +326,7 @@ export class Input implements Base {
       classes.input,
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
+      this.hasFocus && classes['input--has-focus'],
       this.checked && classes[`input--checked`],
       this.resize && classes[`input--resize-${this.resize}`],
       this.variant && classes[`input--variant-${this.variant}`],

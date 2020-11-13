@@ -16,6 +16,7 @@
 | `max`         | `max`          | (optional) the maximal value of the slider                            | `number`  | `100`       |
 | `min`         | `min`          | t(optional) he minimal value of the slider                            | `number`  | `0`         |
 | `showValue`   | `show-value`   | (optional) slider display value                                       | `boolean` | `true`      |
+| `sliderId`    | `slider-id`    | (optional) Slider id                                                  | `string`  | `undefined` |
 | `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider | `number`  | `1`         |
 | `styles`      | `styles`       | (optional) Injected jss styles                                        | `any`     | `undefined` |
 | `thumbLarge`  | `thumb-large`  | (optional) larger thumb                                               | `boolean` | `false`     |

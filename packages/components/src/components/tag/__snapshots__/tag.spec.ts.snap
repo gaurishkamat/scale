@@ -12,8 +12,6 @@ exports[`Tag should have a link 1`] = `
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
-  font-family: TeleNeoWeb-Bold;
-  font-weight: 400;
   line-height: 24px;
   white-space: nowrap;
   border-radius: 4px;
@@ -22,6 +20,7 @@ exports[`Tag should have a link 1`] = `
   background: #262626;
   color: #FFF;
   --icon-color: #FFF;
+  font-weight: 700;
 }
 .tag-0-0-7 scale-icon {
   margin-left: 2px;
@@ -107,8 +106,6 @@ exports[`Tag should match snapshot 1`] = `
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
-  font-family: TeleNeoWeb-Bold;
-  font-weight: 400;
   line-height: 24px;
   white-space: nowrap;
   border-radius: 4px;
@@ -117,6 +114,7 @@ exports[`Tag should match snapshot 1`] = `
   background: #262626;
   color: #FFF;
   --icon-color: #FFF;
+  font-weight: 700;
 }
 .tag-0-0-7 scale-icon {
   margin-left: 2px;

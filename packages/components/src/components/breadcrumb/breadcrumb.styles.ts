@@ -39,6 +39,6 @@ export const styles: JssStyle = {
     },
   },
   current: {
-    fontFamily: 'TeleNeoWeb-ExtraBold', // TODO token
+    fontWeight: ({ type }) => type.weight_extrabold,
   },
 };

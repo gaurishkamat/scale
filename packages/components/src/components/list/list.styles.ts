@@ -14,7 +14,7 @@ export const styles: JssStyle = {
     },
     '& ::slotted(li)::before': {
       content: 'counter(scale-counter) "."',
-      fontFamily: 'TeleNeoWeb-Bold', // TODO use token (`weight` directly)
+      fontWeight: ({ type }) => type.weight_bold,
       paddingRight: ({ spacing }) => spacing.inline,
     },
   },

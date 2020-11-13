@@ -17,8 +17,8 @@ export const styles: JssStyle = {
 
     '& th': {
       color: ({ colors }) => colors.grey[600],
-      lineHeight: '32px',
-      fontSize: 12,
+      lineHeight: '32px', // TODO revise, this is weird
+      fontSize: ({ type }) => type.size_2,
       textAlign: 'left',
       userSelect: 'none',
       '&:focus': {

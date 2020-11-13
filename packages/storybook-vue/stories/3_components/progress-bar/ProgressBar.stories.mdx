@@ -9,26 +9,84 @@ export const ICON_CIRCLE_CLOSE = 'M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 
 />
 
 export const Template = (args, {argTypes}) => ({
-  components:{ ScaleProgressBar },
-  props: {
-    ...ScaleProgressBar.props
-  },
-  template: `
-  <scale-progress-bar
-    :icon="icon"
-    :custom-class="customClass"
-    :custom-color="customColor"
-    :disabled="disabled"
-    :has-error="hasError"
-    :status-inside="statusInside"
-    :status-description="statusDescription"
-    :show-status="showStatus"
-    :stroke-width="strokeWidth"
-    :percentage="percentage"
-    :styles="styles"
-  >
-  </scale-progress-bar>
+    components:{ ScaleProgressBar },
+    props: {
+        ...ScaleProgressBar.props
+    },
+    template: `
+      <scale-progress-bar
+        :icon="icon"
+        :custom-class="customClass"
+        :custom-color="customColor"
+        :disabled="disabled"
+        :label="label"
+        :has-error="hasError"
+        :status-inside="statusInside"
+        :status-description="statusDescription"
+        :show-status="showStatus"
+        :stroke-width="strokeWidth"
+        :percentage="percentage"
+        :styles="styles"
+      >
+      </scale-progress-bar>
   `
+})
+
+export const TemplateInteractive = (args, {argTypes}) => ({
+    components:{ ScaleProgressBar },
+    template: `
+      <div>
+          <scale-progress-bar
+            label="Download progress example"
+            :icon="$data[$data.state].icon"
+            :custom-color="$data[$data.state].customColor"
+            :has-error="$data[$data.state].hasError"
+            :status-inside="$data[$data.state].statusInside"
+            :status-description="$data[$data.state].statusDescription"
+            :show-status="$data[$data.state].showStatus"
+            :percentage="$data.percentage"
+          >
+          </scale-progress-bar>
+          <scale-button variant="secondary" size="small" @click="start">Start</scale-button>
+          <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
+      </div>
+  `,
+    methods: {
+        start() {
+            const xxx = setInterval(()  => {
+                if (this.$data.percentage === 100) {
+                    clearInterval(this.interval);
+                    this.$data.state = 'success';
+                    this.interval = null;
+                    return;
+                }
+                this.$data.percentage += 1;
+            }, 100);
+            this.interval = xxx;
+            return xxx;
+        },
+        reset() {
+            clearInterval(this.interval);
+            this.interval = null;
+            this.$data.state = 'initial';
+            this.$data.percentage = 0;
+        }
+    },
+    data: () => ({
+        interval: null,
+        success: {
+            showStatus: false,
+            icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
+            statusDescription: 'Upload complete',
+            customColor: "#67c23a",
+        },
+        initial: {
+            showStatus: true,
+        },
+        percentage: 0,
+        state: 'initial',
+        busy: false,
+    })
 })
 
 # Progress Bar
@@ -40,6 +98,7 @@ export const Template = (args, {argTypes}) => ({
     name="Determinate"
     args={{
       percentage: 20,
+      label: 'Determinate',
     }}
   >
     {Template.bind({})}
@@ -56,7 +115,8 @@ export const Template = (args, {argTypes}) => ({
     name="Progress custom"
     args={{
       percentage: 20,
-      customColor: "#009DE0"
+      customColor: "#009DE0",
+      label:"Progress custom"
     }}
   >
     {Template.bind({})}
@@ -64,7 +124,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="20" custom-color="#009DE0"></scale-progress-bar>
+<scale-progress-bar percentage="20" custom-color="#009DE0" label="Progress custom"></scale-progress-bar>
 ```
 
 
@@ -75,7 +135,8 @@ export const Template = (args, {argTypes}) => ({
     name="Progress with description"
     args={{
       percentage: 40,
-      statusDescription: 'Progress status description text'
+      statusDescription: 'Progress status description text',
+      label: 'Progress with description'
     }}
   >
     {Template.bind({})}
@@ -96,7 +157,8 @@ export const Template = (args, {argTypes}) => ({
       percentage: 100,
       showStatus: false,
       icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
-      statusDescription: 'Upload complete'
+      statusDescription: 'Upload complete',
+      label: 'Complete default'
     }}
   >
     {Template.bind({})}
@@ -104,7 +166,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete"></scale-progress-bar>
+<scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" label="Complete default"></scale-progress-bar>
 ```
 
 
@@ -118,7 +180,8 @@ export const Template = (args, {argTypes}) => ({
       showStatus: false,
       icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
       statusDescription: 'Upload complete',
-      customColor: "#67c23a"
+      customColor: "#67c23a",
+      label: 'Complete green'
     }}
   >
     {Template.bind({})}
@@ -126,7 +189,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" custom-color="#67c23a"></scale-progress-bar>
+<scale-progress-bar label="Complete green" percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" custom-color="#67c23a"></scale-progress-bar>
 ```
 
 
@@ -140,7 +203,8 @@ export const Template = (args, {argTypes}) => ({
       hasError: true,
       showStatus: false,
       icon: ICON_CIRCLE_CLOSE,
-      statusDescription: 'Upload fail'
+      statusDescription: 'Upload fail',
+      label: 'Complete error'
     }}
   >
     {Template.bind({})}
@@ -148,5 +212,28 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail"></scale-progress-bar>
+<scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail" label="Complete error"></scale-progress-bar>
+```
+
+
+## Interactive
+
+<Preview withSource="none">
+  <Story
+    name="Interactive"
+    args={{
+      percentage: 0,
+      hasError: true,
+      showStatus: false,
+      icon: ICON_CIRCLE_CLOSE,
+      statusDescription: 'Upload fail',
+      label: 'Interactive'
+    }}
+  >
+    {TemplateInteractive.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail" label="Interactive"></scale-progress-bar>
 ```
