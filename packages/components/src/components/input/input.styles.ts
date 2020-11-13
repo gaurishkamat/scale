@@ -83,6 +83,7 @@ export const styles: JssStyle = {
       margin: '6px 0',
       transition: 'border-color 0.2s ease-in-out',
       width: '100%',
+      outline: 'none',
     },
     [`
       & .input__input, 
