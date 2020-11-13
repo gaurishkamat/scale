@@ -5,7 +5,7 @@ import {
   Host,
   Event,
   EventEmitter,
-  Watch,
+  Listen,
 } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -39,6 +39,13 @@ export class Switch implements Base {
   /** Emitted when the switch was clicked */
   @Event() scaleChange!: EventEmitter;
 
+  @Listen('click', { capture: true })
+  handleClick() {
+    if (!this.disabled) {
+      this.checked = !this.checked;
+    }
+  }
+
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'switch-' + i++;
@@ -47,33 +54,32 @@ export class Switch implements Base {
   componentWillUpdate() {}
   componentDidUnload() {}
 
-  @Watch('checked')
-  checkedChanged() {
-    this.scaleChange.emit({ value: this.checked });
-  }
-
-  handleChange = () => {
-    if (!this.disabled) {
-      this.checked = !this.checked;
-    }
-  };
-
   render() {
     const { classes } = this.stylesheet;
     return (
       <Host>
-        {/* This needs a proper "text" label, either with aria-label, arial-labeledby or some text, otherwise is weird */}
         <div class={this.getCssClassMap()}>
           <input
             type="checkbox"
             checked={this.checked}
             disabled={this.disabled}
-            onChange={this.handleChange}
             aria-pressed={this.checked}
             aria-labelledby={`${this.inputId}-label`}
             id={this.inputId}
+            onChange={() => {
+              if (!this.disabled) {
+                this.scaleChange.emit({ value: this.checked });
+              }
+            }}
           />
-          <div class={classes['switch__wrapper']}>
+          <div
+            class={classes['switch__wrapper']}
+            onClick={() => {
+              if (!this.disabled) {
+                this.scaleChange.emit({ value: this.checked });
+              }
+            }}
+          >
             <div class={classes['switch__container']}>
               <div class={classes['switch__toggle']} />
               <div class={classes['switch__text']} />
@@ -83,6 +89,9 @@ export class Switch implements Base {
                 class={classes['switch__label']}
                 id={`${this.inputId}-label`}
                 htmlFor={this.inputId}
+                onClick={event => {
+                  event.preventDefault();
+                }}
               >
                 {this.label}
               </label>
