@@ -123,6 +123,8 @@ function findLayer(symbol, predicate) {
         "minSize": 0
       };
     } else {
+      var icon = findLayer(symbol, s => s.name === 'svg.icon');
+      if (icon) icon.resizingConstraint = 45;
       if (symbol.layers && symbol.layers[0]) {
         symbol.layers[0].resizingConstraint = 45;
       }
@@ -144,6 +146,12 @@ function findLayer(symbol, predicate) {
     }
     if (/^(Button)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 45;
+      var button = findLayer(symbol, s => s.name === 'button.button');
+      var icon = findLayer(symbol, s => s.name === 'Icon');
+      var label = findLayer(symbol, s => s.name === 'Button Label');
+      if (button) button.resizingConstraint = 10;
+      if (icon) icon.resizingConstraint = 58;
+      if (label) label.resizingConstraint = 42;
     }
     if (/^Breadcrumb/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
