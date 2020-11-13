@@ -133,11 +133,7 @@ export class ProgressBar implements Base {
           </div>
         )}
         {
-          <span
-            aria-live="polite"
-            aria-hidden="true"
-            class={classes['progress-bar__aria-live']}
-          >
+          <span aria-live="polite" class={classes['progress-bar__aria-live']}>
             {this.statusDescription ||
               `${Math.round(this.percentage / 10) * 10}%`}
           </span>
