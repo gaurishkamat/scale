@@ -84,6 +84,7 @@ export const styles: JssStyle = {
       transition: 'border-color 0.2s ease-in-out',
       width: '100%',
       outline: 'none',
+      resize: 'vertical',
     },
     [`
       & .input__input, 
