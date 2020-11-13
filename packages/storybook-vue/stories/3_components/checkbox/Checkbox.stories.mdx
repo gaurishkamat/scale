@@ -20,6 +20,7 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :type="type"
       :label="label"
+      :helper-text="helperText"
       :disabled="disabled"
       :checked="checked"
       :value="value"
@@ -124,10 +125,11 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Error"
     args={{
-      label: "Error",
+      label: "Standard with error",
       type: "checkbox",
       icon: ICON,
-      status: "error"
+      status: "error",
+      helperText: "This is the error message"
     }}
   >
     {Template.bind({})}

@@ -4,6 +4,7 @@
     :status="status"
     :type="type"
     :label="label"
+    :helper-text="helperText"
     :disabled="disabled"
     :checked="checked"
     :value="value"
@@ -23,6 +24,7 @@ export default {
     name: { type: String },
     type: { type: String },
     label: { type: String },
+    helperText: { type: String },
     disabled: { type: Boolean },
     checked: { type: Boolean },
     value: { type: String },
