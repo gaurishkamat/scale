@@ -712,6 +712,10 @@ export namespace Components {
     }
     interface ScaleTabPanel {
         /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
@@ -1807,6 +1811,10 @@ declare namespace LocalJSX {
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
+        /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */

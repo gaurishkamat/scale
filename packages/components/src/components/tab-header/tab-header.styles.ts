@@ -44,9 +44,14 @@ export const styles: JssStyle = {
       backgroundColor: ({ color }) => color.primary_active,
     },
 
-    '&:focus-within': {
+    '&:focus': {
       boxShadow: ({ size, color }) =>
-        `0 0 0 ${size.border_focus} ${color.focus}`,
+        `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
+
+    // For the icon
+    '& ::slotted(*)': {
+      marginInlineEnd: ({ spacing }) => spacing[2],
     },
   },
 
