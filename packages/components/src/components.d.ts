@@ -692,11 +692,19 @@ export namespace Components {
     interface ScaleTabHeader {
         "selected": boolean;
         /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -1780,11 +1788,19 @@ declare namespace LocalJSX {
     interface ScaleTabHeader {
         "selected"?: boolean;
         /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
