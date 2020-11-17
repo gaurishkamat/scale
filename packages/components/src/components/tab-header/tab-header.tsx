@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Watch } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './tab-header.styles';
@@ -14,13 +14,23 @@ let i = 0;
 })
 export class TabHeader implements Base {
   generatedId: number = i++;
+  container: HTMLElement;
 
+  /** True for smaller height and font size */
+  @Prop() small: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('TabHeader', styles) stylesheet: StyleSheet;
 
   @Prop() selected: boolean;
+
+  @Watch('selected')
+  selectedChanged(newValue: boolean) {
+    if (newValue === true) {
+      this.container.focus();
+    }
+  }
 
   componentDidUnload() {}
   componentWillUpdate() {}
@@ -31,10 +41,13 @@ export class TabHeader implements Base {
         id={`scale-tab-header-${this.generatedId}`}
         role="tab"
         aria-selected={String(this.selected)}
-        tabindex={this.selected ? '0' : '-1'}
       >
         <style>{this.stylesheet.toString()}</style>
-        <span class={this.getCssClassMap()}>
+        <span
+          ref={el => (this.container = el)}
+          class={this.getCssClassMap()}
+          tabindex={this.selected ? '0' : '-1'}
+        >
           <slot />
         </span>
       </Host>
@@ -45,7 +58,8 @@ export class TabHeader implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes['tab-header'],
-      this.selected && classes['tab-header--selected']
+      this.selected && classes['tab-header--selected'],
+      this.small && classes['tab-header--small']
     );
   }
 }

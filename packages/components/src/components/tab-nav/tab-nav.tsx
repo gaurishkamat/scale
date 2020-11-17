@@ -1,4 +1,12 @@
-import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
+import {
+  Element,
+  Component,
+  h,
+  Prop,
+  Host,
+  Listen,
+  Watch,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './tab-nav.styles';
@@ -23,10 +31,18 @@ const END = 'End';
 })
 export class TabNav implements Base {
   @Element() el: HTMLElement;
+
+  /** True for smaller height and font size in tab headers. */
+  @Prop() small: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('TabNav', styles) stylesheet: StyleSheet;
+
+  @Watch('small')
+  smallChanged() {
+    this.propagateSizeToTabs();
+  }
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -86,7 +102,10 @@ export class TabNav implements Base {
     Promise.all([
       customElements.whenDefined('scale-tab-header'),
       customElements.whenDefined('scale-tab-panel'),
-    ]).then(() => this.linkPanels());
+    ]).then(() => {
+      this.linkPanels();
+      this.propagateSizeToTabs();
+    });
   }
 
   getAllTabs() {
@@ -150,7 +169,15 @@ export class TabNav implements Base {
     this.reset();
     nextPanel.hidden = false;
     nextTab.selected = true;
-    nextTab.focus();
+  }
+
+  /**
+   * Sets or removes the `small` prop in `scale-tab-header` children.
+   */
+  propagateSizeToTabs() {
+    const action = this.small ? 'setAttribute' : 'removeAttribute';
+    const tabs = this.getAllTabs();
+    tabs.forEach(tab => tab[action]('small', ''));
   }
 
   render() {

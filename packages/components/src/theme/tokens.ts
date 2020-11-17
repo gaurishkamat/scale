@@ -150,6 +150,7 @@ const color = {
   divider: GRAY_6_DECORATIVE,
   tableLine: GRAY_6_DECORATIVE,
   border_slider_thumb: GRAY_3,
+  border_tab: GRAY_6_DECORATIVE,
   slider_track: GRAY_4,
 };
 
@@ -247,13 +248,17 @@ const spacing = {
 };
 
 const size = {
-  divider: '1px',
-  underline: '1px',
-  border_input: '1px',
-  border_focus: '2px',
+  divider: 1,
+  underline: 1,
+  border_input: 1,
+  border_focus: 2,
+  border_tab: 2,
+  border_tab_selected: 4,
   modal_narrow: rem(31),
   modal: rem(44),
   modal_wide: rem(64),
+  height_tab: rem(SPACING_1 * 10),
+  height_tab_small: rem(SPACING_6),
 };
 
 const shadow = {
