@@ -690,26 +690,19 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label": string;
-        "selected"?: boolean;
+        "selected": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -1785,11 +1778,6 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label"?: string;
-        "onTabclick"?: (event: CustomEvent<any>) => void;
         "selected"?: boolean;
         /**
           * (optional) Injected jss styles
@@ -1797,15 +1785,12 @@ declare namespace LocalJSX {
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
         /**
           * (optional) Injected jss styles
          */

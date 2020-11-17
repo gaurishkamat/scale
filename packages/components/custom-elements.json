@@ -1025,22 +1025,6 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": ""
-        },
-        {
-          "name": "icon-only",
-          "description": ""
-        },
-        {
-          "name": "icon-size",
-          "description": ""
-        },
-        {
-          "name": "label",
-          "description": ""
-        },
-        {
           "name": "selected",
           "description": ""
         }
@@ -1052,12 +1036,7 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [
-        {
-          "name": "aria-label",
-          "description": ""
-        }
-      ]
+      "attributes": []
     },
     {
       "name": "scale-tab-panel",
@@ -1065,16 +1044,7 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [
-        {
-          "name": "aria-label",
-          "description": ""
-        },
-        {
-          "name": "identifier",
-          "description": ""
-        }
-      ]
+      "attributes": []
     },
     {
       "name": "scale-table",
