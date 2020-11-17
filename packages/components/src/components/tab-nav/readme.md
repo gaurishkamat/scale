@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                    | Type                                     | Default     |
-| ----------- | ------------ | ------------------------------ | ---------------------------------------- | ----------- |
-| `ariaLabel` | `aria-label` |                                | `string`                                 | `undefined` |
-| `styles`    | --           | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property | Attribute | Description                    | Type                                     | Default     |
+| -------- | --------- | ------------------------------ | ---------------------------------------- | ----------- |
+| `styles` | --        | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 
 ----------------------------------------------

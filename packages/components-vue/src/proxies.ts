@@ -533,15 +533,11 @@ export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
     styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
-    label: {} as PropOptions<Components.ScaleTabHeader['label']>,
     selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
-    icon: {} as PropOptions<Components.ScaleTabHeader['icon']>,
-    iconSize: {} as PropOptions<Components.ScaleTabHeader['iconSize']>,
-    iconOnly: {} as PropOptions<Components.ScaleTabHeader['iconOnly']>,
   },
 
 
-  render: createCommonRender('scale-tab-header', ['tabclick']),
+  render: createCommonRender('scale-tab-header', []),
 });
 
 
@@ -549,7 +545,6 @@ export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
 
   props: {
     styles: {} as PropOptions<Components.ScaleTabNav['styles']>,
-    ariaLabel: {} as PropOptions<Components.ScaleTabNav['ariaLabel']>,
   },
 
 
@@ -561,8 +556,6 @@ export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
 
   props: {
     styles: {} as PropOptions<Components.ScaleTabPanel['styles']>,
-    ariaLabel: {} as PropOptions<Components.ScaleTabPanel['ariaLabel']>,
-    identifier: {} as PropOptions<Components.ScaleTabPanel['identifier']>,
   },
 
 
