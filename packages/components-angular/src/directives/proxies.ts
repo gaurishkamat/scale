@@ -574,13 +574,13 @@ export class ScaleSwitch {
 
 export declare interface ScaleTabHeader extends Components.ScaleTabHeader {}
 @ProxyCmp({
-  inputs: ['selected', 'styles']
+  inputs: ['selected', 'small', 'styles']
 })
 @Component({
   selector: 'scale-tab-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['selected', 'styles']
+  inputs: ['selected', 'small', 'styles']
 })
 export class ScaleTabHeader {
   protected el: HTMLElement;
@@ -593,13 +593,13 @@ export class ScaleTabHeader {
 
 export declare interface ScaleTabNav extends Components.ScaleTabNav {}
 @ProxyCmp({
-  inputs: ['styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabNav {
   protected el: HTMLElement;
@@ -612,13 +612,13 @@ export class ScaleTabNav {
 
 export declare interface ScaleTabPanel extends Components.ScaleTabPanel {}
 @ProxyCmp({
-  inputs: ['styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-panel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabPanel {
   protected el: HTMLElement;
