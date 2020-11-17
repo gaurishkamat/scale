@@ -30,7 +30,7 @@ export class TabNav implements Base {
 
   @Listen('click')
   handleClick(event: MouseEvent) {
-    const nextTab = (event.target as HTMLScaleTabHeaderElement);
+    const nextTab = event.target as HTMLScaleTabHeaderElement;
     if (nextTab.getAttribute('role') !== 'tab') {
       return;
     }
@@ -39,7 +39,7 @@ export class TabNav implements Base {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
-    const target = (event.target as HTMLScaleTabHeaderElement);
+    const target = event.target as HTMLScaleTabHeaderElement;
     let nextTab;
 
     if (target.getAttribute('role') !== 'tab') {
