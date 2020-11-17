@@ -19,7 +19,7 @@ When creating tabs, make sure the different sections of content are:
 
 ### When not to use
 
-Don't use tabs when:
+Don't use tabs if:
 
 *	users might want to compare the content,
 *	users need to read the content in a particular order (e.g., with processes), or
