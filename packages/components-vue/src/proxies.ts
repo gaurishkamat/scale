@@ -532,6 +532,7 @@ export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
 export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabHeader['small']>,
     styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
     selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
   },
@@ -544,6 +545,7 @@ export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
 export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabNav['small']>,
     styles: {} as PropOptions<Components.ScaleTabNav['styles']>,
   },
 
@@ -555,6 +557,7 @@ export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
 export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabPanel['small']>,
     styles: {} as PropOptions<Components.ScaleTabPanel['styles']>,
   },
 
