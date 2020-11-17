@@ -30,6 +30,25 @@ export class TabHeader implements Base {
     if (newValue === true) {
       this.container.focus();
     }
+    this.updateSlottedIcon();
+  }
+
+  /**
+   * Find slotted icons, and if any, add the `selected` attribute accordingly.
+   */
+  updateSlottedIcon() {
+    const slot = this.container.querySelector('slot') as HTMLSlotElement;
+    if (slot === null) {
+      return;
+    }
+    const children = Array.from(slot.assignedNodes())
+      .filter(node => node.nodeType === 1)
+      .filter(node => node.nodeName.toUpperCase().indexOf('ICON') > -1);
+    if (children.length === 0) {
+      return;
+    }
+    const action = this.selected ? 'setAttribute' : 'removeAttribute';
+    children.forEach(child => child[action]('selected', ''));
   }
 
   componentDidUnload() {}

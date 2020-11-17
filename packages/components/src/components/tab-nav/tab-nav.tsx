@@ -172,12 +172,13 @@ export class TabNav implements Base {
   }
 
   /**
-   * Sets or removes the `small` prop in `scale-tab-header` children.
+   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
    */
   propagateSizeToTabs() {
     const action = this.small ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
-    tabs.forEach(tab => tab[action]('small', ''));
+    const panels = this.getAllPanels();
+    [...tabs, ...panels].forEach(child => child[action]('small', ''));
   }
 
   render() {
@@ -194,6 +195,9 @@ export class TabNav implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes['tab-nav']);
+    return classNames(
+      classes['tab-nav'],
+      this.small && classes['tab-nav--small']
+    );
   }
 }

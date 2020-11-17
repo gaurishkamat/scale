@@ -15,6 +15,8 @@ let i = 0;
 export class TabPanel implements Base {
   generatedId: number = i++;
 
+  /** True for smaller height and font size */
+  @Prop() small: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -36,6 +38,9 @@ export class TabPanel implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes['tab-panel']);
+    return classNames(
+      classes['tab-panel'],
+      this.small && classes['tab-panel--small']
+    );
   }
 }
