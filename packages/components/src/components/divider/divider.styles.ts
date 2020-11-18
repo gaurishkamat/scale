@@ -10,7 +10,7 @@ export const styles: JssStyle = {
     '& hr': {
       border: '0',
       borderTop: ({ color, size }) =>
-        `${size.divider}px solid ${color.divider}`,
+          `${size.divider}px solid ${color.divider}`,
       margin: 0,
     },
   },
