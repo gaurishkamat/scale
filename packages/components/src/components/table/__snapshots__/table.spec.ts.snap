@@ -15,13 +15,14 @@ exports[`Table should match snapshot 1`] = `
   white-space: nowrap;
   border-spacing: 0;
   border-collapse: collapse;
+  font-family: TeleNeoWeb;
 }
 .table-0-0-4 th {
-  font-size: 12px;
   text-align: left;
   line-height: 32px;
   user-select: none;
   color: #757575;
+  font-size: 0.75rem;
 }
 .table-0-0-4 th, .table-0-0-4 td {
   padding: 0 8px;
