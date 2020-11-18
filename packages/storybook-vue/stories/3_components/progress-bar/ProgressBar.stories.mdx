@@ -47,16 +47,23 @@ export const TemplateInteractive = (args, {argTypes}) => ({
             :percentage="$data.percentage"
           >
           </scale-progress-bar>
-          <scale-button variant="secondary" size="small" @click="start">Start</scale-button>
+          <scale-button variant="secondary" size="small" @click="startSuccess">Start Success</scale-button>
+          <scale-button variant="secondary" size="small" @click="startFailure">Start Failure</scale-button>
           <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
       </div>
   `,
     methods: {
-        start() {
+        startSuccess() {
+            this.start('success');
+        },
+        startFailure() {
+            this.start('failure');
+        },
+        start(outcome) {
             const xxx = setInterval(()  => {
                 if (this.$data.percentage === 100) {
                     clearInterval(this.interval);
-                    this.$data.state = 'success';
+                    this.$data.state = outcome;
                     this.interval = null;
                     return;
                 }
@@ -79,6 +86,12 @@ export const TemplateInteractive = (args, {argTypes}) => ({
             icon: 'm22.4 5.05c-.3-.3-.75-.3-1.05 0l-12.35 12.35-5.9-5.9c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l6.95 6.95 13.4-13.4c.3-.3.3-.75 0-1.05z',
             statusDescription: 'Upload complete',
             customColor: "#67c23a",
+        },
+        failure: {
+            showStatus: false,
+            hasError: true,
+            icon: ICON_CIRCLE_CLOSE,
+            statusDescription: 'Upload fail',
         },
         initial: {
             showStatus: true,
