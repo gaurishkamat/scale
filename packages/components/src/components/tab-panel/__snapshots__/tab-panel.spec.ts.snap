@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TabPanel should match snapshot 1`] = `
-<scale-tab-panel>
-  <!---->
-</scale-tab-panel>
-`;

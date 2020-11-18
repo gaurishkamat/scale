@@ -34,7 +34,7 @@ export const styles: JssStyle = {
     },
     '& tbody td': {
       borderBottom: ({ color, size }) =>
-        `${size.divider} solid ${color.divider}`,
+        `${size.divider}px solid ${color.divider}`,
     },
 
     '& tbody tr': {
