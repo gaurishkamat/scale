@@ -1,61 +1,153 @@
-import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
+import {
+  Element,
+  Component,
+  h,
+  Prop,
+  Host,
+  Listen,
+  Watch,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './tab-nav.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { TabHeader } from '../tab-header/tab-header';
+
+/**
+ * @see https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-tabs/howto-tabs.js
+ */
+
+const ARROW_LEFT = 'ArrowLeft';
+const ARROW_UP = 'ArrowUp';
+const ARROW_DOWN = 'ArrowDown';
+const ARROW_RIGHT = 'ArrowRight';
+const HOME = 'Home';
+const END = 'End';
 
 @Component({
   tag: 'scale-tab-nav',
-  shadow: false,
+  shadow: true,
 })
 export class TabNav implements Base {
   @Element() el: HTMLElement;
+
+  /** True for smaller height and font size in tab headers. */
+  @Prop() small: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('TabNav', styles) stylesheet: StyleSheet;
 
-  @Prop() ariaLabel?: string;
-
-  @Listen('tabclick')
-  clickHandler(ev: CustomEvent<TabHeader>) {
-    // console.log(ev.target);
-    this.selectTab(ev.target);
+  @Watch('small')
+  smallChanged() {
+    this.propagateSizeToTabs();
   }
 
-  componentWillLoad() {
-    this.linkPanels();
+  @Listen('click')
+  handleClick(event: MouseEvent) {
+    const nextTab = event.target as HTMLScaleTabHeaderElement;
+    if (nextTab.getAttribute('role') !== 'tab') {
+      return;
+    }
+    this.selectTab(nextTab);
   }
+
+  @Listen('keydown')
+  handleKeydown(event: KeyboardEvent) {
+    const target = event.target as HTMLScaleTabHeaderElement;
+    let nextTab;
+
+    if (target.getAttribute('role') !== 'tab') {
+      return;
+    }
+    // Do not handle modifier shortcuts typically used by assistive technology
+    if (event.altKey) {
+      return;
+    }
+
+    switch (event.key) {
+      case ARROW_LEFT:
+      case ARROW_UP:
+        nextTab = this.getPreviousTab();
+        break;
+      case ARROW_RIGHT:
+      case ARROW_DOWN:
+        nextTab = this.getNextTab();
+        break;
+      case HOME:
+        nextTab = this.getFirstTab();
+        break;
+      case END:
+        nextTab = this.getLastTab();
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    this.selectTab(nextTab);
+  }
+
   componentDidUnload() {}
   componentWillUpdate() {}
 
-  getAllPanels() {
-    return Array.from(this.el.querySelectorAll('scale-tab-panel'));
+  connectedCallback() {
+    if (!this.el.hasAttribute('role')) {
+      this.el.setAttribute('role', 'tablist');
+    }
+  }
+
+  componentDidLoad() {
+    Promise.all([
+      customElements.whenDefined('scale-tab-header'),
+      customElements.whenDefined('scale-tab-panel'),
+    ]).then(() => {
+      this.linkPanels();
+      this.propagateSizeToTabs();
+    });
   }
 
   getAllTabs() {
     return Array.from(this.el.querySelectorAll('scale-tab-header'));
   }
 
-  panelForTab(tab) {
-    const panelId = tab.getAttribute('aria-controls');
-    return this.el.querySelector(`#${panelId}`);
+  getAllPanels() {
+    return Array.from(this.el.querySelectorAll('scale-tab-panel'));
   }
 
-  selectTab(tab) {
-    this.reset();
-    const panel: any = this.panelForTab(tab);
+  getPreviousTab() {
+    const tabs = this.getAllTabs();
+    const index = tabs.findIndex(tab => tab.selected) - 1;
+    return tabs[(index + tabs.length) % tabs.length];
+  }
 
-    if (!panel) {
-      throw new Error('No panel with this id');
-    }
+  getNextTab() {
+    const tabs = this.getAllTabs();
+    const index = tabs.findIndex(tab => tab.selected) + 1;
+    return tabs[index % tabs.length];
+  }
 
-    tab.selected = true;
-    panel.hidden = false;
-    tab.focus();
+  getFirstTab() {
+    const tabs = this.getAllTabs();
+    return tabs[0];
+  }
+
+  getLastTab() {
+    const tabs = this.getAllTabs();
+    return tabs[tabs.length - 1];
+  }
+
+  linkPanels() {
+    const tabs = this.getAllTabs();
+    const selectedTab = tabs.find(x => x.selected) || tabs[0];
+
+    tabs.forEach(tab => {
+      const panel = tab.nextElementSibling;
+      tab.setAttribute('aria-controls', panel.id);
+      panel.setAttribute('aria-labelledby', tab.id);
+    });
+    this.selectTab(selectedTab);
   }
 
   reset() {
@@ -63,46 +155,39 @@ export class TabNav implements Base {
     const panels = this.getAllPanels();
 
     tabs.forEach(tab => (tab.selected = false));
-
     panels.forEach(panel => (panel.hidden = true));
   }
 
-  linkPanels() {
+  findPanelForTab(tab: HTMLScaleTabHeaderElement): HTMLScaleTabPanelElement {
+    const panelId = tab.getAttribute('aria-controls');
+    return this.el.querySelector(`#${panelId}`);
+  }
+
+  selectTab(nextTab: HTMLScaleTabHeaderElement) {
+    const nextPanel = this.findPanelForTab(nextTab);
+
+    this.reset();
+    nextPanel.hidden = false;
+    nextTab.selected = true;
+  }
+
+  /**
+   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
+   */
+  propagateSizeToTabs() {
+    const action = this.small ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
-
-    tabs.forEach((tab, i) => {
-      const panel = tab.nextElementSibling;
-      if (panel.tagName.toLowerCase() !== 'scale-tab-panel') {
-        // console.error(`Tab #${i} is not a` + `sibling of a Panel`);
-        return;
-      }
-      // auto-generate id
-      if (
-        !tab.getAttribute('aria-controls') &&
-        !panel.getAttribute('aria-labelledby')
-      ) {
-        const id = `auto-generated-${i}`;
-
-        tab.setAttribute('aria-controls', id);
-        panel.setAttribute('aria-labelledby', id);
-        panel.setAttribute('id', id);
-      }
-    });
-
-    const selectedTab = tabs.find(tab => tab.selected) || tabs[0];
-    this.selectTab(selectedTab);
+    const panels = this.getAllPanels();
+    [...tabs, ...panels].forEach(child => child[action]('small', ''));
   }
 
   render() {
     return (
       <Host>
-        <nav class={this.getCssClassMap()}>
-          <ul class="tab-nav__list">
-            <slot name="headings"></slot>
-          </ul>
-        </nav>
-        <div>
-          <slot name="content"></slot>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          <slot name="tab" />
+          <slot name="panel" />
         </div>
       </Host>
     );
@@ -110,6 +195,9 @@ export class TabNav implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes['tab-nav']);
+    return classNames(
+      classes['tab-nav'],
+      this.small && classes['tab-nav--small']
+    );
   }
 }

@@ -34,7 +34,7 @@ export const styles: JssStyle = {
     },
     '&:focus': {
       boxShadow: ({ size, color }) =>
-        `0 0 0 ${size.border_focus} ${color.focus}`,
+        `0 0 0 ${size.border_focus}px ${color.focus}`,
       outline: 'none',
     },
   },

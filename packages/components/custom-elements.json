@@ -1025,24 +1025,12 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": ""
-        },
-        {
-          "name": "icon-only",
-          "description": ""
-        },
-        {
-          "name": "icon-size",
-          "description": ""
-        },
-        {
-          "name": "label",
-          "description": ""
-        },
-        {
           "name": "selected",
           "description": ""
+        },
+        {
+          "name": "small",
+          "description": "True for smaller height and font size"
         }
       ]
     },
@@ -1054,8 +1042,8 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": ""
+          "name": "small",
+          "description": "True for smaller height and font size in tab headers."
         }
       ]
     },
@@ -1067,12 +1055,8 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": ""
-        },
-        {
-          "name": "identifier",
-          "description": ""
+          "name": "small",
+          "description": "True for smaller height and font size"
         }
       ]
     },

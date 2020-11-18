@@ -1,59 +1,45 @@
 <template>
-  <scale-tab-nav>
-    <scale-tab-header
-      slot="headings"
-      :label="label1"
-      :icon="icon1"
-      :icon-only="iconOnly"
-    ></scale-tab-header>
-    <scale-tab-panel slot="content">
-      <p>This is General</p>
+  <scale-tab-nav :small="small">
+    <scale-tab-header slot="tab">
+      <scale-icon-home-home v-if="withIcon" size="16" /> General
+    </scale-tab-header>
+    <scale-tab-panel slot="panel">
+      <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst. 90's tumblr whatever direct trade, organic master cleanse copper mug schlitz palo santo bushwick ethical pop-up chambray portland. Sartorial austin iceland street art, pug asymmetrical marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin food truck everyday carry 3 wolf moon.</p>
     </scale-tab-panel>
-    <scale-tab-header
-      slot="headings"
-      :label="label2"
-      :icon-only="iconOnly"
-      :icon="icon2"
-    ></scale-tab-header>
-    <scale-tab-panel slot="content">
-      <p>This is Usage</p>
+    <scale-tab-header slot="tab">
+      <scale-icon-user_file-analytics v-if="withIcon" size="16" /> Usage
+    </scale-tab-header>
+    <scale-tab-panel slot="panel">
+      <p>Bespoke austin pork belly yuccie pop-up. Before they sold out YOLO kickstarter scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers microdosing etsy hashtag seitan photo booth bitters.</p>
     </scale-tab-panel>
-    <scale-tab-header
-      slot="headings"
-      :label="label3"
-      :icon-only="iconOnly"
-      :icon="icon3"
-    ></scale-tab-header>
-    <scale-tab-panel slot="content">
-      <p>This is Style</p>
+    <scale-tab-header slot="tab">
+      <scale-icon-content-heart v-if="withIcon" size="16" /> Style
+    </scale-tab-header>
+    <scale-tab-panel slot="panel">
+      <p>Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh four loko selfies you probably haven't heard of them locavore bushwick. Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf godard skateboard celiac taxidermy tacos offal.</p>
     </scale-tab-panel>
-    <scale-tab-header
-      slot="headings"
-      :label="label4"
-      :icon-only="iconOnly"
-      :icon="icon4"
-    ></scale-tab-header>
-    <scale-tab-panel slot="content">
-      <p>This is Code</p>
+    <scale-tab-header slot="tab">
+      <scale-icon-action-random v-if="withIcon" size="16" /> Code
+    </scale-tab-header>
+    <scale-tab-panel slot="panel">
+      <p>Asymmetrical tattooed chia, banh mi blog microdosing edison bulb meditation readymade drinking vinegar brunch irony. Whatever humblebrag 3 wolf moon kinfolk selvage. Listicle mumblecore forage paleo. Asymmetrical hella crucifix ethical.</p>
     </scale-tab-panel>
   </scale-tab-nav>
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
-
 export default {
   props: {
     styles: { type: Object },
-    iconOnly: { type: Boolean },
-    label1: { type: String, default: "General" },
-    icon1: { type: String },
-    label2: { type: String, default: "Usage" },
-    icon2: { type: String },
-    label3: { type: String, default: "Style" },
-    icon3: { type: String },
-    label4: { type: String, default: "Code" },
-    icon4: { type: String },
+    small: { type: Boolean, default: false },
+    withIcon: { type: Boolean, default: true }
   },
 };
 </script>
+
+<style scoped>
+p {
+  max-width: 60ch;
+  margin-top: 0;
+}
+</style>

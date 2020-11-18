@@ -1090,14 +1090,18 @@
 
       <h3>Tabs</h3>
       <scale-tab-nav>
-        <scale-tab-header
-          icon="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-          slot="headings"
-          label="test1"
-        ></scale-tab-header>
-        <scale-tab-panel slot="content">this is one Test</scale-tab-panel>
-        <scale-tab-header slot="headings" label="test2"></scale-tab-header>
-        <scale-tab-panel slot="content">this is another test</scale-tab-panel>
+        <scale-tab-header slot="tab">Tab 1</scale-tab-header>
+        <scale-tab-panel slot="panel"
+          >Content goes here for tab 1</scale-tab-panel
+        >
+        <scale-tab-header slot="tab">Tab 2</scale-tab-header>
+        <scale-tab-panel slot="panel"
+          >Content goes here for tab 2</scale-tab-panel
+        >
+        <scale-tab-header slot="tab">Tab 3</scale-tab-header>
+        <scale-tab-panel slot="panel"
+          >Content goes here for tab 3</scale-tab-panel
+        >
       </scale-tab-nav>
 
       <h3>Accordion</h3>

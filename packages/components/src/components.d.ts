@@ -690,26 +690,31 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label": string;
-        "selected"?: boolean;
+        "selected": boolean;
+        /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
+        /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -1785,27 +1790,31 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label"?: string;
-        "onTabclick"?: (event: CustomEvent<any>) => void;
         "selected"?: boolean;
+        /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
+        /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */

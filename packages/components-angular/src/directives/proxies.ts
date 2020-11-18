@@ -571,39 +571,35 @@ export class ScaleSwitch {
   }
 }
 
-import { TabHeader as ITabHeader } from '@scaleds/components-telekom/dist/types/components/tab-header/tab-header';
+
 export declare interface ScaleTabHeader extends Components.ScaleTabHeader {}
 @ProxyCmp({
-  inputs: ['icon', 'iconOnly', 'iconSize', 'label', 'selected', 'styles']
+  inputs: ['selected', 'small', 'styles']
 })
 @Component({
   selector: 'scale-tab-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'iconOnly', 'iconSize', 'label', 'selected', 'styles'],
-  outputs: ['tabclick']
+  inputs: ['selected', 'small', 'styles']
 })
 export class ScaleTabHeader {
-  /**  */
-  tabclick!: ITabHeader['tabClick'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['tabclick']);
   }
 }
 
 
 export declare interface ScaleTabNav extends Components.ScaleTabNav {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabNav {
   protected el: HTMLElement;
@@ -616,13 +612,13 @@ export class ScaleTabNav {
 
 export declare interface ScaleTabPanel extends Components.ScaleTabPanel {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'identifier', 'styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-panel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'identifier', 'styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabPanel {
   protected el: HTMLElement;
