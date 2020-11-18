@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.1...v1.12.2) (2020-11-18)
+
+**Note:** Version bump only for package @scaleds/icons-telekom
+
+
+
+
+
 ## [1.12.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.0...v1.12.1) (2020-11-17)
 
 **Note:** Version bump only for package @scaleds/icons-telekom

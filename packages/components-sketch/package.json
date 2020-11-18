@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "1.12.1",
+  "version": "1.12.2",
   "description": "",
   "license": "MIT",
   "scripts": {

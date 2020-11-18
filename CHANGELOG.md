@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.1...v1.12.2) (2020-11-18)
+
+
+### Bug Fixes
+
+* add max-width to logo ([eea3f54](https://gitlab.com/scale-ds/scale-telekom/commit/eea3f540f0e03a229f8b80574dabe043dec9e892))
+* typeVariants to type_variants in text.tsx ([ebf7927](https://gitlab.com/scale-ds/scale-telekom/commit/ebf79278b722b5de6ff8afe01805f9ca05429b5a))
+
+
+
+
+
 ## [1.12.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.0...v1.12.1) (2020-11-17)
 
 
