@@ -30,6 +30,20 @@ export const styles: JssStyle = {
       backgroundColor: ({ color }) => color.border_tab,
     },
 
+    /* Accessiblity: Windows "High Contrast Mode" border */
+    '&::before': {
+      content: '""',
+      zIndex: 1,
+      display: 'block',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      width: '100%',
+      height: 0,
+      borderTop: '1px solid transparent',
+    },
+
     '&:hover': {
       color: ({ color }) => color.primary_hover,
     },
@@ -63,6 +77,11 @@ export const styles: JssStyle = {
       borderTopRightRadius: ({ radii }) => radii.medium,
       height: ({ size }) => size.border_tab_selected,
       backgroundColor: ({ color }) => color.primary,
+    },
+
+    '&::before': {
+      borderTop: ({ size }) =>
+        `${size.border_tab_selected}px solid transparent`,
     },
   },
 
