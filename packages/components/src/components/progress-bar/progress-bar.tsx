@@ -116,6 +116,7 @@ export class ProgressBar implements Base {
             {!!this.showStatus && (
               <div
                 class={classes['progress-bar__status']}
+                aria-hidden
               >{`${this.percentage}%`}</div>
             )}
             {!!this.icon && (
@@ -128,14 +129,13 @@ export class ProgressBar implements Base {
           </div>
         </div>
         {!!this.statusDescription && (
-          <div class={classes['progress-bar__status-description']}>
+          <div class={classes['progress-bar__status-description']} role="alert">
             {this.statusDescription}
           </div>
         )}
         {
           <span aria-live="polite" class={classes['progress-bar__aria-live']}>
-            {this.statusDescription ||
-              `${Math.round(this.percentage / 10) * 10}%`}
+            {`${Math.round(this.percentage / 10) * 10}%`}
           </span>
         }
       </Host>
