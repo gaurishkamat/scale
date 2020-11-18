@@ -11,14 +11,12 @@ exports[`Button should match snapshot 1`] = `
   display: inline-flex;
   outline: none;
   position: relative;
-  font-size: 1rem;
   box-shadow: none;
   box-sizing: border-box;
   min-height: 40px;
   text-align: center;
   align-items: center;
   flex-shrink: 0;
-  line-height: 24px;
   padding-top: 8px;
   user-select: none;
   white-space: nowrap;
@@ -36,6 +34,8 @@ exports[`Button should match snapshot 1`] = `
   background: #E0E0E0;
   font-family: TeleNeoWeb;
   font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-0-0-8:before {
@@ -118,9 +118,9 @@ exports[`Button should match snapshot 1`] = `
   --icon-color: #CB0068;
 }
 .button--size-small-0-0-14 {
-  font-size: 12px;
   min-height: 32px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1.3333;
 }
 .button--size-small-0-0-14.button--icon-only-0-0-12 {
   min-width: 32px;

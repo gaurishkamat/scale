@@ -8,10 +8,10 @@ export const styles: JssStyle = {
     color: ({ color }) => color.link,
     '&:hover&:not($link--disabled)': {
       color: ({ color }) => color.link_hover,
-      borderBottom: ({ size }) => `${size.underline} solid currentColor`,
+      borderBottom: ({ size }) => `${size.underline}px solid currentColor`,
     },
     '&:focus:not($link--disabled)': {
-      borderBottom: ({ size }) => `${size.border_focus} solid currentColor`,
+      borderBottom: ({ size }) => `${size.border_focus}px solid currentColor`,
     },
     '&:active&:not($link--disabled)': {
       color: ({ color }) => color.link_active,
