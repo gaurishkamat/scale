@@ -8,7 +8,7 @@ export const styles: JssStyle = {
     background: ({ colors }) => colors.grey[100],
 
     '& table': {
-      fontFamily: ({ typography }) => typography.fontFamily,
+      fontFamily: ({ type }) => type.family,
       borderSpacing: 0,
       borderCollapse: 'collapse',
       width: '100%',

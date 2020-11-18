@@ -24,17 +24,17 @@ exports[`Toast should match snapshot 1`] = `
   margin: 0;
   display: flex;
   padding: 1rem;
-  font-size: 1.25rem;
   border-bottom: 1px solid #ccc;
   justify-content: space-between;
+  font-size: 1.25rem;
 }
 .toast__header-0-0-7 a {
   cursor: pointer;
 }
 .toast__header-0-0-7 small {
-  font-size: 0.8rem;
   margin-top: 5px;
   margin-left: 120px;
+  font-size: 0.75rem;
 }
 .toast__progress-0-0-8 {
   left: 0;
@@ -114,17 +114,17 @@ exports[`Toast should match snapshot when opened 1`] = `
   margin: 0;
   display: flex;
   padding: 1rem;
-  font-size: 1.25rem;
   border-bottom: 1px solid #ccc;
   justify-content: space-between;
+  font-size: 1.25rem;
 }
 .toast__header-0-0-7 a {
   cursor: pointer;
 }
 .toast__header-0-0-7 small {
-  font-size: 0.8rem;
   margin-top: 5px;
   margin-left: 120px;
+  font-size: 0.75rem;
 }
 .toast__progress-0-0-8 {
   left: 0;
