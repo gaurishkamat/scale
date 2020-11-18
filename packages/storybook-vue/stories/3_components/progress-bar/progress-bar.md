@@ -11,17 +11,17 @@ A progress bar is a non-interactive, visual indicator. Depending on whether or n
 
 For processes where you know the duration, use determinate progress bars. The label specifically indicates how much of the process has already finished. You should use it if a process will take more than 10 seconds.
 
-![Image Name](assets/3_components/progress-bar/image-20200810094334611.png)
+![Image Name](assets/3_components/progress-bar/pb_determinate_procent-done.png)
 
 ### Indeterminate
 
 If you cannot determine the duration of a process, use the indeterminate progress bar. This indicates that the system is operating, but doesn't give any idea how long it could take. Therefore, you should always avoid using this type of progress bar whenever possible.
 
-![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
+![Image Name](assets/3_components/progress-bar/pb-indeterminate.png)
 
 ## Elements
 
-![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
+![Image Name](assets/3_components/progress-bar/pb_elements.png)
 
 ### Track (1)
 
@@ -39,8 +39,8 @@ Display a description whenever you can. It gives more information about the ongo
 
 Telekom progess bars use Magenta as an accent color. If you need to use a different color for a particular reason, you can either use colors from the Telekom color palette or create a custom one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
-![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
+![Image Name](assets/3_components/progress-bar/pb-in-custom-color.png)
 
 ### Progress states
 
-![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
+![Image Name](assets/3_components/progress-bar/pb_states.png)
