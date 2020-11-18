@@ -9,7 +9,7 @@ import { getTheme } from '../../theme/theme';
 
 const variants = () => {
   const variantClasses = {};
-  const themeVariants = getTheme().typeVariants;
+  const themeVariants = getTheme().type_variants;
   Object.keys(themeVariants).map(variant => {
     const variantName = variant.replace('_', '-');
     variantClasses[`text--variant-${variantName}`] = themeVariants[variant];
