@@ -187,6 +187,9 @@ export class Header {
                   this.activeSegment.id === item.id && 'active'
                 )}
                 href={item.href || 'javascript:void(0);'}
+                onFocus={() => {
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 {item.name}
               </a>
@@ -209,6 +212,9 @@ export class Header {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
+              }}
+              onFocus={() => {
+                window.scrollTo({ top: 0 });
               }}
             >
               {item.name}
