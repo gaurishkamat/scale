@@ -182,6 +182,10 @@ export namespace Components {
          */
         "interactive"?: boolean;
         /**
+          * (optional) Label of the card
+         */
+        "label"?: string;
+        /**
           * (optional) Padding off
          */
         "noPadding"?: boolean;
@@ -1252,6 +1256,10 @@ declare namespace LocalJSX {
           * (optional) Link interactive
          */
         "interactive"?: boolean;
+        /**
+          * (optional) Label of the card
+         */
+        "label"?: string;
         /**
           * (optional) Padding off
          */

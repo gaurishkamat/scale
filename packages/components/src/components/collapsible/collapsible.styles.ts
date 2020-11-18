@@ -54,6 +54,7 @@ export const styles: JssStyle = {
     paddingRight: ({ spacing }) => spacing['7'],
     paddingBottom: ({ spacing }) => `calc(0.5 * ${spacing['5']})`,
     paddingLeft: ({ spacing }) => spacing['6'],
+    border: '1px solid transparent',
     '& ::slotted(*)': {
       marginTop: 0,
       marginBottom: 0,

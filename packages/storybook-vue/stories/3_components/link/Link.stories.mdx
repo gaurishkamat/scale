@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import ScaleLink from './ScaleLink.vue';
 export const ICON = 'M12.65 3l1.5 1.5H4.5V18c0 .85.65 1.5 1.5 1.5h12c.85 0 1.5-.65 1.5-1.5V9.85l1.5 1.5V18c0 1.65-1.35 3-3 3H6c-1.65 0-3-1.35-3-3V3zM22.7 1.35l-1.65 7.9-2.6-2.6-7.55 7.55c-.15.15-.35.2-.55.2s-.4-.05-.55-.2c-.3-.3-.3-.75 0-1.05l7.55-7.55-2.6-2.6 7.95-1.65z';
 
@@ -20,7 +20,6 @@ export const Template = (args, {argTypes}) => ({
     props: {
         label: String,
         ...ScaleLink.props,
-        underline: true
     },
     template: `
         <scale-link
@@ -31,7 +30,6 @@ export const Template = (args, {argTypes}) => ({
         :icon="icon"
         :icon-size="iconSize"
         :target="target"
-        :underline="underline"
         :variant="variant"
     >
     {{ label }}
@@ -47,7 +45,8 @@ export const Template = (args, {argTypes}) => ({
     <Story
         name="Standard"
         args={{
-            label: 'A link'
+            label: 'A link',
+            href: '#top'
         }}>
         {Template.bind({})}
     </Story>
@@ -62,7 +61,8 @@ export const Template = (args, {argTypes}) => ({
         name="Disabled"
         args={{
             label: 'A link, disabled',
-            disabled: true
+            disabled: true,
+            href: '#top'
         }}
     >
     {Template.bind({})}
@@ -70,7 +70,7 @@ export const Template = (args, {argTypes}) => ({
 </Preview>
 
 ```html
-<scale-link disabled>A link, disabled</scale-link>
+<scale-link disabled href="#top">A link, disabled</scale-link>
 ```
 
 
@@ -81,29 +81,13 @@ export const Template = (args, {argTypes}) => ({
         name="With Icon"
         args={{
             label: 'A link, with an icon',
-            icon: ICON
+            icon: ICON,
+            href: '#top'
         }}>
         {Template.bind({})}
     </Story>
 </Preview>
 
 ```html
-<scale-link icon="SVG-PATH">A link, with an icon</scale-link>
-```
-
-## Without Underline
-
-<Preview withSource="none">
-    <Story
-        name="Without Underline"
-        args={{
-            label: 'A link without underline',
-            underline: false
-        }}>
-        { Template.bind({})}
-    </Story>
-</Preview>
-
-```html
-<scale-link underline="false">A link without underline</scale-link>
+<scale-link icon="SVG-PATH" href="#top">A link, with an icon</scale-link>
 ```

@@ -1,6 +1,7 @@
 <template>
   <scale-card
     :custom-class="customClass"
+    :label="label"
     :href="href"
     :target="target"
     :interactive="interactive"
@@ -16,12 +17,13 @@
 export default {
   props: {
     customClass: String,
+    label: String,
     href: String,
-    target: { type: String, default: '_self' },
+    target: { type: String, default: "_self" },
     interactive: { type: Boolean, default: false },
     noPadding: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     styles: { type: Object }
   }
-}
+};
 </script>
