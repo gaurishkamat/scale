@@ -44,6 +44,9 @@ export class MegaMenu {
                           }}
                         >
                           {menuItem.name}
+                          {this.activeRouteId === menuItem.id && (
+                            <span class="sr-only">active</span>
+                          )}
                         </a>
                       </li>
                     ))}

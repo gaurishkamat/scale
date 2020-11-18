@@ -47,6 +47,9 @@ export class NavigationSectorMobile {
               aria-current={this.selected.id === item.id}
             >
               {item.name}
+              {this.selected.id === item.id && (
+                <span class="sr-only">active</span>
+              )}
             </a>
           </li>
         ))}
