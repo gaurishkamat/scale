@@ -1,52 +1,46 @@
 # Progress Bar
 
-The progress bar informs users about the status of an ongoing process, such as loading an app, submitting a form or saving updates.
+A progress bar indicates that the system is running a process. This make users feel in control and can help to estimate how long it takes to accomplish a task.
+
+## General
+A progress bar is a non-interactive, visual indicator. Depending on whether or not you know the duration of the process, you can use a determinate or indeterminate progress bar.
 
 ## Basic Types
 
 ### Determinate
 
-Determinate indicators display how long a process will take. They should be used when it is possible to define the process completion rate.
+For processes where you know the duration, use determinate progress bars. The label specifically indicates how much of the process has already finished. You should use it if a process will take more than 10 seconds.
 
 ![Image Name](assets/3_components/progress-bar/image-20200810094334611.png)
 
 ### Indeterminate
 
-Indeterminate indicators illustrate an unspecified amount of wait time. They should be used when it is either not possible or not necessary to indicate how long a process will take.
+If you cannot determine the duration of a process, use the indeterminate progress bar. This indicates that the system is operating, but doesn't give any idea how long it could take. Therefore, you should always avoid using this type of progress bar whenever possible.
 
 ![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
 
 ## Elements
 
-### Description (1) (Optional)
+![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
 
-### Status (2) (Optional)
+### Track (1)
 
-![Image Name](assets/3_components/progress-bar/image-20200810094345964.png)
+The track is animated and fills from left to right.
+
+### Status label (2)
+
+The status label indicates what percentage of a task has already finished.
+
+### Description (3)
+
+Display a description whenever you can. It gives more information about the ongoing process, e.g., which file is uploading.
 
 ## Colors
 
-Use the default color or assign a custom color. When customizing, use a color-coding scheme that is clear and supports the user in what they want to achieve.
+Telekom progess bars use Magenta as an accent color. If you need to use a different color for a particular reason, you can either use colors from the Telekom color palette or create a custom one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
-### Progress
+![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
 
-#### Default
+### Progress states
 
-![Image Name](assets/3_components/progress-bar/image-20200810094334611.png)
-
-#### Custom
-
-![Image Name](assets/3_components/progress-bar/image-20200810094258891.png)
-
-### Complete
-
-#### Default
-
-![Image Name](assets/3_components/progress-bar/image-20200811100931435.png)
-
-#### Green
-
-![Image Name](assets/3_components/progress-bar/image-20200811100938570.png)
-#### Error
-
-![Image Name](assets/3_components/progress-bar/image-20200811100945283.png)
+![Image Name](assets/3_components/progress-bar/image-20200810094322804.png)
