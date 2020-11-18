@@ -51,7 +51,7 @@ export const styles: JssStyle = {
 
     // For the icon
     '& ::slotted(*)': {
-      marginInlineEnd: ({ spacing }) => spacing[2],
+      marginRight: ({ spacing }) => spacing[2],
     },
   },
 
