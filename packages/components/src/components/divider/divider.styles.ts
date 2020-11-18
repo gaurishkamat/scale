@@ -9,7 +9,8 @@ export const styles: JssStyle = {
     padding: ({ spacing }) => spacing['3'],
     '& hr': {
       border: '0',
-      borderTop: ({ color, size }) => `${size.divider}px solid ${color.divider}`,
+      borderTop: ({ color, size }) =>
+        `${size.divider}px solid ${color.divider}`,
       margin: 0,
     },
   },
