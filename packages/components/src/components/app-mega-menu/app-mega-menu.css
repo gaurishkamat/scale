@@ -22,6 +22,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
+  list-style: none;
 }
 
 .mega-menu__row-title {
