@@ -33,7 +33,7 @@ The status label indicates what percentage of a task has already finished.
 
 ### Description (3)
 
-Display a description whenever you can. It gives more information about the ongoing process, e.g., which file is uploading.
+Show a description whenever you can. It gives more information about the ongoing process, e.g., which file is uploading.
 
 ## Colors
 
