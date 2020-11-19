@@ -7,14 +7,15 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 import { getTheme } from '../../theme/theme';
 
-const variants = () => {
-  const variantClasses = {};
+const variantStyles = () => {
+  const result = {};
   const themeVariants = getTheme().type_variants;
-  Object.keys(themeVariants).map(variant => {
-    const variantName = variant.replace('_', '-');
-    variantClasses[`text--variant-${variantName}`] = themeVariants[variant];
+
+  Object.keys(themeVariants).map(key => {
+    const name = key.replace('_', '-');
+    result[`text--variant-${name}`] = themeVariants[key];
   });
-  return variantClasses;
+  return result;
 };
 
 @Component({
@@ -30,16 +31,20 @@ export class Text implements Base {
   @Prop() tag?: string = '';
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: any;
+  @Prop() styles?: any = {};
   /** decorator Jss stylesheet */
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
   componentDidUnload() {}
 
+  componentWillRender() {
+    this.styles = Object.assign(this.styles, variantStyles());
+  }
+
   render() {
-    this.stylesheet.addRules(variants());
     const Tag = this.tag || 'p';
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
