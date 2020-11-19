@@ -108,7 +108,7 @@ const rem = (x: number) => `${x}rem`;
  * This is so to play nice with user-provided themes,
  * where properties other than the ones below can be present
  * and objects get directly merged.
- **/
+ */
 export interface TypeVariant {
   fontFamily: string;
   fontSize: string; // rem
