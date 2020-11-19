@@ -11,7 +11,7 @@ const variantStyles = () => {
   const result = {};
   const themeVariants = getTheme().type_variants;
 
-  Object.keys(themeVariants).map(key => {
+  Object.keys(themeVariants).forEach(key => {
     const name = key.replace('_', '-');
     result[`text--variant-${name}`] = themeVariants[key];
   });
