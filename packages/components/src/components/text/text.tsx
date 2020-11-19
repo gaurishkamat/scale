@@ -23,6 +23,8 @@ const variantStyles = () => {
   shadow: true,
 })
 export class Text implements Base {
+  variants: object = variantStyles();
+
   /** (optional) Text class */
   @Prop() customClass?: string = '';
   /** (optional) Text variant */
@@ -39,7 +41,9 @@ export class Text implements Base {
   componentDidUnload() {}
 
   componentWillRender() {
-    this.styles = Object.assign(this.styles, variantStyles());
+    // We avoid calling this.stylesheet.addRules(this.variants)
+    // on every render for performance reasons
+    this.styles = Object.assign(this.styles, this.variants);
   }
 
   render() {
