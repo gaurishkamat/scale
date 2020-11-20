@@ -103,27 +103,33 @@ const SHADOW_LEVEL_5_ACTIVE =
 
 const rem = (x: number) => `${x}rem`;
 
+/**
+ * A Type Variant is a set of JSS styles, so we use camelCase for them.
+ * This is so to play nice with user-provided themes,
+ * where properties other than the ones below can be present
+ * and objects get directly merged.
+ */
 export interface TypeVariant {
-  family: string;
-  size: string; // rem
-  leading: number;
-  weight: number;
-  tracking: number;
+  fontFamily: string;
+  fontSize: string; // rem
+  lineHeight: number;
+  fontWeight: number;
+  letterSpacing: number | string;
 }
 
 export const typeVariant = (
   // tslint:disable-next-line
-  size: number = FONT_SIZE_3,
-  leading: number = LEADING_5,
-  weight: number = FONT_WEIGHT_MEDIUM,
-  family: string = '',
-  tracking: number = 0
+  fontSize: number = FONT_SIZE_3,
+  lineHeight: number = LEADING_5,
+  fontWeight: number = FONT_WEIGHT_MEDIUM,
+  fontFamily: string = FONT_FAMILY,
+  letterSpacing: string | number = 'normal'
 ): TypeVariant => ({
-  family,
-  size: rem(size),
-  leading,
-  weight,
-  tracking,
+  fontFamily,
+  fontSize: rem(fontSize),
+  lineHeight,
+  fontWeight,
+  letterSpacing,
 });
 
 // ACTUAL TOKENS
