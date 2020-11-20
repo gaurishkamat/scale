@@ -184,14 +184,14 @@ export class ScaleBreadcrumb {
 
 export declare interface ScaleButton extends Components.ScaleButton {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'role', 'size', 'styles', 'target', 'type', 'variant'],
+  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'size', 'styles', 'target', 'type', 'variant'],
   methods: ['disable', 'enable']
 })
 @Component({
   selector: 'scale-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'role', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'size', 'styles', 'target', 'type', 'variant']
 })
 export class ScaleButton {
   protected el: HTMLElement;

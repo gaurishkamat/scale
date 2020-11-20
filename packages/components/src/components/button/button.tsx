@@ -40,7 +40,6 @@ export class Button implements Base {
   @Prop() type?: 'reset' | 'submit' | 'button';
   @Prop() ariaLabel?: string = '';
   @Prop() focusable?: boolean = true;
-  @Prop() role?: string = '';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -92,11 +91,6 @@ export class Button implements Base {
   render() {
     const { classes } = this.stylesheet;
     const Tag = this.href ? 'a' : 'button';
-    const role = this.href
-      ? { role: this.role || 'button' }
-      : this.role
-      ? { role: this.role }
-      : {};
 
     return (
       <Host onClick={this.handleClick}>
@@ -109,7 +103,6 @@ export class Button implements Base {
           {...(!!this.href ? { target: this.target } : {})}
           {...(!!!this.href ? { disabled: this.disabled } : {})}
           {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
-          {...role}
         >
           {!!this.icon === false &&
             (!!this.iconBefore === true || this.hasSlotBefore) && (

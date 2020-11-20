@@ -266,10 +266,6 @@
           "description": "(optional) Icon only"
         },
         {
-          "name": "role",
-          "description": ""
-        },
-        {
           "name": "size",
           "description": "(optional) Button size"
         },
