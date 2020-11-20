@@ -36,11 +36,26 @@ export const styles: JssStyle = {
     height: 'unset',
     minHeight: 40,
     whiteSpace: 'nowrap',
+    // TODO figure out why is this needed?
     '&:before': {
       width: 0,
       content: '""',
       display: 'block',
       height: '100%',
+    },
+    // Accessibility: Windows High Contrast Mode border
+    '&:after': {
+      content: '""',
+      display: 'block',
+      boxSizing: 'border-box',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      border: '1px solid transparent',
+      borderRadius: 8,
+      pointerEvents: 'none',
     },
     '&:hover': {
       transition: theme => getTransition(theme, 'all', 'standard', 'easeInOut'),
@@ -100,6 +115,10 @@ export const styles: JssStyle = {
   'button--variant-secondary': {
     paddingTop: 7,
     paddingBottom: 7,
+    // Accessibility: Windows High Contrast Mode border
+    '&:after': {
+      display: 'none',
+    },
     '&, &:focus, &.focus': {
       border: ({ palette }) => `1px solid ${palette.gray}`,
       background: 'none',
