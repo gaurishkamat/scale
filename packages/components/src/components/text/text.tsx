@@ -7,14 +7,15 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 import { getTheme } from '../../theme/theme';
 
-const variants = () => {
-  const variantClasses = {};
-  const themeVariants = getTheme().typeVariants;
-  Object.keys(themeVariants).map(variant => {
-    const variantName = variant.replace('_', '-');
-    variantClasses[`text--variant-${variantName}`] = themeVariants[variant];
+const variantStyles = () => {
+  const result = {};
+  const themeVariants = getTheme().type_variants;
+
+  Object.keys(themeVariants).forEach(key => {
+    const name = key.replace('_', '-');
+    result[`text--variant-${name}`] = themeVariants[key];
   });
-  return variantClasses;
+  return result;
 };
 
 @Component({
@@ -22,6 +23,8 @@ const variants = () => {
   shadow: true,
 })
 export class Text implements Base {
+  variants: object = variantStyles();
+
   /** (optional) Text class */
   @Prop() customClass?: string = '';
   /** (optional) Text variant */
@@ -30,16 +33,22 @@ export class Text implements Base {
   @Prop() tag?: string = '';
 
   /** (optional) Injected jss styles */
-  @Prop() styles?: any;
+  @Prop() styles?: any = {};
   /** decorator Jss stylesheet */
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
   componentDidUnload() {}
 
+  componentWillRender() {
+    // We avoid calling this.stylesheet.addRules(this.variants)
+    // on every render for performance reasons
+    this.styles = Object.assign(this.styles, this.variants);
+  }
+
   render() {
-    this.stylesheet.addRules(variants());
     const Tag = this.tag || 'p';
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>

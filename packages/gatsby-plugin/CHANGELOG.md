@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.1...v1.12.2) (2020-11-18)
+
+**Note:** Version bump only for package @scaleds/gatsby-plugin
+
+
+
+
+
+## [1.12.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.0...v1.12.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **gatsby-plugin:** make package private for release ([6b156a8](https://gitlab.com/scale-ds/scale-telekom/commit/6b156a8beb503b2078c844ad9c3058ff4261733a))
+
+
+
+
+
 # [1.12.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.2...v1.12.0) (2020-11-12)
 
 **Note:** Version bump only for package @scaleds/gatsby-plugin

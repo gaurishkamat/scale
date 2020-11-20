@@ -15,6 +15,8 @@ export class Card implements Base {
   @Prop() customClass?: string = '';
   /** (optional) Link card */
   @Prop() href?: string = '';
+  /** (optional) Label of the card */
+  @Prop() label?: string = '';
   /** (optional) Link card target */
   @Prop() target?: string = '_self';
   /** (optional) Link interactive */
@@ -43,6 +45,9 @@ export class Card implements Base {
           {...(!!this.href ? { href: this.href } : {})}
           {...(!!this.href ? { target: this.target } : {})}
           {...(!!this.interactive ? { tabindex: 1 } : {})}
+          role="group"
+          aria-label={this.label}
+          aria-disabled={this.disabled}
         >
           <div class={classes.card__body}>
             <slot />

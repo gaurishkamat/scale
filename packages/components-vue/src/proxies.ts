@@ -220,6 +220,7 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
   props: {
     customClass: {} as PropOptions<Components.ScaleCard['customClass']>,
     href: {} as PropOptions<Components.ScaleCard['href']>,
+    label: {} as PropOptions<Components.ScaleCard['label']>,
     target: {} as PropOptions<Components.ScaleCard['target']>,
     interactive: {} as PropOptions<Components.ScaleCard['interactive']>,
     disabled: {} as PropOptions<Components.ScaleCard['disabled']>,

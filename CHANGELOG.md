@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.1...v1.12.2) (2020-11-18)
+
+
+### Bug Fixes
+
+* add max-width to logo ([eea3f54](https://gitlab.com/scale-ds/scale-telekom/commit/eea3f540f0e03a229f8b80574dabe043dec9e892))
+* typeVariants to type_variants in text.tsx ([ebf7927](https://gitlab.com/scale-ds/scale-telekom/commit/ebf79278b722b5de6ff8afe01805f9ca05429b5a))
+
+
+
+
+
+## [1.12.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.0...v1.12.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **components:** add missing name attribute to input select, closes [#12](https://gitlab.com/scale-ds/scale-telekom/issues/12) ([be3b48a](https://gitlab.com/scale-ds/scale-telekom/commit/be3b48a477207a4d90f05bc50e8c8722b45e44b1))
+* add solid background to textarea label (a11y) ([81f05a1](https://gitlab.com/scale-ds/scale-telekom/commit/81f05a1a5e43a15e6d3b5f4f750fd1ff43c06572))
+* add tslint ignore comment in tokens.ts (snake case) ([5ea04fa](https://gitlab.com/scale-ds/scale-telekom/commit/5ea04fa78cb7bf3f108975b82f21a2052dd9dfa3))
+* checked state ([e02d964](https://gitlab.com/scale-ds/scale-telekom/commit/e02d964db208b1f1e2f33820fa6c354d1af5f7b0))
+* load fonts using font-weight and font-style CSS prop names ([0a8ca2a](https://gitlab.com/scale-ds/scale-telekom/commit/0a8ca2a25ec37d3a9f79d9c186760401790d13fe))
+* load fonts using font-weight and font-style CSS prop names ([d1e87c6](https://gitlab.com/scale-ds/scale-telekom/commit/d1e87c694200f510ede0a2f67dfea61707015d3e))
+* mouse cursor and hover for disabled state in checkbox/radio ([b8f679c](https://gitlab.com/scale-ds/scale-telekom/commit/b8f679c09c5e8af7b087ac8846878c8ded4cb5cb))
+* remove inline styles from scale-icon (icon.tsx) ([10db081](https://gitlab.com/scale-ds/scale-telekom/commit/10db0818b14b9b29be228958687d3f808ea47460))
+* remove px values for fontSize and lineHeight, use tokens (except for Input) ([febde1e](https://gitlab.com/scale-ds/scale-telekom/commit/febde1e2133d3152729a428675118f7978957c3c))
+* remove unwanted outline from textarea ([de47cf0](https://gitlab.com/scale-ds/scale-telekom/commit/de47cf07421d8de0c588bc4278fd4fc44783c913))
+* rename FontVariant to TypeVariant and remove Camel for better consistency ([8db6ce5](https://gitlab.com/scale-ds/scale-telekom/commit/8db6ce5900b9ebe96604788260887e7c529431a0))
+* render the checkbox checked icon only when checked ([84895f3](https://gitlab.com/scale-ds/scale-telekom/commit/84895f33bcf56d3fe18138c2c8a4f1ff2ec8c48a))
+* switch order of label/input in input.tsx (label first) ([6799860](https://gitlab.com/scale-ds/scale-telekom/commit/679986096634533db75657dc9ec208e7f866c811))
+* textarea solid label background in disabled state ([a5aaf89](https://gitlab.com/scale-ds/scale-telekom/commit/a5aaf892154c57ccf68ee9fa73ed62083ed67a77))
+* **components:** make border 2px for error status for input text and textarea ([72d46fd](https://gitlab.com/scale-ds/scale-telekom/commit/72d46fdc9dc9316faf26e68e90ca3d470067ea01))
+* **components:** make border 2px/red for error status for input select ([48b4b85](https://gitlab.com/scale-ds/scale-telekom/commit/48b4b859a2dc8913832ee7a7618b0666b52164de))
+* **components:** make border 2px/red, update label color and states for error status for input radio and checkbox ([32c8dca](https://gitlab.com/scale-ds/scale-telekom/commit/32c8dca427195376a77d9d15f3326451289e53a9))
+* rename typeVariants to type_variants ([f38b823](https://gitlab.com/scale-ds/scale-telekom/commit/f38b823125204834db12577347e0e9e090b7a321))
+* update GRAY_3 token (6C6C6C to 6B6B6B) ([e100874](https://gitlab.com/scale-ds/scale-telekom/commit/e100874383586cca1367edeb4ea20eeacd0a4b6c))
+* **components:** remove px values for fontSize and lineHeight in Input ([fc9369d](https://gitlab.com/scale-ds/scale-telekom/commit/fc9369dd4783524538e0bc61a74136012d72b558))
+* **gatsby-plugin:** make package private for release ([6b156a8](https://gitlab.com/scale-ds/scale-telekom/commit/6b156a8beb503b2078c844ad9c3058ff4261733a))
+
+
+### Features
+
+* use aria for improving helper/error messages (input.tsx) ([fd979e1](https://gitlab.com/scale-ds/scale-telekom/commit/fd979e1bebdb5e81e67c135cf34f217d760bf22a))
+* **components:** add missing typography tokens ([509cb52](https://gitlab.com/scale-ds/scale-telekom/commit/509cb52dad632861b0363836843c7c6a3363455e))
+
+
+
+
+
 # [1.12.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.2...v1.12.0) (2020-11-12)
 
 

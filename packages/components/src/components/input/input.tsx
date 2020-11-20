@@ -278,6 +278,7 @@ export class Input implements Base {
                 required={this.required}
                 multiple={this.multiple}
                 id={this.inputId}
+                name={this.name}
                 size={this.visibleSize}
                 {...ariaInvalidAttr}
                 {...ariaDescribedByAttr}

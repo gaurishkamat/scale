@@ -6,81 +6,169 @@ exports[`Text should match snapshot 1`] = `
     <style>
       .text-0-0-2 {
   margin: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.text--variant-h1-0-0-3 {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 48px;
-  letter-spacing: 0;
+.text--variant-label-0-0-3 {
+  font-size: 0.75rem;
+  font-family: TeleNeoWeb;
+  font-weight: 500;
+  line-height: 1.3333;
+  letter-spacing: normal;
 }
-.text--variant-h2-0-0-4 {
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 40px;
-  letter-spacing: 0;
+.text--variant-label-floating-0-0-4 {
+  font-size: 0.625rem;
+  font-family: TeleNeoWeb;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: normal;
 }
-.text--variant-h3-0-0-5 {
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 32px;
-  letter-spacing: 0;
+.text--variant-code-0-0-5 {
+  font-size: 0.75rem;
+  font-family: TeleNeoWeb;
+  font-weight: 400;
+  line-height: 1.3333;
+  letter-spacing: normal;
 }
-.text--variant-h4-0-0-6 {
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 24px;
-  letter-spacing: 0;
+.text--variant-caption-0-0-6 {
+  font-size: 0.75rem;
+  font-family: TeleNeoWeb;
+  font-weight: 500;
+  line-height: 1.3333;
+  letter-spacing: normal;
 }
-.text--variant-h5-0-0-7 {
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 24px;
-  letter-spacing: 0;
+.text--variant-helper-text-0-0-7 {
+  font-size: 0.75rem;
+  font-family: TeleNeoWeb;
+  font-weight: 500;
+  line-height: 1.3333;
+  letter-spacing: normal;
 }
-.text--variant-h6-0-0-8 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0;
+.text--variant-smaller-0-0-8 {
+  font-size: 0.75rem;
+  font-family: TeleNeoWeb;
+  font-weight: 500;
+  line-height: 1.3333;
+  letter-spacing: normal;
 }
 .text--variant-body-0-0-9 {
-  font-size: 16px;
+  font-size: 1rem;
+  font-family: TeleNeoWeb;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0;
+  line-height: 1.5;
+  letter-spacing: normal;
 }
-.text--variant-body-short-0-0-10 {
-  font-size: 16px;
+.text--variant-body-long-0-0-10 {
+  font-size: 1rem;
+  font-family: TeleNeoWeb;
   font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0;
+  line-height: 1.5;
+  letter-spacing: normal;
 }
-.text--variant-body-long-0-0-11 {
-  font-size: 16px;
+.text--variant-body-short-0-0-11 {
+  font-size: 1rem;
+  font-family: TeleNeoWeb;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0;
+  line-height: 1.25;
+  letter-spacing: normal;
 }
 .text--variant-body-large-0-0-12 {
-  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: TeleNeoWeb;
   font-weight: 500;
-  line-height: 32px;
-  letter-spacing: 0;
+  line-height: 1.6;
+  letter-spacing: normal;
 }
-.text--variant-button-0-0-13 {
+.text--variant-h6-0-0-13 {
   font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: none;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: normal;
 }
-.text--variant-collapsible-0-0-14 {
+.text--variant-h5-0-0-14 {
   font-size: 1.25rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+.text--variant-h4-0-0-15 {
+  font-size: 1.5rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.3333;
+  letter-spacing: normal;
+}
+.text--variant-h3-0-0-16 {
+  font-size: 2rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.text--variant-h2-0-0-17 {
+  font-size: 2.5rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.text--variant-h1-0-0-18 {
+  font-size: 3.5rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.1428571429;
+  letter-spacing: normal;
+}
+.text--variant-h6-mobile-0-0-19 {
+  font-size: 1rem;
+  font-family: TeleNeoWeb;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.text--variant-h5-mobile-0-0-20 {
+  font-size: 1rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.text--variant-h4-mobile-0-0-21 {
+  font-size: 1.25rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+.text--variant-h3-mobile-0-0-22 {
+  font-size: 1.5rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.3333;
+  letter-spacing: normal;
+}
+.text--variant-h2-mobile-0-0-23 {
+  font-size: 2rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.text--variant-h1-mobile-0-0-24 {
+  font-size: 2.5rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.text--variant-collapsible-0-0-25 {
+  font-size: 1.25rem;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
+  line-height: 1.25;
   margin-bottom: 0;
-  text-transform: none;
+  letter-spacing: normal;
 }
     </style>
     <p class="text--variant-body-0-0-9 text-0-0-2">

@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/nuxt-module",
-  "version": "1.12.0",
+  "version": "1.12.2",
   "license": "MIT",
   "files": [
     "lib"

@@ -33,6 +33,7 @@
 | `disabled`    | `disabled`     | (optional) Link disabled       | `boolean` | `false`     |
 | `href`        | `href`         | (optional) Link card           | `string`  | `''`        |
 | `interactive` | `interactive`  | (optional) Link interactive    | `boolean` | `false`     |
+| `label`       | `label`        | (optional) Label of the card   | `string`  | `''`        |
 | `noPadding`   | `no-padding`   | (optional) Padding off         | `boolean` | `false`     |
 | `styles`      | `styles`       | (optional) Injected jss styles | `any`     | `undefined` |
 | `target`      | `target`       | (optional) Link card target    | `string`  | `'_self'`   |

@@ -322,6 +322,10 @@
           "description": "(optional) Link interactive"
         },
         {
+          "name": "label",
+          "description": "(optional) Label of the card"
+        },
+        {
           "name": "no-padding",
           "description": "(optional) Padding off"
         },

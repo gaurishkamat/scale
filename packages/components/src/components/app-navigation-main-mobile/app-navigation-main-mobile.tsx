@@ -154,6 +154,7 @@ export class MainNavigationMobile {
               <li class="main-navigation-mobile__child-menu-item">
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
+                  {isActive(child) && <span class="sr-only">active</span>}
                   {child.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>

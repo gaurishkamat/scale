@@ -8,7 +8,7 @@ export const styles: JssStyle = {
     transition: ({ transition }) => transition.generic,
     borderRadius: ({ radii }) => radii.card,
     boxShadow: ({ shadow }) => shadow.card,
-    border: 'none',
+    border: '1px solid transparent',
   },
   card__body: {
     padding: ({ spacing }) => spacing.box,

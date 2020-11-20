@@ -67,7 +67,6 @@ export class Header {
               this.visibleMegaMenu === item.id && 'mega-menu--visible',
               isActive(item) && 'selected'
             )}
-            aria-current={isActive(item)}
             onMouseEnter={() => {
               this.visibleMegaMenu = item.children ? item.id : null;
             }}
@@ -78,19 +77,26 @@ export class Header {
             <a
               class="main-navigation__item-link"
               href={item.href || 'javascript:void(0);'}
+              aria-current={isActive(item)}
+              aria-haspopup={!!item.children}
               onClick={event => {
                 if (item.href) {
                   this.visibleMegaMenu = '';
                 }
+
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
+                if (!this.visibleMegaMenu) {
+                  this.visibleMegaMenu = item.children ? item.name : null;
+                  return;
+                }
+                this.visibleMegaMenu = '';
               }}
               onKeyDown={event => {
                 if (['Enter', ' '].includes(event.key)) {
                   event.preventDefault();
-                  this.visibleMegaMenu =
-                    !this.visibleMegaMenu && item.children ? item.name : null;
+                  this.visibleMegaMenu = item.children ? item.name : null;
                 }
                 if (['Escape', 'Esc'].includes(event.key)) {
                   this.visibleMegaMenu = null;
@@ -99,6 +105,7 @@ export class Header {
               tabIndex={0}
             >
               <span class="main-navigation__item-link-text">{item.name}</span>
+              {isActive(item) && <span class="sr-only">active</span>}
             </a>
             {item.children && item.children.length > 0 && (
               <app-mega-menu
@@ -180,6 +187,9 @@ export class Header {
                   this.activeSegment.id === item.id && 'active'
                 )}
                 href={item.href || 'javascript:void(0);'}
+                onFocus={() => {
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 {item.name}
               </a>
@@ -202,6 +212,9 @@ export class Header {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
+              }}
+              onFocus={() => {
+                window.scrollTo({ top: 0 });
               }}
             >
               {item.name}
@@ -283,7 +296,7 @@ export class Header {
               <div class="header__brand-meta">{this.menuAddon()}</div>
             </div>
           </div>
-          <nav class="header__nav" aria-label="desktop navigation">
+          <nav class="header__nav" aria-label="top">
             <span class="header__nav-before"></span>
             <span class="header__nav-after"></span>
             <div class="header__nav-content">
@@ -300,7 +313,7 @@ export class Header {
             class={`header__nav__mobile-menu${
               this.mobileMenu ? ' header__nav__mobile-menu--opened' : ''
             }`}
-            aria-label="mobile navigation"
+            aria-label="main"
           >
             <app-navigation-sector-mobile
               navigation={this.sectorNavigation}

@@ -204,13 +204,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
 })
 export class ScaleCard {
   protected el: HTMLElement;
