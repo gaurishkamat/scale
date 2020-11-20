@@ -18,7 +18,6 @@
 | `iconAfter`   | `icon-after`   | (optional) Icon after          | `string`                          | `undefined` |
 | `iconBefore`  | `icon-before`  | (optional) Icon before         | `string`                          | `undefined` |
 | `iconSize`    | `icon-size`    | (optional) Icon only           | `number`                          | `24`        |
-| `role`        | `role`         |                                | `string`                          | `''`        |
 | `size`        | `size`         | (optional) Button size         | `string`                          | `''`        |
 | `styles`      | `styles`       | (optional) Injected jss styles | `any`                             | `undefined` |
 | `target`      | `target`       | (optional) Link target button  | `string`                          | `'_self'`   |
