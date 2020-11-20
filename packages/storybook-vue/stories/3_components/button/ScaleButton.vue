@@ -1,7 +1,7 @@
 <template>
   <scale-button
-    :alt="alt"
-    :ariaLabel="ariaLabel"
+    :title="title"
+    :aria-label="ariaLabel"
     :disabled="disabled"
     :focusable="focusable"
     :icon="icon"
@@ -25,7 +25,8 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
-    alt: String,
+    // TODO `title` is not an actual prop in the component, how should we handle this?
+    title: String,
     ariaLabel: String,
     disabled: Boolean,
     focusable: Boolean,
