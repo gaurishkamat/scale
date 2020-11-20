@@ -8,7 +8,6 @@ export const styles: JssStyle = {
     background: ({ colors }) => colors.grey[100],
 
     '& table': {
-      fontFamily: ({ type }) => type.family,
       borderSpacing: 0,
       borderCollapse: 'collapse',
       width: '100%',
@@ -16,7 +15,7 @@ export const styles: JssStyle = {
     },
 
     '& th': {
-      color: ({ colors }) => colors.grey[600],
+      color: ({ color }) => color.text,
       lineHeight: '32px', // TODO revise, this is weird
       fontSize: ({ type }) => type.size_2,
       textAlign: 'left',

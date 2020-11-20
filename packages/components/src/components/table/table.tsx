@@ -45,7 +45,6 @@ export class Table implements Base {
   render() {
     return (
       <Host class={this.getCssClassMap()}>
-        <style>{this.stylesheet.toString()}</style>
         <slot />
       </Host>
     );

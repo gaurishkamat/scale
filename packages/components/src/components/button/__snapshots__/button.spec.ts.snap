@@ -119,8 +119,6 @@ exports[`Button should match snapshot 1`] = `
 }
 .button--size-small-0-0-14 {
   min-height: 32px;
-  font-size: 0.75rem;
-  line-height: 1.3333;
 }
 .button--size-small-0-0-14.button--icon-only-0-0-12 {
   min-width: 32px;
