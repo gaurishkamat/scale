@@ -6,6 +6,7 @@ export const styles: JssStyle = {
     overflow: 'auto',
     borderRadius: '4px 4px 0 0',
     background: ({ colors }) => colors.grey[100],
+    color: ({ color }) => color.text,
 
     '& table': {
       borderSpacing: 0,
@@ -20,11 +21,12 @@ export const styles: JssStyle = {
       fontSize: ({ type }) => type.size_2,
       textAlign: 'left',
       userSelect: 'none',
+      padding: '0 8px',
       '&:focus': {
         outline: 'none',
       },
     },
-    '& th, td': {
+    '& td': {
       padding: '0 8px',
     },
 
@@ -49,7 +51,7 @@ export const styles: JssStyle = {
     '& tfoot tr td': {
       fontWeight: 600,
       padding: '8px',
-      borderBottom: '1px solid #000000',
+      borderBottom: ({ color }) => `1px solid ${color.text}`,
     },
 
     '& .scale-sort-indicator svg': {
@@ -67,7 +69,13 @@ export const styles: JssStyle = {
     '& th': {
       cursor: 'pointer',
       borderRadius: '4px 4px 0 0',
+      padding: '0 8px 0 0',
+
       '&:hover': {
+        '& .scale-sort-indicator': {
+          display: 'inline-block',
+        },
+        padding: '0 8px 0 0',
         background: '#EDEDED',
       },
 
@@ -84,10 +92,33 @@ export const styles: JssStyle = {
       },
       '&[aria-disabled]': {
         pointerEvents: 'none',
+        padding: '0 8px',
+      },
+
+      '&:not([aria-sort])': {
+        padding: '0 8px',
+        '&:hover': {
+          padding: '0 8px 0 0',
+        },
+        '& .scale-sort-indicator': {
+          display: 'none',
+        },
+      },
+      '&[aria-sort="none"]': {
+        padding: '0 8px',
+        '&:hover': {
+          padding: '0 8px 0 0',
+        },
+        '& .scale-sort-indicator': {
+          display: 'none',
+        },
       },
 
       '&[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: '#000000',
+        fill: ({ color }) => color.text,
+      },
+      '&:hover .scale-sort-indicator polygon:first-of-type': {
+        fill: ({ color }) => color.primary_hover,
       },
       '&:hover[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.primary_hover,
@@ -95,26 +126,27 @@ export const styles: JssStyle = {
       '&:active[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.primary_active,
       },
+
       '&[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&:hover[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&:active[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&:hover[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&:active[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: '#DCDCDC',
+        fill: 'transparent',
       },
       '&[aria-sort="ascending"] .scale-sort-indicator polygon': {
-        fill: '#000000',
+        fill: ({ color }) => color.text,
       },
       '&:hover[aria-sort="ascending"] .scale-sort-indicator polygon': {
         fill: ({ color }) => color.primary_hover,
@@ -123,20 +155,20 @@ export const styles: JssStyle = {
         fill: ({ color }) => color.primary_active,
       },
       '& .scale-sort-indicator': {
-        left: '-8px',
         position: 'relative',
         display: 'inline-block',
-        width: '12px',
-        height: '20px',
+        width: '16px',
+        height: '16px',
+        margin: '0 0 0 4px',
         '& > svg': {
           position: 'absolute',
           left: 0,
           top: '4px',
-          height: '24px',
-          width: '24px',
+          height: '16px',
+          width: '16px',
         },
         '& polygon': {
-          fill: '#DCDCDC',
+          fill: 'transparent',
         },
       },
     },

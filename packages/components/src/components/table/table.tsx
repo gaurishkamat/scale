@@ -31,9 +31,9 @@ export class Table implements Base {
         'afterbegin',
         `
           <span class="scale-sort-indicator">
-            <svg width="24px" height="24px" viewBox="0 0 24 24">
-              <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271" />
-              <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271" />
+            <svg viewBox="0 0 16 16">
+             <polygon transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) " points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407"/></polygon>
+             <polygon transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) " points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069"/>
             </svg>
           </span>`
       );
