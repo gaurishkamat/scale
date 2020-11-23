@@ -29,6 +29,8 @@ export const styles: JssStyle = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: 100,
+    /* Accessibility: Windows High Contrast Mode border */
+    border: '1px solid transparent',
   },
   '@media (min-width: 1024px)': {
     'modal--size-small': {
