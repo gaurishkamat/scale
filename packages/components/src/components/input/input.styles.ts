@@ -44,11 +44,11 @@ const animated = (size: string) => ({
     fontWeight: ({ type }) => type.weight_medium,
   },
   end: {
-    fontSize: ({ type_variants }) => type_variants.label_floating.size,
+    fontSize: ({ type_variants }) => type_variants.label_floating.fontSize,
     transform: `translate(${input[size].paddingX}px, ${input[size].labelTop}px)`,
     color: '#6C6C6C',
     transition: defaultTransition,
-    fontWeight: ({ type_variants }) => type_variants.label_floating.weight,
+    fontWeight: ({ type_variants }) => type_variants.label_floating.fontWeight,
   },
 });
 
@@ -110,16 +110,16 @@ export const styles: JssStyle = {
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',
-      fontSize: ({ type_variants }) => type_variants.helper_text.size,
-      lineHeight: ({ type_variants }) => type_variants.helper_text.leading,
+      fontSize: ({ type_variants }) => type_variants.helper_text.fontSize,
+      lineHeight: ({ type_variants }) => type_variants.helper_text.lineHeight,
       marginLeft: 'auto',
       color: ({ palette }) => palette.gray,
       transition: defaultTransition,
       paddingRight: 12,
     },
     '& .input__helper-text': {
-      fontSize: ({ type_variants }) => type_variants.helper_text.size,
-      lineHeight: ({ type_variants }) => type_variants.helper_text.leading,
+      fontSize: ({ type_variants }) => type_variants.helper_text.fontSize,
+      lineHeight: ({ type_variants }) => type_variants.helper_text.lineHeight,
       color: ({ palette }) => palette.helperText,
       transition: defaultTransition,
       paddingLeft: 12,
