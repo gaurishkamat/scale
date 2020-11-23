@@ -26,7 +26,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
 }
 .link-0-0-4 {
   text-decoration: none;
-  color: #262626;
+  color: #6B6B6B;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
 }
@@ -41,7 +41,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
   box-shadow: 0 0 0 2px #009DE0;
 }
 .current-0-0-5 {
-  font-weight: 800;
+  color: #262626;
 }
     </style>
     <nav aria-label="Breadcrumb" class="breadcrumb-0-0-1">
