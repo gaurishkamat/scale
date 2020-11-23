@@ -28,6 +28,7 @@ export class Modal implements Base {
   hasSlotClose: boolean;
   hasSlotActions: boolean;
   combinedTransitions: any;
+  closeLink: HTMLElement;
 
   @Element() hostElement: HTMLStencilElement;
   /** (optional) Transition overrides */
@@ -56,8 +57,18 @@ export class Modal implements Base {
   }
 
   @Watch('opened')
-  async watchHandler() {
+  async watchHandler(newValue) {
     await this.animateComponent();
+    if (newValue === true) {
+      this.focusCloseLink();
+    }
+  }
+
+  focusCloseLink() {
+    try {
+      /* Accessibility: avoid focus trap */
+      this.closeLink.focus()
+    } catch (err) {}
   }
 
   async close(event?: MouseEvent | KeyboardEvent) {
@@ -172,13 +183,16 @@ export class Modal implements Base {
       '[slot="modal-actions"]'
     );
   }
+
   componentWillUpdate() {}
   componentDidUnload() {}
+
   handleKeyDown(event) {
     if (event.key === 'Escape') {
       this.close(event);
     }
   }
+
   componentDidLoad() {
     this.animateComponent();
   }
@@ -198,16 +212,18 @@ export class Modal implements Base {
                 <div class={classes.modal__header}>
                   <slot name="header" />
                   <a
+                    ref={el => this.closeLink = el}
                     class={classes.modal__close}
                     onClick={this.close}
                     onKeyPress={this.close}
+                    tabindex="0"
                   >
                     {this.hasSlotClose ? (
                       <div class={classes['modal__close-icon']}>
                         <slot name="close" />
                       </div>
                     ) : (
-                      <scale-icon-action-circle-close tabindex="0"></scale-icon-action-circle-close>
+                      <scale-icon-action-circle-close></scale-icon-action-circle-close>
                     )}
                   </a>
                 </div>

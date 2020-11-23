@@ -71,23 +71,26 @@ export const styles: JssStyle = {
     },
   },
   modal__close: {
-    height: '24px',
-    display: 'block',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 24,
+    height: 24,
     cursor: 'pointer',
-    '& scale-icon-action-circle-close': {
-      outline: 'none',
-      borderRadius: '8px',
+    outline: 'none',
+    borderRadius: ({ radii }) => radii.button,
+    /* '& scale-icon-action-circle-close': {
       padding: '10px',
       margin: '-10px',
-      '&:hover': {
-        color: ({ color }) => color.primary_hover,
-      },
-      '&:active': {
-        color: ({ color }) => color.primary_active,
-      },
-      '&:focus': {
-        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
-      },
+    }, */
+    '&:hover': {
+      color: ({ color }) => color.primary_hover,
+    },
+    '&:active': {
+      color: ({ color }) => color.primary_active,
+    },
+    '&:focus': {
+      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
     },
   },
   modal__actions: {
