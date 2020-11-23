@@ -140,6 +140,7 @@ const color = {
   primary_active: MAGENTA_ACTIVE,
   text: GRAY_1,
   text_contrast: WHITE,
+  text_muted: GRAY_3,
   link: BLUE,
   link_hover: BLUE,
   link_active: BLUE_DARK,

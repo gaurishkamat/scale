@@ -22,7 +22,7 @@ export const styles: JssStyle = {
     padding: ({ spacing }) => `${spacing['1']} ${spacing['2']}`,
   },
   link: {
-    color: ({ color }) => color.text,
+    color: ({ color }) => color.text_muted,
     textDecoration: 'none',
     padding: ({ spacing }) => `${spacing['1']} ${spacing['2']}`,
     borderRadius: ({ radii }) => radii.medium,
@@ -39,6 +39,6 @@ export const styles: JssStyle = {
     },
   },
   current: {
-    fontWeight: ({ type }) => type.weight_extrabold,
+    color: ({ color }) => color.text,
   },
 };
