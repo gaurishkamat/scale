@@ -67,7 +67,7 @@ export class Modal implements Base {
   focusCloseLink() {
     try {
       /* Accessibility: avoid focus trap */
-      this.closeLink.focus()
+      this.closeLink.focus();
     } catch (err) {}
   }
 
@@ -212,7 +212,7 @@ export class Modal implements Base {
                 <div class={classes.modal__header}>
                   <slot name="header" />
                   <a
-                    ref={el => this.closeLink = el}
+                    ref={el => (this.closeLink = el)}
                     class={classes.modal__close}
                     onClick={this.close}
                     onKeyPress={this.close}
