@@ -41,6 +41,8 @@ export class Modal implements Base {
   @Prop() variant?: string = '';
   /** (optional) If true, the Modal is open. */
   @Prop() opened?: boolean = false;
+  /** (optional) Label for close button */
+  @Prop() closeLabel?: string = 'Close Pop-up';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -216,6 +218,7 @@ export class Modal implements Base {
                     class={classes.modal__close}
                     onClick={this.close}
                     onKeyPress={this.close}
+                    aria-label={this.closeLabel}
                     tabindex="0"
                   >
                     {this.hasSlotClose ? (

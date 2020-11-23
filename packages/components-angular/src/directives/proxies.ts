@@ -413,13 +413,13 @@ export class ScaleListItem {
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
-  inputs: ['customClass', 'opened', 'size', 'styles', 'transitions', 'variant']
+  inputs: ['closeLabel', 'customClass', 'opened', 'size', 'styles', 'transitions', 'variant']
 })
 @Component({
   selector: 'scale-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'opened', 'size', 'styles', 'transitions', 'variant'],
+  inputs: ['closeLabel', 'customClass', 'opened', 'size', 'styles', 'transitions', 'variant'],
   outputs: ['scaleClose']
 })
 export class ScaleModal {

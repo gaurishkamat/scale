@@ -6,6 +6,7 @@
     :header="header"
     :close="close"
     :opened="opened"
+    :close-label="closeLabel"
     :styles="styles"
     @scaleClose="scaleClose"
   >
@@ -55,6 +56,7 @@ export default {
     transitions: String,
     opened: Boolean,
     close: String,
+    closeLabel: String,
     header: String,
     size: String,
     styles: { type: String },

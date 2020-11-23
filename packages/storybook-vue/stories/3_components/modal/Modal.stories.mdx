@@ -35,6 +35,7 @@ export const Template = (args, { argTypes }) => ({
         :header="header"
         :opened="isOpen"
         :styles="styles"
+        :close-label="closeLabel"
         @scaleClose="scaleClose"
       >
         <template #header v-if="!!header"><h2 slot="header">{{header}}</h2></template>
@@ -45,10 +46,10 @@ export const Template = (args, { argTypes }) => ({
               style="margin-right: 8px"
               @click="scaleClose"
             >
-              cancel
+              Cancel
             </scale-button>
             <scale-button @click="scaleClose">
-              submit
+              Primary Action
             </scale-button>
           </span>
         </template>
@@ -65,10 +66,10 @@ export const Template = (args, { argTypes }) => ({
               style="margin-right: 8px"
               @click="scaleClose"
             >
-              cancel
+              Cancel
             </scale-button>
             <scale-button @click="scaleClose">
-              submit
+              Primary Action
             </scale-button>
           </div>
         </slot>
@@ -106,7 +107,8 @@ export const Template = (args, { argTypes }) => ({
     name='Standard L / 8 Columns'
     args={{
       opened: false,
-      header: 'Header'
+      header: 'Header',
+      closeLabel: 'Close Pop-up'
     }}
   >
     {Template.bind({})}
@@ -142,10 +144,10 @@ export const Template = (args, { argTypes }) => ({
        style="margin-right: 8px"
        @click="scaleClose"
      >
-       cancel
+       Cancel
      </scale-button>
      <scale-button @click="scaleClose">
-       submit
+       Primary Action
      </scale-button>
    </div>
   </slot>
@@ -179,10 +181,10 @@ export const Template = (args, { argTypes }) => ({
         style="margin-right: 8px"
         @click="scaleClose"
       >
-        cancel
+        Cancel
       </scale-button>
       <scale-button @click="scaleClose">
-        submit
+        Primary Action
       </scale-button>
     </div>
   </slot>
@@ -216,10 +218,10 @@ export const Template = (args, { argTypes }) => ({
         style="margin-right: 8px"
         @click="opened = false"
       >
-        cancel
+        Cancel
       </scale-button>
       <scale-button @click="opened = false">
-        submit
+        Primary Action
       </scale-button>
     </span>
     <slot><p>Hello. Welcome.</p></slot>
