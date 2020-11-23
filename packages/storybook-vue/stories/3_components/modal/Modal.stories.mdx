@@ -37,7 +37,7 @@ export const Template = (args, { argTypes }) => ({
         :styles="styles"
         @scaleClose="scaleClose"
       >
-        <template #header v-if="!!header"><span slot="header">{{header}}</span></template>
+        <template #header v-if="!!header"><h2 slot="header">{{header}}</h2></template>
         <template #modal-actions v-if="close === 'showActions'">
           <span slot="modal-actions">
             <scale-button
@@ -132,8 +132,8 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal opened="opened" size="small" @scaleClose="opened = false">
-  <span slot="header">Header</span>
+<scale-modal :opened="opened" size="small" @scaleClose="opened = false">
+  <h2 slot="header">Header</h2>
   <slot>
   <p>Hello. Welcome.</p>
    <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
@@ -169,8 +169,8 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-modal opened="opened" size="large" @scaleClose="opened = false">
-  <span slot="header">Header</span>
+<scale-modal :opened="opened" size="large" @scaleClose="opened = false">
+  <h2 slot="header">Header</h2>
   <slot>
     <p>Hello. Welcome.</p>
     <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
@@ -207,7 +207,8 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <div>
-  <scale-modal opened="opened" @scaleClose="opened = false">
+  <scale-modal :opened="opened" @scaleClose="opened = false">
+    <h2 slot="header">Header</h2>
     <span slot="close"><scale-icon-action-circle-close></scale-icon-action-circle-close></span>
     <span slot="modal-actions">
       <scale-button
@@ -226,5 +227,5 @@ export const Template = (args, { argTypes }) => ({
   <scale-button @click="opened = true">
     Open Modal
   </scale-button>
-</div
+</div>
 ```

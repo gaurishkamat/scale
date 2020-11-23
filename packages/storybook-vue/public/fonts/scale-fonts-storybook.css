@@ -90,37 +90,37 @@ li {
   font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.sbdocs-h1,
+.sbdocs-h2,
+.sbdocs-h3,
+.sbdocs-h4,
+.sbdocs-h5,
+.sbdocs-h6 {
   font-weight: 800 !important;
 }
 
-h1 {
+.sbdocs-h1 {
   font-size: 56px !important;
   line-height: 64px !important;
 }
-h2 {
+.sbdocs-h2 {
   font-size: 32px !important;
   line-height: 40px !important;
   margin-top: 40px !important;
 }
-h3 {
+.sbdocs-h3 {
   font-size: 24px !important;
   line-height: 32px !important;
 }
-h4 {
+.sbdocs-h4 {
   font-size: 20px !important;
   line-height: 24px !important;
 }
-h5 {
+.sbdocs-h5 {
   font-size: 16px !important;
   line-height: 24px !important;
 }
-h6 {
+.sbdocs-h6 {
   font-size: 16px !important;
   line-height: 22px !important;
 }
