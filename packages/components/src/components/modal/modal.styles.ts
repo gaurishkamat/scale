@@ -7,9 +7,9 @@ export const styles: JssStyle = {
     position: 'fixed',
     top: 0,
     left: 0,
-    height: 'calc(100% - 160px)',
+    height: 'calc(100% - 96px)',
     width: 'calc(100% - 32px)',
-    margin: '80px 16px',
+    margin: '48px 16px',
     alignItems: 'center',
   },
   'modal--opened': {
@@ -37,6 +37,7 @@ export const styles: JssStyle = {
     },
     'modal--size-default': {
       width: 'calc(100% - 50%)',
+      height: 'calc(100% - 160px)',
       margin: '80px 25%',
     },
     'modal--size-large': {
