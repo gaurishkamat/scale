@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.2...v1.13.0) (2020-11-23)
+
+
+### Bug Fixes
+
+* type_variants values in component styles ([f05c409](https://gitlab.com/scale-ds/scale-telekom/commit/f05c4098954afd7384b845a29f6fbe0923a3b07d))
+* update TypeVariant interface to fix theming and add perf optimization for scale-text ([0a3fe9e](https://gitlab.com/scale-ds/scale-telekom/commit/0a3fe9eccc4f75fc3e5a1ffffdaa912282405033))
+
+
+### Features
+
+* add iife-like optimization to scale-text (thank you Nathan) ([dab91db](https://gitlab.com/scale-ds/scale-telekom/commit/dab91db4dc6e9ce48a96b7b0ff7e4a1190a25293))
+* more header accessibility ([62e91d1](https://gitlab.com/scale-ds/scale-telekom/commit/62e91d1b426690705d18c5caa0a4b30bffbc98b0))
+
+
+
+
+
 ## [1.12.2](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.1...v1.12.2) (2020-11-18)
 
 
