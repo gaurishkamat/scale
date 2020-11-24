@@ -21,7 +21,7 @@ export function queryShadowRoot(
   maxDepth: number = 20,
   depth: number = 0
 ): HTMLElement[] {
-  let matches: HTMLElement[] = [];
+  const matches: HTMLElement[] = [];
 
   // If the depth is above the max depth, abort the searching here.
   if (depth >= maxDepth) {
@@ -52,7 +52,7 @@ export function queryShadowRoot(
   // Go through each child and continue the traversing if necessary
   // Even though the typing says that children can't be undefined, Edge 15 sometimes gives an undefined value.
   // Therefore we fallback to an empty array if it is undefined.
-  const children = <HTMLElement[]>Array.from(root.children || []);
+  const children = Array.from(root.children || []) as HTMLElement[];
   for (const $child of children) {
     // Check if the element and its descendants should be skipped
     if (skipNode($child)) {
@@ -80,7 +80,7 @@ export function queryShadowRoot(
       );
     } else if ($child.tagName === 'SLOT') {
       // If the child is a slot we need to traverse each assigned node
-      matches.push(...traverseSlot(<HTMLSlotElement>$child));
+      matches.push(...traverseSlot($child as HTMLSlotElement));
     } else {
       // Traverse the children of the element
       matches.push(
@@ -113,7 +113,7 @@ export function isHidden($elem: HTMLElement): boolean {
 
   // If offsetParent is null we can assume that the element is hidden
   // https://stackoverflow.com/questions/306305/what-would-make-offsetparent-null
-  //|| $elem.offsetParent == null;
+  // || $elem.offsetParent == null;
 }
 
 /**
