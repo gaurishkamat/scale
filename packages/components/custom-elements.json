@@ -452,6 +452,10 @@
       },
       "attributes": [
         {
+          "name": "aria-label",
+          "description": "(optional) When using the icon by itself, add a label to improve accessibility"
+        },
+        {
           "name": "custom-class",
           "description": "(optional) Tag custom class"
         },
@@ -461,7 +465,7 @@
         },
         {
           "name": "focusable",
-          "description": ""
+          "description": "(optional) If `true` the icon can receive focus"
         },
         {
           "name": "name",
