@@ -17,20 +17,32 @@ export const styles: JssStyle = {
   },
   'modal__scroll-container': {
     overflow: 'auto',
+    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
+    minHeight: ({ spacing }) => spacing[8],
   },
   modal__content: {
+    position: 'relative',
     background: '#FFFFFF',
     // color: '#262626',
     borderRadius: '8px',
     boxShadow: ({ shadow }) => shadow.modal,
     maxHeight: '100%',
+    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
+    minHeight: 200,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: 100,
     /* Accessibility: Windows High Contrast Mode border */
-    border: '1px solid transparent',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      pointerEvents: 'none',
+      border: '1px solid transparent',
+    },
   },
   '@media (min-width: 1024px)': {
     'modal--size-small': {
