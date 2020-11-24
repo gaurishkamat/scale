@@ -70,7 +70,7 @@ export class Shell {
           <main class="content">
             <slot></slot>
           </main>
-          <scale-app-footer 
+          <scale-app-footer
             footerNavigation={levelEnhancer(this.footerNavigation)}
           ></scale-app-footer>
         </div>

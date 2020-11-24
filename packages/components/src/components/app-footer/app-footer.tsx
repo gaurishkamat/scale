@@ -29,7 +29,8 @@ export class Footer {
                 window.scrollTo({ top: 0 });
               }}
             >
-              {item.icon && renderIcon(item.icon, 'footer-navigation__item-link')}
+              {item.icon &&
+                renderIcon(item.icon, 'footer-navigation__item-link')}
               <span>{item.name}</span>
             </a>
           </li>
@@ -64,12 +65,8 @@ export class Footer {
             <div class="footer-branding">
               <app-logo claim claimLang={this.claimLang}></app-logo>
             </div>
-            <div class="footer-copyright">
-              © Deutsche Telekom GmbH
-            </div>
-            <div class="footer-navigation">
-              {this.footerMenu()}
-            </div>
+            <div class="footer-copyright">© Deutsche Telekom GmbH</div>
+            <div class="footer-navigation">{this.footerMenu()}</div>
           </div>
         </footer>
       </Host>
@@ -77,9 +74,6 @@ export class Footer {
   }
 
   getCssClassMap(): CssClassMap {
-    return classNames(
-      'footer',
-      this.customClass && this.customClass,
-    );
+    return classNames('footer', this.customClass && this.customClass);
   }
 }
