@@ -6,7 +6,28 @@
 
 .content {
   background: #fff;
+  box-shadow: 0 12px 12px 0 rgba(0,0,0, .1);
+  border-radius: 0 0 8px 8px;
+  border-bottom: 0;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
 }
+
+/* 
+ * 1. `margin-top` needs to be dynamic depending on the footer content 
+ * 2. Currently pointer event do not work (links not clickable) as the z-index order is not correct
+ */
+scale-app-footer {
+  display: block;
+  margin-top: 266px;
+}
+@media (min-width: 1024px) {
+  scale-app-footer {
+    margin-top: 82px;
+  }
+}
+
 .shell {
   --header-nav-height: 56px;
   --header-brand-height: 72px;

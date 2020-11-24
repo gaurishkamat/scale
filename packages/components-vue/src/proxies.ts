@@ -16,6 +16,7 @@ const customElementTags: string[] = [
  'app-navigation-sector-mobile',
  'scale-accordion',
  'scale-alert',
+ 'scale-app-footer',
  'scale-app-header',
  'scale-app-shell',
  'scale-breadcrumb',
@@ -136,6 +137,19 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 });
 
 
+export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    customClass: {} as PropOptions<Components.ScaleAppFooter['customClass']>,
+    claimLang: {} as PropOptions<Components.ScaleAppFooter['claimLang']>,
+    footerNavigation: {} as PropOptions<Components.ScaleAppFooter['footerNavigation']>,
+  },
+
+
+  render: createCommonRender('scale-app-footer', []),
+});
+
+
 export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
@@ -166,6 +180,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
+    footerNavigation: {} as PropOptions<Components.ScaleAppShell['footerNavigation']>,
     customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppShell['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppShell['activeSectorId']>,

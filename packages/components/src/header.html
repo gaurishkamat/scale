@@ -28,6 +28,9 @@
         height: 800px;
         border-bottom: 1px solid #dfdfdf;
       }
+      .block:last-child {
+        border-bottom: 0;
+      }
     </style>
   </head>
 
@@ -436,6 +439,29 @@
           href: '#kontakt',
         },
       ];
+      app.footerNavigation = [
+        {
+          name: 'Contact',
+          id: 'Contact',
+          href: '#contact'
+        },
+        {
+          name: 'Terms and conditions',
+          id: 'Terms and conditions',
+          href: '#terms-and-conditions'
+        },
+        {
+          name: 'Imprint',
+          id: 'Imprint',
+          href: '#imprint'
+        },
+        {
+          name: 'Data privacy',
+          id: 'Data privacy',
+          href: '#data-privacy',
+          icon: 'alert-imprint-dataprivacy',
+        },
+      ]
     </script>
   </body>
 </html>

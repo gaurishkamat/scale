@@ -37,6 +37,7 @@ export class Shell {
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
+  @Prop() footerNavigation?: any = [];
   @Prop() customClass?: string = '';
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
@@ -69,6 +70,9 @@ export class Shell {
           <main class="content">
             <slot></slot>
           </main>
+          <scale-app-footer 
+            footerNavigation={levelEnhancer(this.footerNavigation)}
+          ></scale-app-footer>
         </div>
       </Host>
     );
