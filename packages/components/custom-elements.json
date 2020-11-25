@@ -242,12 +242,24 @@
           "description": "(optional) When present, an <a> tag will be used"
         },
         {
+          "name": "icon-after",
+          "description": "(optional) Set to `true` when the button contains an icon _after_ the label"
+        },
+        {
           "name": "icon-only",
-          "description": "(optional) Set true when the button contains only an icon"
+          "description": "(optional) Set to `true` when the button contains only an icon"
         },
         {
           "name": "size",
-          "description": "(optional) Make the button smaller"
+          "description": "(optional) The size of the button",
+          "values": [
+            {
+              "name": "large"
+            },
+            {
+              "name": "small"
+            }
+          ]
         },
         {
           "name": "styles",

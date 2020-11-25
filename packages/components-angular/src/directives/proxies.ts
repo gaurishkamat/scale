@@ -184,13 +184,13 @@ export class ScaleBreadcrumb {
 
 export declare interface ScaleButton extends Components.ScaleButton {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'href', 'iconOnly', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['customClass', 'disabled', 'href', 'iconAfter', 'iconOnly', 'size', 'styles', 'target', 'type', 'variant']
 })
 @Component({
   selector: 'scale-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'href', 'iconOnly', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['customClass', 'disabled', 'href', 'iconAfter', 'iconOnly', 'size', 'styles', 'target', 'type', 'variant']
 })
 export class ScaleButton {
   protected el: HTMLElement;

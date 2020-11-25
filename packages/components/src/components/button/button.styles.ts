@@ -11,6 +11,8 @@ export const styles: JssStyle = {
     cursor: 'pointer',
     userSelect: 'none',
     boxSizing: 'border-box',
+    paddingLeft: ({ spacing }) => spacing.x_button,
+    paddingRight: ({ spacing }) => spacing.x_button,
     fontFamily: ({ type }) => type.family,
     fontWeight: ({ type }) => type.weight_bold,
     fontSize: ({ type }) => type.size_3,
@@ -18,9 +20,23 @@ export const styles: JssStyle = {
     minHeight: ({ size }) => size.button,
     transition: ({ transition }) => transition.generic,
 
+    // Focus state, the same for all variants
     '&:not($button--disabled):focus': {
       boxShadow: ({ size, color }) =>
         `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
+
+    // Spacing for inline icons
+    '& ::slotted(*)': {
+      marginRight: ({ spacing }) => spacing[2],
+    },
+    '&$button--icon-after ::slotted(*)': {
+      marginRight: 0,
+      marginLeft: ({ spacing }) => spacing[2],
+    },
+    '&$button--icon-only ::slotted(*)': {
+      marginRight: 0,
+      marginLeft: 0,
     },
   },
 
@@ -46,8 +62,6 @@ export const styles: JssStyle = {
   },
 
   'button--variant-primary': {
-    paddingLeft: ({ spacing }) => spacing.x_button,
-    paddingRight: ({ spacing }) => spacing.x_button,
     borderRadius: ({ radii }) => radii.button,
     background: ({ color }) => color.primary,
     color: ({ color }) => color.text_contrast,
@@ -66,8 +80,6 @@ export const styles: JssStyle = {
   },
 
   'button--variant-secondary': {
-    paddingLeft: ({ spacing }) => spacing.x_button,
-    paddingRight: ({ spacing }) => spacing.x_button,
     borderRadius: ({ radii }) => radii.button,
     border: ({ size }) => `${size.border}px solid currentColor`,
     background: 'transparent',
@@ -86,6 +98,13 @@ export const styles: JssStyle = {
       borderColor: ({ color }) => color.disabled,
       color: ({ color }) => color.disabled,
     },
+  },
+
+  'button--icon-after': {},
+
+  'button--icon-only': {
+    paddingLeft: ({ spacing }) => spacing[2],
+    paddingRight: ({ spacing }) => spacing[2],
   },
 
   'button--disabled': {

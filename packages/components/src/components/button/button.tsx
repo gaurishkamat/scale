@@ -9,9 +9,9 @@ import Base from '../../utils/base-interface';
 
 /*
   TODO
-  - [ ] icon only styles
-  - [ ] inline icon styles, before and after (update storybook)
-  - [ ] remove link disabled in storybook
+  - [x] icon only styles
+  - [x] inline icon styles, before and after
+  - [ ] update storybook (remove link disabled?)
 */
 
 @Component({
@@ -23,8 +23,8 @@ export class Button implements Base {
 
   /** (optional) Custom class */
   @Prop() customClass?: string = '';
-  /** (optional) Make the button smaller */
-  @Prop() size?: string = 'large';
+  /** (optional) The size of the button */
+  @Prop() size?: 'small' | 'large' = 'large';
   /** (optional) Button variant */
   @Prop() variant?: string = 'primary';
   /** (optional) If `true`, the button is disabled */
@@ -35,8 +35,10 @@ export class Button implements Base {
   @Prop() target?: string = '_self';
   /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
-  /** (optional) Set true when the button contains only an icon */
+  /** (optional) Set to `true` when the button contains only an icon */
   @Prop() iconOnly?: boolean = false;
+  /** (optional) Set to `true` when the button contains an icon _after_ the label */
+  @Prop() iconAfter?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -67,6 +69,25 @@ export class Button implements Base {
 
   componentWillUpdate() {}
   componentDidUnload() {}
+
+  connectedCallback() {
+    this.setIconAfterProp();
+  }
+
+  /**
+   * Detect whether the last node is an element (not text),
+   * and set `iconAfter` to `true` if so.
+   */
+  setIconAfterProp() {
+    const nodes = Array.from(this.hostElement.childNodes);
+    if (nodes.length < 2) {
+      return;
+    }
+    const lastNode = nodes[nodes.length - 1];
+    if (lastNode != null && lastNode.nodeType === 1) {
+      this.iconAfter = true;
+    }
+  }
 
   render() {
     return (
@@ -103,6 +124,7 @@ export class Button implements Base {
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
       this.iconOnly && classes[`button--icon-only`],
+      this.iconAfter && classes[`button--icon-after`],
       this.disabled && !this.href && classes[`button--disabled`]
     );
   }
