@@ -7,9 +7,9 @@ export const styles: JssStyle = {
     position: 'fixed',
     top: 0,
     left: 0,
-    height: 'calc(100% - 160px)',
+    height: 'calc(100% - 96px)',
     width: 'calc(100% - 32px)',
-    margin: '80px 16px',
+    margin: '48px 16px',
     alignItems: 'center',
   },
   'modal--opened': {
@@ -17,18 +17,32 @@ export const styles: JssStyle = {
   },
   'modal__scroll-container': {
     overflow: 'auto',
+    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
+    minHeight: ({ spacing }) => spacing[8],
   },
   modal__content: {
+    position: 'relative',
     background: '#FFFFFF',
     // color: '#262626',
     borderRadius: '8px',
     boxShadow: ({ shadow }) => shadow.modal,
     maxHeight: '100%',
+    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
+    minHeight: 200,
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: 100,
+    /* Accessibility: Windows High Contrast Mode border */
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      pointerEvents: 'none',
+      border: '1px solid transparent',
+    },
   },
   '@media (min-width: 1024px)': {
     'modal--size-small': {
@@ -37,6 +51,7 @@ export const styles: JssStyle = {
     },
     'modal--size-default': {
       width: 'calc(100% - 50%)',
+      height: 'calc(100% - 160px)',
       margin: '80px 25%',
     },
     'modal--size-large': {
@@ -71,23 +86,26 @@ export const styles: JssStyle = {
     },
   },
   modal__close: {
-    height: '24px',
-    display: 'block',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 24,
+    height: 24,
     cursor: 'pointer',
-    '& scale-icon-action-circle-close': {
-      outline: 'none',
-      borderRadius: '8px',
+    outline: 'none',
+    borderRadius: ({ radii }) => radii.button,
+    /* '& scale-icon-action-circle-close': {
       padding: '10px',
       margin: '-10px',
-      '&:hover': {
-        color: ({ color }) => color.primary_hover,
-      },
-      '&:active': {
-        color: ({ color }) => color.primary_active,
-      },
-      '&:focus': {
-        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
-      },
+    }, */
+    '&:hover': {
+      color: ({ color }) => color.primary_hover,
+    },
+    '&:active': {
+      color: ({ color }) => color.primary_active,
+    },
+    '&:focus': {
+      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
     },
   },
   modal__actions: {

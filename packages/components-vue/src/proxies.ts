@@ -403,6 +403,7 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
     size: {} as PropOptions<Components.ScaleModal['size']>,
     variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
+    closeLabel: {} as PropOptions<Components.ScaleModal['closeLabel']>,
     styles: {} as PropOptions<Components.ScaleModal['styles']>,
   },
 

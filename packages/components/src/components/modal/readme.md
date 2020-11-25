@@ -7,14 +7,15 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                            | Type      | Default     |
-| ------------- | -------------- | -------------------------------------- | --------- | ----------- |
-| `customClass` | `custom-class` | (optional) Modal class                 | `string`  | `''`        |
-| `opened`      | `opened`       | (optional) If true, the Modal is open. | `boolean` | `false`     |
-| `size`        | `size`         | (optional) Modal size                  | `string`  | `'default'` |
-| `styles`      | `styles`       | (optional) Injected jss styles         | `any`     | `undefined` |
-| `transitions` | `transitions`  | (optional) Transition overrides        | `any`     | `undefined` |
-| `variant`     | `variant`      | (optional) Modal variant               | `string`  | `''`        |
+| Property      | Attribute      | Description                            | Type      | Default          |
+| ------------- | -------------- | -------------------------------------- | --------- | ---------------- |
+| `closeLabel`  | `close-label`  | (optional) Label for close button      | `string`  | `'Close Pop-up'` |
+| `customClass` | `custom-class` | (optional) Modal class                 | `string`  | `''`             |
+| `opened`      | `opened`       | (optional) If true, the Modal is open. | `boolean` | `false`          |
+| `size`        | `size`         | (optional) Modal size                  | `string`  | `'default'`      |
+| `styles`      | `styles`       | (optional) Injected jss styles         | `any`     | `undefined`      |
+| `transitions` | `transitions`  | (optional) Transition overrides        | `any`     | `undefined`      |
+| `variant`     | `variant`      | (optional) Modal variant               | `string`  | `''`             |
 
 
 ## Events

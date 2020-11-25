@@ -148,7 +148,7 @@ const color = {
   error: RED_FUNCTIONAL,
   focus: BLUE_FUNCTIONAL,
   divider: GRAY_6_DECORATIVE,
-  tableLine: GRAY_6_DECORATIVE,
+  table_line: GRAY_6_DECORATIVE,
   border_slider_thumb: GRAY_3,
   border_tab: GRAY_6_DECORATIVE,
   slider_track: GRAY_4,

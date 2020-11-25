@@ -746,6 +746,10 @@
       },
       "attributes": [
         {
+          "name": "close-label",
+          "description": "(optional) Label for close button"
+        },
+        {
           "name": "custom-class",
           "description": "(optional) Modal class"
         },

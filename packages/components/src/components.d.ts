@@ -473,6 +473,10 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
+          * (optional) Label for close button
+         */
+        "closeLabel"?: string;
+        /**
           * (optional) Modal class
          */
         "customClass"?: string;
@@ -1573,6 +1577,10 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface ScaleModal {
+        /**
+          * (optional) Label for close button
+         */
+        "closeLabel"?: string;
         /**
           * (optional) Modal class
          */
