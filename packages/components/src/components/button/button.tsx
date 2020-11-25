@@ -37,8 +37,8 @@ export class Button implements Base {
   @Prop() type?: 'reset' | 'submit' | 'button';
   /** (optional) Set to `true` when the button contains only an icon */
   @Prop() iconOnly?: boolean = false;
-  /** (optional) Set to `true` when the button contains an icon _after_ the label */
-  @Prop() iconAfter?: boolean = false;
+  /** (optional) Icon position related to the label */
+  @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -71,21 +71,21 @@ export class Button implements Base {
   componentDidUnload() {}
 
   connectedCallback() {
-    this.setIconAfterProp();
+    this.setIconPositionProp();
   }
 
   /**
    * Detect whether the last node is an element (not text),
    * and set `iconAfter` to `true` if so.
    */
-  setIconAfterProp() {
+  setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes);
     if (nodes.length < 2) {
       return;
     }
     const lastNode = nodes[nodes.length - 1];
     if (lastNode != null && lastNode.nodeType === 1) {
-      this.iconAfter = true;
+      this.iconPosition = 'after';
     }
   }
 
@@ -124,7 +124,9 @@ export class Button implements Base {
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
       this.iconOnly && classes[`button--icon-only`],
-      this.iconAfter && classes[`button--icon-after`],
+      !this.iconOnly &&
+        this.iconPosition &&
+        classes[`button--icon-${this.iconPosition}`],
       this.disabled && !this.href && classes[`button--disabled`]
     );
   }

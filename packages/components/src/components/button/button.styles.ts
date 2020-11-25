@@ -27,16 +27,11 @@ export const styles: JssStyle = {
     },
 
     // Spacing for inline icons
-    '& ::slotted(*)': {
+    '&$button--icon-before ::slotted(*)': {
       marginRight: ({ spacing }) => spacing[2],
     },
     '&$button--icon-after ::slotted(*)': {
-      marginRight: 0,
       marginLeft: ({ spacing }) => spacing[2],
-    },
-    '&$button--icon-only ::slotted(*)': {
-      marginRight: 0,
-      marginLeft: 0,
     },
   },
 
@@ -100,6 +95,7 @@ export const styles: JssStyle = {
     },
   },
 
+  'button--icon-before': {},
   'button--icon-after': {},
 
   'button--icon-only': {

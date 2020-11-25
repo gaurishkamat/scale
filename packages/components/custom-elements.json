@@ -242,12 +242,20 @@
           "description": "(optional) When present, an <a> tag will be used"
         },
         {
-          "name": "icon-after",
-          "description": "(optional) Set to `true` when the button contains an icon _after_ the label"
-        },
-        {
           "name": "icon-only",
           "description": "(optional) Set to `true` when the button contains only an icon"
+        },
+        {
+          "name": "icon-position",
+          "description": "(optional) Icon position related to the label",
+          "values": [
+            {
+              "name": "after"
+            },
+            {
+              "name": "before"
+            }
+          ]
         },
         {
           "name": "size",

@@ -198,7 +198,7 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
     target: {} as PropOptions<Components.ScaleButton['target']>,
     type: {} as PropOptions<Components.ScaleButton['type']>,
     iconOnly: {} as PropOptions<Components.ScaleButton['iconOnly']>,
-    iconAfter: {} as PropOptions<Components.ScaleButton['iconAfter']>,
+    iconPosition: {} as PropOptions<Components.ScaleButton['iconPosition']>,
     styles: {} as PropOptions<Components.ScaleButton['styles']>,
   },
 

@@ -117,13 +117,13 @@ export namespace Components {
          */
         "href"?: string;
         /**
-          * (optional) Set to `true` when the button contains an icon _after_ the label
-         */
-        "iconAfter"?: boolean;
-        /**
           * (optional) Set to `true` when the button contains only an icon
          */
         "iconOnly"?: boolean;
+        /**
+          * (optional) Icon position related to the label
+         */
+        "iconPosition": 'before' | 'after';
         /**
           * (optional) The size of the button
          */
@@ -1192,13 +1192,13 @@ declare namespace LocalJSX {
          */
         "href"?: string;
         /**
-          * (optional) Set to `true` when the button contains an icon _after_ the label
-         */
-        "iconAfter"?: boolean;
-        /**
           * (optional) Set to `true` when the button contains only an icon
          */
         "iconOnly"?: boolean;
+        /**
+          * (optional) Icon position related to the label
+         */
+        "iconPosition"?: 'before' | 'after';
         /**
           * (optional) The size of the button
          */
