@@ -142,7 +142,6 @@ export namespace Components {
           * (optional) Icon only
          */
         "iconSize"?: number;
-        "role"?: string;
         /**
           * (optional) Button size
          */
@@ -1224,7 +1223,6 @@ declare namespace LocalJSX {
           * (optional) Icon only
          */
         "iconSize"?: number;
-        "role"?: string;
         /**
           * (optional) Button size
          */

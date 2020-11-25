@@ -28,7 +28,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-button
-      :alt="alt"
+      :title="title"
       :ariaLabel="ariaLabel"
       :disabled="disabled"
       :focusable="focusable"
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Standard'
     args={{
-      label: 'A button'
+      label: 'Label'
     }}
   >
     {Template.bind({})}
@@ -160,7 +160,8 @@ export const Template = (args, { argTypes }) => ({
     name='Large Icon Only'
     args={{
       icon: ICON,
-      alt: 'Search'
+      title: 'Search',
+      ariaLabel: 'Search'
     }}
   >
     {Template.bind({})}
@@ -179,7 +180,8 @@ export const Template = (args, { argTypes }) => ({
     name='Large Link'
     args={{
       href: 'https://example.com',
-      target: '_blank'
+      target: '_blank',
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}
@@ -197,7 +199,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       size: 'small',
       iconSize: 16,
-      label: 'A button'
+      label: 'Label'
     }}
   >
     {Template.bind({})}
@@ -320,7 +322,8 @@ export const Template = (args, { argTypes }) => ({
       size: 'small',
       iconSize: 16,
       icon: ICON,
-      alt: 'Search'
+      title: 'Search',
+      ariaLabel: 'Search'
     }}
   >
     {Template.bind({})}
@@ -341,7 +344,8 @@ export const Template = (args, { argTypes }) => ({
       size: 'small',
       iconSize: 16,
       href: 'https://example.com',
-      target: '_blank'
+      target: '_blank',
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}

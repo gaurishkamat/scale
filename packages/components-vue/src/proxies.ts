@@ -203,7 +203,6 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
     type: {} as PropOptions<Components.ScaleButton['type']>,
     ariaLabel: {} as PropOptions<Components.ScaleButton['ariaLabel']>,
     focusable: {} as PropOptions<Components.ScaleButton['focusable']>,
-    role: {} as PropOptions<Components.ScaleButton['role']>,
     styles: {} as PropOptions<Components.ScaleButton['styles']>,
   },
 
