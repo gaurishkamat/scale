@@ -28,7 +28,7 @@ export const styles: JssStyle = {
       cursor: 'pointer',
     },
     '& small': {
-      fontSize: ({ type_variants }) => type_variants.smaller.size,
+      fontSize: ({ type_variants }) => type_variants.smaller.fontSize,
       marginLeft: '120px',
       marginTop: '5px',
     },

@@ -6,7 +6,7 @@ exports[`Card should match snapshot 1`] = `
     <style>
       .card-0-0-6 {
   width: 100%;
-  border: none;
+  border: 1px solid transparent;
   overflow: hidden;
   box-sizing: border-box;
   transition: all .2s ease-in-out;
@@ -50,7 +50,7 @@ exports[`Card should match snapshot 1`] = `
   opacity: 0.5;
 }
     </style>
-    <div class="card-0-0-6">
+    <div aria-label="" class="card-0-0-6" role="group">
       <div class="card__body-0-0-7">
         <slot></slot>
       </div>

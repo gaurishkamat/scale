@@ -118,7 +118,6 @@ export interface TypeVariant {
 }
 
 export const typeVariant = (
-  // tslint:disable-next-line
   fontSize: number = FONT_SIZE_3,
   lineHeight: number = LEADING_5,
   fontWeight: number = FONT_WEIGHT_MEDIUM,
@@ -140,6 +139,7 @@ const color = {
   primary_active: MAGENTA_ACTIVE,
   text: GRAY_1,
   text_contrast: WHITE,
+  text_muted: GRAY_3,
   link: BLUE,
   link_hover: BLUE,
   link_active: BLUE_DARK,
