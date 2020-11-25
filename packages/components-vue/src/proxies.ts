@@ -194,23 +194,14 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
     size: {} as PropOptions<Components.ScaleButton['size']>,
     variant: {} as PropOptions<Components.ScaleButton['variant']>,
     disabled: {} as PropOptions<Components.ScaleButton['disabled']>,
-    iconSize: {} as PropOptions<Components.ScaleButton['iconSize']>,
-    icon: {} as PropOptions<Components.ScaleButton['icon']>,
-    iconBefore: {} as PropOptions<Components.ScaleButton['iconBefore']>,
-    iconAfter: {} as PropOptions<Components.ScaleButton['iconAfter']>,
     href: {} as PropOptions<Components.ScaleButton['href']>,
     target: {} as PropOptions<Components.ScaleButton['target']>,
     type: {} as PropOptions<Components.ScaleButton['type']>,
-    ariaLabel: {} as PropOptions<Components.ScaleButton['ariaLabel']>,
-    focusable: {} as PropOptions<Components.ScaleButton['focusable']>,
+    iconOnly: {} as PropOptions<Components.ScaleButton['iconOnly']>,
     styles: {} as PropOptions<Components.ScaleButton['styles']>,
   },
 
 
-  methods: {
-    disable: createCommonMethod('disable') as Components.ScaleButton['disable'],
-    enable: createCommonMethod('enable') as Components.ScaleButton['enable'],
-  },
   render: createCommonRender('scale-button', []),
 });
 

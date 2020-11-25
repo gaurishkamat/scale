@@ -29,16 +29,9 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-button
       :title="title"
-      :ariaLabel="ariaLabel"
       :disabled="disabled"
-      :focusable="focusable"
-      :icon="icon"
-      :iconAfter="iconAfter"
-      :iconBefore="iconBefore"
-      :iconSize="iconSize"
-      :href="href"
-      :role="role"
       :size="size"
+      :href="href"
       :target="target"
       :variant="variant"
       @click="click"
@@ -57,7 +50,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Standard'
     args={{
-      label: 'Label'
+      label: 'Primary Btn'
     }}
   >
     {Template.bind({})}

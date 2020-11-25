@@ -104,46 +104,24 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleButton {
-        "ariaLabel"?: string;
         /**
-          * (optional) Button class
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * Button method: disable()
-         */
-        "disable": () => Promise<void>;
-        /**
-          * (optional) Disabled button
+          * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
         /**
-          * Button method: enable()
-         */
-        "enable": () => Promise<void>;
-        "focusable"?: boolean;
-        /**
-          * (optional) Link button
+          * (optional) When present, an <a> tag will be used
          */
         "href"?: string;
         /**
-          * (optional) Icon only
+          * (optional) Set true when the button contains only an icon
          */
-        "icon"?: string;
+        "iconOnly"?: boolean;
         /**
-          * (optional) Icon after
-         */
-        "iconAfter"?: string;
-        /**
-          * (optional) Icon before
-         */
-        "iconBefore"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "iconSize"?: number;
-        /**
-          * (optional) Button size
+          * (optional) Make the button smaller
          */
         "size"?: string;
         /**
@@ -151,11 +129,11 @@ export namespace Components {
          */
         "styles"?: any;
         /**
-          * (optional) Link target button
+          * (optional) The target attribute for the <a> tag
          */
         "target"?: string;
         /**
-          * (optional) button type
+          * (optional) Button type
          */
         "type"?: 'reset' | 'submit' | 'button';
         /**
@@ -1197,38 +1175,24 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleButton {
-        "ariaLabel"?: string;
         /**
-          * (optional) Button class
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) Disabled button
+          * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
-        "focusable"?: boolean;
         /**
-          * (optional) Link button
+          * (optional) When present, an <a> tag will be used
          */
         "href"?: string;
         /**
-          * (optional) Icon only
+          * (optional) Set true when the button contains only an icon
          */
-        "icon"?: string;
+        "iconOnly"?: boolean;
         /**
-          * (optional) Icon after
-         */
-        "iconAfter"?: string;
-        /**
-          * (optional) Icon before
-         */
-        "iconBefore"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "iconSize"?: number;
-        /**
-          * (optional) Button size
+          * (optional) Make the button smaller
          */
         "size"?: string;
         /**
@@ -1236,11 +1200,11 @@ declare namespace LocalJSX {
          */
         "styles"?: any;
         /**
-          * (optional) Link target button
+          * (optional) The target attribute for the <a> tag
          */
         "target"?: string;
         /**
-          * (optional) button type
+          * (optional) Button type
          */
         "type"?: 'reset' | 'submit' | 'button';
         /**
