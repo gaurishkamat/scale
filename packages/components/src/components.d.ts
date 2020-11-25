@@ -261,6 +261,10 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
+          * (optional) When using the icon by itself, add a label to improve accessibility
+         */
+        "ariaLabel"?: string;
+        /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
@@ -268,6 +272,9 @@ export namespace Components {
           * The SVG `fill` attribute
          */
         "fill"?: string;
+        /**
+          * (optional) If `true` the icon can receive focus
+         */
         "focusable"?: boolean;
         /**
           * A name that will be used to reference an SVG object defined elsewhere, via `<use xlink:href="">`. `icon-` will be prepended to the name, so if you pass `circle`, it will look for for the `icon-circle` id e.g. `<use xlink:href="#icon-circle">`. If there is no element in the document with the id by the name provided, this component will render empty.
@@ -1336,6 +1343,10 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
+          * (optional) When using the icon by itself, add a label to improve accessibility
+         */
+        "ariaLabel"?: string;
+        /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
@@ -1343,6 +1354,9 @@ declare namespace LocalJSX {
           * The SVG `fill` attribute
          */
         "fill"?: string;
+        /**
+          * (optional) If `true` the icon can receive focus
+         */
         "focusable"?: boolean;
         /**
           * A name that will be used to reference an SVG object defined elsewhere, via `<use xlink:href="">`. `icon-` will be prepended to the name, so if you pass `circle`, it will look for for the `icon-circle` id e.g. `<use xlink:href="#icon-circle">`. If there is no element in the document with the id by the name provided, this component will render empty.
