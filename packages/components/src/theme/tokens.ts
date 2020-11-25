@@ -118,7 +118,6 @@ export interface TypeVariant {
 }
 
 export const typeVariant = (
-  // tslint:disable-next-line
   fontSize: number = FONT_SIZE_3,
   lineHeight: number = LEADING_5,
   fontWeight: number = FONT_WEIGHT_MEDIUM,
