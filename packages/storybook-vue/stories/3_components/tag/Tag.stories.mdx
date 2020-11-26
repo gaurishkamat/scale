@@ -35,6 +35,35 @@ export const Template = (args, { argTypes }) => ({
   `
 })
 
+export const TemplateInteractive = (args, {argTypes}) => ({
+    components:{ ScaleTag },
+    template: `
+      <ul aria-label="fruits" style="display: flex; list-style: none; padding: 0;">
+          <li v-for="fruit in fruits" :key="fruit" style="margin-right: 4px;">
+            <scale-tag
+                dismissable="true"
+                v-bind:dismiss-text="'Remove ' + fruit + ' from the list'"
+                @click="removeFruit(fruit)"
+                @scaleClose="removeFruit(fruit)"
+            >
+                {{fruit}}
+            </scale-tag>
+          </li>
+      </ul>
+  `,
+    methods: {
+        removeFruit(fruit) {
+            this.fruits = this.fruits.filter((x) => x !== fruit)
+            setTimeout(() => {
+                this.$el.querySelector("#root > ul > li > scale-tag") && this.$el.querySelector("#root > ul > li > scale-tag").shadowRoot.querySelector("span > button").focus()
+            })
+        }
+    },
+    data: () => ({
+        fruits: ['Melon', 'Banana', 'Pear']
+    })
+})
+
 # Chip
 
 ## Standard
@@ -51,7 +80,6 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 <Props story="Standard"/>
-
 
 ## A dissmisable tag
 
@@ -103,23 +131,6 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-tag size="small" dismissable>A small dismissable tag</scale-tag>
-```
-
-## Disabled tag
-
-<Preview withSource="none">
-    <Story
-    name="Disabled tag"
-    args={{
-        label: 'Disabled tag',
-        disabled: true
-    }}>
-    {Template.bind({})}
-    </Story>
-</Preview>
-
-```html
-<scale-tag disabled>Disabled tag</scale-tag>
 ```
 
 ## Disable dissmisable tag
@@ -248,3 +259,13 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-tag variant="secondary" dismissable size="small">Variant secondary dismissable small</scale-tag>
 ```
+
+## Complete example
+
+<Preview withSource="none">
+    <Story
+        name="Complete example"
+    >
+        {TemplateInteractive.bind({})}
+    </Story>
+</Preview>

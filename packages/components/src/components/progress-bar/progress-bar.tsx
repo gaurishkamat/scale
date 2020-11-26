@@ -95,9 +95,8 @@ export class ProgressBar implements Base {
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-valuenow={this.percentage}
               aria-busy={this.busy}
-              aria-valuetext={`${this.percentage}%`}
+              aria-valuenow={this.percentage}
               aria-label={this.label}
               id={this.progressBarId}
             >
@@ -108,6 +107,7 @@ export class ProgressBar implements Base {
                 {!!this.statusInside && (
                   <div
                     class={classes['progress-bar__inner-status']}
+                    aria-hidden="true"
                   >{`${this.percentage}%`}</div>
                 )}
               </div>
@@ -116,7 +116,7 @@ export class ProgressBar implements Base {
             {!!this.showStatus && (
               <div
                 class={classes['progress-bar__status']}
-                aria-hidden
+                aria-live="polite"
               >{`${this.percentage}%`}</div>
             )}
             {!!this.icon && (
@@ -133,11 +133,6 @@ export class ProgressBar implements Base {
             {this.statusDescription}
           </div>
         )}
-        {
-          <span aria-live="polite" class={classes['progress-bar__aria-live']}>
-            {`${Math.round(this.percentage / 10) * 10}%`}
-          </span>
-        }
       </Host>
     );
   }
