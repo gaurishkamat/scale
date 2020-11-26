@@ -11,6 +11,7 @@ export const styles: JssStyle = {
     cursor: 'pointer',
     userSelect: 'none',
     boxSizing: 'border-box',
+    border: 0,
     paddingLeft: ({ spacing }) => spacing.x_button,
     paddingRight: ({ spacing }) => spacing.x_button,
     fontFamily: ({ type }) => type.family,
@@ -19,6 +20,8 @@ export const styles: JssStyle = {
     lineHeight: ({ type }) => type.leading_5,
     minHeight: ({ size }) => size.button,
     transition: ({ transition }) => transition.generic,
+    // Accessibility: allows some "external" typographic styles to leak in
+    all: 'inherit',
 
     // Focus state, the same for all variants
     '&:not($button--disabled):focus': {
