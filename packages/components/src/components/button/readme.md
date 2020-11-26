@@ -9,6 +9,7 @@
 
 | Property       | Attribute       | Description                                                    | Type                              | Default     |
 | -------------- | --------------- | -------------------------------------------------------------- | --------------------------------- | ----------- |
+| `ariaLabel`    | `aria-label`    | (optional) aria-label attribute needed for icon-only buttons   | `string`                          | `undefined` |
 | `customClass`  | `custom-class`  | (optional) Custom class                                        | `string`                          | `''`        |
 | `disabled`     | `disabled`      | (optional) If `true`, the button is disabled                   | `boolean`                         | `false`     |
 | `href`         | `href`          | (optional) When present, an <a> tag will be used               | `string`                          | `undefined` |

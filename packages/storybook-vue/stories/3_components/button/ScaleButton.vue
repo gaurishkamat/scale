@@ -8,6 +8,7 @@
     :type="type"
     :variant="variant"
     :icon-only="iconOnly"
+    :aria-label="ariaLabel"
     @click="handler"
   >
     <slot></slot>
@@ -30,6 +31,7 @@ export default {
     variant: String,
     size: String,
     iconOnly: Boolean,
+    ariaLabel: String
   },
   methods: {
     handler

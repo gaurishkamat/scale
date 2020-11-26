@@ -105,6 +105,10 @@ export namespace Components {
     }
     interface ScaleButton {
         /**
+          * (optional) aria-label attribute needed for icon-only buttons
+         */
+        "ariaLabel": string;
+        /**
           * (optional) Custom class
          */
         "customClass"?: string;
@@ -1179,6 +1183,10 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleButton {
+        /**
+          * (optional) aria-label attribute needed for icon-only buttons
+         */
+        "ariaLabel"?: string;
         /**
           * (optional) Custom class
          */

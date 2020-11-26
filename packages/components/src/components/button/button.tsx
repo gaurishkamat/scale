@@ -9,8 +9,6 @@ import Base from '../../utils/base-interface';
 
 /*
   TODO
-  - [x] icon only styles
-  - [x] inline icon styles, before and after
   - [ ] update storybook (remove link disabled?)
 */
 
@@ -29,16 +27,18 @@ export class Button implements Base {
   @Prop() variant?: string = 'primary';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
-  /** (optional) When present, an <a> tag will be used */
-  @Prop() href?: string;
-  /** (optional) The target attribute for the <a> tag */
-  @Prop() target?: string = '_self';
   /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
   /** (optional) Set to `true` when the button contains only an icon */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
   @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
+  /** (optional) aria-label attribute needed for icon-only buttons */
+  @Prop() ariaLabel: string;
+  /** (optional) When present, an <a> tag will be used */
+  @Prop() href?: string;
+  /** (optional) The target attribute for the <a> tag */
+  @Prop() target?: string = '_self';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -99,18 +99,20 @@ export class Button implements Base {
             href={this.href}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
+            aria-label={this.ariaLabel}
           >
             <slot />
           </a>
         ) : (
-          <div
-            role="button"
+          <button
             class={this.getCssClassMap()}
             onClick={this.handleClick}
-            tabIndex={0}
+            disabled={this.disabled}
+            type={this.type}
+            aria-label={this.ariaLabel}
           >
             <slot />
-          </div>
+          </button>
         )}
       </Host>
     );

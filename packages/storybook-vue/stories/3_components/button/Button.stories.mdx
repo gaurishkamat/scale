@@ -33,7 +33,9 @@ export const Template = (args, { argTypes }) => ({
       :href="href"
       :target="target"
       :variant="variant"
+      :type="type"
       :icon-only="iconOnly"
+      :aria-label="ariaLabel"
       @click="action('clicked')"
     >
       <scale-icon-action-search v-if="icon === 'before'" :size="size == 'small' ? 16 : 24" />
@@ -157,7 +159,8 @@ export const Template = (args, { argTypes }) => ({
     name='Large Icon Only'
     args={{
       iconOnly: true,
-      title: 'Search'
+      title: 'Search',
+      ariaLabel: 'Search'
     }}
   >
     {Template.bind({})}

@@ -230,6 +230,10 @@
       },
       "attributes": [
         {
+          "name": "aria-label",
+          "description": "(optional) aria-label attribute needed for icon-only buttons"
+        },
+        {
           "name": "custom-class",
           "description": "(optional) Custom class"
         },
