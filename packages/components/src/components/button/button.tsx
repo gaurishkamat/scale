@@ -75,8 +75,8 @@ export class Button implements Base {
   }
 
   /**
-   * Detect whether the last node is an element (not text),
-   * and set `iconAfter` to `true` if so.
+   * Detect whether the last node is an element (not text).
+   * If so, it's probably an icon, so we set `iconPosition` to `after`.
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes);
