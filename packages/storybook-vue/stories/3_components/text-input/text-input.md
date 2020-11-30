@@ -1,73 +1,72 @@
-# Text Input
+# Text field
 
-Text input allows users to enter different types of data.
+A text field allows users to enter a single line of text.
 
 ## General
 
-### When to Use
+A text field is an input control for a single line of text. It can vary in width depending on which type of input you need.
 
-The input field is used to enter different kinds of data into a form.
+### When to use
 
-### When Not to Use
+Use input fields when users should enter information like:
 
-Do not use input fields for searching. If you have a search use case, refer to the search component. Use regular input fields exclusively for capturing data.
+* email addresses,
+* passwords,
+* phone numbers,
+* or any other kind of information as free text.
 
-## Basic Types
+### When not to use
 
-### Text
+Don't use a text field when users need to:
 
-Use the type "text" to capture generic text like names or addresses.
-
-### Number
-
-Use the type "number" to capture natural numbers like the amount of items to order.
-
-### Email
-
-Use the type "email" whenever a user has to enter an e-mail adress.
-
-### Password
-
-Use the type "password" for passwords and sensitive data. Password text will be obscured by symbols such as the asterisk ("*") or a dot ("•"). The character will vary depending on the user agent and OS.
+* search for something (here use the search component) or
+* enter more than one line of input (use a text area instead).
 
 ## Elements
 
-![Image Name](assets/3_components/text-input/image-20200811095946547.png)
+![Image Name](assets/3_components/text-input/input-field-elements.png)
 
 ### Label (1)
 
-Clearly label the input field so the user knows what information to enter. e.g. "your email".
+The label clearly indicates what information a user should enter, e.g., "Last name".
 
-### Placeholder Text (2) (Optional)
+### Placeholder text (2) (Optional)
 
-An example text that is displayed on focus when no input has been entered yet, e.g. "max@muster.de".
+After a user clicks/taps the text area, the placeholder text offers a brief explanation of what to enter.
 
-### Info (3) (Optional)
+### Information (3) (Optional)
 
-Optional instructions about the field, e.g. "this will not be shared with your contacts". If provided, this text is displayed below the input by default.
+When necessary, you can also provide additional information to help users, such as "This information will remain anonymous".
 
-### Character Count (4) (Optional)
+### Character count (4) (Optional)
 
-Limits the number of characters that can be entered. When a limit is set, a counter is displayed, e.g. "14/75".
+If the number of characters is limited, the counter shows the max number of characters and the current character count.
 
-### Error / Improve / Required Input (5) (Optional)
+### Error (5)
 
-Error text can be set to highlight the changes a user has to make for the information to validate, e.g. "please enter a valid e-mail address". The error text overwrites the information notes, if present.
+If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please enter your name".  If the input field has an information text, the error text will temporarily take its place.
 
-For required fields, use this flag to display the corresponding information and validate the form accordingly.
+## Disabled state
+
+If the text field is disabled, the user can't enter or change text. Use this state if a particular interaction is unavailable due to permissions or dependencies.
+
+![Image Name](assets/3_components/text-input/input_disabled.png)
 
 ## Sizes
 
-Important: Use either only small or only large elements within groups.
+Scale provides two sizes of the text field. Decide for one size within one group.
 
 ### Large
 
-Use large fields as the default option.
+Use the large size in all standard cases.
 
-![Image Name](assets/3_components/text-input/image-20200811100017924.png)
+![Image Name](assets/3_components/text-input/input-field-large.png)
 
 ### Small
 
-When space is limited, consistently use small size elements.
+When space is limited, the small size may work better.
 
-![Image Name](assets/3_components/text-input/image-20200811100024147.png)
+![Image Name](assets/3_components/text-input/input-field-small.png)
+
+Important: Use either only small or only large elements within groups.
+
