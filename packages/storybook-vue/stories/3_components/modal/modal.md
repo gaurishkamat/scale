@@ -1,19 +1,27 @@
 # Modal
 
-Modals help users focus their attention on a single task or piece of information. Therefore, modals are displayed as overlays on top of a page.
+Modal dialogs require immediate attention and interrupt the user's workflow. They appear whenever the user needs information or has to make a decision to complete a task.
 
 ## General
 
-### When to Use
+A modal dialog appears as an overlay. The main content of the page is disabled until the user interacts with the modal.
 
-**Immediate User Response Is Required**<br>
-Use a modal dialog to request information that is preventing the system from continuing a user-initiated process.
+### When to use
 
-**Notify the User of Urgent Information**<br>
-Use a modal dialog to notify the user about urgent information concerning their current task. Modal dialogs are commonly used to report system errors or convey a consequence of a user’s action.
+Use a modal if:
 
-**Confirm a User Decision**<br>
-Use a modal dialog to confirm user decisions. Clearly describe the action that is being confirmed and explain the potential consequences. Both title and button should indicate which action will occur. Never use a primary button if the action is destructive or irreversible.
+*	you need to provide warnings and urgent information about the user's current task (e.g., system errors or the consequence of a user's action),
+*	the system requires critical information from the user to execute the current process,
+*	particular information from the user would make a process easier for them to continue, or
+*	the user needs to confirm a decision to prevent or correct critical errors.
+
+### When not to use
+
+Don't use a modal for:
+
+*	information or actions that are not related to the current user flow (this might prevent users from completing their task) or
+*	complex decision making that requires information the modal doesn't provide (this might force users to switch between the modal and main page, which would critically affect the user experience).
+
 
 ## Elements
 
@@ -21,43 +29,47 @@ Use a modal dialog to confirm user decisions. Clearly describe the action that i
 
 ### Title (1)
 
-The modal must contain a title.
+A title is mandatory and should be short and concise.
 
 ### Content (2)
 
-The modal can hold all kinds of content. Once the modal reaches its maximum display height, the content starts scrolling.
+Different kinds of content are possible. Once the modal reaches its maximum display height, the content starts scrolling.
 
-#### Call To Action Bar (3)
+#### Action area (3)
 
-The call to action bar features buttons relevant to the interaction. A primary button is used to proceeed with a positive action, a secondary button is used to cancel the action and close the modal— in addition to the x icon in the header. All buttons in the call to action bar have the same size. There is only one primary button, all other buttons are secondary.
-
-#### Negative Actions
-
-Use secondary buttons for negative actions like "delete" or "remove".
+The action area can contain one primary button and up to two secondary buttons. The primary button should represent a positive action (confirm, save); the secondary buttons represent negative or less important actions (delete, cancel).
 
 ### Close Icon (4)
 
-A click on the "close" icon will close the modal.
+The close icon is mandatory.
 
-## Scrolling Modal
+## Scrolling
 
-In the case of scrolling or as a custom option, an overlay on the action bar can be activated.
+If the content exceeds the space provided by the modal, the content becomes scrollable.
+To frame the scrollable area, an overlay highlights the action bar. A divider appears below the header.
 
 ![Image Name](assets/3_components/modal/image-20200812110102276.png)
 
 ## Sizes
 
-On desktop, modals come in **S**, **L** and **XL**, spanning **6**, **8** or **12** columns respectively. On mobile, all modals become full width (**4** columns).
+### Desktop
 
-Select the modal size that best fits your use case and amount of content.
-
-### Size S / 6 Columns (1)
-### Size L / 8 Columns (2)
-#### Size XL / 12 Columns (3)
-### Mobile / 4 Columns (4)
+For desktops, modals come in sizes S, L, or XL and span 6, 8, or 12 columns, respectively. Select the modal size that best fits the amount of content for your use case.
 
 ![Image Name](assets/3_components/modal/image-20200812212714272.png)
 
-## Related Components
+### Mobile
+
+![Image Name](assets/3_components/modal/image-20200812212714272.png)
+
+## Best practices
+
+*	Clearly describe the confirmed action and explain the potential consequences.
+*	Both title and button should indicate which action will occur.
+*	Never use a primary button if the action is destructive or irreversible.
+
+
+
+## Related components
 
 Alertbox, Global Notification
