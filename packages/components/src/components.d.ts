@@ -77,11 +77,11 @@ export namespace Components {
         "activeRouteId": string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
-        "brandTitle"?: string;
         "claimLang": string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
+        "portalName"?: string;
         "scrolled": boolean;
         "sectorNavigation"?: any[];
     }
@@ -94,6 +94,7 @@ export namespace Components {
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
+        "portalName"?: string;
         "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
@@ -1151,11 +1152,11 @@ declare namespace LocalJSX {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
-        "brandTitle"?: string;
         "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
+        "portalName"?: string;
         "scrolled"?: boolean;
         "sectorNavigation"?: any[];
     }
@@ -1168,6 +1169,7 @@ declare namespace LocalJSX {
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
+        "portalName"?: string;
         "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
