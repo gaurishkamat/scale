@@ -42,6 +42,18 @@ If an error occurs, a corresponding text indicates what a user still needs to do
 
 Users can make the entire text visible with this resizing element.
 
+## Scrolling
+
+If the text is longer than the text area, the text area becomes scrollable. This even happens if the text field is resizable.
+
+![Image Name](assets/3_components/text-area/text_area_scrolling.png)
+
+## Disabled state
+
+If the text area is disabled, users can't enter or change text. Use this state if a particular interaction is unavailable due to permissions or dependencies.
+
+![Image Name](assets/3_components/text-area/text_area_disabled.png)
+
 ## Related domponents
 
 Input field
