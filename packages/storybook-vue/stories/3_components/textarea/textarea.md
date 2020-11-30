@@ -1,47 +1,47 @@
 # Textarea
 
-With a text area, users can enter long text in a form.
+A text area allows users to enter one or multiple lines of text.
 
 ## General
 
-### When to Use
+The text area is an input control for multiple lines of text. It can vary in width and height depending on which type of input you need.
 
-Use text area whenever users should be able to enter a larger amount of text. Examples: comments or notes on an order, a message in a contact form.
+### When to use
 
-### When Not to Use
+Use a text area whenever users should be able to enter a longer piece of text. Typical use cases are comments or message fields.
 
-For simple text input that does not require multiple lines, use an input filed instead.
+### When not to use
+
+If users don't need to enter multiple lines of text, use text fields instead.
 
 ## Elements
 
-![Image Name](assets/3_components/text-area/image-20200811104309878.png)
+![Image Name](assets/3_components/text-area/text_area_elements.png)
 
 ### Label (1)
 
-Clearly label your text area so users know which information to enter. e.g. "notes".
+The label clearly indicates what information a user should enter, e.g., "Your message".
 
-### Placeholder Text (2) (Optional)
+### Placeholder text (2) (Optional)
 
-An example text that is displayed on focus when no input has been entered yet, e.g. "your message".
+After a user clicks/taps the text area, the placeholder text offers a brief explanation of what to enter.
 
-### Info (3)
+### Information (3) (Optional)
 
-Optional instructions about the field, e.g. "this will not be shared with your contacts".
+When necessary, you can also provide additional information, such as "This information will remain anonymous".
 
-### Character Count (4) (Optional)
+### Character count (4) (Optional)
 
-Limit the amount of characters for a text area. When a limit is set, a counter is displayed e.g. "14/75".
+If the number of characters is limited, the counter shows the max number of characters and the current character count.
 
-### Error / Improve / Required Input (5) (Optional)
+### Error (5)
 
-Error text can be set to highlight the changes a user has to make for the information to validate. e.g. "please enter a valid e-mail adress". The error text overwrites the information notes, if present.
-
-For required fields, use this flag to display the corresponding information and validate the form accordingly.
+If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please fill out this field".  If the input field has an information text, the error text will temporarily take its place.
 
 ### Resize (6) (Optional)
 
-With this element, the user can adjust the size of the text field to make the entire text visible.
+Users can make the entire text visible with this resizing element.
 
-## Related Components
+## Related domponents
 
-Input Field
+Input field
