@@ -12,11 +12,11 @@
 | `activeRouteId`    | `active-route-id`  |             | `string`  | `undefined` |
 | `activeSectorId`   | `active-sector-id` |             | `string`  | `undefined` |
 | `addonNavigation`  | --                 |             | `any[]`   | `[]`        |
-| `brandTitle`       | `brand-title`      |             | `string`  | `''`        |
 | `claimLang`        | `claim-lang`       |             | `string`  | `undefined` |
 | `customClass`      | `custom-class`     |             | `string`  | `''`        |
 | `iconNavigation`   | --                 |             | `any[]`   | `[]`        |
 | `mainNavigation`   | --                 |             | `any[]`   | `[]`        |
+| `portalName`       | `portal-name`      |             | `string`  | `''`        |
 | `scrolled`         | `scrolled`         |             | `boolean` | `false`     |
 | `sectorNavigation` | --                 |             | `any[]`   | `[]`        |
 

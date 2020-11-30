@@ -141,7 +141,7 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
   props: {
     claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
     customClass: {} as PropOptions<Components.ScaleAppHeader['customClass']>,
-    brandTitle: {} as PropOptions<Components.ScaleAppHeader['brandTitle']>,
+    portalName: {} as PropOptions<Components.ScaleAppHeader['portalName']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppHeader['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppHeader['sectorNavigation']>,
@@ -160,6 +160,7 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
 
   props: {
     brandTitle: {} as PropOptions<Components.ScaleAppShell['brandTitle']>,
+    portalName: {} as PropOptions<Components.ScaleAppShell['portalName']>,
     claimLang: {} as PropOptions<Components.ScaleAppShell['claimLang']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppShell['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,

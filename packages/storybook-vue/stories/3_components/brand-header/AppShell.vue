@@ -1,6 +1,6 @@
 <template>
   <scale-app-shell
-    :brand-title="brandTitle"
+    :portal-name="portalName"
     :claim-lang="claimLang"
     :main-navigation="mainNavigation"
     :icon-navigation="iconNavigation"
@@ -17,7 +17,7 @@
 <script>
 export default {
   props: {
-    brandTitle: String,
+    portalName: String,
     claimLang: String,
     mainNavigation: String,
     iconNavigation: String,
