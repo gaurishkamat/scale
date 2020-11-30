@@ -3,6 +3,9 @@ import Style from './model/style';
 import nodeToSketchLayers from './nodeToSketchLayers';
 import {isNodeVisible} from './helpers/visibility';
 import { removeJssNameFromClass } from './helpers/utils';
+import createXPathFromElement from './helpers/createXPathFromElement';
+
+(console as any).debugObjs = [];
 
 export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   let bcr = node.getBoundingClientRect();
@@ -136,6 +139,9 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // Now build a group for all these children
   const styles = getComputedStyle(node);
   const {opacity} = styles;
+
+  const debugObj = {node, symbol: node.dataset.sketchSymbol, xpath: createXPathFromElement(node), styles};
+  (console as any).debugObjs.push(debugObj);
 
   const groupStyle = new Style();
 

@@ -596,6 +596,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   if (CSSRules === undefined) {
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
   }
+
   const layers: any[] = [];
   let bcr = node.getBoundingClientRect();
   if (bcr.width === 0 && bcr.height === 0) {
@@ -1103,8 +1104,9 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
     rectangle.setStyle(style);
+    rectangle.setName("Background");
 
-    shapeGroup.setName('background');
+    shapeGroup.setName('Background');
     shapeGroup.addLayer(rectangle);
 
 		if (styles.overflow === 'hidden' || node.tagName == 'IFRAME') {

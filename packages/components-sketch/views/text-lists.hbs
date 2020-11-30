@@ -1,4 +1,12 @@
-<div data-sketch-artboard="Text Lists" class="artboard">
+<style>
+    scale-list-item {
+        display: list-item;
+    }
+    scale-list-item[type="decimal"] {
+        list-style-type: decimal;
+    }
+</style>
+<div data-sketch-artboard="Text Lists" class="artboard" data-sketch-unnamed-component-path="Text Lists">
     <h1 class="title--artboard">Text Lists</h1>
 
     <h2 class="title--artboard-section">Ordered Lists</h2>
@@ -56,6 +64,11 @@
     Array.from(document.querySelectorAll("scale-list")).forEach(btn => {
         btn.dataset.sketchSymbol = `Text Lists / ${
                 order(0, btn.getAttribute('variant') === 'unordered' ? 'Unordered Lists' : 'Ordered Lists')
+            }`;
+    });
+    Array.from(document.querySelectorAll("scale-list-item")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Text Lists / List Item / ${
+                order(1, btn.getAttribute('type') === 'decimal' ? 'Decimal' : 'Default')
             }`;
     });
 </script>

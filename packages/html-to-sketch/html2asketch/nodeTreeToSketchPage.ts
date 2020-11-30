@@ -2,9 +2,20 @@ import Artboard from './model/artboard';
 import Page from './model/page';
 import nodeTreeToSketchGroup from './nodeTreeToSketchGroup';
 
-function traverse(node: HTMLElement) {
+function findComponentPath(node: HTMLElement): string {
+  if (node.dataset.sketchUnnamedComponentPath) {
+    return node.dataset.sketchUnnamedComponentPath;
+  } else if (node.parentElement) {
+    return findComponentPath(node.parentElement);
+  } else {
+    return "Unnamed Components";
+  }
+}
+
+function traverse(node: HTMLElement): void {
   if (/^scale-/i.test(node.nodeName)) {
-    const componentName = node.getAttribute('data-sketch-symbol') || ("Unnamed Components / " + node.nodeName.replace(/^scale-/i, '').toLowerCase());
+    const componentPath = findComponentPath(node);
+    const componentName = node.getAttribute('data-sketch-symbol') || (componentPath + " / " + node.nodeName.replace(/^scale-/i, '').toLowerCase());
     node.setAttribute('data-sketch-symbol', `${componentName}`);
     const attrVariant:string[] = [];
     for (let i = 0; i < node.attributes.length; i++) {

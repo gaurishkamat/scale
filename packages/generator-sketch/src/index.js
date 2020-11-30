@@ -43,6 +43,16 @@ function findLayer(symbol, predicate) {
   return undefined;
 }
 
+function findLayers(symbol, predicate, results=[]) {
+  if (predicate(symbol)) results.push(symbol);
+  if (symbol.layers) {
+    for (let i = 0; i < symbol.layers.length; i++) {
+      findLayer(symbol.layers[i], predicate, results);
+    }
+  }
+  return results;
+}
+
 (async function() {
 
   const documentDB = await sqlite.open({
@@ -114,7 +124,7 @@ function findLayer(symbol, predicate) {
       },
       ...args
     });
-    if (!/^(Icon|(Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
+    if (!/^(Icon|(Unnamed Components \/ icon))/.test(symbol.name)) {
       symbol.groupLayout = {
         "_class": "MSImmutableInferredGroupLayout",
         "axis": 0,
@@ -129,6 +139,10 @@ function findLayer(symbol, predicate) {
         symbol.layers[0].resizingConstraint = 45;
       }
     }
+
+    var icons = findLayers(symbol, s => s.name === /^Unnamed Components \/ icon/);
+    icons.forEach(icon => icon.name = 'Icon');
+
     if (/^(Card)/.test(symbol.name)) {
       symbol.layers[0].layers[1].resizingConstraint = 18;      
     }
@@ -164,49 +178,32 @@ function findLayer(symbol, predicate) {
       symbol.layers[0].resizingConstraint = 10;
 
       var track = findLayer(symbol, s => s.name === 'div.slider--track');
-      var count = findLayer(symbol, s => s.name === '40');
+      var count = findLayer(symbol, s => /^\d+/.test(s.name));
       var label = findLayer(symbol, s => s.name === 'Slider Label');
 
       if (label) label.resizingConstraint = 47;
 
       if (count) {
         count.resizingConstraint = 44;
+        count.name = 'Counter Label';
       }
 
       track.resizingConstraint = 58;
       track.layers[1].frame.width += 6;
       track.layers[2].resizingConstraint = 45;
     }
-    // Textarea & inputfield
-    // Deal with information text aligns (. = bottom left/right pin, ' = top left/right pin)
-    //
-    // Textarea pins:
-    //
-    // .Information notes    0 / 148.
-    //                       0 / 148.
-    // .Information notes
-    //
-    // Inputfield pins:
-    //
-    // 'Information notes    0 / 148'
-    //                       0 / 148'
-    // 'Information notes
     if (/^(Text area)/.test(symbol.name)) {
+      var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
+      if (count) {
+        count.resizingConstraint = 36;
+        count.name = 'Counter';
+      }
+      var info = findLayer(symbol, s => /^Information/.test(s.name));
+      if (info) {
+        info.resizingConstraint = 35;
+      }
       if (symbol.layers[0].layers.length > 2) {
         symbol.layers[0].layers[2].resizingConstraint = 11;
-        if (symbol.layers[0].layers[1].layers) {
-          symbol.layers[0].layers[1].resizingConstraint = 35;
-          symbol.layers[0].layers[1].layers[0].resizingConstraint = 35;
-          symbol.layers[0].layers[1].layers[1].resizingConstraint = 36;
-        } else {
-          if (symbol.layers[0].layers[1].name === '0 / 148') {
-            // If it's "0 / 148"
-            symbol.layers[0].layers[1].resizingConstraint = 36;
-          } else {
-            // If it's "Information notes"
-            symbol.layers[0].layers[1].resizingConstraint = 35;
-          }
-        }
         symbol.layers[0].layers[1].resizingConstraint = 35;
         symbol.layers[0].layers[0].resizingConstraint = 18;
       } else {
@@ -214,31 +211,31 @@ function findLayer(symbol, predicate) {
       }
     }
     if (/^(Inputfield)/.test(symbol.name)) {
+      var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
+      if (count) {
+        count.resizingConstraint = 12;
+        count.name = 'Counter';
+      }
+      var info = findLayer(symbol, s => /^Information/.test(s.name));
+      if (info) {
+        info.resizingConstraint = 11;
+      }
       if (symbol.layers[0].layers.length > 2) {
         symbol.layers[0].layers[2].resizingConstraint = 11;
-        if (symbol.layers[0].layers[1].layers) {
-          symbol.layers[0].layers[1].resizingConstraint = 11;
-          symbol.layers[0].layers[1].layers[0].resizingConstraint = 11;
-          symbol.layers[0].layers[1].layers[1].resizingConstraint = 12;
-        } else {
-          if (symbol.layers[0].layers[1].name === '0 / 148') {
-            // If it's "0 / 148"
-            symbol.layers[0].layers[1].resizingConstraint = 12;
-          } else {
-            // If it's "Information notes"
-            symbol.layers[0].layers[1].resizingConstraint = 11;
-          }
-        }
-        symbol.layers[0].layers[0].resizingConstraint = 11;
-      } else {
-        symbol.layers[0].layers[1].resizingConstraint = 11;
-        symbol.layers[0].layers[0].resizingConstraint = 11;
       }
+      symbol.layers[0].layers[1].resizingConstraint = 11;
+      symbol.layers[0].layers[0].resizingConstraint = 11;
     }
     if (/^(Select Box)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 11;
-        symbol.layers[0].layers[0].layers[1].resizingConstraint = 12;
-        symbol.layers[0].layers[1].resizingConstraint = 11;
+        var label = findLayer(symbol, s => s.name === "Select Box Label");
+        var icon = findLayer(symbol, s => s.name === "Icon");
+        icon.resizingConstraint = 11;
+        if (label) {
+          label.resizingConstraint = 12;
+          label.glyphBounds = "{{0, 3}, {140, 12}}";
+          label.textBehaviour = 2;
+        }
     }
     if (/^Link/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
@@ -252,6 +249,8 @@ function findLayer(symbol, predicate) {
     if (/^Accordion/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
     }
+
+
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
     }
@@ -523,7 +522,7 @@ function findLayer(symbol, predicate) {
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
-        if (/^((Unnamed Components \/ icon\-\d+))/.test(symbol.name)) {
+        if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
           instance.name = 'Icon';
         }
       }
@@ -535,7 +534,7 @@ function findLayer(symbol, predicate) {
   function simplifyTree(node, parent) {
     if (node.layers) {
       node.layers.forEach(l => simplifyTree(l, node));
-      if ((node.name == 'div' || node.layers.length == 1) && parent && !node.isSymbol) {
+      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
