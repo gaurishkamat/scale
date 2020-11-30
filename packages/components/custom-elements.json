@@ -141,6 +141,10 @@
         {
           "name": "custom-class",
           "description": ""
+        },
+        {
+          "name": "footer-navigation",
+          "description": ""
         }
       ]
     },
@@ -206,10 +210,6 @@
         },
         {
           "name": "custom-class",
-          "description": ""
-        },
-        {
-          "name": "footer-navigation",
           "description": ""
         },
         {

@@ -3,19 +3,30 @@ import classNames from 'classnames';
 import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
 
+const readData = data => {
+  let parsedData;
+  try {
+    parsedData = JSON.parse(data);
+  } catch (error) {
+    parsedData = data;
+  }
+  return parsedData;
+};
+
 @Component({
   tag: 'scale-app-footer',
   styleUrl: 'app-footer.css',
+  shadow: true,
 })
-export class Footer {
+export class AppFooter {
   @Prop() customClass?: string = '';
   @Prop() claimLang: string;
-  @Prop() footerNavigation?: any[] = [];
+  @Prop() footerNavigation?: any = [];
 
   footerMenu() {
     return (
-      <ul class="">
-        {this.footerNavigation.map(item => (
+      <ul>
+        {readData(this.footerNavigation).map(item => (
           <li class="footer-navigation__item">
             <a
               class="footer-navigation__item-link"
@@ -24,9 +35,6 @@ export class Footer {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
-              }}
-              onFocus={() => {
-                window.scrollTo({ top: 0 });
               }}
             >
               {item.icon &&
@@ -66,7 +74,9 @@ export class Footer {
               <app-logo claim claimLang={this.claimLang}></app-logo>
             </div>
             <div class="footer-copyright">© Deutsche Telekom GmbH</div>
-            <div class="footer-navigation">{this.footerMenu()}</div>
+            <nav aria-label="bottom" class="footer-navigation">
+              {this.footerMenu()}
+            </nav>
           </div>
         </footer>
       </Host>

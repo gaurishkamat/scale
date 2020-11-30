@@ -180,7 +180,6 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
-    footerNavigation: {} as PropOptions<Components.ScaleAppShell['footerNavigation']>,
     customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppShell['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppShell['activeSectorId']>,

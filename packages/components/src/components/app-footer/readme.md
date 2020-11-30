@@ -7,18 +7,14 @@
 
 ## Properties
 
-| Property           | Attribute      | Description | Type     | Default     |
-| ------------------ | -------------- | ----------- | -------- | ----------- |
-| `claimLang`        | `claim-lang`   |             | `string` | `undefined` |
-| `customClass`      | `custom-class` |             | `string` | `''`        |
-| `footerNavigation` | --             |             | `any[]`  | `[]`        |
+| Property           | Attribute           | Description | Type     | Default     |
+| ------------------ | ------------------- | ----------- | -------- | ----------- |
+| `claimLang`        | `claim-lang`        |             | `string` | `undefined` |
+| `customClass`      | `custom-class`      |             | `string` | `''`        |
+| `footerNavigation` | `footer-navigation` |             | `any`    | `[]`        |
 
 
 ## Dependencies
-
-### Used by
-
- - [scale-app-shell](../app-shell)
 
 ### Depends on
 
@@ -30,7 +26,6 @@
 graph TD;
   scale-app-footer --> app-logo
   scale-app-footer --> scale-icon
-  scale-app-shell --> scale-app-footer
   style scale-app-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

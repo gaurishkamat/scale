@@ -15,7 +15,6 @@
 | `brandTitle`       | `brand-title`       |             | `string` | `''`    |
 | `claimLang`        | `claim-lang`        |             | `string` | `'de'`  |
 | `customClass`      | `custom-class`      |             | `string` | `''`    |
-| `footerNavigation` | `footer-navigation` |             | `any`    | `[]`    |
 | `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |
 | `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`    |
 | `portalName`       | `portal-name`       |             | `string` | `''`    |
@@ -27,21 +26,17 @@
 ### Depends on
 
 - [scale-app-header](../app-header)
-- [scale-app-footer](../app-footer)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-app-shell --> scale-app-header
-  scale-app-shell --> scale-app-footer
   scale-app-header --> app-mega-menu
   scale-app-header --> scale-icon
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
   app-navigation-main-mobile --> scale-icon
-  scale-app-footer --> app-logo
-  scale-app-footer --> scale-icon
   style scale-app-shell fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

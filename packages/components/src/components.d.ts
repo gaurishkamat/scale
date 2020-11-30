@@ -76,7 +76,7 @@ export namespace Components {
     interface ScaleAppFooter {
         "claimLang": string;
         "customClass"?: string;
-        "footerNavigation"?: any[];
+        "footerNavigation"?: any;
     }
     interface ScaleAppHeader {
         "activeRouteId": string;
@@ -97,7 +97,6 @@ export namespace Components {
         "brandTitle"?: string;
         "claimLang"?: string;
         "customClass"?: string;
-        "footerNavigation"?: any;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;
@@ -1164,7 +1163,7 @@ declare namespace LocalJSX {
     interface ScaleAppFooter {
         "claimLang"?: string;
         "customClass"?: string;
-        "footerNavigation"?: any[];
+        "footerNavigation"?: any;
     }
     interface ScaleAppHeader {
         "activeRouteId"?: string;
@@ -1185,7 +1184,6 @@ declare namespace LocalJSX {
         "brandTitle"?: string;
         "claimLang"?: string;
         "customClass"?: string;
-        "footerNavigation"?: any;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;

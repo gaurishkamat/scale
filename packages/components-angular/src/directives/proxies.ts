@@ -125,6 +125,25 @@ export class ScaleAlert {
 }
 
 
+export declare interface ScaleAppFooter extends Components.ScaleAppFooter {}
+@ProxyCmp({
+  inputs: ['claimLang', 'customClass', 'footerNavigation']
+})
+@Component({
+  selector: 'scale-app-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['claimLang', 'customClass', 'footerNavigation']
+})
+export class ScaleAppFooter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
   inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']

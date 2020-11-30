@@ -3,16 +3,9 @@
   background: #262626;
   color: #ffffff;
   padding: 24px;
-  padding-top: 40px;
-  box-sizing: border-box;
-  margin-top: -8px;
-  z-index: -1;
-  position: fixed;
+  position: relative;
   bottom: 0;
-}
-
-.footer-content {
-  margin-top: 100px;
+  box-sizing: border-box;
 }
 
 .footer-branding .logo svg {
@@ -34,7 +27,8 @@
   padding: 0;
   list-style: none;
   font-size: 14px;
-  font-family: TeleNeoWeb-ExtraBold;
+  font-family: TeleNeoWeb;
+  font-weight: 800;
 }
 
 .footer-navigation li a {
@@ -48,7 +42,7 @@
   margin-right: 8px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 639px) {
   .footer-branding {
     margin-bottom: 24px;
   }
@@ -60,8 +54,9 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .footer-branding {
+    grid-area: branding;
     width: 100%;
     display: flex;
     align-items: center;
@@ -69,6 +64,7 @@
   }
 
   .footer-copyright {
+    grid-area: copyright;
     width: 100%;
     display: flex;
     align-items: center;
@@ -76,16 +72,11 @@
   }
 
   .footer-navigation {
+    grid-area: navigation;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-
-  .footer-content {
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
   }
 
   .footer-navigation ul {
@@ -95,5 +86,29 @@
 
   .footer-navigation li {
     margin-left: 18px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1295px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-areas:
+      'branding ....... .......'
+      'copyright navigation navigation';
+  }
+  .footer-branding {
+    margin-bottom: 24px;
+  }
+  .footer-copyright {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1296px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-areas: 'branding copyright navigation';
   }
 }

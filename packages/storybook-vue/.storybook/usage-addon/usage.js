@@ -27,6 +27,7 @@ import table from "raw-loader!../../stories/3_components/table/table.md";
 import tag from "raw-loader!../../stories/3_components/tag/tag.md";
 import textarea from "raw-loader!../../stories/3_components/textarea/textarea.md";
 import textInput from "raw-loader!../../stories/3_components/text-input/text-input.md";
+import footer from "raw-loader!../../stories/3_components/footer/footer.md";
 
 const NOT_A_COMPONENT_MD = "`Browse to any component to see usage.`";
 const COMPONENT_NOT_MAPPED_MD =
@@ -70,7 +71,8 @@ const Usage = props => {
     table,
     tag,
     textarea,
-    textinput: textInput
+    textinput: textInput,
+    footer
   };
 
   // Select the most appropriate markdown text based on if this is a component story and
