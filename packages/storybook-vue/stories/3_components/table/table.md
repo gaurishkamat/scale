@@ -49,7 +49,7 @@ The table structure and display are the same for both mobile and desktops. To se
 
 ![Image Name](assets/3_components/data-table/data-table-mobile.png)
 
-## Best Practices
+## Best practices
 
 ### Content alignment
 
