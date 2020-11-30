@@ -25,7 +25,7 @@ Don't use a modal for:
 
 ## Elements
 
-![Image Name](assets/3_components/modal/image-20200812105039304.png)
+![Image Name](assets/3_components/modal/Modal_Basic.png)
 
 ### Title (1)
 
@@ -48,7 +48,7 @@ The close icon is mandatory.
 If the content exceeds the space provided by the modal, the content becomes scrollable.
 To frame the scrollable area, an overlay highlights the action bar. A divider appears below the header.
 
-![Image Name](assets/3_components/modal/image-20200812110102276.png)
+![Image Name](assets/3_components/modal/Modal_Scrolling.png)
 
 ## Sizes
 
