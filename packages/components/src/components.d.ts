@@ -762,6 +762,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * (optional) Dismiss label
+         */
+        "dismissText"?: string;
+        /**
           * (optional) Tag dismissable
          */
         "dismissable"?: boolean;
@@ -1875,6 +1879,10 @@ declare namespace LocalJSX {
           * (optional) Tag disabled
          */
         "disabled"?: boolean;
+        /**
+          * (optional) Dismiss label
+         */
+        "dismissText"?: string;
         /**
           * (optional) Tag dismissable
          */

@@ -35,6 +35,7 @@
 | ------------- | -------------- | ------------------------------ | --------- | ----------- |
 | `customClass` | `custom-class` | (optional) Tag class           | `string`  | `''`        |
 | `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean` | `false`     |
+| `dismissText` | `dismiss-text` | (optional) Dismiss label       | `string`  | `'dismiss'` |
 | `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean` | `false`     |
 | `href`        | `href`         | (optional) Tag href            | `string`  | `''`        |
 | `size`        | `size`         | (optional) Tag size            | `string`  | `''`        |

@@ -592,6 +592,7 @@ export const ScaleTag = /*@__PURE__*/ Vue.extend({
     target: {} as PropOptions<Components.ScaleTag['target']>,
     dismissable: {} as PropOptions<Components.ScaleTag['dismissable']>,
     disabled: {} as PropOptions<Components.ScaleTag['disabled']>,
+    dismissText: {} as PropOptions<Components.ScaleTag['dismissText']>,
     styles: {} as PropOptions<Components.ScaleTag['styles']>,
   },
 

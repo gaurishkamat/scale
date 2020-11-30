@@ -1109,6 +1109,10 @@
           "description": "(optional) Tag disabled"
         },
         {
+          "name": "dismiss-text",
+          "description": "(optional) Dismiss label"
+        },
+        {
           "name": "dismissable",
           "description": "(optional) Tag dismissable"
         },
