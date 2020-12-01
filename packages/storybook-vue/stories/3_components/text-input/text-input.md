@@ -84,5 +84,5 @@ Important: Use either only small or only large elements within groups.
 
 ## Related components
 
-Text area
+<a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textarea--standard" target="_blank">Text area</a>
 
