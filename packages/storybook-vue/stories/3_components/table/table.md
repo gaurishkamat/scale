@@ -1,6 +1,6 @@
 # Data Table
 
-Data tables help the user easily grasp and compare data.
+Data tables help the user grasp and compare data easily.
 
 ## General
 
@@ -38,7 +38,6 @@ The other cells can contain a wide variety of content types - in addition to tex
 
 A mouse over highlights the rows to make them more readable.
 
-
 ### Divider (3)
 
 The dividing line separates the table rows from one another.
@@ -54,7 +53,6 @@ The table structure and display are the same for both mobile and desktops. To se
 ### Content alignment
 
 Always align the content of the first column to the left. Depending on the context or type of content, you can also align the content of the other columns to the right.
-
 
 ## Related components
 
