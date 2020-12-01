@@ -44,7 +44,7 @@ Users can make the entire text visible with this resizing element.
 
 ## Scrolling
 
-If the text is longer than the text area, the text area becomes scrollable. This even happens if the text field is resizable.
+If the text is longer than the text area, the text area becomes scrollable. This even happens if the text area is resizable.
 
 ![Image Name](assets/3_components/text-area/text_area_scrolling.png)
 
