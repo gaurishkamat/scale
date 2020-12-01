@@ -70,3 +70,19 @@ When space is limited, the small size may work better.
 
 Important: Use either only small or only large elements within groups.
 
+## Best practices
+
+* Declare text fields for specific data formats accordingly (e.g., for types like text, number, email, or password).
+
+* Group text fields that are related to the same topic.
+
+* Arrange input fields in a single-column layout to not disturb the user's editing flow. Exceptions are logically related fields like postal code and city.
+
+* Mark mandatory inputs and reduce optional inputs as much as possible.
+
+* Explain all input requirements, for example for passwords or credit card numbers.
+
+## Related components
+
+Text area
+
