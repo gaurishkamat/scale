@@ -54,6 +54,6 @@ If the text area is disabled, users can't enter or change text. Use this state i
 
 ![Image Name](assets/3_components/text-area/text_area_disabled.png)
 
-## Related domponents
+## Related components
 
 <a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textinput--standard" target="_blank">Text field</a>
