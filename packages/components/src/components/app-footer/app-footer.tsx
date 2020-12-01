@@ -67,6 +67,7 @@ export class AppFooter {
   render() {
     return (
       <Host>
+        <div class="footer-mask"></div>
         <footer class={this.getCssClassMap()}>
           {this.iconDefs()}
           <div class="footer-content">
