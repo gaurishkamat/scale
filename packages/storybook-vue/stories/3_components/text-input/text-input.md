@@ -54,7 +54,7 @@ If the text field is disabled, the user can't enter or change text. Use this sta
 
 ## Sizes
 
-Scale provides two sizes of the text field. Decide for one size within one group.
+Scale provides two sizes of text fields. Only use one size within a group.
 
 ### Large
 

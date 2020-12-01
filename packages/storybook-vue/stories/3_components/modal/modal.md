@@ -62,6 +62,8 @@ For desktops, modals come in sizes S, L, or XL and span 6, 8, or 12 columns, res
 
 ### Mobile
 
+On mobile, all modals have the same size: full width (4 columns).
+
 ![Image Name](assets/3_components/modal/mobile_4columns.png)
 
 ## Best practices
@@ -70,8 +72,6 @@ For desktops, modals come in sizes S, L, or XL and span 6, 8, or 12 columns, res
 *	Both title and button should indicate which action will occur.
 *	Never use a primary button if the action is destructive or irreversible.
 
-
-
 ## Related components
 
-Alertbox, Global Notification
+Alertbox, Global notification
