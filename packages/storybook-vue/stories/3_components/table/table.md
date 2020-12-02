@@ -1,6 +1,6 @@
-# Data Table
+# Table
 
-Data tables help the user grasp and compare data easily.
+Tables help the user grasp and compare data easily.
 
 ## General
 
