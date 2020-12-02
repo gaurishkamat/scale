@@ -7,59 +7,20 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                              | Default     |
-| ------------- | -------------- | ------------------------------ | --------------------------------- | ----------- |
-| `ariaLabel`   | `aria-label`   |                                | `string`                          | `''`        |
-| `customClass` | `custom-class` | (optional) Button class        | `string`                          | `''`        |
-| `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                         | `false`     |
-| `focusable`   | `focusable`    |                                | `boolean`                         | `true`      |
-| `href`        | `href`         | (optional) Link button         | `string`                          | `''`        |
-| `icon`        | `icon`         | (optional) Icon only           | `string`                          | `undefined` |
-| `iconAfter`   | `icon-after`   | (optional) Icon after          | `string`                          | `undefined` |
-| `iconBefore`  | `icon-before`  | (optional) Icon before         | `string`                          | `undefined` |
-| `iconSize`    | `icon-size`    | (optional) Icon only           | `number`                          | `24`        |
-| `size`        | `size`         | (optional) Button size         | `string`                          | `''`        |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`                             | `undefined` |
-| `target`      | `target`       | (optional) Link target button  | `string`                          | `'_self'`   |
-| `type`        | `type`         | (optional) button type         | `"button" \| "reset" \| "submit"` | `undefined` |
-| `variant`     | `variant`      | (optional) Button variant      | `string`                          | `''`        |
+| Property       | Attribute       | Description                                                    | Type                              | Default     |
+| -------------- | --------------- | -------------------------------------------------------------- | --------------------------------- | ----------- |
+| `ariaLabel`    | `aria-label`    | (optional) aria-label attribute needed for icon-only buttons   | `string`                          | `undefined` |
+| `customClass`  | `custom-class`  | (optional) Custom class                                        | `string`                          | `''`        |
+| `disabled`     | `disabled`      | (optional) If `true`, the button is disabled                   | `boolean`                         | `false`     |
+| `href`         | `href`          | (optional) When present, an <a> tag will be used               | `string`                          | `undefined` |
+| `iconOnly`     | `icon-only`     | (optional) Set to `true` when the button contains only an icon | `boolean`                         | `false`     |
+| `iconPosition` | `icon-position` | (optional) Icon position related to the label                  | `"after" \| "before"`             | `'before'`  |
+| `size`         | `size`          | (optional) The size of the button                              | `"large" \| "small"`              | `'large'`   |
+| `styles`       | `styles`        | (optional) Injected jss styles                                 | `any`                             | `undefined` |
+| `target`       | `target`        | (optional) The target attribute for the <a> tag                | `string`                          | `'_self'`   |
+| `type`         | `type`          | (optional) Button type                                         | `"button" \| "reset" \| "submit"` | `undefined` |
+| `variant`      | `variant`       | (optional) Button variant                                      | `string`                          | `'primary'` |
 
-
-## Methods
-
-### `disable() => Promise<void>`
-
-Button method: disable()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-### `enable() => Promise<void>`
-
-Button method: enable()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-
-## Dependencies
-
-### Depends on
-
-- [scale-icon](../icon)
-
-### Graph
-```mermaid
-graph TD;
-  scale-button --> scale-icon
-  style scale-button fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

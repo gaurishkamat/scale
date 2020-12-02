@@ -231,43 +231,47 @@
       "attributes": [
         {
           "name": "aria-label",
-          "description": ""
+          "description": "(optional) aria-label attribute needed for icon-only buttons"
         },
         {
           "name": "custom-class",
-          "description": "(optional) Button class"
+          "description": "(optional) Custom class"
         },
         {
           "name": "disabled",
-          "description": "(optional) Disabled button"
-        },
-        {
-          "name": "focusable",
-          "description": ""
+          "description": "(optional) If `true`, the button is disabled"
         },
         {
           "name": "href",
-          "description": "(optional) Link button"
+          "description": "(optional) When present, an <a> tag will be used"
         },
         {
-          "name": "icon",
-          "description": "(optional) Icon only"
+          "name": "icon-only",
+          "description": "(optional) Set to `true` when the button contains only an icon"
         },
         {
-          "name": "icon-after",
-          "description": "(optional) Icon after"
-        },
-        {
-          "name": "icon-before",
-          "description": "(optional) Icon before"
-        },
-        {
-          "name": "icon-size",
-          "description": "(optional) Icon only"
+          "name": "icon-position",
+          "description": "(optional) Icon position related to the label",
+          "values": [
+            {
+              "name": "after"
+            },
+            {
+              "name": "before"
+            }
+          ]
         },
         {
           "name": "size",
-          "description": "(optional) Button size"
+          "description": "(optional) The size of the button",
+          "values": [
+            {
+              "name": "large"
+            },
+            {
+              "name": "small"
+            }
+          ]
         },
         {
           "name": "styles",
@@ -275,11 +279,11 @@
         },
         {
           "name": "target",
-          "description": "(optional) Link target button"
+          "description": "(optional) The target attribute for the <a> tag"
         },
         {
           "name": "type",
-          "description": "(optional) button type",
+          "description": "(optional) Button type",
           "values": [
             {
               "name": "button"

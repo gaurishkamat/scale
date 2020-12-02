@@ -250,6 +250,7 @@ const spacing = {
 const size = {
   divider: 1,
   underline: 1,
+  border: 1,
   border_input: 1,
   border_focus: 2,
   border_tab: 2,
@@ -259,6 +260,8 @@ const size = {
   modal_wide: rem(64),
   height_tab: rem(SPACING_1 * 10),
   height_tab_small: rem(SPACING_6),
+  button: 40,
+  button_small: 32,
 };
 
 const shadow = {

@@ -26,7 +26,6 @@
 
  - [app-navigation-main-mobile](../app-navigation-main-mobile)
  - [scale-app-header](../app-header)
- - [scale-button](../button)
  - [scale-input](../input)
  - [scale-link](../link)
  - [scale-list-item](../list/listItem)
@@ -38,7 +37,6 @@
 graph TD;
   app-navigation-main-mobile --> scale-icon
   scale-app-header --> scale-icon
-  scale-button --> scale-icon
   scale-input --> scale-icon
   scale-link --> scale-icon
   scale-list-item --> scale-icon
