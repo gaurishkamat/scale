@@ -143,6 +143,7 @@ function findLayers(symbol, predicate, results=[]) {
     var icons = findLayers(symbol, s => s.name === /^Unnamed Components \/ icon/);
     icons.forEach(icon => icon.name = 'Icon');
 
+    try {
     if (/^(Card)/.test(symbol.name)) {
       symbol.layers[0].layers[1].resizingConstraint = 18;      
     }
@@ -249,13 +250,126 @@ function findLayers(symbol, predicate, results=[]) {
     if (/^Accordion/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
     }
-
+    } catch(err) {
+      console.log("Error processing", symbol.name, err);
+    }
 
     if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
       symbol.layers[0].groupLayout = {...symbol.groupLayout};
     }
     return symbol;
   };
+
+  function positionString(position) {
+    if (position === 0) {
+      return 'inside';
+    } else if (position === 1) {
+      return 'center';
+    } else if (position === 2) {
+      return 'outside';
+    } else {
+      return '';
+    }
+  }
+
+  function colorString(fillOrBorder) {
+    if (!fillOrBorder.color) {
+      if (fillOrBorder.image) return 'image';
+      return 'default';
+    }
+    const {red,green,blue,alpha} = fillOrBorder.color;
+    return `rgba(${Math.floor(red*255.999)}, ${Math.floor(green*255.999)}, ${Math.floor(blue*255.999)}, ${Math.floor(alpha*1000)/1000})`;
+  }
+
+  const styleMap = new Map();
+  function createSymbolOverrides(symbol, symbolVariantName) {
+    const keys = Object.keys(symbol);
+    for (let i = 0 ; i < keys.length; i++) {
+      const key = keys[i];
+      const symbolValue = symbol[key];
+      if (key === 'do_objectID') {
+        objectID = symbolValue;
+      }
+      if (Array.isArray(symbolValue)) {
+        symbolValue.forEach((nestedJson, i) => createSymbolOverrides(nestedJson, symbolVariantName));
+      } else if (!excludeKeys.has(key) && typeof symbolValue === 'string') {
+        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
+        // const overrideValue = {
+        //   "_class": "overrideValue",
+        //   "overrideName": `${objectID}_${key}Value`,
+        //   "value": jsonValue
+        // };
+        // instance.overrideValues.push(overrideValue);
+      } else if (typeof symbolValue === 'object') {
+        // If we're in style, do fill, borders and textStyle comparisons
+        // If they differ, create a new SharedStyle and assign it to the symbol instance.
+        if (key === 'style') {
+          let differs = false;
+          let textDiffers = false;
+          const override = {};
+          const textOverride = {};
+          if (symbolValue.borders && symbolValue.borders.length > 0) {
+            differs = true;
+            override.borders = symbolValue.borders;
+          }
+          if (symbolValue.fills && symbolValue.fills.length > 0) {
+            differs = true;
+            override.fills = symbolValue.fills;
+          }
+          if (symbolValue.textStyle) {
+            textDiffers = true;
+            textOverride.textStyle = symbolValue.textStyle;
+          }
+          if (differs) {
+            // console.log('style override', JSON.stringify(override, null, 4));
+            if (!symbol.sharedStyleID) {
+              var styleKey = JSON.stringify(override);
+              if (styleMap.has(styleKey)) {
+                symbol.sharedStyleID = styleMap.get(styleKey);
+              } else {
+                var styleName = "";
+                if (override.fills) {
+                  styleName += "Fill " + override.fills.map(b => `${colorString(b)}` ).join(", ");
+                }
+                if (override.borders) {
+                  if (override.fills) styleName += ' / ';
+                  styleName += "02 Border " + override.borders.map(b => `${Math.floor(100*b.thickness)/100}px ${positionString(b.position)} ${colorString(b)}` ).join(", ");
+                } else if (override.fills) {
+                  styleName += ' / 01 No Border';
+                }
+                // Make a shared style for the SymbolMaster
+                const sharedStyle = new SharedStyle(null, {
+                  name: styleName,
+                  do_objectID: uuid(),
+                  _class: 'sharedStyle',
+                  value: symbolValue
+                });
+                sketch.addLayerStyle(sharedStyle);
+                symbol.sharedStyleID = sharedStyle.do_objectID;
+                styleMap.set(styleKey, symbol.sharedStyleID);
+              }
+            }
+          }
+          if (textDiffers) {
+            // console.log('textStyle override', JSON.stringify(textOverride, null, 4));
+            if (!symbol.sharedStyleID) {
+              // Make a shared style for the SymbolMaster
+              const sharedStyle = new SharedStyle(null, {
+                name: symbolVariantName,
+                do_objectID: uuid(),
+                _class: 'sharedStyle',
+                value: symbolValue
+              });
+              sketch.addTextStyle(sharedStyle);
+              symbol.sharedStyleID = sharedStyle.do_objectID;
+              // console.log(symbolVariantName, variantName);
+            }
+          }
+        }
+        createSymbolOverrides(symbolValue, symbolVariantName);
+      }
+    }
+  }
 
   function isSymbolInstanceOf(instance, symbol, json, objectID = '', symbolName, parentFrames) {
     if (!symbol || !json) {
@@ -517,6 +631,7 @@ function findLayers(symbol, predicate, results=[]) {
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
+        createSymbolOverrides(symbol, symbol.name);
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
