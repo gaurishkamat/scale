@@ -473,15 +473,19 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
-          * (optional) Label for close button
-         */
-        "closeLabel"?: string;
-        /**
-          * (optional) Modal class
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) If true, the Modal is open.
+          * (optional) Transition duration
+         */
+        "duration"?: number;
+        /**
+          * Modal heading
+         */
+        "heading": string;
+        /**
+          * (optional) If `true`, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -492,10 +496,6 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) Transition overrides
-         */
-        "transitions"?: any;
         /**
           * (optional) Modal variant
          */
@@ -1578,19 +1578,21 @@ declare namespace LocalJSX {
     }
     interface ScaleModal {
         /**
-          * (optional) Label for close button
-         */
-        "closeLabel"?: string;
-        /**
-          * (optional) Modal class
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) Callback fired when the component requests to be closed.
+          * (optional) Transition duration
          */
-        "onScaleClose"?: (event: CustomEvent<MouseEvent | KeyboardEvent>) => void;
+        "duration"?: number;
         /**
-          * (optional) If true, the Modal is open.
+          * Modal heading
+         */
+        "heading"?: string;
+        "onScaleClose"?: (event: CustomEvent<any>) => void;
+        "onScaleOpen"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) If `true`, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -1601,10 +1603,6 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) Transition overrides
-         */
-        "transitions"?: any;
         /**
           * (optional) Modal variant
          */

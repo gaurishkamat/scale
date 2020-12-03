@@ -671,76 +671,31 @@
     </scale-link>
 
     <h3>Modal with header</h3>
-    <scale-button id="show-modal">
-      show modal
-    </scale-button>
-    <scale-modal id="modal-default" opened="false">
-      <span slot="header">Header content</span> content in the modal slot
+    <scale-button id="modal-trigger">Open modal</scale-button>
+
+    <scale-modal id="modal" heading="This is the heading">
+      <p>Some content here</p>
+      <p><input type="text" /></p>
+      <p><input type="text" /></p>
+      <div slot="actions">
+        <scale-button variant="secondary">Cancel</scale-button>
+        <scale-button>Pay</scale-button>
+      </div>
     </scale-modal>
-
+    
     <script>
-      const showModal = document.querySelector('#show-modal');
-      const modal = document.getElementById('modal-default');
-      showModal.addEventListener('click', () => {
-        modal.setAttribute('opened', 'true');
-      });
-
-      modal.addEventListener('scaleClose', () => {
-        modal.removeAttribute('opened');
-      });
-    </script>
-    <h3>Modal without header</h3>
-    <scale-button id="show-modal-without-header">
-      show modal without header
-    </scale-button>
-    <scale-modal id="modal-without-header" opened="false">content</scale-modal>
-    <script>
-      const showModalWithoutHeader = document.querySelector(
-        '#show-modal-without-header'
-      );
-      const modalWithoutHeader = document.getElementById(
-        'modal-without-header'
-      );
-      showModalWithoutHeader.addEventListener('click', () => {
-        modalWithoutHeader.setAttribute('opened', 'true');
-      });
-      modalWithoutHeader.addEventListener('scaleClose', () => {
-        modalWithoutHeader.removeAttribute('opened');
-      });
-    </script>
-
-    <h3>Modal with header and buttons</h3>
-    <scale-button id="show-modal-with-header-and-buttons">
-      show modal with header and buttons
-    </scale-button>
-    <scale-modal id="modal-with-header-and-buttons" opened="false" size="large">
-      <span slot="header">Header</span> content of the modal with header and
-      buttons
-      <span slot="close">Close</span>
-      <span slot="modal-actions">
-        <scale-button id="cancel-btn">cancel</scale-button>
-        <scale-button id="submit-btn">submit</scale-button>
-      </span>
-    </scale-modal>
-
-    <script>
-      const showModalWithHeaderAndButtons = document.querySelector(
-        '#show-modal-with-header-and-buttons'
-      );
-      const modalWithHeaderAndButtons = document.getElementById(
-        'modal-with-header-and-buttons'
-      );
-      showModalWithHeaderAndButtons.addEventListener('click', () => {
-        modalWithHeaderAndButtons.setAttribute('opened', 'true');
-      });
-
-      modalWithHeaderAndButtons.addEventListener('scaleClose', () => {
-        modalWithHeaderAndButtons.removeAttribute('opened');
-      });
-
-      document.getElementById('cancel-btn').addEventListener('click', () => {
-        modalWithHeaderAndButtons.removeAttribute('opened');
-      });
+      const $button = document.getElementById('modal-trigger');
+      const $modal = document.getElementById('modal');
+    
+      $button.onclick = () => {
+        let opened = $modal.getAttribute('opened') === 'true';
+        opened = !opened;
+        $modal.setAttribute('opened', opened);
+      };
+    
+      /* setTimeout(() => {
+        $modal.setAttribute('opened', true)
+      }, 1000) */
     </script>
 
     <h3>Switch</h3>

@@ -1,202 +1,168 @@
-import '@proyecto26/animatable-component';
-import { KEYFRAMES } from '@proyecto26/animatable-component';
 import {
   Component,
   Prop,
+  State,
   h,
   Element,
   Host,
   Watch,
   Event,
   EventEmitter,
+  Listen,
 } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
-import { combineObjects, CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { StyleSheet } from 'jss';
+import { CssClassMap } from '../../utils/utils';
 import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { getTheme } from '../../theme/theme';
+import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
+
+function animateTo(
+  element: HTMLElement,
+  keyframes: Keyframe,
+  options?: KeyframeAnimationOptions
+) {
+  const anim = element.animate(keyframes, { ...options, fill: 'both' });
+  anim.addEventListener('finish', () => {
+    // @ts-ignore
+    anim.commitStyles();
+    anim.cancel();
+  });
+
+  return anim;
+}
+
+/*
+  TODO
+  ====
+  - [ ] add styles
+  - [ ] handle scrolling (styles)
+  - [ ] hide .modal__actions if no slot
+  - [ ] close on backdrop click
+  - [ ] trigger events
+  - [ ] save focus of last element previous to opening the modal
+  - [ ] move animateTo to utils, document source
+  - [ ] make sure modal content is visible in mobile-landscape
+  - [ ] add close-label prop and use it
+  - [ ] add HCM border
+  - [ ] add align-right prop
+ */
 
 @Component({
   tag: 'scale-modal',
   shadow: true,
 })
 export class Modal implements Base {
-  hasSlotHeader: boolean;
-  hasSlotClose: boolean;
-  hasSlotActions: boolean;
-  combinedTransitions: any;
-  closeLink: HTMLElement;
+  closeButton: HTMLButtonElement | HTMLScaleButtonElement;
+  modalContainer: HTMLElement;
+  focusableElements: HTMLElement[] = [];
 
-  @Element() hostElement: HTMLStencilElement;
-  /** (optional) Transition overrides */
-  @Prop() transitions?: any;
-  /** (optional) Modal class */
+  @Element() hostElement: HTMLElement;
+  /** (optional) Custom class */
   @Prop() customClass?: string = '';
+  /** Modal heading */
+  @Prop() heading: string;
   /** (optional) Modal size */
   @Prop() size?: string = 'default';
   /** (optional) Modal variant */
-  @Prop() variant?: string = '';
-  /** (optional) If true, the Modal is open. */
-  @Prop() opened?: boolean = false;
-  /** (optional) Label for close button */
-  @Prop() closeLabel?: string = 'Close Pop-up';
+  @Prop() variant?: string;
+  /** (optional) If `true`, the Modal is open. */
+  @Prop({ reflect: true }) opened?: boolean = false;
+  /** (optional) Transition duration */
+  @Prop() duration?: number = 200;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
-  /** (optional) Callback fired when the component requests to be closed. */
-  @Event() scaleClose?: EventEmitter<MouseEvent | KeyboardEvent>;
+  @State() isOpen: boolean = false;
 
-  constructor() {
-    this.close = this.close.bind(this);
-    this.animateComponent = this.animateComponent.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+  @Event() scaleOpen?: EventEmitter;
+  @Event() scaleClose?: EventEmitter;
+
+  @Listen('keydown', { target: 'window' })
+  handleKeypress(event: KeyboardEvent) {
+    if (!this.isOpen) {
+      return;
+    }
+    if (event.key === 'Escape') {
+      this.opened = false;
+    }
+  }
+
+  componentDidUnload() {}
+  componentWillUpdate() {}
+
+  componentDidLoad() {
+    this.focusableElements = queryShadowRoot(
+      this.hostElement.shadowRoot,
+      el => isHidden(el) || el.matches('[data-focus-trap-edge]'),
+      isFocusable
+    );
+  }
+
+  getFirstFocusableElement(): HTMLElement | null {
+    return this.focusableElements[0];
+  }
+
+  getLastFocusableElement(): HTMLElement | null {
+    return this.focusableElements[this.focusableElements.length - 1];
+  }
+
+  handleTopFocus = () => {
+    this.attemptFocus(this.getLastFocusableElement());
+  };
+
+  handleBottomFocus = () => {
+    this.attemptFocus(this.getFirstFocusableElement());
+  };
+
+  attemptFocus(element: HTMLElement | null) {
+    if (element == null) {
+      this.closeButton.focus();
+      return;
+    }
+    element.focus();
   }
 
   @Watch('opened')
-  async watchHandler(newValue) {
-    await this.animateComponent();
+  openedChanged(newValue) {
     if (newValue === true) {
-      this.focusCloseLink();
+      this.open();
+    } else {
+      this.close();
     }
   }
 
-  focusCloseLink() {
+  open() {
+    this.isOpen = true;
     try {
-      /* Accessibility: avoid focus trap */
-      this.closeLink.focus();
+      const anim = animateTo(
+        this.modalContainer,
+        { opacity: 1 },
+        { duration: this.duration }
+      );
+      anim.addEventListener('finish', () => {
+        this.attemptFocus(this.getFirstFocusableElement());
+      });
     } catch (err) {}
   }
 
-  async close(event?: MouseEvent | KeyboardEvent) {
-    this.scaleClose.emit(event);
-  }
-
-  waitForChildren(children) {
-    return new Promise(resolve => {
-      const findChildren = () =>
-        children.length
-          ? resolve()
-          : setTimeout(() => {
-              findChildren();
-            });
-
-      findChildren();
-    });
-  }
-
-  decorateScrollContainer() {
-    const scrollContainer = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes['modal__scroll-container']}`
-    );
-    const modalHeader = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal__header}`
-    );
-    const modalActions = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal__actions}`
-    );
-    setTimeout(() => {
-      const hasVerticalScrollbar =
-        scrollContainer.scrollHeight > scrollContainer.clientHeight;
-
-      if (hasVerticalScrollbar) {
-        modalHeader.classList.add(
-          this.stylesheet.classes['modal__header-scroll']
-        );
-        if (modalActions) {
-          modalActions.classList.add(
-            this.stylesheet.classes['modal__actions-scroll']
-          );
-        }
-      }
-    });
-  }
-
-  async animateComponent() {
-    const direction = this.opened ? 'IN' : 'OUT';
-
-    // in this case we are doing SSR, so we can skip animations
-    if (typeof window === 'undefined' || typeof window.Audio === 'undefined') {
-      return null;
-    }
-    await this.waitForChildren(this.hostElement.shadowRoot.children);
-
-    this.decorateScrollContainer();
-
-    let combinedTransitions;
+  close() {
     try {
-      combinedTransitions = JSON.parse(this.transitions);
+      const anim = animateTo(
+        this.modalContainer,
+        { opacity: 0 },
+        { duration: this.duration }
+      );
+      anim.addEventListener('finish', () => {
+        this.isOpen = false;
+      });
     } catch (err) {
-      combinedTransitions = this.transitions;
+      this.isOpen = false;
     }
-    combinedTransitions = combineObjects(
-      getTheme().components.Modal.transitions,
-      combinedTransitions
-    );
-
-    const { backDrop, modalContent } = combinedTransitions;
-    const { transition: transitionModal, ...optionsModal } = modalContent[
-      direction
-    ];
-    const { transition: transitionBackDrop, ...optionsBackDrop } = backDrop[
-      direction
-    ];
-
-    const animationModal = this.hostElement.shadowRoot
-      .querySelector(`.${this.stylesheet.classes.modal__content}`)
-      .animate(KEYFRAMES[transitionModal], optionsModal);
-
-    const animationBackdrop = this.hostElement.shadowRoot
-      .querySelector(`.${this.stylesheet.classes.modal__backdrop}`)
-      .animate(KEYFRAMES[transitionBackDrop], optionsBackDrop);
-
-    const modalClassList = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal}`
-    ).classList;
-
-    if (direction === 'IN') {
-      modalClassList.add(this.stylesheet.classes['modal--opened']);
-      document.addEventListener('keydown', this.handleKeyDown);
-    }
-
-    animationBackdrop.play();
-    animationModal.play();
-
-    return new Promise(resolve => {
-      animationModal.onfinish = function() {
-        if (direction === 'OUT') {
-          modalClassList.remove(this.stylesheet.classes['modal--opened']);
-          document.removeEventListener('keydown', this.handleKeyDown);
-        }
-        resolve();
-      }.bind(this);
-    });
-  }
-
-  componentWillLoad() {
-    this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
-    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
-    this.hasSlotActions = !!this.hostElement.querySelector(
-      '[slot="modal-actions"]'
-    );
-  }
-
-  componentWillUpdate() {}
-  componentDidUnload() {}
-
-  handleKeyDown(event) {
-    if (event.key === 'Escape') {
-      this.close(event);
-    }
-  }
-
-  componentDidLoad() {
-    this.animateComponent();
   }
 
   render() {
@@ -205,47 +171,42 @@ export class Modal implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <animatable-component>
-          <div class={this.getCssClassMap()}>
-            <div class={classes.modal__backdrop} onClick={this.close}></div>
-
-            <div class={classes.modal__content}>
-              {this.hasSlotHeader && (
-                <div class={classes.modal__header}>
-                  <slot name="header" />
-                  <a
-                    ref={el => (this.closeLink = el)}
-                    class={classes.modal__close}
-                    onClick={this.close}
-                    onKeyPress={this.close}
-                    aria-label={this.closeLabel}
-                    tabindex="0"
-                  >
-                    {this.hasSlotClose ? (
-                      <div class={classes['modal__close-icon']}>
-                        <slot name="close" />
-                      </div>
-                    ) : (
-                      <scale-icon-action-circle-close></scale-icon-action-circle-close>
-                    )}
-                  </a>
-                </div>
-              )}
-
-              <div class={classes['modal__scroll-container']}>
-                <div class={classes.modal__body}>
-                  <slot />
-                </div>
-              </div>
-
-              {this.hasSlotActions && (
-                <div class={classes.modal__actions}>
-                  <slot name="modal-actions" />
-                </div>
-              )}
+        <div
+          ref={el => (this.modalContainer = el)}
+          class={this.getCssClassMap()}
+        >
+          <div
+            data-focus-trap-edge
+            onFocus={this.handleTopFocus}
+            tabindex="0"
+          ></div>
+          <div class={classes['modal__window']} role="dialog" aria-modal="true">
+            <div class={classes['modal__header']}>
+              <h2>{this.heading}</h2>
+              <button
+                ref={el => (this.closeButton = el)}
+                class={classes['modal__close-button']}
+                onClick={() => (this.opened = false)}
+              >
+                <slot name="close-icon">
+                  {/* <scale-icon-action-circle-close /> */}
+                  <span>(x)</span>
+                </slot>
+              </button>
+            </div>
+            <div class={classes['modal__body']}>
+              <slot></slot>
+            </div>
+            <div class={classes['modal__actions']}>
+              <slot name="actions"></slot>
             </div>
           </div>
-        </animatable-component>
+          <div
+            data-focus-trap-edge
+            onFocus={this.handleBottomFocus}
+            tabindex="0"
+          ></div>
+        </div>
       </Host>
     );
   }
@@ -255,6 +216,7 @@ export class Modal implements Base {
     return classNames(
       classes.modal,
       this.customClass && this.customClass,
+      this.isOpen && classes['modal--is-open'],
       this.size && classes[`modal--size-${this.size}`],
       this.variant && classes[`modal--variant-${this.variant}`]
     );
