@@ -143,6 +143,7 @@ export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
     customClass: {} as PropOptions<Components.ScaleAppFooter['customClass']>,
     claimLang: {} as PropOptions<Components.ScaleAppFooter['claimLang']>,
     footerNavigation: {} as PropOptions<Components.ScaleAppFooter['footerNavigation']>,
+    variant: {} as PropOptions<Components.ScaleAppFooter['variant']>,
   },
 
 

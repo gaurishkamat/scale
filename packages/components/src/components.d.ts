@@ -77,6 +77,7 @@ export namespace Components {
         "claimLang": string;
         "customClass"?: string;
         "footerNavigation"?: any;
+        "variant"?: string;
     }
     interface ScaleAppHeader {
         "activeRouteId": string;
@@ -1164,6 +1165,7 @@ declare namespace LocalJSX {
         "claimLang"?: string;
         "customClass"?: string;
         "footerNavigation"?: any;
+        "variant"?: string;
     }
     interface ScaleAppHeader {
         "activeRouteId"?: string;

@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppFooter extends Components.ScaleAppFooter {}
 @ProxyCmp({
-  inputs: ['claimLang', 'customClass', 'footerNavigation']
+  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
 })
 @Component({
   selector: 'scale-app-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claimLang', 'customClass', 'footerNavigation']
+  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
 })
 export class ScaleAppFooter {
   protected el: HTMLElement;

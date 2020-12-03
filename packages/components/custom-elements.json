@@ -145,6 +145,10 @@
         {
           "name": "footer-navigation",
           "description": ""
+        },
+        {
+          "name": "variant",
+          "description": ""
         }
       ]
     },

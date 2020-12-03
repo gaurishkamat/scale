@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+.footer--variant-minimal .footer {
+  border-top: 1px solid #d0d0d0;
+  color: #6b6b6b;
+  background: #ffffff;
+  padding: 24px;
+}
+
 .footer-mask {
   height: 8px;
   position: relative;
@@ -15,6 +22,10 @@
   background: white;
   z-index: 1;
   border-radius: 0 0 8px 8px;
+}
+
+.footer--variant-minimal .footer-mask {
+  display: none;
 }
 
 .footer-branding .logo svg {
@@ -29,6 +40,10 @@
 .footer-navigation a {
   color: #fff;
   text-decoration: none;
+}
+
+.footer--variant-minimal .footer-navigation a {
+  color: #6b6b6b;
 }
 
 .footer-navigation ul {
@@ -48,6 +63,7 @@
 }
 
 .footer-navigation li a:hover {
+  color: #f90984;
   text-decoration: underline;
 }
 .footer-navigation li a:active {
@@ -69,6 +85,18 @@
   width: auto;
   height: 16px;
   margin-right: 8px;
+}
+
+.footer--variant-minimal .footer-copyright {
+  justify-content: flex-start;
+}
+
+.footer--variant-minimal .footer-branding {
+  display: none;
+}
+
+.footer--variant-minimal .footer-content {
+  grid-template-areas: 'copyright navigation navigation';
 }
 
 @media (max-width: 639px) {
@@ -116,11 +144,6 @@
     display: flex;
     align-items: center;
   }
-
-  .footer-navigation li a {
-    /*padding: 8px;*/
-    /*margin: -8px 0;*/
-  }
 }
 
 @media (min-width: 640px) and (max-width: 1295px) {
@@ -131,6 +154,7 @@
       'branding ....... .......'
       'copyright navigation navigation';
   }
+
   .footer-branding {
     margin-bottom: 24px;
   }

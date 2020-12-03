@@ -22,6 +22,7 @@ export class AppFooter {
   @Prop() customClass?: string = '';
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
+  @Prop() variant?: string = 'standard';
 
   footerMenu() {
     return (
@@ -67,24 +68,30 @@ export class AppFooter {
   render() {
     return (
       <Host>
-        <div class="footer-mask"></div>
-        <footer class={this.getCssClassMap()}>
-          {this.iconDefs()}
-          <div class="footer-content">
-            <div class="footer-branding">
-              <app-logo claim claimLang={this.claimLang}></app-logo>
+        <div class={this.getCssClassMap()}>
+          <div class="footer-mask"></div>
+          <footer class="footer">
+            {this.iconDefs()}
+            <div class="footer-content">
+              <div class="footer-branding">
+                <app-logo claim claimLang={this.claimLang}></app-logo>
+              </div>
+              <div class="footer-copyright">© Deutsche Telekom GmbH</div>
+              <nav aria-label="bottom" class="footer-navigation">
+                {this.footerMenu()}
+              </nav>
             </div>
-            <div class="footer-copyright">© Deutsche Telekom GmbH</div>
-            <nav aria-label="bottom" class="footer-navigation">
-              {this.footerMenu()}
-            </nav>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </Host>
     );
   }
 
   getCssClassMap(): CssClassMap {
-    return classNames('footer', this.customClass && this.customClass);
+    return classNames(
+      'footer-container',
+      this.customClass && this.customClass,
+      this.variant && `footer--variant-${this.variant}`
+    );
   }
 }
