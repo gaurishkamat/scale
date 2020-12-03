@@ -6,7 +6,10 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader'
+      esmLoaderPath: '../loader',
+      copy: [
+        { src: 'index.json', warn: true }
+      ]
     },
     {
       type: 'dist-custom-elements-bundle'
