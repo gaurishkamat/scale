@@ -54,6 +54,7 @@ const Usage = props => {
     checkbox,
     collapsible,
     divider,
+    "icon-library": icon,
     icon,
     link: linkMarkdown,
     list,
