@@ -55,7 +55,6 @@ export class Tag implements Base {
       : {};
     const iconProps = !this.disabled
       ? {
-          focusable: true,
           onClick: event => this.handleClose(event),
         }
       : {};
