@@ -71,7 +71,12 @@ customElements.define('scale-icon-action-favorite', ScaleIconActionFavorite);
     return (
       <div key={category.category}>
         <h3>{category.label}</h3>
-        <div style={{ marginTop: 32 }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gap: 16,
+          marginTop: 32
+        }}>
           {category.items.map(item => {
             let markup = () => ({
               __html: `<scale-icon-${category.category}-${item} />`
@@ -79,7 +84,7 @@ customElements.define('scale-icon-action-favorite', ScaleIconActionFavorite);
             return (
               <div key={item}>
                 <span>
-                  <span style={{ color: '#7C7C7C' }}>scale-icon-{category.category}-</span>{item}
+                  <span style={{ color: '#7C7C7C' }}>{category.category}-</span>{item}
                 </span>
                 <Canvas mdxSource={markup().__html}>
                   <span dangerouslySetInnerHTML={markup()}></span>
