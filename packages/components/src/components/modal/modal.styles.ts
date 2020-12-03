@@ -23,13 +23,33 @@ export const styles: JssStyle = {
   },
 
   'modal--is-open': {},
+  'modal--has-actions': {},
+
+  modal__backdrop: {
+    position: 'absolute',
+    zIndex: 0,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
 
   modal__window: {
+    position: 'relative',
+    zIndex: 1,
     width: 500,
     height: 'auto',
     marginTop: 80,
     marginBottom: 80,
-    border: '1px solid gold',
     backgroundColor: 'white',
+  },
+
+  modal__actions: {
+    display: 'none',
+    border: '1px solid gold',
+
+    '$modal--has-actions &': {
+      display: 'flex',
+    },
   },
 };

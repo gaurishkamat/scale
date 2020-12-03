@@ -38,8 +38,8 @@ function animateTo(
   ====
   - [ ] add styles
   - [ ] handle scrolling (styles)
-  - [ ] hide .modal__actions if no slot
-  - [ ] close on backdrop click
+  - [x] hide .modal__actions if no slot
+  - [x] close on backdrop click
   - [ ] trigger events
   - [ ] save focus of last element previous to opening the modal
   - [ ] move animateTo to utils, document source
@@ -78,6 +78,7 @@ export class Modal implements Base {
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
   @State() isOpen: boolean = false;
+  @State() hasActionsSlot: boolean = false;
 
   @Event() scaleOpen?: EventEmitter;
   @Event() scaleClose?: EventEmitter;
@@ -94,6 +95,11 @@ export class Modal implements Base {
 
   componentDidUnload() {}
   componentWillUpdate() {}
+
+  componentWillLoad() {
+    this.hasActionsSlot =
+      this.hostElement.querySelector('[slot="actions"]') != null;
+  }
 
   componentDidLoad() {
     this.focusableElements = queryShadowRoot(
@@ -176,6 +182,10 @@ export class Modal implements Base {
           class={this.getCssClassMap()}
         >
           <div
+            class={classes['modal__backdrop']}
+            onClick={() => (this.opened = false)}
+          ></div>
+          <div
             data-focus-trap-edge
             onFocus={this.handleTopFocus}
             tabindex="0"
@@ -217,6 +227,7 @@ export class Modal implements Base {
       classes.modal,
       this.customClass && this.customClass,
       this.isOpen && classes['modal--is-open'],
+      this.hasActionsSlot && classes['modal--has-actions'],
       this.size && classes[`modal--size-${this.size}`],
       this.variant && classes[`modal--variant-${this.variant}`]
     );

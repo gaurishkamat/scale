@@ -682,17 +682,17 @@
         <scale-button>Pay</scale-button>
       </div>
     </scale-modal>
-    
+
     <script>
       const $button = document.getElementById('modal-trigger');
       const $modal = document.getElementById('modal');
-    
+
       $button.onclick = () => {
         let opened = $modal.getAttribute('opened') === 'true';
         opened = !opened;
         $modal.setAttribute('opened', opened);
       };
-    
+
       /* setTimeout(() => {
         $modal.setAttribute('opened', true)
       }, 1000) */
