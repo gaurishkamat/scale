@@ -43,10 +43,26 @@
 .footer-navigation li a {
   display: flex;
   align-items: center;
+  padding: 8px;
+  margin: -8px 0;
 }
 
 .footer-navigation li a:hover {
   text-decoration: underline;
+}
+.footer-navigation li a:active {
+  color: #cb0068;
+}
+
+.footer-navigation li a:active:focus {
+  color: #cb0068;
+  box-shadow: none;
+}
+
+.footer-navigation li a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e20074;
+  border-radius: 4px;
 }
 
 .footer-navigation svg {
@@ -64,6 +80,10 @@
   }
   .footer-navigation ul {
     line-height: 32px;
+  }
+  .footer-navigation li a {
+    padding: 4px;
+    margin: -8px -4px;
   }
 }
 
@@ -97,8 +117,9 @@
     align-items: center;
   }
 
-  .footer-navigation li {
-    margin-left: 18px;
+  .footer-navigation li a {
+    /*padding: 8px;*/
+    /*margin: -8px 0;*/
   }
 }
 
