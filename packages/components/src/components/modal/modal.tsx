@@ -36,17 +36,18 @@ function animateTo(
 /*
   TODO
   ====
-  - [ ] add styles
-  - [ ] handle scrolling (styles)
   - [x] hide .modal__actions if no slot
   - [x] close on backdrop click
-  - [ ] trigger events
-  - [ ] save focus of last element previous to opening the modal
-  - [ ] move animateTo to utils, document source
+  - [ ] add styles
+  - [ ] handle scrolling (styles)
   - [ ] make sure modal content is visible in mobile-landscape
   - [ ] add close-label prop and use it
   - [ ] add HCM border
   - [ ] add align-right prop
+
+  - [ ] trigger events
+  - [ ] save focus of last element previous to opening the modal
+  - [ ] move animateTo to utils, document source
  */
 
 @Component({
