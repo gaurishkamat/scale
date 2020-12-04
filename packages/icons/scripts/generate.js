@@ -180,7 +180,7 @@ async function main() {
     );
     // Create index.json file, useful for documentation
     await fs.writeFile(
-      path.join(OUTPUT_PATH, '..', 'index.json'),
+      path.join(OUTPUT_PATH, '..', 'scale-icons.json'),
       JSON.stringify(indexByCategory, null, 2)
     );
     // The same for sets
