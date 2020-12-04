@@ -3,7 +3,7 @@
  */
 export function animateTo(
   element: HTMLElement,
-  keyframes: Keyframe,
+  keyframes: Keyframe | Keyframe[],
   options?: KeyframeAnimationOptions
 ) {
   const anim = element.animate(keyframes, { ...options, fill: 'both' });
@@ -15,3 +15,48 @@ export function animateTo(
 
   return anim;
 }
+
+const keyframeDefaults = {
+  easing: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+};
+
+export const keyframes = {
+  fadeIn: [
+    {
+      offset: 0,
+      ...keyframeDefaults,
+      opacity: 0,
+    },
+    {
+      offset: 1,
+      ...keyframeDefaults,
+      opacity: 1,
+    },
+  ],
+  fadeOut: [
+    {
+      offset: 0,
+      ...keyframeDefaults,
+      opacity: 1,
+    },
+    {
+      offset: 1,
+      ...keyframeDefaults,
+      opacity: 0,
+    },
+  ],
+  fadeInTop: [
+    {
+      offset: 0,
+      ...keyframeDefaults,
+      opacity: 0,
+      transform: 'translateY(-3rem)',
+    },
+    {
+      offset: 1,
+      ...keyframeDefaults,
+      opacity: 1,
+      transform: 'translateY(0)',
+    },
+  ],
+};

@@ -17,6 +17,7 @@ import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import Base from '../../utils/base-interface';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
+import { animateTo, keyframes } from '../../utils/animate';
 
 /*
   TODO
@@ -27,10 +28,10 @@ import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
   - [ ] add close-label prop and use it
   - [ ] add HCM border
   - [ ] add align-actions="left" prop and use it
-  - [ ] improve animation, get it working like previously
 
   - [ ] trigger events
   - [ ] save focus of last element previous to opening the modal
+  - [ ] put animations in tokens
  */
 
 @Component({
@@ -150,31 +151,30 @@ export class Modal implements Base {
   open() {
     this.isOpen = true;
     try {
-      /* const anim = animateTo(
-        this.modalContainer,
-        { opacity: 1 },
-        { duration: this.duration }
-      );
+      animateTo(this.modalWindow, keyframes.fadeInTop, {
+        duration: this.duration,
+        delay: this.duration * 0.5,
+      });
+      const anim = animateTo(this.modalContainer, keyframes.fadeIn, {
+        duration: this.duration,
+      });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-      }); */
+      });
     } catch (err) {}
   }
 
   close() {
     try {
-      /* const anim = animateTo(
-        this.modalContainer,
-        { opacity: 0 },
-        { duration: this.duration }
-      );
+      const anim = animateTo(this.modalContainer, keyframes.fadeOut, {
+        duration: this.duration,
+      });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-      }); */
+      });
     } catch (err) {
       this.isOpen = false;
     }
-    this.isOpen = false;
   }
 
   render() {
