@@ -91,7 +91,7 @@ export class Modal implements Base {
    * Set `hasActionsSlot` and `hasBody`.
    */
   componentWillRender() {
-    const actionSlots = this.hostElement.querySelectorAll('[slot="action"]')
+    const actionSlots = this.hostElement.querySelectorAll('[slot="action"]');
     const bodySlot = Array.from(
       this.hostElement.shadowRoot.querySelectorAll('slot')
     ).find(x => !x.name);
@@ -210,8 +210,7 @@ export class Modal implements Base {
                 onClick={() => (this.opened = false)}
               >
                 <slot name="close-icon">
-                  {/* <scale-icon-action-circle-close /> */}
-                  x
+                  {/* <scale-icon-action-circle-close /> */}x
                 </slot>
               </button>
             </div>

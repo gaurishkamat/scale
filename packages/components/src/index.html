@@ -76,7 +76,9 @@
 
     <scale-modal id="modal" heading="This is the heading">
       <p>Vegan shabby chic tbh aesthetic.</p>
-      <scale-button id="cancel" slot="action" variant="secondary">Cancel</scale-button>
+      <scale-button id="cancel" slot="action" variant="secondary"
+        >Cancel</scale-button
+      >
       <scale-button slot="action">Pay</scale-button>
     </scale-modal>
 
@@ -92,7 +94,7 @@
       };
       $cancel.onclick = () => {
         $modal.setAttribute('opened', false);
-      }
+      };
 
       setTimeout(() => {
         $modal.setAttribute('opened', true);
