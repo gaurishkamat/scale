@@ -746,16 +746,20 @@
       },
       "attributes": [
         {
-          "name": "close-label",
-          "description": "(optional) Label for close button"
+          "name": "custom-class",
+          "description": "(optional) Custom class"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Modal class"
+          "name": "duration",
+          "description": "(optional) Transition duration"
+        },
+        {
+          "name": "heading",
+          "description": "Modal heading"
         },
         {
           "name": "opened",
-          "description": "(optional) If true, the Modal is open."
+          "description": "(optional) If `true`, the Modal is open."
         },
         {
           "name": "size",
@@ -764,10 +768,6 @@
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "transitions",
-          "description": "(optional) Transition overrides"
         },
         {
           "name": "variant",

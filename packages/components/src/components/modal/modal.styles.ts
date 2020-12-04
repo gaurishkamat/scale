@@ -4,6 +4,7 @@ export const styles: JssStyle = {
   modal: {
     position: 'fixed',
     zIndex: 100,
+    boxSizing: 'border-box',
     display: 'none',
     justifyContent: 'center',
     alignItems: 'center',
@@ -11,18 +12,19 @@ export const styles: JssStyle = {
     left: 0,
     bottom: 0,
     width: '100%',
-    paddingLeft: 16,
-    paddingRight: 16,
-    opacity: 0,
+    paddingLeft: ({ spacing }) => spacing[4],
+    paddingRight: ({ spacing }) => spacing[4],
     background: 'rgba(108, 108, 108, 0.7)', // 'rgba(35,0,18,0.67)',
 
     '&$modal--is-open': {
       display: 'flex',
-      opacity: 1,
     },
   },
 
+  /* Do not remove, these create the hash selectors */
   'modal--is-open': {},
+  'modal--has-scroll': {},
+  'modal--has-body': {},
   'modal--has-actions': {},
 
   modal__backdrop: {
@@ -37,19 +39,83 @@ export const styles: JssStyle = {
   modal__window: {
     position: 'relative',
     zIndex: 1,
-    width: 500,
+    display: 'flex',
+    flexDirection: 'column',
+    width: 500, // TODO handle sizes, start with 100%
     height: 'auto',
-    marginTop: 80,
-    marginBottom: 80,
+    overflowY: 'auto',
+    minHeight: ({ spacing }) => `calc(1.5 * ${spacing[9]})`,
+    maxHeight: ({ spacing }) => `calc(100vh - (2 * ${spacing[9]}))`,
+    marginTop: ({ spacing }) => spacing[9],
+    marginBottom: ({ spacing }) => spacing[9],
     backgroundColor: 'white',
+    borderRadius: ({ radii }) => radii.modal,
+    boxShadow: ({ shadow }) => shadow.modal,
+
+    '& $modal__body-wrapper': {
+      flexShrink: '1',
+      overflowY: 'auto',
+    },
+
+    '$modal--has-scroll &': {
+      minHeight: ({ spacing }) => `calc(3 * ${spacing[9]})`,
+    },
+  },
+
+  modal__header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginLeft: ({ spacing }) => spacing[5],
+    marginRight: ({ spacing }) => spacing[5],
+    paddingTop: ({ spacing }) => spacing[5],
+    paddingBottom: ({ spacing }) => spacing[5],
+
+    '$modal--has-scroll &': {
+      borderBottom: ({ size, color }) =>
+        `${size.divider} solid ${color.divider}`,
+    },
+  },
+
+  modal__heading: {
+    margin: 0,
+    fontFamily: ({ type }) => type.family,
+    fontSize: ({ type }) => type.size_4,
+    fontWeight: ({ type }) => type.weight_extrabold,
+  },
+
+  'modal__body-wrapper': {
+    paddingLeft: ({ spacing }) => spacing[5],
+    paddingRight: ({ spacing }) => spacing[5],
+
+    '$modal--has-body &': {
+      minHeight: ({ spacing }) => spacing[7],
+    },
+  },
+
+  modal__body: {
+    '$modal--has-body &': {
+      /* These should collapse with tags like p, that's what we want */
+      marginTop: ({ spacing }) => spacing[5],
+      marginBottom: ({ spacing }) => spacing[5],
+    },
   },
 
   modal__actions: {
     display: 'none',
-    border: '1px solid gold',
+    justifyContent: 'flex-end',
+    padding: ({ spacing }) => spacing[5],
+
+    '& ::slotted(*)': {
+      marginLeft: ({ spacing }) => spacing[2],
+    },
 
     '$modal--has-actions &': {
       display: 'flex',
+    },
+
+    '$modal--has-scroll &': {
+      backgroundColor: ({ background }) => background.light,
     },
   },
 };

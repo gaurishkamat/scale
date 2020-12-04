@@ -18,36 +18,19 @@ import { CssInJs } from '../../utils/css-in-js';
 import Base from '../../utils/base-interface';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 
-function animateTo(
-  element: HTMLElement,
-  keyframes: Keyframe,
-  options?: KeyframeAnimationOptions
-) {
-  const anim = element.animate(keyframes, { ...options, fill: 'both' });
-  anim.addEventListener('finish', () => {
-    // @ts-ignore
-    anim.commitStyles();
-    anim.cancel();
-  });
-
-  return anim;
-}
-
 /*
   TODO
   ====
-  - [x] hide .modal__actions if no slot
-  - [x] close on backdrop click
-  - [ ] add styles
-  - [ ] handle scrolling (styles)
-  - [ ] make sure modal content is visible in mobile-landscape
+  - [ ] update storybook (add proper icon)
+  - [ ] handle scrolling logic (toggle has-scroll class)
+  - [ ] implement sizes
   - [ ] add close-label prop and use it
   - [ ] add HCM border
-  - [ ] add align-right prop
+  - [ ] add align-actions="left" prop and use it
+  - [ ] improve animation, get it working like previously
 
   - [ ] trigger events
   - [ ] save focus of last element previous to opening the modal
-  - [ ] move animateTo to utils, document source
  */
 
 @Component({
@@ -57,6 +40,7 @@ function animateTo(
 export class Modal implements Base {
   closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   modalContainer: HTMLElement;
+  modalWindow: HTMLElement;
   focusableElements: HTMLElement[] = [];
 
   @Element() hostElement: HTMLElement;
@@ -78,8 +62,14 @@ export class Modal implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
+  /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = false;
+  /** Check wheter there are actions slots, style accordingly */
   @State() hasActionsSlot: boolean = false;
+  /** Check wheter there's content in the body, style accordingly */
+  @State() hasBody: boolean = false;
+  /** Useful for toggling scroll-specific styles */
+  @State() hasScroll: boolean = false;
 
   @Event() scaleOpen?: EventEmitter;
   @Event() scaleClose?: EventEmitter;
@@ -97,11 +87,25 @@ export class Modal implements Base {
   componentDidUnload() {}
   componentWillUpdate() {}
 
-  componentWillLoad() {
-    this.hasActionsSlot =
-      this.hostElement.querySelector('[slot="actions"]') != null;
+  /**
+   * Set `hasActionsSlot` and `hasBody`.
+   */
+  componentWillRender() {
+    const actionSlots = this.hostElement.querySelectorAll('[slot="action"]')
+    const bodySlot = Array.from(
+      this.hostElement.shadowRoot.querySelectorAll('slot')
+    ).find(x => !x.name);
+
+    this.hasActionsSlot = actionSlots.length > 0;
+    if (bodySlot != null) {
+      this.hasBody = bodySlot.assignedElements().length > 0;
+    }
   }
 
+  /**
+   * Query all focusable elements and store them in `focusableElements`.
+   * Needed for the "focus trap" functionality.
+   */
   componentDidLoad() {
     this.focusableElements = queryShadowRoot(
       this.hostElement.shadowRoot,
@@ -146,30 +150,31 @@ export class Modal implements Base {
   open() {
     this.isOpen = true;
     try {
-      const anim = animateTo(
+      /* const anim = animateTo(
         this.modalContainer,
         { opacity: 1 },
         { duration: this.duration }
       );
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-      });
+      }); */
     } catch (err) {}
   }
 
   close() {
     try {
-      const anim = animateTo(
+      /* const anim = animateTo(
         this.modalContainer,
         { opacity: 0 },
         { duration: this.duration }
       );
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-      });
+      }); */
     } catch (err) {
       this.isOpen = false;
     }
+    this.isOpen = false;
   }
 
   render() {
@@ -191,9 +196,14 @@ export class Modal implements Base {
             onFocus={this.handleTopFocus}
             tabindex="0"
           ></div>
-          <div class={classes['modal__window']} role="dialog" aria-modal="true">
+          <div
+            class={classes['modal__window']}
+            ref={el => (this.modalWindow = el)}
+            role="dialog"
+            aria-modal="true"
+          >
             <div class={classes['modal__header']}>
-              <h2>{this.heading}</h2>
+              <h2 class={classes['modal__heading']}>{this.heading}</h2>
               <button
                 ref={el => (this.closeButton = el)}
                 class={classes['modal__close-button']}
@@ -201,15 +211,17 @@ export class Modal implements Base {
               >
                 <slot name="close-icon">
                   {/* <scale-icon-action-circle-close /> */}
-                  <span>(x)</span>
+                  x
                 </slot>
               </button>
             </div>
-            <div class={classes['modal__body']}>
-              <slot></slot>
+            <div class={classes['modal__body-wrapper']}>
+              <div class={classes['modal__body']}>
+                <slot></slot>
+              </div>
             </div>
             <div class={classes['modal__actions']}>
-              <slot name="actions"></slot>
+              <slot name="action"></slot>
             </div>
           </div>
           <div
@@ -229,6 +241,8 @@ export class Modal implements Base {
       this.customClass && this.customClass,
       this.isOpen && classes['modal--is-open'],
       this.hasActionsSlot && classes['modal--has-actions'],
+      this.hasScroll && classes['modal--has-scroll'],
+      this.hasBody && classes['modal--has-body'],
       this.size && classes[`modal--size-${this.size}`],
       this.variant && classes[`modal--variant-${this.variant}`]
     );
