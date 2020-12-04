@@ -12,7 +12,7 @@ export class Header {
   mobileMenuToggle?: HTMLAnchorElement;
   @Prop() claimLang: string;
   @Prop() customClass?: string = '';
-  @Prop() brandTitle?: string = '';
+  @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
   @Prop() sectorNavigation?: any[] = [];
@@ -175,8 +175,8 @@ export class Header {
   menuSegment() {
     return (
       <ul class="segment-navigation">
-        {this.brandTitle ? (
-          <li class="segment-navigation__brand-title">{this.brandTitle}</li>
+        {this.portalName ? (
+          <li class="segment-navigation__portal-name">{this.portalName}</li>
         ) : (
           this.sectorNavigation.map(item => (
             <li class="segment-navigation__item">

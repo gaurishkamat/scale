@@ -29,7 +29,9 @@ const levelEnhancer = (data, i = 0) => {
   shadow: true,
 })
 export class Shell {
+  // DEPRECATED - portalName should replace brandTitle
   @Prop() brandTitle?: string = '';
+  @Prop() portalName?: string = '';
   @Prop() claimLang?: string = 'de';
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
@@ -55,7 +57,7 @@ export class Shell {
         <div class={this.getCssClassMap()}>
           <scale-app-header
             scrolled={this.scrolled}
-            brandTitle={this.brandTitle}
+            portalName={this.portalName || this.brandTitle}
             mainNavigation={levelEnhancer(this.mainNavigation)}
             iconNavigation={levelEnhancer(this.iconNavigation)}
             sectorNavigation={levelEnhancer(this.sectorNavigation)}

@@ -72,7 +72,9 @@ export class Button implements Base {
         ev.preventDefault();
 
         const fakeButton = document.createElement('button');
-        // fakeButton.type = this.type;
+        if (this.type) {
+          fakeButton.type = this.type;
+        }
         fakeButton.style.display = 'none';
         form.appendChild(fakeButton);
         fakeButton.click();

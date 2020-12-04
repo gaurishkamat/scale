@@ -143,15 +143,15 @@
           "description": ""
         },
         {
-          "name": "brand-title",
-          "description": ""
-        },
-        {
           "name": "claim-lang",
           "description": ""
         },
         {
           "name": "custom-class",
+          "description": ""
+        },
+        {
+          "name": "portal-name",
           "description": ""
         },
         {
@@ -197,6 +197,10 @@
         },
         {
           "name": "main-navigation",
+          "description": ""
+        },
+        {
+          "name": "portal-name",
           "description": ""
         },
         {

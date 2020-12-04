@@ -7,6 +7,7 @@ const SVGO = require('svgo');
 const {
   kebabCase,
   camelCase,
+  startCase,
   upperFirst,
   groupBy,
   map,
@@ -87,6 +88,23 @@ async function main() {
     };
   });
 
+  /* Generate an "index" JSON file */
+
+  const groupedByCategory = groupBy(files, 'category');
+  const indexByCategory = [];
+
+  Object.keys(groupedByCategory)
+    .sort()
+    .forEach((key) => {
+      indexByCategory.push({
+        label: startCase(key),
+        category: key,
+        items: groupedByCategory[key]
+          .filter((x) => x.state === 'default')
+          .map((x) => x.name),
+      });
+    });
+
   /* The "iconset" feature (sets) is commented out for now as we don't see any use in it. */
 
   /* const groupedByCategory = groupBy(files, 'category');
@@ -159,6 +177,11 @@ async function main() {
           templateIcon(component)
         );
       })
+    );
+    // Create index.json file, useful for documentation
+    await fs.writeFile(
+      path.join(OUTPUT_PATH, '..', 'index.json'),
+      JSON.stringify(indexByCategory, null, 2)
     );
     // The same for sets
     /* await Promise.all(

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.0...v1.13.1) (2020-12-02)
+
+
+### Bug Fixes
+
+* header z-index and brandTitle rename and font fix ([2de7e77](https://gitlab.com/scale-ds/scale-telekom/commit/2de7e771a46f2bffd93ff4f7fc9e84691a05af6c))
+
+
+
+
+
 # [1.13.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.12.2...v1.13.0) (2020-11-23)
 
 **Note:** Version bump only for package @scaleds/components-angular-telekom

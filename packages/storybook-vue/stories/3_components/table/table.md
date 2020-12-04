@@ -1,61 +1,59 @@
-# Data Table
+# Table
 
-Data tables present data to the user in a structured and effective way.
+Tables help the user grasp and compare data easily.
 
 ## General
 
-### When  to Use
+A table view organizes data into rows and columns. Additional functions like filtering or sorting offer the user the option to adjust the presentation of the data to their own needs.
 
-Tables are mainly used to display sorted data.
+### When  to use
 
-### When Not to Use
+Use a table to:
 
-Do not use tables to sort or display content other than data.
+*	organize data so users can easily understand, analyze, and compare it.
+
+
+### When not to use
+
+Don't use a table when:
+
+*	a simple table can't map the complexity of the individual data and functions or
+*	you can show a data visualization instead.
+
 
 ## Elements
 
-![Image Name](assets/3_components/data-table/image-20200811091807192.png)
+![Image Name](assets/3_components/data-table/data-table-elements.png)
 
-### Table Row (1)
+### Column header (1)
 
-Data is organized in rows, each row displaying one object.
+The title in the column header describes the content of the respective column. By default, the column header is static. But you can also use the sorting function so users can sort the content in the column in ascending or descending order.
+The sort icon shows when the user has sorted the content in a column.
 
-### Table Row Hover
+### Table row (2)
 
-For improved readability, table rows can be highlighted through a mouse hover effect.
+The content of a row forms a data unit and differentiates from the other rows both visually and in terms of its content.
+The first cell of a row contains the title: a meaningful description of the data set.
+The other cells can contain a wide variety of content types - in addition to text, for example, are also tags, progress bars, or functions.
 
-#### Table Column (2)
+A mouse over highlights the rows to make them more readable.
 
-Columns hold the same types of data through all displayed objects.
+### Divider (3)
 
-### Table Cell Content (3)
-
-Table cells can contain any type of information or markup.
-
-### Table Header (4)
-
-The table header describes the content of the table columns.
-
-#### Static Header
-
-The default table header is descriptive and has no interactive functionality.
-
-#### Sorting Header
-
-With a sorting header, the objects in the table (organized in table rows) can be sorted by the contents of the respective column. The sorting order can be switched between ascending and descending.
+The dividing line separates the table rows from one another.
 
 ## Mobile
 
-The table structure and presentation are similar on both desktop and mobile. On mobile, horizontal swiping allows for viewing the complete content.
+The table structure and display are the same for both mobile and desktops. To see the entire table, the user can swipe horizontally.
 
-![Image Name](assets/3_components/data-table/image-20200812204851349.png)
+![Image Name](assets/3_components/data-table/data-table-mobile.png)
 
-## Best Practice
+## Best practices
 
-### Content Alignment
+### Content alignment
 
-The content of the first column should always be left-aligned. Content within other columns can be aligned left or right. The alignment of the respective table header should be adjusted accordingly.
+Always align the content of the first column to the left. Depending on the context or type of content, you can also align the content of the other columns to the right.
 
-## Related Components
+## Related components
 
 Divider

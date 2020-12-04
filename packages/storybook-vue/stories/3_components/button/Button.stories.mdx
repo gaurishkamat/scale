@@ -10,6 +10,9 @@ import { action } from "@storybook/addon-actions";
     variant: {
       control: { type: 'select', options: ['primary', 'secondary'] }
     },
+    type: {
+      control: { type: 'select', options: ['reset', 'submit', 'button'] }
+    },
     label: {
       defaultValue: 'Label',
       control: { type: 'text' }
@@ -40,6 +43,7 @@ export const Template = (args, { argTypes }) => ({
       :role="role"
       :size="size"
       :target="target"
+      :type="type"
       :variant="variant"
       @click="click"
     >
