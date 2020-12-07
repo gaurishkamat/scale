@@ -19,11 +19,13 @@
 
 ### Used by
 
+ - [scale-app-footer](../app-footer)
  - [scale-app-header](../app-header)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-app-footer --> app-logo
   scale-app-header --> app-logo
   style app-logo fill:#f9f,stroke:#333,stroke-width:4px
 ```

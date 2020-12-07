@@ -22,7 +22,7 @@
         padding: 0;
         margin: 0;
         /* height: 100%;
-    width: 100%; */
+width: 100%; */
       }
       .block {
         height: 800px;
@@ -38,6 +38,7 @@
       </div>
       <div class="block">Two</div>
     </scale-app-shell>
+    <scale-app-footer id="footer"></scale-app-footer>
 
     <script>
       const changeButton = document.getElementById('change-button');
@@ -48,6 +49,7 @@
             : 'Privatkunden';
       });
       const app = document.getElementById('app');
+      const footer = document.getElementById('footer');
       app.claimLang = 'de';
       app.activeRouteId = 'Smartphone-Tarife';
       app.activeSectorId = 'Privatkunden';
@@ -436,6 +438,30 @@
           href: '#kontakt',
         },
       ];
+      footer.footerNavigation = [
+        {
+          name: 'Contact',
+          id: 'Contact',
+          href: '#contact',
+        },
+        {
+          name: 'Terms and conditions',
+          id: 'Terms and conditions',
+          href: '#terms-and-conditions',
+        },
+        {
+          name: 'Imprint',
+          id: 'Imprint',
+          href: '#imprint',
+        },
+        {
+          name: 'Data privacy',
+          id: 'Data privacy',
+          href: '#data-privacy',
+          icon: 'alert-imprint-dataprivacy',
+        },
+      ];
+      footer.claimLang = 'de';
     </script>
   </body>
 </html>

@@ -14,6 +14,7 @@ export const AppNavigationMainMobile = /*@__PURE__*/createReactComponent<JSX.App
 export const AppNavigationSectorMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationSectorMobile, HTMLAppNavigationSectorMobileElement>('app-navigation-sector-mobile');
 export const ScaleAccordion = /*@__PURE__*/createReactComponent<JSX.ScaleAccordion, HTMLScaleAccordionElement>('scale-accordion');
 export const ScaleAlert = /*@__PURE__*/createReactComponent<JSX.ScaleAlert, HTMLScaleAlertElement>('scale-alert');
+export const ScaleAppFooter = /*@__PURE__*/createReactComponent<JSX.ScaleAppFooter, HTMLScaleAppFooterElement>('scale-app-footer');
 export const ScaleAppHeader = /*@__PURE__*/createReactComponent<JSX.ScaleAppHeader, HTMLScaleAppHeaderElement>('scale-app-header');
 export const ScaleAppShell = /*@__PURE__*/createReactComponent<JSX.ScaleAppShell, HTMLScaleAppShellElement>('scale-app-shell');
 export const ScaleBreadcrumb = /*@__PURE__*/createReactComponent<JSX.ScaleBreadcrumb, HTMLScaleBreadcrumbElement>('scale-breadcrumb');
