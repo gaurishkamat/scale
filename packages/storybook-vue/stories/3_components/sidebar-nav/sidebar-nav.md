@@ -8,11 +8,14 @@ Using the sidebar navigation is optional. It offers the option of mapping second
 
 ### When to use
 
+Use the sidebar navigation if:
+
 * your secondary navigation contains more than seven menu items or
 * the secondary navigation of an area should always be visible.
 
-
 ### When not to use
+
+Don't use the sidebar navigation if:
 
 * the main navigation can easily map all hierarchy levels.
 
