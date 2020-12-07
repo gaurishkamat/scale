@@ -25,6 +25,8 @@ Place other global links to Telekom destinations outside the current website her
 
 #### Language switch (4)
 
+> Coming soon
+
 With the language switch, users can select the desired language for the website. We offer two variants: simple text links or a dropdown.
 
 ## Language switch variants
@@ -42,6 +44,9 @@ Use a dropdown with country code for more than four languages or if there is not
 ![Image Name](assets/3_components/brand-header/EN-brandheader_language02.png)
 
 ### Portal name
+
+> Coming soon
+
 If you do not offer personal and business sections, you can display the portal name instead. This provides orientation for the user.
 
 ![Image Name](assets/3_components/brand-header/EN_brandheader_portalname.png)
@@ -77,6 +82,8 @@ For websites with only one level of hierarchy, the user clicks on a menu item to
 ![Image Name](assets/3_components/brand-header/EN-brandheader_nav2_nosubmenu.png)
 
 ### Dropdown
+
+> Coming soon
 
 The dropdown navigation can accommodate several levels of navigation and different depths within a navigation tree. As a general rule, the less levels the better.
 
