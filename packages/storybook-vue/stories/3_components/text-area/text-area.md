@@ -1,4 +1,4 @@
-# Textarea
+# Text Area
 
 A text area allows users to enter one or multiple lines of text.
 
