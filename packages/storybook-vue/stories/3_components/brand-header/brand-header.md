@@ -3,6 +3,7 @@
 The brand header identifies our brand and the purpose of a website in seconds. It makes Telekom websites instantly recognizable and ensures a consistent experience for all our products and services.
 
 ## General
+
 The brand header is made up of the brand bar and the navigation bar. It is the core component for carrying our customers into the world of Deutsche Telekom. The brand bar with Magenta background clearly identifies our brand. The navigation bar provides the most important navigation elements and core functions for the website.
 
 ## Brand bar
