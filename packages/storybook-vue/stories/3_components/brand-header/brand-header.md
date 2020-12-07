@@ -1,4 +1,4 @@
-# Brand Header
+# Brand Header & Navigation
 
 The brand header identifies our brand and the purpose of a website in seconds. It makes Telekom websites instantly recognizable and ensures a consistent experience for all our products and services.
 
