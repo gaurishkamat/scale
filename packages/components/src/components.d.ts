@@ -73,15 +73,21 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleAppFooter {
+        "claimLang": string;
+        "customClass"?: string;
+        "footerNavigation"?: any;
+        "variant"?: string;
+    }
     interface ScaleAppHeader {
         "activeRouteId": string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
-        "brandTitle"?: string;
         "claimLang": string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
+        "portalName"?: string;
         "scrolled": boolean;
         "sectorNavigation"?: any[];
     }
@@ -94,6 +100,7 @@ export namespace Components {
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
+        "portalName"?: string;
         "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
@@ -882,6 +889,12 @@ declare global {
         prototype: HTMLScaleAlertElement;
         new (): HTMLScaleAlertElement;
     };
+    interface HTMLScaleAppFooterElement extends Components.ScaleAppFooter, HTMLStencilElement {
+    }
+    var HTMLScaleAppFooterElement: {
+        prototype: HTMLScaleAppFooterElement;
+        new (): HTMLScaleAppFooterElement;
+    };
     interface HTMLScaleAppHeaderElement extends Components.ScaleAppHeader, HTMLStencilElement {
     }
     var HTMLScaleAppHeaderElement: {
@@ -1063,6 +1076,7 @@ declare global {
         "app-navigation-sector-mobile": HTMLAppNavigationSectorMobileElement;
         "scale-accordion": HTMLScaleAccordionElement;
         "scale-alert": HTMLScaleAlertElement;
+        "scale-app-footer": HTMLScaleAppFooterElement;
         "scale-app-header": HTMLScaleAppHeaderElement;
         "scale-app-shell": HTMLScaleAppShellElement;
         "scale-breadcrumb": HTMLScaleBreadcrumbElement;
@@ -1156,15 +1170,21 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface ScaleAppFooter {
+        "claimLang"?: string;
+        "customClass"?: string;
+        "footerNavigation"?: any;
+        "variant"?: string;
+    }
     interface ScaleAppHeader {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
-        "brandTitle"?: string;
         "claimLang"?: string;
         "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
+        "portalName"?: string;
         "scrolled"?: boolean;
         "sectorNavigation"?: any[];
     }
@@ -1177,6 +1197,7 @@ declare namespace LocalJSX {
         "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
+        "portalName"?: string;
         "sectorNavigation"?: any;
     }
     interface ScaleBreadcrumb {
@@ -1963,6 +1984,7 @@ declare namespace LocalJSX {
         "app-navigation-sector-mobile": AppNavigationSectorMobile;
         "scale-accordion": ScaleAccordion;
         "scale-alert": ScaleAlert;
+        "scale-app-footer": ScaleAppFooter;
         "scale-app-header": ScaleAppHeader;
         "scale-app-shell": ScaleAppShell;
         "scale-breadcrumb": ScaleBreadcrumb;
@@ -2004,6 +2026,7 @@ declare module "@stencil/core" {
             "app-navigation-sector-mobile": LocalJSX.AppNavigationSectorMobile & JSXBase.HTMLAttributes<HTMLAppNavigationSectorMobileElement>;
             "scale-accordion": LocalJSX.ScaleAccordion & JSXBase.HTMLAttributes<HTMLScaleAccordionElement>;
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
+            "scale-app-footer": LocalJSX.ScaleAppFooter & JSXBase.HTMLAttributes<HTMLScaleAppFooterElement>;
             "scale-app-header": LocalJSX.ScaleAppHeader & JSXBase.HTMLAttributes<HTMLScaleAppHeaderElement>;
             "scale-app-shell": LocalJSX.ScaleAppShell & JSXBase.HTMLAttributes<HTMLScaleAppShellElement>;
             "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;

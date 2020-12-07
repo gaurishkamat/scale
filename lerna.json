@@ -7,7 +7,7 @@
     "--pure-lockfile"
   ],
   "useWorkspaces": true,
-  "version": "1.13.0",
+  "version": "1.13.1",
   "command": {
     "version": {
       "allowBranch": "master"

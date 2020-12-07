@@ -128,6 +128,31 @@
       ]
     },
     {
+      "name": "scale-app-footer",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "claim-lang",
+          "description": ""
+        },
+        {
+          "name": "custom-class",
+          "description": ""
+        },
+        {
+          "name": "footer-navigation",
+          "description": ""
+        },
+        {
+          "name": "variant",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "scale-app-header",
       "description": {
         "kind": "markdown",
@@ -143,15 +168,15 @@
           "description": ""
         },
         {
-          "name": "brand-title",
-          "description": ""
-        },
-        {
           "name": "claim-lang",
           "description": ""
         },
         {
           "name": "custom-class",
+          "description": ""
+        },
+        {
+          "name": "portal-name",
           "description": ""
         },
         {
@@ -197,6 +222,10 @@
         },
         {
           "name": "main-navigation",
+          "description": ""
+        },
+        {
+          "name": "portal-name",
           "description": ""
         },
         {

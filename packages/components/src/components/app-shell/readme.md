@@ -17,6 +17,7 @@
 | `customClass`      | `custom-class`      |             | `string` | `''`    |
 | `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |
 | `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`    |
+| `portalName`       | `portal-name`       |             | `string` | `''`    |
 | `sectorNavigation` | `sector-navigation` |             | `any`    | `[]`    |
 
 

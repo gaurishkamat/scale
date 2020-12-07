@@ -25,6 +25,7 @@
 ### Used by
 
  - [app-navigation-main-mobile](../app-navigation-main-mobile)
+ - [scale-app-footer](../app-footer)
  - [scale-app-header](../app-header)
  - [scale-input](../input)
  - [scale-link](../link)
@@ -36,6 +37,7 @@
 ```mermaid
 graph TD;
   app-navigation-main-mobile --> scale-icon
+  scale-app-footer --> scale-icon
   scale-app-header --> scale-icon
   scale-input --> scale-icon
   scale-link --> scale-icon

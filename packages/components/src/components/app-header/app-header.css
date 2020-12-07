@@ -8,7 +8,7 @@
 }
 .header {
   width: 100%;
-  z-index: 999999999;
+  z-index: 99;
   position: fixed;
   background: #e20074;
   font-weight: 400;
@@ -59,14 +59,14 @@
 .header.menu--open .header__nav-before,
 .header.sticky .header__nav-before {
   left: -1px;
-  z-index: 999999997;
+  z-index: 97;
   border-left: 1px solid #dfdfdf;
   border-top-left-radius: var(--header-border-radius);
 }
 .header.menu--open .header__nav-after,
 .header.sticky .header__nav-after {
   right: -1px;
-  z-index: 999999998;
+  z-index: 98;
   border-right: 1px solid #dfdfdf;
   border-top-right-radius: var(--header-border-radius);
 }
@@ -93,7 +93,7 @@
     height: var(--header-nav-height);
     display: flex;
     padding: 0 16px;
-    z-index: 4001;
+    z-index: 96;
     position: absolute;
     transition: height var(--header-transition-speed) ease-in-out;
     align-items: center;
@@ -109,7 +109,7 @@
     width: 100%;
     height: calc(var(--header-nav-height) - 4px);
     padding: 0 16px;
-    z-index: 4000;
+    z-index: 95;
     position: absolute;
   }
   .header .header__nav__mobile-menu {
@@ -158,13 +158,13 @@
   }
   .header .header__brand .header__brand-before {
     left: -1px;
-    z-index: 999999997;
+    z-index: 97;
     border-left: transparent;
     border-top-left-radius: var(--header-border-radius);
   }
   .header .header__brand .header__brand-after {
     right: -1px;
-    z-index: 999999998;
+    z-index: 98;
     border-right: transparent;
     border-top-right-radius: var(--header-border-radius);
   }
@@ -271,8 +271,8 @@
   .header .addon-navigation .addon-navigation__item-link:hover {
     border-bottom: 1px solid #fff;
   }
-  .header .segment-navigation .segment-navigation__brand-title {
-    font-family: TeleNeoWeb-ExtraBold;
+  .header .segment-navigation .segment-navigation__portal-name {
+    font-weight: 800;
     font-size: 1.25rem;
   }
   .header .segment-navigation .segment-navigation__item-link {
