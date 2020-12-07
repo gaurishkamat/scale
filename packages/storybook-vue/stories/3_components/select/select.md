@@ -8,20 +8,20 @@ The dropdown temporarily displays a selection list. Thus, the dropdown helps sav
 
 ### When to use
 
-Use a dropdown, when
+Use a dropdown when users:
 
-* Users can select options within a form,
-* Users should only select one of the options, or
-* Users should filter or sort content.
+* can select options within a form,
+* should only select one of the options, or
+* should filter or sort content.
 
 ### When not to use
 
-Don’t use dropdowns, when
+Don’t use dropdowns, when users:
 
-* users only have a few options (radio buttons may be better),
-* users have a lot of choices (an input field with auto-fill is more helpful),
-* users shold have several options (use checkboxes instead), or
-* users should navigate (use a navigation component like the sidebar navigation).
+* should only have a few options (radio buttons may be better),
+* should have a lot of choices (an input field with auto-fill is more helpful),
+* shold have several options (use checkboxes instead), or
+* should navigate (use a navigation component like the sidebar navigation).
 
 ## Basic Types
 
@@ -33,7 +33,7 @@ The standard dropdown from Scale lists all available options.
 
 ### Option groups
 
-If you have a lot of options which can be categorised, you can create groups of options.
+If you have a lot of options to categorize, you can create groups of options.
 
 ![Image Name](assets/3_components/select-box/Dropdown-optionsgruppe.png)
 
