@@ -75,6 +75,11 @@
   color: #f90984;
 }
 
+.footer--variant-minimal .footer-navigation li a:hover span {
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+}
+
 .footer--variant-standard .footer-navigation li a:hover span {
   border-bottom: 1px solid #fff;
   margin-bottom: -1px;
@@ -82,6 +87,11 @@
 
 .footer-navigation li a:active {
   color: #cb0068;
+}
+
+.footer--variant-minimal .footer-navigation li a:active span {
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
 }
 
 .footer--variant-standard .footer-navigation li a:active span {
