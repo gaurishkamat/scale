@@ -81,6 +81,6 @@ When space is limited, use the small dropdown consistently.
 
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
-## Related Components
+## Related components
 
 Text Field, Text Area, Checkbox, Switch, Radio Button
