@@ -473,6 +473,10 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
+          * (optional) Alignment of action buttons
+         */
+        "alignActions"?: 'right' | 'left';
+        /**
           * (optional) Label for close button
          */
         "closeButtonLabel"?: string;
@@ -1581,6 +1585,10 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface ScaleModal {
+        /**
+          * (optional) Alignment of action buttons
+         */
+        "alignActions"?: 'right' | 'left';
         /**
           * (optional) Label for close button
          */

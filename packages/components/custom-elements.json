@@ -746,6 +746,18 @@
       },
       "attributes": [
         {
+          "name": "align-actions",
+          "description": "(optional) Alignment of action buttons",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ]
+        },
+        {
           "name": "close-button-label",
           "description": "(optional) Label for close button"
         },

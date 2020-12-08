@@ -23,11 +23,13 @@ export const styles: JssStyle = {
     },
   },
 
-  /* Do not remove, these create the hash selectors */
+  // Do not remove, these create the hash selectors
   'modal--is-open': {},
   'modal--has-scroll': {},
   'modal--has-body': {},
   'modal--has-actions': {},
+  'modal--align-actions-left': {},
+  'modal--align-actions-right': {},
   'modal--size-small': {},
   'modal--size-default': {},
   'modal--size-large': {},
@@ -49,10 +51,7 @@ export const styles: JssStyle = {
     width: '100%',
     height: 'auto',
     overflowY: 'auto',
-    minHeight: ({ spacing }) => `calc(1.5 * ${spacing[9]})`,
     maxHeight: ({ spacing }) => `calc(100vh - (2 * ${spacing[9]}))`,
-    marginTop: ({ spacing }) => spacing[9],
-    marginBottom: ({ spacing }) => spacing[9],
     backgroundColor: 'white',
     borderRadius: ({ radii }) => radii.modal,
     boxShadow: ({ shadow }) => shadow.modal,
@@ -62,11 +61,7 @@ export const styles: JssStyle = {
       overflowY: 'auto',
     },
 
-    '$modal--has-scroll &': {
-      minHeight: ({ spacing }) => `calc(3 * ${spacing[9]})`,
-    },
-
-    /* Rudimentarily simulating the grid */
+    // Rudimentarily simulating the grid
     '$modal--size-small &': {
       maxWidth: ({ spacing }) =>
         `calc((6 * ${columnWidth}px) + (5 * ${spacing.gutter}))`,
@@ -80,7 +75,12 @@ export const styles: JssStyle = {
         `calc((12 * ${columnWidth}px) + (11 * ${spacing.gutter}))`,
     },
 
-    // Accessibility: Windows High Contrast Mode transparent border
+    /* Accessibility: more space for "mobile landscape" */
+    '@media (max-height: 30em)': {
+      maxHeight: ({ spacing }) => `calc(100vh - (2 * ${spacing[4]}))`,
+    },
+
+    /* Accessibility: Windows High Contrast Mode transparent border */
     '&:after': {
       content: '""',
       display: 'block',
@@ -118,6 +118,8 @@ export const styles: JssStyle = {
     fontWeight: ({ type }) => type.weight_extrabold,
   },
 
+  // This could be `scale-button`, but we don't have such variant
+  // (`secondary`) without border, I think we should add it
   'modal__close-button': {
     appearance: 'none',
     display: 'inline-flex',
@@ -126,17 +128,25 @@ export const styles: JssStyle = {
     background: 'transparent',
     border: 0,
     borderRadius: ({ radii }) => radii.button,
-    padding: ({ spacing }) => spacing[2],
-    transform: ({ spacing }) => `translate(${spacing[2]}, -${spacing[2]})`,
     outline: 'none',
     cursor: 'pointer',
     userSelect: 'none',
     boxSizing: 'border-box',
     transition: ({ transition }) => transition.generic,
+    padding: ({ spacing }) => spacing[2],
+    // Take care of position and outer spacing because padding
+    marginBottom: ({ spacing }) => `calc(2 * -${spacing[2]})`,
+    transform: ({ spacing }) => `translate(${spacing[2]}, -${spacing[2]})`,
 
     '&:focus': {
       boxShadow: ({ size, color }) =>
         `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
+    '&:hover': {
+      color: ({ color }) => color.primary_hover,
+    },
+    '&:active': {
+      color: ({ color }) => color.primary_active,
     },
   },
 
@@ -168,6 +178,10 @@ export const styles: JssStyle = {
 
     '$modal--has-actions &': {
       display: 'flex',
+    },
+
+    '$modal--align-actions-left &': {
+      justifyContent: 'flex-start',
     },
 
     '$modal--has-scroll &': {

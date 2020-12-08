@@ -24,14 +24,6 @@ const supportsResizeObserver = 'ResizeObserver' in window;
 /*
   TODO
   ====
-  - [ ] update storybook ~~(add proper icon)~~
-  - [x] handle scrolling logic (toggle has-scroll class)
-  - [x] implement sizes
-  - [x] add close-label prop and use it
-  - [x] add HCM border
-  
-  - [ ] add align-actions="left" prop and use it
-  - [ ] trigger events
   - [ ] save focus of last element previous to opening the modal
   - [ ] put animations in tokens
  */
@@ -63,6 +55,8 @@ export class Modal implements Base {
   @Prop() duration?: number = 200;
   /** (optional) Label for close button */
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  /** (optional) Alignment of action buttons */
+  @Prop() alignActions?: 'right' | 'left' = 'right';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -183,8 +177,11 @@ export class Modal implements Base {
       });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
+        this.scaleOpen.emit();
       });
-    } catch (err) {}
+    } catch (err) {
+      this.scaleOpen.emit();
+    }
   }
 
   close() {
@@ -194,9 +191,11 @@ export class Modal implements Base {
       });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
+        this.scaleClose.emit();
       });
     } catch (err) {
       this.isOpen = false;
+      this.scaleClose.emit();
     }
   }
 
@@ -267,6 +266,7 @@ export class Modal implements Base {
       this.customClass && this.customClass,
       this.isOpen && classes['modal--is-open'],
       this.hasActionsSlot && classes['modal--has-actions'],
+      classes[`modal--align-actions-${this.alignActions}`],
       this.hasScroll && classes['modal--has-scroll'],
       this.hasBody && classes['modal--has-body'],
       this.size && classes[`modal--size-${this.size}`],
