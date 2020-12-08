@@ -120,20 +120,26 @@ export class Input implements Base {
     }
   }
 
-  /**
-   * @todo document all these, plus setting value on `select`
-   */
   componentDidLoad() {
+    // Keep this.value up-to-date for type="select".
+    // This is important also for React, where `value` is used to control the element state.
     if (this.type === 'select') {
       const select = this.el.querySelector('select') as HTMLSelectElement;
-      const selectedValue = select.options[select.selectedIndex].value;
+      const selectedValue = select.selectedIndex > -1 ? select.options[select.selectedIndex].value : null;
 
+      // If we have a `value` passed, set it on the <select> element
+      // Otherwise, if we have an <option selected>, set its value on `value`
       if (this.value) {
         select.value = String(this.value);
-      } else {
+      } else if (selectedValue) {
         this.value = selectedValue;
       }
     }
+    // This is a workaroud to prevent a bug in Stencil:
+    // when using slots without Shadow DOM (possible only with Stencil)
+    // sometimes an update in the Light DOM does not trigger a re-render
+    // thus causing unexpected results.
+    // https://gitlab.com/scale-ds/scale-telekom/-/issues/16
     if (this.type === 'select' && this.selectElement) {
       this.mutationObserver = new MutationObserver(() => {
         this.forceUpdate = String(Date.now());
@@ -154,6 +160,10 @@ export class Input implements Base {
     }
   }
 
+  // We're not watching `value` like we used to
+  // because we get unwanted `scaleChange` events
+  // because how we keep this.value up-to-date for type="select"
+  // `this.value = selectedValue`
   emitChange() {
     this.scaleChange.emit({
       value: this.value == null ? this.value : this.value.toString(),
