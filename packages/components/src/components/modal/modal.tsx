@@ -22,11 +22,11 @@ import { animateTo, keyframes } from '../../utils/animate';
 /*
   TODO
   ====
-  - [ ] update storybook (add proper icon)
+  - [ ] update storybook ~~(add proper icon)~~
   - [ ] handle scrolling logic (toggle has-scroll class)
   - [x] implement sizes
   - [x] add close-label prop and use it
-  - [ ] add HCM border
+  - [x] add HCM border
   
   - [ ] add align-actions="left" prop and use it
   - [ ] trigger events
