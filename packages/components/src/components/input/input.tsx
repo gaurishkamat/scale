@@ -125,7 +125,10 @@ export class Input implements Base {
     // This is important also for React, where `value` is used to control the element state.
     if (this.type === 'select') {
       const select = this.el.querySelector('select') as HTMLSelectElement;
-      const selectedValue = select.selectedIndex > -1 ? select.options[select.selectedIndex].value : null;
+      const selectedValue =
+        select.selectedIndex > -1
+          ? select.options[select.selectedIndex].value
+          : null;
 
       // If we have a `value` passed, set it on the <select> element
       // Otherwise, if we have an <option selected>, set its value on `value`
