@@ -24,11 +24,11 @@ import { animateTo, keyframes } from '../../utils/animate';
   ====
   - [ ] update storybook (add proper icon)
   - [ ] handle scrolling logic (toggle has-scroll class)
-  - [ ] implement sizes
-  - [ ] add close-label prop and use it
+  - [x] implement sizes
+  - [x] add close-label prop and use it
   - [ ] add HCM border
+  
   - [ ] add align-actions="left" prop and use it
-
   - [ ] trigger events
   - [ ] save focus of last element previous to opening the modal
   - [ ] put animations in tokens
@@ -57,6 +57,8 @@ export class Modal implements Base {
   @Prop({ reflect: true }) opened?: boolean = false;
   /** (optional) Transition duration */
   @Prop() duration?: number = 200;
+  /** (optional) Label for close button */
+  @Prop() closeButtonLabel?: string = 'Close Pop-up';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -208,9 +210,10 @@ export class Modal implements Base {
                 ref={el => (this.closeButton = el)}
                 class={classes['modal__close-button']}
                 onClick={() => (this.opened = false)}
+                aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">
-                  {/* <scale-icon-action-circle-close /> */}x
+                  <scale-icon-action-circle-close />
                 </slot>
               </button>
             </div>

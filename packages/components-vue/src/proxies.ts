@@ -404,6 +404,7 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
     variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
     duration: {} as PropOptions<Components.ScaleModal['duration']>,
+    closeButtonLabel: {} as PropOptions<Components.ScaleModal['closeButtonLabel']>,
     styles: {} as PropOptions<Components.ScaleModal['styles']>,
   },
 

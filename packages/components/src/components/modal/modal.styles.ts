@@ -100,6 +100,27 @@ export const styles: JssStyle = {
     fontWeight: ({ type }) => type.weight_extrabold,
   },
 
+  'modal__close-button': {
+    appearance: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'transparent',
+    border: 0,
+    borderRadius: ({ radii }) => radii.button,
+    padding: ({ spacing }) => spacing[2],
+    transform: ({ spacing }) => `translate(${spacing[2]}, -${spacing[2]})`,
+    outline: 'none',
+    cursor: 'pointer',
+    userSelect: 'none',
+    boxSizing: 'border-box',
+
+    '&:focus': {
+      boxShadow: ({ size, color }) =>
+        `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
+  },
+
   'modal__body-wrapper': {
     paddingLeft: ({ spacing }) => spacing[5],
     paddingRight: ({ spacing }) => spacing[5],
