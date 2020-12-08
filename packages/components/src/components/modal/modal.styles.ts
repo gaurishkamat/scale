@@ -1,5 +1,7 @@
 import { JssStyle } from 'jss';
 
+const columnWidth = 56 // TODO currently not in `spacing` tokens, need to revise with design
+
 export const styles: JssStyle = {
   modal: {
     position: 'fixed',
@@ -26,6 +28,9 @@ export const styles: JssStyle = {
   'modal--has-scroll': {},
   'modal--has-body': {},
   'modal--has-actions': {},
+  'modal--size-small': {},
+  'modal--size-default': {},
+  'modal--size-large': {},
 
   modal__backdrop: {
     position: 'absolute',
@@ -41,7 +46,7 @@ export const styles: JssStyle = {
     zIndex: 1,
     display: 'flex',
     flexDirection: 'column',
-    width: 500, // TODO handle sizes, start with 100%
+    width: '100%',
     height: 'auto',
     overflowY: 'auto',
     minHeight: ({ spacing }) => `calc(1.5 * ${spacing[9]})`,
@@ -60,6 +65,17 @@ export const styles: JssStyle = {
     '$modal--has-scroll &': {
       minHeight: ({ spacing }) => `calc(3 * ${spacing[9]})`,
     },
+
+    /* Rudimentarily simulating the grid */
+    '$modal--size-small &': {
+      maxWidth: ({ spacing }) => `calc((6 * ${columnWidth}px) + (5 * ${spacing.gutter}))`
+    },
+    '$modal--size-default &': {
+      maxWidth: ({ spacing }) => `calc((8 * ${columnWidth}px) + (7 * ${spacing.gutter}))`
+    },
+    '$modal--size-large &': {
+      maxWidth: ({ spacing }) => `calc((12 * ${columnWidth}px) + (11 * ${spacing.gutter}))`
+    }
   },
 
   modal__header: {
