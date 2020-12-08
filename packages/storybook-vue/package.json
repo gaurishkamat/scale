@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/storybook-vue",
-  "version": "1.13.1",
+  "version": "1.14.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -25,9 +25,9 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "@scaleds/components-telekom": "^1.13.1",
-    "@scaleds/components-vue-telekom": "^1.13.1",
-    "@scaleds/icons-telekom": "^1.13.1"
+    "@scaleds/components-telekom": "^1.14.0",
+    "@scaleds/components-vue-telekom": "^1.14.0",
+    "@scaleds/icons-telekom": "^1.14.0"
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",
