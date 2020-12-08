@@ -27,6 +27,9 @@ let i = 0;
   shadow: false,
 })
 export class Input implements Base {
+  selectElement: HTMLSelectElement;
+  mutationObserver: MutationObserver;
+
   @Element() el: HTMLElement;
   /** (optional) Input text class */
   @Prop() customClass?: string = '';
@@ -108,6 +111,8 @@ export class Input implements Base {
   @State() customResize?: any;
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
+  /** "forceUpdate" hack, set it to trigger and re-render */
+  @State() forceUpdate: string;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -115,18 +120,41 @@ export class Input implements Base {
     }
   }
 
-  componentWillUpdate() {}
+  /**
+   * @todo document all these, plus setting value on `select`
+   */
   componentDidLoad() {
     if (this.type === 'select') {
-      const select = this.el.querySelector('select');
+      const select = this.el.querySelector('select') as HTMLSelectElement;
       const selectedValue = select.options[select.selectedIndex].value;
-      this.value = selectedValue;
+
+      if (this.value) {
+        select.value = String(this.value);
+      } else {
+        this.value = selectedValue;
+      }
+    }
+    if (this.type === 'select' && this.selectElement) {
+      this.mutationObserver = new MutationObserver(() => {
+        this.forceUpdate = String(Date.now());
+      });
+      this.mutationObserver.observe(this.el, {
+        childList: true,
+        subtree: true,
+      });
     }
   }
+
+  componentWillUpdate() {}
   componentDidUnload() {}
 
-  @Watch('value')
-  valueChanged() {
+  disconnectedCallback() {
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect();
+    }
+  }
+
+  emitChange() {
     this.scaleChange.emit({
       value: this.value == null ? this.value : this.value.toString(),
     });
@@ -153,6 +181,7 @@ export class Input implements Base {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value || '';
+      this.emitChange();
     }
     this.scaleInput.emit(event as KeyboardEvent);
   };
@@ -161,6 +190,7 @@ export class Input implements Base {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value || '';
+      this.emitChange();
     }
   };
 
@@ -228,7 +258,6 @@ export class Input implements Base {
     }
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
     const { classes } = this.stylesheet;
-
     const ariaInvalidAttr =
       this.status === 'error' ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
@@ -244,7 +273,10 @@ export class Input implements Base {
           {this.type === 'select' ? (
             <div class="input__select-wrapper">
               <select
+                ref={el => (this.selectElement = el)}
                 class={classNames('input__select')}
+                // @ts-ignore
+                value={this.value}
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
