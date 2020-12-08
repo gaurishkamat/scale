@@ -1,0 +1,105 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import { footerNavigation } from '../brand-header/fixtures'
+import AppFooter from './AppFooter.vue';
+
+<Meta
+  title='Components/Footer'
+  component={AppFooter}
+  argTypes={{
+    footerNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item takes an optional onClick handler'
+    },
+    claimLang: {
+      control: {
+        type: 'select',
+        options: ['en', 'de'],
+      },
+    },
+    variant: {
+      control: { type: 'select', options: ['standard', 'minimal'] }
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { AppFooter },
+  props: AppFooter.props,
+  template: `
+    <div style="margin: -1rem;">
+      <scale-app-footer
+        :claim-lang="claimLang"
+        :footer-navigation="footerNavigation"
+        :custom-class="customClass"
+        :variant="variant"
+      >
+      </scale-app-footer>
+    </div>
+  `
+})
+
+# Footer
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name='Standard'
+    inline={false}
+    height={500}
+    args={{
+      claimLang: 'en',
+      footerNavigation: JSON.stringify(footerNavigation),
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story='Standard' />
+
+```html
+<scale-app-footer
+  claim-lang="en"
+  :footer-navigation="footerNavigation"
+  :custom-class="customClass"
+>
+</scale-app-footer>
+```
+
+
+## Minimal
+
+<Canvas withSource="none">
+  <Story
+    name='Minimal'
+    inline={false}
+    height={500}
+    args={{
+      claimLang: 'en',
+      footerNavigation: JSON.stringify(footerNavigation),
+      variant: 'minimal'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Props story='Minimal' />
+
+```html
+<scale-app-footer
+  claim-lang="en"
+  :footer-navigation="footerNavigation"
+  :custom-class="customClass"
+  variant="minimal"
+>
+</scale-app-footer>
+```

@@ -8,7 +8,7 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: 'index.json', warn: true }
+        { src: 'scale-icons.json', warn: true }
       ]
     },
     {

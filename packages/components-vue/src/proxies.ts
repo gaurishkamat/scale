@@ -16,6 +16,7 @@ const customElementTags: string[] = [
  'app-navigation-sector-mobile',
  'scale-accordion',
  'scale-alert',
+ 'scale-app-footer',
  'scale-app-header',
  'scale-app-shell',
  'scale-breadcrumb',
@@ -133,6 +134,20 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
     open: createCommonMethod('open') as Components.ScaleAlert['open'],
   },
   render: createCommonRender('scale-alert', []),
+});
+
+
+export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    customClass: {} as PropOptions<Components.ScaleAppFooter['customClass']>,
+    claimLang: {} as PropOptions<Components.ScaleAppFooter['claimLang']>,
+    footerNavigation: {} as PropOptions<Components.ScaleAppFooter['footerNavigation']>,
+    variant: {} as PropOptions<Components.ScaleAppFooter['variant']>,
+  },
+
+
+  render: createCommonRender('scale-app-footer', []),
 });
 
 
