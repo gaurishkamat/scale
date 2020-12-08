@@ -34,6 +34,7 @@ exports[`Toast should match snapshot 1`] = `
 .toast__header-0-0-7 small {
   margin-top: 5px;
   margin-left: 120px;
+  font-size: 0.75rem;
 }
 .toast__progress-0-0-8 {
   left: 0;
@@ -123,6 +124,7 @@ exports[`Toast should match snapshot when opened 1`] = `
 .toast__header-0-0-7 small {
   margin-top: 5px;
   margin-left: 120px;
+  font-size: 0.75rem;
 }
 .toast__progress-0-0-8 {
   left: 0;
