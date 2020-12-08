@@ -431,23 +431,25 @@ export class ScaleListItem {
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
-  inputs: ['closeLabel', 'customClass', 'opened', 'size', 'styles', 'transitions', 'variant']
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant']
 })
 @Component({
   selector: 'scale-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['closeLabel', 'customClass', 'opened', 'size', 'styles', 'transitions', 'variant'],
-  outputs: ['scaleClose']
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant'],
+  outputs: ['scaleOpen', 'scaleClose']
 })
 export class ScaleModal {
-  /** (optional) Callback fired when the component requests to be closed. */
+  /**  */
+  scaleOpen!: IModal['scaleOpen'];
+  /**  */
   scaleClose!: IModal['scaleClose'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['scaleClose']);
+    proxyOutputs(this, this.el, ['scaleOpen', 'scaleClose']);
   }
 }
 

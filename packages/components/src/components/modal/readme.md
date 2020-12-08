@@ -7,36 +7,26 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                            | Type      | Default          |
-| ------------- | -------------- | -------------------------------------- | --------- | ---------------- |
-| `closeLabel`  | `close-label`  | (optional) Label for close button      | `string`  | `'Close Pop-up'` |
-| `customClass` | `custom-class` | (optional) Modal class                 | `string`  | `''`             |
-| `opened`      | `opened`       | (optional) If true, the Modal is open. | `boolean` | `false`          |
-| `size`        | `size`         | (optional) Modal size                  | `string`  | `'default'`      |
-| `styles`      | `styles`       | (optional) Injected jss styles         | `any`     | `undefined`      |
-| `transitions` | `transitions`  | (optional) Transition overrides        | `any`     | `undefined`      |
-| `variant`     | `variant`      | (optional) Modal variant               | `string`  | `''`             |
+| Property           | Attribute            | Description                              | Type                | Default          |
+| ------------------ | -------------------- | ---------------------------------------- | ------------------- | ---------------- |
+| `alignActions`     | `align-actions`      | (optional) Alignment of action buttons   | `"left" \| "right"` | `'right'`        |
+| `closeButtonLabel` | `close-button-label` | (optional) Label for close button        | `string`            | `'Close Pop-up'` |
+| `customClass`      | `custom-class`       | (optional) Custom class                  | `string`            | `''`             |
+| `duration`         | `duration`           | (optional) Transition duration           | `number`            | `200`            |
+| `heading`          | `heading`            | Modal heading                            | `string`            | `undefined`      |
+| `opened`           | `opened`             | (optional) If `true`, the Modal is open. | `boolean`           | `false`          |
+| `size`             | `size`               | (optional) Modal size                    | `string`            | `'default'`      |
+| `styles`           | `styles`             | (optional) Injected jss styles           | `any`               | `undefined`      |
+| `variant`          | `variant`            | (optional) Modal variant                 | `string`            | `undefined`      |
 
 
 ## Events
 
-| Event        | Description                                                         | Type                                       |
-| ------------ | ------------------------------------------------------------------- | ------------------------------------------ |
-| `scaleClose` | (optional) Callback fired when the component requests to be closed. | `CustomEvent<KeyboardEvent \| MouseEvent>` |
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `scaleClose` |             | `CustomEvent<any>` |
+| `scaleOpen`  |             | `CustomEvent<any>` |
 
-
-## Dependencies
-
-### Depends on
-
-- animatable-component
-
-### Graph
-```mermaid
-graph TD;
-  scale-modal --> animatable-component
-  style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

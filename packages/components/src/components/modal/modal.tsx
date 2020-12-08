@@ -1,202 +1,202 @@
-import '@proyecto26/animatable-component';
-import { KEYFRAMES } from '@proyecto26/animatable-component';
 import {
   Component,
   Prop,
+  State,
   h,
   Element,
   Host,
   Watch,
   Event,
   EventEmitter,
+  Listen,
 } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
-import { combineObjects, CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { StyleSheet } from 'jss';
+import { CssClassMap } from '../../utils/utils';
 import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { getTheme } from '../../theme/theme';
+import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
+import { animateTo, KEYFRAMES } from '../../utils/animate';
+
+const supportsResizeObserver = 'ResizeObserver' in window;
+
+/*
+  TODO
+  ====
+  - [ ] save focus of last element previous to opening the modal
+  - [ ] put animations in tokens
+ */
 
 @Component({
   tag: 'scale-modal',
   shadow: true,
 })
 export class Modal implements Base {
-  hasSlotHeader: boolean;
-  hasSlotClose: boolean;
-  hasSlotActions: boolean;
-  combinedTransitions: any;
-  closeLink: HTMLElement;
+  closeButton: HTMLButtonElement | HTMLScaleButtonElement;
+  modalContainer: HTMLElement;
+  modalWindow: HTMLElement;
+  modalBody: HTMLElement;
+  focusableElements: HTMLElement[] = [];
+  resizeObserver: ResizeObserver;
 
-  @Element() hostElement: HTMLStencilElement;
-  /** (optional) Transition overrides */
-  @Prop() transitions?: any;
-  /** (optional) Modal class */
+  @Element() hostElement: HTMLElement;
+  /** (optional) Custom class */
   @Prop() customClass?: string = '';
+  /** Modal heading */
+  @Prop() heading: string;
   /** (optional) Modal size */
   @Prop() size?: string = 'default';
   /** (optional) Modal variant */
-  @Prop() variant?: string = '';
-  /** (optional) If true, the Modal is open. */
-  @Prop() opened?: boolean = false;
+  @Prop() variant?: string;
+  /** (optional) If `true`, the Modal is open. */
+  @Prop({ reflect: true }) opened?: boolean = false;
+  /** (optional) Transition duration */
+  @Prop() duration?: number = 200;
   /** (optional) Label for close button */
-  @Prop() closeLabel?: string = 'Close Pop-up';
+  @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  /** (optional) Alignment of action buttons */
+  @Prop() alignActions?: 'right' | 'left' = 'right';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
-  /** (optional) Callback fired when the component requests to be closed. */
-  @Event() scaleClose?: EventEmitter<MouseEvent | KeyboardEvent>;
+  /** What actually triggers opening/closing the modal */
+  @State() isOpen: boolean = false;
+  /** Check wheter there are actions slots, style accordingly */
+  @State() hasActionsSlot: boolean = false;
+  /** Check wheter there's content in the body, style accordingly */
+  @State() hasBody: boolean = false;
+  /** Useful for toggling scroll-specific styles */
+  @State() hasScroll: boolean = false;
 
-  constructor() {
-    this.close = this.close.bind(this);
-    this.animateComponent = this.animateComponent.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
+  @Event() scaleOpen?: EventEmitter;
+  @Event() scaleClose?: EventEmitter;
 
-  @Watch('opened')
-  async watchHandler(newValue) {
-    await this.animateComponent();
-    if (newValue === true) {
-      this.focusCloseLink();
+  @Listen('keydown', { target: 'window' })
+  handleKeypress(event: KeyboardEvent) {
+    if (!this.isOpen) {
+      return;
     }
-  }
-
-  focusCloseLink() {
-    try {
-      /* Accessibility: avoid focus trap */
-      this.closeLink.focus();
-    } catch (err) {}
-  }
-
-  async close(event?: MouseEvent | KeyboardEvent) {
-    this.scaleClose.emit(event);
-  }
-
-  waitForChildren(children) {
-    return new Promise(resolve => {
-      const findChildren = () =>
-        children.length
-          ? resolve()
-          : setTimeout(() => {
-              findChildren();
-            });
-
-      findChildren();
-    });
-  }
-
-  decorateScrollContainer() {
-    const scrollContainer = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes['modal__scroll-container']}`
-    );
-    const modalHeader = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal__header}`
-    );
-    const modalActions = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal__actions}`
-    );
-    setTimeout(() => {
-      const hasVerticalScrollbar =
-        scrollContainer.scrollHeight > scrollContainer.clientHeight;
-
-      if (hasVerticalScrollbar) {
-        modalHeader.classList.add(
-          this.stylesheet.classes['modal__header-scroll']
-        );
-        if (modalActions) {
-          modalActions.classList.add(
-            this.stylesheet.classes['modal__actions-scroll']
-          );
-        }
-      }
-    });
-  }
-
-  async animateComponent() {
-    const direction = this.opened ? 'IN' : 'OUT';
-
-    // in this case we are doing SSR, so we can skip animations
-    if (typeof window === 'undefined' || typeof window.Audio === 'undefined') {
-      return null;
-    }
-    await this.waitForChildren(this.hostElement.shadowRoot.children);
-
-    this.decorateScrollContainer();
-
-    let combinedTransitions;
-    try {
-      combinedTransitions = JSON.parse(this.transitions);
-    } catch (err) {
-      combinedTransitions = this.transitions;
-    }
-    combinedTransitions = combineObjects(
-      getTheme().components.Modal.transitions,
-      combinedTransitions
-    );
-
-    const { backDrop, modalContent } = combinedTransitions;
-    const { transition: transitionModal, ...optionsModal } = modalContent[
-      direction
-    ];
-    const { transition: transitionBackDrop, ...optionsBackDrop } = backDrop[
-      direction
-    ];
-
-    const animationModal = this.hostElement.shadowRoot
-      .querySelector(`.${this.stylesheet.classes.modal__content}`)
-      .animate(KEYFRAMES[transitionModal], optionsModal);
-
-    const animationBackdrop = this.hostElement.shadowRoot
-      .querySelector(`.${this.stylesheet.classes.modal__backdrop}`)
-      .animate(KEYFRAMES[transitionBackDrop], optionsBackDrop);
-
-    const modalClassList = this.hostElement.shadowRoot.querySelector(
-      `.${this.stylesheet.classes.modal}`
-    ).classList;
-
-    if (direction === 'IN') {
-      modalClassList.add(this.stylesheet.classes['modal--opened']);
-      document.addEventListener('keydown', this.handleKeyDown);
-    }
-
-    animationBackdrop.play();
-    animationModal.play();
-
-    return new Promise(resolve => {
-      animationModal.onfinish = function() {
-        if (direction === 'OUT') {
-          modalClassList.remove(this.stylesheet.classes['modal--opened']);
-          document.removeEventListener('keydown', this.handleKeyDown);
-        }
-        resolve();
-      }.bind(this);
-    });
-  }
-
-  componentWillLoad() {
-    this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
-    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
-    this.hasSlotActions = !!this.hostElement.querySelector(
-      '[slot="modal-actions"]'
-    );
-  }
-
-  componentWillUpdate() {}
-  componentDidUnload() {}
-
-  handleKeyDown(event) {
     if (event.key === 'Escape') {
-      this.close(event);
+      this.opened = false;
+    }
+  }
+
+  componentDidUnload() {}
+  componentWillUpdate() {}
+
+  disconnectedCallback() {
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    }
+  }
+
+  /**
+   * Set `hasActionsSlot` and `hasBody`.
+   */
+  componentWillRender() {
+    const actionSlots = this.hostElement.querySelectorAll('[slot="action"]');
+    const bodySlot = Array.from(
+      this.hostElement.shadowRoot.querySelectorAll('slot')
+    ).find(x => !x.name);
+
+    this.hasActionsSlot = actionSlots.length > 0;
+    if (bodySlot != null) {
+      this.hasBody = bodySlot.assignedElements().length > 0;
     }
   }
 
   componentDidLoad() {
-    this.animateComponent();
+    // Query all focusable elements and store them in `focusableElements`.
+    // Needed for the "focus trap" functionality.
+    this.focusableElements = queryShadowRoot(
+      this.hostElement.shadowRoot,
+      el => isHidden(el) || el.matches('[data-focus-trap-edge]'),
+      isFocusable
+    );
+    // Set `hasScroll` state dynamically on resize.
+    if (supportsResizeObserver) {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.setHasScroll();
+      });
+      this.resizeObserver.observe(this.modalBody as Element);
+    }
+    this.setHasScroll();
+  }
+
+  setHasScroll() {
+    const container = this.modalBody;
+    this.hasScroll = container.scrollHeight > container.clientHeight;
+  }
+
+  getFirstFocusableElement(): HTMLElement | null {
+    return this.focusableElements[0];
+  }
+
+  getLastFocusableElement(): HTMLElement | null {
+    return this.focusableElements[this.focusableElements.length - 1];
+  }
+
+  handleTopFocus = () => {
+    this.attemptFocus(this.getLastFocusableElement());
+  };
+
+  handleBottomFocus = () => {
+    this.attemptFocus(this.getFirstFocusableElement());
+  };
+
+  attemptFocus(element: HTMLElement | null) {
+    if (element == null) {
+      this.closeButton.focus();
+      return;
+    }
+    element.focus();
+  }
+
+  @Watch('opened')
+  openedChanged(newValue) {
+    if (newValue === true) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
+
+  open() {
+    this.isOpen = true;
+    try {
+      animateTo(this.modalWindow, KEYFRAMES.fadeInTop, {
+        duration: this.duration,
+        delay: this.duration * 0.5,
+      });
+      const anim = animateTo(this.modalContainer, KEYFRAMES.fadeIn, {
+        duration: this.duration,
+      });
+      anim.addEventListener('finish', () => {
+        this.attemptFocus(this.getFirstFocusableElement());
+        this.scaleOpen.emit();
+      });
+    } catch (err) {
+      this.scaleOpen.emit();
+    }
+  }
+
+  close() {
+    try {
+      const anim = animateTo(this.modalContainer, KEYFRAMES.fadeOut, {
+        duration: this.duration,
+      });
+      anim.addEventListener('finish', () => {
+        this.isOpen = false;
+        this.scaleClose.emit();
+      });
+    } catch (err) {
+      this.isOpen = false;
+      this.scaleClose.emit();
+    }
   }
 
   render() {
@@ -205,47 +205,56 @@ export class Modal implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <animatable-component>
-          <div class={this.getCssClassMap()}>
-            <div class={classes.modal__backdrop} onClick={this.close}></div>
-
-            <div class={classes.modal__content}>
-              {this.hasSlotHeader && (
-                <div class={classes.modal__header}>
-                  <slot name="header" />
-                  <a
-                    ref={el => (this.closeLink = el)}
-                    class={classes.modal__close}
-                    onClick={this.close}
-                    onKeyPress={this.close}
-                    aria-label={this.closeLabel}
-                    tabindex="0"
-                  >
-                    {this.hasSlotClose ? (
-                      <div class={classes['modal__close-icon']}>
-                        <slot name="close" />
-                      </div>
-                    ) : (
-                      <scale-icon-action-circle-close></scale-icon-action-circle-close>
-                    )}
-                  </a>
-                </div>
-              )}
-
-              <div class={classes['modal__scroll-container']}>
-                <div class={classes.modal__body}>
-                  <slot />
-                </div>
+        <div
+          ref={el => (this.modalContainer = el)}
+          class={this.getCssClassMap()}
+        >
+          <div
+            class={classes['modal__backdrop']}
+            onClick={() => (this.opened = false)}
+          ></div>
+          <div
+            data-focus-trap-edge
+            onFocus={this.handleTopFocus}
+            tabindex="0"
+          ></div>
+          <div
+            class={classes['modal__window']}
+            ref={el => (this.modalWindow = el)}
+            role="dialog"
+            aria-modal="true"
+          >
+            <div class={classes['modal__header']}>
+              <h2 class={classes['modal__heading']}>{this.heading}</h2>
+              <button
+                ref={el => (this.closeButton = el)}
+                class={classes['modal__close-button']}
+                onClick={() => (this.opened = false)}
+                aria-label={this.closeButtonLabel}
+              >
+                <slot name="close-icon">
+                  <scale-icon-action-circle-close />
+                </slot>
+              </button>
+            </div>
+            <div
+              ref={el => (this.modalBody = el)}
+              class={classes['modal__body-wrapper']}
+            >
+              <div class={classes['modal__body']}>
+                <slot></slot>
               </div>
-
-              {this.hasSlotActions && (
-                <div class={classes.modal__actions}>
-                  <slot name="modal-actions" />
-                </div>
-              )}
+            </div>
+            <div class={classes['modal__actions']}>
+              <slot name="action"></slot>
             </div>
           </div>
-        </animatable-component>
+          <div
+            data-focus-trap-edge
+            onFocus={this.handleBottomFocus}
+            tabindex="0"
+          ></div>
+        </div>
       </Host>
     );
   }
@@ -255,6 +264,11 @@ export class Modal implements Base {
     return classNames(
       classes.modal,
       this.customClass && this.customClass,
+      this.isOpen && classes['modal--is-open'],
+      this.hasActionsSlot && classes['modal--has-actions'],
+      classes[`modal--align-actions-${this.alignActions}`],
+      this.hasScroll && classes['modal--has-scroll'],
+      this.hasBody && classes['modal--has-body'],
       this.size && classes[`modal--size-${this.size}`],
       this.variant && classes[`modal--variant-${this.variant}`]
     );

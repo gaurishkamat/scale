@@ -407,17 +407,19 @@ export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 export const ScaleModal = /*@__PURE__*/ Vue.extend({
 
   props: {
-    transitions: {} as PropOptions<Components.ScaleModal['transitions']>,
     customClass: {} as PropOptions<Components.ScaleModal['customClass']>,
+    heading: {} as PropOptions<Components.ScaleModal['heading']>,
     size: {} as PropOptions<Components.ScaleModal['size']>,
     variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
-    closeLabel: {} as PropOptions<Components.ScaleModal['closeLabel']>,
+    duration: {} as PropOptions<Components.ScaleModal['duration']>,
+    closeButtonLabel: {} as PropOptions<Components.ScaleModal['closeButtonLabel']>,
+    alignActions: {} as PropOptions<Components.ScaleModal['alignActions']>,
     styles: {} as PropOptions<Components.ScaleModal['styles']>,
   },
 
 
-  render: createCommonRender('scale-modal', ['scaleClose']),
+  render: createCommonRender('scale-modal', ['scaleOpen', 'scaleClose']),
 });
 
 

@@ -306,6 +306,7 @@ const radii = {
   chip: rem(SPACING_1),
   button: rem(SPACING_2),
   card: rem(SPACING_2),
+  modal: rem(SPACING_2),
 };
 
 const opacity = {

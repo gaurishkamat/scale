@@ -1,128 +1,191 @@
 import { JssStyle } from 'jss';
 
+const columnWidth = 56; // TODO currently not in `spacing` tokens, need to revise with design
+
 export const styles: JssStyle = {
   modal: {
-    zIndex: 100,
-    display: 'none',
     position: 'fixed',
+    zIndex: 100,
+    boxSizing: 'border-box',
+    display: 'none',
+    justifyContent: 'center',
+    alignItems: 'center',
     top: 0,
     left: 0,
-    height: 'calc(100% - 96px)',
-    width: 'calc(100% - 32px)',
-    margin: '48px 16px',
-    alignItems: 'center',
-  },
-  'modal--opened': {
-    display: 'flex',
-  },
-  'modal__scroll-container': {
-    overflow: 'auto',
-    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
-    minHeight: ({ spacing }) => spacing[8],
-  },
-  modal__content: {
-    position: 'relative',
-    background: '#FFFFFF',
-    // color: '#262626',
-    borderRadius: '8px',
-    boxShadow: ({ shadow }) => shadow.modal,
-    maxHeight: '100%',
-    /* Accessibility: make sure content is visible in small mobile/landscape contexts */
-    minHeight: 200,
+    bottom: 0,
     width: '100%',
+    paddingLeft: ({ spacing }) => spacing[4],
+    paddingRight: ({ spacing }) => spacing[4],
+    background: 'rgba(108, 108, 108, 0.7)', // 'rgba(35,0,18,0.67)',
+
+    '&$modal--is-open': {
+      display: 'flex',
+    },
+  },
+
+  // Do not remove, these create the hash selectors
+  'modal--is-open': {},
+  'modal--has-scroll': {},
+  'modal--has-body': {},
+  'modal--has-actions': {},
+  'modal--align-actions-left': {},
+  'modal--align-actions-right': {},
+  'modal--size-small': {},
+  'modal--size-default': {},
+  'modal--size-large': {},
+
+  modal__backdrop: {
+    position: 'absolute',
+    zIndex: 0,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+
+  modal__window: {
+    position: 'relative',
+    zIndex: 1,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    zIndex: 100,
-    /* Accessibility: Windows High Contrast Mode border */
-    '&::after': {
+    width: '100%',
+    height: 'auto',
+    overflowY: 'auto',
+    maxHeight: ({ spacing }) => `calc(100vh - (2 * ${spacing[9]}))`,
+    backgroundColor: 'white',
+    borderRadius: ({ radii }) => radii.modal,
+    boxShadow: ({ shadow }) => shadow.modal,
+
+    '& $modal__body-wrapper': {
+      flexShrink: '1',
+      overflowY: 'auto',
+    },
+
+    // Rudimentarily simulating the grid
+    '$modal--size-small &': {
+      maxWidth: ({ spacing }) =>
+        `calc((6 * ${columnWidth}px) + (5 * ${spacing.gutter}))`,
+    },
+    '$modal--size-default &': {
+      maxWidth: ({ spacing }) =>
+        `calc((8 * ${columnWidth}px) + (7 * ${spacing.gutter}))`,
+    },
+    '$modal--size-large &': {
+      maxWidth: ({ spacing }) =>
+        `calc((12 * ${columnWidth}px) + (11 * ${spacing.gutter}))`,
+    },
+
+    /* Accessibility: more space for "mobile landscape" */
+    '@media (max-height: 30em)': {
+      maxHeight: ({ spacing }) => `calc(100vh - (2 * ${spacing[4]}))`,
+    },
+
+    /* Accessibility: Windows High Contrast Mode transparent border */
+    '&:after': {
       content: '""',
+      display: 'block',
+      boxSizing: 'border-box',
       position: 'absolute',
+      top: 0,
+      left: 0,
       width: '100%',
       height: '100%',
-      pointerEvents: 'none',
       border: '1px solid transparent',
-    },
-  },
-  '@media (min-width: 1024px)': {
-    'modal--size-small': {
-      width: 'calc(100% - 62.5%)',
-      margin: '80px 31.25%',
-    },
-    'modal--size-default': {
-      width: 'calc(100% - 50%)',
-      height: 'calc(100% - 160px)',
-      margin: '80px 25%',
-    },
-    'modal--size-large': {
-      width: 'calc(100% - 25%)',
-      margin: '80px 12.5%',
+      borderRadius: ({ radii }) => radii.modal,
+      pointerEvents: 'none',
     },
   },
 
   modal__header: {
-    fontSize: ({ type }) => type.size_4,
-    // color: '#161616',
-    margin: '0 1.5rem',
-    padding: '1.5rem 0',
-    lineHeight: ({ type }) => type.leading_2,
     display: 'flex',
     justifyContent: 'space-between',
-    '& ::slotted(*)': {
-      fontSize: ({ type }) => type.size_4,
-      // color: '#161616',
-      margin: 0,
-      fontWeight: ({ type }) => type.weight_extrabold,
+    alignItems: 'flex-start',
+    marginLeft: ({ spacing }) => spacing[5],
+    marginRight: ({ spacing }) => spacing[5],
+    paddingTop: ({ spacing }) => spacing[5],
+    paddingBottom: ({ spacing }) => spacing[5],
+
+    '$modal--has-scroll &': {
+      borderBottom: ({ size, color }) =>
+        `${size.divider}px solid ${color.divider}`,
     },
   },
-  'modal__header-scroll': {
-    borderBottom: '1px solid #dfdfdf',
+
+  modal__heading: {
+    margin: 0,
+    fontFamily: ({ type }) => type.family,
+    fontSize: ({ type }) => type.size_4,
+    fontWeight: ({ type }) => type.weight_extrabold,
   },
-  modal__body: {
-    padding: '1.5rem',
-    lineHeight: ({ type }) => type.leading_5,
-    '& ::slotted(*)': {
-      margin: 0,
-    },
-  },
-  modal__close: {
+
+  // This could be `scale-button`, but we don't have such variant
+  // (`secondary`) without border, I think we should add it
+  'modal__close-button': {
+    appearance: 'none',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 24,
-    height: 24,
-    cursor: 'pointer',
-    outline: 'none',
+    background: 'transparent',
+    border: 0,
     borderRadius: ({ radii }) => radii.button,
-    /* '& scale-icon-action-circle-close': {
-      padding: '10px',
-      margin: '-10px',
-    }, */
+    outline: 'none',
+    cursor: 'pointer',
+    userSelect: 'none',
+    boxSizing: 'border-box',
+    transition: ({ transition }) => transition.generic,
+    padding: ({ spacing }) => spacing[2],
+    // Take care of position and outer spacing because padding
+    marginBottom: ({ spacing }) => `calc(2 * -${spacing[2]})`,
+    transform: ({ spacing }) => `translate(${spacing[2]}, -${spacing[2]})`,
+
+    '&:focus': {
+      boxShadow: ({ size, color }) =>
+        `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
     '&:hover': {
       color: ({ color }) => color.primary_hover,
     },
     '&:active': {
       color: ({ color }) => color.primary_active,
     },
-    '&:focus': {
-      boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+  },
+
+  'modal__body-wrapper': {
+    paddingLeft: ({ spacing }) => spacing[5],
+    paddingRight: ({ spacing }) => spacing[5],
+
+    '$modal--has-body &': {
+      minHeight: ({ spacing }) => spacing[7],
     },
   },
+
+  modal__body: {
+    '$modal--has-body &': {
+      /* These should collapse with tags like p, that's what we want */
+      marginTop: ({ spacing }) => spacing[5],
+      marginBottom: ({ spacing }) => spacing[5],
+    },
+  },
+
   modal__actions: {
-    display: 'flex',
+    display: 'none',
     justifyContent: 'flex-end',
-    padding: '1.5rem',
-    borderRadius: '0 0 8px 8px',
-  },
-  'modal__actions-scroll': {
-    background: ({ background }) => background.light,
-  },
-  modal__backdrop: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100vh',
-    background: 'rgba(108, 108, 108, 0.7)', // 'rgba(35,0,18,0.67)',
+    padding: ({ spacing }) => spacing[5],
+
+    '& ::slotted(*)': {
+      marginLeft: ({ spacing }) => spacing[2],
+    },
+
+    '$modal--has-actions &': {
+      display: 'flex',
+    },
+
+    '$modal--align-actions-left &': {
+      justifyContent: 'flex-start',
+    },
+
+    '$modal--has-scroll &': {
+      backgroundColor: ({ background }) => background.light,
+    },
   },
 };
