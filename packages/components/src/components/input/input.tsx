@@ -27,6 +27,9 @@ let i = 0;
   shadow: false,
 })
 export class Input implements Base {
+  selectElement: HTMLSelectElement;
+  mutationObserver: MutationObserver;
+
   @Element() el: HTMLElement;
   /** (optional) Input text class */
   @Prop() customClass?: string = '';
@@ -108,6 +111,8 @@ export class Input implements Base {
   @State() customResize?: any;
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
+  /** "forceUpdate" hack, set it to trigger and re-render */
+  @State() forceUpdate: string;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -115,18 +120,54 @@ export class Input implements Base {
     }
   }
 
-  componentWillUpdate() {}
   componentDidLoad() {
+    // Keep this.value up-to-date for type="select".
+    // This is important also for React, where `value` is used to control the element state.
     if (this.type === 'select') {
-      const select = this.el.querySelector('select');
-      const selectedValue = select.options[select.selectedIndex].value;
-      this.value = selectedValue;
+      const select = this.el.querySelector('select') as HTMLSelectElement;
+      const selectedValue =
+        select.selectedIndex > -1
+          ? select.options[select.selectedIndex].value
+          : null;
+
+      // If we have a `value` passed, set it on the <select> element
+      // Otherwise, if we have an <option selected>, set its value on `value`
+      if (this.value) {
+        select.value = String(this.value);
+      } else if (selectedValue) {
+        this.value = selectedValue;
+      }
+    }
+    // This is a workaroud to prevent a bug in Stencil:
+    // when using slots without Shadow DOM (possible only with Stencil)
+    // sometimes an update in the Light DOM does not trigger a re-render
+    // thus causing unexpected results.
+    // https://gitlab.com/scale-ds/scale-telekom/-/issues/16
+    if (this.type === 'select' && this.selectElement) {
+      this.mutationObserver = new MutationObserver(() => {
+        this.forceUpdate = String(Date.now());
+      });
+      this.mutationObserver.observe(this.el, {
+        childList: true,
+        subtree: true,
+      });
     }
   }
+
+  componentWillUpdate() {}
   componentDidUnload() {}
 
-  @Watch('value')
-  valueChanged() {
+  disconnectedCallback() {
+    if (this.mutationObserver) {
+      this.mutationObserver.disconnect();
+    }
+  }
+
+  // We're not watching `value` like we used to
+  // because we get unwanted `scaleChange` events
+  // because how we keep this.value up-to-date for type="select"
+  // `this.value = selectedValue`
+  emitChange() {
     this.scaleChange.emit({
       value: this.value == null ? this.value : this.value.toString(),
     });
@@ -153,6 +194,7 @@ export class Input implements Base {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value || '';
+      this.emitChange();
     }
     this.scaleInput.emit(event as KeyboardEvent);
   };
@@ -161,6 +203,7 @@ export class Input implements Base {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value || '';
+      this.emitChange();
     }
   };
 
@@ -228,7 +271,6 @@ export class Input implements Base {
     }
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
     const { classes } = this.stylesheet;
-
     const ariaInvalidAttr =
       this.status === 'error' ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
@@ -244,7 +286,10 @@ export class Input implements Base {
           {this.type === 'select' ? (
             <div class="input__select-wrapper">
               <select
+                ref={el => (this.selectElement = el)}
                 class={classNames('input__select')}
+                // @ts-ignore
+                value={this.value}
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}

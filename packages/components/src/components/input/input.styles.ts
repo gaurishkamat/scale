@@ -105,6 +105,7 @@ export const styles: JssStyle = {
         right: 12,
         top: '50%',
         transform: 'translateY(-50%)',
+        pointerEvents: 'none',
       },
     },
     '& .input__counter': {
