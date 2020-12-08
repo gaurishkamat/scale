@@ -100,7 +100,7 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
         </div>
       </div>
     </div>
-    <span aria-hidden="true" aria-live="polite" class="progress-bar__aria-live-0-0-22">
+    <span aria-live="polite" class="progress-bar__aria-live-0-0-22">
       0%
     </span>
   </mock:shadow-root>
@@ -206,12 +206,12 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
         <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer-0-0-17" id="progress-bar-2" role="progressbar" style="height: 6px;">
           <div class="progress-bar__inner-0-0-18" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
         </div>
-        <div class="progress-bar__status-0-0-20">
+        <div aria-hidden="" class="progress-bar__status-0-0-20">
           0%
         </div>
       </div>
     </div>
-    <span aria-hidden="true" aria-live="polite" class="progress-bar__aria-live-0-0-22">
+    <span aria-live="polite" class="progress-bar__aria-live-0-0-22">
       0%
     </span>
   </mock:shadow-root>
@@ -319,7 +319,7 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
         </div>
       </div>
     </div>
-    <span aria-hidden="true" aria-live="polite" class="progress-bar__aria-live-0-0-22">
+    <span aria-live="polite" class="progress-bar__aria-live-0-0-22">
       0%
     </span>
   </mock:shadow-root>
@@ -427,7 +427,7 @@ exports[`ProgressBar should match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <span aria-hidden="true" aria-live="polite" class="progress-bar__aria-live-0-0-22">
+    <span aria-live="polite" class="progress-bar__aria-live-0-0-22">
       0%
     </span>
   </mock:shadow-root>

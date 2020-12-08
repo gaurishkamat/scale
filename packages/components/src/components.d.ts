@@ -111,59 +111,44 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleButton {
-        "ariaLabel"?: string;
         /**
-          * (optional) Button class
+          * (optional) aria-label attribute needed for icon-only buttons
+         */
+        "ariaLabel": string;
+        /**
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * Button method: disable()
-         */
-        "disable": () => Promise<void>;
-        /**
-          * (optional) Disabled button
+          * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
         /**
-          * Button method: enable()
-         */
-        "enable": () => Promise<void>;
-        "focusable"?: boolean;
-        /**
-          * (optional) Link button
+          * (optional) When present, an <a> tag will be used
          */
         "href"?: string;
         /**
-          * (optional) Icon only
+          * (optional) Set to `true` when the button contains only an icon
          */
-        "icon"?: string;
+        "iconOnly"?: boolean;
         /**
-          * (optional) Icon after
+          * (optional) Icon position related to the label
          */
-        "iconAfter"?: string;
+        "iconPosition": 'before' | 'after';
         /**
-          * (optional) Icon before
+          * (optional) The size of the button
          */
-        "iconBefore"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "iconSize"?: number;
-        "role"?: string;
-        /**
-          * (optional) Button size
-         */
-        "size"?: string;
+        "size"?: 'small' | 'large';
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
         /**
-          * (optional) Link target button
+          * (optional) The target attribute for the <a> tag
          */
         "target"?: string;
         /**
-          * (optional) button type
+          * (optional) Button type
          */
         "type"?: 'reset' | 'submit' | 'button';
         /**
@@ -188,6 +173,10 @@ export namespace Components {
           * (optional) Link interactive
          */
         "interactive"?: boolean;
+        /**
+          * (optional) Label of the card
+         */
+        "label"?: string;
         /**
           * (optional) Padding off
          */
@@ -264,6 +253,10 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
+          * (optional) When using the icon by itself, add a label to improve accessibility
+         */
+        "ariaLabel"?: string;
+        /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
@@ -271,6 +264,9 @@ export namespace Components {
           * The SVG `fill` attribute
          */
         "fill"?: string;
+        /**
+          * (optional) If `true` the icon can receive focus
+         */
         "focusable"?: boolean;
         /**
           * A name that will be used to reference an SVG object defined elsewhere, via `<use xlink:href="">`. `icon-` will be prepended to the name, so if you pass `circle`, it will look for for the `icon-circle` id e.g. `<use xlink:href="#icon-circle">`. If there is no element in the document with the id by the name provided, this component will render empty.
@@ -470,11 +466,27 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
-          * (optional) Modal class
+          * (optional) Alignment of action buttons
+         */
+        "alignActions"?: 'right' | 'left';
+        /**
+          * (optional) Label for close button
+         */
+        "closeButtonLabel"?: string;
+        /**
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) If true, the Modal is open.
+          * (optional) Transition duration
+         */
+        "duration"?: number;
+        /**
+          * Modal heading
+         */
+        "heading": string;
+        /**
+          * (optional) If `true`, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -485,10 +497,6 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) Transition overrides
-         */
-        "transitions"?: any;
         /**
           * (optional) Modal variant
          */
@@ -697,26 +705,31 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label": string;
-        "selected"?: boolean;
+        "selected": boolean;
+        /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
+        /**
+          * True for smaller height and font size
+         */
+        "small": boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -749,6 +762,10 @@ export namespace Components {
           * (optional) Tag disabled
          */
         "disabled"?: boolean;
+        /**
+          * (optional) Dismiss label
+         */
+        "dismissText"?: string;
         /**
           * (optional) Tag dismissable
          */
@@ -1199,51 +1216,44 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleButton {
+        /**
+          * (optional) aria-label attribute needed for icon-only buttons
+         */
         "ariaLabel"?: string;
         /**
-          * (optional) Button class
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) Disabled button
+          * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
-        "focusable"?: boolean;
         /**
-          * (optional) Link button
+          * (optional) When present, an <a> tag will be used
          */
         "href"?: string;
         /**
-          * (optional) Icon only
+          * (optional) Set to `true` when the button contains only an icon
          */
-        "icon"?: string;
+        "iconOnly"?: boolean;
         /**
-          * (optional) Icon after
+          * (optional) Icon position related to the label
          */
-        "iconAfter"?: string;
+        "iconPosition"?: 'before' | 'after';
         /**
-          * (optional) Icon before
+          * (optional) The size of the button
          */
-        "iconBefore"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "iconSize"?: number;
-        "role"?: string;
-        /**
-          * (optional) Button size
-         */
-        "size"?: string;
+        "size"?: 'small' | 'large';
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
         /**
-          * (optional) Link target button
+          * (optional) The target attribute for the <a> tag
          */
         "target"?: string;
         /**
-          * (optional) button type
+          * (optional) Button type
          */
         "type"?: 'reset' | 'submit' | 'button';
         /**
@@ -1268,6 +1278,10 @@ declare namespace LocalJSX {
           * (optional) Link interactive
          */
         "interactive"?: boolean;
+        /**
+          * (optional) Label of the card
+         */
+        "label"?: string;
         /**
           * (optional) Padding off
          */
@@ -1344,6 +1358,10 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
+          * (optional) When using the icon by itself, add a label to improve accessibility
+         */
+        "ariaLabel"?: string;
+        /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
@@ -1351,6 +1369,9 @@ declare namespace LocalJSX {
           * The SVG `fill` attribute
          */
         "fill"?: string;
+        /**
+          * (optional) If `true` the icon can receive focus
+         */
         "focusable"?: boolean;
         /**
           * A name that will be used to reference an SVG object defined elsewhere, via `<use xlink:href="">`. `icon-` will be prepended to the name, so if you pass `circle`, it will look for for the `icon-circle` id e.g. `<use xlink:href="#icon-circle">`. If there is no element in the document with the id by the name provided, this component will render empty.
@@ -1570,15 +1591,29 @@ declare namespace LocalJSX {
     }
     interface ScaleModal {
         /**
-          * (optional) Modal class
+          * (optional) Alignment of action buttons
+         */
+        "alignActions"?: 'right' | 'left';
+        /**
+          * (optional) Label for close button
+         */
+        "closeButtonLabel"?: string;
+        /**
+          * (optional) Custom class
          */
         "customClass"?: string;
         /**
-          * (optional) Callback fired when the component requests to be closed.
+          * (optional) Transition duration
          */
-        "onScaleClose"?: (event: CustomEvent<MouseEvent | KeyboardEvent>) => void;
+        "duration"?: number;
         /**
-          * (optional) If true, the Modal is open.
+          * Modal heading
+         */
+        "heading"?: string;
+        "onScaleClose"?: (event: CustomEvent<any>) => void;
+        "onScaleOpen"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) If `true`, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -1589,10 +1624,6 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        /**
-          * (optional) Transition overrides
-         */
-        "transitions"?: any;
         /**
           * (optional) Modal variant
          */
@@ -1806,27 +1837,31 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleTabHeader {
-        "icon"?: string;
-        "iconOnly"?: boolean;
-        "iconSize"?: number;
-        "label"?: string;
-        "onTabclick"?: (event: CustomEvent<any>) => void;
         "selected"?: boolean;
+        /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabNav {
-        "ariaLabel"?: string;
+        /**
+          * True for smaller height and font size in tab headers.
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
     }
     interface ScaleTabPanel {
-        "ariaLabel"?: string;
-        "identifier"?: string;
+        /**
+          * True for smaller height and font size
+         */
+        "small"?: boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -1859,6 +1894,10 @@ declare namespace LocalJSX {
           * (optional) Tag disabled
          */
         "disabled"?: boolean;
+        /**
+          * (optional) Dismiss label
+         */
+        "dismissText"?: string;
         /**
           * (optional) Tag dismissable
          */

@@ -203,14 +203,13 @@ export class ScaleBreadcrumb {
 
 export declare interface ScaleButton extends Components.ScaleButton {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'role', 'size', 'styles', 'target', 'type', 'variant'],
-  methods: ['disable', 'enable']
+  inputs: ['ariaLabel', 'customClass', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
 })
 @Component({
   selector: 'scale-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'focusable', 'href', 'icon', 'iconAfter', 'iconBefore', 'iconSize', 'role', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['ariaLabel', 'customClass', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
 })
 export class ScaleButton {
   protected el: HTMLElement;
@@ -223,13 +222,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
 })
 export class ScaleCard {
   protected el: HTMLElement;
@@ -325,13 +324,13 @@ export class ScaleDivider {
 
 export declare interface ScaleIcon extends Components.ScaleIcon {}
 @ProxyCmp({
-  inputs: ['customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['ariaLabel', 'customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
 })
 @Component({
   selector: 'scale-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['ariaLabel', 'customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
 })
 export class ScaleIcon {
   protected el: HTMLElement;
@@ -432,23 +431,25 @@ export class ScaleListItem {
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
-  inputs: ['customClass', 'opened', 'size', 'styles', 'transitions', 'variant']
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant']
 })
 @Component({
   selector: 'scale-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'opened', 'size', 'styles', 'transitions', 'variant'],
-  outputs: ['scaleClose']
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant'],
+  outputs: ['scaleOpen', 'scaleClose']
 })
 export class ScaleModal {
-  /** (optional) Callback fired when the component requests to be closed. */
+  /**  */
+  scaleOpen!: IModal['scaleOpen'];
+  /**  */
   scaleClose!: IModal['scaleClose'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['scaleClose']);
+    proxyOutputs(this, this.el, ['scaleOpen', 'scaleClose']);
   }
 }
 
@@ -590,39 +591,35 @@ export class ScaleSwitch {
   }
 }
 
-import { TabHeader as ITabHeader } from '@scaleds/components-telekom/dist/types/components/tab-header/tab-header';
+
 export declare interface ScaleTabHeader extends Components.ScaleTabHeader {}
 @ProxyCmp({
-  inputs: ['icon', 'iconOnly', 'iconSize', 'label', 'selected', 'styles']
+  inputs: ['selected', 'small', 'styles']
 })
 @Component({
   selector: 'scale-tab-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'iconOnly', 'iconSize', 'label', 'selected', 'styles'],
-  outputs: ['tabclick']
+  inputs: ['selected', 'small', 'styles']
 })
 export class ScaleTabHeader {
-  /**  */
-  tabclick!: ITabHeader['tabClick'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['tabclick']);
   }
 }
 
 
 export declare interface ScaleTabNav extends Components.ScaleTabNav {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabNav {
   protected el: HTMLElement;
@@ -635,13 +632,13 @@ export class ScaleTabNav {
 
 export declare interface ScaleTabPanel extends Components.ScaleTabPanel {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'identifier', 'styles']
+  inputs: ['small', 'styles']
 })
 @Component({
   selector: 'scale-tab-panel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'identifier', 'styles']
+  inputs: ['small', 'styles']
 })
 export class ScaleTabPanel {
   protected el: HTMLElement;
@@ -673,13 +670,13 @@ export class ScaleTable {
 import { Tag as ITag } from '@scaleds/components-telekom/dist/types/components/tag/tag';
 export declare interface ScaleTag extends Components.ScaleTag {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
+  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-tag',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
+  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
   outputs: ['scaleClose']
 })
 export class ScaleTag {

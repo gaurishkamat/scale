@@ -18,9 +18,7 @@ export const styles: JssStyle = {
     '--icon-color': ({ palette }) => palette.white,
     padding: '0 10px',
     fontWeight: ({ type }) => type.weight_bold,
-    '& scale-icon': {
-      marginLeft: 2,
-    },
+    border: '1px solid transparent',
     '&:not($tag--disabled)': {
       '& scale-icon': {
         '&:hover': {
@@ -31,18 +29,33 @@ export const styles: JssStyle = {
   },
   'tag--dismissable': {
     paddingRight: 0,
-    '& scale-icon': {
+    '& button': {
+      padding: 0,
+      margin: 0,
+      marginLeft: 2,
+      background: 'transparent',
+      border: 'none',
+      height: '24px',
+      outline: 'none',
+      borderRadius: 4,
       cursor: 'pointer',
+
+      '&:focus': {
+        boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+        background: 'black',
+        border: '1px solid white',
+        '& scale-icon': {
+          position: 'relative',
+          top: -1,
+        },
+      },
+      '&:hover': {
+        background: 'black',
+      },
+    },
+    '& scale-icon': {
       '& svg': {
         outline: 'none',
-        borderRadius: 4,
-        '&:hover': {
-          background: 'black',
-        },
-        '&:focus': {
-          boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
-          background: 'black',
-        },
       },
     },
   },
@@ -52,6 +65,9 @@ export const styles: JssStyle = {
     lineHeight: ({ type }) => type.leading_6,
     '&$tag--dismissable': {
       paddingRight: 0,
+      '& button': {
+        height: '20px',
+      },
     },
   },
   'tag--variant-secondary': {
@@ -67,6 +83,7 @@ export const styles: JssStyle = {
     textDecoration: 'none',
     '&:focus': {
       boxShadow: ({ color }) => `0 0 0 2px ${color.focus}`,
+      border: '1px solid white',
     },
     '&$tag--variant-secondary': {
       background: ({ palette }) => palette.secondary,
@@ -75,6 +92,7 @@ export const styles: JssStyle = {
       },
       '&:focus': {
         background: ({ palette }) => palette.secondary,
+        border: '1px solid white',
       },
     },
   },
@@ -83,5 +101,13 @@ export const styles: JssStyle = {
     background: ({ palette }) => palette.grayDisabledBackground,
     '--icon-color': '#A4A4A4',
     cursor: 'not-allowed',
+    '& button': {
+      background: ({ palette }) => palette.grayDisabledBackground,
+      cursor: 'not-allowed',
+      '&:hover': {
+        background: ({ palette }) => palette.grayDisabledBackground,
+        cursor: 'not-allowed',
+      },
+    },
   },
 };

@@ -1,47 +1,92 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
-  'tab-wrapper': {
-    backgroundColor: ({ background }) => background.light,
-    marginRight: 8,
-    borderRadius: '8px 8px 0 0',
-  },
-  'tab-wrapper--selected': {
-    backgroundColor: 'transparent',
-  },
   'tab-header': {
-    padding: '.75rem 1.5rem .5rem 1.5rem',
-    // backgroundColor: '#f4f4f4',
-    transition: 'all 0.2s ease-in-out',
+    boxSizing: 'border-box',
+    position: 'relative',
     display: 'inline-flex',
     alignItems: 'center',
+    height: ({ size }) => size.height_tab,
+    marginRight: ({ spacing }) => spacing[5],
+    paddingLeft: 0,
+    paddingRight: ({ spacing }) => spacing[5],
+    fontFamily: ({ type }) => type.family,
+    fontSize: ({ type }) => type.size_4,
     fontWeight: ({ type }) => type.weight_bold,
-    color: ({ color }) => color.text,
-    '&:hover': {
-      '--icon-color': '#F90984',
-      color: '#F90984',
-      cursor: 'pointer',
+    borderRadius: ({ radii }) => radii.small,
+    outline: 'none',
+    cursor: 'pointer',
+
+    // Bottom border
+    '&::after': {
+      content: '""',
+      display: 'block',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      width: '100%',
+      height: ({ size }) => size.border_tab,
+      backgroundColor: ({ color }) => color.border_tab,
     },
+
+    /* Accessiblity: Windows "High Contrast Mode" border */
+    '&::before': {
+      content: '""',
+      zIndex: 1,
+      display: 'block',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      width: '100%',
+      height: 0,
+      borderTop: '1px solid transparent',
+    },
+
+    '&:hover': {
+      color: ({ color }) => color.primary_hover,
+    },
+    '&:hover::after': {
+      backgroundColor: ({ color }) => color.primary_hover,
+    },
+
     '&:active': {
-      '--icon-color': '#CB0068',
-      color: '#CB0068',
+      color: ({ color }) => color.primary_active,
+    },
+    '&:active::after': {
+      backgroundColor: ({ color }) => color.primary_active,
+    },
+
+    '&:focus': {
+      boxShadow: ({ size, color }) =>
+        `0 0 0 ${size.border_focus}px ${color.focus}`,
+    },
+
+    // For the icon
+    '& ::slotted(*)': {
+      marginRight: ({ spacing }) => spacing[2],
     },
   },
 
   'tab-header--selected': {
-    '--icon-color': ' #E20074',
-    color: '#E20074',
+    color: ({ color }) => color.primary,
+
+    '&::after': {
+      borderTopLeftRadius: ({ radii }) => radii.medium,
+      borderTopRightRadius: ({ radii }) => radii.medium,
+      height: ({ size }) => size.border_tab_selected,
+      backgroundColor: ({ color }) => color.primary,
+    },
+
+    '&::before': {
+      borderTop: ({ size }) =>
+        `${size.border_tab_selected}px solid transparent`,
+    },
   },
-  'tab-header__underline': {
-    width: '100%',
-    height: '4px',
-    transform: 'translateY(1px)',
-    backgroundColor: '#E20074',
-    borderRadius: '8px 8px 0 0',
-    opacity: 1,
-    transition: 'all 0.2s ease-in-out',
-  },
-  'tab-header__underline--transparent': {
-    opacity: 0,
+
+  'tab-header--small': {
+    height: ({ size }) => size.height_tab_small,
+    fontSize: ({ type }) => type.size_3,
   },
 };

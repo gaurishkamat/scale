@@ -179,6 +179,14 @@ export class Input implements Base {
   };
 
   render() {
+    const Tag = this.type === 'textarea' ? 'textarea' : 'input';
+    const { classes } = this.stylesheet;
+
+    const ariaInvalidAttr =
+      this.status === 'error' ? { 'aria-invalid': true } : {};
+    const helperTextId = `helper-message-${i}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+
     if (this.type === 'checkbox') {
       return (
         <Host checked={this.checked}>
@@ -191,6 +199,8 @@ export class Input implements Base {
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
+              {...ariaInvalidAttr}
+              {...ariaDescribedByAttr}
             />
             <div
               class={classNames('input__checkbox-container')}
@@ -203,6 +213,16 @@ export class Input implements Base {
               )}
             </div>
             <label htmlFor={this.inputId}>{this.label}</label>
+            {!!this.helperText && (
+              <div
+                class="input__meta"
+                id={helperTextId}
+                aria-live="polite"
+                aria-relevant="additions removals"
+              >
+                <div class="input__helper-text">{this.helperText}</div>
+              </div>
+            )}
           </div>
         </Host>
       );
@@ -220,19 +240,24 @@ export class Input implements Base {
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
+              {...ariaInvalidAttr}
+              {...ariaDescribedByAttr}
             />
             <label htmlFor={this.inputId}>{this.label}</label>
+            {!!this.helperText && (
+              <div
+                class="input__meta"
+                id={helperTextId}
+                aria-live="polite"
+                aria-relevant="additions removals"
+              >
+                <div class="input__helper-text">{this.helperText}</div>
+              </div>
+            )}
           </div>
         </Host>
       );
     }
-    const Tag = this.type === 'textarea' ? 'textarea' : 'input';
-    const { classes } = this.stylesheet;
-
-    const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
       <Host>

@@ -36,7 +36,10 @@ export class Icon implements Base {
   @Prop() fill?: string = 'var(--icon-color, currentColor)';
   /** The SVG `stroke` attribute */
   @Prop() stroke?: string = 'transparent';
+  /** (optional) If `true` the icon can receive focus */
   @Prop() focusable?: boolean = false;
+  /** (optional) When using the icon by itself, add a label to improve accessibility */
+  @Prop({ reflect: true }) ariaLabel?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;

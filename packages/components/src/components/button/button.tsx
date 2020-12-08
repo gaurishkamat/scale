@@ -1,4 +1,4 @@
-import { Component, Prop, h, Method, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './button.styles';
@@ -7,66 +7,50 @@ import { hasShadowDom } from '../../utils/utils';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+/*
+  TODO
+  - [ ] update storybook (remove link disabled?)
+*/
+
 @Component({
   tag: 'scale-button',
   shadow: true,
 })
 export class Button implements Base {
-  hasSlotBefore: boolean;
-  hasSlotAfter: boolean;
-
   @Element() hostElement: HTMLElement;
-  /** (optional) Button class */
+
+  /** (optional) Custom class */
   @Prop() customClass?: string = '';
-  /** (optional) Button size */
-  @Prop() size?: string = '';
+  /** (optional) The size of the button */
+  @Prop() size?: 'small' | 'large' = 'large';
   /** (optional) Button variant */
-  @Prop() variant?: string = '';
-  /** (optional) Disabled button */
+  @Prop() variant?: string = 'primary';
+  /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
-  /** (optional) Icon only */
-  @Prop() iconSize?: number = 24;
-  /** (optional) Icon only */
-  @Prop() icon?: string;
-  /** (optional) Icon before */
-  @Prop() iconBefore?: string;
-  /** (optional) Icon after */
-  @Prop() iconAfter?: string;
-  /** (optional) Link button */
-  @Prop() href?: string = '';
-  /** (optional) Link target button */
-  @Prop() target?: string = '_self';
-  /** (optional) button type */
+  /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
-  @Prop() ariaLabel?: string = '';
-  @Prop() focusable?: boolean = true;
-  @Prop() role?: string = '';
+  /** (optional) Set to `true` when the button contains only an icon */
+  @Prop() iconOnly?: boolean = false;
+  /** (optional) Icon position related to the label */
+  @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
+  /** (optional) aria-label attribute needed for icon-only buttons */
+  @Prop() ariaLabel: string;
+  /** (optional) When present, an <a> tag will be used */
+  @Prop() href?: string;
+  /** (optional) The target attribute for the <a> tag */
+  @Prop() target?: string = '_self';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
-  @CssInJs('Button', styles)
-  stylesheet: StyleSheet;
-
-  /** Button method: disable()  */
-  @Method()
-  async disable() {
-    this.disabled = true;
-  }
-
-  /** Button method: enable()  */
-  @Method()
-  async enable() {
-    this.disabled = false;
-  }
+  @CssInJs('Button', styles) stylesheet: StyleSheet;
 
   /**
-   * Hake to make the button behave semantically like a
-   * real button so plain forms can be submitted, etc.
+   * Hack to make the button behave has expected when inside forms.
    * @see https://github.com/ionic-team/ionic-framework/blob/master/core/src/components/button/button.tsx#L155-L175
    */
   handleClick = (ev: Event) => {
-    if (hasShadowDom(this.hostElement) && !this.href) {
+    if (hasShadowDom(this.hostElement) && this.disabled === false) {
       const form = this.hostElement.closest('form');
       if (form) {
         ev.preventDefault();
@@ -83,62 +67,53 @@ export class Button implements Base {
     }
   };
 
-  componentWillLoad() {
-    this.hasSlotBefore = !!this.hostElement.querySelector('[slot="before"]');
-    this.hasSlotAfter = !!this.hostElement.querySelector('[slot="after"]');
-  }
-
   componentWillUpdate() {}
   componentDidUnload() {}
 
-  render() {
-    const { classes } = this.stylesheet;
-    const Tag = this.href ? 'a' : 'button';
-    const role = this.href
-      ? { role: this.role || 'button' }
-      : this.role
-      ? { role: this.role }
-      : {};
+  connectedCallback() {
+    this.setIconPositionProp();
+  }
 
+  /**
+   * Detect whether the last node is an element (not text).
+   * If so, it's probably an icon, so we set `iconPosition` to `after`.
+   */
+  setIconPositionProp() {
+    const nodes = Array.from(this.hostElement.childNodes);
+    if (nodes.length < 2) {
+      return;
+    }
+    const lastNode = nodes[nodes.length - 1];
+    if (lastNode != null && lastNode.nodeType === 1) {
+      this.iconPosition = 'after';
+    }
+  }
+
+  render() {
     return (
-      <Host onClick={this.handleClick}>
+      <Host>
         <style>{this.stylesheet.toString()}</style>
-        <Tag
-          class={this.getCssClassMap()}
-          tabindex={this.focusable ? 0 : -1}
-          type={this.type}
-          {...(!!this.href ? { href: this.href } : {})}
-          {...(!!this.href ? { target: this.target } : {})}
-          {...(!!!this.href ? { disabled: this.disabled } : {})}
-          {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
-          {...role}
-        >
-          {!!this.icon === false &&
-            (!!this.iconBefore === true || this.hasSlotBefore) && (
-              <div class={classes.button__before}>
-                {!!this.iconBefore ? (
-                  <scale-icon path={this.iconBefore} size={this.iconSize} />
-                ) : (
-                  <slot name="before"></slot>
-                )}
-              </div>
-            )}
-          {this.icon && this.icon !== '' ? (
-            <scale-icon path={this.icon} size={this.iconSize} />
-          ) : (
+        {this.href ? (
+          <a
+            class={this.getCssClassMap()}
+            href={this.href}
+            target={this.target}
+            rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
+            aria-label={this.ariaLabel}
+          >
             <slot />
-          )}
-          {!!this.icon === false &&
-            (!!this.iconAfter === true || this.hasSlotAfter) && (
-              <div class={classes.button__after}>
-                {!!this.iconAfter ? (
-                  <scale-icon path={this.iconAfter} size={this.iconSize} />
-                ) : (
-                  <slot name="after"></slot>
-                )}
-              </div>
-            )}
-        </Tag>
+          </a>
+        ) : (
+          <button
+            class={this.getCssClassMap()}
+            onClick={this.handleClick}
+            disabled={this.disabled}
+            type={this.type}
+            aria-label={this.ariaLabel}
+          >
+            <slot />
+          </button>
+        )}
       </Host>
     );
   }
@@ -147,11 +122,14 @@ export class Button implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes.button,
-      this.customClass && this.customClass,
+      this.customClass && classes[this.customClass],
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
-      this.icon && this.icon !== '' && classes[`button--icon-only`],
-      this.disabled && classes[`button--disabled`]
+      this.iconOnly && classes[`button--icon-only`],
+      !this.iconOnly &&
+        this.iconPosition &&
+        classes[`button--icon-${this.iconPosition}`],
+      this.disabled && !this.href && classes[`button--disabled`]
     );
   }
 }

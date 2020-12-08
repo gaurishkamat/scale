@@ -31,7 +31,7 @@ export class Divider implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} aria-hidden>
           {!this.vertical ? <hr /> : <span class={classes.divider__vertical} />}
         </div>
       </Host>

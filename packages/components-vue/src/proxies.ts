@@ -210,24 +210,16 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
     size: {} as PropOptions<Components.ScaleButton['size']>,
     variant: {} as PropOptions<Components.ScaleButton['variant']>,
     disabled: {} as PropOptions<Components.ScaleButton['disabled']>,
-    iconSize: {} as PropOptions<Components.ScaleButton['iconSize']>,
-    icon: {} as PropOptions<Components.ScaleButton['icon']>,
-    iconBefore: {} as PropOptions<Components.ScaleButton['iconBefore']>,
-    iconAfter: {} as PropOptions<Components.ScaleButton['iconAfter']>,
+    type: {} as PropOptions<Components.ScaleButton['type']>,
+    iconOnly: {} as PropOptions<Components.ScaleButton['iconOnly']>,
+    iconPosition: {} as PropOptions<Components.ScaleButton['iconPosition']>,
+    ariaLabel: {} as PropOptions<Components.ScaleButton['ariaLabel']>,
     href: {} as PropOptions<Components.ScaleButton['href']>,
     target: {} as PropOptions<Components.ScaleButton['target']>,
-    type: {} as PropOptions<Components.ScaleButton['type']>,
-    ariaLabel: {} as PropOptions<Components.ScaleButton['ariaLabel']>,
-    focusable: {} as PropOptions<Components.ScaleButton['focusable']>,
-    role: {} as PropOptions<Components.ScaleButton['role']>,
     styles: {} as PropOptions<Components.ScaleButton['styles']>,
   },
 
 
-  methods: {
-    disable: createCommonMethod('disable') as Components.ScaleButton['disable'],
-    enable: createCommonMethod('enable') as Components.ScaleButton['enable'],
-  },
   render: createCommonRender('scale-button', []),
 });
 
@@ -237,6 +229,7 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
   props: {
     customClass: {} as PropOptions<Components.ScaleCard['customClass']>,
     href: {} as PropOptions<Components.ScaleCard['href']>,
+    label: {} as PropOptions<Components.ScaleCard['label']>,
     target: {} as PropOptions<Components.ScaleCard['target']>,
     interactive: {} as PropOptions<Components.ScaleCard['interactive']>,
     disabled: {} as PropOptions<Components.ScaleCard['disabled']>,
@@ -318,6 +311,7 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     fill: {} as PropOptions<Components.ScaleIcon['fill']>,
     stroke: {} as PropOptions<Components.ScaleIcon['stroke']>,
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
+    ariaLabel: {} as PropOptions<Components.ScaleIcon['ariaLabel']>,
     styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
 
@@ -413,16 +407,19 @@ export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 export const ScaleModal = /*@__PURE__*/ Vue.extend({
 
   props: {
-    transitions: {} as PropOptions<Components.ScaleModal['transitions']>,
     customClass: {} as PropOptions<Components.ScaleModal['customClass']>,
+    heading: {} as PropOptions<Components.ScaleModal['heading']>,
     size: {} as PropOptions<Components.ScaleModal['size']>,
     variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
+    duration: {} as PropOptions<Components.ScaleModal['duration']>,
+    closeButtonLabel: {} as PropOptions<Components.ScaleModal['closeButtonLabel']>,
+    alignActions: {} as PropOptions<Components.ScaleModal['alignActions']>,
     styles: {} as PropOptions<Components.ScaleModal['styles']>,
   },
 
 
-  render: createCommonRender('scale-modal', ['scaleClose']),
+  render: createCommonRender('scale-modal', ['scaleOpen', 'scaleClose']),
 });
 
 
@@ -548,24 +545,21 @@ export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
 export const ScaleTabHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabHeader['small']>,
     styles: {} as PropOptions<Components.ScaleTabHeader['styles']>,
-    label: {} as PropOptions<Components.ScaleTabHeader['label']>,
     selected: {} as PropOptions<Components.ScaleTabHeader['selected']>,
-    icon: {} as PropOptions<Components.ScaleTabHeader['icon']>,
-    iconSize: {} as PropOptions<Components.ScaleTabHeader['iconSize']>,
-    iconOnly: {} as PropOptions<Components.ScaleTabHeader['iconOnly']>,
   },
 
 
-  render: createCommonRender('scale-tab-header', ['tabclick']),
+  render: createCommonRender('scale-tab-header', []),
 });
 
 
 export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabNav['small']>,
     styles: {} as PropOptions<Components.ScaleTabNav['styles']>,
-    ariaLabel: {} as PropOptions<Components.ScaleTabNav['ariaLabel']>,
   },
 
 
@@ -576,9 +570,8 @@ export const ScaleTabNav = /*@__PURE__*/ Vue.extend({
 export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
 
   props: {
+    small: {} as PropOptions<Components.ScaleTabPanel['small']>,
     styles: {} as PropOptions<Components.ScaleTabPanel['styles']>,
-    ariaLabel: {} as PropOptions<Components.ScaleTabPanel['ariaLabel']>,
-    identifier: {} as PropOptions<Components.ScaleTabPanel['identifier']>,
   },
 
 
@@ -610,6 +603,7 @@ export const ScaleTag = /*@__PURE__*/ Vue.extend({
     target: {} as PropOptions<Components.ScaleTag['target']>,
     dismissable: {} as PropOptions<Components.ScaleTag['dismissable']>,
     disabled: {} as PropOptions<Components.ScaleTag['disabled']>,
+    dismissText: {} as PropOptions<Components.ScaleTag['dismissText']>,
     styles: {} as PropOptions<Components.ScaleTag['styles']>,
   },
 

@@ -35,7 +35,7 @@ import ScaleCard from './ScaleCard.vue';
 export const Template = (args, { argTypes }) => ({
   components: { ScaleCard },
   props: {
-    label: String,
+    slot: String,
     ...ScaleCard.props
   },
   template: `
@@ -48,7 +48,7 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :styles="JSON.stringify(styles)"
     >
-      {{ label }}
+      {{ slot }}
     </scale-card>
   `
 })
@@ -61,7 +61,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Standard'
     args={{
-      label: 'A card',
+        slot: 'A card',
+        label: 'Example Card',
     }}
   >
     {Template.bind({})}
@@ -76,7 +77,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='With Link'
     args={{
-      label: 'A card with a link to example.com',
+      slot: 'A card with a link to example.com',
+      label: 'Example Card',
       href: 'https://example.com',
       target: '_blank'
     }}
@@ -86,7 +88,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card href="https://example.com" target="_blank">A card with a link to example.com</scale-card>
+<scale-card href="https://example.com" target="_blank" label="Example Card">A card with a link to example.com</scale-card>
 ```
 
 
@@ -96,7 +98,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Padding Off'
     args={{
-      label: 'A card with a link to example.com',
+      slot: 'A card with a link to example.com',
+      label: 'Example Card',
       noPadding: true
     }}
   >
@@ -105,7 +108,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card href="https://example.com" target="_blank" no-padding>A card with a link to example.com</scale-card>
+<scale-card href="https://example.com" target="_blank" no-padding label="Example Card">A card with no padding</scale-card>
 ```
 
 ## Interactive
@@ -114,7 +117,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Interactive'
     args={{
-      label: 'A card, interactive, no link',
+      slot: 'A card, interactive, no link',
+      label: 'Example Card',
       interactive: true
     }}
   >
@@ -123,7 +127,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card interactive>A card, interactive, no link</scale-card>
+<scale-card interactive label="Example Card">A card, interactive</scale-card>
 ```
 
 
@@ -133,7 +137,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Interactive Padding Off'
     args={{
-      label: 'A card, interactive, no link',
+      slot: 'A card, interactive, no link',
+      label: 'Example Card',
       interactive: true,
       noPadding: true
     }}
@@ -143,7 +148,7 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card interactive no-padding>A card, interactive, no link</scale-card>
+<scale-card interactive no-padding label="Example Card">A card, interactive, no link</scale-card>
 ```
 
 ## Disabled
@@ -152,7 +157,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Disabled'
     args={{
-      label: 'A card, disabled',
+      slot: 'A card, disabled',
+      label: 'Example Card',
       disabled: true
     }}
   >
@@ -161,5 +167,5 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card disabled>A card, interactive</scale-card>
+<scale-card disabled label="Example Card">A card, interactive</scale-card>
 ```

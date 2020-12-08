@@ -1,7 +1,5 @@
 import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
 import ScaleButton from "./ScaleButton.vue";
-export const ICON = 'M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z';
-import { action } from "@storybook/addon-actions";
 
 <Meta
   title='Components/Button'
@@ -27,30 +25,29 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleButton },
   props: {
     label: String,
+    icon: String,
     ...ScaleButton.props
   },
   template: `
     <scale-button
-      :alt="alt"
-      :ariaLabel="ariaLabel"
+      :title="title"
       :disabled="disabled"
-      :focusable="focusable"
-      :icon="icon"
-      :iconAfter="iconAfter"
-      :iconBefore="iconBefore"
-      :iconSize="iconSize"
-      :href="href"
-      :role="role"
       :size="size"
+      :href="href"
       :target="target"
       :type="type"
       :variant="variant"
-      @click="click"
+      :type="type"
+      :icon-only="iconOnly"
+      :aria-label="ariaLabel"
+      @click="action('clicked')"
     >
-      {{label}}
+      <scale-icon-action-search v-if="icon === 'before'" :size="size == 'small' ? 16 : 24" />
+      {{ iconOnly !== true ? label : null }}
+      <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
-  `,
-  methods: { click: action('click') }
+  `
 })
 
 # Button
@@ -61,7 +58,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Standard'
     args={{
-      label: 'A button'
+      label: 'Label'
     }}
   >
     {Template.bind({})}
@@ -77,7 +74,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Secondary'
     args={{
-      variant: 'secondary',
+      variant: 'secondary'
     }}
   >
     {Template.bind({})}
@@ -91,7 +88,7 @@ export const Template = (args, { argTypes }) => ({
     name='Large Secondary Disabled'
     args={{
       variant: 'secondary',
-      disabled: true,
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -109,7 +106,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Disabled'
     args={{
-      disabled: true,
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -127,7 +124,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large With Icon Before'
     args={{
-      iconBefore: ICON,
+      icon: 'before'
     }}
   >
     {Template.bind({})}
@@ -135,7 +132,9 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-button icon-before="SVG-PATH">Label</scale-button>
+<scale-button>
+  <scale-icon-action-search /> Label
+</scale-button>
 ```
 
 
@@ -145,7 +144,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large With Icon After'
     args={{
-      iconAfter: "M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z",
+      icon: 'after'
     }}
   >
     {Template.bind({})}
@@ -163,8 +162,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='Large Icon Only'
     args={{
-      icon: ICON,
-      alt: 'Search'
+      iconOnly: true,
+      title: 'Search',
+      ariaLabel: 'Search'
     }}
   >
     {Template.bind({})}
@@ -183,7 +183,8 @@ export const Template = (args, { argTypes }) => ({
     name='Large Link'
     args={{
       href: 'https://example.com',
-      target: '_blank'
+      target: '_blank',
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}
@@ -200,8 +201,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small Standard'
     args={{
       size: 'small',
-      iconSize: 16,
-      label: 'A button'
+      label: 'Label'
     }}
   >
     {Template.bind({})}
@@ -221,8 +221,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small Secondary'
     args={{
       size: 'small',
-      iconSize: 16,
-      variant: 'secondary',
+      variant: 'secondary'
     }}
   >
     {Template.bind({})}
@@ -241,9 +240,8 @@ export const Template = (args, { argTypes }) => ({
     name='Small Secondary Disabled'
     args={{
       size: 'small',
-      iconSize: 16,
       variant: 'secondary',
-      disabled: true,
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -262,8 +260,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small Disabled'
     args={{
       size: 'small',
-      iconSize: 16,
-      disabled: true,
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -282,8 +279,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small With Icon Before'
     args={{
       size: 'small',
-      iconSize: 16,
-      iconBefore: ICON,
+      icon: 'before'
     }}
   >
     {Template.bind({})}
@@ -302,8 +298,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small With Icon After'
     args={{
       size: 'small',
-      iconSize: 16,
-      iconAfter: "M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z",
+      icon: 'after'
     }}
   >
     {Template.bind({})}
@@ -322,9 +317,8 @@ export const Template = (args, { argTypes }) => ({
     name='Small Icon Only'
     args={{
       size: 'small',
-      iconSize: 16,
-      icon: ICON,
-      alt: 'Search'
+      iconOnly: true,
+      title: 'Search'
     }}
   >
     {Template.bind({})}
@@ -343,9 +337,9 @@ export const Template = (args, { argTypes }) => ({
     name='Small Link'
     args={{
       size: 'small',
-      iconSize: 16,
       href: 'https://example.com',
-      target: '_blank'
+      target: '_blank',
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}

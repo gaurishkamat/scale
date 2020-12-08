@@ -1,6 +1,5 @@
 import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
-import { action } from "@storybook/addon-actions";
 
 <Meta
   title='Components/Modal'
@@ -12,89 +11,96 @@ import { action } from "@storybook/addon-actions";
         options: ["small", "default", "large"]
       },
     },
+    alignActions: {
+      control: {
+        type: "select",
+        options: ["right", "left"]
+      },
+    },
     opened: {
       control: {
         disable: true
       },
     },
+    showActions: {
+      table: {
+        disable: true
+      }
+    },
+    shortBody: {
+      table: {
+        disable: true
+      }
+    },
+    longBody: {
+      table: {
+        disable: true
+      }
+    },
   }}
 />
 
-export const Template = (args, { argTypes }) => ({
+export const Template = (args, context) => ({
   components: { ScaleModal },
   props: {
-    label: String,
+    showActions: Boolean,
+    shortBody: Boolean,
+    longBody: Boolean,
     ...ScaleModal.props
+  },
+  data() {
+    return {
+      isOpen: args.opened
+    }
+  },
+  methods: {
+    close() {
+      this.isOpen = false
+    }
   },
   template: `
     <div>
       <scale-modal
         :custom-class="customClass"
-        :transitions="transitions"
+        :heading="heading"
         :size="size"
-        :header="header"
+        :variant="size"
         :opened="isOpen"
+        :duration="duration"
+        :close-button-label="closeButtonLabel"
+        :align-actions="alignActions"
         :styles="styles"
-        @scaleClose="scaleClose"
+        @close="close()"
       >
-        <template #header v-if="!!header"><span slot="header">{{header}}</span></template>
-        <template #modal-actions v-if="close === 'showActions'">
-          <span slot="modal-actions">
-            <scale-button
-              variant="secondary"
-              style="margin-right: 8px"
-              @click="scaleClose"
-            >
-              cancel
-            </scale-button>
-            <scale-button @click="scaleClose">
-              submit
-            </scale-button>
-          </span>
-        </template>
-        <slot>
+        <template v-if="shortBody">
           <p>Hello. Welcome. What a pleasure it is to have you.</p>
-          <p v-if="close === 'showActions'">It is not a disaster. It's not a disaster, alright? She's not going to the cops, she's not telling a living soul. You wanna know why? One word: blowback. If she blabs, it'll be a disaster - for her. That DEA brother-in-law? Screwed! You were right under his nose. He'll be lucky if they let him bust glue sniffers at the hobby shop. The kids? Paging Dr. Phil! 'My daddy's a drug dealer and my mommy turned him in!' And the house? Gone! The feds will come in and RICO her and the kids out on the street. Good luck arguing with them on that, noooo. It's not gonna happen. She's bluffing. And she knows it. </p>
-          <p v-if="close === 'showActions'">Today's your lucky day. Look around, kiddo - it's all yours. You are now the owner of this fine establishment. Free? Oh ladies, cover your ears. No... not free. Look, hey... this is a squeaky clean, highly profitable (at least potentially), local institution. Look the bottom with favor by the chamber of commerce, better business bureau at three-hundred and twelve thousand dollars, it's a steal.</p>
-          <p v-if="close === 'showActions'">Don't you get it? On the outside it's a nail salon right, on the inside it's the best money laundering a growing boy could ask for. Wait, wait! Come back here. Sit. Come on, come on... humor me here for a second. You know you need to launder your money, right? Do you understand the basics of it - placement, layering, integration. Well, you wanna stay out of jail don't ya? You wanna keep your money and your freedom. Cause I got three little letters for ya, I - R - S. If they can get Capone, they can get you. </p>
-          <p v-if="close === 'showActions'">What am I eighth grade hall monitor? Current whereabouts? Let me tell you something, Mike. There are rules to this lawyer thing. Attorney client privilege, that's a big one. That's something I provide for you! If I give up Pinkman, then you're gonna be asking, old Saul gives 'em up pretty easy what's to keep him from giving me up? You see, so then, where's the trust? </p>
-          <p v-if="close === 'showActions'">Look, let's start with some tough love, alright? Ready for this? Here it goes: you two suck at peddling meth. Period. Good! 'Oh boo-hoo, I won't cook meth anymore!' You're a crybaby! Who needs you?! Hey, I'm unplugging the website, so no more money laundering! How do you like that?! </p>
-          <div v-if="close !== 'showActions'" style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
-            <scale-button
-              variant="secondary"
-              style="margin-right: 8px"
-              @click="scaleClose"
-            >
-              cancel
-            </scale-button>
-            <scale-button @click="scaleClose">
-              submit
-            </scale-button>
-          </div>
-        </slot>
+        </template>
+        <template v-if="longBody">
+          <p>Hello. Welcome. What a pleasure it is to have you.</p>
+          <p>
+            <scale-input label="Please enter your favorite color" helper-text="Any valid CSS value"></scale-input>
+          </p>
+          <p>It is not a disaster. It's not a disaster, alright? She's not going to the cops, she's not telling a living soul. You wanna know why? One word: blowback. If she blabs, it'll be a disaster - for her. That DEA brother-in-law? Screwed! You were right under his nose. He'll be lucky if they let him bust glue sniffers at the hobby shop. The kids? Paging Dr. Phil! 'My daddy's a drug dealer and my mommy turned him in!' And the house? Gone! The feds will come in and RICO her and the kids out on the street. Good luck arguing with them on that, noooo. It's not gonna happen. She's bluffing. And she knows it.</p>
+          <p>Today's your lucky day. Look around, kiddo - it's all yours. You are now the owner of this fine establishment. Free? Oh ladies, cover your ears. No... not free. Look, hey... this is a squeaky clean, highly profitable (at least potentially), local institution. Look the bottom with favor by the chamber of commerce, better business bureau at three-hundred and twelve thousand dollars, it's a steal.</p>
+          <p>Don't you get it? On the outside it's a nail salon right, on the inside it's the best money laundering a growing boy could ask for. Wait, wait! Come back here. Sit. Come on, come on... humor me here for a second. You know you need to launder your money, right? Do you understand the basics of it - placement, layering, integration. Well, you wanna stay out of jail don't ya? You wanna keep your money and your freedom. Cause I got three little letters for ya, I - R - S. If they can get Capone, they can get you.</p>
+          <p>What am I eighth grade hall monitor? Current whereabouts? Let me tell you something, Mike. There are rules to this lawyer thing. Attorney client privilege, that's a big one. That's something I provide for you! If I give up Pinkman, then you're gonna be asking, old Saul gives 'em up pretty easy what's to keep him from giving me up? You see, so then, where's the trust?</p>
+          <p>Look, let's start with some tough love, alright? Ready for this? Here it goes: you two suck at peddling meth. Period. Good! 'Oh boo-hoo, I won't cook meth anymore!' You're a crybaby! Who needs you?! Hey, I'm unplugging the website, so no more money laundering! How do you like that?!</p>
+        </template>
+        <template #actions v-if="showActions">
+          <scale-button slot="action" variant="secondary" @click="close">
+            Cancel
+          </scale-button>
+          <scale-button slot="action"@click="close">
+            Primary Action
+          </scale-button>
+        </template>
       </scale-modal>
-      <scale-button @click="openModal">
+      <!--  -->
+      <scale-button @click="isOpen = true">
         Open Modal
       </scale-button>
     </div>
-  `,
-   methods: {
-     scaleClose: function() {
-       this.isOpen=false;
-       action('scaleClose')();
-     },
-     openModal: function() {
-       this.isOpen=true;
-     }
-   },
-   data: function() {
-      return { isOpen: this.opened }
-   },
-   watch: {
-     opened: function (newOpened) {
-       this.isOpen = newOpened;
-     }
-   },
+  `
 })
 
 # Modal
@@ -103,128 +109,163 @@ export const Template = (args, { argTypes }) => ({
 
 <Preview withSource="none">
   <Story
-    name='Standard L / 8 Columns'
+    name='Standard'
     args={{
       opened: false,
-      header: 'Header'
+      showActions: true,
+      shortBody: true
     }}
   >
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props story='Standard L / 8 Columns' />
-
-
-## Small S / 6 Columns
-
-<Preview withSource="none">
-  <Story
-    name='Small S / 6 Columns'
-    args={{
-      opened: false,
-      header: 'Header',
-      size: 'small'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
+<Props story='Standard' />
 
 ```html
-<scale-modal opened="opened" size="small" @scaleClose="opened = false">
-  <span slot="header">Header</span>
-  <slot>
-  <p>Hello. Welcome.</p>
-   <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
-     <scale-button
-       variant="secondary"
-       style="margin-right: 8px"
-       @click="scaleClose"
-     >
-       cancel
-     </scale-button>
-     <scale-button @click="scaleClose">
-       submit
-     </scale-button>
-   </div>
-  </slot>
-</scale-modal>
-```
-
-
-## Large XL / 12 Columns
-
-<Preview withSource="none">
-  <Story
-    name='Large XL / 12 Columns'
-    args={{
-      opened: false,
-      header: 'Header',
-      size: 'large'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-modal opened="opened" size="large" @scaleClose="opened = false">
-  <span slot="header">Header</span>
-  <slot>
-    <p>Hello. Welcome.</p>
-    <div style="float:right; padding:1.5rem 0 1.5rem 1.5rem;">
-      <scale-button
-        variant="secondary"
-        style="margin-right: 8px"
-        @click="scaleClose"
-      >
-        cancel
-      </scale-button>
-      <scale-button @click="scaleClose">
-        submit
-      </scale-button>
-    </div>
-  </slot>
-</scale-modal>
-```
-
-
-## Scrolling modal with Actions
-
-<Preview withSource="none">
-  <Story
-    name='Scrolling modal with Actions'
-    args={{
-      opened: false,
-      header: 'Header',
-      close: 'showActions',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<div>
-  <scale-modal opened="opened" @scaleClose="opened = false">
-    <span slot="close"><scale-icon-action-circle-close></scale-icon-action-circle-close></span>
-    <span slot="modal-actions">
-      <scale-button
-        variant="secondary"
-        style="margin-right: 8px"
-        @click="opened = false"
-      >
-        cancel
-      </scale-button>
-      <scale-button @click="opened = false">
-        submit
-      </scale-button>
-    </span>
-    <slot><p>Hello. Welcome.</p></slot>
-  </scale-modal>
-  <scale-button @click="opened = true">
-    Open Modal
+<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+  <p>Hello. Welcome. What a pleasure it is to have you.</p>
+  <scale-button variant="secondary" @click="opened = false">
+    Cancel
   </scale-button>
-</div
+  <scale-button @click="handlePrimaryAction">
+    Primary Action
+  </scale-button>
+</scale-modal>
+```
+
+## Standard Small
+
+<Preview withSource="none">
+  <Story
+    name='Standard Small'
+    args={{
+      opened: false,
+      size: 'small',
+      showActions: true,
+      shortBody: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+  <p>Hello. Welcome. What a pleasure it is to have you.</p>
+  <scale-button variant="secondary" @click="opened = false">
+    Cancel
+  </scale-button>
+  <scale-button @click="handlePrimaryAction">
+    Primary Action
+  </scale-button>
+</scale-modal>
+```
+
+## Standard Large
+
+<Preview withSource="none">
+  <Story
+    name='Standard Large'
+    args={{
+      opened: false,
+      size: 'large',
+      showActions: true,
+      shortBody: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-modal heading="Today is your lucky day" size="large" :opened="opened" @scaleClose="opened = false">
+  <p>Hello. Welcome. What a pleasure it is to have you.</p>
+  <scale-button slot="action" variant="secondary" @click="opened = false">
+    Cancel
+  </scale-button>
+  <scale-button slot="action" @click="handlePrimaryAction">
+    Primary Action
+  </scale-button>
+</scale-modal>
+```
+
+## With No Actions
+
+<Preview withSource="none">
+  <Story
+    name='No Actions'
+    args={{
+      opened: false,
+      size: 'small',
+      showActions: false,
+      shortBody: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+  <p>Hello. Welcome. What a pleasure it is to have you.</p>
+</scale-modal>
+```
+
+## With No Body
+
+<Preview withSource="none">
+  <Story
+    name='With No Body'
+    args={{
+      opened: false,
+      size: 'small',
+      showActions: true,
+      shortBody: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+  <scale-button slot="action" variant="secondary" @click="opened = false">
+    Cancel
+  </scale-button>
+  <scale-button slot="action" @click="handlePrimaryAction">
+    Primary Action
+  </scale-button>
+</scale-modal>
+```
+
+## Scrolling With Actions
+
+<Preview withSource="none">
+  <Story
+    name='Scrolling With Actions'
+    args={{
+      opened: false,
+      showActions: true,
+      longBody: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+  <p>Hello. Welcome. What a pleasure it is to have you.</p>
+  <p>...</p>
+  <p>...</p>
+  <p>...</p>
+  <p>...</p>
+  <scale-button slot="action" variant="secondary" @click="opened = false">
+    Cancel
+  </scale-button>
+  <scale-button slot="action" @click="handlePrimaryAction">
+    Primary Action
+  </scale-button>
+</scale-modal>
 ```

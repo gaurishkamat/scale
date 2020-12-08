@@ -260,47 +260,47 @@
       "attributes": [
         {
           "name": "aria-label",
-          "description": ""
+          "description": "(optional) aria-label attribute needed for icon-only buttons"
         },
         {
           "name": "custom-class",
-          "description": "(optional) Button class"
+          "description": "(optional) Custom class"
         },
         {
           "name": "disabled",
-          "description": "(optional) Disabled button"
-        },
-        {
-          "name": "focusable",
-          "description": ""
+          "description": "(optional) If `true`, the button is disabled"
         },
         {
           "name": "href",
-          "description": "(optional) Link button"
+          "description": "(optional) When present, an <a> tag will be used"
         },
         {
-          "name": "icon",
-          "description": "(optional) Icon only"
+          "name": "icon-only",
+          "description": "(optional) Set to `true` when the button contains only an icon"
         },
         {
-          "name": "icon-after",
-          "description": "(optional) Icon after"
-        },
-        {
-          "name": "icon-before",
-          "description": "(optional) Icon before"
-        },
-        {
-          "name": "icon-size",
-          "description": "(optional) Icon only"
-        },
-        {
-          "name": "role",
-          "description": ""
+          "name": "icon-position",
+          "description": "(optional) Icon position related to the label",
+          "values": [
+            {
+              "name": "after"
+            },
+            {
+              "name": "before"
+            }
+          ]
         },
         {
           "name": "size",
-          "description": "(optional) Button size"
+          "description": "(optional) The size of the button",
+          "values": [
+            {
+              "name": "large"
+            },
+            {
+              "name": "small"
+            }
+          ]
         },
         {
           "name": "styles",
@@ -308,11 +308,11 @@
         },
         {
           "name": "target",
-          "description": "(optional) Link target button"
+          "description": "(optional) The target attribute for the <a> tag"
         },
         {
           "name": "type",
-          "description": "(optional) button type",
+          "description": "(optional) Button type",
           "values": [
             {
               "name": "button"
@@ -353,6 +353,10 @@
         {
           "name": "interactive",
           "description": "(optional) Link interactive"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Label of the card"
         },
         {
           "name": "no-padding",
@@ -477,6 +481,10 @@
       },
       "attributes": [
         {
+          "name": "aria-label",
+          "description": "(optional) When using the icon by itself, add a label to improve accessibility"
+        },
+        {
           "name": "custom-class",
           "description": "(optional) Tag custom class"
         },
@@ -486,7 +494,7 @@
         },
         {
           "name": "focusable",
-          "description": ""
+          "description": "(optional) If `true` the icon can receive focus"
         },
         {
           "name": "name",
@@ -771,12 +779,36 @@
       },
       "attributes": [
         {
+          "name": "align-actions",
+          "description": "(optional) Alignment of action buttons",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "close-button-label",
+          "description": "(optional) Label for close button"
+        },
+        {
           "name": "custom-class",
-          "description": "(optional) Modal class"
+          "description": "(optional) Custom class"
+        },
+        {
+          "name": "duration",
+          "description": "(optional) Transition duration"
+        },
+        {
+          "name": "heading",
+          "description": "Modal heading"
         },
         {
           "name": "opened",
-          "description": "(optional) If true, the Modal is open."
+          "description": "(optional) If `true`, the Modal is open."
         },
         {
           "name": "size",
@@ -785,10 +817,6 @@
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "transitions",
-          "description": "(optional) Transition overrides"
         },
         {
           "name": "variant",
@@ -1054,24 +1082,12 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": ""
-        },
-        {
-          "name": "icon-only",
-          "description": ""
-        },
-        {
-          "name": "icon-size",
-          "description": ""
-        },
-        {
-          "name": "label",
-          "description": ""
-        },
-        {
           "name": "selected",
           "description": ""
+        },
+        {
+          "name": "small",
+          "description": "True for smaller height and font size"
         }
       ]
     },
@@ -1083,8 +1099,8 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": ""
+          "name": "small",
+          "description": "True for smaller height and font size in tab headers."
         }
       ]
     },
@@ -1096,12 +1112,8 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": ""
-        },
-        {
-          "name": "identifier",
-          "description": ""
+          "name": "small",
+          "description": "True for smaller height and font size"
         }
       ]
     },
@@ -1144,6 +1156,10 @@
         {
           "name": "disabled",
           "description": "(optional) Tag disabled"
+        },
+        {
+          "name": "dismiss-text",
+          "description": "(optional) Dismiss label"
         },
         {
           "name": "dismissable",

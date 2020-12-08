@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                    | Type                                     | Default     |
-| ------------ | ------------ | ------------------------------ | ---------------------------------------- | ----------- |
-| `ariaLabel`  | `aria-label` |                                | `string`                                 | `undefined` |
-| `identifier` | `identifier` |                                | `string`                                 | `undefined` |
-| `styles`     | --           | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| Property | Attribute | Description                           | Type                                     | Default     |
+| -------- | --------- | ------------------------------------- | ---------------------------------------- | ----------- |
+| `small`  | `small`   | True for smaller height and font size | `boolean`                                | `false`     |
+| `styles` | --        | (optional) Injected jss styles        | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 
 ----------------------------------------------

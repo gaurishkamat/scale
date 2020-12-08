@@ -26,6 +26,8 @@ export class Tag implements Base {
   @Prop() dismissable?: boolean = false;
   /** (optional) Tag disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) Dismiss label */
+  @Prop() dismissText?: string = 'dismiss';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -53,7 +55,6 @@ export class Tag implements Base {
       : {};
     const iconProps = !this.disabled
       ? {
-          focusable: true,
           onClick: event => this.handleClose(event),
         }
       : {};
@@ -68,12 +69,15 @@ export class Tag implements Base {
         <style>{this.stylesheet.toString()}</style>
         <Element class={this.getCssClassMap()} {...linkProps}>
           <slot />
+
           {this.dismissable && (
-            <scale-icon
-              size={this.size === 'small' ? 20 : 24}
-              path={icons.close}
-              {...iconProps}
-            />
+            <button disabled={this.disabled} aria-label={this.dismissText}>
+              <scale-icon
+                size={this.size === 'small' ? 20 : 24}
+                path={icons.close}
+                {...iconProps}
+              />
+            </button>
           )}
         </Element>
       </Host>
