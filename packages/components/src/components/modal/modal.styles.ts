@@ -87,7 +87,7 @@ export const styles: JssStyle = {
       left: 0,
       width: '100%',
       height: '100%',
-      border: '1px solid lime',
+      border: '1px solid transparent',
       borderRadius: ({ radii }) => radii.modal,
       pointerEvents: 'none',
     },
