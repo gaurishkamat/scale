@@ -17,13 +17,15 @@ import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import Base from '../../utils/base-interface';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
-import { animateTo, keyframes } from '../../utils/animate';
+import { animateTo, KEYFRAMES } from '../../utils/animate';
+
+const supportsResizeObserver = 'ResizeObserver' in window;
 
 /*
   TODO
   ====
   - [ ] update storybook ~~(add proper icon)~~
-  - [ ] handle scrolling logic (toggle has-scroll class)
+  - [x] handle scrolling logic (toggle has-scroll class)
   - [x] implement sizes
   - [x] add close-label prop and use it
   - [x] add HCM border
@@ -42,7 +44,9 @@ export class Modal implements Base {
   closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   modalContainer: HTMLElement;
   modalWindow: HTMLElement;
+  modalBody: HTMLElement;
   focusableElements: HTMLElement[] = [];
+  resizeObserver: ResizeObserver;
 
   @Element() hostElement: HTMLElement;
   /** (optional) Custom class */
@@ -90,6 +94,12 @@ export class Modal implements Base {
   componentDidUnload() {}
   componentWillUpdate() {}
 
+  disconnectedCallback() {
+    if (this.resizeObserver) {
+      this.resizeObserver.disconnect();
+    }
+  }
+
   /**
    * Set `hasActionsSlot` and `hasBody`.
    */
@@ -105,16 +115,27 @@ export class Modal implements Base {
     }
   }
 
-  /**
-   * Query all focusable elements and store them in `focusableElements`.
-   * Needed for the "focus trap" functionality.
-   */
   componentDidLoad() {
+    // Query all focusable elements and store them in `focusableElements`.
+    // Needed for the "focus trap" functionality.
     this.focusableElements = queryShadowRoot(
       this.hostElement.shadowRoot,
       el => isHidden(el) || el.matches('[data-focus-trap-edge]'),
       isFocusable
     );
+    // Set `hasScroll` state dynamically on resize.
+    if (supportsResizeObserver) {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.setHasScroll();
+      });
+      this.resizeObserver.observe(this.modalBody as Element);
+    }
+    this.setHasScroll();
+  }
+
+  setHasScroll() {
+    const container = this.modalBody;
+    this.hasScroll = container.scrollHeight > container.clientHeight;
   }
 
   getFirstFocusableElement(): HTMLElement | null {
@@ -153,11 +174,11 @@ export class Modal implements Base {
   open() {
     this.isOpen = true;
     try {
-      animateTo(this.modalWindow, keyframes.fadeInTop, {
+      animateTo(this.modalWindow, KEYFRAMES.fadeInTop, {
         duration: this.duration,
         delay: this.duration * 0.5,
       });
-      const anim = animateTo(this.modalContainer, keyframes.fadeIn, {
+      const anim = animateTo(this.modalContainer, KEYFRAMES.fadeIn, {
         duration: this.duration,
       });
       anim.addEventListener('finish', () => {
@@ -168,7 +189,7 @@ export class Modal implements Base {
 
   close() {
     try {
-      const anim = animateTo(this.modalContainer, keyframes.fadeOut, {
+      const anim = animateTo(this.modalContainer, KEYFRAMES.fadeOut, {
         duration: this.duration,
       });
       anim.addEventListener('finish', () => {
@@ -217,7 +238,10 @@ export class Modal implements Base {
                 </slot>
               </button>
             </div>
-            <div class={classes['modal__body-wrapper']}>
+            <div
+              ref={el => (this.modalBody = el)}
+              class={classes['modal__body-wrapper']}
+            >
               <div class={classes['modal__body']}>
                 <slot></slot>
               </div>

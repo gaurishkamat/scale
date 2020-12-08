@@ -1,6 +1,6 @@
 import { JssStyle } from 'jss';
 
-const columnWidth = 56 // TODO currently not in `spacing` tokens, need to revise with design
+const columnWidth = 56; // TODO currently not in `spacing` tokens, need to revise with design
 
 export const styles: JssStyle = {
   modal: {
@@ -68,13 +68,16 @@ export const styles: JssStyle = {
 
     /* Rudimentarily simulating the grid */
     '$modal--size-small &': {
-      maxWidth: ({ spacing }) => `calc((6 * ${columnWidth}px) + (5 * ${spacing.gutter}))`
+      maxWidth: ({ spacing }) =>
+        `calc((6 * ${columnWidth}px) + (5 * ${spacing.gutter}))`,
     },
     '$modal--size-default &': {
-      maxWidth: ({ spacing }) => `calc((8 * ${columnWidth}px) + (7 * ${spacing.gutter}))`
+      maxWidth: ({ spacing }) =>
+        `calc((8 * ${columnWidth}px) + (7 * ${spacing.gutter}))`,
     },
     '$modal--size-large &': {
-      maxWidth: ({ spacing }) => `calc((12 * ${columnWidth}px) + (11 * ${spacing.gutter}))`
+      maxWidth: ({ spacing }) =>
+        `calc((12 * ${columnWidth}px) + (11 * ${spacing.gutter}))`,
     },
 
     // Accessibility: Windows High Contrast Mode transparent border
@@ -104,7 +107,7 @@ export const styles: JssStyle = {
 
     '$modal--has-scroll &': {
       borderBottom: ({ size, color }) =>
-        `${size.divider} solid ${color.divider}`,
+        `${size.divider}px solid ${color.divider}`,
     },
   },
 
@@ -129,6 +132,7 @@ export const styles: JssStyle = {
     cursor: 'pointer',
     userSelect: 'none',
     boxSizing: 'border-box',
+    transition: ({ transition }) => transition.generic,
 
     '&:focus': {
       boxShadow: ({ size, color }) =>

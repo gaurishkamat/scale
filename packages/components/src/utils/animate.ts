@@ -20,7 +20,7 @@ const keyframeDefaults = {
   easing: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
 };
 
-export const keyframes = {
+export const KEYFRAMES = {
   fadeIn: [
     {
       offset: 0,
