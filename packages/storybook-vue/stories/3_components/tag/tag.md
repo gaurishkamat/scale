@@ -1,6 +1,6 @@
 # Tag
 
-Tags work like ettiquettes. They draw the user's attention to content marked with certain categories.
+Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
 ## General
 
