@@ -5,23 +5,23 @@
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
-            <div class="switch-wrapper" data-sketch-key="switch-1">Switch Label<scale-switch text-on="I" text-off="0" active data-sketch-key="internal-switch-1"></scale-switch></div>
+            <scale-switch label="Switch Label" active data-sketch-key="switch-1"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <div class="switch-wrapper" data-sketch-key="switch-2">Switch Label<scale-switch text-on="I" text-off="0" active data-sketch-state="hover" data-sketch-key="internal-switch-2"></scale-switch></div>
+            <scale-switch label="Switch Label" active data-sketch-state="hover" data-sketch-key="switch-2"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <div class="switch-wrapper" data-sketch-key="switch-3">Switch Label<scale-switch text-on="I" text-off="0" active data-sketch-state="focus" data-sketch-key="internal-switch-3"></scale-switch></div>
+            <scale-switch label="Switch Label" active data-sketch-state="focus" data-sketch-key="switch-3"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:pressed</p>
-            <div class="switch-wrapper" data-sketch-key="switch-4">Switch Label<scale-switch text-on="I" text-off="0" active data-sketch-state="active" data-sketch-key="internal-switch-4"></scale-switch></div>
+            <scale-switch label="Switch Label" active data-sketch-state="active" data-sketch-key="switch-4"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <div class="switch-wrapper" data-sketch-key="switch-5">Switch Label<scale-switch text-on="I" text-off="0" active disabled data-sketch-key="internal-switch-5"></scale-switch></div>
+            <scale-switch label="Switch Label" active disabled data-sketch-key="switch-5"></scale-switch>
         </div>
     </div>
 
@@ -29,23 +29,23 @@
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
-            <div class="switch-wrapper" data-sketch-key="switch-6">Switch Label<scale-switch data-sketch-key="internal-switch-10"></scale-switch></div>
+            <scale-switch data-sketch-key="switch-10"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <div class="switch-wrapper" data-sketch-key="switch-7">Switch Label<scale-switch text-on="I" text-off="0" data-sketch-state="hover" data-sketch-key="internal-switch-6"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="hover" data-sketch-key="switch-6"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <div class="switch-wrapper" data-sketch-key="switch-8">Switch Label<scale-switch text-on="I" text-off="0" data-sketch-state="focus" data-sketch-key="internal-switch-7"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="focus" data-sketch-key="switch-7"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:pressed</p>
-            <div class="switch-wrapper" data-sketch-key="switch-9">Switch Label<scale-switch text-on="I" text-off="0" data-sketch-state="active" data-sketch-key="internal-switch-8"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="active" data-sketch-key="switch-8"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <div class="switch-wrapper" data-sketch-key="switch-10">Switch Label<scale-switch text-on="I" text-off="0" disabled data-sketch-key="internal-switch-9"></scale-switch></div>
+            <scale-switch label="Switch Label" disabled data-sketch-key="switch-9"></scale-switch>
         </div>
     </div>
 </div>
@@ -53,11 +53,11 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll(".switch-wrapper")).forEach(btn => {
+    Array.from(document.querySelectorAll(".switch")).forEach(btn => {
         btn.dataset.sketchSymbol = `Switch / ${
-                order(1, btn.firstElementChild.hasAttribute('active') ? 'Selected On' : 'Selected Off')
+                order(1, btn.hasAttribute('active') ? 'Selected On' : 'Selected Off')
             } / ${
-                order(4, getStateName(btn.firstElementChild))
+                order(4, getStateName(btn))
             }`;
     });
 </script>

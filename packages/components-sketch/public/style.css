@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+scale-switch * {
+    box-sizing: content-box;
+}
+
+*:focus,
+*:focus-within {
+    outline: 0;
+}
+
 html,
 body {
     padding: 0;
@@ -23,10 +32,6 @@ body {
 .artboard--dark {
     color: #fff;
     background: #000;
-}
-
-scale-switch {
-    margin-left: 8px;
 }
 
 .title--artboard {
@@ -102,10 +107,4 @@ scale-switch {
 scale-input[type="select"] {
   width: 198px;
   display: block;
-}
-
-.switch-wrapper {
-  display: flex;
-  min-width: 96px;
-  justify-content: space-between;
 }
