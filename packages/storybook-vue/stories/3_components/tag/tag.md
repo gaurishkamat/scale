@@ -4,7 +4,7 @@ Tags draw the user's attention to certain content elements. They represent a cat
 
 ## General
 
-Tags consist of relevant keywords in a container. A static tag indicates a category; an interactive tag shows things like selected filters, which users can then also remove.
+Tags consist of relevant keywords in a container. A static tag indicates a category or an attribute; an interactive tag shows things like selected filters, which users can then also remove.
 
 ### When to use
 
