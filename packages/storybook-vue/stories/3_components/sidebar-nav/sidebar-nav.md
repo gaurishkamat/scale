@@ -21,7 +21,7 @@ Don't use the sidebar navigation if:
 
 ## Elements
 
-![Image Name](assets/3_components/radio-button/sidebar-navigation-elements.png)
+![Image Name](assets/3_components/sidebar-navigation/sidebar-navigation-elements.png)
 
 An example of the sidebar navigation for desktop
 
@@ -56,6 +56,6 @@ By tapping on an upstream level of hierarchy, users open a list view with entrie
 Depending on the number of levels, users can navigate through further lists to reach the desired content.
 Since there is no mouse over on mobile devices, the arrow of a submenu is always visible.
 
-![Image Name](assets/3_components/radio-button/Sidebar-navigation-mobile.png)
+![Image Name](assets/3_components/sidebar-navigation/Sidebar-navigation-mobile.png)
 
 
