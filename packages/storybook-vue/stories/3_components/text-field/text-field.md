@@ -1,4 +1,4 @@
-# Text field
+# Text Field
 
 A text field allows users to enter a single line of text.
 
