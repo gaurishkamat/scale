@@ -8,7 +8,6 @@ import breadcrumb from "raw-loader!../../stories/3_components/breadcrumb/breadcr
 import button from "raw-loader!../../stories/3_components/button/button.md";
 import card from "raw-loader!../../stories/3_components/card/card.md";
 import checkbox from "raw-loader!../../stories/3_components/checkbox/checkbox.md";
-import collapsible from "raw-loader!../../stories/3_components/collapsible/collapsible.md";
 import divider from "raw-loader!../../stories/3_components/divider/divider.md";
 import icon from "raw-loader!../../stories/3_components/icon/icon.md";
 import linkMarkdown from "raw-loader!../../stories/3_components/link/link.md";
@@ -53,7 +52,6 @@ const Usage = props => {
     button,
     card,
     checkbox,
-    collapsible,
     divider,
     "icon-library": icon,
     icon,
