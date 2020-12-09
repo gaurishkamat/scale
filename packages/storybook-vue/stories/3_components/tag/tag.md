@@ -59,7 +59,7 @@ The default color for tags is dark gray. This way, the maximum contrast guarante
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
-![Image Name](assets/3_components/chip/Tag-colors.png)
+![Image Name](assets/3_components/chip/Tag-color.png)
 
 ## Sizes
 
