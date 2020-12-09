@@ -1,55 +1,86 @@
-# Select Box
+# Dropdown
 
-With select boxes, users can select one option from a list of options.
+With a dropdown, users select an option from a list.
 
 ## General
 
-### When to Use
+The dropdown temporarily displays a selection list. Thus, the dropdown helps save space when there are multiple options to choose from.
 
-Use the select component inside a form whenever users select from a list of options and submit data.
+### When to use
 
-### When Not to Use
+Use a dropdown when users:
 
-Never use select boxes for navigation purposes.
+* can select options within a form,
+* should only select one of the options, or
+* should filter or sort content.
+
+### When not to use
+
+Don’t use dropdowns, when users:
+
+* should only have a few options (radio buttons may be better),
+* should have a lot of choices (an input field with auto-fill is more helpful),
+* shold have several options (use checkboxes instead), or
+* should navigate (use a navigation component like the sidebar navigation).
+
+## Basic Types
+
+### Standard
+
+The standard dropdown from Scale lists all available options.
+
+![Image Name](assets/3_components/select-box/Dropdown.png)
+
+### Option groups
+
+If you have a lot of options to categorize, you can create groups of options.
+
+![Image Name](assets/3_components/select-box/Dropdown-optionsgruppe.png)
 
 ## Elements
 
-![Image Name](assets/3_components/select-box/image-20200811101628432.png)
+![Image Name](assets/3_components/select-box/Elemente.png)
 
 ### Label (1)
 
-Clearly label your select boxes so users know the context of their list of options, e.g. "country".
+The label clearly indicates what kind of options the dropdown provides.
 
-### Info (2) (Optional)
+### Icon (2)
 
-An additional info text may be useful to communicate the content or purpose of the presented options more clearly.
+The direction of the arrow indicates whether the dropdown menu is open or closed.
 
-### Error / Improve / Required Selection (3) (Optional)
+### Information (3) (Optional)
 
-When a selection is required, use this flag to display the corresponding information and validate the form accordingly.
+Additional information can help clarify the content or purpose of a dropdown.
 
-### Option Group (4) (Optional)
+### Error (4)
 
-Related options can be grouped together. The group should be labelled in a way that the content of the group can be derived e.g. "europe".
+If users have to select an option, submitting a form without a selection will result in an error message. If the dropdown already has an information text, the error text will temporarily take its place.
 
-### Options (5)
+### Titel (5)
 
-Selectable options inside a select box e.g. "germany, france, belgium".
+Der Titel fordert zur Auswahl einer Option auf.
+
+### Dropdown Menü (6)
+
+The dropdown menu contains the available options or groups of options.
 
 ## Sizes
 
+Scale offers the dropdown in two sizes. Be careful not to combine the two sizes. Other UI elements such as input fields and buttons should also have the same size.
+
 ### Large
 
-Use large select boxes as the default option. Combine with other large form elements like input or button.
+Use large dropdowns as the default option.
 
-![Image Name](assets/3_components/select-box/image-20200811101326475.png)
+![Image Name](assets/3_components/select-box/dropdown-gross.png)
 
 ### Small
 
-When space is limited, consistently use the small size form elements.
+When space is limited, use the small dropdown consistently.
 
-![Image Name](assets/3_components/select-box/image-20200811101332899.png)
+![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
-## Related Components
+## Related components
 
-Checkbox, Switch, Radio Button
+Text Field, Text Area, Checkbox, Switch, Radio Button

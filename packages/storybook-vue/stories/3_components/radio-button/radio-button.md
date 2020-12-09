@@ -10,7 +10,7 @@ Radio buttons only appear in groups. Activating a radio button automatically des
 
 ![Image Name](assets/3_components/radio-button/radiobuttons_general.png)
 
-### When  to use
+### When to use
 
 Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
 

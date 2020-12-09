@@ -56,4 +56,4 @@ Always align the content of the first column to the left. Depending on the conte
 
 ## Related components
 
-Divider
+List
