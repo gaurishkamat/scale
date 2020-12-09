@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
+
+
+### Bug Fixes
+
+* **icons:** rename index.json to scale-icons.json, npm does not publish index.json ([29382de](https://gitlab.com/scale-ds/scale-telekom/commit/29382def47a2a386513f6b7a886ef37b1fd106ac))
+
+
+### Features
+
+* minimal variant ([1429df1](https://gitlab.com/scale-ds/scale-telekom/commit/1429df1a204cdc2a92ca953c79e85e72a0e365dd))
+* **storybook:** display icon library in a grid ([b45976f](https://gitlab.com/scale-ds/scale-telekom/commit/b45976f38db06f60b4472df8d7568e573ff92d59))
+* add simple footer ([017418d](https://gitlab.com/scale-ds/scale-telekom/commit/017418dbef4dd0f3bda941fcc5d4e80ccf16178b))
+* **storybook-vue:** add Icons page and render all icons (WIP) ([83f9ee6](https://gitlab.com/scale-ds/scale-telekom/commit/83f9ee6cde9a1392db354b8879668a6001ba8e19))
+* **storybook-vue:** add usage documentation to new Icon Library section ([2814cdc](https://gitlab.com/scale-ds/scale-telekom/commit/2814cdcf29118a72707086a3513d1d2c416e8edb))
+
+
+
+
+
 ## [1.13.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.0...v1.13.1) (2020-12-02)
 
 

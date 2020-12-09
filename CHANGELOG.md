@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
+
+
+### Bug Fixes
+
+* **icons:** rename index.json to scale-icons.json, npm does not publish index.json ([29382de](https://gitlab.com/scale-ds/scale-telekom/commit/29382def47a2a386513f6b7a886ef37b1fd106ac))
+* format ([49dfe3d](https://gitlab.com/scale-ds/scale-telekom/commit/49dfe3d73e13fe8454208909edd55c7294e216c2))
+* hover jump on FF and minimal nav font weight ([9f64965](https://gitlab.com/scale-ds/scale-telekom/commit/9f64965955c5053788203546e08fffdf442a7721))
+
+
+### Features
+
+* add transparent border for minimal version ([33b0386](https://gitlab.com/scale-ds/scale-telekom/commit/33b038667dc4e667b38ec9f233d9fdb06e302595))
+* better underline ([e9104c0](https://gitlab.com/scale-ds/scale-telekom/commit/e9104c07bcd38b991a43db62b7b31ed7aae9593a))
+* minimal variant ([1429df1](https://gitlab.com/scale-ds/scale-telekom/commit/1429df1a204cdc2a92ca953c79e85e72a0e365dd))
+* **storybook:** display icon library in a grid ([b45976f](https://gitlab.com/scale-ds/scale-telekom/commit/b45976f38db06f60b4472df8d7568e573ff92d59))
+* add simple footer ([017418d](https://gitlab.com/scale-ds/scale-telekom/commit/017418dbef4dd0f3bda941fcc5d4e80ccf16178b))
+* focus and active states ([16246fb](https://gitlab.com/scale-ds/scale-telekom/commit/16246fb6ba34f5580fde75d1de6c147bf84df618))
+* rounded corner ([076acb5](https://gitlab.com/scale-ds/scale-telekom/commit/076acb5b140538ee226a6d9f63b8d4e9a0c9c949))
+* **icons:** generate index.json file, useful for docs ([21bbbce](https://gitlab.com/scale-ds/scale-telekom/commit/21bbbcea4542bf3df0d01597223f0a2522f78b9b))
+* **storybook-vue:** add Icons page and render all icons (WIP) ([83f9ee6](https://gitlab.com/scale-ds/scale-telekom/commit/83f9ee6cde9a1392db354b8879668a6001ba8e19))
+* **storybook-vue:** add usage documentation to new Icon Library section ([2814cdc](https://gitlab.com/scale-ds/scale-telekom/commit/2814cdcf29118a72707086a3513d1d2c416e8edb))
+
+
+
+
+
 ## [1.13.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.0...v1.13.1) (2020-12-02)
 
 
