@@ -1,6 +1,12 @@
 import { JssStyle } from 'jss';
 export const styles: JssStyle = {
   switch: {
+    '& label': {
+      cursor: 'pointer',
+    },
+    '&.disabled label': {
+      cursor: 'not-allowed',
+    },
     '& input': {
       position: 'absolute',
       opacity: 0,
@@ -18,7 +24,6 @@ export const styles: JssStyle = {
         height: 14,
         padding: 2,
         borderRadius: 10,
-        cursor: 'pointer',
         border: ({ color }) => `1px solid ${color.text}`,
         backgroundColor: ({ color }) => color.text_contrast,
       },
@@ -45,7 +50,6 @@ export const styles: JssStyle = {
       },
       '& $switch__label': {
         marginLeft: ({ spacing }) => spacing['4'],
-        cursor: 'pointer',
       },
     },
     // Checked Off - hover
@@ -95,7 +99,6 @@ export const styles: JssStyle = {
     // Checked Off - disabled
     '& input:disabled ~ $switch__wrapper': {
       '& $switch__container': {
-        cursor: 'not-allowed',
         border: ({ background }) => `1px solid ${background.disabled}`,
         color: ({ color }) => color.text_contrast,
       },
@@ -103,7 +106,6 @@ export const styles: JssStyle = {
         backgroundColor: ({ background }) => background.disabled,
       },
       '& $switch__label': {
-        cursor: 'not-allowed',
         color: ({ color }) => color.disabled,
       },
     },
@@ -169,7 +171,6 @@ export const styles: JssStyle = {
         color: ({ color }) => color.disabled,
       },
       '& $switch__container': {
-        cursor: 'not-allowed',
         border: ({ background }) => `1px solid ${background.disabled}`,
         color: ({ background }) => background.disabled,
         background: ({ background }) => background.disabled,
