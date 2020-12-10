@@ -580,6 +580,10 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * The URL where the link should point to
+         */
+        "href": string;
+        /**
           * The width and height of the icon in pixels
          */
         "iconSize": number;
@@ -1706,6 +1710,10 @@ declare namespace LocalJSX {
           * Used normally for third level items
          */
         "condensed"?: boolean;
+        /**
+          * The URL where the link should point to
+         */
+        "href"?: string;
         /**
           * The width and height of the icon in pixels
          */

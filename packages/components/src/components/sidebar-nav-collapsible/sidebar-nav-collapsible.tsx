@@ -20,6 +20,8 @@ export class SidebarNavCollapsible implements Base {
   @Prop() tag?: string = 'li';
   /** The text for the button */
   @Prop() label: string;
+  /** The URL where the link should point to */
+  @Prop() href: string = '#';
   /** Set this to `true` to expand */
   @Prop() isExpanded?: boolean;
   /** Label and icon get the active color */
@@ -39,9 +41,25 @@ export class SidebarNavCollapsible implements Base {
   componentDidUnload() {}
   componentWillUpdate() {}
 
-  handleClick() {
+  handleClick = (event: MouseEvent) => {
+    event.preventDefault();
     this.expanded = !this.expanded;
-  }
+  };
+
+  /**
+   * Simulate a <button> allowing using the Space key for toggling the menu.
+   */
+  handleKeydown = (event: KeyboardEvent) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey) {
+      return;
+    }
+    if (event.defaultPrevented) {
+      return;
+    }
+    if (event.code === 'Space') {
+      this.expanded = !this.expanded;
+    }
+  };
 
   render() {
     const { classes } = this.stylesheet;
@@ -65,9 +83,11 @@ export class SidebarNavCollapsible implements Base {
         <style>{this.stylesheet.toString()}</style>
         <Tag class={this.getCssClassMap()}>
           <div class={wrapperClassMap}>
-            <button
+            <a
+              href={this.href}
               class={buttonClassMap}
-              onClick={this.handleClick.bind(this)}
+              onClick={this.handleClick}
+              onKeyDown={this.handleKeydown}
               aria-expanded={this.expanded ? 'true' : 'false'}
             >
               {this.label}
@@ -87,7 +107,7 @@ export class SidebarNavCollapsible implements Base {
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+            </a>
           </div>
           <ul hidden={!this.expanded} class={listClassMap}>
             <slot />
