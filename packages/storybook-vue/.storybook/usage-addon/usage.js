@@ -17,8 +17,6 @@ import progressBar from "raw-loader!../../stories/3_components/progress-bar/prog
 import radioButton from "raw-loader!../../stories/3_components/radio-button/radio-button.md";
 import dropdown from "raw-loader!../../stories/3_components/dropdown/dropdown.md";
 import sidebarNav from "raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md";
-import sidebarNavCollapsible from "raw-loader!../../stories/3_components/sidebar-nav-collapsible/sidebar-nav-collapsible.md";
-import sidebarNavItem from "raw-loader!../../stories/3_components/sidebar-nav-item/sidebar-nav-item.md";
 import slider from "raw-loader!../../stories/3_components/slider/slider.md";
 import switchMarkdown from "raw-loader!../../stories/3_components/switch/switch.md";
 import tabNavigation from "raw-loader!../../stories/3_components/tab-navigation/tab-navigation.md";
@@ -62,8 +60,6 @@ const Usage = props => {
     radiobutton: radioButton,
     dropdown,
     "sidebar-nav": sidebarNav,
-    "sidebar-navigation": sidebarNavCollapsible,
-    "sidebar-nav-item": sidebarNavItem,
     slider,
     switch: switchMarkdown,
     "tab-navigation": tabNavigation,
