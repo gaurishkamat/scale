@@ -340,7 +340,7 @@
     height: 100%;
     display: flex;
     font-size: 1.25rem;
-    transition: all 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
     align-items: center;
     font-weight: 800;
     line-height: 1.2;
@@ -352,18 +352,24 @@
     .main-navigation__item:hover
     .main-navigation__item-link {
     color: #f90984;
+    border-bottom: 1px solid transparent;
+    margin-bottom: -1px;
   }
   .header
     .main-navigation
     .main-navigation__item:active
     .main-navigation__item-link {
     color: #cb0068;
+    border-bottom: 1px solid transparent;
+    margin-bottom: -1px;
   }
   .header
     .main-navigation
     .main-navigation__item.selected
     .main-navigation__item-link {
     color: #e20074;
+    border-bottom: 1px solid transparent;
+    margin-bottom: -1px;
   }
 
   .header .header__brand-content .header__brand-branding {
