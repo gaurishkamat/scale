@@ -465,6 +465,7 @@ export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
     styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
     tag: {} as PropOptions<Components.ScaleSidebarNavCollapsible['tag']>,
     label: {} as PropOptions<Components.ScaleSidebarNavCollapsible['label']>,
+    href: {} as PropOptions<Components.ScaleSidebarNavCollapsible['href']>,
     isExpanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isExpanded']>,
     isCurrent: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isCurrent']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavCollapsible['bold']>,

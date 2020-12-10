@@ -14,6 +14,7 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 | ------------ | ------------- | ------------------------------------------ | --------- | ----------- |
 | `bold`       | `bold`        | Bold label and icon                        | `boolean` | `false`     |
 | `condensed`  | `condensed`   | Used normally for third level items        | `boolean` | `false`     |
+| `href`       | `href`        | The URL where the link should point to     | `string`  | `'#'`       |
 | `iconSize`   | `icon-size`   | The width and height of the icon in pixels | `number`  | `16`        |
 | `isCurrent`  | `is-current`  | Label and icon get the active color        | `boolean` | `false`     |
 | `isExpanded` | `is-expanded` | Set this to `true` to expand               | `boolean` | `undefined` |

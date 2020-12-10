@@ -27,20 +27,15 @@ export const styles: JssStyle = {
   },
   // Button
   'sidebar-nav-collapsible__button': {
-    // Reset
-    appearance: 'none',
-    background: 'transparent',
-    font: 'inherit',
-    fontWeight: 'inherit',
-    border: 'none',
-    cursor: 'pointer',
-    // Actual styles
+    boxSizing: 'border-box',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     textAlign: 'left',
     borderRadius: 2,
+    fontFamily: ({ type }) => type.family,
+    textDecoration: 'none',
     color: 'currentColor',
     '&:hover': {
       color: '#E20074',

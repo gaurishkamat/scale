@@ -922,6 +922,10 @@
           "description": "Used normally for third level items"
         },
         {
+          "name": "href",
+          "description": "The URL where the link should point to"
+        },
+        {
           "name": "icon-size",
           "description": "The width and height of the icon in pixels"
         },
