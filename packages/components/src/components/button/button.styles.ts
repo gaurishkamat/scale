@@ -9,7 +9,7 @@ export const styles: JssStyle = {
     border: 'none',
     borderRadius: 8,
     outline: 'none',
-    fontFamily: ({ type }) => type.family,
+    fontFamily: 'inherit',
     fontWeight: ({ type }) => type.weight_bold,
     fontSize: ({ type }) => type.size_3,
     lineHeight: ({ type }) => type.leading_5,
