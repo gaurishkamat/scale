@@ -7,909 +7,3986 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ScaleIconActionAdd {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionAddCard {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionAutoLogin {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionBackspace {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionChangelog {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionCircleAdd {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionCircleClose {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionClose {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionCopyPaste {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionCutPaste {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionDisabledMicrophone {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionDownload {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionDragAndDrop {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionEdit {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionFastForward {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionFavorite {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionFilter {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionForward {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionFullScreen {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionHidePassword {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionInstall {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionLink {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionLogout {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionLoop {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMenu {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMicrophone {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMinimizeScreen {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMore {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMove {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionMute {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionNotification {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionPause {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionPin {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionPlay {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionPopUpWindow {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionPrint {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionRandom {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionRefresh {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionRemove {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionRestart {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionSearch {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionShoppingCart {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionShowPassword {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionSort {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionSoundOn {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionStreamOn {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionSuccess {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionThumbsDown {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionThumbsUp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionTilesAdd {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionUpload {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionVolumeDown {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionVolumeUp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionZoomIn {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconActionZoomOut {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertCompliance {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertError {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertHelp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertImprintDataprivacy {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertInformation {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertLegal {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertSecurity {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconAlertWarning {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationCallIncoming {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationCallOutgoing {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationChat {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationEmail {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationEndCall {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationFeedback {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationMessage {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationPhoneNumber {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationRecipient {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconCommunicationVoiceMessage {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentAchievement {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentApplications {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentBiometric {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentBookmark {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentCalendar {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentClipboard {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentClock {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentCreditCard {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentDelivery {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentDigitalBanking {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentDigitalMedia {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentDraftFile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentESim {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentEu {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentFeatures {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentFlexibleTariffs {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentHeart {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentHistory {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentInternational {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentInternationalSms {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentInterview {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentKey {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentLock {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentMediaFolder {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentMoneyAt {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentMusic {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentNews {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentPrepaidActivate {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentPriceTag {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentRss {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentShop {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentSignal {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentSimCard {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentSmile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentTariffs {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentTransport {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentUnlock {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentVoucher {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconContentWallet {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceAddDevice {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceCamera {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceChangeCamera {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceComputer {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceDevicePhone {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceDeviceRouter {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceDeviceTv {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceDeviceWatch {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceFixedLineServices {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceMediaReceiver {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceMobileDevicesCombination {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceMobileEquipment {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceMobilePhoneInsurance {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceMobileServices {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceNoCamera {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDevicePhotoCamera {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceRemoteController {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceReplacementMobilephone {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceScreenRotate {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceSmartSpeaker {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconDeviceTvAndMobile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeHome {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeInternetAtHome {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeIot {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeNoWifi {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeSmarthome {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconHomeWifi {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationCircleTopUp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationCollapseDown {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationCollapseUp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationExternalLink {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationInternalLink {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationLeft {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationLocation {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationMyLocation {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationRight {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationStart {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconNavigationTopUp {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconProcessOrderStatus {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconProcessProcessing {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconServiceDevicesService {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconServiceMaintanance {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconServiceServices {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconServiceSettings {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconServiceSupport {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productMagentaCloud {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productMagentaTv {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productMagentaone {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productMeasureInternetSpeed {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productSeamlessConnectivity {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productTelekomShopB {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconT_productUsage {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileAnalytics {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileAttachment {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileAudioFile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileBilling {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileBussinesUsers {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileCommunities {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileContacts {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileContracts {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileFamilies {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileHandshake {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileIdCard {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileImageFile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileLogout {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_filePdfFile {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileSwitchUsers {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileUser {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
     interface ScaleIconUser_fileVideos {
-        "color": string;
-        "selected": boolean;
-        "size": number;
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
     }
 }
 declare global {
@@ -2185,908 +5262,3985 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ScaleIconActionAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionAddCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionAutoLogin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionBackspace {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionChangelog {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionCircleAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionCircleClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionCopyPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionCutPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionDisabledMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionDownload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionDragAndDrop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionEdit {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionFastForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionFavorite {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionFilter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionFullScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionHidePassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionInstall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionLoop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMenu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMinimizeScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMore {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionMute {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionNotification {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionPause {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionPin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionPlay {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionPopUpWindow {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionPrint {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionRandom {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionRefresh {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionRemove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionRestart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionSearch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionShoppingCart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionShowPassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionSort {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionSoundOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionStreamOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionSuccess {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionThumbsDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionThumbsUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionTilesAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionUpload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionVolumeDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionVolumeUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionZoomIn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconActionZoomOut {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertCompliance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertError {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertHelp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertImprintDataprivacy {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertInformation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertLegal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertSecurity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconAlertWarning {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationCallIncoming {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationCallOutgoing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationChat {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationEmail {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationEndCall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationFeedback {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationPhoneNumber {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationRecipient {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconCommunicationVoiceMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentAchievement {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentApplications {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentBiometric {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentBookmark {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentCalendar {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentClipboard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentClock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentCreditCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentDelivery {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentDigitalBanking {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentDigitalMedia {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentDraftFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentESim {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentEu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentFeatures {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentFlexibleTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentHeart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentHistory {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentInternational {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentInternationalSms {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentInterview {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentKey {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentLock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentMediaFolder {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentMoneyAt {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentMusic {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentNews {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentPrepaidActivate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentPriceTag {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentRss {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentShop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentSignal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentSimCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentSmile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentTransport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentUnlock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentVoucher {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconContentWallet {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceAddDevice {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceChangeCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceComputer {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceDevicePhone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceDeviceRouter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceDeviceTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceDeviceWatch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceFixedLineServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceMediaReceiver {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceMobileDevicesCombination {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceMobileEquipment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceMobilePhoneInsurance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceMobileServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceNoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDevicePhotoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceRemoteController {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceReplacementMobilephone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceScreenRotate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceSmartSpeaker {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconDeviceTvAndMobile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeInternetAtHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeIot {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeNoWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeSmarthome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconHomeWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationCircleTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationCollapseDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationCollapseUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationExternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationInternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationLeft {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationMyLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationRight {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationStart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconNavigationTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconProcessOrderStatus {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconProcessProcessing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconServiceDevicesService {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconServiceMaintanance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconServiceServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconServiceSettings {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconServiceSupport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productMagentaCloud {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productMagentaTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productMagentaone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productMeasureInternetSpeed {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productSeamlessConnectivity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productTelekomShopB {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconT_productUsage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileAnalytics {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileAttachment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileAudioFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileBilling {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileBussinesUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileCommunities {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileContacts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileContracts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileFamilies {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileHandshake {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileIdCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileImageFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_filePdfFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileSwitchUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileUser {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface ScaleIconUser_fileVideos {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
         "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
         "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
         "size"?: number;
     }
     interface IntrinsicElements {

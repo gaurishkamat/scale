@@ -63,8 +63,8 @@ export const Template = (args, { argTypes }) => ({
       :fill="fill"
       :stroke="stroke"
       :focusable="String(focusable)"
-      :aria-label="ariaLabel"
-      :title="title"
+      :decorative="decorative"
+      :accessibility-title="accessibilityTitle"
       :styles="styles"
     />
   `
@@ -79,7 +79,7 @@ export const Template = (args, { argTypes }) => ({
     name='Standard'
     args={{
       name: 'profile',
-      ariaLabel: 'Profile'
+      accessibilityTitle: 'profile'
     }}
   >
     {Template.bind({})}
@@ -112,7 +112,7 @@ export const Template = (args, { argTypes }) => ({
     name='With Name Attribute'
     args={{
       name: 'shopping-bag',
-      ariaLabel: 'Shopping Bag'
+      accessibilityTitle: 'shopping bag'
     }}
   >
     {Template.bind({})}
