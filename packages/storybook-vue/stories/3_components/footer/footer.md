@@ -14,13 +14,13 @@ Depending on the scope and orientation of your product, decide on a variation of
 
 In this variation, the dark background color clearly signifies the end of the page. The standard footer contains the logo and claim. You can use this variation of the footer for pages with low complexity or little relevance for search engine optimization.
 
-![Image Name](assets/3_components/Footer-standard.png)
+![Image Name](assets/3_components/footer/Footer-standard.png)
 
 ### Minimal
 
 The minimal footer is very reduced in its presentation. Just like the standard version, it is suitable for pages with low complexity or little relevance for search engine optimization.
 
-![Image Name](assets/3_components/Footer-minimal.png)
+![Image Name](assets/3_components/footer/Footer-minimal.png)
 
 ### Extended
 
@@ -28,22 +28,22 @@ The minimal footer is very reduced in its presentation. Just like the standard v
 
 The extended footer is suitable for portals with a comprehensive range of products and services. In addition to the legally binding links, it can also display an introduction into the entire offering of the respective portal.
 
-![Image Name](assets/3_components/footer-erweitert.png)
+![Image Name](assets/3_components/footer/footer-erweitert.png)
 
 ## Elements
 
-![Image Name](assets/3_components/footer-elemente.png)
+![Image Name](assets/3_components/footer/footer-elemente.png)
 
 ### Sitemap (1) (optional)
 
-###Telekom logo with claim (2)
+### Telekom logo with claim (2)
 
-###Copyright (3)
+### Copyright (3)
 
-###Links (4)
+### Links (4)
 
 ## The footer on small devices
 
 Mobile devices display the sitemap as an accordion in the extended footer. All other elements are also arranged vertically.
 
-![Image Name](assets/3_components/Footer-navigation-mobile.png)
+![Image Name](assets/3_components/footer/Footer-navigation-mobile.png)
