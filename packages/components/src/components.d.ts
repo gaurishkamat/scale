@@ -253,13 +253,17 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */
@@ -1362,13 +1366,17 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */

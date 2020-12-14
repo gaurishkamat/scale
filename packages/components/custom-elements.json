@@ -481,12 +481,16 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": "(optional) When using the icon by itself, add a label to improve accessibility"
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon as standalone, make it meaningful for accessibility"
         },
         {
           "name": "custom-class",
           "description": "(optional) Tag custom class"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the svg element will get aria-hidden=\"true\""
         },
         {
           "name": "fill",

@@ -8,7 +8,9 @@ import ExampleIcon from './ExampleIcon.vue';
   argTypes={{
     color: { control: 'color' },
     size: { control: 'number' },
-    selected: { control: 'boolean' }
+    selected: { control: 'boolean' },
+    decorative: { control: 'boolean' },
+    accessibilityTitle: { control: 'text' }
   }}
 />
 
@@ -57,7 +59,13 @@ customElements.define('scale-icon-action-favorite', ScaleIconActionFavorite);
 ## Example
 
 <Canvas withSource="none">
-  <Story name="Example" args={{ color: '#E20074', selected: true, size: 24 }}>
+  <Story name="Example" args={{
+    color: '#E20074',
+    selected: true,
+    size: 24,
+    accessibilityTitle: '',
+    decorative: false
+  }}>
     {() => ExampleIcon}
   </Story>
 </Canvas>

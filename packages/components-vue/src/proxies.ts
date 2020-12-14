@@ -311,7 +311,8 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     fill: {} as PropOptions<Components.ScaleIcon['fill']>,
     stroke: {} as PropOptions<Components.ScaleIcon['stroke']>,
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
-    ariaLabel: {} as PropOptions<Components.ScaleIcon['ariaLabel']>,
+    decorative: {} as PropOptions<Components.ScaleIcon['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIcon['accessibilityTitle']>,
     styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
 
