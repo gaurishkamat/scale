@@ -459,6 +459,10 @@ export namespace Components {
          */
         "index"?: number;
         /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker": boolean;
+        /**
           * Whether this is a child of an ordered scale-list, gets set automatically by its parent
          */
         "ordered"?: boolean;
@@ -1590,6 +1594,10 @@ declare namespace LocalJSX {
           * Index number, useful only for `ordered` type
          */
         "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker"?: boolean;
         /**
           * Whether this is a child of an ordered scale-list, gets set automatically by its parent
          */

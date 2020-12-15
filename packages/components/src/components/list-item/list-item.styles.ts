@@ -8,35 +8,61 @@ export const styles: JssStyle = {
   },
 
   'list-item': {
+    position: 'relative',
+    paddingLeft: ({ spacing }) => `calc(0.25ch + ${spacing[4]})`,
+
     '&::before': {
       content: '""',
-      marginRight: ({ spacing }) => spacing.inline,
+      position: 'absolute',
+      left: 0,
     },
   },
 
+  'list-item--nested': {},
+
   'list-item--unordered': {
     '&::before': {
-      display: 'inline-block',
+      boxSizing: 'border-box',
+      display: 'block',
+      top: '0.5ch',
       width: ({ spacing }) => spacing[2],
       height: ({ spacing }) => spacing[2],
       borderRadius: '50%',
       transform: 'scale(0.66)',
       background: 'currentColor',
     },
+
+    '$list-item--nested&::before': {
+      background: 'transparent',
+      border: '1px solid currentColor',
+    },
   },
 
   'list-item--ordered': {
     '&::before': {
       content: 'attr(data-index) "."',
+      fontSize: ({ type }) => type.size_3,
       fontWeight: ({ type }) => type.weight_bold,
+    },
+
+    '$list-item--nested&::before': {
+      fontSize: ({ type }) => type.size_2,
     },
   },
 
-  'list-item--nested': {
-    // ..
+  'list-item--no-marker': {
+    display: 'inline-flex',
+    alignItems: 'center',
+    paddingLeft: 0,
+
+    '&::before': {
+      display: 'none',
+    },
+
+    '& > ::slotted(*)': {
+      marginRight: ({ spacing }) => spacing[2],
+    },
   },
 
-  'list-item__nested-list': {
-    // ..
-  },
+  'list-item__nested-list': {},
 };

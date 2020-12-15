@@ -8,7 +8,7 @@ export const styles: JssStyle = {
   'list--nested': {
     marginTop: 0,
     marginBottom: 0,
-    paddingLeft: ({ spacing }) => spacing.flow,
+    paddingLeft: ({ spacing }) => spacing[2],
   },
 
   'list--type-ordered': {},

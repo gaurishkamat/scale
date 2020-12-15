@@ -21,6 +21,8 @@ export class ListItem implements Base {
   @Prop() ordered?: boolean = false;
   /** Index number, useful only for `ordered` type */
   @Prop({ mutable: true }) index?: number;
+  /** If `false`, no marker or left padding will be visible */
+  @Prop() marker: boolean = true;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -76,7 +78,8 @@ export class ListItem implements Base {
     return classNames(
       classes['list-item'],
       this.isNested && classes['list-item--nested'],
-      classes[`list-item--${!this.ordered ? 'un' : ''}ordered`]
+      classes[`list-item--${!this.ordered ? 'un' : ''}ordered`],
+      this.marker === false && classes['list-item--no-marker']
     );
   }
 }

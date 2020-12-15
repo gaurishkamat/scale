@@ -27,14 +27,14 @@ export class List implements Base {
 
   @Watch('ordered')
   orderedChanged(newValue) {
-    this.propagateOrderPropToChildren(newValue);
+    this.propagatePropsToChildren(newValue);
   }
 
   componentWillUpdate() {}
   componentDidUnload() {}
 
   componentDidLoad() {
-    this.propagateOrderPropToChildren(this.ordered);
+    this.propagatePropsToChildren(this.ordered);
   }
 
   connectedCallback() {
@@ -47,7 +47,7 @@ export class List implements Base {
     }
   }
 
-  propagateOrderPropToChildren(ordered: boolean) {
+  propagatePropsToChildren(ordered: boolean) {
     const items = Array.from(this.el.children).filter(child =>
       child.matches('scale-list-item')
     );
