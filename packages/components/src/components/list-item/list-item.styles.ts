@@ -2,7 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   '@global': {
-    ':host(scale-item)': {
+    ':host(scale-list-item)': {
       display: 'block',
     },
   },
@@ -17,8 +17,8 @@ export const styles: JssStyle = {
   'list-item--unordered': {
     '&::before': {
       display: 'inline-block',
-      width: 8,
-      height: 8,
+      width: ({ spacing }) => spacing[2],
+      height: ({ spacing }) => spacing[2],
       borderRadius: '50%',
       transform: 'scale(0.66)',
       background: 'currentColor',
