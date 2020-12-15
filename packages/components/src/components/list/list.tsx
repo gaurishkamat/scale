@@ -1,37 +1,64 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element, Watch } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './list.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+
+/**
+ * @see https://github.com/carbon-design-system/carbon-web-components/tree/master/src/components/list
+ */
 @Component({
   tag: 'scale-list',
   shadow: true,
 })
 export class List implements Base {
-  /** (optional) List variant */
-  @Prop() variant?: string = 'unordered';
+  isNested: boolean = false;
+
+  @Element() el: HTMLElement;
+
+  /** (optional) Make the list ordered (ol) */
+  @Prop() ordered?: boolean = false;
+  /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('List', styles) stylesheet: StyleSheet;
-  componentWillLoad() {}
+
+  @Watch('ordered')
+  orderedChanged(newValue) {
+    this.propagateOrderPropToChildren(newValue);
+  }
+
   componentWillUpdate() {}
   componentDidUnload() {}
-  render() {
-    let Tag;
 
-    switch (this.variant) {
-      case 'ordered':
-        Tag = 'ol';
-        break;
-      case 'definition':
-        Tag = 'dl';
-        break;
-      default:
-        Tag = 'ul';
-        break;
+  componentDidLoad() {
+    this.propagateOrderPropToChildren(this.ordered);
+  }
+
+  connectedCallback() {
+    this.isNested = this.el.closest('scale-list-item') != null;
+
+    if (this.isNested) {
+      this.el.setAttribute('slot', 'nested');
+    } else {
+      this.el.removeAttribute('slot');
     }
+  }
+
+  propagateOrderPropToChildren(ordered: boolean) {
+    const items = Array.from(this.el.children).filter(child =>
+      child.matches('scale-list-item')
+    );
+    (items as HTMLScaleListItemElement[]).forEach((item, index) => {
+      item.ordered = ordered;
+      item.index = index + 1;
+    });
+  }
+
+  render() {
+    const Tag = this.ordered ? 'ol' : 'ul';
 
     return (
       <Host>
@@ -42,11 +69,13 @@ export class List implements Base {
       </Host>
     );
   }
+
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
     return classNames(
       classes.list,
-      this.variant && classes[`list--variant-${this.variant}`]
+      this.ordered && classes['list--type-ordered'],
+      this.isNested && classes['list--nested']
     );
   }
 }

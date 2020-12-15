@@ -382,7 +382,7 @@ export const ScaleLink = /*@__PURE__*/ Vue.extend({
 export const ScaleList = /*@__PURE__*/ Vue.extend({
 
   props: {
-    variant: {} as PropOptions<Components.ScaleList['variant']>,
+    ordered: {} as PropOptions<Components.ScaleList['ordered']>,
     styles: {} as PropOptions<Components.ScaleList['styles']>,
   },
 
@@ -394,9 +394,6 @@ export const ScaleList = /*@__PURE__*/ Vue.extend({
 export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 
   props: {
-    icon: {} as PropOptions<Components.ScaleListItem['icon']>,
-    iconSize: {} as PropOptions<Components.ScaleListItem['iconSize']>,
-    type: {} as PropOptions<Components.ScaleListItem['type']>,
     styles: {} as PropOptions<Components.ScaleListItem['styles']>,
   },
 
