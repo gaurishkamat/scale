@@ -5,6 +5,7 @@ exports[`Tag should have a link 1`] = `
   <mock:shadow-root>
     <style>
       .tag-0-0-7 {
+  border: 1px solid transparent;
   display: inline-flex;
   outline: none;
   padding: 0 10px;
@@ -22,9 +23,6 @@ exports[`Tag should have a link 1`] = `
   --icon-color: #FFF;
   font-weight: 700;
 }
-.tag-0-0-7 scale-icon {
-  margin-left: 2px;
-}
 .tag-0-0-7:not(.tag--disabled-0-0-12) {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon:hover {
@@ -33,19 +31,32 @@ exports[`Tag should have a link 1`] = `
 .tag--dismissable-0-0-8 {
   padding-right: 0;
 }
-.tag--dismissable-0-0-8 scale-icon {
+.tag--dismissable-0-0-8 button {
+  border: none;
   cursor: pointer;
-}
-.tag--dismissable-0-0-8 scale-icon svg {
+  height: 24px;
+  margin: 0;
   outline: none;
+  padding: 0;
+  background: transparent;
+  margin-left: 2px;
   border-radius: 4px;
 }
-.tag--dismissable-0-0-8 scale-icon svg:hover {
-  background: black;
+.tag--dismissable-0-0-8 scale-icon {}
+.tag--dismissable-0-0-8 scale-icon svg {
+  outline: none;
 }
-.tag--dismissable-0-0-8 scale-icon svg:focus {
+.tag--dismissable-0-0-8 button:focus {
+  border: 1px solid white;
   background: black;
   box-shadow: 0 0 0 2px #009DE0;
+}
+.tag--dismissable-0-0-8 button:hover {
+  background: black;
+}
+.tag--dismissable-0-0-8 button:focus scale-icon {
+  top: -1px;
+  position: relative;
 }
 .tag--size-small-0-0-9 {
   padding: 0 8px;
@@ -54,6 +65,9 @@ exports[`Tag should have a link 1`] = `
 }
 .tag--size-small-0-0-9.tag--dismissable-0-0-8 {
   padding-right: 0;
+}
+.tag--size-small-0-0-9.tag--dismissable-0-0-8 button {
+  height: 20px;
 }
 .tag--variant-secondary-0-0-10 {
   background: #00739F;
@@ -68,6 +82,7 @@ exports[`Tag should have a link 1`] = `
   text-decoration: none;
 }
 .tag--link-0-0-11:focus {
+  border: 1px solid white;
   box-shadow: 0 0 0 2px #009DE0;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10 {
@@ -77,12 +92,21 @@ exports[`Tag should have a link 1`] = `
   background: #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:focus {
+  border: 1px solid white;
   background: #00739F;
 }
 .tag--disabled-0-0-12 {
   color: #A4A4A4;
   cursor: not-allowed;
   --icon-color: #A4A4A4;
+  background: #D0D0D0;
+}
+.tag--disabled-0-0-12 button {
+  cursor: not-allowed;
+  background: #D0D0D0;
+}
+.tag--disabled-0-0-12 button:hover {
+  cursor: not-allowed;
   background: #D0D0D0;
 }
     </style>
@@ -99,6 +123,7 @@ exports[`Tag should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .tag-0-0-7 {
+  border: 1px solid transparent;
   display: inline-flex;
   outline: none;
   padding: 0 10px;
@@ -116,9 +141,6 @@ exports[`Tag should match snapshot 1`] = `
   --icon-color: #FFF;
   font-weight: 700;
 }
-.tag-0-0-7 scale-icon {
-  margin-left: 2px;
-}
 .tag-0-0-7:not(.tag--disabled-0-0-12) {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon {}
 .tag-0-0-7:not(.tag--disabled-0-0-12) scale-icon:hover {
@@ -127,19 +149,32 @@ exports[`Tag should match snapshot 1`] = `
 .tag--dismissable-0-0-8 {
   padding-right: 0;
 }
-.tag--dismissable-0-0-8 scale-icon {
+.tag--dismissable-0-0-8 button {
+  border: none;
   cursor: pointer;
-}
-.tag--dismissable-0-0-8 scale-icon svg {
+  height: 24px;
+  margin: 0;
   outline: none;
+  padding: 0;
+  background: transparent;
+  margin-left: 2px;
   border-radius: 4px;
 }
-.tag--dismissable-0-0-8 scale-icon svg:hover {
-  background: black;
+.tag--dismissable-0-0-8 scale-icon {}
+.tag--dismissable-0-0-8 scale-icon svg {
+  outline: none;
 }
-.tag--dismissable-0-0-8 scale-icon svg:focus {
+.tag--dismissable-0-0-8 button:focus {
+  border: 1px solid white;
   background: black;
   box-shadow: 0 0 0 2px #009DE0;
+}
+.tag--dismissable-0-0-8 button:hover {
+  background: black;
+}
+.tag--dismissable-0-0-8 button:focus scale-icon {
+  top: -1px;
+  position: relative;
 }
 .tag--size-small-0-0-9 {
   padding: 0 8px;
@@ -148,6 +183,9 @@ exports[`Tag should match snapshot 1`] = `
 }
 .tag--size-small-0-0-9.tag--dismissable-0-0-8 {
   padding-right: 0;
+}
+.tag--size-small-0-0-9.tag--dismissable-0-0-8 button {
+  height: 20px;
 }
 .tag--variant-secondary-0-0-10 {
   background: #00739F;
@@ -162,6 +200,7 @@ exports[`Tag should match snapshot 1`] = `
   text-decoration: none;
 }
 .tag--link-0-0-11:focus {
+  border: 1px solid white;
   box-shadow: 0 0 0 2px #009DE0;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10 {
@@ -171,12 +210,21 @@ exports[`Tag should match snapshot 1`] = `
   background: #00739F;
 }
 .tag--link-0-0-11.tag--variant-secondary-0-0-10:focus {
+  border: 1px solid white;
   background: #00739F;
 }
 .tag--disabled-0-0-12 {
   color: #A4A4A4;
   cursor: not-allowed;
   --icon-color: #A4A4A4;
+  background: #D0D0D0;
+}
+.tag--disabled-0-0-12 button {
+  cursor: not-allowed;
+  background: #D0D0D0;
+}
+.tag--disabled-0-0-12 button:hover {
+  cursor: not-allowed;
   background: #D0D0D0;
 }
     </style>

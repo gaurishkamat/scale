@@ -30,7 +30,6 @@
  - [scale-app-header](../app-header)
  - [scale-input](../input)
  - [scale-link](../link)
- - [scale-list-item](../list/listItem)
  - [scale-progress-bar](../progress-bar)
  - [scale-tag](../tag)
 
@@ -42,7 +41,6 @@ graph TD;
   scale-app-header --> scale-icon
   scale-input --> scale-icon
   scale-link --> scale-icon
-  scale-list-item --> scale-icon
   scale-progress-bar --> scale-icon
   scale-tag --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px
