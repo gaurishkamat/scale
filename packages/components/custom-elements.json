@@ -758,6 +758,18 @@
       },
       "attributes": [
         {
+          "name": "index",
+          "description": "Index number, useful only for styling the `ordered` type (not used currently)"
+        },
+        {
+          "name": "marker",
+          "description": "If `false`, no marker or left padding will be visible"
+        },
+        {
+          "name": "ordered",
+          "description": "Whether this is a child of an ordered scale-list, gets set automatically by its parent"
+        },
+        {
           "name": "styles",
           "description": "(optional) Injected jss styles"
         }

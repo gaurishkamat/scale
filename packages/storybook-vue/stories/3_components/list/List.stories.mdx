@@ -7,16 +7,14 @@ import {
 } from "@storybook/addon-docs/blocks";
 import ScaleList from "./ScaleList.vue";
 import ScaleListItem from "./ScaleListItem.vue";
-const ICON =
-  "M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z";
 
 <Meta
   title="Components/List"
   component={ScaleList}
   subcomponents={{ ScaleListItem }}
   argTypes={{
-    variant: {
-      control: { type: "radio", options: ["unordered", "ordered"] },
+    ordered: {
+      control: { type: "boolean" },
     },
     styles: {
       control: { disable: true },
@@ -25,82 +23,118 @@ const ICON =
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleList },
   props: {
-    label: String,
-    icon: String,
-    iconSize: Number,
-    type: String,
     ...ScaleList.props,
   },
   template: `
-    <scale-list :variant="variant">
-      <scale-list-item :type="type" :icon="icon" :icon-size="iconSize">Eins</scale-list-item>
-      <scale-list-item :type="type" :icon="icon" :icon-size="iconSize">Zwei</scale-list-item>
-      <scale-list-item :type="type" :icon="icon" :icon-size="iconSize">Drei</scale-list-item>
+    <scale-list :ordered="ordered">
+      <scale-list-item>Lorem ipsum dolor</scale-list-item>
+      <scale-list-item>Sit amet
+        <scale-list :ordered="ordered">
+          <scale-list-item>Elementum nibh</scale-list-item>
+          <scale-list-item>Penatibus et magnis
+            <scale-list :ordered="ordered">
+              <scale-list-item>Nulla facilisi</scale-list-item>
+              <scale-list-item>Aliquam etiam</scale-list-item>
+            </scale-list>
+          </scale-list-item>
+        </scale-list>
+      </scale-list-item>
+      <scale-list-item>Consetetur sadipscing</scale-list-item>
     </scale-list>
   `,
 });
 
+export const TemplateCustomIcon = (args) => ({
+  props: {
+    ...ScaleList.props,
+  },
+  template: `
+    <scale-list :ordered="ordered">
+      <scale-list-item marker="false"><scale-icon-action-success size="16" />Lorem ipsum dolor</scale-list-item>
+      <scale-list-item marker="false"><scale-icon-action-success size="16" />Sit amet</scale-list-item>
+      <scale-list-item marker="false"><scale-icon-action-close size="16" />Consetetur sadipscing</scale-list-item>
+    </scale-list>
+  `
+})
+
 # List
 
-## Standard
+## Ordered
 
 <Preview withSource="none">
-  <Story name="Standard" args={{ variant: "unordered" }}>
+  <Story name="Ordered" args={{ ordered: true }}>
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props story="Standard" />
+<Props story="Ordered" />
 
 ```html
-<scale-list variant="unordered">
-  <scale-list-item>Eins</scale-list-item>
-  <scale-list-item>Zwei</scale-list-item>
-  <scale-list-item>Drei</scale-list-item>
+<scale-list ordered>
+  <scale-list-item>Lorem ipsum dolor</scale-list-item>
+  <scale-list-item>Sit amet
+    <scale-list ordered>
+      <scale-list-item>Elementum nibh</scale-list-item>
+      <scale-list-item>Penatibus et magnis
+        <scale-list ordered>
+          <scale-list-item>Nulla facilisi</scale-list-item>
+          <scale-list-item>Aliquam etiam</scale-list-item>
+        </scale-list>
+      </scale-list-item>
+    </scale-list>
+  </scale-list-item>
+  <scale-list-item>Consetetur sadipscing</scale-list-item>
 </scale-list>
 ```
 
-## With Custom Type
+## Unordered
 
 <Preview withSource="none">
-  <Story
-    name="With Custom Type"
-    args={{
-      type: "square",
-    }}
-  >
+  <Story name="Unordered" args={{ ordered: false }}>
     {Template.bind({})}
   </Story>
 </Preview>
 
 ```html
 <scale-list>
-  <scale-list-item type="square">Eins</scale-list-item>
-  <scale-list-item type="square">Zwei</scale-list-item>
-  <scale-list-item type="square">Drei</scale-list-item>
+  <scale-list-item>Lorem ipsum dolor</scale-list-item>
+  <scale-list-item>Sit amet
+    <scale-list>
+      <scale-list-item>Elementum nibh</scale-list-item>
+      <scale-list-item>Penatibus et magnis
+        <scale-list>
+          <scale-list-item>Nulla facilisi</scale-list-item>
+          <scale-list-item>Aliquam etiam</scale-list-item>
+        </scale-list>
+      </scale-list-item>
+    </scale-list>
+  </scale-list-item>
+  <scale-list-item>Consetetur sadipscing</scale-list-item>
 </scale-list>
 ```
 
-## With Custom Icon
+## Unordered With Custom Icon
 
 <Preview withSource="none">
-  <Story
-    name="With Custom Icon"
-    args={{
-      icon: ICON,
-      iconSize: 16,
-    }}
-  >
-    {Template.bind({})}
+  <Story name="Unordered With Custom Icon" args={{ ordered: false }}>
+    {TemplateCustomIcon.bind({})}
   </Story>
 </Preview>
 
 ```html
 <scale-list>
-  <scale-list-item icon="SVG-PATH" icon-size="16">Eins</scale-list-item>
-  <scale-list-item icon="SVG-PATH" icon-size="16">Zwei</scale-list-item>
-  <scale-list-item icon="SVG-PATH" icon-size="16">Drei</scale-list-item>
+  <scale-list-item marker="false">
+    <scale-icon-action-success size="16" />
+    Lorem ipsum dolor
+  </scale-list-item>
+  <scale-list-item marker="false">
+    <scale-icon-action-success size="16" />
+    Sit amet
+  </scale-list-item>
+  <scale-list-item marker="false">
+    <scale-icon-action-close size="16" />
+    Consetetur sadipscing
+  </scale-list-item>
 </scale-list>
 ```

@@ -394,6 +394,9 @@ export const ScaleList = /*@__PURE__*/ Vue.extend({
 export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 
   props: {
+    ordered: {} as PropOptions<Components.ScaleListItem['ordered']>,
+    index: {} as PropOptions<Components.ScaleListItem['index']>,
+    marker: {} as PropOptions<Components.ScaleListItem['marker']>,
     styles: {} as PropOptions<Components.ScaleListItem['styles']>,
   },
 
