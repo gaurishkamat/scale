@@ -9,6 +9,8 @@ export const styles: JssStyle = {
 
   'list-item': {
     position: 'relative',
+    fontSize: ({ type }) => type.size_3,
+    lineHeight: ({ type }) => type.leading_5,
     paddingLeft: ({ spacing }) => `calc(0.25ch + ${spacing[4]})`,
 
     '&::before': {
