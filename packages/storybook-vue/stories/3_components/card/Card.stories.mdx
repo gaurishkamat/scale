@@ -1,24 +1,6 @@
 import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
 import ScaleCard from './ScaleCard.vue';
 
-<!--
-  👀
-
-  We're missing two key things from Stencil's docs in the generated readme file:
-  - whether attributes are optional or required
-  - any description for those attributes
-  - plus, writing them again in the .vue file can be error-prone.
-
-  Other minor pain-points:
-  - writing the code-snippet manually, need to make sure attribute/values match
-  - declaring all props both in Template and the <template> of the .vue file
-
-  Two more thing to think about:
-  - in the end there's nothing Vue-specific in the stories, only for us devs, no?
-    al least until the code snippet in the Preview works as expected and doesn't show `Template.bind()`
-  - we're not using the Vue output target package (it's not really useful in Storybook)
--->
-
 <Meta
   title='Components/Card'
   component={ScaleCard}
@@ -39,17 +21,26 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleCard.props
   },
   template: `
-    <scale-card
-      :custom-class="customClass"
-      :href="href"
-      :target="target"
-      :interactive="interactive"
-      :no-padding="noPadding"
-      :disabled="disabled"
-      :styles="JSON.stringify(styles)"
-    >
-      {{ slot }}
-    </scale-card>
+    <div :style="{ maxWidth: slot.startsWith('<div') ? '300px'  : 'auto' }">
+        <scale-card
+              :custom-class="customClass"
+              :to="to"
+              :target="target"
+              :label="label"
+              :rel="rel"
+              :styles="JSON.stringify(styles)"
+            >
+                <div v-if="slot.startsWith('<div')">
+                    <div style="margin: -24px;">
+                      <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/300/200/tech/grayscale" alt="placeholder" />
+                      <div style="padding: 24px;">A card with a full width image</div>
+                    </div>
+                </div>
+                <div v-if="!slot.startsWith('<div')">
+                  {{ slot }}
+                </div>
+        </scale-card>
+    </div>
   `
 })
 
@@ -79,8 +70,9 @@ export const Template = (args, { argTypes }) => ({
     args={{
       slot: 'A card with a link to example.com',
       label: 'Example Card',
-      href: 'https://example.com',
-      target: '_blank'
+      to: 'https://example.com',
+      target: '_blank',
+      rel: 'noopener noreferrer'
     }}
   >
     {Template.bind({})}
@@ -88,19 +80,25 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card href="https://example.com" target="_blank" label="Example Card">A card with a link to example.com</scale-card>
+<scale-card to="https://example.com" to="_blank" target="_blank" rel="noopener noreferrer" label="Example Card">A card with a link to example.com</scale-card>
 ```
 
 
-## Padding Off
+## With Image
 
 <Preview withSource="none">
   <Story
-    name='Padding Off'
+    name='With Image'
     args={{
-      slot: 'A card with a link to example.com',
+      slot: `<div style="margin: -24px;">
+        <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/200/200/tech/grayscale" alt="placeholder" />
+        <div style="padding: 24px;">A card with a full width image</div>
+      </div>
+      `,
       label: 'Example Card',
-      noPadding: true
+      to: 'https://example.com',
+      target: '_blank',
+      rel: 'noopener noreferrer'
     }}
   >
     {Template.bind({})}
@@ -108,64 +106,12 @@ export const Template = (args, { argTypes }) => ({
 </Preview>
 
 ```html
-<scale-card href="https://example.com" target="_blank" no-padding label="Example Card">A card with no padding</scale-card>
-```
-
-## Interactive
-
-<Preview withSource="none">
-  <Story
-    name='Interactive'
-    args={{
-      slot: 'A card, interactive, no link',
-      label: 'Example Card',
-      interactive: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-card interactive label="Example Card">A card, interactive</scale-card>
-```
-
-
-## Interactive Padding Off
-
-<Preview withSource="none">
-  <Story
-    name='Interactive Padding Off'
-    args={{
-      slot: 'A card, interactive, no link',
-      label: 'Example Card',
-      interactive: true,
-      noPadding: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-card interactive no-padding label="Example Card">A card, interactive, no link</scale-card>
-```
-
-## Disabled
-
-<Preview withSource="none">
-  <Story
-    name='Disabled'
-    args={{
-      slot: 'A card, disabled',
-      label: 'Example Card',
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-card disabled label="Example Card">A card, interactive</scale-card>
+<div style="max-width: 200px;">
+  <scale-card to="https://example.com" target="_blank">
+    <div style="margin: -24px;">
+      <img style="margin-bottom: -4px; width:100%;" src="https://via.placeholder.com/150" alt="placeholder" />
+      <div style="padding: 24px;">A card with a full width image</div>
+    </div>
+  </scale-card>
+</div>
 ```

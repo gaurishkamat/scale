@@ -594,10 +594,19 @@
     <scale-card>A title</scale-card>
 
     <h3>Card - with link</h3>
-    <scale-card href="http://example.com" target="_blank">A title</scale-card>
 
-    <h3>Card - disabled</h3>
-    <scale-card interactive="true" disabled="true">A title</scale-card>
+    <div style="width: 150px">
+      <scale-card to="https://example.com" target="_blank">
+        <div style="margin: -24px;">
+          <img
+                  style="margin-bottom: -4px"
+                  src="https://via.placeholder.com/150"
+                  alt="placeholder"
+          />
+          <div style="padding: 24px;">A title</div>
+        </div>
+      </scale-card>
+    </div>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
     <scale-progress-bar percentage="30" stroke-width="8"></scale-progress-bar>
