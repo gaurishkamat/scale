@@ -16,7 +16,7 @@ If users don't need to enter multiple lines of text, use text fields instead.
 
 ## Elements
 
-![Image Name](assets/3_components/text-area/text_area_elements.png)
+![Image Name](assets/3_components/text-area/text_area_elements_poked.png)
 
 ### Label (1)
 
@@ -36,7 +36,7 @@ If the number of characters is limited, the counter shows the max number of char
 
 ### Error (5)
 
-If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please fill out this field".  If the input field has an information text, the error text will temporarily take its place.
+If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please fill out this field". If the input field has an information text, the error text will temporarily take its place.
 
 ### Resize (6) (Optional)
 
