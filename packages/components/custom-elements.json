@@ -343,24 +343,12 @@
           "description": "(optional) Card class"
         },
         {
-          "name": "disabled",
-          "description": "(optional) Link disabled"
-        },
-        {
-          "name": "href",
-          "description": "(optional) Link card"
-        },
-        {
-          "name": "interactive",
-          "description": "(optional) Link interactive"
-        },
-        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
         {
-          "name": "no-padding",
-          "description": "(optional) Padding off"
+          "name": "rel",
+          "description": "(optional) Link card rel"
         },
         {
           "name": "styles",
@@ -369,6 +357,10 @@
         {
           "name": "target",
           "description": "(optional) Link card target"
+        },
+        {
+          "name": "to",
+          "description": "(optional) Link card"
         }
       ]
     },

@@ -162,25 +162,13 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -189,6 +177,10 @@ export namespace Components {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
@@ -1275,25 +1267,13 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -1302,6 +1282,10 @@ declare namespace LocalJSX {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
