@@ -65,7 +65,7 @@ export class Modal implements Base {
   }
 
   waitForChildren(children) {
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
       const findChildren = () =>
         children.length
           ? resolve()
@@ -92,9 +92,11 @@ export class Modal implements Base {
         scrollContainer.scrollHeight > scrollContainer.clientHeight;
 
       if (hasVerticalScrollbar) {
-        modalHeader.classList.add(
-          this.stylesheet.classes['modal__header-scroll']
-        );
+        if (modalHeader) {
+          modalHeader.classList.add(
+            this.stylesheet.classes['modal__header-scroll']
+          );
+        }
         if (modalActions) {
           modalActions.classList.add(
             this.stylesheet.classes['modal__actions-scroll']
@@ -154,7 +156,7 @@ export class Modal implements Base {
     animationBackdrop.play();
     animationModal.play();
 
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
       animationModal.onfinish = function() {
         if (direction === 'OUT') {
           modalClassList.remove(this.stylesheet.classes['modal--opened']);
