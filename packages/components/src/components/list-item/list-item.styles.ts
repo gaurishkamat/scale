@@ -49,7 +49,7 @@ export const styles: JssStyle = {
 
     '$list-item--nested&::before': {
       fontSize: ({ type }) => type.size_2,
-      paddingTop: ({ spacing }) => `calc(0.5 * ${spacing[1]})`,
+      paddingTop: ({ type }) => `calc(${type.size_3} - ${type.size_2})`,
     },
   },
 
