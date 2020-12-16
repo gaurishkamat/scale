@@ -759,7 +759,7 @@
       "attributes": [
         {
           "name": "index",
-          "description": "Index number, useful only for styling the `ordered` type (not used currently)"
+          "description": "Index number, useful only for styling the `ordered` type"
         },
         {
           "name": "marker",

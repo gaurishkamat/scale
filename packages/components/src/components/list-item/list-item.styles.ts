@@ -26,7 +26,7 @@ export const styles: JssStyle = {
     '&::before': {
       boxSizing: 'border-box',
       display: 'block',
-      top: '0.5ch',
+      top: '0.5em',
       width: ({ spacing }) => spacing[2],
       height: ({ spacing }) => spacing[2],
       borderRadius: '50%',
@@ -46,9 +46,10 @@ export const styles: JssStyle = {
       fontSize: ({ type }) => type.size_3,
       fontWeight: ({ type }) => type.weight_bold,
     },
-
+    
     '$list-item--nested&::before': {
       fontSize: ({ type }) => type.size_2,
+      paddingTop: ({ spacing }) => `calc(0.5 * ${spacing[1]})`,
     },
   },
 

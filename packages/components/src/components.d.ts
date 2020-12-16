@@ -455,7 +455,7 @@ export namespace Components {
     }
     interface ScaleListItem {
         /**
-          * Index number, useful only for styling the `ordered` type (not used currently)
+          * Index number, useful only for styling the `ordered` type
          */
         "index"?: number;
         /**
@@ -1591,7 +1591,7 @@ declare namespace LocalJSX {
     }
     interface ScaleListItem {
         /**
-          * Index number, useful only for styling the `ordered` type (not used currently)
+          * Index number, useful only for styling the `ordered` type
          */
         "index"?: number;
         /**
