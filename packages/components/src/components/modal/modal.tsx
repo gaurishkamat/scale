@@ -92,9 +92,11 @@ export class Modal implements Base {
         scrollContainer.scrollHeight > scrollContainer.clientHeight;
 
       if (hasVerticalScrollbar) {
-        modalHeader.classList.add(
-          this.stylesheet.classes['modal__header-scroll']
-        );
+        if (modalHeader) {
+          modalHeader.classList.add(
+            this.stylesheet.classes['modal__header-scroll']
+          );
+        }
         if (modalActions) {
           modalActions.classList.add(
             this.stylesheet.classes['modal__actions-scroll']
