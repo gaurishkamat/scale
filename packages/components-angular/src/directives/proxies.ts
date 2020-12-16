@@ -393,13 +393,13 @@ export class ScaleLink {
 
 export declare interface ScaleList extends Components.ScaleList {}
 @ProxyCmp({
-  inputs: ['styles', 'variant']
+  inputs: ['ordered', 'styles']
 })
 @Component({
   selector: 'scale-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['styles', 'variant']
+  inputs: ['ordered', 'styles']
 })
 export class ScaleList {
   protected el: HTMLElement;
@@ -412,13 +412,13 @@ export class ScaleList {
 
 export declare interface ScaleListItem extends Components.ScaleListItem {}
 @ProxyCmp({
-  inputs: ['icon', 'iconSize', 'styles', 'type']
+  inputs: ['index', 'marker', 'ordered', 'styles']
 })
 @Component({
   selector: 'scale-list-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'iconSize', 'styles', 'type']
+  inputs: ['index', 'marker', 'ordered', 'styles']
 })
 export class ScaleListItem {
   protected el: HTMLElement;

@@ -436,29 +436,32 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker": boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**
@@ -1561,29 +1564,32 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker"?: boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**

@@ -733,12 +733,12 @@
       },
       "attributes": [
         {
-          "name": "styles",
-          "description": ""
+          "name": "ordered",
+          "description": "(optional) Make the list ordered (ol)"
         },
         {
-          "name": "variant",
-          "description": "(optional) List variant"
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -750,20 +750,20 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": "(optional) List item icon"
+          "name": "index",
+          "description": "Index number, useful only for styling the `ordered` type"
         },
         {
-          "name": "icon-size",
-          "description": "(optional) list Icon size"
+          "name": "marker",
+          "description": "If `false`, no marker or left padding will be visible"
+        },
+        {
+          "name": "ordered",
+          "description": "Whether this is a child of an ordered scale-list, gets set automatically by its parent"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "type",
-          "description": "(optional) List item style type"
         }
       ]
     },
