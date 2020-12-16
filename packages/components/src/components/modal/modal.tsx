@@ -65,7 +65,7 @@ export class Modal implements Base {
   }
 
   waitForChildren(children) {
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
       const findChildren = () =>
         children.length
           ? resolve()
@@ -156,7 +156,7 @@ export class Modal implements Base {
     animationBackdrop.play();
     animationModal.play();
 
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
       animationModal.onfinish = function() {
         if (direction === 'OUT') {
           modalClassList.remove(this.stylesheet.classes['modal--opened']);
