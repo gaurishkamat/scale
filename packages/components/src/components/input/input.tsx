@@ -22,6 +22,8 @@ export interface InputChangeEventDetail {
 
 let i = 0;
 
+const SELECT_ICON = 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z';
+
 @Component({
   tag: 'scale-input',
   shadow: false,
@@ -117,6 +119,10 @@ export class Input implements Base {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
+    }
+    // Default icon for `select` type
+    if (this.type === 'select' && this.icon == null) {
+      this.icon = SELECT_ICON;
     }
   }
 
