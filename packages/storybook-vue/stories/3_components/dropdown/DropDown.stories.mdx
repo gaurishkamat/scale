@@ -30,17 +30,18 @@ export const Template = (args, { argTypes }) => ({
       :icon="icon"
       :input-id="inputId"
       :visible-size="visibleSize"
+      :controlled="controlled"
       @scaleChange="scaleChange"
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
       @scaleKeyDown="scaleKeyDown"
     >
-      <option value="A">Category 1</option>
+      <option value="1">Category 1</option>
       <optgroup label="Category Group">
-        <option value="A">Category 2</option>
+        <option value="2">Category 2</option>
       </optgroup>
       <optgroup label="Category Group 2">
-        <option value="A">Category 3</option>
+        <option value="3">Category 3</option>
       </optgroup>
     </scale-input>
   `,

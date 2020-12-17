@@ -303,6 +303,10 @@ export namespace Components {
          */
         "cols"?: number;
         /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
           * (optional) Input counter
          */
         "counter"?: boolean;
@@ -1382,6 +1386,10 @@ declare namespace LocalJSX {
           * (optional) textarea column
          */
         "cols"?: number;
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
         /**
           * (optional) Input counter
          */
