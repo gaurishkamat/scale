@@ -419,7 +419,7 @@ export class Input implements Base {
       this.transparent && classes['input--transparent'],
       this.status && classes[`input--status-${this.status}`],
       this.size && classes[`input--size-${this.size}`],
-      this.value && 'animated'
+      this.value != null && this.value !== '' && 'animated'
     );
   }
 }
