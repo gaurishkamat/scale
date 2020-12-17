@@ -1,8 +1,8 @@
 import {
   Meta,
   Story,
-  Props,
-  Preview,
+  ArgsTable,
+  Canvas,
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleAccordion from "./ScaleAccordion.vue";
@@ -49,15 +49,15 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Standard">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-<Props story="Standard" />
+<ArgsTable story="Standard" />
 
 ## Dependent
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Dependent"
     args={{
@@ -66,7 +66,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-accordion dependent>

@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
 import { action } from "@storybook/addon-actions";
 
@@ -101,7 +101,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard L / 8 Columns'
     args={{
@@ -111,14 +111,14 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard L / 8 Columns' />
+<ArgsTable story='Standard L / 8 Columns' />
 
 
 ## Small S / 6 Columns
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small S / 6 Columns'
     args={{
@@ -129,7 +129,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal opened="opened" size="small" @scaleClose="opened = false">
@@ -155,7 +155,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large XL / 12 Columns
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large XL / 12 Columns'
     args={{
@@ -166,7 +166,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal opened="opened" size="large" @scaleClose="opened = false">
@@ -192,7 +192,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Scrolling modal with Actions
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Scrolling modal with Actions'
     args={{
@@ -203,7 +203,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <div>

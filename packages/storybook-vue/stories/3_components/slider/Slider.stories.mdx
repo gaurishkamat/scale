@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleSlider from './ScaleSlider.vue';
 import { action } from "@storybook/addon-actions";
 
@@ -53,7 +53,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Standard"
         args={{
@@ -63,13 +63,13 @@ export const Template = (args, {argTypes}) => ({
         >
         {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ## Slider track small
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Slider track small"
         args={{
@@ -79,7 +79,7 @@ export const Template = (args, {argTypes}) => ({
         }}>
         {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-slider label="Slider track small" value="20" track-small></scale-slider>
@@ -87,7 +87,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Slider thumb large
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Slider thumb large"
         args={{
@@ -97,7 +97,7 @@ export const Template = (args, {argTypes}) => ({
         }}>
         {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
@@ -105,7 +105,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Slider with custom color
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Slider with custom color"
         args={{
@@ -116,7 +116,7 @@ export const Template = (args, {argTypes}) => ({
         >
         {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-slider label="Slider with custom color" value="20" custom-color="#009DE0"></scale-slider>
@@ -124,7 +124,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Disabled slider
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Disabled Slider"
         args={{
@@ -134,7 +134,7 @@ export const Template = (args, {argTypes}) => ({
         }}>
         {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-slider label="Disabled Slider" value="40" disabled></scale-slider>

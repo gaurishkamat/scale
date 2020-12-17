@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleBreadcrumb from './ScaleBreadcrumb.vue';
 
 <Meta
@@ -38,16 +38,16 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{}}
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-breadcrumb separator="---">
@@ -59,7 +59,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## With Custom Separator Element
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With Custom Separator Element'
     args={{
@@ -68,7 +68,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-breadcrumb>

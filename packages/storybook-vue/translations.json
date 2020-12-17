@@ -1,0 +1,77 @@
+[
+  {
+    "elementSelector": "#scale-design-system--page",
+    "en": "Scale Design System",
+    "de": "(DE)Scale Design System"
+  },
+  {
+    "elementSelector": "#getting-started",
+    "en": "Getting Started",
+    "de": "(DE)Getting Started"
+  },
+  {
+    "elementSelector": "#getting-started-about-scale--page",
+    "en": "About Scale",
+    "de": "(DE)About Scale"
+  },
+  {
+    "elementSelector": "#getting-started-scale-for-designers--page",
+    "en": "Scale for Designers",
+    "de": "(DE)Scale for Designers"
+  },
+  {
+    "elementSelector": "#getting-started-scale-for-developers--page",
+    "en": "Scale for Developers",
+    "de": "(DE)Scale for Developers"
+  },
+  {
+    "elementSelector": "#getting-started-faq--page",
+    "en": "FAQ",
+    "de": "(DE)FAQ"
+  },
+  {
+    "elementSelector": "#guidelines",
+    "en": "Guidelines",
+    "de": "(DE)Guidelines"
+  },
+  {
+    "elementSelector": "#guidelines-grid--page",
+    "en": "Grid",
+    "de": "(DE)Grid"
+  },
+  {
+    "elementSelector": "#guidelines-spacing--page",
+    "en": "Spacing",
+    "de": "(DE)Spacing"
+  },
+  {
+    "elementSelector": "#guidelines-typography--page",
+    "en": "Typography",
+    "de": "(DE)Typography"
+  },
+  {
+    "elementSelector": "#guidelines-theming-scale--page",
+    "en": "Theming Scale",
+    "de": "(DE)Theming Scale"
+  },
+  {
+    "elementSelector": "#components",
+    "en": "Components",
+    "de": "(DE)Components"
+  },
+  {
+    "elementSelector": "#community",
+    "en": "Community",
+    "de": "(DE)Community"
+  },
+  {
+    "elementSelector": "#community-contributing-to-scale--page",
+    "en": "Contributing to Scale",
+    "de": "(DE)Contributing to Scale"
+  },
+  {
+    "elementSelector": "#community-your-feedback--page",
+    "en": "Your Feedback",
+    "de": "(DE)Your Feedback"
+  }
+]

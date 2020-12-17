@@ -1,8 +1,8 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleSidebarNav from './SidebarNav.vue';
 
 <Meta
-  title='Components/Sidebar Nav'
+  title='Components/Sidebar Navigation'
   component={ScaleSidebarNav}
   argTypes={{
     width: {
@@ -87,13 +87,13 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name='Standard'>
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-sidebar-nav aria-label="primary">

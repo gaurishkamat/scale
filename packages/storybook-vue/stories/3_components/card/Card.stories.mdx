@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleCard from './ScaleCard.vue';
 
 <!--
@@ -15,7 +15,7 @@ import ScaleCard from './ScaleCard.vue';
 
   Two more thing to think about:
   - in the end there's nothing Vue-specific in the stories, only for us devs, no?
-    al least until the code snippet in the Preview works as expected and doesn't show `Template.bind()`
+    al least until the code snippet in the Canvas works as expected and doesn't show `Template.bind()`
   - we're not using the Vue output target package (it's not really useful in Storybook)
 -->
 
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -66,13 +66,13 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ## With Link
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With Link'
     args={{
@@ -83,7 +83,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card href="https://example.com" target="_blank">A card with a link to example.com</scale-card>
@@ -92,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Padding Off
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Padding Off'
     args={{
@@ -102,7 +102,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card href="https://example.com" target="_blank" no-padding>A card with a link to example.com</scale-card>
@@ -110,7 +110,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Interactive
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Interactive'
     args={{
@@ -120,7 +120,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card interactive>A card, interactive, no link</scale-card>
@@ -129,7 +129,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Interactive Padding Off
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Interactive Padding Off'
     args={{
@@ -140,7 +140,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card interactive no-padding>A card, interactive, no link</scale-card>
@@ -148,7 +148,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Disabled'
     args={{
@@ -158,7 +158,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card disabled>A card, interactive</scale-card>

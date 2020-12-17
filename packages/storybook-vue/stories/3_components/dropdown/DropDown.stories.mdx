@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleDropDown from "./ScaleDropDown.vue";
 import { action } from "@storybook/addon-actions";
 export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -68,9 +68,9 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-input icon="SVG-PATH" type="select" label="select">
@@ -83,7 +83,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small'
     args={{
@@ -96,7 +96,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -110,7 +110,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Disabled'
     args={{
@@ -122,7 +122,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -136,7 +136,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Error
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Error'
     args={{
@@ -149,7 +149,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
