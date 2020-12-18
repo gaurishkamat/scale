@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.14.0...v1.15.0) (2020-12-18)
+
+
+### Bug Fixes
+
+* images ([7d2de0e](https://gitlab.com/scale-ds/scale-telekom/commit/7d2de0e960b0330b80296172cfdfb7a0b59784c6))
+* tag-color image link ([5fb4efd](https://gitlab.com/scale-ds/scale-telekom/commit/5fb4efd281e1361456c545db2e27243c64d38b96))
+
+
+### Features
+
+* add _controlled_ attribute and behavior to input select ([8b5ad7e](https://gitlab.com/scale-ds/scale-telekom/commit/8b5ad7eceb00a6c5851122c16e866840293ac843))
+
+
+
+
+
 # [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
 
 
