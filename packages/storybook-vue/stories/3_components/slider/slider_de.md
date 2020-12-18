@@ -23,17 +23,17 @@ Der Slider zeigt einen Default-Wert oder -Wertebereich an, den Nutzer*innen durc
 
 Jeder Slider benötigt ein Label, das den sich ändernden Wert beschreibt. Zeige den aktuellen Wert immer per Default.
 
-![Image Name](/assets/3_components/slider/slider_types.png)
+![Image Name](/assets/3_components/slider/slider_types_de.png)
 
 ## Farben
 
 Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, kannst du eine Farbe aus der Telekom Farbpalette oder eine eigene Farbe wählen. Achte in jedem Fall darauf, dass die Farbkodierung für Nutzer*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
-![Image Name](/assets/3_components/slider/slider_color.png)
+![Image Name](/assets/3_components/slider/slider_color_de.png)
 
 ## Größen
 
-![Image Name](/assets/3_components/slider/slider_sizes.png)
+![Image Name](/assets/3_components/slider/slider_sizes_de.png)
 
  ## Deaktivierter Zustand
 

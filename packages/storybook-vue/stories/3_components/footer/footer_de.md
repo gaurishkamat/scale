@@ -46,4 +46,4 @@ Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sic
 
 Kleine Geräte stellen die Seitennavigation als Accordion dar. Alle anderen Elemente sind ebenfalls vertikal angeordnet.
 
-![Image Name](assets/3_components/footer/Footer-navigation-mobile.png)
+![Image Name](assets/3_components/footer/Footer-navigation-mobile_de.png)

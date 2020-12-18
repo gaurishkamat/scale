@@ -18,7 +18,7 @@ Das Logo, der Claim und der magentafarbene Hintergrund sind für jede Seite der 
 
 #### Element für die Bereiche Privat- und Geschäftskund*innen (2)
 
-Verwende dieses Element, wenn die Webseite Bereiche für Privat- und Geschäftskund*innen enthält. Damit werden die Nutzer*innen auf die jeweilige Startseite weitergeleitet. Ein Unterstrich kennzeichnet den gewählten Bereich als aktiv.
+Verwende dieses Element, wenn die Webseite Bereiche für Privat- und Geschäftskund\*innen enthält. Damit werden die Nutzer*innen auf die jeweilige Startseite weitergeleitet. Ein Unterstrich kennzeichnet den gewählten Bereich als aktiv.
 
 #### Telekom Links (3)
 
@@ -48,7 +48,7 @@ Setze eine Dropdown-Navigation mit Länderkürzeln ein, wenn mehr als vier Sprac
 
 > Diese Funktion ist bald verfügbar.
 
-Benötigst du keinen Wechsel zwischen den Bereichen von Privat- und Geschäftskund*innen, dann kannst du an dieser Stelle den Portalnamen ausweisen. Das gibt den Nutzer&ast;innen eine zusätzliche Hilfe zur Orientierung.
+Benötigst du keinen Wechsel zwischen den Bereichen von Privat- und Geschäftskund\*innen, dann kannst du an dieser Stelle den Portalnamen ausweisen. Das gibt den Nutzer*innen eine zusätzliche Hilfe zur Orientierung.
 
 ![Image Name](assets/3_components/brand-header/EN_brandheader_portalname.png)
 
@@ -112,7 +112,7 @@ Die Kernfunktionen werden weiterhin auf der obersten Ebene dargestellt. Die Haup
 
 #### Geöffnete Navigation (3)
 
-Durch einen Klick/Tap auf das Menü-Icon öffnet sich eine Listenansicht. An erster Stelle sind die Tabs für Privat- und Geschäftskund&ast;innen platziert. Darunter folgt eine Liste mit Navigationspunkten der ersten Hierarchieebene. Das Element für den Sprachenwechsel befindet sich am unteren Ende der Liste. Webseiten ohne Unterseiten (One-Page) haben keine Navigation – hier navigieren die Nutzer*innen durch Scrollen.
+Durch einen Klick/Tap auf das Menü-Icon öffnet sich eine Listenansicht. An erster Stelle sind die Tabs für Privat- und Geschäftskund\*innen platziert. Darunter folgt eine Liste mit Navigationspunkten der ersten Hierarchieebene. Das Element für den Sprachenwechsel befindet sich am unteren Ende der Liste. Webseiten ohne Unterseiten (One-Page) haben keine Navigation – hier navigieren die Nutzer*innen durch Scrollen.
 
 
 #### Hierarchieebenen (4)

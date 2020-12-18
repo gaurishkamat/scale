@@ -55,7 +55,7 @@ Die Standardfarbe für Tags ist Dunkelgrau. So garantierst du maximalen Kontrast
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
-![Image Name](assets/3_components/chip/Tag-color.png)
+![Image Name](assets/3_components/chip/Tag-color_de.png)
 
 ## Größen
 

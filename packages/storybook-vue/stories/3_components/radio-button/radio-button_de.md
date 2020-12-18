@@ -36,7 +36,7 @@ Deaktiviere den Radio-Button, wenn
 
 ## Titel und Default-Auswahl
 
-Treffe eine Vorauswahl durch die Default-Aktivierung einer Option. Entspricht diese den Erwartungen der Nutzer*innen, reduzierst du somit den benötigen Interaktionsaufwand. Das ist zudem eine gute Möglichkeit, Nutzer&ast;innen Vorschläge zu machen.
+Treffe eine Vorauswahl durch die Default-Aktivierung einer Option. Entspricht diese den Erwartungen der Nutzer\*innen, reduzierst du somit den benötigen Interaktionsaufwand. Das ist zudem eine gute Möglichkeit, Nutzer\*innen Vorschläge zu machen.
 
 Es gibt ein paar wenige Fälle, in denen du besser keine Vorauswahl triffst, zum Beispiel bei der Auswahl des Titels in einem Formular (Herr, Frau etc.).
 

@@ -19,5 +19,5 @@ sie nicht unbedingt benötigt werden. Zu viele Trenner lassen das Design unruhig
 
 ## Varianten
 
-![Image Name](assets/3_components/divider/divider.png)
+![Image Name](assets/3_components/divider/divider_de.png)
 

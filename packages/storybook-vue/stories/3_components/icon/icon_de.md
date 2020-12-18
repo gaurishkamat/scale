@@ -21,7 +21,7 @@ Die Deutsche Telekom hat einen eigenen Icon-Stil, um die Werte der Marke auf ein
 
 Verwende standardmäßig Outline-Icons für User Interfaces. Sie sind für helle und dunkle Hintergründe optimiert. Flächige Icons heben einen ausgewählten Status hervor.
 
-![Image Name](assets/3_components/icon/icons_variants.png)
+![Image Name](assets/3_components/icon/icons_variants_de.png)
 
 ## Statische und interaktive Icons
 

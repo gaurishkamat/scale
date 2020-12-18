@@ -2,52 +2,52 @@
   {
     "elementSelector": "#scale-design-system--page",
     "en": "Scale Design System",
-    "de": "(DE)Scale Design System"
+    "de": "Scale Design System"
   },
   {
     "elementSelector": "#getting-started",
     "en": "Getting Started",
-    "de": "(DE)Getting Started"
+    "de": "Erste Schritte"
   },
   {
     "elementSelector": "#getting-started-about-scale--page",
     "en": "About Scale",
-    "de": "(DE)About Scale"
+    "de": "Das Design System Scale"
   },
   {
     "elementSelector": "#getting-started-scale-for-designers--page",
     "en": "Scale for Designers",
-    "de": "(DE)Scale for Designers"
+    "de": "Design mit Scale"
   },
   {
     "elementSelector": "#getting-started-scale-for-developers--page",
     "en": "Scale for Developers",
-    "de": "(DE)Scale for Developers"
+    "de": "Entwicklung mit Scale"
   },
   {
     "elementSelector": "#getting-started-faq--page",
     "en": "FAQ",
-    "de": "(DE)FAQ"
+    "de": "FAQ"
   },
   {
     "elementSelector": "#guidelines",
     "en": "Guidelines",
-    "de": "(DE)Guidelines"
+    "de": "Guidelines"
   },
   {
     "elementSelector": "#guidelines-grid--page",
     "en": "Grid",
-    "de": "(DE)Grid"
+    "de": "Gestaltungsraster"
   },
   {
     "elementSelector": "#guidelines-spacing--page",
     "en": "Spacing",
-    "de": "(DE)Spacing"
+    "de": "Abstände"
   },
   {
     "elementSelector": "#guidelines-typography--page",
     "en": "Typography",
-    "de": "(DE)Typography"
+    "de": "Typografie"
   },
   {
     "elementSelector": "#guidelines-theming-scale--page",
@@ -57,21 +57,21 @@
   {
     "elementSelector": "#components",
     "en": "Components",
-    "de": "(DE)Components"
+    "de": "Komponenten"
   },
   {
     "elementSelector": "#community",
     "en": "Community",
-    "de": "(DE)Community"
+    "de": "Community"
   },
   {
     "elementSelector": "#community-contributing-to-scale--page",
     "en": "Contributing to Scale",
-    "de": "(DE)Contributing to Scale"
+    "de": "An Scale mitwirken"
   },
   {
     "elementSelector": "#community-your-feedback--page",
     "en": "Your Feedback",
-    "de": "(DE)Your Feedback"
+    "de": "Feedback"
   }
 ]

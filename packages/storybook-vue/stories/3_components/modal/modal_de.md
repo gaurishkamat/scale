@@ -1,10 +1,10 @@
 # Modal
 
-Modale Dialoge erfordern sofortige Aufmerksamkeit und unterbrechen die Nutzer*innen in ihrem Workflow. Sie erscheinen immer dann, wenn Nutzer*innen für die Erledigung einer Aufgabe eine Information benötigen oder sie eine Entscheidung treffen müssen.
+Modale Dialoge erfordern sofortige Aufmerksamkeit und unterbrechen die Nutzer\*innen in ihrem Workflow. Sie erscheinen immer dann, wenn Nutzer*innen für die Erledigung einer Aufgabe eine Information benötigen oder sie eine Entscheidung treffen müssen.
 
 ## Allgemein
 
-Der modale Dialog wird als Overlay angezeigt. Der Hauptinhalt der Seite ist nicht mehr bedienbar, bis der*die Nutzer*in darauf reagiert.
+Der modale Dialog wird als Overlay angezeigt. Der Hauptinhalt der Seite ist nicht mehr bedienbar, bis der\*die Nutzer*in darauf reagiert.
 
 ### Verwende einen modalen Dialog, wenn
 
@@ -52,15 +52,15 @@ Ein Overlay grenzt den Aktionsbereich vom scrollbaren Bereich ab. Unter dem Tite
 
 Für Desktop-Anwendungen stehen modale Dialoge in den Größen S, L oder XL zur Verfügung. Sie umfassen jeweils 6, 8 oder 12 Spalten. Wähle die Größe, die am besten zur Menge des Inhalts und den jeweiligen Anwendungsfall passt.
 
-![Image Name](assets/3_components/modal/desktop_12columns.png)
-![Image Name](assets/3_components/modal/desktop_8columns.png)
-![Image Name](assets/3_components/modal/desktop_6columns.png)
+![Image Name](assets/3_components/modal/de/desktop_12columns_de.png)
+![Image Name](assets/3_components/modal/de/desktop_8columns_de.png)
+![Image Name](assets/3_components/modal/de/desktop_6columns_de.png)
 
 ### Mobil
 
 Auf kleinen Geräten werden alle modalen Dialoge über die volle Breite (4 Spalten) dargestellt.
 
-![Image Name](assets/3_components/modal/mobile_4columns.png)
+![Image Name](assets/3_components/modal/de/mobile_4columns_de.png)
 
 ## Best Practices
 
