@@ -52,21 +52,21 @@
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-input pre-checked type="radio" label="Radio Button Label" data-sketch-key="radio-10"></scale-input>
+      <scale-input checked type="radio" label="Radio Button Label" data-sketch-key="radio-10"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-input pre-checked type="radio" label="Radio Button Label" data-sketch-state="focus" data-sketch-key="radio-11"></scale-input>
+      <scale-input checked type="radio" label="Radio Button Label" data-sketch-state="focus" data-sketch-key="radio-11"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-input pre-checked type="radio" label="Radio Button Label" disabled data-sketch-key="radio-12"></scale-input>
+      <scale-input checked type="radio" label="Radio Button Label" disabled data-sketch-key="radio-12"></scale-input>
     </div>
   </div>
 </div>
@@ -76,7 +76,7 @@
 <script>
     Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
         btn.dataset.sketchSymbol = `Radio Button / ${
-                order(1, btn.hasAttribute('pre-checked') ? 'Selected' : 'Default')
+                order(1, btn.hasAttribute('checked') ? 'Selected' : 'Default')
             } / ${
                 order(2, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
             } / ${

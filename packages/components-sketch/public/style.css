@@ -108,3 +108,11 @@ scale-input[type="select"] {
   width: 198px;
   display: block;
 }
+.input__select {
+  background: white;
+}
+
+.hide-pseudo:before,
+.hide-pseudo:after {
+    content: none !important;
+}
