@@ -526,6 +526,10 @@
           "description": "(optional) textarea column"
         },
         {
+          "name": "controlled",
+          "description": "(optional) Makes type `select` behave as a controlled component in React"
+        },
+        {
           "name": "counter",
           "description": "(optional) Input counter"
         },

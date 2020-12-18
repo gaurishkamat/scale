@@ -14,6 +14,7 @@
     :icon="icon"
     :input-id="inputId"
     :visible-size="visibleSize"
+    :controlled="controlled"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -42,6 +43,7 @@ export default {
     value: { type: String },
     inputId: { type: String },
     visibleSize: { type: Number },
+    controlled: { type: Boolean },
     styles: { type: String }
   },
   methods: {

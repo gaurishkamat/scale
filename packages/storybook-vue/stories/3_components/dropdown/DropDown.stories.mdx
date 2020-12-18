@@ -1,7 +1,6 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 import ScaleDropDown from "./ScaleDropDown.vue";
 import { action } from "@storybook/addon-actions";
-export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
 
 <Meta
   title='Components/Dropdown'
@@ -31,17 +30,18 @@ export const Template = (args, { argTypes }) => ({
       :icon="icon"
       :input-id="inputId"
       :visible-size="visibleSize"
+      :controlled="controlled"
       @scaleChange="scaleChange"
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
       @scaleKeyDown="scaleKeyDown"
     >
-      <option value="A">Category 1</option>
+      <option value="1">Category 1</option>
       <optgroup label="Category Group">
-        <option value="A">Category 2</option>
+        <option value="2">Category 2</option>
       </optgroup>
       <optgroup label="Category Group 2">
-        <option value="A">Category 3</option>
+        <option value="3">Category 3</option>
       </optgroup>
     </scale-input>
   `,
@@ -63,7 +63,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'Select',
       type: 'select',
-      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
+      variant: 'animated',
     }}
   >
     {Template.bind({})}
@@ -91,7 +91,6 @@ export const Template = (args, { argTypes }) => ({
       type: 'select',
       size: 'small',
       variant: 'animated',
-      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -116,8 +115,8 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'Disabled',
       type: 'select',
+      variant: 'animated',
       disabled: true,
-      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
@@ -142,9 +141,9 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'Error',
       type: 'select',
+      variant: 'animated',
       status: 'error',
       helperText: 'Something went wrong...',
-      icon: 'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z'
     }}
   >
     {Template.bind({})}
