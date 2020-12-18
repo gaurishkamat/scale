@@ -2,6 +2,12 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   button: {
+    // Accessibility: allows some "external" typographic styles to leak in
+    // https://www.w3.org/TR/WCAG21/#text-spacing
+    lineHeight: 'inherit',
+    wordSpacing: 'inherit',
+    letterSpacing: 'inherit',
+
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -17,11 +23,10 @@ export const styles: JssStyle = {
     fontFamily: ({ type }) => type.family,
     fontWeight: ({ type }) => type.weight_bold,
     fontSize: ({ type }) => type.size_3,
+    // @ts-ignore
     lineHeight: ({ type }) => type.leading_5,
     minHeight: ({ size }) => size.button,
     transition: ({ transition }) => transition.generic,
-    // Accessibility: allows some "external" typographic styles to leak in
-    all: 'inherit',
 
     // Focus state, the same for all variants
     '&:not($button--disabled):focus': {
