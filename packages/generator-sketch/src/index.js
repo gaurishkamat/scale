@@ -149,8 +149,6 @@ function findLayers(symbol, predicate, results=[]) {
     }
     if (/^(Radio|Checkbox)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
-      symbol.layers[0].layers[0].resizingConstraint = 9;
-      symbol.layers[0].layers[1].resizingConstraint = 11;
     }
     if (/^Tag/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
@@ -648,16 +646,62 @@ function findLayers(symbol, predicate, results=[]) {
 
   function simplifyTree(node, parent) {
     if (node.layers) {
-      node.layers.forEach(l => simplifyTree(l, node));
+      var minX, minY, maxX, maxY;
+      minX = minY = Infinity;
+      maxX = maxY = -Infinity;
+      if (node.frame.width === 0 || node.frame.height === 0) {
+        node.frame.x = node.frame.y = node.frame.width = node.frame.height = 0;
+      }
+      var hadALayer = false;
+      node.layers.forEach(l => {
+        simplifyTree(l, node);
+        if (l.frame) {
+          hadALayer = true;
+          if (l.frame.x < minX) minX = l.frame.x;
+          if (l.frame.x + l.frame.width > maxX) maxX = l.frame.x + l.frame.width;
+          if (l.frame.y < minY) minY = l.frame.y;
+          if (l.frame.y + l.frame.height > maxY) maxY = l.frame.y + l.frame.height;
+        }
+      });
       if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
-          l.frame.x += node.frame.x;
-          l.frame.y += node.frame.y;
+          if (l.frame) {
+            l.frame.x += node.frame.x;
+            l.frame.y += node.frame.y;
+          }
         });
+      } else {
+        if (hadALayer && (minX !== 0 || minY !== 0)) {
+          node.frame.x += minX;
+          node.frame.y += minY;
+          node.frame.width = maxX - minX;
+          node.frame.height = maxY - minY;
+          node.layers.forEach(l => {
+            if (l.frame) {
+              l.frame.x -= minX;
+              l.frame.y -= minY;
+            }
+          });
+        }
       }
+
     }
+    // if (node.frame) {
+    //   if (node.frame.x < 0 || node.frame.y < 0)  {
+    //     parent.frame.x += node.frame.x;
+    //     parent.frame.y += node.frame.y;
+    //     parent.layers.forEach(l => {
+    //       if (l !== node && l.frame) {
+    //         l.frame.x -= node.frame.x;
+    //         l.frame.y -= node.frame.y;
+    //       }
+    //     });
+    //     node.frame.x = 0;
+    //     node.frame.y = 0;
+    //   }
+    // }
   }
 
   const symbolsPage = new Page({

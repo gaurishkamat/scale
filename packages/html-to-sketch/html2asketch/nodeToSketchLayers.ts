@@ -356,7 +356,11 @@ const ALIGNMENTS = {
   left: 0,
   right: 1,
   center: 2,
-  justify: 3
+  justify: 3,
+  "flex-start": 0,
+  "flex-end": 1,
+  start: 0,
+  end: 1
 };
 
 function hasOnlyDefaultStyles(styles: object) {
@@ -624,19 +628,37 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       }
       if (pseudo === ":before") {
         node.insertBefore(element, node.firstChild);
-        // The fake pseudo element messes with the node's layout
-        if (
-          element.style.position !== "absolute" &&
-          element.style.position !== "fixed"
-        ) {
-          element.style.left = -element.getBoundingClientRect().width + "px";
-          element.style.position = "relative";
-        }
       } else if (pseudo === ":after") {
         node.appendChild(element);
       }
+      // Hide pseudo elements after recreating them.
+      node.classList.add("hide-pseudo");
     }
   });
+  if (node instanceof HTMLSelectElement) {
+    const selectedOption = Array.from(node.getElementsByTagName("option")).find(o => o.selected);
+    const textValue = selectedOption?.textContent;
+    if (textValue) {
+      const element = document.createElement('div');
+      element.appendChild(document.createTextNode("Select Box Value"));
+      applyStyle(element, getComputedStyle(node));
+      element.style.background = 'none';
+      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
+      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.border = '0px';
+      element.style.outline = '0px';
+      element.style.textShadow = 'none';
+      element.style.boxShadow = 'none';
+      element.style.webkitBoxShadow = 'none';
+      element.style.position = 'absolute';
+      element.style.display = 'block';
+      if (node.style.position === 'static') {
+        node.style.position = 'relative';
+        node.style.left = node.style.top = '0px';
+      }
+      node.parentElement?.appendChild(element);
+    }
+  }
 
   let haveTrack = false;
   const sliderTrackCSSRules = findSliderTrackCSSRules(node);
@@ -728,6 +750,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     borderBottomLeftRadius,
     borderBottomRightRadius,
     textAlign,
+    justifyContent,
     fontFamily,
     fontSize,
     lineHeight,
@@ -1221,7 +1244,10 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     skipSystemFonts: options && options.skipSystemFonts
   });
 
-  const alignment = ALIGNMENTS[textAlign] || 0;
+  const alignment = ALIGNMENTS[justifyContent] || ALIGNMENTS[textAlign] || 0;
+  if (justifyContent === 'flex-end') {
+    console.log(alignment, justifyContent, layers, node, node.tagName, node.textContent);
+  }
 
   const textAttributedString = (text: string) =>
     new TextAttributedString({
@@ -1236,19 +1262,20 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
   const rangeHelper = document.createRange();
 
-	// if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
-	// 	const inputEl = node as HTMLInputElement;
-	// 	const div = document.createElement('div');
-	// 	if (inputEl.value === '' && inputEl.placeholder !== '') {
-	// 		div.textContent = inputEl.placeholder;
-	// 		div.setAttribute('pseudo', "-webkit-input-placeholder");
-	// 		div.id = "placeholder";
-	// 		div.style.display = "block !important";
-	// 	} else {
-	// 		div.textContent = inputEl.value;
-	// 	}
-	// 	node.appendChild(div);
-	// }
+	if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
+		const inputEl = node as HTMLInputElement;
+		// const div = document.createElement('div');
+		if (inputEl.value === '' && inputEl.placeholder !== '') {
+      inputEl.value = inputEl.placeholder;
+		// 	div.textContent = inputEl.placeholder;
+		// 	div.setAttribute('pseudo', "-webkit-input-placeholder");
+		// 	div.id = "placeholder";
+		// 	div.style.display = "block !important";
+		// } else {
+		// 	div.textContent = inputEl.value;
+		}
+		// node.appendChild(div);
+	}
 
   // Text
   Array.from(node.childNodes)
