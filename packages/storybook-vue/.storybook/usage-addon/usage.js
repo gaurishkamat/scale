@@ -49,8 +49,6 @@ import textField_de from "raw-loader!../../stories/3_components/text-field/text-
 import footer_en from "raw-loader!../../stories/3_components/footer/footer.md";
 import footer_de from "raw-loader!../../stories/3_components/footer/footer_de.md";
 
-import translationMap from "../../translations.json";
-
 const NOT_A_COMPONENT_MD = "`Browse to any component to see usage.`";
 const COMPONENT_NOT_MAPPED_MD =
   "`Please import and add this component's usage markdown to the componentMap in .storybook/usage-addon/usage.js.`";
@@ -60,22 +58,6 @@ const Usage = props => {
 
   // Then we get the currently selected locale
   const [{ locale }] = useGlobals();
-
-  // We apply the translations of the sidebar
-  React.useEffect(() => {
-    if (!locale) {
-      return;
-    }
-    translationMap.forEach(translation => {
-      const element = window.document.querySelector(
-        translation.elementSelector
-      );
-      if (!element) {
-        return;
-      }
-      element.innerHTML = translation[locale];
-    });
-  }, [locale]);
 
   // Check if this is a component's story and grab it's name when available.
   const componentName = storyId.startsWith("components-")

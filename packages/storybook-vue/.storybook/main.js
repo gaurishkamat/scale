@@ -5,7 +5,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-controls",
     "./usage-addon/register.js",
-    "@storybook/addon-toolbars"
+    "./language-addon/register.js",
   ],
   stories: ["../stories/**/**/*.stories.mdx"]
 };
