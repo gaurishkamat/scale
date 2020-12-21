@@ -343,13 +343,13 @@ export class ScaleIcon {
 import { Input as IInput } from '@scaleds/components-telekom/dist/types/components/input/input';
 export declare interface ScaleInput extends Components.ScaleInput {}
 @ProxyCmp({
-  inputs: ['checked', 'cols', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize']
+  inputs: ['checked', 'cols', 'controlled', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize']
 })
 @Component({
   selector: 'scale-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'cols', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize'],
+  inputs: ['checked', 'cols', 'controlled', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleInput {

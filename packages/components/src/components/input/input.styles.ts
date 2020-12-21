@@ -144,6 +144,12 @@ export const styles: JssStyle = {
           },
         },
       },
+      '&:hover .input__select-wrapper': {
+        '--icon-color': ({ color }) => color.primary_hover,
+      },
+      '&:active .input__select-wrapper': {
+        '--icon-color': ({ color }) => color.primary_active,
+      },
     },
   },
   'input--variant-static': {
@@ -469,12 +475,15 @@ export const styles: JssStyle = {
       & .input__input, 
       & .input__checkbox-container, 
       & .input__radio, 
-      & .input__select, 
+      & .input__select,
       & .input__textarea
     `]: {
       borderColor: '#D0D0D0',
       color: ({ color }) => color.disabled,
       cursor: 'not-allowed',
+    },
+    '& .input__select-wrapper': {
+      '--icon-color': '#D0D0D0',
     },
   },
 };

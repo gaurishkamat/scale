@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
 
 <Meta
@@ -107,7 +107,7 @@ export const Template = (args, context) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -118,9 +118,9 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
@@ -136,7 +136,7 @@ export const Template = (args, context) => ({
 
 ## Standard Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard Small'
     args={{
@@ -148,7 +148,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -164,7 +164,7 @@ export const Template = (args, context) => ({
 
 ## Standard Large
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard Large'
     args={{
@@ -176,7 +176,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="large" :opened="opened" @scaleClose="opened = false">
@@ -192,7 +192,7 @@ export const Template = (args, context) => ({
 
 ## With No Actions
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='No Actions'
     args={{
@@ -204,7 +204,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -214,7 +214,7 @@ export const Template = (args, context) => ({
 
 ## With No Body
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With No Body'
     args={{
@@ -226,7 +226,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -241,7 +241,7 @@ export const Template = (args, context) => ({
 
 ## Scrolling With Actions
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Scrolling With Actions'
     args={{
@@ -252,7 +252,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">

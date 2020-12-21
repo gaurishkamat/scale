@@ -346,6 +346,7 @@ export const ScaleInput = /*@__PURE__*/ Vue.extend({
     multiple: {} as PropOptions<Components.ScaleInput['multiple']>,
     visibleSize: {} as PropOptions<Components.ScaleInput['visibleSize']>,
     transparent: {} as PropOptions<Components.ScaleInput['transparent']>,
+    controlled: {} as PropOptions<Components.ScaleInput['controlled']>,
     styles: {} as PropOptions<Components.ScaleInput['styles']>,
   },
 

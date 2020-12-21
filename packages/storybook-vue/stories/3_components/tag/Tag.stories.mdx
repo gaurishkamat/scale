@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleTag from './ScaleTag.vue';
 
 <Meta
@@ -68,7 +68,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -77,13 +77,13 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story="Standard"/>
+<ArgsTable story="Standard"/>
 
 ## A dissmisable tag
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="A dissmisable tag"
     args={{
@@ -92,7 +92,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag dismissable>A dissmisable tag</scale-tag>
@@ -100,7 +100,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## A small tag
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="A small tag"
     args={{
@@ -109,7 +109,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag size="small">A small tag</scale-tag>
@@ -117,7 +117,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## A small dismissable tag
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="A small dismissable tag"
     args={{
@@ -127,7 +127,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag size="small" dismissable>A small dismissable tag</scale-tag>
@@ -135,7 +135,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Disable dissmisable tag
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Disabled dismissable tag"
     args={{
@@ -145,7 +145,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag disabled dismissable>Disabled dismissable tag</scale-tag>
@@ -153,7 +153,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Variant secondary tag
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Variant secondary tag"
     args={{
@@ -162,7 +162,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag variant="secondary">Variant secondary tag</scale-tag>
@@ -170,7 +170,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Variant secondary link
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Variant secondary link"
     args={{
@@ -181,7 +181,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag variant="secondary" href="https://www.example.com" target="_blank">Variant secondary link</scale-tag>
@@ -189,7 +189,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Variant secondary dismissable
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Variant secondary dismissable"
     args={{
@@ -199,7 +199,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag variant="secondary" dismissable>Variant secondary dismissable</scale-tag>
@@ -207,7 +207,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Variant secondary small
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Variant secondary small"
     args={{
@@ -217,7 +217,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag variant="secondary" size="small">Variant secondary small</scale-tag>
@@ -225,7 +225,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Variant secondary dismissable small
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
     name="Variant secondary dismissable small"
     args={{
@@ -236,7 +236,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     }}>
     {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tag variant="secondary" dismissable size="small">Variant secondary dismissable small</scale-tag>
@@ -244,10 +244,10 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Complete example
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
         name="Complete example"
     >
         {TemplateInteractive.bind({})}
     </Story>
-</Preview>
+</Canvas>

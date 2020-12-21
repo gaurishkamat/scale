@@ -1,60 +1,19 @@
-import { Meta } from "@storybook/addon-docs/blocks";
-import LinkTo from "@storybook/addon-links/react";
+import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
 
-<Meta title="Getting Started/Scale for Designers" />
+import text_en from "./2.ScaleForDesigners_en.md";
+import text_de from "./2.ScaleForDesigners_de.md";
 
-![Scale for Designers](assets/1_setup/2_scale-for-designers/Scale-for-designers.png)
-
-Rapidly create beautiful, intuitive and accessible experiences. The Scale components kit contains all the resources you need to get started.
-
-## 1. Install Sketch
-
-To work with the design system components you must have the latest version of [Sketch](https://www.sketch.com/) installed.
-
-## 2. Download and install TeleNeo Font
-
-Find TeleNeo [here](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
-
-## 3. Get the Components Kit
-
-Download the latest version of the Scale components Sketch library.
-
-[Get the library.](https://www.brand-design.telekom.com/asset/web-component-kit-0-scale-components/)
-
-### Activate the Library
-
-Open the library Sketch file and choose "File → Add as Library..." from the Sketch menu.
-
-![Scale for Designers](assets/1_setup/2_scale-for-designers/sketch-menu-library.png)
-
-## 4. Start Designing
-
-To get started, familiarize yourself with the contents of the Sketch library.
-
-### Access the Components
-
-Use "Insert → Symbols" and find the symbols you want to use in your designs.
-
-Alternatively, you can choose the tab "Components" in Sketch's left sidebar for an overview and search functionality.
-
-### Component Structure
-
-Symbols are organized by component; after selecting a component, you will see the variations and states of that component.
-
-To add the component, select the desired variant and place it on your artboard.
-
-### Component Usage
-
-On this website, we provide you with information on variants and usage regarding the components that are currently included in Scale.
-
-Simply navigate to the component you want to learn more about in the left sidebar and select the "Docs" tab of Storybook.
-
-## 5. Leave Feedback
-
-Find out how you can provide feedback and make Scale better for everyone.
-
-Share your designs and let us learn from each other.
-
-## Get Help Regarding Sketch
-
-Sketch provides outstanding [tutorials and help docs.](https://www.sketch.com/docs/)
+<Meta title="Getting Started/Scale for Designers"
+      parameters={{
+          docs: {
+              container: ({ context }) => {
+                  const locale = context && context.globals && context.globals.locale
+                  return (
+                      <DocsContainer context={context}>
+                          {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                      </DocsContainer>
+                  )
+              }
+          },
+      }}
+/>

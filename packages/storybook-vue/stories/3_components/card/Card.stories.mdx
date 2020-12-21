@@ -1,5 +1,23 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleCard from './ScaleCard.vue';
+
+<!--
+  👀
+
+  We're missing two key things from Stencil's docs in the generated readme file:
+  - whether attributes are optional or required
+  - any description for those attributes
+  - plus, writing them again in the .vue file can be error-prone.
+
+  Other minor pain-points:
+  - writing the code-snippet manually, need to make sure attribute/values match
+  - declaring all props both in Template and the <template> of the .vue file
+
+  Two more thing to think about:
+  - in the end there's nothing Vue-specific in the stories, only for us devs, no?
+    al least until the code snippet in the Canvas works as expected and doesn't show `Template.bind()`
+  - we're not using the Vue output target package (it's not really useful in Storybook)
+-->
 
 <Meta
   title='Components/Card'
@@ -48,7 +66,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -58,13 +76,13 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ## With Link
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With Link'
     args={{
@@ -77,7 +95,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-card to="https://example.com" to="_blank" target="_blank" rel="noopener noreferrer" label="Example Card">A card with a link to example.com</scale-card>
@@ -86,7 +104,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## With Image
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With Image'
     args={{
@@ -103,7 +121,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <div style="max-width: 200px;">
