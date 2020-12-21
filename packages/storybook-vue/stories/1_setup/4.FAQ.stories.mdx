@@ -1,56 +1,19 @@
-import { Meta } from "@storybook/addon-docs/blocks";
-import LinkTo from "@storybook/addon-links/react";
+import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
 
-<Meta title="Getting Started/FAQ" />
+import text_en from "./4.FAQ_en.md";
+import text_de from "./4.FAQ_de.md";
 
-# FAQs
-
-Here is a list of common questions about Scale, along with practical answers.
-
-## Why does the documentation focus on VUE.js? What about React, Angular, and plain web components?
-
-The web components work for all of the mentioned frameworks. For this beta version, we have focused on VUE.js first and will deliver the additional documentation over time. If you need something urgently, please <LinkTo kind="community-your-feedback">let us know.</LinkTo>
-
-## When can I use web components?
-
-Web components are compatible with all modern browsers and backwards compatible through polyfills. For more information visit [webcomponents.org](https://webcomponents.org).
-
-## The component I need is not part of Scale right now. What should I do?
-
-<LinkTo kind="community-your-feedback">Reach out for us</LinkTo>. We might be able to help with your requirements. We would be happy if you decided to <LinkTo kind="community-contributing-to-scale">contribute.</LinkTo> to the process.
-
-## What if a component I want to use does not meet my specific requirements??
-
-You can always take any of our components and improve on them. If meeting your requirements is beneficial for everyone, we would love for you to  <LinkTo kind="community-contributing-to-scale">contribute</LinkTo> to the process.
-
-## I have an idea for Scale. What now?
-
-<LinkTo kind="community-your-feedback">Reach out to us.</LinkTo>
-
-## Can I use Scale with software other than Sketch?
-
-Currently, we are primarily supporting Sketch. If you want to add support for something like Figma or Framer X, we look forward to your  <LinkTo kind="community-contributing-to-scale">contribution.</LinkTo>
-
-## We have our own design system. Why not use that?
-
-At the project level, there are several design systems to serve project requirements; Scale addresses the requirements at an enterprise level. While you can probably use your own system along with Scale, we recommend you use a custom theme from Scale and add your own components as needed.
-
-## What if something is broken?
-
-Please report <LinkTo kind="community-your-feedback">bugs here.</LinkTo>
-
-Part of my design team is with an agency. Do they have to use the system as well?
-
-Using Scale is currently voluntary. We work hard to provide access to everyone who needs it.
-
-## How often will you release updates to the design system?
-
-We are planning for regular iterations, bugfixes, and feature releases.
-
-## What's your timeline?
-
-Milestones include:
-
-Closed Beta Q3 2020
-
-Official Release Q1 2021.
+<Meta title="Getting Started/FAQ"
+      parameters={{
+          docs: {
+              container: ({ context }) => {
+                  const locale = context && context.globals && context.globals.locale
+                  return (
+                      <DocsContainer context={context}>
+                          {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                      </DocsContainer>
+                  )
+              }
+          },
+      }}
+/>

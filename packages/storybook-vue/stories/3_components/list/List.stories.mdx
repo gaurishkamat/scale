@@ -1,8 +1,8 @@
 import {
   Meta,
   Story,
-  Props,
-  Preview,
+  ArgsTable,
+  Canvas,
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleList from "./ScaleList.vue";
@@ -46,13 +46,13 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Standard" args={{ variant: "unordered" }}>
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story="Standard" />
+<ArgsTable story="Standard" />
 
 ```html
 <scale-list variant="unordered">
@@ -64,7 +64,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## With Custom Type
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="With Custom Type"
     args={{
@@ -73,7 +73,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-list>
@@ -85,7 +85,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## With Custom Icon
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="With Custom Icon"
     args={{
@@ -95,7 +95,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-list>

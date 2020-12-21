@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleDropDown from "./ScaleDropDown.vue";
 import { action } from "@storybook/addon-actions";
 
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -68,9 +68,9 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-input icon="SVG-PATH" type="select" label="select">
@@ -83,7 +83,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small'
     args={{
@@ -95,7 +95,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -109,7 +109,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Disabled'
     args={{
@@ -121,7 +121,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -135,7 +135,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Error
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Error'
     args={{
@@ -148,7 +148,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html

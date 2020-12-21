@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import { action } from "@storybook/addon-actions";
 import ScaleSwitch from './ScaleSwitch.vue';
 
@@ -35,7 +35,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Standard"
     args={{
@@ -44,14 +44,14 @@ export const Template = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story="Standard"/>
+<ArgsTable story="Standard"/>
 
 
 ## Standard disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Standard disabled"
     args={{
@@ -61,7 +61,7 @@ export const Template = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-switch disabled @scaleChange="handleChange" label="Standard disabled"></scale-switch>
@@ -70,7 +70,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Selected
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Selected"
     args={{
@@ -80,7 +80,7 @@ export const Template = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-switch checked @scaleChange="handleChange" label="Selected"></scale-switch>
@@ -89,7 +89,7 @@ export const Template = (args, {argTypes}) => ({
 
 ## Selected disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
     <Story
       name="Selected disabled"
       args={{
@@ -100,7 +100,7 @@ export const Template = (args, {argTypes}) => ({
     >
       {Template.bind({})}
     </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-switch disabled checked @scaleChange="handleChange" label="Selected disabled"></scale-switch>

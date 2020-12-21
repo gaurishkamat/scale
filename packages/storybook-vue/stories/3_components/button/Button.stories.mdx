@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleButton from "./ScaleButton.vue";
 export const ICON = 'M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z';
 import { action } from "@storybook/addon-actions";
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Standard'
     args={{
@@ -66,14 +66,14 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Large Standard' />
+<ArgsTable story='Large Standard' />
 
 
 ## Large Secondary
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Secondary'
     args={{
@@ -82,11 +82,11 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## Large Secondary Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Secondary Disabled'
     args={{
@@ -96,7 +96,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button variant="secondary" disabled>Label</scale-button>
@@ -105,7 +105,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Disabled'
     args={{
@@ -114,7 +114,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button disabled>Label</scale-button>
@@ -123,7 +123,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large With Icon Before
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large With Icon Before'
     args={{
@@ -132,7 +132,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button icon-before="SVG-PATH">Label</scale-button>
@@ -141,7 +141,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large With Icon After
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large With Icon After'
     args={{
@@ -150,7 +150,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button icon-after="SVG-PATH">Label</scale-button>
@@ -159,7 +159,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large Icon Only
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Icon Only'
     args={{
@@ -169,7 +169,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button icon="SVG-PATH">Label</scale-button>
@@ -178,7 +178,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Large Link
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Large Link'
     args={{
@@ -188,14 +188,14 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button href="https://example.com" target="_blank">Label</scale-button>
 ```
 
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Standard'
     args={{
@@ -206,7 +206,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -216,7 +216,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small Secondary
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Secondary'
     args={{
@@ -227,7 +227,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html
@@ -236,7 +236,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small Secondary Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Secondary Disabled'
     args={{
@@ -248,7 +248,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" variant="secondary" disabled>Label</scale-button>
@@ -257,7 +257,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small Disabled
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Disabled'
     args={{
@@ -268,7 +268,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" disabled>Label</scale-button>
@@ -277,7 +277,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small With Icon Before
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small With Icon Before'
     args={{
@@ -288,7 +288,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" icon-size="16" icon-before="SVG-PATH">Label</scale-button>
@@ -297,7 +297,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small With Icon After
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small With Icon After'
     args={{
@@ -308,7 +308,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" icon-size="16" icon-after="SVG-PATH">Label</scale-button>
@@ -317,7 +317,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small Icon Only
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Icon Only'
     args={{
@@ -329,7 +329,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" icon-size="16" icon="SVG-PATH">Label</scale-button>
@@ -338,7 +338,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Small Link
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Small Link'
     args={{
@@ -350,7 +350,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-button size="large" href="https://example.com" target="_blank">Label</scale-button>

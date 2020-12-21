@@ -1,8 +1,8 @@
 import {
   Meta,
   Story,
-  Props,
-  Preview,
+  ArgsTable,
+  Canvas,
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleTabNav from "./ScaleTabNav.vue";
@@ -24,9 +24,9 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Text only">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav>
@@ -41,11 +41,11 @@ export const Template = (args, { argTypes }) => ({
 </scale-tab-nav>
 ```
 
-<Props story="Standard" />
+<ArgsTable story="Standard" />
 
 ## Text & Icon
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Text and Icon"
     args={{
@@ -57,7 +57,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav>
@@ -94,7 +94,7 @@ export const Template = (args, { argTypes }) => ({
 
 ## Icon only
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Icon only"
     args={{
@@ -107,7 +107,7 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 
 ```html

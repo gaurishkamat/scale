@@ -1,13 +1,22 @@
-import {
-  Meta,
-  Story,
-  Props,
-  Preview,
-  Description,
-} from "@storybook/addon-docs/blocks";
-import LinkTo from "@storybook/addon-links/react";
+import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
 
-<Meta title="Getting Started/Scale for Developers" />
+import text_en from "./3.ScaleForDevelopers_en.md";
+import text_de from "./3.ScaleForDevelopers_de.md";
+
+<Meta title="Getting Started/Scale for Developers"
+  parameters={{
+      docs: {
+          container: ({ context }) => {
+              const locale = context && context.globals && context.globals.locale
+              return (
+                  <DocsContainer context={context}>
+                      {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                  </DocsContainer>
+              )
+          }
+      },
+  }}
+/>
 
 ![Scale for Developers](assets/1_setup/3_scale-for-developers/Scale-for-developers.png)
 
