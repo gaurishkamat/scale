@@ -4,7 +4,6 @@ import {
   State,
   Prop,
   Host,
-  Watch,
   Event,
   EventEmitter,
 } from '@stencil/core';
@@ -64,9 +63,9 @@ export class Slider implements Base {
 
   @Event() scaleChange: EventEmitter<number>;
 
-  @Watch('value')
-  valueChanged() {
-    this.scaleChange.emit(Math.abs(this.value));
+  constructor() {
+    this.onDragging = this.onDragging.bind(this);
+    this.onDragEnd = this.onDragEnd.bind(this);
   }
 
   componentWillLoad() {
@@ -76,8 +75,7 @@ export class Slider implements Base {
   }
   componentWillUpdate() {}
   componentDidUnload() {
-    window.removeEventListener('mousemove', this.onDragging.bind(this));
-    window.removeEventListener('mouseup', this.onDragEnd.bind(this));
+    this.removeGlobalListeners();
   }
 
   onButtonDown = (event: any) => {
@@ -85,14 +83,12 @@ export class Slider implements Base {
       return;
     }
     this.onDragStart(event);
-
-    window.addEventListener('mousemove', this.onDragging.bind(this));
-    window.addEventListener('mouseup', this.onDragEnd.bind(this));
+    this.addGlobalListeners();
   };
 
   onDragStart = (event: any) => {
     this.dragging = true;
-    this.startX = event.clientX;
+    this.startX = this.handleTouchEvent(event).clientX;
     this.startPosition = parseInt(this.currentPosition(), 10);
   };
 
@@ -100,7 +96,7 @@ export class Slider implements Base {
     const { dragging, startX, startPosition } = this;
 
     if (dragging) {
-      this.currentX = event.clientX;
+      this.currentX = this.handleTouchEvent(event).clientX;
 
       let diff: number;
 
@@ -117,9 +113,26 @@ export class Slider implements Base {
       this.dragging = false;
     }
     this.setPosition(newPosition || this.startPosition);
-    window.removeEventListener('mousemove', this.onDragging.bind(this));
-    window.removeEventListener('mouseup', this.onDragEnd.bind(this));
+    this.removeGlobalListeners();
   };
+
+  addGlobalListeners() {
+    window.addEventListener('mousemove', this.onDragging.bind(this));
+    window.addEventListener('mouseup', this.onDragEnd.bind(this));
+    window.addEventListener('touchmove', this.onDragging.bind(this));
+    window.addEventListener('touchend', this.onDragEnd.bind(this));
+  }
+
+  removeGlobalListeners() {
+    window.removeEventListener('mousemove', this.onDragging);
+    window.removeEventListener('mouseup', this.onDragEnd);
+    window.removeEventListener('touchmove', this.onDragging);
+    window.removeEventListener('touchend', this.onDragEnd);
+  }
+
+  handleTouchEvent(event: any): MouseEvent | Touch {
+    return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
+  }
 
   onKeyDown = event => {
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
@@ -146,6 +159,7 @@ export class Slider implements Base {
     const steps = Math.round(newPosition / lengthPerStep);
     this.value =
       steps * lengthPerStep * (this.max - this.min) * 0.01 + this.min;
+    this.scaleChange.emit(Math.abs(this.value));
   };
 
   currentPosition(): string {
@@ -182,6 +196,7 @@ export class Slider implements Base {
                 class="slider--thumb-wrapper"
                 style={{ left: `${this.value}%` }}
                 onMouseDown={this.onButtonDown}
+                onTouchStart={this.onButtonDown}
               >
                 <div
                   class="slider--thumb"
