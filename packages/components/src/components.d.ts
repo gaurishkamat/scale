@@ -162,25 +162,13 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -189,6 +177,10 @@ export namespace Components {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
@@ -253,13 +245,17 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */
@@ -440,29 +436,32 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker": boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**
@@ -579,6 +578,10 @@ export namespace Components {
           * Used normally for third level items
          */
         "condensed": boolean;
+        /**
+          * The URL where the link should point to
+         */
+        "href": string;
         /**
           * The width and height of the icon in pixels
          */
@@ -1267,25 +1270,13 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -1294,6 +1285,10 @@ declare namespace LocalJSX {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
@@ -1358,13 +1353,17 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */
@@ -1565,29 +1564,32 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker"?: boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**
@@ -1706,6 +1708,10 @@ declare namespace LocalJSX {
           * Used normally for third level items
          */
         "condensed"?: boolean;
+        /**
+          * The URL where the link should point to
+         */
+        "href"?: string;
         /**
           * The width and height of the icon in pixels
          */

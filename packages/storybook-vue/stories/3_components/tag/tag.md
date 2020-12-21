@@ -1,66 +1,87 @@
-# Chip
+# Tag
 
-Chips help users to percieve and identify tags and categories assigned to objects in the product. By default, chips are not interactive.
+Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
 ## General
 
-Chips allow users to enter information, make selections or filter content. Chips should appear dynamically as a group of multiple interactive elements.
+Tags consist of relevant keywords in a container. A static tag indicates a category or an attribute; an interactive tag shows things like selected filters, which users can then also remove.
 
-### When to Use
+### When to use
 
-Use chips when content is mapped to multiple categories and the user needs a way to differentiate between them. Chips can also be used as a method of filtering data, to show only items within a particular category.
+Use tags to:
 
-## Basic Types
+* draw a user's attention to certain elements they might otherwise overlook,
+* make it easier for users to recognize content, for instance in tables, or
+* show users selected filters.
 
-### Static
+### When not to use
 
-For display only.
+In general, be careful using tags. Don't use them when:
 
-![Image Name](assets/3_components/chip/image-20200810103235995.png)
+* users could confuse them with buttons or
+* users might not be able to recognize relevant content (particularly if there are too many tags).
 
-### Interactive
+## Basic types
 
-Can be removed directly.
+### Static tag
 
-![Image Name](assets/3_components/chip/image-20200810103222682.png)
+A static tag has no interactive function. It only conveys information, for instance a category within a table.
 
-## Colors
+![Image Name](assets/3_components/chip/Tag-static.png)
 
-Use a default color or assign a custom color. When customizing, use a color-coding scheme that is clear and supports the user in what they want to achieve.
+### Interactive tag
 
-### Default
+An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use is, for example, the deactivation of selected filters.
 
-![Image Name](assets/3_components/chip/image-20200810103222682.png)
-### Custom
-
-Consider accessibility / contrast in your color choice.
-
-![Image Name](assets/3_components/chip/image-20200810103229377.png)
-
-## Sizes
-
-Regular is the recommended size.
-
-### Regular
-
-![Image Name](assets/3_components/chip/image-20200810103222682.png)
-
-### Small
-
-Use the small size only in exceptional cases when space is limited.
-
-![Image Name](assets/3_components/chip/image-20200810103241914.png)
+![Image Name](assets/3_components/chip/Tag-Interactive.png)
 
 ## Elements
 
-### Label
+![Image Name](assets/3_components/chip/Tag-Elements.png)
 
-The label clearly describes what the chip stands for. Use a maximum of three words.
+### Container (1)
 
-### Remove Icon (Optional)
+The container contains labels and optionally a close icon.
 
-When users can manually remove tags or categories, an X - icon can be added to the chip. Clicking on it removes the tag from its assigned object.
+### Label (2)
 
-## Related Components
+Make the label clear and short.
 
-Button, Toggle
+### Icon (3)
+
+By clicking/tapping on the icon, users remove the tag.
+
+## Colors
+
+The default color for tags is dark gray. This way, the maximum contrast guarantees the best legibility.
+
+![Image Name](assets/3_components/chip/Tag-Interactive.png)
+
+You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
+
+![Image Name](assets/3_components/chip/Tag-color.png)
+
+## Sizes
+
+Scale offers two sizes for tags. Be careful not to combine the two sizes.
+
+### Large
+
+Use large tags as default.
+
+![Image Name](assets/3_components/chip/Tag-size-default.png)
+
+### Small
+
+Only use small tags if you don't have enough space for the standard size.
+
+![Image Name](assets/3_components/chip/Tag-size-small.png)
+
+### Best practices
+
+* Don't mix interactive and static tags within a product or service.
+* Decide on one size for your tags.
+* Use a clear keyword for the label.
+
+
+

@@ -1,0 +1,252 @@
+import { Meta, Story, Props, Preview, Description } from "@storybook/addon-docs/blocks";
+import ScaleTextField from "./ScaleTextField.vue";
+import { action } from "@storybook/addon-actions";
+export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
+
+<Meta
+  title="Components/Text Field"
+  component={ScaleTextField}
+  argTypes={{
+    resize: {
+      control: {
+        type: "select",
+        options: ["unset", "none", "vertical", "horizontal"]
+      }
+    },
+    type: {
+      control: {
+        type: "select",
+        options: [
+          "email",
+          "hidden",
+          "number",
+          "password",
+          "tel",
+          "text",
+          "checkbox",
+          "radio",
+          "select",
+          "textarea",
+          "url"
+        ]
+      }
+    },
+    variant: {
+      control: { type: "select", options: ["animated", "static"] }
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTextField },
+  props: {
+    label: String,
+    ...ScaleTextField.props
+  },
+  template: `
+    <scale-input
+      :name="name"
+      :variant="variant"
+      :type="type"
+      :label="label"
+      :helper-text="helperText"
+      :status="status"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :required="required"
+      :counter="counter"
+      :size="size"
+      :value="value"
+      :input-id="inputId"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-input>
+  `,
+  methods: {
+    scaleChange: action("scaleChange"),
+    scaleFocus: action("scaleFocus"),
+    scaleBlur: action("scaleBlur"),
+    scaleKeyDown: action("scaleKeyDown"),
+  }
+})
+
+# Text Field
+
+## Standard
+
+<Preview withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: "An input",
+      variant: "animated"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story="Standard" />
+
+
+## Text With Events
+
+<Preview withSource="none">
+  <Story
+    name="Text With Events"
+    args={{
+      label: "Text With Events",
+      variant: "animated"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="text" variant="animated" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-input>
+```
+
+
+## Placeholder
+
+<Preview withSource="none">
+  <Story
+    name="Placeholder"
+    args={{
+      label: "Placeholder",
+      placeholder: "this is the placeholder",
+      variant: "animated"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" type="text" label="Placeholder" placeholder="this is the placeholder"></scale-input>
+```
+
+
+## Helper Text
+
+<Preview withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: "Helper Text",
+      helperText: "Make sure to fill this",
+      variant: "animated"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" type="text" label="Helper Text" helperText="Make sure to fill this"></scale-input>
+```
+
+
+## Small
+
+<Preview withSource="none">
+  <Story
+    name="Small"
+    args={{
+      label: "Small",
+      size: 'small',
+      variant: 'animated'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" type="text" label="Small" size="small"></scale-input>
+```
+
+
+## Animated
+
+<Preview withSource="none">
+  <Story
+    name="Animated"
+    args={{
+      label: "Animated",
+      variant: "animated",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input type="text" label="Animated" variant="animated"></scale-input>
+```
+
+## With Error
+
+<Preview withSource="none">
+  <Story
+    name="With Error"
+    args={{
+      label: "With Error",
+      status: "error",
+      helperText: "something is wrong",
+      variant: "animated"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" type="text" label="With Error" helper-text="something is wrong" status="error"></scale-input>
+```
+
+
+## Disabled
+
+<Preview withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: "Disabled",
+      disabled: true,
+      variant: 'animated'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" label="Disabled" disabled></scale-input>
+```
+
+
+## Max Length With Counter
+
+<Preview withSource="none">
+  <Story
+    name="Max Length With Counter"
+    args={{
+      label: "Max Length With Counter",
+      maxLength: 10,
+      counter: true,
+      variant: 'animated'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+```html
+<scale-input variant="animated" label="Max Length With Counter" max-length="10" counter></scale-input>
+```

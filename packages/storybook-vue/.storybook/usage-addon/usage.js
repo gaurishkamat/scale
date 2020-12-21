@@ -8,7 +8,6 @@ import breadcrumb from "raw-loader!../../stories/3_components/breadcrumb/breadcr
 import button from "raw-loader!../../stories/3_components/button/button.md";
 import card from "raw-loader!../../stories/3_components/card/card.md";
 import checkbox from "raw-loader!../../stories/3_components/checkbox/checkbox.md";
-import collapsible from "raw-loader!../../stories/3_components/collapsible/collapsible.md";
 import divider from "raw-loader!../../stories/3_components/divider/divider.md";
 import icon from "raw-loader!../../stories/3_components/icon/icon.md";
 import linkMarkdown from "raw-loader!../../stories/3_components/link/link.md";
@@ -16,17 +15,15 @@ import list from "raw-loader!../../stories/3_components/list/list.md";
 import modal from "raw-loader!../../stories/3_components/modal/modal.md";
 import progressBar from "raw-loader!../../stories/3_components/progress-bar/progress-bar.md";
 import radioButton from "raw-loader!../../stories/3_components/radio-button/radio-button.md";
-import select from "raw-loader!../../stories/3_components/select/select.md";
+import dropdown from "raw-loader!../../stories/3_components/dropdown/dropdown.md";
 import sidebarNav from "raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md";
-import sidebarNavCollapsible from "raw-loader!../../stories/3_components/sidebar-nav-collapsible/sidebar-nav-collapsible.md";
-import sidebarNavItem from "raw-loader!../../stories/3_components/sidebar-nav-item/sidebar-nav-item.md";
 import slider from "raw-loader!../../stories/3_components/slider/slider.md";
 import switchMarkdown from "raw-loader!../../stories/3_components/switch/switch.md";
 import tabNavigation from "raw-loader!../../stories/3_components/tab-navigation/tab-navigation.md";
 import table from "raw-loader!../../stories/3_components/table/table.md";
 import tag from "raw-loader!../../stories/3_components/tag/tag.md";
-import textarea from "raw-loader!../../stories/3_components/textarea/textarea.md";
-import textInput from "raw-loader!../../stories/3_components/text-input/text-input.md";
+import textArea from "raw-loader!../../stories/3_components/text-area/text-area.md";
+import textField from "raw-loader!../../stories/3_components/text-field/text-field.md";
 import footer from "raw-loader!../../stories/3_components/footer/footer.md";
 
 const NOT_A_COMPONENT_MD = "`Browse to any component to see usage.`";
@@ -48,12 +45,11 @@ const Usage = props => {
   // ?path=/story/components-brandheader--standard > brandheader
   const componentMap = {
     accordion,
-    brandheader: brandHeader,
+    "brand-header-navigation": brandHeader,
     breadcrumb,
     button,
     card,
     checkbox,
-    collapsible,
     divider,
     "icon-library": icon,
     icon,
@@ -62,17 +58,15 @@ const Usage = props => {
     modal,
     "progress-bar": progressBar,
     radiobutton: radioButton,
-    select,
+    dropdown,
     "sidebar-nav": sidebarNav,
-    "sidebar-nav-collapsible": sidebarNavCollapsible,
-    "sidebar-nav-item": sidebarNavItem,
     slider,
     switch: switchMarkdown,
     "tab-navigation": tabNavigation,
     table,
     tag,
-    textarea,
-    textinput: textInput,
+    "text-area": textArea,
+    "text-field": textField,
     footer
   };
 

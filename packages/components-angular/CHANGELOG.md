@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
+
+
+### Features
+
+* add simple footer ([017418d](https://gitlab.com/scale-ds/scale-telekom/commit/017418dbef4dd0f3bda941fcc5d4e80ccf16178b))
+* minimal variant ([1429df1](https://gitlab.com/scale-ds/scale-telekom/commit/1429df1a204cdc2a92ca953c79e85e72a0e365dd))
+
+
+
+
+
 ## [1.13.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.0...v1.13.1) (2020-12-02)
 
 

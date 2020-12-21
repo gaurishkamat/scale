@@ -222,13 +222,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'href', 'interactive', 'label', 'noPadding', 'styles', 'target']
+  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
 })
 export class ScaleCard {
   protected el: HTMLElement;
@@ -324,13 +324,13 @@ export class ScaleDivider {
 
 export declare interface ScaleIcon extends Components.ScaleIcon {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
 })
 @Component({
   selector: 'scale-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'customClass', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
 })
 export class ScaleIcon {
   protected el: HTMLElement;
@@ -393,13 +393,13 @@ export class ScaleLink {
 
 export declare interface ScaleList extends Components.ScaleList {}
 @ProxyCmp({
-  inputs: ['styles', 'variant']
+  inputs: ['ordered', 'styles']
 })
 @Component({
   selector: 'scale-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['styles', 'variant']
+  inputs: ['ordered', 'styles']
 })
 export class ScaleList {
   protected el: HTMLElement;
@@ -412,13 +412,13 @@ export class ScaleList {
 
 export declare interface ScaleListItem extends Components.ScaleListItem {}
 @ProxyCmp({
-  inputs: ['icon', 'iconSize', 'styles', 'type']
+  inputs: ['index', 'marker', 'ordered', 'styles']
 })
 @Component({
   selector: 'scale-list-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'iconSize', 'styles', 'type']
+  inputs: ['index', 'marker', 'ordered', 'styles']
 })
 export class ScaleListItem {
   protected el: HTMLElement;
@@ -494,13 +494,13 @@ export class ScaleSidebarNav {
 
 export declare interface ScaleSidebarNavCollapsible extends Components.ScaleSidebarNavCollapsible {}
 @ProxyCmp({
-  inputs: ['bold', 'condensed', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
 })
 @Component({
   selector: 'scale-sidebar-nav-collapsible',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bold', 'condensed', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
 })
 export class ScaleSidebarNavCollapsible {
   protected el: HTMLElement;

@@ -20,10 +20,10 @@ describe('List', () => {
   });
 
   it('should handle css classes', () => {
-    element.variant = 'ordered';
-    stylesheet.addRule('list--variant-ordered', {});
+    element.ordered = true;
+    stylesheet.addRule('list--type-ordered', {});
     expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['list--variant-ordered']
+      stylesheet.classes['list--type-ordered']
     );
   });
 });

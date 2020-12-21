@@ -465,53 +465,118 @@
         );
     </script>
 
-    <h3>List ordered</h3>
-    <scale-list variant="ordered">
-      <scale-list-item type="upper-alpha">One</scale-list-item>
-      <scale-list-item type="upper-alpha">Two</scale-list-item>
-      <scale-list-item type="upper-alpha">Three</scale-list-item>
+    <h3>List (ordered)</h3>
+    <scale-list ordered>
+      <scale-list-item>Leggings</scale-list-item>
+      <scale-list-item>Church-key</scale-list-item>
+      <scale-list-item>Disrupt</scale-list-item>
     </scale-list>
 
-    <h3>List unordered</h3>
-    <scale-list variant="unordered">
-      <scale-list-item type="circle">one</scale-list-item>
-      <scale-list-item type="circle">Two</scale-list-item>
-      <scale-list-item type="circle">Three</scale-list-item>
+    <h3>List (ordered), nested</h3>
+    <scale-list ordered>
+      <scale-list-item>Brooklyn</scale-list-item>
+      <scale-list-item
+        >Letterpress
+        <scale-list ordered>
+          <scale-list-item>Brunch</scale-list-item>
+          <scale-list-item>YOLO</scale-list-item>
+        </scale-list>
+      </scale-list-item>
+      <scale-list-item>Cardigan</scale-list-item>
     </scale-list>
 
-    <h3>List ordered</h3>
-    <scale-list variant="ordered">
-      <scale-list-item type="decimal">one</scale-list-item>
-      <scale-list-item type="decimal">Two</scale-list-item>
-      <scale-list-item type="decimal">Three</scale-list-item>
-    </scale-list>
-
-    <h3>List with icon</h3>
+    <h3>List (unordered)</h3>
     <scale-list>
+      <scale-list-item>Brunch</scale-list-item>
+      <scale-list-item>Organic</scale-list-item>
+      <scale-list-item>Woke</scale-list-item>
       <scale-list-item
-        icon-size="16"
-        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
-        id="Path"
-        fill="#000000"
-        fill-rule="nonzero"
-        >Apple</scale-list-item
+        >Moreover, because this property is inherited, it can be set on a parent
+        element (commonly ol or ul) to make it apply to all list
+        items.</scale-list-item
       >
+    </scale-list>
+
+    <h3>List (no marker)</h3>
+    <scale-list>
+      <scale-list-item marker="false">Brunch</scale-list-item>
+      <scale-list-item marker="false">Organic</scale-list-item>
+      <scale-list-item marker="false">Woke</scale-list-item>
+    </scale-list>
+
+    <h3>List (with custom icon)</h3>
+    <scale-list>
+      <scale-list-item marker="false"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline></svg
+        >Brunch</scale-list-item
+      >
+      <scale-list-item marker="false"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline></svg
+        >Organic</scale-list-item
+      >
+      <scale-list-item marker="false"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline></svg
+        >Woke</scale-list-item
+      >
+    </scale-list>
+
+    <h3>List (unordered), nested</h3>
+    <scale-list>
+      <scale-list-item>Woke</scale-list-item>
+      <scale-list-item>Cardigan</scale-list-item>
       <scale-list-item
-        icon-size="16"
-        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
-        id="Path"
-        fill="#000000"
-        fill-rule="nonzero"
-        >Microsoft</scale-list-item
-      >
+        >YOLO
+        <scale-list>
+          <scale-list-item marker="false"><span>€</span>Euros</scale-list-item>
+          <scale-list-item>Tacos</scale-list-item>
+          <scale-list-item>Farm-to-table</scale-list-item>
+        </scale-list>
+      </scale-list-item>
       <scale-list-item
-        icon-size="16"
-        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
-        id="Path"
-        fill="#000000"
-        fill-rule="nonzero"
-        >Google</scale-list-item
-      >
+        >Yr seitan hashtag
+        <scale-list>
+          <scale-list-item
+            >Farm-to-table
+            <scale-list>
+              <scale-list-item>Tilde</scale-list-item>
+              <scale-list-item>Activated</scale-list-item>
+            </scale-list>
+          </scale-list-item>
+        </scale-list>
+      </scale-list-item>
     </scale-list>
 
     <h3>Text</h3>
@@ -594,10 +659,19 @@
     <scale-card>A title</scale-card>
 
     <h3>Card - with link</h3>
-    <scale-card href="http://example.com" target="_blank">A title</scale-card>
 
-    <h3>Card - disabled</h3>
-    <scale-card interactive="true" disabled="true">A title</scale-card>
+    <div style="width: 150px">
+      <scale-card to="https://example.com" target="_blank">
+        <div style="margin: -24px;">
+          <img
+            style="margin-bottom: -4px"
+            src="https://via.placeholder.com/150"
+            alt="placeholder"
+          />
+          <div style="padding: 24px;">A title</div>
+        </div>
+      </scale-card>
+    </div>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
     <scale-progress-bar percentage="30" stroke-width="8"></scale-progress-bar>

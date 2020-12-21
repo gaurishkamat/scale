@@ -1,14 +1,11 @@
-<template>
-  <scale-list :variant="variant">
-    <slot></slot>
-  </scale-list>
-</template>
-
 <script>
 export default {
   props: {
-    variant: { type: String, default: 'unordered' },
+    ordered: { type: Boolean },
     styles: { type: Object }
+  },
+  render() {
+    return this.$slots.default
   }
 }
 </script>

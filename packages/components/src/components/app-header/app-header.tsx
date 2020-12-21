@@ -190,8 +190,12 @@ export class Header {
                 onFocus={() => {
                   window.scrollTo({ top: 0 });
                 }}
+                aria-current={this.activeSegment.id === item.id}
               >
                 {item.name}
+                {this.activeSegment.id === item.id && (
+                  <span class="sr-only">active</span>
+                )}
               </a>
             </li>
           ))

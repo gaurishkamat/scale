@@ -5,10 +5,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description             | Type     | Default       |
-| --------- | --------- | ----------------------- | -------- | ------------- |
-| `styles`  | `styles`  |                         | `any`    | `undefined`   |
-| `variant` | `variant` | (optional) List variant | `string` | `'unordered'` |
+| Property  | Attribute | Description                           | Type      | Default     |
+| --------- | --------- | ------------------------------------- | --------- | ----------- |
+| `ordered` | `ordered` | (optional) Make the list ordered (ol) | `boolean` | `false`     |
+| `styles`  | `styles`  | (optional) Injected jss styles        | `any`     | `undefined` |
 
 
 ----------------------------------------------

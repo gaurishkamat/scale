@@ -38,7 +38,7 @@
   font-weight: 500;
   color: #262626;
   text-decoration: none;
-  transition: all 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
   margin-bottom: 8px;
   display: block;
 }
@@ -46,6 +46,8 @@
 .mega-menu__row-item.active,
 .mega-menu__row-item:hover {
   color: #e20074;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 7px;
 }
 
 .mega-menu__row li {

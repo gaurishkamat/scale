@@ -2,11 +2,9 @@
   <scale-card
     :custom-class="customClass"
     :label="label"
-    :href="href"
+    :to="to"
     :target="target"
-    :interactive="interactive"
-    :no-padding="noPadding"
-    :disabled="disabled"
+    :rel="rel"
     :styles="styles"
   >
     <slot></slot>
@@ -18,11 +16,9 @@ export default {
   props: {
     customClass: String,
     label: String,
-    href: String,
+    to: String,
     target: { type: String, default: "_self" },
-    interactive: { type: Boolean, default: false },
-    noPadding: { type: Boolean, default: false },
-    disabled: { type: Boolean, default: false },
+    rel: { type: String, default: "_self" },
     styles: { type: Object }
   }
 };

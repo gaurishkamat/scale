@@ -343,24 +343,12 @@
           "description": "(optional) Card class"
         },
         {
-          "name": "disabled",
-          "description": "(optional) Link disabled"
-        },
-        {
-          "name": "href",
-          "description": "(optional) Link card"
-        },
-        {
-          "name": "interactive",
-          "description": "(optional) Link interactive"
-        },
-        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
         {
-          "name": "no-padding",
-          "description": "(optional) Padding off"
+          "name": "rel",
+          "description": "(optional) Link card rel"
         },
         {
           "name": "styles",
@@ -369,6 +357,10 @@
         {
           "name": "target",
           "description": "(optional) Link card target"
+        },
+        {
+          "name": "to",
+          "description": "(optional) Link card"
         }
       ]
     },
@@ -481,12 +473,16 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": "(optional) When using the icon by itself, add a label to improve accessibility"
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon as standalone, make it meaningful for accessibility"
         },
         {
           "name": "custom-class",
           "description": "(optional) Tag custom class"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the svg element will get aria-hidden=\"true\""
         },
         {
           "name": "fill",
@@ -737,12 +733,12 @@
       },
       "attributes": [
         {
-          "name": "styles",
-          "description": ""
+          "name": "ordered",
+          "description": "(optional) Make the list ordered (ol)"
         },
         {
-          "name": "variant",
-          "description": "(optional) List variant"
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -754,20 +750,20 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": "(optional) List item icon"
+          "name": "index",
+          "description": "Index number, useful only for styling the `ordered` type"
         },
         {
-          "name": "icon-size",
-          "description": "(optional) list Icon size"
+          "name": "marker",
+          "description": "If `false`, no marker or left padding will be visible"
+        },
+        {
+          "name": "ordered",
+          "description": "Whether this is a child of an ordered scale-list, gets set automatically by its parent"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "type",
-          "description": "(optional) List item style type"
         }
       ]
     },
@@ -920,6 +916,10 @@
         {
           "name": "condensed",
           "description": "Used normally for third level items"
+        },
+        {
+          "name": "href",
+          "description": "The URL where the link should point to"
         },
         {
           "name": "icon-size",

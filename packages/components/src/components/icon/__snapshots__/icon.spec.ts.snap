@@ -3,7 +3,7 @@
 exports[`Icon should match snapshot 1`] = `
 <scale-icon path="m 10 10" style="display: inline-flex;">
   Label
-  <svg class="icon-0-0-2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <svg class="icon-0-0-2" height="24" role="img" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="m 10 10" fill="var(--icon-color, currentColor)" stroke="transparent"></path>
   </svg>
 </scale-icon>

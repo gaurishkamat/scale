@@ -38,8 +38,8 @@
       :fill="fill"
       :stroke="stroke"
       :focusable="focusable"
-      :aria-label="ariaLabel"
-      :title="title"
+      :decorative="decorative"
+      :accessibility-title="accessibilityTitle"
       :styles="styles"
     />
   </div>
@@ -55,8 +55,8 @@ export default {
     fill: { type: String, default: 'var(--icon-color, currentColor)' },
     stroke: { type: String, default: 'transparent' },
     focusable: { type: Boolean, default: false },
-    ariaLabel: { type: String },
-    title: { type: String },
+    decorative: { type: Boolean, default: false },
+    accessibilityTitle: { type: String },
     styles: { type: Object }
   }
 }

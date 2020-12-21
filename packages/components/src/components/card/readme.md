@@ -27,16 +27,14 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type      | Default     |
-| ------------- | -------------- | ------------------------------ | --------- | ----------- |
-| `customClass` | `custom-class` | (optional) Card class          | `string`  | `''`        |
-| `disabled`    | `disabled`     | (optional) Link disabled       | `boolean` | `false`     |
-| `href`        | `href`         | (optional) Link card           | `string`  | `''`        |
-| `interactive` | `interactive`  | (optional) Link interactive    | `boolean` | `false`     |
-| `label`       | `label`        | (optional) Label of the card   | `string`  | `''`        |
-| `noPadding`   | `no-padding`   | (optional) Padding off         | `boolean` | `false`     |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`     | `undefined` |
-| `target`      | `target`       | (optional) Link card target    | `string`  | `'_self'`   |
+| Property      | Attribute      | Description                    | Type     | Default     |
+| ------------- | -------------- | ------------------------------ | -------- | ----------- |
+| `customClass` | `custom-class` | (optional) Card class          | `string` | `''`        |
+| `label`       | `label`        | (optional) Label of the card   | `string` | `''`        |
+| `rel`         | `rel`          | (optional) Link card rel       | `string` | `''`        |
+| `styles`      | `styles`       | (optional) Injected jss styles | `any`    | `undefined` |
+| `target`      | `target`       | (optional) Link card target    | `string` | `'_self'`   |
+| `to`          | `to`           | (optional) Link card           | `string` | `''`        |
 
 
 ## Dependencies

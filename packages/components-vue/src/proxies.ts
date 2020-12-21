@@ -228,12 +228,10 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
 
   props: {
     customClass: {} as PropOptions<Components.ScaleCard['customClass']>,
-    href: {} as PropOptions<Components.ScaleCard['href']>,
+    to: {} as PropOptions<Components.ScaleCard['to']>,
     label: {} as PropOptions<Components.ScaleCard['label']>,
     target: {} as PropOptions<Components.ScaleCard['target']>,
-    interactive: {} as PropOptions<Components.ScaleCard['interactive']>,
-    disabled: {} as PropOptions<Components.ScaleCard['disabled']>,
-    noPadding: {} as PropOptions<Components.ScaleCard['noPadding']>,
+    rel: {} as PropOptions<Components.ScaleCard['rel']>,
     styles: {} as PropOptions<Components.ScaleCard['styles']>,
   },
 
@@ -311,7 +309,8 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     fill: {} as PropOptions<Components.ScaleIcon['fill']>,
     stroke: {} as PropOptions<Components.ScaleIcon['stroke']>,
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
-    ariaLabel: {} as PropOptions<Components.ScaleIcon['ariaLabel']>,
+    decorative: {} as PropOptions<Components.ScaleIcon['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIcon['accessibilityTitle']>,
     styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
 
@@ -381,7 +380,7 @@ export const ScaleLink = /*@__PURE__*/ Vue.extend({
 export const ScaleList = /*@__PURE__*/ Vue.extend({
 
   props: {
-    variant: {} as PropOptions<Components.ScaleList['variant']>,
+    ordered: {} as PropOptions<Components.ScaleList['ordered']>,
     styles: {} as PropOptions<Components.ScaleList['styles']>,
   },
 
@@ -393,9 +392,9 @@ export const ScaleList = /*@__PURE__*/ Vue.extend({
 export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 
   props: {
-    icon: {} as PropOptions<Components.ScaleListItem['icon']>,
-    iconSize: {} as PropOptions<Components.ScaleListItem['iconSize']>,
-    type: {} as PropOptions<Components.ScaleListItem['type']>,
+    ordered: {} as PropOptions<Components.ScaleListItem['ordered']>,
+    index: {} as PropOptions<Components.ScaleListItem['index']>,
+    marker: {} as PropOptions<Components.ScaleListItem['marker']>,
     styles: {} as PropOptions<Components.ScaleListItem['styles']>,
   },
 
@@ -465,6 +464,7 @@ export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
     styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
     tag: {} as PropOptions<Components.ScaleSidebarNavCollapsible['tag']>,
     label: {} as PropOptions<Components.ScaleSidebarNavCollapsible['label']>,
+    href: {} as PropOptions<Components.ScaleSidebarNavCollapsible['href']>,
     isExpanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isExpanded']>,
     isCurrent: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isCurrent']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavCollapsible['bold']>,

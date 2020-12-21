@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
+
+
+### Bug Fixes
+
+* **icons:** rename index.json to scale-icons.json, npm does not publish index.json ([29382de](https://gitlab.com/scale-ds/scale-telekom/commit/29382def47a2a386513f6b7a886ef37b1fd106ac))
+
+
+### Features
+
+* **icons:** generate index.json file, useful for docs ([21bbbce](https://gitlab.com/scale-ds/scale-telekom/commit/21bbbcea4542bf3df0d01597223f0a2522f78b9b))
+
+
+
+
+
 ## [1.13.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.0...v1.13.1) (2020-12-02)
 
 **Note:** Version bump only for package @scaleds/icons-telekom
