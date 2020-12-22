@@ -35,6 +35,8 @@ Die Elemente dieser Liste sind gleichrangig. Die Liste gibt also keine Reihenfol
 
 ### Definitionsliste
 
+> Diese Funktion ist bald verfügbar.
+
 Diese Liste beinhaltet Begriffe und darunter die jeweilige Definition. 
 
 ![Image Name](assets/3_components/text-list/definition_list.png)

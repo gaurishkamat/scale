@@ -15,6 +15,8 @@ Bei einem Prozess, bei dem du die Dauer genau kennst, solltest du immer die best
 
 ### Unbestimmte Progress-Bar
 
+> Diese Funktion ist bald verfügbar.
+
 Wenn du die Dauer eines Prozesses nicht genau abschätzen kannst, dann verwende die unbestimmte Progress-Bar. Sie zeigt zwar an, dass ein Prozess ausgeführt wird, aber nicht, wie lange es dauert. Wenn möglich, vermeide die Verwendung der unbestimmten Progress-Bar.
 
 ![Image Name](assets/3_components/progress-bar/pb-indeterminate.png)
