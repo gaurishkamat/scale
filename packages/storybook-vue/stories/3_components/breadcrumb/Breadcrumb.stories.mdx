@@ -56,27 +56,3 @@ export const Template = (args, { argTypes }) => ({
   <a href="#3">Third link</a>
 </scale-breadcrumb>
 ```
-
-## With Custom Separator Element
-
-<Canvas withSource="none">
-  <Story
-    name='With Custom Separator Element'
-    args={{
-      separator: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-breadcrumb>
-  <a href="#1">First link</a>
-  <a href="#2">Second link</a>
-  <a href="#3">Third link</a>
-  <span slot="separator">
-    <scale-icon-navigation-right></scale-icon-navigation-right>
-  </span>
-</scale-breadcrumb>
-```
