@@ -140,47 +140,7 @@ When using the `name` attribute, the component assumes there is an object with a
 
 ## Icon Library
 
-There's an icon library available as a separate npm package.
-
-<p>It features a total of {index.reduce((acc, x) => acc + x.items.length, 0)} icons as standalone components.</p>
-
-### Usage
-
-Install with `yarn` or `npm`.
-
-```bash
-yarn add @scaleds/icons-telekom
-```
-
-Load the library the same way you load the components library. In the following snippet we're loading both. Components will be lazy-loaded, thanks to [Stencil](https://stenciljs.com/).
-
-```js
-import { applyPolyfills, defineCustomElements } from '@scaleds/components-telekom/loader';
-import { defineCustomElements as defineCustomElementsIcons } from '@scaleds/icons-telekom/loader';
-
-applyPolyfills().then(() => {
-  defineCustomElements(); // Loads the core component library
-  defineCustomElementsIcons(); // Loads the icon library
-});
-```
-
-You can then use them following a simple naming convention: `scale-icon-{CATEGORY}-{NAME}`. There's a `selected` state you can activate via the `selected` attribute.
-
-```html
-<scale-icon-action-favorite color="#E20074" size="24" selected>
-```
-
----
-
-It's also possible to import and define elements individually.
-
-```js
-import { ScaleIconActionFavorite } from '@scaleds/components-telekomy/dist/custom-elements';
-
-customElements.define('scale-icon-action-favorite', ScaleIconActionFavorite);
-```
-
-### Example
+## Example
 
 <Canvas withSource="none">
   <Story name="Icon Library" args={{
