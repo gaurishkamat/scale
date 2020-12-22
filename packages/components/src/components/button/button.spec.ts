@@ -19,25 +19,7 @@ describe('Button', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should disable the button', () => {
-    expect(element.disabled).toBe(false);
-    element.disable();
-    expect(element.disabled).toBe(true);
-  });
-
-  it('should enable the button', () => {
-    element.disable();
-    expect(element.disabled).toBe(true);
-    element.enable();
-    expect(element.disabled).toBe(false);
-  });
-
-  it('should handle custom css class', () => {});
-
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.size = 'small';
     stylesheet.addRule('button--size-small', {});
     expect(element.getCssClassMap()).toContain(

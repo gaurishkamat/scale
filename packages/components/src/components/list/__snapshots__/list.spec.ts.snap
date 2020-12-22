@@ -5,12 +5,12 @@ exports[`List should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .list-0-0-4 {
-  border-left: 1px solid cyan;
-  padding-left: 1.5rem;
+  padding-left: 0;
 }
 .list--nested-0-0-5 {
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 0.5rem;
 }
 .list--type-ordered-0-0-6 {}
     </style>
