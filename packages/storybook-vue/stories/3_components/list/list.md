@@ -37,6 +37,8 @@ The items of an unordered list have equal status. The list will not convey a spe
 
 ### Definition list
 
+> Available soon
+
 A definition list consists of terms and their definition.
 
 ![Image Name](assets/3_components/text-list/definition_list.png)

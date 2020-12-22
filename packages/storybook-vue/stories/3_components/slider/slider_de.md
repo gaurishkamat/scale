@@ -40,5 +40,5 @@ Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, 
 *	eine andere Aktion erfolgen muss, bevor der Slider nutzbar ist oder
 *	die Nutzer*innen den Wert/Wertebereich aktuell nicht ändern können.
 
-![Image Name](/assets/3_components/slider/slider_disabled.png)
+![Image Name](/assets/3_components/slider/slider_disabled_de.png)
 

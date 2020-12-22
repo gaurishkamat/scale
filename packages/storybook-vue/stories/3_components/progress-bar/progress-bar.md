@@ -15,6 +15,8 @@ For processes where you know the duration, use determinate progress bars. The la
 
 ### Indeterminate
 
+> Available soon
+
 If you cannot determine the duration of a process, use the indeterminate progress bar. This indicates that the system is operating, but doesn't give any idea how long it could take. Therefore, you should always avoid using this type of progress bar whenever possible.
 
 ![Image Name](assets/3_components/progress-bar/pb-indeterminate.png)

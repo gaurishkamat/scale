@@ -36,11 +36,13 @@ Disable the checkbox if:
 
 ## Nested groups of checkboxes
 
+> Available soon
+
 When checkboxes are related to a parent checkbox, you can nest them. Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
 
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
-### Required input
+## Required input
 
 When checking a box is required, use an asterisk (*) in the text label.
 

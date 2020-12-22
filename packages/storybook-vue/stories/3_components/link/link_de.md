@@ -36,7 +36,7 @@ Ein Icon kennzeichnet, ob ein Link zu einer externen Webseite, einem Dokument od
 - Ein Text-Link sollte so kurz wie möglich sein, jedoch lang genug, um den Zweck klar zu vermitteln. Im Optimalfall besteht ein Link aus ein bis drei Wörtern. In Ausnahmefällen kannst du auch einen ganzen Satz verlinken, wenn es sinnvoll ist.
 - Setze einen Text-Link nur ein, wenn er selbsterklärend ist und keine weiteren Informationen benötigt. Text-Links wie „Hier klicken" oder „Mehr Informationen" können für Personen, die auf einen Screen Reader angewiesen sind, problematisch sein.
 
-## Größen
+<!--## Größen
 
 Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 
@@ -50,4 +50,4 @@ Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 
 16px
 
-![Image Name](/assets/3_components/link/link_small.png)
+![Image Name](/assets/3_components/link/link_small.png)-->

@@ -62,7 +62,3 @@ The label clearly describes the content which a particular tab represents. Since
 *	Arrange the tabs according to the needs of our users.
 *	Don't mix different types of tabs: for one set of tabs, decide on either having icons or not.
 
-
-## Related components
-
-Icons

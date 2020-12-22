@@ -49,7 +49,3 @@ Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darste
 
 *	Richte den Inhalt der ersten Spalte immer linksbündig aus.
 *	Je nach Kontext oder Art des Inhalts kannst du den Inhalt der anderen Spalten auch rechtsbündig ausrichten.
-
-## Verwandte Komponenten
-
-Liste

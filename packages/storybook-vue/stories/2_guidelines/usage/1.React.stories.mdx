@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Guidelines/Usage/React" />
+
+# React
+
+Unfortunately `React` brings it's own synthetic event system and handles all props as HTML attributes, more info: <a href="https://custom-elements-everywhere.com/">Custom Elements Everywhere</a>.
+
+To work around this problems we provide custom element wrappers for better developer experience.
+
+Please note that you will need to install both, the `@scaleds/components-telekom` as well as the `@scaleds/components-react-telekom` packages.
+
+Once you have installed both packages and defined the custom elements, `Scale` components behave mostly the way you would expect a `React` component to behave!
+
+More info on how to work with events in `React` can be found <a href="?path=/story/guidelines-events--page">here</a>.
+
+### src/index.html
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { applyPolyfills, defineCustomElements } from '@scaleds/components-telekom/loader';
+import App from './App';
+import '@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css';
+import './index.css';
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### src/App.jsx
+```jsx
+import React from 'react';
+import { ScaleButton } from '@scaleds/components-react-telekom';
+import './App.css';
+
+const App: React.FC = () => (
+  <div>
+    <ScaleButton>Label</ScaleButton>
+  </div>
+);
+
+export default App;
+
+```

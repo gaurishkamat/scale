@@ -42,4 +42,4 @@ You can add a simple body text or also insert headlines, split text into paragra
 
 ## Related components
 
-Tabs
+Tab Navigation

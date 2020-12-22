@@ -20,7 +20,7 @@ export const styles: JssStyle = {
     border: 0,
     paddingLeft: ({ spacing }) => spacing.x_button,
     paddingRight: ({ spacing }) => spacing.x_button,
-    fontFamily: ({ type }) => type.family,
+    fontFamily: 'inherit',
     fontWeight: ({ type }) => type.weight_bold,
     fontSize: ({ type }) => type.size_3,
     // @ts-ignore
