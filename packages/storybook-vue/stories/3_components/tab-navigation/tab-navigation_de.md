@@ -58,8 +58,3 @@ Das Label beschreibt verständlich den Inhalt eines Tabs. Am besten funktioniere
 *	Wechseln die Nutzer*innen zwischen den Bereichen, dann ändern sich nur der Tab und sein Inhaltsbereich. Die übrige Darstellung der Seite bleibt gleich.
 *	Ordne die Tabs nach den Bedürfnissen der Nutzer*innen an.
 *	Entscheide dich für eine Variante der Tabs (mit Icon oder ohne) und mische sie nicht.
-
-
-## Verwandte Komponenten
-
-Icons

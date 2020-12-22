@@ -53,7 +53,3 @@ The table structure and display are the same for both mobile and desktops. To se
 ### Content alignment
 
 Always align the content of the first column to the left. Depending on the context or type of content, you can also align the content of the other columns to the right.
-
-## Related components
-
-List

@@ -1,20 +1,20 @@
-# Trenner
+# Divider
 
-Ein Trenner ist eine feine Linie, mit der du Elemente in Gruppen unterteilen und Inhalte strukturieren kannst. Für Nutzer*innen ist es dadurch einfacher, zusammengehörige Inhalte zu erkennen.
+Ein Divider ist eine feine Linie, mit der du Elemente in Gruppen unterteilen und Inhalte strukturieren kannst. Für Nutzer*innen ist es dadurch einfacher, zusammengehörige Inhalte zu erkennen.
 
 ## Allgemein
 
-Trenner sind subtil: Sie sind gut erkennbar, aber nie dominant.
+Divider sind subtil: Sie sind gut erkennbar, aber nie dominant.
 
-### Verwende einen Trenner, wenn
+### Verwende einen Divider, wenn
 
 *	Weißraum nicht ausreicht, um Inhalte zu strukturieren oder
 *	es nicht möglich ist, Weißraum zu nutzen, zum Beispiel bei Platzmangel.
 
 
-### Verwende Trenner besser nicht, wenn
+### Verwende Divider besser nicht, wenn
 
-sie nicht unbedingt benötigt werden. Zu viele Trenner lassen das Design unruhig und fragmentiert erscheinen.
+sie nicht unbedingt benötigt werden. Zu viele Divider lassen das Design unruhig und fragmentiert erscheinen.
 
 
 ## Varianten
