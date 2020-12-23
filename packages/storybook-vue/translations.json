@@ -5,54 +5,74 @@
     "de": "Scale Design System"
   },
   {
-    "elementSelector": "#getting-started",
-    "en": "Getting Started",
-    "de": "Erste Schritte"
-  },
-  {
-    "elementSelector": "#getting-started-about-scale--page",
+    "elementSelector": "#about-scale--page",
     "en": "About Scale",
     "de": "Das Design System Scale"
   },
   {
-    "elementSelector": "#getting-started-scale-for-designers--page",
-    "en": "Scale for Designers",
-    "de": "Design mit Scale"
-  },
-  {
-    "elementSelector": "#getting-started-scale-for-developers--page",
-    "en": "Scale for Developers",
-    "de": "Entwicklung mit Scale"
-  },
-  {
-    "elementSelector": "#getting-started-faq--page",
+    "elementSelector": "#faq--page",
     "en": "FAQ",
     "de": "FAQ"
   },
   {
-    "elementSelector": "#guidelines",
-    "en": "Guidelines",
-    "de": "Richtlinien"
+    "elementSelector": "#scale-for-designers",
+    "en": "Scale for Designers",
+    "de": "Design mit Scale"
   },
   {
-    "elementSelector": "#guidelines-grid--page",
+    "elementSelector": "#scale-for-designers-getting-started--page",
+    "en": "Getting Started",
+    "de": "Erste Schritte"
+  },
+  {
+    "elementSelector": "#scale-for-designers-grid--page",
     "en": "Grid",
     "de": "Gestaltungsraster"
   },
   {
-    "elementSelector": "#guidelines-spacing--page",
+    "elementSelector": "#scale-for-designers-spacing--page",
     "en": "Spacing",
     "de": "Abstände"
   },
   {
-    "elementSelector": "#guidelines-typography--page",
+    "elementSelector": "#scale-for-designers-typography--page",
     "en": "Typography",
     "de": "Typografie"
   },
   {
-    "elementSelector": "#guidelines-theming-scale--page",
-    "en": "Theming Scale",
-    "de": "(DE)Theming Scale"
+    "elementSelector": "#scale-for-developers",
+    "en": "Scale for Developers",
+    "de": "Entwicklung mit Scale"
+  },
+  {
+    "elementSelector": "#scale-for-developers-setup--page",
+    "en": "Setup",
+    "de": "Setup"
+  },
+  {
+    "elementSelector": "#scale-for-developers-icon-library--page",
+    "en": "Icon Library",
+    "de": "Icon Library"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-angular--page",
+    "en": "Scale and Angular",
+    "de": "Scale und Angular"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-react--page",
+    "en": "Scale and React",
+    "de": "Scale und React"
   },
   {
     "elementSelector": "#components",
@@ -62,7 +82,7 @@
   {
     "elementSelector": "#community",
     "en": "Community",
-    "de": "Community"
+    "de": "Community2"
   },
   {
     "elementSelector": "#community-contributing-to-scale--page",
