@@ -635,12 +635,37 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       node.classList.add("hide-pseudo");
     }
   });
+
   if (node instanceof HTMLSelectElement) {
     const selectedOption = Array.from(node.getElementsByTagName("option")).find(o => o.selected);
     const textValue = selectedOption?.textContent;
     if (textValue) {
       const element = document.createElement('div');
       element.appendChild(document.createTextNode("Select Box Value"));
+      applyStyle(element, getComputedStyle(node));
+      element.style.background = 'none';
+      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
+      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.border = '0px';
+      element.style.outline = '0px';
+      element.style.textShadow = 'none';
+      element.style.boxShadow = 'none';
+      element.style.webkitBoxShadow = 'none';
+      element.style.position = 'absolute';
+      element.style.display = 'block';
+      if (node.style.position === 'static') {
+        node.style.position = 'relative';
+        node.style.left = node.style.top = '0px';
+      }
+      node.parentElement?.appendChild(element);
+    }
+  }
+
+  if (node instanceof HTMLInputElement || node instanceof HTMLTextAreaElement) {
+    const textValue = node.value;
+    if (textValue) {
+      const element = document.createElement('div');
+      element.appendChild(document.createTextNode("Input Value"));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
       element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
@@ -1240,9 +1265,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     fontSize: parseInt(fontSize, 10),
     textTransform: styles.textTransform,
     fontWeight: styles.fontWeight,
+    fontStyle: styles.fontStyle,
     color,
     skipSystemFonts: options && options.skipSystemFonts
   });
+
+  const fullFontFamily = textStyle.getFontFamily();
 
   const alignment = ALIGNMENTS[justifyContent] || ALIGNMENTS[textAlign] || 0;
   if (justifyContent === 'flex-end') {
@@ -1252,7 +1280,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const textAttributedString = (text: string) =>
     new TextAttributedString({
       text,
-      fontFamily,
+      fontFamily: fullFontFamily,
       fontSize: parseInt(fontSize, 10),
       textTransform: styles.textTransform,
       skipSystemFonts: options && options.skipSystemFonts,

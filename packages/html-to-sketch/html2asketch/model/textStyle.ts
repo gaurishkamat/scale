@@ -9,6 +9,7 @@ class TextStyle {
   _fontSize: any;
   _fontFamily: any;
   _fontWeight: string = '400';
+  _fontStyle: string = '';
   _textTransform: string = 'none';
 
   constructor({
@@ -17,12 +18,14 @@ class TextStyle {
     fontFamily,
     skipSystemFonts,
     fontWeight,
+    fontStyle,
     textTransform,
   }: any) {
     this._color = color;
     this._fontSize = fontSize;
     this._fontFamily = getFirstFont(fontFamily, skipSystemFonts);
     this._fontWeight = fontWeight || this._fontWeight;
+    this._fontStyle = fontStyle || this._fontStyle;
     this._textTransform = textTransform || this._textTransform;
   }
 
@@ -75,9 +78,8 @@ class TextStyle {
           MSAttributedStringFontAttribute: {
             _class: "fontDescriptor",
             attributes: {
-              name: this._fontFamily,
-              size: this._fontSize,
-              weight: getFontWeight(this._fontWeight)
+              name: this.getFontFamily(),
+              size: this._fontSize
             }
           },
           paragraphStyle: {
@@ -92,13 +94,43 @@ class TextStyle {
 
     return result;
   }
+
+  getFontFamily():string {
+    return this._fontFamily + getFontWeight(this._fontFamily, this._fontWeight, this._fontStyle);
+  }
 }
 
-function getFontWeight(s: string):number {
-  if (s == 'normal') return 4;
-  if (s == 'bold') return 7;
-  if (/^\d\d\d$/.test(s)) return (parseInt(s) / 100);
-  return 4;
+/**
+ * Gets the font weight for a weight string and a style string.
+ * 
+ * The Sketch fontWeight property seems to do nothing, so we use font variant names here. 
+ * These are for the TeleNeoWeb font, other fonts will require changes.
+ * 
+ * TODO Make this configurable in config.js
+ */
+function getFontWeight(fam: string, s: string, style: string):string {
+  if (/TeleNeoWeb\-/.test(fam)) return '';
+  s = s.trim().toLowerCase();
+  if (/\d+/.test(s)) {
+    const weight = Math.round(parseInt(s) / 100) * 100;
+    if (weight === 900 && style === 'italic') { return '-ExtraBoldItalic'; }
+    if (weight === 900) { return '-ExtraBold'; }
+    if (weight === 700 && style === 'italic') { return '-BoldItalic'; }
+    if (weight === 700) { return '-Bold'; }
+    if (weight === 800 && style === 'italic') { return '-BoldItalic'; }
+    if (weight === 800) { return '-Bold'; }
+    if (weight === 600 && style === 'italic') { return '-MediumItalic'; }
+    if (weight === 600) { return '-Medium'; }
+    if (weight === 500 && style === 'italic') { return '-MediumItalic'; }
+    if (weight === 500) { return '-Medium'; }
+    if (weight === 400 && style === 'italic') { return '-RegularItalic'; }
+    if (weight === 400) { return '-Regular'; }
+    if (weight <= 300 && style === 'italic') { return '-ThinItalic'; }
+    if (weight <= 300) { return '-Thin'; }
+
+  }
+  if (s === 'bold') return '-Bold';
+  return '-Regular';
 }
 
 export default TextStyle;
