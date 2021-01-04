@@ -45,7 +45,7 @@ export class Collapsible implements Base {
   @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   componentWillLoad() {
     this.panelId = 'collapsable-panel-' + i++;

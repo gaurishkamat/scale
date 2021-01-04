@@ -1,4 +1,4 @@
-import { defineCustomElements } from '@scaleds/icons-telekom/loader';
+// import { defineCustomElements } from '@scaleds/icons-telekom/loader';
 
 if (
   typeof window !== 'undefined' &&
@@ -10,5 +10,6 @@ if (
 }
 
 export default () => {
-  defineCustomElements();
+  // this breaks SSR
+  // defineCustomElements();
 };

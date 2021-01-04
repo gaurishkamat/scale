@@ -49,7 +49,7 @@ export class Shell {
 
   componentWillLoad() {}
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     return (

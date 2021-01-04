@@ -57,7 +57,7 @@ export class TabHeader implements Base {
     children.forEach(child => child[action]('selected', ''));
   }
 
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   render() {

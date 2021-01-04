@@ -42,7 +42,7 @@ export class Accordion implements Base {
     return Array.from(this.el.querySelectorAll('scale-collapsible'));
   }
 
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   render() {

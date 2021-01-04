@@ -38,7 +38,7 @@ export class Link implements Base {
   @CssInJs('Link', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     const { classes } = this.stylesheet;

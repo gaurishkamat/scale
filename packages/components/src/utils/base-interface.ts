@@ -4,7 +4,7 @@ import { StyleSheet } from 'jss';
 export default interface Base {
   styles?: StyleSheet;
   stylesheet: StyleSheet;
-  componentDidUnload(): void;
+  disconnectedCallback(): void;
   componentWillUpdate(): void;
   getCssClassMap(): CssClassMap;
 }
