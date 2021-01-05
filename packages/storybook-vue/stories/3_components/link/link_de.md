@@ -51,3 +51,7 @@ Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 16px
 
 ![Image Name](/assets/3_components/link/link_small.png)-->
+
+## Verwandte Komponenten
+
+<a href="../?path=/usage/components-button--large-standard">Button</a>

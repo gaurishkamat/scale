@@ -53,3 +53,7 @@ Choose the size based on the body text you are using.
 16px
 
 ![Image Name](/assets/3_components/link/link_small.png)-->
+
+## Related components
+
+<a href="../?path=/usage/components-button--large-standard">Button</a>

@@ -119,3 +119,10 @@ Websites without subpages (only one page) do not have navigation. On these pages
 #### Navigation level 3 (4)
 
 Depending on how many levels of hierarchy there are, the user navigates through further lists to the desired content.
+
+## Related components
+
+<a href="../?path=/usage/components-breadcrumb--standard">Breadcrumb, </a>
+<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar Navigation, </a>
+<a href="../?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
+<a href="../?path=/usage/components-accordion--standard">Accordion</a>

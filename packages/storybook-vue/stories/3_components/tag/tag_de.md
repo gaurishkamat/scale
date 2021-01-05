@@ -78,6 +78,3 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 * Mische keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
 * Entscheide dich für eine Größe.
 * Verwende ein eindeutiges Schlüsselwort für das Label.
-
-
-

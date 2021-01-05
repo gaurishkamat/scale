@@ -56,7 +56,3 @@ Stelle Inhalte derselben Art (zum Beispiel Blogposts, Produkte oder Veranstaltun
 ### Gestalte deine eigene Card
 
 Du kannst verschiedene Cards für jeden speziellen Anwendungsfall gestalten, damit sie gut für die Nutzer*innen funktionieren. 
-
-## Verwandte Komponenten 
-
-Divider, Data Table

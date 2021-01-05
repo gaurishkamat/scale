@@ -58,4 +58,8 @@ Since there is no mouse over on mobile devices, the arrow of a submenu is always
 
 ![Image Name](assets/3_components/sidebar-navigation/Sidebar-navigation-mobile.png)
 
+## Related components
 
+<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
+<a href="../?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
+<a href="../?path=/usage/components-accordion--standard">Accordion</a>

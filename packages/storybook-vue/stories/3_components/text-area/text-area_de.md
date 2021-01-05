@@ -56,4 +56,4 @@ Ist die Text-Area deaktiviert, können Nutzer*innen keinen Text eingeben, bezieh
 
 ## Verwandte Komponenten
 
-<a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textinput--standard" target="_blank">Text-Field</a>
+<a href="../?path=/usage/components-text-field--standard">Text-Field</a>

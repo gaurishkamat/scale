@@ -99,6 +99,7 @@ Icons erleichtern das Erfassen von Informationen, wenn sie an der richtigen Stel
 
 ![Image Name](assets/3_components/button/Button_Icon_position.png)
 
-## Related components
+## Verwandte Komponenten
 
-Link, Icon, Toggle
+<a href="../?path=/usage/components-link--standard">Link, </a>
+<a href="../?path=/usage/components-icon--standard">Icon</a>
