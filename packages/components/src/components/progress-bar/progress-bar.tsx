@@ -123,6 +123,7 @@ export class ProgressBar implements Base {
             {!!this.icon && (
               <scale-icon
                 class={classes['progress-bar__status']}
+                aria-hidden="true"
                 path={this.icon}
                 size={16}
               ></scale-icon>
