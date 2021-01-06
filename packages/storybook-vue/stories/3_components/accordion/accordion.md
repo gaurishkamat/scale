@@ -42,4 +42,5 @@ You can add a simple body text or also insert headlines, split text into paragra
 
 ## Related components
 
-Tab Navigation
+<a href="../?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
+<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar Navigation</a>

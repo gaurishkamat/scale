@@ -35,3 +35,6 @@ Das Pfeilsymbol trennt die einzelnen Links optisch voneinander.
 
 Die aktuelle Seite ist immer der letzte Eintrag der Breadcrumb. Sie hat keine interaktive Funktionalität.
 
+## Verwandte Komponenten
+
+<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>

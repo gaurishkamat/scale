@@ -56,4 +56,4 @@ If the text area is disabled, users can't enter or change text. Use this state i
 
 ## Related components
 
-<a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textinput--standard" target="_blank">Text field</a>
+<a href="../?path=/usage/components-text-field--standard">Text field</a>

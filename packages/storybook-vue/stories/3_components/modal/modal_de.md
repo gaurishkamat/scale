@@ -67,7 +67,3 @@ Auf kleinen Geräten werden alle modalen Dialoge über die volle Breite (4 Spalt
 *	Beschreibe die Handlungsmöglichkeiten und die resultierenden Folgen klar und deutlich.
 *	Sowohl der Titel als auch die Schaltflächen beschreiben, welche Aktion danach erfolgt. 
 *	Benutze niemals eine primäre Schaltfläche für destruktive oder irreversible Aktionen.
-
-## Verwandte Komponenten
-
-Alertbox, Globale Benachrichtigungen 

@@ -57,3 +57,7 @@ Interaktive Icons ohne Label müssen immer einen Alt-Text haben, den Screen Read
 ## Gestaltung von Icons
 
 Wenn du mehr über die Gestaltung von Telekom Icons erfahren möchtest, lies bitte die Richtlinie <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/?updatePreferredLanguage=1" target="_blank">Icons for User Interfaces</a>.
+
+## Verwandte Komponenten
+
+<a href="../?path=/usage/components-button--large-standard">Button</a>

@@ -42,3 +42,7 @@ The items of an unordered list have equal status. The list will not convey a spe
 A definition list consists of terms and their definition.
 
 ![Image Name](assets/3_components/text-list/definition_list.png)
+
+## Related components
+
+<a href="../?path=/usage/components-table--standard">Table</a>

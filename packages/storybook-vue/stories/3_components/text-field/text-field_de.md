@@ -78,5 +78,4 @@ Verwende kleine Text-Fields, wenn du nicht genug Platz für die Standardgröße 
 
 ## Verwandte Komponenten
 
-<a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textarea--standard" target="_blank">Text area</a>
-
+<a href="../?path=/usage/components-text-area--standard">Text area</a>

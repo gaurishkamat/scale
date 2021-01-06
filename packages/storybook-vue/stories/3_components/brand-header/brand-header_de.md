@@ -118,3 +118,10 @@ Durch einen Klick/Tap auf das Menü-Icon öffnet sich eine Listenansicht. An ers
 #### Hierarchieebenen (4)
 
 Je nach Anzahl der Hierarchieebenen navigieren die Nutzer*innen sich durch weitere Listen bis zum gewünschten Inhalt.
+
+## Verwandte Komponenten
+
+<a href="../?path=/usage/components-breadcrumb--standard">Breadcrumb, </a>
+<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation, </a>
+<a href="../?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
+<a href="../?path=/usage/components-accordion--standard">Accordion</a>

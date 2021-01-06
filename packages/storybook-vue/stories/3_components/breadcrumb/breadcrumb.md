@@ -33,3 +33,6 @@ The arrow icon visually separates the individual pages.
 
 The current page is highlighted at the right end of the breadcrumb. It has no interactive functionality.
 
+## Related components
+
+<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>

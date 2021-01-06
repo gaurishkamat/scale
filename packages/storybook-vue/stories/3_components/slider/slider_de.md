@@ -42,3 +42,6 @@ Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, 
 
 ![Image Name](/assets/3_components/slider/slider_disabled_de.png)
 
+## Verwandte Komponenten
+
+<a href="../?path=/usage/components-text-field--standard">Text-Field</a>

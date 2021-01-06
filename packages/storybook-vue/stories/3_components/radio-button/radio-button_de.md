@@ -46,4 +46,6 @@ In vielen Fällen ist es für Nutzer*innen hilfreich, wenn du eine Headline verw
 
 ## Verwandte Komponenten
 
-Checkbox, Switch, Dropdown
+<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="../?path=/usage/components-switch--standard">Switch, </a>
+<a href="../?path=/usage/components-dropdown--standard">Dropdown</a>
