@@ -7,7 +7,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "prestart": "rimraf public/dist && cp -r ../components/dist public/dist",
+    "prestart": "rimraf public/components && rimraf public/icons && cp -r ../components/dist public/components && cp -r ../icons/dist public/icons",
     "start": "nodemon app.js"
   },
   "dependencies": {
