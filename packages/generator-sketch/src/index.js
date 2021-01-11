@@ -588,6 +588,9 @@ function findLayers(symbol, predicate, results=[]) {
     /*
       Handle symbol creation and instancing
     */
+    if (enhanced.name && enhanced.name.startsWith('Text Lists / list')) {
+      enhanced.isSymbol = false;
+    }
     if (enhanced['_class'] === 'group' && enhanced.isSymbol === true) {
       // Find all symbols with the same name.
       let symbolArray = symbols.get(enhanced.name);
@@ -711,6 +714,7 @@ function findLayers(symbol, predicate, results=[]) {
   sketch.addPage(symbolsPage);
 
   const jsons = fs.readdirSync(path.resolve(__dirname, "../sketch-json")).filter(fn => fn.endsWith('.json'));
+  jsons.sort();
   jsons.forEach(jsonFn => {
     const json = require(`../sketch-json/${jsonFn}`);
 

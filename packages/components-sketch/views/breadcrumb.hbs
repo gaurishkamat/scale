@@ -7,8 +7,8 @@
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
-            <scale-breadcrumb data-sketch-key="breadcrumb-1">
-                <span>Current Page</span>
+            <scale-breadcrumb data-sketch-key="breadcrumb-0" is-current>
+                <a href="#">Current Page</a>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
@@ -34,29 +34,25 @@
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-1" separator=" ">
-                <a href="#">Breadcrumb Label</a>
-                <a href="#"></a>
+                <a href="#">Breadcrumb Label</a><div></div>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-2" data-sketch-state="hover" separator=" ">
-                <a href="#">Breadcrumb Label</a>
-                <a href="#"></a>
+                <a href="#">Breadcrumb Label</a><div></div>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-3" data-sketch-state="focus" separator=" ">
-                <a href="#">Breadcrumb Label</a>
-                <a href="#"></a>
+                <a href="#">Breadcrumb Label</a><div></div>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:active/:selected</p>
             <scale-breadcrumb data-sketch-key="breadcrumb-4" data-sketch-state="active" separator=" ">
-                <a href="#">Breadcrumb Label</a>
-                <a href="#"></a>
+                <a href="#">Breadcrumb Label</a><div></div>
             </scale-breadcrumb>
         </div>
         <div class="agent-states--item">
@@ -94,9 +90,9 @@
 <script>
     Array.from(document.querySelectorAll("scale-breadcrumb")).forEach(btn => {
         btn.dataset.sketchSymbol = `Breadcrumb / ${
-                order(1, btn.firstElementChild.hasAttribute("is-current") ? 'Current Page' : 'Breadcrumb Label')
+                order(1, btn.hasAttribute("is-current") ? 'Current Page' : 'Breadcrumb Label')
             }${
-                btn.firstElementChild.hasAttribute("is-current") 
+                btn.hasAttribute("is-current") 
                 ? ""
                 : " / " + order(4, getStateName(btn))
             }`;

@@ -24,18 +24,56 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // Collect layers for the node level itself
   const layers = nodeToSketchLayers(node, group, {...options, layerOpacity: false}) || [];
 
+  // const printLayers = (l:any) => l._name + '[ ' + (l._layers || []).map(printLayers).join(', ') + ' ]';
+
+  const replaceSlotsWithLayers = (node:any, layers:any[]) => {
+    if (layers.length === 0) return;
+    if (node._name === 'slot') {
+      const l = layers.shift();
+      if (l._isShadow) {
+        if (node._layers.length > 0) {
+          l._x = node._layers[0]._x;
+          l._y = node._layers[0]._y;
+          l._style = node._layers[0]._style;
+          l._width = node._layers[0]._width;
+          l._height = node._layers[0]._height;
+        }
+        node._layers = [l];
+        console.log('replacing', node._layers[0], l);
+      }
+    } else {
+      node._layers.forEach((l:any) => replaceSlotsWithLayers(l, layers));
+    }
+  };
+
+  const materializeStyle = function(n:HTMLElement) {
+    const style = getComputedStyle(n);
+    for (const k in style) {
+      try {
+        n.style[k] = style[k];
+      } catch(e) {}
+    }
+    Array.from(n.children).forEach(materializeStyle);
+  };
+
   const processChild = (childNode: HTMLElement) => {
     if (childNode.shadowRoot) {
       // Get parent shadow root element
       const root = nodeTreeToSketchGroup(childNode, options);
       // Remove slotted content as it is already assigned
+      // console.log(printLayers(root));
+      // The issue here is that the slotted content doesn't have its shadow roots expanded
+      const previousLayers = root._layers;
       root._layers = [];
+      (root as any)._isShadow = true;
       // Process children
       const children = Array.from(childNode.shadowRoot.children)
         .filter(isNodeVisible)
         .map(c => nodeTreeToSketchGroup(c as HTMLElement, options));
+      // Replace slot content with expanded layers
+      replaceSlotsWithLayers({_name:"", _layers:children}, previousLayers);
       // Align child and root positioning
-      let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
       children.forEach(layer => {
         minX = Math.min(minX, layer._x);
         minY = Math.min(minY, layer._y);
@@ -43,14 +81,21 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         maxY = Math.max(maxY, layer._y + layer._height);
         root._layers.push(layer);
       });
-      root._x = minX;
-      root._y = minY;
-      root._width = maxX - minX;
-      root._height = maxY - minY;
+      // console.log(printLayers(root));
+      if (minX !== Infinity) {
+        root._x = minX;
+        root._y = minY;
+        root._width = maxX - minX;
+        root._height = maxY - minY;
+      }
       root._layers.forEach((layer:any) => {
         layer._x -= root._x;
         layer._y -= root._y;
+        {
+          console.log('layer', layer._x, layer._y, layer._width, layer._height);
+        }
       });
+      console.log('shadowRoot', root._x, root._y, root._width, root._height);
       
       layers.push(root);
     } else if (childNode.tagName == 'IFRAME' && (childNode as HTMLIFrameElement).contentDocument) {
@@ -72,20 +117,28 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
           const children = Array.from(iframe.contentDocument.children)
             .filter(isNodeVisible)
             .map(c => nodeTreeToSketchGroup(c as HTMLElement, iframeOptions));
-          children.forEach(c => root._layers.push(c));
+          children.forEach(c => {
+            c._x -= root._x;
+            c._y -= root._y;
+            root._layers.push(c);
+            {
+              const layer = c;
+              console.log('layer', layer._x, layer._y, layer._width, layer._height);
+            }
+          });
         }
+        console.log('<slot>', root._x, root._y, root._width, root._height);
         layers.push(root);
       }
     } else if (childNode.tagName === 'SLOT') {
       // Push slotted text nodes directly into the slot
       const childNodes = Array.from((childNode as HTMLSlotElement).assignedNodes())
         .filter(n => {
-          if (n.nodeType === 3) {
-            childNode.appendChild(n);
-            return false;
-          } else {
-            return true;
+          if (n instanceof HTMLElement) {
+            materializeStyle(n);
           }
+          childNode.appendChild(n);
+          return false;
         });
       // Get parent shadow root element
       const root = nodeTreeToSketchGroup(childNode, options);
@@ -95,22 +148,28 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
           .filter(isNodeVisible)
           .map(c => nodeTreeToSketchGroup(c as HTMLElement, options));
         // Align child and root positioning
-        let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
         children.forEach(layer => {
-          minX = Math.min(minX, layer._x);
-          minY = Math.min(minY, layer._y);
-          maxX = Math.max(maxX, layer._x + layer._width);
-          maxY = Math.max(maxY, layer._y + layer._height);
-          root._layers.push(layer);
+          if (layer._width > 0 && layer._height > 0) {
+            minX = Math.min(minX, layer._x);
+            minY = Math.min(minY, layer._y);
+            maxX = Math.max(maxX, layer._x + layer._width);
+            maxY = Math.max(maxY, layer._y + layer._height);
+            root._layers.push(layer);
+          }
         });
-        root._x = minX;
-        root._y = minY;
-        root._width = maxX - minX;
-        root._height = maxY - minY;
+        if (minX !== Infinity) {
+          root._x = minX;
+          root._y = minY;
+          root._width = maxX - minX;
+          root._height = maxY - minY;
+        }
         root._layers.forEach((layer:any) => {
           layer._x -= root._x;
           layer._y -= root._y;
+          console.log('>slot', root._x, root._y, layer._x, layer._y, layer._width,  layer._height);
         });
+        console.log('>>slot', root._x, root._y, root._width, root._height);
       }
       layers.push(root);
     } else {
@@ -151,9 +210,11 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   layers.forEach((layer: any) => {
     // Layer positions are relative, and as we put the node position to the group,
     // we have to shift back the layers by that distance.
-    layer._x -= left;
-    layer._y -= top;
-    group.addLayer(layer);
+    if (layer._width > 0 && layer._height > 0) {
+      layer._x -= left;
+      layer._y -= top;
+      group.addLayer(layer);
+    }
   });
 
   // Set group name from a name provider in the options
@@ -195,6 +256,10 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   if (node instanceof SVGClipPathElement || node instanceof SVGDefsElement) { // Hide clipPaths
     group._isVisible = false;
   }
+
+  group._layers.forEach((layer:any) =>
+        console.log(group._name, layer._name, left, top, layer._x, layer._y, layer._width, layer._height));
+
 
   return group;
 }

@@ -116,3 +116,7 @@ scale-input[type="select"] {
 .hide-pseudo:after {
     content: none !important;
 }
+
+a[href="https://foo/"] {
+    display: none;
+}

@@ -1273,9 +1273,6 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const fullFontFamily = textStyle.getFontFamily();
 
   const alignment = ALIGNMENTS[justifyContent] || ALIGNMENTS[textAlign] || 0;
-  if (justifyContent === 'flex-end') {
-    console.log(alignment, justifyContent, layers, node, node.tagName, node.textContent);
-  }
 
   const textAttributedString = (text: string) =>
     new TextAttributedString({
@@ -1333,8 +1330,8 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const text = new Text({
         x: textBCR.left,
         y: textBCR.top + fixY,
-        width: Math.ceil(textBCR.right - textBCR.left + 2),
-        height: textBCRHeight + 2,
+        width: Math.ceil(textBCR.right - textBCR.left) + 3,
+        height: textBCRHeight,
         text: textValue,
         style: textStyle,
         attributedString: textAttributedString(textValue),

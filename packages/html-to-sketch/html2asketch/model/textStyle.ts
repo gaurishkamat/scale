@@ -92,6 +92,10 @@ class TextStyle {
       },
     }
 
+    if (this.getFontFamily() === "TeleNeoWeb-Regular-Bold") {
+      console.log("WHAT NO "+document.location.toString());
+    }
+
     return result;
   }
 
@@ -108,28 +112,28 @@ class TextStyle {
  * 
  * TODO Make this configurable in config.js
  */
-function getFontWeight(fam: string, s: string, style: string):string {
-  if (/TeleNeoWeb\-/.test(fam)) return '';
-  s = s.trim().toLowerCase();
-  if (/\d+/.test(s)) {
-    const weight = Math.round(parseInt(s) / 100) * 100;
-    if (weight === 900 && style === 'italic') { return '-ExtraBoldItalic'; }
+function getFontWeight(fontFamily: string, fontWeight: string, fontStyle: string):string {
+  if (/\-/.test(fontFamily)) return '';
+  fontWeight = fontWeight.trim().toLowerCase();
+  if (/\d+/.test(fontWeight)) {
+    const weight = Math.round(parseInt(fontWeight) / 100) * 100;
+    if (weight === 900 && fontStyle === 'italic') { return '-ExtraBoldItalic'; }
     if (weight === 900) { return '-ExtraBold'; }
-    if (weight === 700 && style === 'italic') { return '-BoldItalic'; }
+    if (weight === 700 && fontStyle === 'italic') { return '-BoldItalic'; }
     if (weight === 700) { return '-Bold'; }
-    if (weight === 800 && style === 'italic') { return '-BoldItalic'; }
+    if (weight === 800 && fontStyle === 'italic') { return '-BoldItalic'; }
     if (weight === 800) { return '-Bold'; }
-    if (weight === 600 && style === 'italic') { return '-MediumItalic'; }
+    if (weight === 600 && fontStyle === 'italic') { return '-MediumItalic'; }
     if (weight === 600) { return '-Medium'; }
-    if (weight === 500 && style === 'italic') { return '-MediumItalic'; }
+    if (weight === 500 && fontStyle === 'italic') { return '-MediumItalic'; }
     if (weight === 500) { return '-Medium'; }
-    if (weight === 400 && style === 'italic') { return '-RegularItalic'; }
+    if (weight === 400 && fontStyle === 'italic') { return '-RegularItalic'; }
     if (weight === 400) { return '-Regular'; }
-    if (weight <= 300 && style === 'italic') { return '-ThinItalic'; }
+    if (weight <= 300 && fontStyle === 'italic') { return '-ThinItalic'; }
     if (weight <= 300) { return '-Thin'; }
 
   }
-  if (s === 'bold') return '-Bold';
+  if (fontWeight === 'bold') return '-Bold';
   return '-Regular';
 }
 

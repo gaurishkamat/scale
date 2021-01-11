@@ -1,0 +1,44 @@
+<div data-sketch-artboard="Tab Navigation" class="artboard">
+    <h1 class="title--artboard">Tab Navigation</h1>
+
+    <scale-tab-nav>
+        <scale-tab-header slot="tab">
+            <scale-icon-home-home size="16" /> General
+        </scale-tab-header>
+        <scale-tab-panel slot="panel">
+            Freegan kinfolk farm-to-table humblebrag cred…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">
+            <scale-icon-user_file-analytics size="16" /> Usage
+        </scale-tab-header>
+        <scale-tab-panel slot="panel">
+            Bespoke austin pork belly yuccie pop-up. Before they sold out…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">
+            <scale-icon-content-heart size="16" /> Style
+        </scale-tab-header>
+        <scale-tab-panel slot="panel">
+            Biodiesel chia af hoodie tumeric bespoke letterpress…
+        </scale-tab-panel>
+        <scale-tab-header slot="tab">
+            <scale-icon-action-random size="16" /> Code
+        </scale-tab-header>
+        <scale-tab-panel slot="panel">
+            Asymmetrical tattooed chia, banh mi blog microdosing…
+        </scale-tab-panel>
+    </scale-tab-nav>
+
+</div>
+
+<script src="/symbol_names.js"></script>
+<script>
+    Array.from(document.querySelectorAll("scale-tab-nav")).forEach(btn => {
+        btn.dataset.sketchSymbol = `Tab Navigation / 01 Example`
+    });
+    Array.from([document.querySelector("scale-tab-header")]).forEach(btn => {
+        btn.dataset.sketchSymbol = `Tab Navigation / 02 Tab Header`
+    });
+    Array.from([document.querySelector("scale-tab-panel")]).forEach(btn => {
+        btn.dataset.sketchSymbol = `Tab Navigation / 02 Tab Panel`
+    });
+</script>
