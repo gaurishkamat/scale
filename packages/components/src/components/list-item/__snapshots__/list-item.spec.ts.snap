@@ -4,20 +4,62 @@ exports[`ListItem should match snapshot 1`] = `
 <scale-list-item role="listitem">
   <mock:shadow-root>
     <style>
-      :host {
+      :host(scale-list-item) {
   display: block;
 }
-.list-item-0-0-1 {}
-.list-item--nested-0-0-2 {
-  color: tomato;
+.list-item-0-0-1 {
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: calc(0.25ch + 1rem);
 }
-.list-item__nested-list-0-0-3 {
-  border: 1px solid gold;
+.list-item-0-0-1::before {
+  left: 0;
+  content: "";
+  position: absolute;
 }
+.list-item--nested-0-0-2 {}
+.list-item--unordered-0-0-3 {}
+.list-item--unordered-0-0-3::before {
+  top: 0.5em;
+  display: block;
+  transform: scale(0.66);
+  background: currentColor;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.list-item--nested-0-0-2.list-item--unordered-0-0-3::before {
+  border: 1px solid currentColor;
+  background: transparent;
+}
+.list-item--ordered-0-0-4 {}
+.list-item--ordered-0-0-4::before {
+  content: attr(data-index) ".";
+  font-size: 1rem;
+  font-weight: 700;
+}
+.list-item--nested-0-0-2.list-item--ordered-0-0-4::before {
+  font-size: 0.75rem;
+  padding-top: calc(1rem - 0.75rem);
+}
+.list-item--no-marker-0-0-5 {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0;
+}
+.list-item--no-marker-0-0-5::before {
+  display: none;
+}
+.list-item--no-marker-0-0-5 > ::slotted(*) {
+  margin-right: 0.5rem;
+}
+.list-item__nested-list-0-0-6 {}
     </style>
-    <div class="list-item-0-0-1">
+    <div class="list-item--unordered-0-0-3 list-item-0-0-1">
       <slot></slot>
-      <div class="list-item__nested-list-0-0-3" hidden="">
+      <div class="list-item__nested-list-0-0-6" hidden="">
         <slot name="nested"></slot>
       </div>
     </div>

@@ -100,6 +100,7 @@ export const styles: JssStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    flexShrink: '0',
     marginLeft: ({ spacing }) => spacing[5],
     marginRight: ({ spacing }) => spacing[5],
     paddingTop: ({ spacing }) => spacing[5],
@@ -170,6 +171,7 @@ export const styles: JssStyle = {
   modal__actions: {
     display: 'none',
     justifyContent: 'flex-end',
+    flexShrink: '0',
     padding: ({ spacing }) => spacing[5],
 
     '& ::slotted(*)': {

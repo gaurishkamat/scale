@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.14.0...v1.15.0) (2020-12-18)
+
+
+### Bug Fixes
+
+* icon colors in input select ([576903f](https://gitlab.com/scale-ds/scale-telekom/commit/576903f9bdf70cc1794365527670d1159184d0c0))
+* make label floating also when value is number 0 ([3661148](https://gitlab.com/scale-ds/scale-telekom/commit/3661148bb02333785d2f69ac3d69e2582697b31d))
+* **components:** avoid typeerror when missing header element in modal ([e0c9236](https://gitlab.com/scale-ds/scale-telekom/commit/e0c92367f57f54c47c7020388c9a139f0d06e837))
+* add missing active state for screen-readers ([2b4413f](https://gitlab.com/scale-ds/scale-telekom/commit/2b4413f67b863cb0bd7bff661d56bf32dd55bc3a))
+* remove extra level of list ([4c7cf17](https://gitlab.com/scale-ds/scale-telekom/commit/4c7cf1770e3cc1f644083d5753b4fa04f043cbe6))
+
+
+### Features
+
+* add _controlled_ attribute and behavior to input select ([8b5ad7e](https://gitlab.com/scale-ds/scale-telekom/commit/8b5ad7eceb00a6c5851122c16e866840293ac843))
+* underlines ([b2deb98](https://gitlab.com/scale-ds/scale-telekom/commit/b2deb98fa7e8047ea477a397a9d6880ac28c751a))
+
+
+
+
+
 # [1.14.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.13.1...v1.14.0) (2020-12-08)
 
 

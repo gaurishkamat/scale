@@ -20,7 +20,7 @@ Don’t use dropdowns, when users:
 
 * should only have a few options (radio buttons may be better),
 * should have a lot of choices (an input field with auto-fill is more helpful),
-* shold have several options (use checkboxes instead), or
+* should have several options (use checkboxes instead), or
 * should navigate (use a navigation component like the sidebar navigation).
 
 ## Basic Types
@@ -57,11 +57,11 @@ Additional information can help clarify the content or purpose of a dropdown.
 
 If users have to select an option, submitting a form without a selection will result in an error message. If the dropdown already has an information text, the error text will temporarily take its place.
 
-### Titel (5)
+### Title (5)
 
-Der Titel fordert zur Auswahl einer Option auf.
+The title prompts the user to select an option
 
-### Dropdown Menü (6)
+### Dropdown menu (6)
 
 The dropdown menu contains the available options or groups of options.
 
@@ -83,4 +83,6 @@ When space is limited, use the small dropdown consistently.
 
 ## Related components
 
-Text Field, Text Area, Checkbox, Switch, Radio Button
+<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="../?path=/usage/components-switch--standard">Switch, </a>
+<a href="../?path=/usage/components-radiobutton--standard">Radio Button</a>

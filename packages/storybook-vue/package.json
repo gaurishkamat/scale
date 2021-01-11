@@ -1,19 +1,19 @@
 {
   "name": "@scaleds/storybook-vue",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.10.4",
-    "@storybook/addon-actions": "^6.0.26",
-    "@storybook/addon-controls": "^6.0.26",
-    "@storybook/addon-docs": "^6.0.26",
-    "@storybook/addon-links": "^6.0.26",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/api": "^6.0.26",
-    "@storybook/components": "^6.0.26",
-    "@storybook/theming": "^6.0.26",
-    "@storybook/vue": "^6.0.26",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-controls": "^6.1.11",
+    "@storybook/addon-docs": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/addons": "^6.1.11",
+    "@storybook/api": "^6.1.11",
+    "@storybook/components": "^6.1.11",
+    "@storybook/theming": "^6.1.11",
+    "@storybook/vue": "^6.1.11",
     "babel-loader": "^8.1.0",
     "babel-preset-vue": "^2.0.2",
     "copy-webpack-plugin": "^6.0.3",
@@ -25,9 +25,9 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "@scaleds/components-telekom": "^1.14.0",
-    "@scaleds/components-vue-telekom": "^1.14.0",
-    "@scaleds/icons-telekom": "^1.14.0"
+    "@scaleds/components-telekom": "^1.15.0",
+    "@scaleds/components-vue-telekom": "^1.15.0",
+    "@scaleds/icons-telekom": "^1.15.0"
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006",

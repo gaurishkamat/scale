@@ -71,7 +71,3 @@ On mobile, all modals have the same size: full width (4 columns).
 *	Clearly describe the confirmed action and explain the potential consequences.
 *	Both title and button should indicate which action will occur.
 *	Never use a primary button if the action is destructive or irreversible.
-
-## Related components
-
-Alertbox, Global notification

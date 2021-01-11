@@ -4,9 +4,11 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card-0-0-6 {
-  width: 100%;
+      .card__border-0-0-5 {
   border: 1px solid transparent;
+}
+.card-0-0-6 {
+  width: 100%;
   overflow: hidden;
   box-sizing: border-box;
   transition: all .2s ease-in-out;
@@ -19,40 +21,32 @@ exports[`Card should match snapshot 1`] = `
 .card__body-0-0-7 ::slotted(*) {
   margin: 0;
 }
-.card--no-padding-0-0-8 {}
-.card--no-padding-0-0-8 .card__body-0-0-7 {
-  padding: 0;
-}
-.card--interactive-0-0-9 {
+.card--interactive-0-0-8 {
   color: inherit;
   cursor: pointer;
   display: block;
   outline: none;
   text-decoration: none;
 }
-.card--interactive-0-0-9:hover {
+.card--interactive-0-0-8:hover {
   box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-9:focus {
+.card--interactive-0-0-8:focus {
   box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10),0 0 0 2px #009DE0;
 }
-.card--interactive-0-0-9:active {
+.card--interactive-0-0-8:active {
   border: none;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-9 .card__body-0-0-7 ::slotted(*) {
+.card--interactive-0-0-8 .card__body-0-0-7 ::slotted(*) {
   margin: 0;
 }
-.card--disabled-0-0-10 {}
-.card--disabled-0-0-10, .card--disabled-0-0-10:hover, .card--disabled-0-0-10:focus, .card--disabled-0-0-10:active {
-  cursor: not-allowed;
-  outline: none;
-  opacity: 0.5;
-}
     </style>
-    <div aria-label="" class="card-0-0-6" role="group">
-      <div class="card__body-0-0-7">
-        <slot></slot>
+    <div class="card__border-0-0-5">
+      <div class="card-0-0-6" role="group" target="_self">
+        <div class="card__body-0-0-7">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </mock:shadow-root>
