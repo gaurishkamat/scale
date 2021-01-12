@@ -19,8 +19,6 @@ import Base from '../../utils/base-interface';
  */
 
 const ARROW_LEFT = 'ArrowLeft';
-const ARROW_UP = 'ArrowUp';
-const ARROW_DOWN = 'ArrowDown';
 const ARROW_RIGHT = 'ArrowRight';
 const HOME = 'Home';
 const END = 'End';
@@ -68,11 +66,9 @@ export class TabNav implements Base {
 
     switch (event.key) {
       case ARROW_LEFT:
-      case ARROW_UP:
         nextTab = this.getPreviousTab();
         break;
       case ARROW_RIGHT:
-      case ARROW_DOWN:
         nextTab = this.getNextTab();
         break;
       case HOME:
