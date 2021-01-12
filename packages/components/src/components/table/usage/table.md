@@ -74,8 +74,8 @@
     <thead>
     <tr>
       <!--  Pay attention to the usage of `th` `aria-sort` attribute-->
-      <!--  which supports all the native values: `ascending`, `descending`, `none`, `other`.-->
-      <th aria-sort="descending" onclick="sortTable(this)">Title</th>
+      <!--  which supports all the native values: `descending`, `ascending`, `none`, `other`.-->
+      <th aria-sort="ascending" onclick="sortTable(this)">Title</th>
       <!--  When you want to disable sorting for a particular column,-->
       <!--  add the `aria-disabled` attribute to the `th`.-->
       <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
@@ -176,10 +176,10 @@
   <script>
     function getNextSort(sort) {
       if (!sort || ["none", "other"].includes(sort)) {
-        return "descending";
-      }
-      if (sort === "descending") {
         return "ascending";
+      }
+      if (sort === "ascending") {
+        return "descending";
       }
       return "none";
     };
@@ -221,7 +221,7 @@
           y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
     
           if (
-            !["ascending", "descending"].includes(nextSort) ||
+            !["descending", "ascending"].includes(nextSort) ||
             x.parentElement.parentElement.tagName === "TFOOT" ||
             y.parentElement.parentElement.tagName === "TFOOT"
           ) {
@@ -230,8 +230,8 @@
     
           //check if the two rows should switch place:
           if (
-            (nextSort === "descending" ? y : x).innerHTML.toLowerCase() >
-            (nextSort === "descending" ? x : y).innerHTML.toLowerCase()
+            (nextSort === "ascending" ? y : x).innerHTML.toLowerCase() >
+            (nextSort === "ascending" ? x : y).innerHTML.toLowerCase()
           ) {
             //if so, mark as a switch and break the loop:
             shouldSwitch = true;
