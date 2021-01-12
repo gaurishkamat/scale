@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Watch } from '@stencil/core';
+import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './tab-header.styles';
@@ -16,6 +16,8 @@ export class TabHeader implements Base {
   generatedId: number = i++;
   container: HTMLElement;
 
+  @Element() el: HTMLElement;
+
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
   /** (optional) Injected jss styles */
@@ -25,10 +27,14 @@ export class TabHeader implements Base {
 
   @Prop() selected: boolean;
 
+  @State() hasFocus: boolean = false;
+
   @Watch('selected')
   selectedChanged(newValue: boolean) {
     if (newValue === true) {
-      this.container.focus();
+      // Having focus on the host element, and not on inner elements,
+      // is required because screen readers.
+      this.el.focus();
     }
     this.updateSlottedIcon();
   }
@@ -60,12 +66,14 @@ export class TabHeader implements Base {
         id={`scale-tab-header-${this.generatedId}`}
         role="tab"
         aria-selected={String(this.selected)}
+        tabindex={this.selected ? '0' : '-1'}
+        onFocus={() => this.hasFocus = true}
+        onBlur={() => this.hasFocus = false}
       >
         <style>{this.stylesheet.toString()}</style>
         <span
           ref={el => (this.container = el)}
           class={this.getCssClassMap()}
-          tabindex={this.selected ? '0' : '-1'}
         >
           <slot />
         </span>
@@ -78,7 +86,8 @@ export class TabHeader implements Base {
     return classNames(
       classes['tab-header'],
       this.selected && classes['tab-header--selected'],
-      this.small && classes['tab-header--small']
+      this.small && classes['tab-header--small'],
+      this.hasFocus && classes['tab-header--has-focus']
     );
   }
 }
