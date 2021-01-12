@@ -50,6 +50,7 @@ export class Link implements Base {
           {...(!this.disabled ? { href: this.href } : {})}
           {...(!this.disabled ? { target: this.target } : {})}
           tabindex="0"
+          aria-disabled={this.disabled}
         >
           <span class={classes['link__wrapper']}>
             <slot />
