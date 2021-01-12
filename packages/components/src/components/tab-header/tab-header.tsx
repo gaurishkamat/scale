@@ -67,14 +67,11 @@ export class TabHeader implements Base {
         role="tab"
         aria-selected={String(this.selected)}
         tabindex={this.selected ? '0' : '-1'}
-        onFocus={() => this.hasFocus = true}
-        onBlur={() => this.hasFocus = false}
+        onFocus={() => (this.hasFocus = true)}
+        onBlur={() => (this.hasFocus = false)}
       >
         <style>{this.stylesheet.toString()}</style>
-        <span
-          ref={el => (this.container = el)}
-          class={this.getCssClassMap()}
-        >
+        <span ref={el => (this.container = el)} class={this.getCssClassMap()}>
           <slot />
         </span>
       </Host>
