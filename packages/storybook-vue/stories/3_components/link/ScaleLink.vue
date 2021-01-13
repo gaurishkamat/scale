@@ -6,6 +6,7 @@
     :href="href"
     :icon="icon"
     :icon-size="iconSize"
+    :icon-accessibility-title="iconAccessibilityTitle"
     :target="target"
     :variant="variant"
   >
@@ -22,6 +23,7 @@ export default {
     href: String,
     icon: String,
     iconSize: { type: Number, default: 16 },
+    iconAccessibilityTitle: { type: String },
     target: { type: String, default: "_self" },
     variant: String
   }
