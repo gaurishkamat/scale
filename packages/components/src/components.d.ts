@@ -423,6 +423,10 @@ export namespace Components {
          */
         "icon"?: string;
         /**
+          * (optional) Icon title for accessibility
+         */
+        "iconAccessibilityTitle"?: string;
+        /**
           * (optional) Icon size
          */
         "iconSize"?: number;
@@ -1554,6 +1558,10 @@ declare namespace LocalJSX {
           * (optional) Icon only
          */
         "icon"?: string;
+        /**
+          * (optional) Icon title for accessibility
+         */
+        "iconAccessibilityTitle"?: string;
         /**
           * (optional) Icon size
          */

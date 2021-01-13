@@ -29,6 +29,7 @@ export const Template = (args, {argTypes}) => ({
         :href="href"
         :icon="icon"
         :icon-size="iconSize"
+        :icon-accessibility-title="iconAccessibilityTitle"
         :target="target"
         :variant="variant"
     >
@@ -82,7 +83,8 @@ export const Template = (args, {argTypes}) => ({
         args={{
             label: 'A link, with an icon',
             icon: ICON,
-            href: '#top'
+            href: '#top',
+            iconAccessibilityTitle: 'open link in new tab'
         }}>
         {Template.bind({})}
     </Story>

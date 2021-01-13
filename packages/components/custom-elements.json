@@ -712,6 +712,10 @@
           "description": "(optional) Icon only"
         },
         {
+          "name": "icon-accessibility-title",
+          "description": "(optional) Icon title for accessibility"
+        },
+        {
           "name": "icon-size",
           "description": "(optional) Icon size"
         },

@@ -29,6 +29,8 @@ export class Link implements Base {
   @Prop() iconSize?: number = 24;
   /** (optional) Icon only */
   @Prop() icon?: string;
+  /** (optional) Icon title for accessibility */
+  @Prop() iconAccessibilityTitle?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -39,26 +41,28 @@ export class Link implements Base {
   componentDidUnload() {}
 
   render() {
-    const Tag = !this.disabled ? 'a' : 'span';
     const { classes } = this.stylesheet;
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <Tag
+        <a
           class={this.getCssClassMap()}
           {...(!this.disabled ? { href: this.href } : {})}
           {...(!this.disabled ? { target: this.target } : {})}
-          tabindex="0"
           aria-disabled={this.disabled}
         >
           <span class={classes['link__wrapper']}>
             <slot />
             {this.icon && this.icon !== '' && (
-              <scale-icon path={this.icon} size={this.iconSize} />
+              <scale-icon
+                accessibilityTitle={this.iconAccessibilityTitle}
+                path={this.icon}
+                size={this.iconSize}
+              />
             )}
           </span>
-        </Tag>
+        </a>
       </Host>
     );
   }
