@@ -48,7 +48,7 @@ export class Link implements Base {
         <style>{this.stylesheet.toString()}</style>
         <a
           class={this.getCssClassMap()}
-          {...(!this.disabled ? { href: this.href } : {})}
+          href={this.disabled ? 'javascript:void(0)' : this.href}
           {...(!this.disabled ? { target: this.target } : {})}
           aria-disabled={this.disabled}
         >
