@@ -8,11 +8,12 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  font-weight: 500;
   color: #007DB3;
+  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
   color: #007DB3;
-  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:focus:not(.link--disabled-0-0-8) {
   border-bottom: 2px solid currentColor;
@@ -38,7 +39,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" href="http://example.com" tabindex="0" target="_self">
+    <a class="link-0-0-5" href="http://example.com" target="_self">
       <span class="link__wrapper-0-0-6">
         <slot></slot>
       </span>
@@ -56,11 +57,12 @@ exports[`Link should have link href value when href value is set 1`] = `
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  font-weight: 500;
   color: #007DB3;
+  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
   color: #007DB3;
-  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:focus:not(.link--disabled-0-0-8) {
   border-bottom: 2px solid currentColor;
@@ -86,7 +88,7 @@ exports[`Link should have link href value when href value is set 1`] = `
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" href="http://example.com" tabindex="0" target="_self">
+    <a class="link-0-0-5" href="http://example.com" target="_self">
       <span class="link__wrapper-0-0-6">
         <slot></slot>
       </span>
@@ -104,11 +106,12 @@ exports[`Link should match snapshot 1`] = `
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  font-weight: 500;
   color: #007DB3;
+  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
   color: #007DB3;
-  border-bottom: 1px solid currentColor;
 }
 .link-0-0-5:focus:not(.link--disabled-0-0-8) {
   border-bottom: 2px solid currentColor;
@@ -134,7 +137,7 @@ exports[`Link should match snapshot 1`] = `
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" tabindex="0" target="_self">
+    <a class="link-0-0-5" target="_self">
       <span class="link__wrapper-0-0-6">
         <slot></slot>
       </span>
