@@ -7,43 +7,17 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                    | Type      | Default     |
-| ------------ | ------------- | ------------------------------ | --------- | ----------- |
-| `isExpanded` | `is-expanded` |                                | `boolean` | `undefined` |
-| `label`      | `label`       |                                | `string`  | `'label'`   |
-| `styles`     | `styles`      | (optional) Injected jss styles | `any`     | `undefined` |
-| `tag`        | `tag`         |                                | `string`  | `'li'`      |
+| Property   | Attribute  | Description                    | Type      | Default     |
+| ---------- | ---------- | ------------------------------ | --------- | ----------- |
+| `expanded` | `expanded` | Set to `true` to expand        | `boolean` | `undefined` |
+| `styles`   | `styles`   | (optional) Injected jss styles | `any`     | `undefined` |
 
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `toggleHead` |             | `CustomEvent<any>` |
-| `toggler`    |             | `CustomEvent<any>` |
-
-
-## Methods
-
-### `close() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-### `setFocus() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
+| Event         | Description                                        | Type                                  |
+| ------------- | -------------------------------------------------- | ------------------------------------- |
+| `scaleExpand` | Emitted so parent <scale-accordion> knows about it | `CustomEvent<CollapsibleEventDetail>` |
 
 
 ----------------------------------------------

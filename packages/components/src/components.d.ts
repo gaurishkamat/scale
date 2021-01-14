@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
+import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { InputChangeEventDetail } from "./components/input/input";
 import { StyleSheet } from "jss";
 export namespace Components {
@@ -32,7 +33,13 @@ export namespace Components {
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
+        /**
+          * If `true`, only one scale-collapsible within the accordion can be open at a time
+         */
         "dependent": boolean;
+        /**
+          * (optional) Injected jss styles
+         */
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -215,15 +222,14 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleCollapsible {
-        "close": () => Promise<void>;
-        "isExpanded"?: boolean;
-        "label": string;
-        "setFocus": () => Promise<void>;
+        /**
+          * Set to `true` to expand
+         */
+        "expanded": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "tag"?: string;
     }
     interface ScaleDivider {
         /**
@@ -1152,7 +1158,13 @@ declare namespace LocalJSX {
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {
+        /**
+          * If `true`, only one scale-collapsible within the accordion can be open at a time
+         */
         "dependent"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -1331,15 +1343,18 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleCollapsible {
-        "isExpanded"?: boolean;
-        "label"?: string;
-        "onToggleHead"?: (event: CustomEvent<any>) => void;
-        "onToggler"?: (event: CustomEvent<any>) => void;
+        /**
+          * Set to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
+          * Emitted so parent <scale-accordion> knows about it
+         */
+        "onScaleExpand"?: (event: CustomEvent<CollapsibleEventDetail>) => void;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "tag"?: string;
     }
     interface ScaleDivider {
         /**

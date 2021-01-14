@@ -1,107 +1,127 @@
 import {
-  Element,
   Component,
   h,
   Prop,
-  State,
   Host,
   Event,
+  State,
+  Element,
   EventEmitter,
-  Method,
 } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
+import { StyleSheet } from 'jss';
 import classNames from 'classnames';
 import { styles } from './collapsible.styles';
+import { CssClassMap } from '../../utils/utils';
 import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+
+export interface CollapsibleEventDetail {
+  expanded: boolean;
+}
+
+let i = 0;
 
 @Component({
   tag: 'scale-collapsible',
-  shadow: false,
+  shadow: true,
 })
 export class Collapsible implements Base {
+  headingElement: HTMLElement;
+  panelId: string;
+
   @Element() el: HTMLElement;
+
+  /** Set to `true` to expand */
+  @Prop({ mutable: true, reflect: true }) expanded: boolean;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Collapsible', styles) stylesheet: StyleSheet;
 
-  @Prop() tag?: string = 'li';
-  @Prop() label: string = 'label';
-  @Prop() isExpanded?: boolean;
+  /** Default aria-level for heading */
+  @State() level: number = 2;
 
-  @State() expanded: boolean = false;
+  /** Emitted so parent <scale-accordion> knows about it */
+  @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
 
-  @Event({ eventName: 'toggler' }) onToggle: EventEmitter;
-  @Event({ eventName: 'toggleHead' }) onPress: EventEmitter;
-
-  @Method()
-  async close() {
-    this.expanded = false;
-  }
-
-  @Method()
-  async setFocus() {
-    this.el.querySelector('button').focus();
-  }
-
-  componentWillLoad() {
-    this.expanded = this.isExpanded;
-  }
   componentWillUpdate() {}
-
   componentDidUnload() {}
 
-  handleClick() {
+  componentWillLoad() {
+    this.panelId = 'collapsable-panel-' + i++;
+  }
+
+  componentDidLoad() {
+    this.setHeadingFromLightDOM();
+  }
+
+  connectedCallback() {
+    if (!this.el.hasAttribute('role')) {
+      this.el.setAttribute('role', 'region');
+    }
+  }
+
+  /**
+   * In this method we:
+   * - query the first element from the light DOM, it should be a heading (e.g. h2)
+   * - take its content and place it into our own heading element
+   * - set aria-level to the level of that provided in the light DOM
+   * - remove the original heading
+   * @see https://inclusive-components.design/collapsible-sections/
+   */
+  setHeadingFromLightDOM() {
+    const lightHeading = this.el.querySelector(':first-child');
+    if (lightHeading == null) {
+      return;
+    }
+    const level = parseInt(lightHeading.tagName.substr(1), 10);
+
+    if (!level) {
+      // tslint:disable-next-line
+      console.warn(
+        'The first element inside each <scale-collapsible> should be a heading of an appropriate level.'
+      );
+    }
+    if (level !== this.level) {
+      this.level = level;
+    }
+    this.headingElement.innerHTML = lightHeading.innerHTML;
+    lightHeading.parentNode.removeChild(lightHeading);
+  }
+
+  handleClick = () => {
     this.expanded = !this.expanded;
-    this.onToggle.emit({ expanded: this.expanded });
-  }
-
-  handleKeyDown(event: KeyboardEvent) {
-    // tslint:disable-next-line: no-unused-expression
-    event.key === `ArrowDown` && event.preventDefault();
-    // tslint:disable-next-line: no-unused-expression
-    event.key === `ArrowUp` && event.preventDefault();
-    // tslint:disable-next-line: no-unused-expression
-    event.key === `Home` && event.preventDefault();
-    // tslint:disable-next-line: no-unused-expression
-    event.key === `End` && event.preventDefault();
-
-    this.onPress.emit({ key: event.key });
-  }
+    this.scaleExpand.emit({ expanded: this.expanded });
+  };
 
   render() {
     const { classes } = this.stylesheet;
 
     return (
       <Host>
+        <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
-          <div class={classes['collapsible__wrapper']}>
+          <h2 aria-level={this.level} class={classes['collapsible__heading']}>
             <button
               class={classes['collapsible__button']}
-              onClick={this.handleClick.bind(this)}
-              onKeyDown={this.handleKeyDown.bind(this)}
+              onClick={this.handleClick}
               aria-expanded={this.expanded ? 'true' : 'false'}
+              aria-controls={this.panelId}
             >
-              {/* TODO use scale-icon */}
-              <svg
-                height="16"
-                width="16"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m20.65 7.4c-.3-.3-.75-.3-1.05 0l-7.6 7.6-7.6-7.6c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l8.65 8.65 8.65-8.65c.3-.25.3-.75 0-1.05z"
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                />
-              </svg>
-              <slot name="headline" />
+              <scale-icon-navigation-collapse-down
+                size="16"
+                decorative
+                class={classes['collapsible__icon']}
+              />
+              <span ref={el => (this.headingElement = el)} />
             </button>
-          </div>
-          <div hidden={!this.expanded} class={classes['collapsible__content']}>
-            <slot name="content" />
+          </h2>
+          <div
+            id={this.panelId}
+            hidden={!this.expanded}
+            class={classes['collapsible__content']}
+          >
+            <slot />
           </div>
         </div>
       </Host>
