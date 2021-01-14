@@ -18,8 +18,7 @@ const GRAY_1 = '#262626';
 // const GRAY_2 = '#383838';
 const GRAY_3 = '#6B6B6B';
 const GRAY_4 = '#7C7C7C';
-// not AA on white background
-// const GRAY_5_DECORATIVE = '#A4A4A4';
+const GRAY_5_DECORATIVE = '#A4A4A4';
 const GRAY_6_DECORATIVE = '#D0D0D0';
 const GRAY_7_DECORATIVE = '#DCDCDC';
 // const GRAY_8_DECORATIVE = '#EDEDED';
@@ -145,10 +144,12 @@ const color = {
   link_active: BLUE_DARK,
   link_visited: BLUE_DARK,
   disabled: GRAY_4,
+  disabled_low_contrast: GRAY_5_DECORATIVE,
   error: RED_FUNCTIONAL,
   focus: BLUE_FUNCTIONAL,
   divider: GRAY_6_DECORATIVE,
   table_line: GRAY_6_DECORATIVE,
+  breadcrumb_separator: GRAY_3,
   border_slider_thumb: GRAY_3,
   border_tab: GRAY_6_DECORATIVE,
   slider_track: GRAY_4,
