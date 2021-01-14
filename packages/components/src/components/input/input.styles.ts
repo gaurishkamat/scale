@@ -471,7 +471,7 @@ export const styles: JssStyle = {
     '&.animated': {
       '& label.input__label': {
         color: ({ background }) => background.disabled,
-      }
+      },
     },
     [`
       & label,
