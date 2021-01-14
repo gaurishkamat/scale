@@ -2,11 +2,26 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   collapsible: {
+    position: 'relative',
     marginTop: ({ spacing }) => spacing['4'],
     marginBottom: ({ spacing }) => spacing['4'],
   },
 
-  'collapsible--expanded': {},
+  'collapsible--expanded': {
+    // Accessibility: transparent border for High Contrast Mode in Windows
+    '&::before': {
+      content: '""',
+      display: 'block',
+      position: 'absolute',
+      width: '100%',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: ({ spacing }) => `calc(-1 * ${spacing['4']})`,
+      border: '1px solid transparent',
+      pointerEvents: 'none',
+    },
+  },
 
   collapsible__heading: {
     margin: 0,
