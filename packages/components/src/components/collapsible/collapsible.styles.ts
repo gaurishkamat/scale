@@ -75,10 +75,11 @@ export const styles: JssStyle = {
 
   collapsible__icon: {
     flexShrink: '0',
+    transform: 'rotate(270deg)',
     marginTop: ({ spacing }) => `calc(${spacing['1']} + 1px)`,
 
     '$collapsible__button[aria-expanded="true"] &': {
-      transform: 'rotate(180deg)',
+      transform: 'rotate(0deg)',
     },
   },
 
