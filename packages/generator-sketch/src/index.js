@@ -145,7 +145,7 @@ function findLayers(symbol, predicate, results=[]) {
 
     try {
     if (/^(Card)/.test(symbol.name)) {
-      symbol.layers[0].layers[1].resizingConstraint = 18;      
+      findLayer(symbol, l => l.name === 'div.card').layers[1].resizingConstraint = 18;
     }
     if (/^(Radio|Checkbox)/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;

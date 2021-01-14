@@ -39,11 +39,19 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
           l._height = node._layers[0]._height;
         }
         node._layers = [l];
-        console.log('replacing', node._layers[0], l);
+        // console.log('replacing', node._layers[0], l);
       }
     } else {
       node._layers.forEach((l:any) => replaceSlotsWithLayers(l, layers));
     }
+  };
+
+  const overrideOutline = function(n:HTMLElement) {
+    const style = getComputedStyle(n);
+    if (style.outlineColor === 'rgb(0, 0, 0)' || style.outlineColor === 'rgba(0, 103, 244, 0.247)' ) {
+      n.style.outline = '0';
+    }
+    Array.from(n.children).forEach(overrideOutline);
   };
 
   const materializeStyle = function(n:HTMLElement) {
@@ -59,6 +67,8 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   const processChild = (childNode: HTMLElement) => {
     if (childNode.shadowRoot) {
       // Get parent shadow root element
+      overrideOutline(childNode);
+      Array.from(childNode.shadowRoot.children).forEach(overrideOutline);
       const root = nodeTreeToSketchGroup(childNode, options);
       // Remove slotted content as it is already assigned
       // console.log(printLayers(root));
@@ -92,10 +102,10 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         layer._x -= root._x;
         layer._y -= root._y;
         {
-          console.log('layer', layer._x, layer._y, layer._width, layer._height);
+          // console.log('layer', layer._x, layer._y, layer._width, layer._height);
         }
       });
-      console.log('shadowRoot', root._x, root._y, root._width, root._height);
+      // console.log('shadowRoot', root._x, root._y, root._width, root._height);
       
       layers.push(root);
     } else if (childNode.tagName == 'IFRAME' && (childNode as HTMLIFrameElement).contentDocument) {
@@ -122,12 +132,12 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
             c._y -= root._y;
             root._layers.push(c);
             {
-              const layer = c;
-              console.log('layer', layer._x, layer._y, layer._width, layer._height);
+              // const layer = c;
+              // console.log('layer', layer._x, layer._y, layer._width, layer._height);
             }
           });
         }
-        console.log('<slot>', root._x, root._y, root._width, root._height);
+        // console.log('<slot>', root._x, root._y, root._width, root._height);
         layers.push(root);
       }
     } else if (childNode.tagName === 'SLOT') {
@@ -167,9 +177,9 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         root._layers.forEach((layer:any) => {
           layer._x -= root._x;
           layer._y -= root._y;
-          console.log('>slot', root._x, root._y, layer._x, layer._y, layer._width,  layer._height);
+          // console.log('>slot', root._x, root._y, layer._x, layer._y, layer._width,  layer._height);
         });
-        console.log('>>slot', root._x, root._y, root._width, root._height);
+        // console.log('>>slot', root._x, root._y, root._width, root._height);
       }
       layers.push(root);
     } else {
@@ -257,8 +267,8 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
     group._isVisible = false;
   }
 
-  group._layers.forEach((layer:any) =>
-        console.log(group._name, layer._name, left, top, layer._x, layer._y, layer._width, layer._height));
+  // group._layers.forEach((layer:any) =>
+        // console.log(group._name, layer._name, left, top, layer._x, layer._y, layer._width, layer._height));
 
 
   return group;
