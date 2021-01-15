@@ -279,26 +279,23 @@ export class ScaleChartStackCard {
 import { Collapsible as ICollapsible } from '@scaleds/components-telekom/dist/types/components/collapsible/collapsible';
 export declare interface ScaleCollapsible extends Components.ScaleCollapsible {}
 @ProxyCmp({
-  inputs: ['isExpanded', 'label', 'styles', 'tag'],
-  methods: ['close', 'setFocus']
+  inputs: ['expanded', 'styles']
 })
 @Component({
   selector: 'scale-collapsible',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['isExpanded', 'label', 'styles', 'tag'],
-  outputs: ['toggler', 'toggleHead']
+  inputs: ['expanded', 'styles'],
+  outputs: ['scaleExpand']
 })
 export class ScaleCollapsible {
-  /**  */
-  toggler!: ICollapsible['onToggle'];
-  /**  */
-  toggleHead!: ICollapsible['onPress'];
+  /** Emitted so parent <scale-accordion> knows about it */
+  scaleExpand!: ICollapsible['scaleExpand'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['toggler', 'toggleHead']);
+    proxyOutputs(this, this.el, ['scaleExpand']);
   }
 }
 

@@ -270,18 +270,12 @@ export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
 export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
 
   props: {
+    expanded: {} as PropOptions<Components.ScaleCollapsible['expanded']>,
     styles: {} as PropOptions<Components.ScaleCollapsible['styles']>,
-    tag: {} as PropOptions<Components.ScaleCollapsible['tag']>,
-    label: {} as PropOptions<Components.ScaleCollapsible['label']>,
-    isExpanded: {} as PropOptions<Components.ScaleCollapsible['isExpanded']>,
   },
 
 
-  methods: {
-    close: createCommonMethod('close') as Components.ScaleCollapsible['close'],
-    setFocus: createCommonMethod('setFocus') as Components.ScaleCollapsible['setFocus'],
-  },
-  render: createCommonRender('scale-collapsible', ['toggler', 'toggleHead']),
+  render: createCommonRender('scale-collapsible', ['scaleExpand']),
 });
 
 
