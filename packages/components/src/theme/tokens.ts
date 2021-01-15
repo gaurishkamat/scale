@@ -216,11 +216,6 @@ const type_variants = {
   h3_mobile: typeVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
   h2_mobile: typeVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
   h1_mobile: typeVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
-  // TODO remove by removing scale-text from collapsible usage, and using plain span
-  collapsible: {
-    ...typeVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
-    marginBottom: 0,
-  },
 };
 
 const spacing = {

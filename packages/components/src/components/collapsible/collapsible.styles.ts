@@ -1,63 +1,93 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
-  // Wrapper li
   collapsible: {
-    margin: ({ spacing }) => `calc(0.5 * ${spacing['5']}) 0`,
+    position: 'relative',
+    marginTop: ({ spacing }) => spacing['4'],
+    marginBottom: ({ spacing }) => spacing['4'],
   },
+
   'collapsible--expanded': {
-    marginBottom: 0,
+    // Accessibility: transparent border for High Contrast Mode in Windows
+    '&::before': {
+      content: '""',
+      display: 'block',
+      position: 'absolute',
+      width: '100%',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: ({ spacing }) => `calc(-1 * ${spacing['4']})`,
+      border: '1px solid transparent',
+      pointerEvents: 'none',
+    },
+  },
+
+  collapsible__heading: {
+    margin: 0,
   },
 
   // Button
   collapsible__button: {
+    // Accessibility: allows some "external" typographic styles to leak in
+    // https://www.w3.org/TR/WCAG21/#text-spacing
+    fontFamily: 'inherit',
+    wordSpacing: 'inherit',
+    letterSpacing: 'inherit',
+
     width: '100%',
     display: 'flex',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
+    alignItems: 'flex-start',
     textAlign: 'left',
+    backgroundColor: 'transparent',
+    color: 'currentColor',
+    fontSize: ({ type }) => type.size_4,
+    fontWeight: ({ type }) => type.weight_extrabold,
+    lineHeight: ({ type }) => type.leading_3,
     borderWidth: ({ size }) => size.border_focus,
     borderStyle: 'solid',
     borderColor: 'transparent',
     borderRadius: ({ radii }) => radii.chip,
-    color: 'currentColor',
-    fontFamily: 'inherit',
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingBottom: 0,
+    paddingLeft: ({ spacing }) => spacing['1'],
+
+    '& > span': {
+      marginLeft: ({ spacing }) => spacing.inline,
+    },
+
     '&:hover': {
       color: ({ color }) => color.primary,
       backgroundColor: ({ background }) => background.light,
       cursor: 'pointer',
     },
+
     '&:active': {
       color: ({ color }) => color.primary_active,
     },
+
     '&:focus': {
       outline: 'none',
       borderColor: ({ color }) => color.focus,
     },
-    '&[aria-expanded="true"] svg': {
+  },
+
+  collapsible__icon: {
+    flexShrink: '0',
+    transform: 'rotate(270deg)',
+    marginTop: ({ spacing }) => `calc(${spacing['1']} + 1px)`,
+
+    '$collapsible__button[aria-expanded="true"] &': {
       transform: 'rotate(0deg)',
-    },
-    '& svg': {
-      flexShrink: '0',
-      marginRight: ({ spacing }) => spacing.inline,
-      transform: 'rotate(270deg)',
-      transition: ({ transitions }) =>
-        `opacity ${transitions.duration.shortest}ms`, // TODO use token
     },
   },
 
-  // List
   collapsible__content: {
-    marginTop: 0,
-    marginBottom: 0,
-    paddingTop: ({ spacing }) => spacing['4'],
     paddingRight: ({ spacing }) => spacing['7'],
-    paddingBottom: ({ spacing }) => `calc(0.5 * ${spacing['5']})`,
     paddingLeft: ({ spacing }) => spacing['6'],
-    border: '1px solid transparent',
-    '& ::slotted(*)': {
-      marginTop: 0,
-      marginBottom: 0,
-    },
+    /* These should collapse with tags like p, that's what we want */
+    marginTop: ({ spacing }) => spacing['4'],
+    marginBottom: ({ spacing }) => spacing['5'],
   },
 };
