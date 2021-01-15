@@ -13,10 +13,14 @@ export const styles: JssStyle = {
     '& li': {
       display: 'inline-flex',
       alignItems: 'center',
+      fontSize: '0.875rem',
     },
   },
   separator: {
     display: 'flex',
+    '& path': {
+      fill: ({ color }) => color.breadcrumb_separator,
+    },
   },
   item: {
     padding: ({ spacing }) => `${spacing['1']} ${spacing['2']}`,

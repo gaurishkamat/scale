@@ -32,6 +32,7 @@ export const styles: JssStyle = {
       borderRadius: '50%',
       transform: 'scale(0.66)',
       background: 'currentColor',
+      border: '1px solid currentColor',
     },
 
     '$list-item--nested&::before': {

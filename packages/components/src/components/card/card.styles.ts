@@ -6,7 +6,7 @@ export const styles: JssStyle = {
   card: {
     boxSizing: 'border-box',
     overflow: 'hidden',
-    background: ({ color }) => color.white,
+    background: ({ color }) => color.text_contrast,
     width: '100%',
     transition: ({ transition }) => transition.generic,
     borderRadius: ({ radii }) => radii.card,

@@ -53,7 +53,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
 
 export const config: Config = {
   testing: {
-    testRegex: '/src/.*\\.spec\\.(ts|tsx)$',
+    testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
+    collectCoverageFrom: [
+      '**/src/**/*.{ts,tsx}',
+      '!**/node_modules/**',
+      '!**/*.{d,esm,iife,styles}.ts',
+    ],
   },
   namespace: 'scale-components',
   globalScript: './global',

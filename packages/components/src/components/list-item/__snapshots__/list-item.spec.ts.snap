@@ -22,6 +22,7 @@ exports[`ListItem should match snapshot 1`] = `
 .list-item--unordered-0-0-3 {}
 .list-item--unordered-0-0-3::before {
   top: 0.5em;
+  border: 1px solid currentColor;
   display: block;
   transform: scale(0.66);
   background: currentColor;

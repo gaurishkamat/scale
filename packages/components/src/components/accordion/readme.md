@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type      | Default     |
-| ----------- | ----------- | ----------- | --------- | ----------- |
-| `dependent` | `dependent` |             | `boolean` | `false`     |
-| `styles`    | `styles`    |             | `any`     | `undefined` |
+| Property    | Attribute   | Description                                                                      | Type      | Default     |
+| ----------- | ----------- | -------------------------------------------------------------------------------- | --------- | ----------- |
+| `dependent` | `dependent` | If `true`, only one scale-collapsible within the accordion can be open at a time | `boolean` | `false`     |
+| `styles`    | `styles`    | (optional) Injected jss styles                                                   | `any`     | `undefined` |
 
 
 ----------------------------------------------

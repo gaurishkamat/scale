@@ -78,11 +78,11 @@
       "attributes": [
         {
           "name": "dependent",
-          "description": ""
+          "description": "If `true`, only one scale-collapsible within the accordion can be open at a time"
         },
         {
           "name": "styles",
-          "description": ""
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -423,20 +423,12 @@
       },
       "attributes": [
         {
-          "name": "is-expanded",
-          "description": ""
-        },
-        {
-          "name": "label",
-          "description": ""
+          "name": "expanded",
+          "description": "Set to `true` to expand"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "tag",
-          "description": ""
         }
       ]
     },
@@ -710,6 +702,10 @@
         {
           "name": "icon",
           "description": "(optional) Icon only"
+        },
+        {
+          "name": "icon-accessibility-title",
+          "description": "(optional) Icon title for accessibility"
         },
         {
           "name": "icon-size",

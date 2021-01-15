@@ -78,7 +78,7 @@ export const styles: JssStyle = {
     },
     '$button--disabled&': {
       background: ({ background }) => background.disabled,
-      color: ({ color }) => color.disabled,
+      color: ({ color }) => color.disabled_low_contrast,
     },
   },
 
@@ -98,8 +98,8 @@ export const styles: JssStyle = {
       color: ({ color }) => color.primary_active,
     },
     '$button--disabled&': {
-      borderColor: ({ color }) => color.disabled,
-      color: ({ color }) => color.disabled,
+      borderColor: ({ background }) => background.disabled,
+      color: ({ background }) => background.disabled,
     },
   },
 

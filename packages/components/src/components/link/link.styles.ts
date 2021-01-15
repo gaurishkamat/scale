@@ -5,10 +5,11 @@ export const styles: JssStyle = {
     textDecoration: 'none',
     outline: 'none',
     cursor: 'pointer',
+    fontWeight: ({ type }) => type.weight_medium,
     color: ({ color }) => color.link,
+    borderBottom: ({ size }) => `${size.underline}px solid currentColor`,
     '&:hover&:not($link--disabled)': {
       color: ({ color }) => color.link_hover,
-      borderBottom: ({ size }) => `${size.underline}px solid currentColor`,
     },
     '&:focus:not($link--disabled)': {
       borderBottom: ({ size }) => `${size.border_focus}px solid currentColor`,
