@@ -109,7 +109,7 @@ export class Collapsible implements Base {
               aria-controls={this.panelId}
             >
               <scale-icon-navigation-collapse-down
-                size="16"
+                size={16}
                 decorative
                 class={classes['collapsible__icon']}
               />

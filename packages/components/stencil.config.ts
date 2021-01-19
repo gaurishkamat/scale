@@ -108,6 +108,13 @@ export const config: Config = {
       type: 'docs-json',
       file: './dist/scale-components.json'
     },
-    { type: 'dist-hydrate-script' }
+    { type: 'dist-hydrate-script' },
+    {
+      type: 'dist',
+      esmLoaderPath: '../loader',
+      copy: [
+        { src: 'components/icons/scale-icons.json', warn: true }
+      ]
+    },
   ]
 }
