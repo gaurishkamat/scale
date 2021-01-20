@@ -74,7 +74,7 @@ export class Slider implements Base {
     }
   }
   componentWillUpdate() {}
-  componentDidUnload() {
+  disconnectedCallback() {
     this.removeGlobalListeners();
   }
 

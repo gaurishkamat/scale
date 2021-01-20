@@ -36,7 +36,7 @@ export class Tag implements Base {
   @Event() scaleClose: EventEmitter<MouseEvent>;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   handleClose(event) {
     event.preventDefault();

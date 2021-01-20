@@ -27,7 +27,7 @@ export class Toast implements Base {
   /** (optional) Toast variant */
   @Prop() variant?: string = '';
   /** (optional) Toast opened */
-  @Prop({ reflectToAttr: true }) opened?: boolean;
+  @Prop({ reflect: true }) opened?: boolean;
   /** (optional) Toast autohide time */
   @Prop() autoHide?: boolean | number = false;
   /** (optional) Animated toast */
@@ -49,7 +49,7 @@ export class Toast implements Base {
   @Element() element: HTMLElement;
 
   /** (optional) Injected jss styles */
-  @Prop({ reflectToAttr: true }) styles?: StyleSheet;
+  @Prop({ reflect: true }) styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Toast', styles) stylesheet: StyleSheet;
 
@@ -57,7 +57,7 @@ export class Toast implements Base {
 
   timerId = null;
 
-  componentDidUnload() {
+  disconnectedCallback() {
     if (this.timerId) {
       clearTimeout(this.timerId);
       this.timerId = null;

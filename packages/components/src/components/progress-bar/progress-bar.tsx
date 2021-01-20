@@ -50,7 +50,7 @@ export class ProgressBar implements Base {
     }
   }
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   transitions = (width: number) => `
     @keyframes showProgress {

@@ -85,7 +85,6 @@ export class Modal implements Base {
     }
   }
 
-  componentDidUnload() {}
   componentWillUpdate() {}
 
   disconnectedCallback() {
@@ -233,7 +232,19 @@ export class Modal implements Base {
                 aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">
-                  <scale-icon-action-circle-close />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                  >
+                    <g>
+                      <path
+                        d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zM7.95 7.95c.3-.3.75-.3 1.05 0l3 3 3-3c.3-.3.75-.3 1.05 0s.3.75 0 1.05l-3 3 3 3c.3.3.3.75 0 1.05s-.75.3-1.05 0l-3-3-3 3c-.3.3-.75.3-1.05 0s-.3-.75 0-1.05l3-3-3-3c-.3-.3-.3-.75 0-1.05z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </g>
+                  </svg>
                 </slot>
               </button>
             </div>

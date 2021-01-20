@@ -40,7 +40,7 @@ export class Table implements Base {
     });
   }
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     return (

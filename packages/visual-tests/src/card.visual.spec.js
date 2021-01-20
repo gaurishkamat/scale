@@ -1,12 +1,12 @@
-describe("Card", () => {
-  test.each([["standard"], ["disabled"], ["long-text"]])(
-    "matches snapshot",
-    async variant => {
+describe('Card', () => {
+  test.each([['standard'], ['with-link'], ['with-image']])(
+    '%p',
+    async (variant) => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-card--${variant}`
+        `http://host.docker.internal:3123/iframe.html?id=components-card--${variant}&viewMode=story`
       );
-      await page.waitForSelector("html.hydrated");
-      const previewHtml = await page.$("body");
+      await page.waitForSelector('html.hydrated');
+      const previewHtml = await page.$('body');
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     }
   );

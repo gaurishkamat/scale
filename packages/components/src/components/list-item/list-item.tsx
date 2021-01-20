@@ -32,7 +32,7 @@ export class ListItem implements Base {
   @State() isNested: boolean = false;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   componentWillLoad() {
     this.isNested = this.isNestedCheck();

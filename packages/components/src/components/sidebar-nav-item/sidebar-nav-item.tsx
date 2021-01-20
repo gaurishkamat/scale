@@ -24,7 +24,7 @@ export class SidebarNavItem implements Base {
   @Prop() isCurrent: boolean = false;
 
   componentWillLoad() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   render() {

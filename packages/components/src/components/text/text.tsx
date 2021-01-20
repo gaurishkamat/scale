@@ -38,7 +38,7 @@ export class Text implements Base {
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   componentWillRender() {
     // We avoid calling this.stylesheet.addRules(this.variants)
