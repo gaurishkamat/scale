@@ -25,7 +25,7 @@ const svgo = new SVGO({
 
 const INPUT_GLOB = './data/icons/**/*.svg';
 const OUTPUT_PATH = './src/components/icons';
-const ICON_TEMPLATE_PATH = './scripts/component.hbs';
+const ICON_TEMPLATE_PATH = './scripts/icon-component.hbs';
 // const SET_TEMPLATE_PATH = './scripts/set.hbs';
 const EXT = '.svg';
 
