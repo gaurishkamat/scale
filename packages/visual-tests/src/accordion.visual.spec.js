@@ -7,7 +7,7 @@ describe('Accordion', () => {
     const previewHtml = await page.$('body');
 
     const firstButton = await page.evaluateHandle(
-      `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1) > div > div:nth-child(1) > button")`
+      `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1)").shadowRoot.querySelector("div > h2 > button")`
     );
     await firstButton.click();
 
