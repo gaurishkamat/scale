@@ -173,7 +173,7 @@ When using the `name` attribute, the component assumes there is an object with a
         }}>
           {category.items.map(item => {
             let markup = () => ({
-              __html: `<scale-icon-${category.category}-${item} />`
+              __html: `<scale-icon-${category.category}-${item} accessibility-title="${item}" />`
             })
             return (
               <div key={item}>
