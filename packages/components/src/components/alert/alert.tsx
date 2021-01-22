@@ -21,9 +21,9 @@ export class Alert implements Base {
   /** (optional) Alert variant */
   @Prop() variant?: string = '';
   /** (optional) Alert title */
-  @Prop({ reflectToAttr: true }) headline: string;
+  @Prop({ reflect: true }) headline: string;
   /** (optional) Alert opened */
-  @Prop({ reflectToAttr: true }) opened: boolean;
+  @Prop({ reflect: true }) opened: boolean;
   /** (optional) Alert timeout */
   @Prop() timeout?: boolean | number = false;
   /** (optional) Alert icon */
@@ -42,7 +42,7 @@ export class Alert implements Base {
     this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
   }
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   close = () => {
     this.opened = false;

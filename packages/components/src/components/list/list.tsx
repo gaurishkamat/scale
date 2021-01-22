@@ -31,7 +31,7 @@ export class List implements Base {
   }
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   componentDidLoad() {
     this.propagatePropsToChildren(this.ordered);

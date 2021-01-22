@@ -85,7 +85,7 @@ export class TabNav implements Base {
     this.selectTab(nextTab);
   }
 
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   connectedCallback() {
@@ -94,7 +94,7 @@ export class TabNav implements Base {
     }
   }
 
-  componentDidLoad() {
+  componentDidRender() {
     Promise.all([
       customElements.whenDefined('scale-tab-header'),
       customElements.whenDefined('scale-tab-panel'),

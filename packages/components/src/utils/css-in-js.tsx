@@ -62,7 +62,7 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
   };
 
   return (target: ComponentInterface, propertyKey: string) => {
-    const { render, componentDidUnload } = target;
+    const { render, disconnectedCallback } = target;
 
     target.render = function() {
       const newKey = getComponentKey(componentKey, this);
@@ -78,19 +78,19 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
       return render.call(this);
     };
 
-    if (!componentDidUnload) {
+    if (!disconnectedCallback) {
       // tslint:disable-next-line: no-console
       return console.warn(
-        `ConstructibleStyle requires you to have a \`componentDidUnload\` lifecycle method in \`${target.constructor.name}\`. Failure to add this function may cause ConstructibleStyle to fail due to StencilJS build optimizations.`
+        `ConstructibleStyle requires you to have a \`disconnectedCallback\` lifecycle method in \`${target.constructor.name}\`. Failure to add this function may cause ConstructibleStyle to fail due to StencilJS build optimizations.`
       );
     }
 
-    target.componentDidUnload = function() {
+    target.disconnectedCallback = function() {
       if (this.key) {
         sheetManager.unmanage(this.key);
       }
 
-      return componentDidUnload.call(this);
+      return disconnectedCallback.call(this);
     };
   };
 }

@@ -164,8 +164,6 @@ export class Input implements Base {
   }
 
   componentWillUpdate() {}
-  componentDidUnload() {}
-
   componentDidRender() {
     // When type `select` and `controlled` is true,
     // make sure the <select> is always in sync with the value.

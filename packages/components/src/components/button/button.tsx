@@ -68,7 +68,7 @@ export class Button implements Base {
   };
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   connectedCallback() {
     this.setIconPositionProp();
