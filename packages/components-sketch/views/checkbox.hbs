@@ -3,7 +3,7 @@
 <div data-sketch-artboard="Checkbox" class="artboard">
   <h1 class="title--artboard">Checkbox</h1>
 
-  <h2 class="title--artboard-section">Default</h2>
+  <h2 class="title--artboard-section">Standard</h2>
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
@@ -51,23 +51,23 @@
     </div>
   </div>
 
-  <h2 class="title--artboard-section">Default Error</h2>
+  <h2 class="title--artboard-section">Standard Error</h2>
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-input status="error" type="checkbox" data-sketch-key="checkbox-11" label="Checkbox Label" icon="{{>icon}}"></scale-input>
+      <scale-input status="error" helper-text="Error message" type="checkbox" data-sketch-key="checkbox-11" label="Checkbox Label" icon="{{>icon}}"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-input status="error" type="checkbox" data-sketch-key="checkbox-12" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="hover"></scale-input>
+      <scale-input status="error" helper-text="Error message" type="checkbox" data-sketch-key="checkbox-12" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="hover"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-input status="error" type="checkbox" data-sketch-key="checkbox-13" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="focus"></scale-input>
+      <scale-input status="error" helper-text="Error message" type="checkbox" data-sketch-key="checkbox-13" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="focus"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
-      <scale-input status="error" type="checkbox" data-sketch-key="checkbox-14" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="active"></scale-input>
+      <scale-input status="error" helper-text="Error message" type="checkbox" data-sketch-key="checkbox-14" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="active"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
@@ -78,19 +78,19 @@
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-input status="error" checked type="checkbox" data-sketch-key="checkbox-15" label="Checkbox Label" icon="{{>icon}}"></scale-input>
+      <scale-input status="error" helper-text="Error message" checked type="checkbox" data-sketch-key="checkbox-15" label="Checkbox Label" icon="{{>icon}}"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-input status="error" checked type="checkbox" data-sketch-key="checkbox-16" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="hover"></scale-input>
+      <scale-input status="error" helper-text="Error message" checked type="checkbox" data-sketch-key="checkbox-16" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="hover"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-input status="error" checked type="checkbox" data-sketch-key="checkbox-17" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="focus"></scale-input>
+      <scale-input status="error" helper-text="Error message" checked type="checkbox" data-sketch-key="checkbox-17" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="focus"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
-      <scale-input status="error" checked type="checkbox" data-sketch-key="checkbox-18" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="active"></scale-input>
+      <scale-input status="error" helper-text="Error message" checked type="checkbox" data-sketch-key="checkbox-18" label="Checkbox Label" icon="{{>icon}}" data-sketch-state="active"></scale-input>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
@@ -102,7 +102,7 @@
 <script>
     Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
         btn.dataset.sketchSymbol = `Checkbox / ${
-                order(1, btn.hasAttribute('checked') ? 'Selected' : 'Default')
+                order(1, btn.hasAttribute('checked') ? 'Selected' : 'Standard')
             } / ${
                 order(2, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
             } / ${

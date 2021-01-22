@@ -128,7 +128,7 @@ function getFontWeight(fontFamily: string, fontWeight: string, fontStyle: string
     if (weight === 500 && fontStyle === 'italic') { return '-MediumItalic'; }
     if (weight === 500) { return '-Medium'; }
     if (weight === 400 && fontStyle === 'italic') { return '-RegularItalic'; }
-    if (weight === 400) { return '-Regular'; }
+    if (weight === 400) { return '-Medium'; }
     if (weight <= 300 && fontStyle === 'italic') { return '-ThinItalic'; }
     if (weight <= 300) { return '-Thin'; }
 

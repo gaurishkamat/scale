@@ -8,10 +8,11 @@ scale-switch * {
     box-sizing: content-box;
 }
 
-*:focus,
-*:focus-within {
+:focus,
+:focus-within {
     outline: 0;
 }
+
 
 html,
 body {

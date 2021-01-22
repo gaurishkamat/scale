@@ -23,28 +23,6 @@
         </div>
     </div>
 
-    <h2 class="title--artboard-section">Label On - Counter Off</h2>
-    <div class="agent-states--vertical-grid">
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-4" label="Slider Label" value="40" show-value="false" track-small></scale-slider>
-        </div>
-        <div class="agent-states--item">
-            magenta
-        </div>
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-5" label="Slider Label" value="40" show-value="false" track-small custom-color="#009DE0"></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          custom color
-        </div>
-        <div class="agent-states--item">
-          <scale-slider data-sketch-key="slider-6" label="Slider Label" value="40" show-value="false" track-small disabled></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          disabled
-        </div>
-    </div>
-
     <h2 class="title--artboard-section">Label Off - Counter On</h2>
     <div class="agent-states--vertical-grid">
         <div class="agent-states--item">
@@ -67,27 +45,6 @@
         </div>
     </div>
 
-    <h2 class="title--artboard-section">Label Off - Counter Off</h2>
-    <div class="agent-states--vertical-grid">
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-10" value="40" show-value="false" track-small></scale-slider>
-        </div>
-        <div class="agent-states--item">
-            magenta
-        </div>
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-11" value="40" show-value="false" track-small custom-color="#009DE0"></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          custom color
-        </div>
-        <div class="agent-states--item">
-          <scale-slider data-sketch-key="slider-12" value="40" show-value="false" track-small disabled></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          disabled
-        </div>
-    </div>
 </div>
 
 <div data-sketch-artboard="Slider Track Large" class="artboard" data-category="Large">
@@ -115,28 +72,6 @@
         </div>
     </div>
 
-    <h2 class="title--artboard-section">Label On - Counter Off</h2>
-    <div class="agent-states--vertical-grid">
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-16" label="Slider Label" value="40" show-value="false" track-height="5"></scale-slider>
-        </div>
-        <div class="agent-states--item">
-            magenta
-        </div>
-        <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-17" label="Slider Label" value="40" show-value="false" track-height="5" custom-color="#009DE0"></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          custom color
-        </div>
-        <div class="agent-states--item">
-          <scale-slider data-sketch-key="slider-18" label="Slider Label" value="40" show-value="false" track-height="5" disabled></scale-slider>
-        </div>
-        <div class="agent-states--item">
-          disabled
-        </div>
-    </div>
-
     <h2 class="title--artboard-section">Label Off - Counter On</h2>
     <div class="agent-states--vertical-grid">
         <div class="agent-states--item">
@@ -158,28 +93,55 @@
           disabled
         </div>
     </div>
+</div>
 
-    <h2 class="title--artboard-section">Label Off - Counter Off</h2>
+<div data-sketch-artboard="Slider Large Thumb" class="artboard" data-category="Large Thumb">
+    <h1 class="title--artboard">Slider Large Thumb</h1>
+
+    <h2 class="title--artboard-section">Label On - Counter On</h2>
     <div class="agent-states--vertical-grid">
         <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-22" value="40" show-value="false" track-height="5"></scale-slider>
+            <scale-slider data-sketch-key="slider-lt-13" thumb-large="true" label="Slider Label" value="40" track-height="5"></scale-slider>
         </div>
         <div class="agent-states--item">
             magenta
         </div>
         <div class="agent-states--item">
-            <scale-slider data-sketch-key="slider-23" value="40" show-value="false" track-height="5" custom-color="#009DE0"></scale-slider>
+            <scale-slider data-sketch-key="slider-lt-14" thumb-large="true" label="Slider Label" value="40" track-height="5" custom-color="#009DE0"></scale-slider>
         </div>
         <div class="agent-states--item">
           custom color
         </div>
         <div class="agent-states--item">
-          <scale-slider data-sketch-key="slider-24" value="40" show-value="false" track-height="5" disabled></scale-slider>
+          <scale-slider data-sketch-key="slider-lt-15" thumb-large="true" label="Slider Label" value="40" track-height="5" disabled></scale-slider>
         </div>
         <div class="agent-states--item">
           disabled
         </div>
     </div>
+
+    <h2 class="title--artboard-section">Label Off - Counter On</h2>
+    <div class="agent-states--vertical-grid">
+        <div class="agent-states--item">
+            <scale-slider data-sketch-key="slider-lt-19" thumb-large="true" value="40" track-height="5"></scale-slider>
+        </div>
+        <div class="agent-states--item">
+            magenta
+        </div>
+        <div class="agent-states--item">
+            <scale-slider data-sketch-key="slider-lt-20" thumb-large="true" value="40" track-height="5" custom-color="#009DE0"></scale-slider>
+        </div>
+        <div class="agent-states--item">
+          custom color
+        </div>
+        <div class="agent-states--item">
+          <scale-slider data-sketch-key="slider-lt-21" thumb-large="true" value="40" track-height="5" disabled></scale-slider>
+        </div>
+        <div class="agent-states--item">
+          disabled
+        </div>
+    </div>
+
 </div>
 
 <script src="/symbol_names.js"></script>
@@ -189,8 +151,6 @@
                 order(0, getCategoryName(btn))
             } / ${
                 order(2, btn.hasAttribute('label') ? 'Label On' : 'Label Off')
-            } / ${
-                order(1, btn.hasAttribute('show-value') ? 'Counter Off' : 'Counter On')
             } / ${
                 order(4, btn.hasAttribute('disabled') ? 'Disabled' : (btn.hasAttribute('custom-color') ? 'Custom Color' : 'Normal'))
             }`;

@@ -47,7 +47,7 @@ function findLayers(symbol, predicate, results=[]) {
   if (predicate(symbol)) results.push(symbol);
   if (symbol.layers) {
     for (let i = 0; i < symbol.layers.length; i++) {
-      findLayer(symbol.layers[i], predicate, results);
+      findLayers(symbol.layers[i], predicate, results);
     }
   }
   return results;
@@ -168,6 +168,7 @@ function findLayers(symbol, predicate, results=[]) {
     }
     if (/^Breadcrumb/.test(symbol.name)) {
       symbol.layers[0].resizingConstraint = 9;
+      findLayers(symbol.layers[0], l => l.resizingConstraint = 9);
     }
     if (/^Modal/.test(symbol.name)) {
       symbol.layers[0].layers[1].resizingConstraint = 45;
@@ -666,7 +667,7 @@ function findLayers(symbol, predicate, results=[]) {
           if (l.frame.y + l.frame.height > maxY) maxY = l.frame.y + l.frame.height;
         }
       });
-      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol) {
+      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol && (!(node.layers[0] && node.layers[0].name === 'Background'))) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
