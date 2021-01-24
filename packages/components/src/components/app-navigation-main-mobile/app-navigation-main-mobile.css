@@ -48,6 +48,16 @@ app-navigation-main-mobile {
   transition: var(--transition-out);
 }
 
+.main-navigation-mobile__item-link--selected
+  .main-navigation-mobile__item {
+  border-right: 2px solid #e20074;
+}
+
+.main-navigation-mobile__item-link--selected
+  scale-icon {
+  margin-right: -2px;
+}
+
 .main-navigation-mobile__child-menu {
   position: absolute;
   top: 0;
@@ -108,6 +118,14 @@ svg path {
   color: #e20074;
 }
 
+.main-navigation-mobile__child-menu-item-link.selected .main-navigation-mobile__child-menu-item-wrapper {
+  border-right: 2px solid #e20074;
+}
+
+.main-navigation-mobile__child-menu-item-link.selected scale-icon {
+  margin-right: 38px;
+}
+
 .main-navigation-mobile__child-menu-item {
   font-size: 1.5rem;
   line-height: 2.5;
@@ -121,6 +139,7 @@ svg path {
   align-items: center;
   border-bottom: 1px solid #efefef;
   margin-left: 64px;
+  box-sizing: border-box;
 }
 
 .main-navigation-mobile__child-menu-item-wrapper scale-icon {
