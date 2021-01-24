@@ -43,7 +43,7 @@ export class MegaMenu {
                             }
                           }}
                         >
-                          {menuItem.name}
+                          <span>{menuItem.name}</span>
                           {this.activeRouteId === menuItem.id && (
                             <span class="sr-only">active</span>
                           )}

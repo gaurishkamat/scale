@@ -354,24 +354,48 @@
     .main-navigation__item:hover
     .main-navigation__item-link {
     color: #f90984;
-    border-bottom: 1px solid transparent;
-    margin-bottom: -1px;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item:hover
+    .main-navigation__item-link-text {
+    border-bottom: 2px solid #f90984;
+    margin-bottom: -2px;
+    height: calc(100% - 4px);
+    display: flex;
+    align-items: center;
   }
   .header
     .main-navigation
     .main-navigation__item:active
     .main-navigation__item-link {
     color: #cb0068;
-    border-bottom: 1px solid transparent;
-    margin-bottom: -1px;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item:active
+    .main-navigation__item-link-text {
+    border-bottom: 2px solid #cb0068;
+    margin-bottom: -2px;
+    height: calc(100% - 4px);
+    display: flex;
+    align-items: center;
   }
   .header
     .main-navigation
     .main-navigation__item.selected
     .main-navigation__item-link {
     color: #e20074;
-    border-bottom: 1px solid transparent;
-    margin-bottom: -1px;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item.selected
+    .main-navigation__item-link-text {
+    border-bottom: 2px solid #e20074;
+    margin-bottom: -2px;
+    height: calc(100% - 4px);
+    display: flex;
+    align-items: center;
   }
 
   .header .header__brand-content .header__brand-branding {

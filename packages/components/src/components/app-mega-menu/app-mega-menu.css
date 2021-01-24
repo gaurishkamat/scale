@@ -46,8 +46,15 @@
 .mega-menu__row-item.active,
 .mega-menu__row-item:hover {
   color: #e20074;
-  border-bottom: 1px solid transparent;
   margin-bottom: 7px;
+}
+
+.mega-menu__row-item.active span,
+.mega-menu__row-item:hover span {
+  padding-bottom: 2px;
+  margin-bottom: -2px;
+  display: inline-block;
+  border-bottom: 1px solid #e20074;
 }
 
 .mega-menu__row li {
