@@ -342,7 +342,7 @@
     height: 100%;
     display: flex;
     font-size: 1.25rem;
-    transition: color 0.2s ease-in-out;
+    transition: color, border 0.2s ease-in-out;
     align-items: center;
     font-weight: 800;
     line-height: 1.2;

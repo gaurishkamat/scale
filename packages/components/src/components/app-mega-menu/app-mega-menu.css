@@ -38,7 +38,7 @@
   font-weight: 500;
   color: #262626;
   text-decoration: none;
-  transition: color 0.15s ease-in-out;
+  transition: color, border 0.15s ease-in-out;
   margin-bottom: 8px;
   display: block;
 }
