@@ -15,9 +15,9 @@ export class MegaMenu {
     return (
       <div class="mega-menu">
         <div class="mega-menu__wrapper">
-          <ul class="mega-menu__container">
+          <div class="mega-menu__container">
             {this.navigation.map(child => (
-              <li class="mega-menu__row">
+              <ul class="mega-menu__row">
                 <li class="mega-menu__row-title">{child.name}</li>
                 <ul>
                   {child.children &&
@@ -51,9 +51,9 @@ export class MegaMenu {
                       </li>
                     ))}
                 </ul>
-              </li>
+              </ul>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     );
