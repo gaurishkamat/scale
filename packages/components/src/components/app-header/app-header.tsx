@@ -87,11 +87,7 @@ export class Header {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
-                if (!this.visibleMegaMenu) {
-                  this.visibleMegaMenu = item.children ? item.name : null;
-                  return;
-                }
-                this.visibleMegaMenu = '';
+                this.visibleMegaMenu = item.children ? item.name : null;
               }}
               onKeyDown={event => {
                 if (['Enter', ' '].includes(event.key)) {
