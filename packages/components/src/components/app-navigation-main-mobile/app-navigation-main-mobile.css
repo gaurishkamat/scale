@@ -48,13 +48,11 @@ app-navigation-main-mobile {
   transition: var(--transition-out);
 }
 
-.main-navigation-mobile__item-link--selected
-  .main-navigation-mobile__item {
+.main-navigation-mobile__item-link--selected .main-navigation-mobile__item {
   border-right: 2px solid #e20074;
 }
 
-.main-navigation-mobile__item-link--selected
-  scale-icon {
+.main-navigation-mobile__item-link--selected scale-icon {
   margin-right: -2px;
 }
 
@@ -118,7 +116,8 @@ svg path {
   color: #e20074;
 }
 
-.main-navigation-mobile__child-menu-item-link.selected .main-navigation-mobile__child-menu-item-wrapper {
+.main-navigation-mobile__child-menu-item-link.selected
+  .main-navigation-mobile__child-menu-item-wrapper {
   border-right: 2px solid #e20074;
 }
 
