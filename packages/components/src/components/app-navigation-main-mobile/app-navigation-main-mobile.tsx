@@ -124,12 +124,13 @@ export class MainNavigationMobile {
         >
           {section.children.map(child => (
             <a
+              aria-current={isActive(child) ? 'true' : 'false'}
+              aria-haspopup={child.children ? 'true' : 'false'}
               class={`main-navigation-mobile__child-menu-item-link ${
                 isActive(child) ? 'selected' : ''
               }`}
               href={child.href || 'javascript:void(0);'}
               tabIndex={0}
-              aria-current={isActive(child)}
               onClick={event => {
                 this.handleSelect(event, child);
               }}
@@ -168,6 +169,7 @@ export class MainNavigationMobile {
   render() {
     const { selected } = findSelected(this.navigation, this.activeRouteId);
     const rootNode = selected && findRootNode(this.navigation, selected.id);
+    const isActive = itemId => rootNode && rootNode.id === itemId;
     return (
       <div class="main-navigation-mobile">
         {this.childMenuPage()}
@@ -179,8 +181,10 @@ export class MainNavigationMobile {
         >
           {this.navigation.map(item => (
             <a
+              aria-current={isActive(item.id) ? 'true' : 'false'}
+              aria-haspopup={item.children ? 'true' : 'false'}
               class={`main-navigation-mobile__item-link${
-                rootNode && rootNode.id === item.id
+                isActive(item.id)
                   ? ' main-navigation-mobile__item-link--selected'
                   : ''
               }`}
@@ -211,6 +215,7 @@ export class MainNavigationMobile {
               <li class="main-navigation-mobile__item">
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
+                  {isActive(item.id) && <span class="sr-only">active</span>}
                   {item.children && <scale-icon name="ahead"></scale-icon>}
                 </div>
               </li>
