@@ -1,12 +1,6 @@
 source ./scripts/_colors.sh;
 echo "This will setup the project, build components and then Storybook"
 echo "--------"
-echo "${GREEN}Installing dependencies...${NC}"
-yarn install;
-echo "--------"
-echo "${GREEN}Bootstrapping lerna...${NC}"
-yarn bootstrap;
-echo "--------"
 echo "${GREEN}Building Components...${NC}"
 yarn workspace @scaleds/components-telekom build;
 echo "--------"
