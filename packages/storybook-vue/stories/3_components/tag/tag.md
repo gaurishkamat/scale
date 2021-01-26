@@ -1,4 +1,7 @@
-# Tag
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tag</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
