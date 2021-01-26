@@ -1,4 +1,7 @@
-# Tab Navigation
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tab Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tabs allow users to quickly switch between different sections of a topic.
 

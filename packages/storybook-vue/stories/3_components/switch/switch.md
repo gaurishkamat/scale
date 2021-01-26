@@ -1,4 +1,7 @@
-# Switch
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Switch</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Switches allow users to quickly turn an item on or off. Like a physical light switch, they provide an immediate result.
 
