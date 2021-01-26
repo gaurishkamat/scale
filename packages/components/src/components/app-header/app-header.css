@@ -387,7 +387,23 @@
   }
   .header
     .main-navigation
+    .main-navigation__item.mega-menu--visible
+    .main-navigation__item-link {
+    color: #e20074;
+  }
+  .header
+    .main-navigation
     .main-navigation__item.selected
+    .main-navigation__item-link-text {
+    border-bottom: 2px solid #e20074;
+    margin-bottom: -2px;
+    height: calc(100% - 4px);
+    display: flex;
+    align-items: center;
+  }
+  .header
+    .main-navigation
+    .main-navigation__item.mega-menu--visible
     .main-navigation__item-link-text {
     border-bottom: 2px solid #e20074;
     margin-bottom: -2px;
