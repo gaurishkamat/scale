@@ -124,8 +124,8 @@ export class MainNavigationMobile {
         >
           {section.children.map(child => (
             <a
-              aria-current={isActive(child)}
-              aria-haspopup={!!child.children}
+              aria-current={isActive(child) ? 'true' : 'false'}
+              aria-haspopup={child.children ? 'true' : 'false'}
               class={`main-navigation-mobile__child-menu-item-link ${
                 isActive(child) ? 'selected' : ''
               }`}
@@ -181,8 +181,8 @@ export class MainNavigationMobile {
         >
           {this.navigation.map(item => (
             <a
-              aria-current={isActive(item.id)}
-              aria-haspopup={!!item.children}
+              aria-current={isActive(item.id) ? 'true' : 'false'}
+              aria-haspopup={item.children ? 'true' : 'false'}
               class={`main-navigation-mobile__item-link${
                 isActive(item.id)
                   ? ' main-navigation-mobile__item-link--selected'

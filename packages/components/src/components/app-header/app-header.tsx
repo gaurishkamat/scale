@@ -77,8 +77,8 @@ export class Header {
             <a
               class="main-navigation__item-link"
               href={item.href || 'javascript:void(0);'}
-              aria-current={isActive(item)}
-              aria-haspopup={!!item.children}
+              aria-current={isActive(item) ? 'true' : 'false'}
+              aria-haspopup={item.children ? 'true' : 'false'}
               onClick={event => {
                 if (item.href) {
                   this.visibleMegaMenu = '';
@@ -186,7 +186,9 @@ export class Header {
                 onFocus={() => {
                   window.scrollTo({ top: 0 });
                 }}
-                aria-current={this.activeSegment.id === item.id}
+                aria-current={
+                  this.activeSegment.id === item.id ? 'true' : 'false'
+                }
               >
                 {item.name}
                 {this.activeSegment.id === item.id && (

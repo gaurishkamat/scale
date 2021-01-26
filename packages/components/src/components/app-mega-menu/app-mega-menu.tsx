@@ -28,7 +28,11 @@ export class MegaMenu {
                           class={`mega-menu__row-item ${
                             this.activeRouteId === menuItem.id ? 'active' : ''
                           }`}
-                          aria-current={this.activeRouteId === menuItem.id}
+                          aria-current={
+                            this.activeRouteId === menuItem.id
+                              ? 'true'
+                              : 'false'
+                          }
                           href={menuItem.href || 'javascript:void(0);'}
                           tabIndex={this.isActive ? 0 : -1}
                           onClick={event => {

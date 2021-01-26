@@ -267,7 +267,6 @@
     transition: all 0.2s ease-in-out;
     font-weight: 800;
     line-height: 1.143;
-    border-bottom: 1px solid transparent;
     text-decoration: none;
   }
   .header .addon-navigation .addon-navigation__item-link:hover {
@@ -285,7 +284,6 @@
     transition: all 0.2s ease-in-out;
     font-weight: 800;
     line-height: 1.143;
-    border-bottom: 1px solid transparent;
     text-decoration: none;
   }
   .header .segment-navigation .segment-navigation__item-link:hover,
