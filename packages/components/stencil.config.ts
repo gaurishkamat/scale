@@ -1,5 +1,5 @@
 import { Config } from '@stencil/core';
-import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
+import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget, ComponentModelConfig } from '@nowseemee/vue-output-target';
 import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
 

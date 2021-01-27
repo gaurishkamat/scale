@@ -3,11 +3,10 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@scaleds/components-telekom';
+import type { JSX } from '@scaleds/components-telekom';
 
-import { defineCustomElements, applyPolyfills } from '@scaleds/components-telekom/loader';
 
-applyPolyfills().then(() => defineCustomElements());
+
 export const AppLogo = /*@__PURE__*/createReactComponent<JSX.AppLogo, HTMLAppLogoElement>('app-logo');
 export const AppMegaMenu = /*@__PURE__*/createReactComponent<JSX.AppMegaMenu, HTMLAppMegaMenuElement>('app-mega-menu');
 export const AppNavigationMainMobile = /*@__PURE__*/createReactComponent<JSX.AppNavigationMainMobile, HTMLAppNavigationMainMobileElement>('app-navigation-main-mobile');
@@ -23,6 +22,7 @@ export const ScaleCard = /*@__PURE__*/createReactComponent<JSX.ScaleCard, HTMLSc
 export const ScaleCarousel = /*@__PURE__*/createReactComponent<JSX.ScaleCarousel, HTMLScaleCarouselElement>('scale-carousel');
 export const ScaleChartStackCard = /*@__PURE__*/createReactComponent<JSX.ScaleChartStackCard, HTMLScaleChartStackCardElement>('scale-chart-stack-card');
 export const ScaleCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleCollapsible, HTMLScaleCollapsibleElement>('scale-collapsible');
+export const ScaleDatePicker = /*@__PURE__*/createReactComponent<JSX.ScaleDatePicker, HTMLScaleDatePickerElement>('scale-date-picker');
 export const ScaleDivider = /*@__PURE__*/createReactComponent<JSX.ScaleDivider, HTMLScaleDividerElement>('scale-divider');
 export const ScaleIcon = /*@__PURE__*/createReactComponent<JSX.ScaleIcon, HTMLScaleIconElement>('scale-icon');
 export const ScaleIconActionAdd = /*@__PURE__*/createReactComponent<JSX.ScaleIconActionAdd, HTMLScaleIconActionAddElement>('scale-icon-action-add');
