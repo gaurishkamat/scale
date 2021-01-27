@@ -11,10 +11,10 @@ export class NavigationSectorMobile {
   @Prop() activeSectorId?: string;
   // @ts-ignore
   @State() selected: MenuItem = this.navigation
-    // @ts-ignore
-    ? this.navigation.find(({ id }) => id === this.activeSectorId) ||
-    // @ts-ignore
-    this.navigation[0]
+    ? // @ts-ignore
+      this.navigation.find(({ id }) => id === this.activeSectorId) ||
+      // @ts-ignore
+      this.navigation[0]
     : ({} as MenuItem);
 
   @Watch('activeSectorId')

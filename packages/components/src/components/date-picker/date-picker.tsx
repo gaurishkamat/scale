@@ -1,11 +1,4 @@
-import {
-  Component,
-  h,
-  Prop,
-  Method,
-  Event,
-  EventEmitter,
-} from '@stencil/core';
+import { Component, h, Prop, Method, Event, EventEmitter } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 
 import {
