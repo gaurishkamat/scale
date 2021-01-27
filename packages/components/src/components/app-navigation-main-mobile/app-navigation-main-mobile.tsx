@@ -179,7 +179,7 @@ export class MainNavigationMobile {
             this.mainNavigationWrapper = el;
           }}
         >
-          {this.navigation.map(item => (
+          {(this.navigation || []).map(item => (
             <a
               aria-current={isActive(item.id) ? 'true' : 'false'}
               aria-haspopup={item.children ? 'true' : 'false'}
