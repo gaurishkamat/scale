@@ -433,6 +433,71 @@
       ]
     },
     {
+      "name": "scale-date-picker",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "date-adapter",
+          "description": "Date adapter, for custom parsing/formatting.\nMust be object with a `parse` function which accepts a `string` and returns a `Date`,\nand a `format` function which accepts a `Date` and returns a `string`.\nDefault is IS0-8601 parsing and formatting."
+        },
+        {
+          "name": "direction",
+          "description": "Forces the opening direction of the calendar modal to be always left or right.\nThis setting can be useful when the input is smaller than the opening date picker\nwould be as by default the picker always opens towards right.",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "Makes the date picker input component disabled. This prevents users from being able to\ninteract with the input, and conveys its inactive state to assistive technologies."
+        },
+        {
+          "name": "first-day-of-week",
+          "description": "Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc.\nDefault is Monday."
+        },
+        {
+          "name": "identifier",
+          "description": "Adds a unique identifier for the date picker input. Use this instead of html `id` attribute."
+        },
+        {
+          "name": "localization",
+          "description": "Button labels, day names, month names, etc, used for localization.\nDefault is English."
+        },
+        {
+          "name": "max",
+          "description": "Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the min property."
+        },
+        {
+          "name": "min",
+          "description": "Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the max property."
+        },
+        {
+          "name": "name",
+          "description": "Name of the date picker input."
+        },
+        {
+          "name": "required",
+          "description": "Should the input be marked as required?"
+        },
+        {
+          "name": "role",
+          "description": "Defines a specific role attribute for the date picker input."
+        },
+        {
+          "name": "value",
+          "description": "Date value. Must be in IS0-8601 format: YYYY-MM-DD."
+        }
+      ]
+    },
+    {
       "name": "scale-divider",
       "description": {
         "kind": "markdown",

@@ -25,6 +25,7 @@ const customElementTags: string[] = [
  'scale-carousel',
  'scale-chart-stack-card',
  'scale-collapsible',
+ 'scale-date-picker',
  'scale-divider',
  'scale-icon',
  'scale-icon-action-add',
@@ -457,6 +458,33 @@ export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-collapsible', ['scaleExpand']),
+});
+
+
+export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleDatePicker['name']>,
+    identifier: {} as PropOptions<Components.ScaleDatePicker['identifier']>,
+    disabled: {} as PropOptions<Components.ScaleDatePicker['disabled']>,
+    role: {} as PropOptions<Components.ScaleDatePicker['role']>,
+    direction: {} as PropOptions<Components.ScaleDatePicker['direction']>,
+    required: {} as PropOptions<Components.ScaleDatePicker['required']>,
+    value: {} as PropOptions<Components.ScaleDatePicker['value']>,
+    min: {} as PropOptions<Components.ScaleDatePicker['min']>,
+    max: {} as PropOptions<Components.ScaleDatePicker['max']>,
+    firstDayOfWeek: {} as PropOptions<Components.ScaleDatePicker['firstDayOfWeek']>,
+    localization: {} as PropOptions<Components.ScaleDatePicker['localization']>,
+    dateAdapter: {} as PropOptions<Components.ScaleDatePicker['dateAdapter']>,
+  },
+
+
+  methods: {
+    setFocus: createCommonMethod('setFocus') as Components.ScaleDatePicker['setFocus'],
+    show: createCommonMethod('show') as Components.ScaleDatePicker['show'],
+    hide: createCommonMethod('hide') as Components.ScaleDatePicker['hide'],
+  },
+  render: createCommonRender('scale-date-picker', ['scaleChange', 'scaleBlur', 'scaleFocus']),
 });
 
 

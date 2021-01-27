@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script src="/build/theme/theme.iife.js"></script>
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+        --icon-color: black;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+
+      hr {
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-date-picker name="daniel" value="2021-03-24"></scale-date-picker>
+    <scale-button id="show">show</scale-button>
+    <scale-button id="hide">hide</scale-button>
+    <scale-button id="focus">focus</scale-button>
+    <script>
+      const date = document.querySelector('scale-date-picker');
+      const show = document.getElementById('show');
+      const hide = document.getElementById('hide');
+      const focus = document.getElementById('focus');
+
+      show.addEventListener('click', () => {
+        date.show();
+      });
+      hide.addEventListener('click', () => {
+        date.hide();
+      });
+      focus.addEventListener('click', () => {
+        date.setFocus();
+      });
+
+      // Listen for when date is selected
+      date.addEventListener('scaleChange', function(e) {
+        console.log('scaleChange selected date', e.detail.valueAsDate);
+      });
+      date.addEventListener('scaleFocus', function(e) {
+        console.log('scaleFocus', e);
+      });
+
+      date.addEventListener('scaleBlur', function(e) {
+        console.log('scaleBlur', e);
+      });
+    </script>
+  </body>
+</html>

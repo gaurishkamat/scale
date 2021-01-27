@@ -51,6 +51,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   }
 ]
 
+const excludeComponents = [
+  'animatable-component',
+  'animatable-cube',
+  'duet-date-picker',
+];
+
 export const config: Config = {
   testing: {
     testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
@@ -66,13 +72,13 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
-      excludeComponents: ['animatable-component', 'animatable-cube']
+      excludeComponents
     }),
     vueOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-vue/src/proxies.ts',
       componentModels: vueComponentModels,
-      excludeComponents: ['animatable-component', 'animatable-cube']
+      excludeComponents
     }),
     angularOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
@@ -80,7 +86,7 @@ export const config: Config = {
       directivesArrayFile: '../components-angular/src/directives/proxies-list.tsx',
       directivesUtilsFile: '../components-angular/src/directives/proxies-utils.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
-      excludeComponents: ['animatable-component', 'animatable-cube'],
+      excludeComponents
     }),
     {
       type: 'dist',

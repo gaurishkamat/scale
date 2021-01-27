@@ -299,6 +299,34 @@ export class ScaleCollapsible {
   }
 }
 
+import { DatePicker as IDatePicker } from '@scaleds/components-telekom/dist/types/components/date-picker/date-picker';
+export declare interface ScaleDatePicker extends Components.ScaleDatePicker {}
+@ProxyCmp({
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'identifier', 'localization', 'max', 'min', 'name', 'required', 'role', 'value'],
+  methods: ['setFocus', 'show', 'hide']
+})
+@Component({
+  selector: 'scale-date-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'identifier', 'localization', 'max', 'min', 'name', 'required', 'role', 'value'],
+  outputs: ['scaleChange', 'scaleBlur', 'scaleFocus']
+})
+export class ScaleDatePicker {
+  /** Event emitted when a date is selected. */
+  scaleChange!: IDatePicker['scaleChange'];
+  /** Event emitted the date picker input is blurred. */
+  scaleBlur!: IDatePicker['scaleBlur'];
+  /** Event emitted the date picker input is focused. */
+  scaleFocus!: IDatePicker['scaleFocus'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange', 'scaleBlur', 'scaleFocus']);
+  }
+}
+
 
 export declare interface ScaleDivider extends Components.ScaleDivider {}
 @ProxyCmp({
