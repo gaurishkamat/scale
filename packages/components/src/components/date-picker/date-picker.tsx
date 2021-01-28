@@ -139,23 +139,24 @@ export class DatePicker {
   }
 
   componentDidLoad() {
-    // @ts-ignore
-    this.duetInput.addEventListener('duetChange', e => {
-      this.scaleChange.emit(e.detail);
-    });
-    // @ts-ignore
-    this.duetInput.addEventListener('duetBlur', e => {
-      this.scaleBlur.emit(e.detail);
-    });
-    // @ts-ignore
-    this.duetInput.addEventListener('duetFocus', e => {
-      this.scaleFocus.emit(e.detail);
-    });
+    this.duetInput
+      // @ts-ignore
+      .querySelector('.duet-date__toggle-icon')
+      .replaceWith(document.createElement('scale-icon-content-calendar'));
   }
 
   render() {
     return (
       <duet-date-picker
+        onDuetChange={e => {
+          this.scaleChange.emit(e.detail);
+        }}
+        onDuetFocus={e => {
+          this.scaleFocus.emit(e.detail);
+        }}
+        onDuetBlur={e => {
+          this.scaleBlur.emit(e.detail);
+        }}
         name={this.name}
         identifier={this.identifier}
         role={this.role}

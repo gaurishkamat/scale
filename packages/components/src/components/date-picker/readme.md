@@ -70,11 +70,13 @@ Type: `Promise<void>`
 
 ### Depends on
 
+- [scale-icon-content-calendar](../icons/content-calendar)
 - duet-date-picker
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-date-picker --> scale-icon-content-calendar
   scale-date-picker --> duet-date-picker
   style scale-date-picker fill:#f9f,stroke:#333,stroke-width:4px
 ```
