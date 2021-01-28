@@ -1877,10 +1877,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@duetds/date-picker@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@duetds/date-picker/-/date-picker-1.1.0.tgz#7c8b24a1fcb6f1ec0c13e99fe8f9cf924efc9cdb"
-  integrity sha512-qUnLoIAgBN1L8AOTEuYV1L/zz8BQasbQXzvqEVGlH1wfEU4ZrJgDw8lMuYWiFcUMiKwoaUTHKOyfPFWV/35PZg==
+"@duetds/date-picker@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@duetds/date-picker/-/date-picker-1.2.0.tgz#811c669a09ad93f5916386c57de61db259b59087"
+  integrity sha512-8uIbQLYrUHgUtJdF9Q6GANGFZw/R6luATyLZYMb0211Nv/nK+o5tWdCbJPcvszV7Ggi3y+8vb41OKgfP8KIWnQ==
   dependencies:
     "@stencil/core" "^2.3.0"
 
