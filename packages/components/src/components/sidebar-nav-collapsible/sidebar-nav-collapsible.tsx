@@ -110,7 +110,7 @@ export class SidebarNavCollapsible implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes['sidebar-nav-collapsible'],
-      this.condensed && classes['sidebar-nav-collapsible--condensed'],
+      this.condensed && classes['sidebar-nav-collapsible--condensed']
     );
   }
 }

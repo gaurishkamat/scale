@@ -37,22 +37,22 @@ export class SidebarNav implements Base {
    * TODO explain this a bit
    */
   setNestingLevelOnChildren() {
-    const COLLAPSIBLE_TAG = 'SCALE-SIDEBAR-NAV-COLLAPSIBLE'
-    const ITEM_TAG = 'SCALE-SIDEBAR-NAV-ITEM'
+    const COLLAPSIBLE_TAG = 'SCALE-SIDEBAR-NAV-COLLAPSIBLE';
+    const ITEM_TAG = 'SCALE-SIDEBAR-NAV-ITEM';
 
     function setNestingLevel(el: Element, level: number = 1) {
-      Array.from(el.children).forEach((child) => {
+      Array.from(el.children).forEach(child => {
         if (child.tagName === COLLAPSIBLE_TAG) {
-          setNestingLevel(child, level + 1)
-          child.setAttribute('nesting-level', String(level))
+          setNestingLevel(child, level + 1);
+          child.setAttribute('nesting-level', String(level));
         }
         if (child.tagName === ITEM_TAG) {
-          child.setAttribute('nesting-level', String(level))
+          child.setAttribute('nesting-level', String(level));
         }
-      })
+      });
     }
 
-    setNestingLevel(this.el)
+    setNestingLevel(this.el);
   }
 
   render() {
