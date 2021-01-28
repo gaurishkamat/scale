@@ -1,0 +1,67 @@
+import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
+import ScaleDatePicker from "./ScaleDatePicker.vue";
+import { action } from "@storybook/addon-actions";
+
+<Meta
+  title="Components/DatePicker"
+  component={ScaleDatePicker}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleDatePicker },
+  props: ScaleDatePicker.props,
+  template: `
+    <div style="height: 380px;">
+        <scale-date-picker
+                :name="name"
+                :identifier="identifier"
+                :role="role"
+                :direction="direction"
+                :required="required"
+                :min="min"
+                :max="max"
+                :first-day-of-week="firstDayOfWeek"
+                :localization="localization"
+                :date-adapter="dateAdapter"
+                :value="value"
+                @scaleChange="scaleChange"
+                @scaleFocus="scaleFocus"
+                @scaleBlur="scaleBlur"
+            ></scale-date-picker>
+    </div>
+  `,
+  methods: {
+    scaleChange: function() {
+      action('scaleChange')();
+    },
+    scaleFocus: function() {
+      action('scaleFocus')();
+    },
+    scaleBlur: function() {
+      action('scaleBlur')();
+    },
+  },
+})
+
+
+# DatePicker
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+        value: '2020-12-31'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" icon="SVG-PATH" />
+
+```html
+<scale-date-picker @scaleChange="handleChange" @scaleFocus="handleFocus" @scaleBlur="handleBlur"></scale-date-picker>
+```
