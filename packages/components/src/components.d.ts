@@ -4575,6 +4575,14 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * Label and icon get the active color
+         */
+        "current"?: boolean;
+        /**
+          * Set this to `true` to expand
+         */
+        "expanded": boolean;
+        /**
           * The URL where the link should point to
          */
         "href": string;
@@ -4583,17 +4591,13 @@ export namespace Components {
          */
         "iconSize": number;
         /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
-        /**
           * The text for the button
          */
         "label": string;
+        /**
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
+         */
+        "nestingLevel": number;
         /**
           * (optional) Injected jss styles
          */
@@ -4615,7 +4619,11 @@ export namespace Components {
         /**
           * Text gets the active color
          */
-        "isCurrent": boolean;
+        "current": boolean;
+        /**
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
+         */
+        "nestingLevel": number;
         /**
           * (optional) Injected jss styles
          */
@@ -10971,6 +10979,14 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
+          * Label and icon get the active color
+         */
+        "current"?: boolean;
+        /**
+          * Set this to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
           * The URL where the link should point to
          */
         "href"?: string;
@@ -10979,17 +10995,13 @@ declare namespace LocalJSX {
          */
         "iconSize"?: number;
         /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
-        /**
           * The text for the button
          */
         "label"?: string;
+        /**
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
+         */
+        "nestingLevel"?: number;
         /**
           * (optional) Injected jss styles
          */
@@ -11011,7 +11023,11 @@ declare namespace LocalJSX {
         /**
           * Text gets the active color
          */
-        "isCurrent"?: boolean;
+        "current"?: boolean;
+        /**
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
+         */
+        "nestingLevel"?: number;
         /**
           * (optional) Injected jss styles
          */

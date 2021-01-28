@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './sidebar-nav.styles';
@@ -11,6 +11,8 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class SidebarNav implements Base {
+  @Element() el: HTMLElement;
+
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -26,6 +28,32 @@ export class SidebarNav implements Base {
   componentWillLoad() {}
   disconnectedCallback() {}
   componentWillUpdate() {}
+
+  componentDidLoad() {
+    this.setNestingLevelOnChildren();
+  }
+
+  /**
+   * TODO explain this a bit
+   */
+  setNestingLevelOnChildren() {
+    const COLLAPSIBLE_TAG = 'SCALE-SIDEBAR-NAV-COLLAPSIBLE'
+    const ITEM_TAG = 'SCALE-SIDEBAR-NAV-ITEM'
+
+    function setNestingLevel(el: Element, level: number = 1) {
+      Array.from(el.children).forEach((child) => {
+        if (child.tagName === COLLAPSIBLE_TAG) {
+          setNestingLevel(child, level + 1)
+          child.setAttribute('nesting-level', String(level))
+        }
+        if (child.tagName === ITEM_TAG) {
+          child.setAttribute('nesting-level', String(level))
+        }
+      })
+    }
+
+    setNestingLevel(this.el)
+  }
 
   render() {
     const { classes } = this.stylesheet;

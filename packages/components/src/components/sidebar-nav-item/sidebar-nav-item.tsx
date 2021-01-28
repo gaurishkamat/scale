@@ -21,7 +21,9 @@ export class SidebarNavItem implements Base {
   /** Bold text */
   @Prop() bold: boolean = false;
   /** Text gets the active color */
-  @Prop() isCurrent: boolean = false;
+  @Prop() current: boolean = false;
+  /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
+  @Prop() nestingLevel: number;
 
   componentWillLoad() {}
   disconnectedCallback() {}
@@ -44,7 +46,7 @@ export class SidebarNavItem implements Base {
       classes['sidebar-nav-item'],
       this.bold && classes['sidebar-nav-item--bold'],
       this.condensed && classes['sidebar-nav-item--condensed'],
-      this.isCurrent && classes['sidebar-nav-item--current']
+      this.current && classes['sidebar-nav-item--current']
     );
   }
 }

@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                                                   | Type      | Default     |
-| ----------- | ------------ | ------------------------------------------------------------- | --------- | ----------- |
-| `bold`      | `bold`       | Bold text                                                     | `boolean` | `false`     |
-| `condensed` | `condensed`  | Used normally for third level items, remove the bottom border | `boolean` | `false`     |
-| `isCurrent` | `is-current` | Text gets the active color                                    | `boolean` | `false`     |
-| `styles`    | `styles`     | (optional) Injected jss styles                                | `any`     | `undefined` |
+| Property       | Attribute       | Description                                                                 | Type      | Default     |
+| -------------- | --------------- | --------------------------------------------------------------------------- | --------- | ----------- |
+| `bold`         | `bold`          | Bold text                                                                   | `boolean` | `false`     |
+| `condensed`    | `condensed`     | Used normally for third level items, remove the bottom border               | `boolean` | `false`     |
+| `current`      | `current`       | Text gets the active color                                                  | `boolean` | `false`     |
+| `nestingLevel` | `nesting-level` | Nesting level within the <scale-sidebar-nav> parent, gets set automatically | `number`  | `undefined` |
+| `styles`       | `styles`        | (optional) Injected jss styles                                              | `any`     | `undefined` |
 
 
 ----------------------------------------------

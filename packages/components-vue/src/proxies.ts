@@ -3357,11 +3357,12 @@ export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
     tag: {} as PropOptions<Components.ScaleSidebarNavCollapsible['tag']>,
     label: {} as PropOptions<Components.ScaleSidebarNavCollapsible['label']>,
     href: {} as PropOptions<Components.ScaleSidebarNavCollapsible['href']>,
-    isExpanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isExpanded']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isCurrent']>,
+    expanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['expanded']>,
+    current: {} as PropOptions<Components.ScaleSidebarNavCollapsible['current']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavCollapsible['bold']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavCollapsible['condensed']>,
     iconSize: {} as PropOptions<Components.ScaleSidebarNavCollapsible['iconSize']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavCollapsible['nestingLevel']>,
   },
 
 
@@ -3375,7 +3376,8 @@ export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
     styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavItem['condensed']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavItem['bold']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavItem['isCurrent']>,
+    current: {} as PropOptions<Components.ScaleSidebarNavItem['current']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavItem['nestingLevel']>,
   },
 
 

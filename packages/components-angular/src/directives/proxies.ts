@@ -3930,13 +3930,13 @@ export class ScaleSidebarNav {
 
 export declare interface ScaleSidebarNavCollapsible extends Components.ScaleSidebarNavCollapsible {}
 @ProxyCmp({
-  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['bold', 'condensed', 'current', 'expanded', 'href', 'iconSize', 'label', 'nestingLevel', 'styles', 'tag']
 })
 @Component({
   selector: 'scale-sidebar-nav-collapsible',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['bold', 'condensed', 'current', 'expanded', 'href', 'iconSize', 'label', 'nestingLevel', 'styles', 'tag']
 })
 export class ScaleSidebarNavCollapsible {
   protected el: HTMLElement;
@@ -3949,13 +3949,13 @@ export class ScaleSidebarNavCollapsible {
 
 export declare interface ScaleSidebarNavItem extends Components.ScaleSidebarNavItem {}
 @ProxyCmp({
-  inputs: ['bold', 'condensed', 'isCurrent', 'styles']
+  inputs: ['bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 @Component({
   selector: 'scale-sidebar-nav-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bold', 'condensed', 'isCurrent', 'styles']
+  inputs: ['bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 export class ScaleSidebarNavItem {
   protected el: HTMLElement;

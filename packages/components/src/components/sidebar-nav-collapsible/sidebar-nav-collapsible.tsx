@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './sidebar-nav-collapsible.styles';
@@ -11,6 +11,8 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class SidebarNavCollapsible implements Base {
+  @Element() el: HTMLElement;
+
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -23,21 +25,18 @@ export class SidebarNavCollapsible implements Base {
   /** The URL where the link should point to */
   @Prop() href: string = '#';
   /** Set this to `true` to expand */
-  @Prop() isExpanded?: boolean;
+  @Prop({ mutable: true, reflect: true }) expanded: boolean;
   /** Label and icon get the active color */
-  @Prop() isCurrent?: boolean = false;
+  @Prop() current?: boolean = false;
   /** Bold label and icon */
   @Prop() bold: boolean = false;
   /** Used normally for third level items */
   @Prop() condensed: boolean = false;
   /** The width and height of the icon in pixels */
   @Prop() iconSize: number = 16;
+  /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
+  @Prop() nestingLevel: number;
 
-  @State() expanded: boolean = false;
-
-  componentWillLoad() {
-    this.expanded = this.isExpanded;
-  }
   disconnectedCallback() {}
   componentWillUpdate() {}
 
@@ -70,7 +69,7 @@ export class SidebarNavCollapsible implements Base {
     const buttonClassMap = classNames(
       classes['sidebar-nav-collapsible__button'],
       this.bold && classes['sidebar-nav-collapsible__button--bold'],
-      this.isCurrent && classes['sidebar-nav-collapsible__button--current']
+      this.current && classes['sidebar-nav-collapsible__button--current']
     );
     const listClassMap = classNames(
       classes['sidebar-nav-collapsible__list'],
@@ -88,25 +87,15 @@ export class SidebarNavCollapsible implements Base {
               class={buttonClassMap}
               onClick={this.handleClick}
               onKeyDown={this.handleKeydown}
+              role="button"
               aria-expanded={this.expanded ? 'true' : 'false'}
             >
               {this.label}
-              <svg
-                width={this.iconSize}
-                height={this.iconSize}
-                viewBox="0 0 26 26"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-width={this.bold ? 3 : 1.5}
-                  d="M4 9l9 9.5L22 9"
-                  fill="none"
-                  fill-rule="evenodd"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <scale-icon-navigation-collapse-down
+                class={classes['sidebar-nav-collapsible__icon']}
+                selected={this.bold}
+                size={this.iconSize}
+              />
             </a>
           </div>
           <ul hidden={!this.expanded} class={listClassMap}>
@@ -121,7 +110,7 @@ export class SidebarNavCollapsible implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes['sidebar-nav-collapsible'],
-      this.condensed && classes['sidebar-nav-collapsible--condensed']
+      this.condensed && classes['sidebar-nav-collapsible--condensed'],
     );
   }
 }

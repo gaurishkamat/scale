@@ -6167,6 +6167,14 @@
           "description": "Used normally for third level items"
         },
         {
+          "name": "current",
+          "description": "Label and icon get the active color"
+        },
+        {
+          "name": "expanded",
+          "description": "Set this to `true` to expand"
+        },
+        {
           "name": "href",
           "description": "The URL where the link should point to"
         },
@@ -6175,16 +6183,12 @@
           "description": "The width and height of the icon in pixels"
         },
         {
-          "name": "is-current",
-          "description": "Label and icon get the active color"
-        },
-        {
-          "name": "is-expanded",
-          "description": "Set this to `true` to expand"
-        },
-        {
           "name": "label",
           "description": "The text for the button"
+        },
+        {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
         },
         {
           "name": "styles",
@@ -6212,8 +6216,12 @@
           "description": "Used normally for third level items, remove the bottom border"
         },
         {
-          "name": "is-current",
+          "name": "current",
           "description": "Text gets the active color"
+        },
+        {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
         },
         {
           "name": "styles",

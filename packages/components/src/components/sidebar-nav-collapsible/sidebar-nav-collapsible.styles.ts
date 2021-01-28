@@ -47,10 +47,10 @@ export const styles: JssStyle = {
       outline: 'none',
       boxShadow: 'inset 0 0 0 2px #009DE0',
     },
-    '&[aria-expanded="true"] svg': {
+    '&[aria-expanded="true"] $sidebar-nav-collapsible__icon': {
       transform: 'rotate(180deg)',
     },
-    '& svg': {
+    '& $sidebar-nav-collapsible__icon': {
       transition: ({ transitions }) =>
         `opacity ${transitions.duration.shortest}ms`,
     },
@@ -61,13 +61,13 @@ export const styles: JssStyle = {
   },
   '@media (hover: hover)': {
     'sidebar-nav-collapsible__button': {
-      '&[aria-expanded="false"] svg': {
+      '&[aria-expanded="false"] $sidebar-nav-collapsible__icon': {
         opacity: 0,
       },
-      '&:hover svg': {
+      '&:hover $sidebar-nav-collapsible__icon': {
         opacity: 1,
       },
-      '&:focus svg': {
+      '&:focus $sidebar-nav-collapsible__icon': {
         opacity: 1,
       },
     },
@@ -75,6 +75,7 @@ export const styles: JssStyle = {
   'sidebar-nav-collapsible__button--bold': {
     fontWeight: ({ type }) => type.weight_bold,
   },
+  'sidebar-nav-collapsible__icon': {},
   // List
   'sidebar-nav-collapsible__list': {
     marginTop: 0,
