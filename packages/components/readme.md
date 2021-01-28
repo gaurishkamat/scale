@@ -20,12 +20,12 @@ See the `scripts` section inside `package.json` for a list of all available comm
 #### Testing
 |Command|Description|
 |---|---|
-|`yarn test` |Run all tests|
-|`yarn test component-name` |Run all tests for a specific component|
-|`yarn test:watch` |Run all tests in watch mode|
-|`yarn test -u`|Run all tests and update snapshots|
-|`yarn test --coverage`|Run all tests and show coverage|
-|`yarn test:visual`|Run all visual tests|
+|`yarn test --spec` |Run all tests|
+|`yarn test --spec component-name` |Run all tests for a specific component|
+|`yarn test --spec --watch` |Run all tests in watch mode|
+|`yarn test --spec -u`|Run all tests and update snapshots|
+|`yarn test --spec--coverage`|Run all tests and show coverage|
+|`yarn test --e2e`|Run all visual tests|
 
 > Some test commands can be combined e.g. `yarn test -u --coverage`
 
@@ -40,7 +40,7 @@ In order to satisfy the `CI` pipeline it is advised to run some scripts before p
 
 `yarn format`
 `yarn lint`
-`yarn test -u`
+`yarn test --spec --e2e -u`
 
 > If any of the above commands throw an error, please fix the errors before pushing to remote
 
