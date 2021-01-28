@@ -108,6 +108,7 @@ export const config: Config = {
       copy: [
         { src: '../build/theme', dest: 'build/theme' , warn: true },
         { src: 'header.html', warn: true },
+        { src: 'date-picker.html', warn: true },
       ]
     },
     {
