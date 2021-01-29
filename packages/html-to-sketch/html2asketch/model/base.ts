@@ -134,6 +134,18 @@ class Base {
       result.points = this._points;
     }
 
+
+    const newLayers = [];
+    const suffix = [];
+    for (let i = 0; i < this._layers.length; i++) {
+      if (this._layers[i]._onTop) {
+        suffix.push(result.layers[i]);
+      } else {
+        newLayers.push(result.layers[i]);
+      }
+    }
+    result.layers = newLayers.concat(suffix);
+
     return result;
   }
 }

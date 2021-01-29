@@ -641,7 +641,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     const textValue = selectedOption?.textContent;
     if (textValue) {
       const element = document.createElement('div');
-      element.appendChild(document.createTextNode("Select Box Value"));
+      element.appendChild(document.createTextNode("Dropdown Value"));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
       element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
@@ -1151,8 +1151,42 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     };
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
+    const borderAddWidth = parseFloat(borderLeftWidth) + parseFloat(borderRightWidth);
+    const borderAddHeight = parseFloat(borderTopWidth) + parseFloat(borderBottomWidth);
+    rectangle._width += borderAddWidth;
+    rectangle._height += borderAddHeight;
+    rectangle._x -= parseFloat(borderLeftWidth);
+    rectangle._y -= parseFloat(borderTopWidth);
     rectangle.setStyle(style);
     rectangle.setName("Background");
+
+    if (borderAddWidth > 0 || borderAddHeight > 0) {
+      const borderRect = new Rectangle({ 
+        width: rectangle._width,
+        height: rectangle._height,
+        x: rectangle._x,
+        y: rectangle._y,
+        cornerRadius
+      });
+      const borderStyle = new Style();
+      borderStyle._borders = style._borders;
+      borderStyle._shadows = style._shadows;
+      borderStyle._innerShadows = style._innerShadows;
+      borderStyle._borderOptions = style._borderOptions;
+      borderStyle._opacity = style._opacity;
+      borderRect.setStyle(borderStyle);
+      style._borders = [];
+      const sg2 = new ShapeGroup({});
+      for (var i in shapeGroup) {
+        sg2[i] = shapeGroup[i];
+      }
+      sg2._layers = [];
+      sg2.setStyle(borderStyle);
+      layers.push(sg2);
+      (sg2 as any)._onTop = true;
+      borderRect.setName("Border");
+      sg2.addLayer(borderRect);
+    }
 
     shapeGroup.setName('Background');
     shapeGroup.addLayer(rectangle);

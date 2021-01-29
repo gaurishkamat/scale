@@ -27,53 +27,86 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
         - [x] Naming
     - [x] Slider
         - [x] Large thumb variant missing
+        - [x] Large thumb variant for small track
         - [x] label on and label off without counter can be removed
         - [x] label off can be removed
         - [x] Bar is 1px to the right
             - Broken in the Storybook component
     - [x] Link
         - [x] font weight should be medium
+    - [x] Card
+        - [x] Use new component
+    - [x] Select Box renamed to Dropdown
+    - [x] progress bar filling needs corner roundings
+    - [x] progress bar needs counter with percentage 
+    - [z] label inside switch should change color as well in hover/active  states
+    - [x] switch artboards too large
+    - [x] tag disabled states can be removed
+    - [x] Rename "Input field" to "Text field"
+    - [x] textarea scroll is three times in there
+    - [x] textarea resizable and expand missing
+    - [x] Switch symbol names fixed
+    - [x] Progress bar symbol names fixed
+    - [x] Switch
+        - [x] should have fixed height/width and spacing
+    - [x] Tag
+        - [x] tag with overwrites the alignment/Spacing is off
+    - [x] progress bar should have fixed height/width and spacing
+    - [x] dropdown should have fixed height/width and spacing
+    - [x] dropdown icon pinned to right side
+    - [x] Text lists
+        - [x] should have fixed height/width and spacing
+    - [x] Textarea
+        - [x] should have fixed height/width and spacing
+            - [x] find layer names that are broken
+            - [x] change layer resizing to existing examples of similar type
+    - [x] Text field
+        - [x] should have fixed height/width and spacing
+            - [x] find layer names that are broken
+            - [x] change layer resizing to existing examples of similar type
+    - [x] Progress bar
+        - [x] Fill is 1px off
+            - Issue is that the component is using a 1px transparent border to expand the background fill area and html-to-sketch does borders outside the fill area
+            - [x] Find where the border is set
+            - [x] Expand the background fill by the border width
+            - [x] Create a border element
+            - [x] Add the border element above content
+    - [x] Make a spacing test doc for the lib
+        - Dropdown
+        - progress bar
+        - switch
+        - tag
+        - textarea
+        - text field
+        - text lists
+    - [x] Tag fix button background positioning
+    - [x] Textarea fix groupLayout weirdo bug
+    - [x] Fix progress bar description layout
+    - [x] Fix dropdown override resizing
 
+    - [ ] Test doc extra tests
+        - [ ] Override text field texts
+        - [ ] Override text area texts  
     - [ ] Breadcrumb fix positioning of "Current Page"
-    - [ ] Card
-        - [ ] Use new component
+        - [ ] 8px too far left
+        - [ ] Driven by weird things in Sketch's autolayout system -_-
     - [ ] Dropdown
-        - [x] Select Box renamed to Dropdown
-        - [ ] should have fixed height/width and spacing
-        - [ ] different symbol naming structure, no open dropdown symbol existing
         - [ ] pressed states should have an open dropdown, solid icon and (except the error state) a magenta pressed outline (#CB0068)
-    - [ ] Progress bar
-        - [x] progress bar filling needs corner roundings
-        - [x] progress bar needs counter with percentage 
-        - [ ] should have fixed height/width and spacing
-        - [ ] naming sketch files + storybook need to be aligned
-    - [ ] Switch
-        - [z] label inside switch should change color as well in hover/active  states
-        - [x] artboards too large
-        - [ ] should have fixed height/width and spacing
-        - [ ] different symbol naming
-    - [ ] Tag
-        - [x] disabled states can be removed
-        - [ ] with overwrites the alignment/Spacing is off
-        - [ ] naming sketch files + storybook need to be aligned (default vs standard etc.)
-    - [ ] Textarea
-        - [ ] textarea scroll is three times in there
-        - [ ] textarea resizable and expand missing
-        - [ ] should have fixed height/width and spacing
-        - [ ] naming sketch files + storybook need to be aligned (default vs standard etc.)
-    - [ ] Text field
-        - [x] Rename "Input field" to "Text field"
-        - [ ] should have fixed height/width and spacing
-        - [ ] naming sketch files + storybook need to be aligned (default vs standard etc.)
-    - [ ] Text lists
-        - [ ] should have fixed height/width and spacing
-    
-    - Later
-        - [ ] Accordion
-        - [ ] Modal
-        - [ ] Tab Nav
-        - [ ] Sidebar Nav
+        - [ ] Open example document
+        - [ ] Make a template with open dropdown
+        - [ ] Add extra states
+    - [ ] Accordion
+    - [ ] Tab Nav
+    - [ ] Table
+    - [ ] Modal
 
+    - [ ] Naming sketch files + storybook need to be aligned
+        - [ ] Dropdown
+        - [ ] Tag
+        - [ ] Textarea
+
+    - Later
+        - [ ] Sidebar Nav
 
 
 
