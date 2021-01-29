@@ -32,9 +32,9 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-slider")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-progress-bar")).forEach(btn => {
         var h2name = btn.previousElementSibling.textContent;
-        btn.dataset.sketchSymbol = `Slider / ${
+        btn.dataset.sketchSymbol = `Progress Bar / ${
             order(0, h2name)
         }`;
     });

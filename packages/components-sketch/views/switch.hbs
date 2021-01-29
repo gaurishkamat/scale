@@ -53,9 +53,9 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll(".switch")).forEach(btn => {
+    Array.from(document.querySelectorAll("scale-switch")).forEach(btn => {
         btn.dataset.sketchSymbol = `Switch / ${
-                order(1, btn.hasAttribute('active') ? 'Selected On' : 'Selected Off')
+                order(1, btn.hasAttribute('checked') ? 'Selected On' : 'Selected Off')
             } / ${
                 order(4, getStateName(btn))
             }`;
