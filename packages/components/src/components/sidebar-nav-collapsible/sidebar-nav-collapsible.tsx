@@ -1,22 +1,14 @@
-import { Component, h, Prop, Host, Element } from '@stencil/core';
+import { Component, h, Prop, Host, Element, Watch } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './sidebar-nav-collapsible.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-sidebar-nav-collapsible',
+  styleUrl: 'sidebar-nav-collapsible.css',
   shadow: true,
 })
-export class SidebarNavCollapsible implements Base {
+export class SidebarNavCollapsible {
   @Element() el: HTMLElement;
-
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('SidebarNavCollapsible', styles) stylesheet: StyleSheet;
 
   /** The parent wrapper */
   @Prop() tag?: string = 'li';
@@ -36,9 +28,15 @@ export class SidebarNavCollapsible implements Base {
   @Prop() iconSize: number = 16;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
+  /** (optional) Extra styles */
+  @Prop() styles?: string;
 
-  disconnectedCallback() {}
-  componentWillUpdate() {}
+  @Watch('nestingLevel')
+  nestingLevelChanged(newValue) {
+    if (newValue === 1) {
+      this.bold = true;
+    }
+  }
 
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
@@ -61,30 +59,16 @@ export class SidebarNavCollapsible implements Base {
   };
 
   render() {
-    const { classes } = this.stylesheet;
-    const wrapperClassMap = classNames(
-      classes['sidebar-nav-collapsible__wrapper'],
-      this.condensed && classes['sidebar-nav-collapsible__wrapper--condensed']
-    );
-    const buttonClassMap = classNames(
-      classes['sidebar-nav-collapsible__button'],
-      this.bold && classes['sidebar-nav-collapsible__button--bold'],
-      this.current && classes['sidebar-nav-collapsible__button--current']
-    );
-    const listClassMap = classNames(
-      classes['sidebar-nav-collapsible__list'],
-      this.condensed && classes['sidebar-nav-collapsible__list--condensed']
-    );
     const Tag = this.tag;
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <Tag class={this.getCssClassMap()}>
-          <div class={wrapperClassMap}>
+        <style>{this.styles}</style>
+        <Tag class={this.getCssClassMap()} role="listitem">
+          <div class="sidebar-nav-collapsible__wrapper">
             <a
               href={this.href}
-              class={buttonClassMap}
+              class="sidebar-nav-collapsible__button"
               onClick={this.handleClick}
               onKeyDown={this.handleKeydown}
               role="button"
@@ -92,13 +76,13 @@ export class SidebarNavCollapsible implements Base {
             >
               {this.label}
               <scale-icon-navigation-collapse-down
-                class={classes['sidebar-nav-collapsible__icon']}
+                class="sidebar-nav-collapsible__icon"
                 selected={this.bold}
                 size={this.iconSize}
               />
             </a>
           </div>
-          <ul hidden={!this.expanded} class={listClassMap}>
+          <ul hidden={!this.expanded} class="sidebar-nav-collapsible__list">
             <slot />
           </ul>
         </Tag>
@@ -107,10 +91,10 @@ export class SidebarNavCollapsible implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes['sidebar-nav-collapsible'],
-      this.condensed && classes['sidebar-nav-collapsible--condensed']
+      'sidebar-nav-collapsible',
+      this.condensed && 'sidebar-nav-collapsible--condensed',
+      this.current && 'sidebar-nav-collapsible--current'
     );
   }
 }

@@ -37,34 +37,34 @@ export const Template = (args, { argTypes }) => ({
       <scale-sidebar-nav
         :styles="styles"
       >
-        <scale-sidebar-nav-item bold>
+        <scale-sidebar-nav-item>
           <a href="#">Overview</a>
         </scale-sidebar-nav-item>
-        <scale-sidebar-nav-collapsible label="Reference" current expanded bold>
-          <scale-sidebar-nav-collapsible label="Function A" expanded condensed>
-            <scale-sidebar-nav-item condensed>
+        <scale-sidebar-nav-collapsible label="Reference">
+          <scale-sidebar-nav-collapsible label="Function A">
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed current>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 2</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 3</a>
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
-          <scale-sidebar-nav-collapsible label="Function B" condensed>
-            <scale-sidebar-nav-item condensed>
+          <scale-sidebar-nav-collapsible label="Function B">
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 2</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 3</a>
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
         </scale-sidebar-nav-collapsible>
-        <scale-sidebar-nav-collapsible label="Etcetera" bold>
+        <scale-sidebar-nav-collapsible label="Etcetera">
           <scale-sidebar-nav-item>
             <a href="#">Some foo</a>
           </scale-sidebar-nav-item>
@@ -75,7 +75,7 @@ export const Template = (args, { argTypes }) => ({
             <a href="#">Links baz</a>
           </scale-sidebar-nav-item>
         </scale-sidebar-nav-collapsible>
-        <scale-sidebar-nav-item bold>
+        <scale-sidebar-nav-item current>
           <a href="#">Console</a>
         </scale-sidebar-nav-item>
       </scale-sidebar-nav>
@@ -97,45 +97,45 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-sidebar-nav aria-label="primary">
-  <scale-sidebar-nav-item bold>
+  <scale-sidebar-nav-item>
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>
-  <scale-sidebar-nav-collapsible label="Reference" bold>
-    <scale-sidebar-nav-collapsible label="Function A" condensed>
-      <scale-sidebar-nav-item condensed>
+  <scale-sidebar-nav-collapsible label="Reference">
+    <scale-sidebar-nav-collapsible label="Function A">
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed is-current>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 2</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 3</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
-    <scale-sidebar-nav-collapsible label="Function B" condensed>
-      <scale-sidebar-nav-item condensed>
+    <scale-sidebar-nav-collapsible label="Function B">
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 2</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 3</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
-    <scale-sidebar-nav-collapsible label="Function C" condensed>
-      <scale-sidebar-nav-item condensed>
+    <scale-sidebar-nav-collapsible label="Function C">
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 2</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 3</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
   </scale-sidebar-nav-collapsible>
-  <scale-sidebar-nav-collapsible label="Etcetera" bold>
+  <scale-sidebar-nav-collapsible label="Etcetera">
     <scale-sidebar-nav-item>
       <a href="#">Some foo</a>
     </scale-sidebar-nav-item>
@@ -146,7 +146,7 @@ export const Template = (args, { argTypes }) => ({
       <a href="#">Links baz</a>
     </scale-sidebar-nav-item>
   </scale-sidebar-nav-collapsible>
-  <scale-sidebar-nav-item bold>
+  <scale-sidebar-nav-item>
     <a href="#">Console</a>
   </scale-sidebar-nav-item>
 </scale-sidebar-nav>

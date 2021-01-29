@@ -4561,9 +4561,9 @@ export namespace Components {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
         /**
@@ -4599,9 +4599,9 @@ export namespace Components {
          */
         "nestingLevel": number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * The parent wrapper
          */
@@ -4625,9 +4625,9 @@ export namespace Components {
          */
         "nestingLevel": number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -10965,9 +10965,9 @@ declare namespace LocalJSX {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
         /**
@@ -11003,9 +11003,9 @@ declare namespace LocalJSX {
          */
         "nestingLevel"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * The parent wrapper
          */
@@ -11029,9 +11029,9 @@ declare namespace LocalJSX {
          */
         "nestingLevel"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Extra styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**

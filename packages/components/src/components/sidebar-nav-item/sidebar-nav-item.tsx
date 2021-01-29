@@ -1,21 +1,13 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Watch } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './sidebar-nav-item.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-sidebar-nav-item',
+  styleUrl: 'sidebar-nav-item.css',
   shadow: true,
 })
-export class SidebarNavItem implements Base {
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('SidebarNavItem', styles) stylesheet: StyleSheet;
-
+export class SidebarNavItem {
   /** Used normally for third level items, remove the bottom border */
   @Prop() condensed: boolean = false;
   /** Bold text */
@@ -24,16 +16,21 @@ export class SidebarNavItem implements Base {
   @Prop() current: boolean = false;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
+  /** (optional) Extra styles */
+  @Prop() styles?: string;
 
-  componentWillLoad() {}
-  disconnectedCallback() {}
-  componentWillUpdate() {}
+  @Watch('nestingLevel')
+  nestingLevelChanged(newValue) {
+    if (newValue === 1) {
+      this.bold = true;
+    }
+  }
 
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <li class={this.getCssClassMap()}>
+        <style>{this.styles}</style>
+        <li class={this.getCssClassMap()} role="listitem">
           <slot />
         </li>
       </Host>
@@ -41,12 +38,11 @@ export class SidebarNavItem implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes['sidebar-nav-item'],
-      this.bold && classes['sidebar-nav-item--bold'],
-      this.condensed && classes['sidebar-nav-item--condensed'],
-      this.current && classes['sidebar-nav-item--current']
+      'sidebar-nav-item',
+      this.bold && 'sidebar-nav-item--bold',
+      this.condensed && 'sidebar-nav-item--condensed',
+      this.current && 'sidebar-nav-item--current'
     );
   }
 }

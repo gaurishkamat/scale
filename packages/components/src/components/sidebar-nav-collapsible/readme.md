@@ -20,7 +20,7 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 | `iconSize`     | `icon-size`     | The width and height of the icon in pixels                                  | `number`  | `16`        |
 | `label`        | `label`         | The text for the button                                                     | `string`  | `undefined` |
 | `nestingLevel` | `nesting-level` | Nesting level within the <scale-sidebar-nav> parent, gets set automatically | `number`  | `undefined` |
-| `styles`       | `styles`        | (optional) Injected jss styles                                              | `any`     | `undefined` |
+| `styles`       | `styles`        | (optional) Extra styles                                                     | `string`  | `undefined` |
 | `tag`          | `tag`           | The parent wrapper                                                          | `string`  | `'li'`      |
 
 

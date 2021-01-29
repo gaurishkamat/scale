@@ -6147,7 +6147,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },
@@ -6192,7 +6192,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         },
         {
           "name": "tag",
@@ -6225,7 +6225,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },
