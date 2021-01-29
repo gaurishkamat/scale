@@ -1,7 +1,7 @@
 .sidebar-nav-item {
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #E0E0E0;
+  border-bottom-color: #e0e0e0;
 }
 
 ::slotted(a) {
@@ -16,20 +16,20 @@
 }
 
 ::slotted(a:hover) {
-  color: #E20074;
+  color: #e20074;
 }
 
 ::slotted(a:focus) {
   outline: none;
-  box-shadow: inset 0 0 0 2px #009DE0;
+  box-shadow: inset 0 0 0 2px #009de0;
 }
 
 ::slotted(a:active) {
-  color: #CB0068;
+  color: #cb0068;
 }
 
 .sidebar-nav-item--current {
-  color: #E20074;
+  color: #e20074;
 }
 
 :host([nesting-level='1']) .sidebar-nav-item,
