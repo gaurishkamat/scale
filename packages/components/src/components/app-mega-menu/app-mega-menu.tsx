@@ -15,9 +15,9 @@ export class MegaMenu {
     return (
       <div class="mega-menu">
         <div class="mega-menu__wrapper">
-          <ul class="mega-menu__container">
+          <div class="mega-menu__container">
             {this.navigation.map(child => (
-              <li class="mega-menu__row">
+              <ul class="mega-menu__row">
                 <li class="mega-menu__row-title">{child.name}</li>
                 <ul>
                   {child.children &&
@@ -28,7 +28,11 @@ export class MegaMenu {
                           class={`mega-menu__row-item ${
                             this.activeRouteId === menuItem.id ? 'active' : ''
                           }`}
-                          aria-current={this.activeRouteId === menuItem.id}
+                          aria-current={
+                            this.activeRouteId === menuItem.id
+                              ? 'true'
+                              : 'false'
+                          }
                           href={menuItem.href || 'javascript:void(0);'}
                           tabIndex={this.isActive ? 0 : -1}
                           onClick={event => {
@@ -43,7 +47,7 @@ export class MegaMenu {
                             }
                           }}
                         >
-                          {menuItem.name}
+                          <span>{menuItem.name}</span>
                           {this.activeRouteId === menuItem.id && (
                             <span class="sr-only">active</span>
                           )}
@@ -51,9 +55,9 @@ export class MegaMenu {
                       </li>
                     ))}
                 </ul>
-              </li>
+              </ul>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     );

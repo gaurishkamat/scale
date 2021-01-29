@@ -77,12 +77,14 @@ export const styles: JssStyle = {
   'slider--track-small': {
     '& .slider--track': {
       height: 1,
-      border: '1px solid transparent',
+      border: 'none',
+      borderTop: '1px solid transparent',
       backgroundColor: '#7c7c7c',
     },
     '& .slider--bar': {
       height: 3,
       border: '1px solid transparent',
+      boxSizing: 'border-box',
       zIndex: 1,
     },
   },

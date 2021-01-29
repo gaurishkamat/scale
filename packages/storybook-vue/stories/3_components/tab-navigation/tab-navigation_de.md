@@ -1,4 +1,7 @@
-# Tab-Navigation
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tab-Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Mit Hilfe einer Tab-Navigation können Nutzer*innen schnell zwischen verschiedenen Bereichen eines Themas wechseln.
 

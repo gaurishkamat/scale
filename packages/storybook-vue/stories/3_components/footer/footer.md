@@ -1,4 +1,7 @@
-# Footer
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Footer</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 The footer finishes off all Telekom websites. Users can find important information, global links, and additional functions in the footer.
 

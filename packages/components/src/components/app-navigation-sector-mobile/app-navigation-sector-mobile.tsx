@@ -46,7 +46,7 @@ export class NavigationSectorMobile {
                   this.hide();
                 }
               }}
-              aria-current={this.selected.id === item.id}
+              aria-current={this.selected.id === item.id ? 'true' : 'false'}
             >
               {item.name}
               {this.selected.id === item.id && (
