@@ -46,6 +46,7 @@ export const Template = (args, { argTypes }) => ({
       {{ iconOnly !== true ? label : null }}
       <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-external-link v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
   `
 })
@@ -184,7 +185,8 @@ export const Template = (args, { argTypes }) => ({
     args={{
       href: 'https://example.com',
       target: '_blank',
-      title: 'External link, opens in new tab'
+      title: 'External link, opens in new tab',
+      icon: 'external'
     }}
   >
     {Template.bind({})}
@@ -340,7 +342,8 @@ export const Template = (args, { argTypes }) => ({
       size: 'small',
       href: 'https://example.com',
       target: '_blank',
-      title: 'External link, opens in new tab'
+      title: 'External link, opens in new tab',
+      icon: 'external'
     }}
   >
     {Template.bind({})}
