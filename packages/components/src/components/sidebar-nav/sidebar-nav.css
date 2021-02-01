@@ -1,6 +1,31 @@
+:host {
+  --max-width: 15rem;
+  --spacing-indent: 1.5rem;
+  --spacing-collapsible: 1rem;
+  --opacity-chevron: 0;
+  --left-current-border: 0;
+}
+
+:host(.sidebar-nav--collapsible) {
+  --max-width: none;
+  --spacing-indent: 0rem;
+  --opacity-chevron: 1;
+  --left-current-border: calc(-1 * var(--spacing-collapsible));
+}
+
+.sidebar-nav__toggle-button {
+  background-color: turquoise; /* TODO */
+}
+
 .sidebar-nav__list {
   list-style: none;
+  max-width: var(--max-width);
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+:host(.sidebar-nav--collapsible) .sidebar-nav__list {
+  padding-right: var(--spacing-collapsible);
+  padding-left: var(--spacing-collapsible);
 }

@@ -3911,13 +3911,13 @@ export class ScaleProgressBar {
 
 export declare interface ScaleSidebarNav extends Components.ScaleSidebarNav {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['ariaLabel', 'collapsible', 'collapsibleLabel', 'collapsibleMediaQuery', 'styles']
 })
 @Component({
   selector: 'scale-sidebar-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['ariaLabel', 'collapsible', 'collapsibleLabel', 'collapsibleMediaQuery', 'styles']
 })
 export class ScaleSidebarNav {
   protected el: HTMLElement;

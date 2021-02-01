@@ -4561,6 +4561,18 @@ export namespace Components {
          */
         "ariaLabel"?: string;
         /**
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
+         */
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
           * (optional) Extra styles
          */
         "styles"?: string;
@@ -10964,6 +10976,18 @@ declare namespace LocalJSX {
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
          */
         "ariaLabel"?: string;
+        /**
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
+         */
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
         /**
           * (optional) Extra styles
          */

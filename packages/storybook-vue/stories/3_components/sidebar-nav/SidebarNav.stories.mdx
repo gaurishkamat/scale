@@ -10,7 +10,7 @@ import ScaleSidebarNav from './SidebarNav.vue';
         type: 'radio',
         options: ['256px', '25rem', '100%']
       },
-      defaultValue: '25rem',
+      defaultValue: '100%',
       description: 'Example width for wrapper element'
     },
     styles: {
@@ -35,12 +35,14 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="wrapperStyles">
       <scale-sidebar-nav
+        collapsible
+        collapsible-label="Toggle this"
         :styles="styles"
       >
         <scale-sidebar-nav-item>
           <a href="#">Overview</a>
         </scale-sidebar-nav-item>
-        <scale-sidebar-nav-collapsible label="Reference">
+        <scale-sidebar-nav-collapsible label="Reference" current>
           <scale-sidebar-nav-collapsible label="Function A">
             <scale-sidebar-nav-item>
               <a href="#">Endpoint 1</a>
@@ -75,7 +77,7 @@ export const Template = (args, { argTypes }) => ({
             <a href="#">Links baz</a>
           </scale-sidebar-nav-item>
         </scale-sidebar-nav-collapsible>
-        <scale-sidebar-nav-item current>
+        <scale-sidebar-nav-item>
           <a href="#">Console</a>
         </scale-sidebar-nav-item>
       </scale-sidebar-nav>
@@ -124,7 +126,7 @@ export const Template = (args, { argTypes }) => ({
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
     <scale-sidebar-nav-collapsible label="Function C">
-      <scale-sidebar-nav-item>
+      <scale-sidebar-nav-item current>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
       <scale-sidebar-nav-item>

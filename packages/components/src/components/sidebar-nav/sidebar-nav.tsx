@@ -1,5 +1,5 @@
-import { Component, h, Prop, Host, Element } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
+import { Component, h, Prop, Host, Element, State } from '@stencil/core';
+import classNames from 'classnames';
 
 /*
 TODO
@@ -8,11 +8,16 @@ TODO
 - [x] remove classNames() outside "map"
 - [x] use plain CSS, ~~with variables~~
 - [x] auto styles (Tim) (autoset and propagate `condensed`?)
-- [ ] "current" styles (vertical line + color) + new padding
+- [x] new styles (padding)
+- [x] "current" styles (vertical line + color)
+- [x] mobile version styles
+  - [x] arrow opacity
+  - [x] inner padding
+  - [x] outer padding
 - [ ] mobile version toggle
-- [ ] mobile version styles
-- [ ] aria-selected="true" ? (current – we already have?)
+- [ ] implement `collapsibleMediaQuery` via matchMedia
 - [ ] sr-only (for screenreader), "she suggested this" (below)
+- [ ] aria-selected="true" ? (current – we already have?)
 
 ---
 <style>.sr-only { position:absolute; left:-10000px; overflow:hidden; }</style>
@@ -35,8 +40,16 @@ export class SidebarNav {
    * both the role and the contents of the label.
    */
   @Prop() ariaLabel?: string;
+  /** Set to `true` to make the sidebar toggleable (useful for small screens) */
+  @Prop({ mutable: true, reflect: true }) collapsible?: boolean = false;
+  /** Automatically set `collapsible` based on this media query */
+  @Prop() collapsibleMediaQuery?: string;
+  /** Label for toggle button */
+  @Prop() collapsibleLabel?: string = 'Explore this topic';
   /** (optional) Extra styles */
   @Prop() styles?: string;
+
+  @State() collapsed: boolean = true;
 
   componentDidLoad() {
     this.setNestingLevelOnChildren();
@@ -73,13 +86,27 @@ export class SidebarNav {
     setNestingLevel(this.el);
   }
 
+  toggle = () => {
+    this.collapsed = !this.collapsed;
+  };
+
   render() {
     const label = this.ariaLabel ? { 'aria-label': this.ariaLabel } : {};
+    const hidden = this.collapsible ? { hidden: this.collapsed } : {};
 
     return (
       <Host>
         <style>{this.styles}</style>
-        <nav class={this.getCssClassMap()} {...label}>
+        {this.collapsible === true && (
+          <button
+            class="sidebar-nav__toggle-button"
+            aria-expanded={this.collapsed ? 'false' : 'true'}
+            onClick={this.toggle}
+          >
+            {this.collapsibleLabel}
+          </button>
+        )}
+        <nav class={this.getCssClassMap()} {...label} {...hidden}>
           <ul class="sidebar-nav__list" role="list">
             <slot />
           </ul>
@@ -88,7 +115,10 @@ export class SidebarNav {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    return 'sidebar-nav';
+  getCssClassMap() {
+    return classNames(
+      'sidebar-nav',
+      this.collapsible && 'sidebar-nav--collapsible'
+    );
   }
 }

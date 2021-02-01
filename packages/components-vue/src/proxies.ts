@@ -3342,6 +3342,9 @@ export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 
   props: {
     ariaLabel: {} as PropOptions<Components.ScaleSidebarNav['ariaLabel']>,
+    collapsible: {} as PropOptions<Components.ScaleSidebarNav['collapsible']>,
+    collapsibleMediaQuery: {} as PropOptions<Components.ScaleSidebarNav['collapsibleMediaQuery']>,
+    collapsibleLabel: {} as PropOptions<Components.ScaleSidebarNav['collapsibleLabel']>,
     styles: {} as PropOptions<Components.ScaleSidebarNav['styles']>,
   },
 

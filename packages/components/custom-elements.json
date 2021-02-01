@@ -6146,6 +6146,18 @@
           "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
         },
         {
+          "name": "collapsible",
+          "description": "Set to `true` to make the sidebar toggleable (useful for small screens)"
+        },
+        {
+          "name": "collapsible-label",
+          "description": "Label for toggle button"
+        },
+        {
+          "name": "collapsible-media-query",
+          "description": "Automatically set `collapsible` based on this media query"
+        },
+        {
           "name": "styles",
           "description": "(optional) Extra styles"
         }
