@@ -2,7 +2,7 @@ import { Component, h, Prop, Host, Watch, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
-const SR_ACTIVE_TEXT = ' Zurzeit aktiv'
+const SR_ACTIVE_TEXT = ' Zurzeit aktiv';
 
 @Component({
   tag: 'scale-sidebar-nav-item',
@@ -23,7 +23,7 @@ export class SidebarNavItem {
   /**
    * Mark the child link as "current" with `aria-current=page`.
    * Provide the text hint if needed, default is: "Zurzeit aktiv"
-   * */
+   */
   @Prop() current: string | null = null;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
