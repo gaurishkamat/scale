@@ -70,6 +70,10 @@ export const Template = (args, { argTypes }) => ({
 
 ## External Link
 
+If the button with a link is used to point the user to an external address, then the user should be informed of this.
+We recommend using an icon (visually) and an additional caption for screen readers.
+If the icon is an `img` element, its `alt` attribute should be empty.
+
 <Canvas withSource="none">
     <Story
         name='External link'
@@ -77,8 +81,7 @@ export const Template = (args, { argTypes }) => ({
             href: 'https://example.com',
             target: '_blank',
             label: 'External link, opens in new tab',
-            icon: 'external',
-            title: 'External link, opens in new tab'
+            icon: 'external'
         }}
     >
         {Template.bind({})}
@@ -86,7 +89,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-button href="https://example.com" target="_blank">
+<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
   External link, opens in new tab
   <scale-icon-navigation-external-link size="24" />
 </scale-button>
