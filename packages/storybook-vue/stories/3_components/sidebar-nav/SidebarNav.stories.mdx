@@ -1,9 +1,15 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleSidebarNav from './SidebarNav.vue';
+import ScaleSidebarNavCollapsible from './SidebarNavCollapsible.vue';
+import ScaleSidebarNavItem from './SidebarNavItem.vue';
 
 <Meta
   title='Components/Sidebar Navigation'
   component={ScaleSidebarNav}
+  subcomponents={{
+    'scale-sidebar-nav-collapsible': ScaleSidebarNavCollapsible,
+    'scale-sidebar-nav-item': ScaleSidebarNavItem
+  }}
   argTypes={{
     width: {
       control: {

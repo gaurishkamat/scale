@@ -1,38 +1,14 @@
 import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import classNames from 'classnames';
 
-/*
-TODO
-----
-- [x] new icon
-- [x] remove classNames() outside "map"
-- [x] use plain CSS, ~~with variables~~
-- [x] auto styles (Tim) (autoset and propagate `condensed`?)
-- [x] new styles (padding)
-- [x] "current" styles (vertical line + color)
-- [x] mobile version styles
-  - [x] arrow opacity
-  - [x] inner padding
-  - [x] outer padding
-- [x] mobile version toggle
-- [x] current -> sr-only (for screenreader), "she suggested this" (below)
-- [-] aria-selected="true" ? (current – we already have?)
-- [ ] implement `collapsibleMediaQuery` via matchMedia
-- [ ] add -collapsible and -item to storybook
-
----
-<style>.sr-only { position:absolute; left:-10000px; overflow:hidden; }</style>
-<a href="#">Menüeintrag<span class="sr-only"> Zurzeit aktiv</span></a>
-
-https://www.w3.org/TR/wai-aria-1.1/#aria-current
-*/
-
 @Component({
   tag: 'scale-sidebar-nav',
   styleUrl: 'sidebar-nav.css',
   shadow: true,
 })
 export class SidebarNav {
+  mq: MediaQueryList;
+
   @Element() el: HTMLElement;
 
   /**
@@ -44,7 +20,7 @@ export class SidebarNav {
   /** Set to `true` to make the sidebar toggleable (useful for small screens) */
   @Prop({ mutable: true, reflect: true }) collapsible?: boolean = false;
   /** Automatically set `collapsible` based on this media query */
-  @Prop() collapsibleMediaQuery?: string;
+  @Prop() collapsibleMediaQuery?: string = '(max-width: 30em)';
   /** Label for toggle button */
   @Prop() collapsibleLabel?: string = 'Menu';
   /** (optional) Extra styles */
@@ -54,6 +30,13 @@ export class SidebarNav {
 
   componentDidLoad() {
     this.setNestingLevelOnChildren();
+    this.setMatchMedia();
+  }
+
+  disconnectedCallback() {
+    if (this.mq != null) {
+      this.mq.removeListener(this.handleMediaQueryChange);
+    }
   }
 
   /**
@@ -86,6 +69,19 @@ export class SidebarNav {
 
     setNestingLevel(this.el);
   }
+
+  setMatchMedia() {
+    if (this.collapsibleMediaQuery) {
+      this.mq = window.matchMedia(this.collapsibleMediaQuery);
+      // Recent versions of Safari throw with `addEventListener`
+      // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
+      this.mq.addListener(this.handleMediaQueryChange);
+    }
+  }
+
+  handleMediaQueryChange = (event: MediaQueryListEvent) => {
+    this.collapsible = event.matches;
+  };
 
   toggle = () => {
     this.collapsed = !this.collapsed;
