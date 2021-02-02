@@ -45,7 +45,7 @@ export const Template = (args, { argTypes }) => ({
       {{ iconOnly !== true ? label : null }}
       <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
-      <scale-icon-navigation-external-link alt="" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-external-link v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
   `
 })
