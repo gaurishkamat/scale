@@ -37,7 +37,6 @@ export const Template = (args, { argTypes }) => ({
       :target="target"
       :type="type"
       :variant="variant"
-      :type="type"
       :icon-only="iconOnly"
       :aria-label="ariaLabel"
       @click="action('clicked')"
@@ -67,6 +66,30 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story='Large Standard' />
+
+
+## External Link
+
+<Canvas withSource="none">
+  <Story
+    name='External link'
+    args={{
+        href: 'https://example.com',
+        target: '_blank',
+        label: 'External link, opens in new tab',
+        icon: 'external'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button href="https://example.com" target="_blank">
+  External link, opens in new tab
+  <scale-icon-navigation-external-link size="24" />
+</scale-button>
+```
 
 
 ## Large Secondary
@@ -185,8 +208,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       href: 'https://example.com',
       target: '_blank',
-      title: 'External link, opens in new tab',
-      icon: 'external'
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}
@@ -342,8 +364,7 @@ export const Template = (args, { argTypes }) => ({
       size: 'small',
       href: 'https://example.com',
       target: '_blank',
-      title: 'External link, opens in new tab',
-      icon: 'external'
+      title: 'External link, opens in new tab'
     }}
   >
     {Template.bind({})}
