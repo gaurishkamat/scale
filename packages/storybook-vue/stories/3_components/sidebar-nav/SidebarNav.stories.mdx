@@ -43,9 +43,9 @@ export const Template = (args, { argTypes }) => ({
         <scale-sidebar-nav-item>
           <a href="#">Overview</a>
         </scale-sidebar-nav-item>
-        <scale-sidebar-nav-collapsible label="Reference" active>
-          <scale-sidebar-nav-collapsible label="Function A" active>
-            <scale-sidebar-nav-item current active>
+        <scale-sidebar-nav-collapsible label="Reference" expanded>
+          <scale-sidebar-nav-collapsible label="Function A" expanded>
+            <scale-sidebar-nav-item active current>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -56,7 +56,7 @@ export const Template = (args, { argTypes }) => ({
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
           <scale-sidebar-nav-collapsible label="Function B">
-            <scale-sidebar-nav-item active>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 4</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -91,7 +91,7 @@ export const Template = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name='Standard' args={{ collapsible: true, collapsibleLabel: 'Explore this topic' }}>
+  <Story name='Standard' args={{ collapsibleLabel: 'Explore this topic' }}>
     {Template.bind({})}
   </Story>
 </Canvas>
