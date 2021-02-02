@@ -11,6 +11,11 @@
     :localization="localization"
     :date-adapter="dateAdapter"
     :value="value"
+    :disabled="disabled"
+    :label="label"
+    :helper-text="helperText"
+    :status="status"
+    :size="size"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -33,7 +38,12 @@ export default {
     firstDayOfWeek: { type: String },
     localization: { type: Object },
     dateAdapter: { type: Object },
-    value: { type: String }
+    value: { type: String },
+    label: { type: String },
+    helperText: { type: String },
+    status: { type: String },
+    disabled: { type: Boolean },
+    size: { type: String },
   },
   methods: {
     scaleChange($event) {

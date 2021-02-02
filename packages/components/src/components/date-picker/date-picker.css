@@ -16,6 +16,8 @@ duet-date-picker {
 
 duet-date-picker .duet-date__input {
   border: 1px solid #262626;
+  padding: 12px 12px 0px 11px;
+  height: 48px;
 }
 
 duet-date-picker .duet-date__input:hover {
@@ -42,6 +44,137 @@ duet-date-picker .duet-date__toggle:hover scale-icon-content-calendar {
 duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   color: #cb0068;
 }
+
+.scale-date-picker {
+  position: relative;
+}
+
+.scale-date-picker .date-picker__helper-text {
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  padding-left: 12px;
+  font-size: 0.75rem;
+  line-height: 1.3333;
+  color: #007db3;
+}
+
+.scale-date-picker .input__meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scale-date-picker .date-picker__label {
+  top: 0;
+  left: 0;
+  color: #6c6c6c;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  font-size: 1rem;
+  transform: translate(13px, calc((48px - 1rem) / 2));
+  font-weight: 500;
+}
+
+duet-date-picker .duet-date__input::placeholder {
+  color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.scale-date-picker.scale-date-picker--focus .date-picker__label,
+.scale-date-picker.animated .date-picker__label {
+  color: #6c6c6c;
+  transform: translate(12px, 8px);
+  transition: all 0.2s ease-in-out;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.scale-date-picker.animated .duet-date__input::placeholder,
+duet-date-picker .duet-date__input:focus::placeholder {
+  color: #6c6c6c;
+  transition: all 0.2s ease-in-out;
+}
+
+.scale-date-picker.scale-date-picker--focus .date-picker__label {
+  color: #6c6c6c;
+  transform: translate(12px, 8px);
+  transition: all 0.2s ease-in-out;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+/* Error state */
+
+.scale-date-picker--status-error duet-date-picker .duet-date__input {
+  border: 2px solid #d90000;
+}
+.scale-date-picker--status-error duet-date-picker .duet-date__input:hover {
+  border: 2px solid #f90984;
+}
+.scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
+  border: 2px solid #f90984;
+}
+.scale-date-picker--status-error .date-picker__helper-text {
+  color: #d90000;
+}
+.scale-date-picker--status-error .duet-date__toggle {
+  height: 44px;
+  margin-top: 1px;
+  margin-right: 1px;
+  width: 47px;
+}
+
+/* Small */
+.scale-date-picker--size-small .duet-date__input {
+  height: 40px;
+}
+
+.scale-date-picker--size-small .date-picker__label {
+  top: 0;
+  left: 0;
+  color: #6c6c6c;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  font-size: 1rem;
+  transform: translate(13px, calc((40px - 1rem) / 2));
+  font-weight: 500;
+}
+.scale-date-picker--size-small.scale-date-picker--focus .date-picker__label,
+.scale-date-picker--size-small.animated .date-picker__label {
+  color: #6c6c6c;
+  transform: translate(12px, 4px);
+  transition: all 0.2s ease-in-out;
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+/* Disabled */
+
+.scale-date-picker.scale-date-picker--disabled,
+.scale-date-picker.scale-date-picker--disabled input,
+.scale-date-picker.scale-date-picker--disabled input:hover,
+.scale-date-picker.scale-date-picker--disabled .duet-date__toggle,
+.scale-date-picker.scale-date-picker--disabled .duet-date__toggle:hover,
+.scale-date-picker.scale-date-picker--disabled
+  .duet-date__toggle:hover
+  scale-icon-content-calendar,
+.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
+  cursor: not-allowed;
+  border-color: #d0d0d0;
+  color: #d0d0d0;
+  background: #ffffff;
+}
+
+.scale-date-picker.scale-date-picker--disabled .date-picker__label {
+  color: #d0d0d0;
+}
+
+/* Popover layout */
 
 duet-date-picker .duet-date__dialog-content {
   border: none;
@@ -136,14 +269,14 @@ duet-date-picker .duet-date__day:focus {
   color: #e20074;
 }
 
-duet-date-picker .duet-date__day:active:focus {
-  box-shadow: none;
-  background: #cb0068;
+duet-date-picker .duet-date__day:hover {
+  background: #f90984;
   color: #fff;
 }
 
-duet-date-picker .duet-date__day:hover {
-  background: #f90984;
+duet-date-picker .duet-date__day:active {
+  box-shadow: none;
+  background: #cb0068;
   color: #fff;
 }
 

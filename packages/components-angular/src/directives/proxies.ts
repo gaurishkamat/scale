@@ -302,14 +302,14 @@ export class ScaleCollapsible {
 import { DatePicker as IDatePicker } from '@scaleds/components-telekom/dist/types/components/date-picker/date-picker';
 export declare interface ScaleDatePicker extends Components.ScaleDatePicker {}
 @ProxyCmp({
-  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'identifier', 'localization', 'max', 'min', 'name', 'required', 'role', 'value'],
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'helperText', 'identifier', 'label', 'localization', 'max', 'min', 'name', 'required', 'role', 'size', 'status', 'value'],
   methods: ['setFocus', 'show', 'hide']
 })
 @Component({
   selector: 'scale-date-picker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'identifier', 'localization', 'max', 'min', 'name', 'required', 'role', 'value'],
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'helperText', 'identifier', 'label', 'localization', 'max', 'min', 'name', 'required', 'role', 'size', 'status', 'value'],
   outputs: ['scaleChange', 'scaleBlur', 'scaleFocus']
 })
 export class ScaleDatePicker {

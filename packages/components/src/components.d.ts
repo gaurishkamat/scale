@@ -250,6 +250,10 @@ export namespace Components {
          */
         "firstDayOfWeek"?: any;
         /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
           * Hide the calendar modal. Set `moveFocusToButton` to false to prevent focus returning to the date picker's button. Default is true.
          */
         "hide": (moveFocusToButton?: boolean) => Promise<void>;
@@ -257,6 +261,10 @@ export namespace Components {
           * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
          */
         "identifier": string;
+        /**
+          * (optional) Label
+         */
+        "label": string;
         /**
           * Button labels, day names, month names, etc, used for localization. Default is English.
          */
@@ -289,6 +297,14 @@ export namespace Components {
           * Show the calendar modal, moving focus to the calendar inside.
          */
         "show": () => Promise<void>;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
         /**
           * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
          */
@@ -6693,9 +6709,17 @@ declare namespace LocalJSX {
          */
         "firstDayOfWeek"?: any;
         /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
           * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
          */
         "identifier"?: string;
+        /**
+          * (optional) Label
+         */
+        "label"?: string;
         /**
           * Button labels, day names, month names, etc, used for localization. Default is English.
          */
@@ -6732,6 +6756,14 @@ declare namespace LocalJSX {
           * Defines a specific role attribute for the date picker input.
          */
         "role"?: string;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
         /**
           * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
          */

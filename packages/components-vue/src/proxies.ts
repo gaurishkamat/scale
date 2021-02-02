@@ -476,6 +476,10 @@ export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
     firstDayOfWeek: {} as PropOptions<Components.ScaleDatePicker['firstDayOfWeek']>,
     localization: {} as PropOptions<Components.ScaleDatePicker['localization']>,
     dateAdapter: {} as PropOptions<Components.ScaleDatePicker['dateAdapter']>,
+    helperText: {} as PropOptions<Components.ScaleDatePicker['helperText']>,
+    status: {} as PropOptions<Components.ScaleDatePicker['status']>,
+    label: {} as PropOptions<Components.ScaleDatePicker['label']>,
+    size: {} as PropOptions<Components.ScaleDatePicker['size']>,
   },
 
 

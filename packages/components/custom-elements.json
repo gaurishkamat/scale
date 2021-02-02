@@ -464,8 +464,16 @@
           "description": "Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc.\nDefault is Monday."
         },
         {
+          "name": "helper-text",
+          "description": "(optional) Helper text"
+        },
+        {
           "name": "identifier",
           "description": "Adds a unique identifier for the date picker input. Use this instead of html `id` attribute."
+        },
+        {
+          "name": "label",
+          "description": "(optional) Label"
         },
         {
           "name": "localization",
@@ -490,6 +498,14 @@
         {
           "name": "role",
           "description": "Defines a specific role attribute for the date picker input."
+        },
+        {
+          "name": "size",
+          "description": "(optional) Size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Status"
         },
         {
           "name": "value",

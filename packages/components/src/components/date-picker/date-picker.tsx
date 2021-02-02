@@ -1,4 +1,12 @@
-import { Component, h, Prop, Method, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  Method,
+  Event,
+  EventEmitter,
+  State,
+} from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 
 import {
@@ -7,6 +15,9 @@ import {
   DuetDatePickerFocusEvent,
   DuetDatePicker,
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
+import classNames from 'classnames';
+
+let i = 0;
 
 if (
   typeof window !== 'undefined' &&
@@ -93,6 +104,24 @@ export class DatePicker {
    */
   @Prop() dateAdapter?: any;
 
+  /** (optional) Helper text */
+  @Prop() helperText?: string = '';
+
+  /** (optional) Status */
+  @Prop() status?: string = '';
+
+  /** (optional) Label */
+  @Prop() label: string = '';
+
+  /** (optional) Size */
+  @Prop() size?: string = '';
+
+  /** Whether the input element has focus */
+  @State() hasFocus: boolean = false;
+
+  /** Whether the input element has value */
+  @State() hasValue: boolean = this.value != null && this.value !== '';
+
   /**
    * Events section.
    */
@@ -138,39 +167,106 @@ export class DatePicker {
     return this.duetInput.hide(moveFocusToButton);
   }
 
+  componentWillLoad() {
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    if (this.identifier == null) {
+      this.identifier = 'scale-date-picker-' + i++;
+    }
+  }
+
   componentDidLoad() {
-    this.duetInput
+    const icon = this.duetInput
       // @ts-ignore
-      .querySelector('.duet-date__toggle-icon')
-      .replaceWith(document.createElement('scale-icon-content-calendar'));
+      .querySelector('.duet-date__toggle-icon');
+
+    if (icon) {
+      icon.replaceWith(document.createElement('scale-icon-content-calendar'));
+    }
+
+    const input = this.duetInput
+      // @ts-ignore
+      .querySelector('.duet-date__input');
+
+    if (input) {
+      input.addEventListener('keyup', this.handleKeyPress);
+    }
+  }
+
+  disconnectedCallback() {
+    const input = this.duetInput
+      // @ts-ignore
+      .querySelector('.duet-date__input');
+
+    if (input) {
+      input.removeEventListener('keyup', this.handleKeyPress);
+    }
+  }
+
+  handleKeyPress(e) {
+    this.hasValue = e.target.value != null && e.target.value !== '';
   }
 
   render() {
+    const ariaInvalidAttr =
+      this.status === 'error' ? { 'aria-invalid': true } : {};
+    const helperTextId = `helper-message-${i}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+
     return (
-      <duet-date-picker
-        onDuetChange={e => {
-          this.scaleChange.emit(e.detail);
-        }}
-        onDuetFocus={e => {
-          this.scaleFocus.emit(e.detail);
-        }}
-        onDuetBlur={e => {
-          this.scaleBlur.emit(e.detail);
-        }}
-        name={this.name}
-        identifier={this.identifier}
-        role={this.role}
-        direction={this.direction}
-        required={this.required}
-        min={this.min}
-        max={this.max}
-        firstDayOfWeek={this.firstDayOfWeek}
-        localization={this.localization}
-        dateAdapter={this.dateAdapter}
-        value={this.value}
-        // @ts-ignore
-        ref={element => (this.duetInput = element)}
-      ></duet-date-picker>
+      <div
+        class={classNames(
+          'scale-date-picker',
+          this.status && `scale-date-picker--status-${this.status}`,
+          this.hasFocus && 'scale-date-picker--focus',
+          this.disabled && 'scale-date-picker--disabled',
+          this.size && `scale-date-picker--size-${this.size}`,
+          this.hasValue && 'animated'
+        )}
+      >
+        <label class="date-picker__label" htmlFor={this.identifier}>
+          {this.label}
+        </label>
+        <duet-date-picker
+          onDuetChange={e => {
+            this.scaleChange.emit(e.detail);
+            this.handleKeyPress(e);
+          }}
+          onDuetFocus={e => {
+            this.scaleFocus.emit(e.detail);
+            this.hasFocus = true;
+          }}
+          onDuetBlur={e => {
+            this.scaleBlur.emit(e.detail);
+            this.hasFocus = false;
+          }}
+          name={this.name}
+          identifier={this.identifier}
+          role={this.role}
+          direction={this.direction}
+          required={this.required}
+          min={this.min}
+          max={this.max}
+          firstDayOfWeek={this.firstDayOfWeek}
+          localization={this.localization}
+          dateAdapter={this.dateAdapter}
+          disabled={this.disabled}
+          value={this.value}
+          // @ts-ignore
+          ref={element => (this.duetInput = element)}
+          {...ariaInvalidAttr}
+          {...ariaDescribedByAttr}
+        ></duet-date-picker>
+        {!!this.helperText && (
+          <div
+            class="date-picker__meta"
+            id={helperTextId}
+            aria-live="polite"
+            aria-relevant="additions removals"
+          >
+            <div class="date-picker__helper-text">{this.helperText}</div>
+          </div>
+        )}
+      </div>
     );
   }
 }

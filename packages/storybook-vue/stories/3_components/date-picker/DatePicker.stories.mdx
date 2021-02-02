@@ -14,20 +14,25 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="height: 380px;">
         <scale-date-picker
-                :name="name"
-                :identifier="identifier"
-                :role="role"
-                :direction="direction"
-                :required="required"
-                :min="min"
-                :max="max"
-                :first-day-of-week="firstDayOfWeek"
-                :localization="localization"
-                :date-adapter="dateAdapter"
-                :value="value"
-                @scaleChange="scaleChange"
-                @scaleFocus="scaleFocus"
-                @scaleBlur="scaleBlur"
+            :name="name"
+            :identifier="identifier"
+            :role="role"
+            :direction="direction"
+            :required="required"
+            :min="min"
+            :max="max"
+            :first-day-of-week="firstDayOfWeek"
+            :localization="localization"
+            :date-adapter="dateAdapter"
+            :value="value"
+            :disabled="disabled"
+            :label="label"
+            :helper-text="helperText"
+            :status="status"
+            :size="size"
+            @scaleChange="scaleChange"
+            @scaleFocus="scaleFocus"
+            @scaleBlur="scaleBlur"
             ></scale-date-picker>
     </div>
   `,
@@ -53,7 +58,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-        value: '2020-12-31'
+        value: '2020-12-31',
+        label: 'Standard'
     }}
   >
     {Template.bind({})}
@@ -62,6 +68,89 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" icon="SVG-PATH" />
 
+
 ```html
-<scale-date-picker @scaleChange="handleChange" @scaleFocus="handleFocus" @scaleBlur="handleBlur"></scale-date-picker>
+<scale-date-picker label="Standard" value="2020-12-31" @scaleChange="handleChange" @scaleFocus="handleFocus" @scaleBlur="handleBlur"></scale-date-picker>
+```
+
+
+## Helper Text
+
+<Canvas withSource="none">
+    <Story
+        name="Helper Text"
+        args={{
+            value: '2020-12-31',
+            label: "Helper Text",
+            helperText: "Make sure to fill this",
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+```html
+<scale-date-picker helperText="Make sure to fill this" label="Helper Text" value="2020-12-31"></scale-date-picker>
+```
+
+
+## Small
+
+<Canvas withSource="none">
+    <Story
+        name="Small"
+        args={{
+            value: '2020-12-31',
+            label: "Small",
+            size: "small"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+```html
+<scale-date-picker label="Small" size="small" value="2020-12-31"></scale-date-picker>
+```
+
+
+## With Error
+
+<Canvas withSource="none">
+    <Story
+        name="With Error"
+        args={{
+            label: "With Error",
+            status: "error",
+            helperText: "something is wrong",
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+```html
+<scale-date-picker label="With Error" helper-text="something is wrong" status="error" value="2020-12-31"></scale-date-picker>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+    <Story
+        name="Disabled"
+        args={{
+            label: "Disabled",
+            disabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+```html
+<scale-date-picker label="Disabled" disabled></scale-date-picker>
 ```
