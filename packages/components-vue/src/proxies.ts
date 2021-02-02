@@ -3378,6 +3378,7 @@ export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
     condensed: {} as PropOptions<Components.ScaleSidebarNavItem['condensed']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavItem['bold']>,
     active: {} as PropOptions<Components.ScaleSidebarNavItem['active']>,
+    current: {} as PropOptions<Components.ScaleSidebarNavItem['current']>,
     nestingLevel: {} as PropOptions<Components.ScaleSidebarNavItem['nestingLevel']>,
     styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
   },

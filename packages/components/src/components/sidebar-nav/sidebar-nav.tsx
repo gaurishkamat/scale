@@ -15,7 +15,7 @@ TODO
   - [x] inner padding
   - [x] outer padding
 - [x] mobile version toggle
-- [ ] current -> sr-only (for screenreader), "she suggested this" (below)
+- [x] current -> sr-only (for screenreader), "she suggested this" (below)
 - [-] aria-selected="true" ? (current – we already have?)
 - [ ] implement `collapsibleMediaQuery` via matchMedia
 - [ ] add -collapsible and -item to storybook
@@ -64,7 +64,7 @@ export class SidebarNav {
   setNestingLevelOnChildren() {
     function setNestingLevel(el: Element, level: number = 1) {
       Array.from(el.children).forEach(child => {
-        if (child.tagName === 'SCALE-SIDEBAR-NAV-COLLAPSIBLE') {
+        if (child.tagName.toUpperCase() === 'SCALE-SIDEBAR-NAV-COLLAPSIBLE') {
           setNestingLevel(child, level + 1);
           if (!child.hasAttribute('nesting-level')) {
             child.setAttribute('nesting-level', String(level));
@@ -73,7 +73,7 @@ export class SidebarNav {
             child.setAttribute('condensed', 'true');
           }
         }
-        if (child.tagName === 'SCALE-SIDEBAR-NAV-ITEM') {
+        if (child.tagName.toUpperCase() === 'SCALE-SIDEBAR-NAV-ITEM') {
           if (!child.hasAttribute('nesting-level')) {
             child.setAttribute('nesting-level', String(level));
           }

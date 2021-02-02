@@ -3949,13 +3949,13 @@ export class ScaleSidebarNavCollapsible {
 
 export declare interface ScaleSidebarNavItem extends Components.ScaleSidebarNavItem {}
 @ProxyCmp({
-  inputs: ['active', 'bold', 'condensed', 'nestingLevel', 'styles']
+  inputs: ['active', 'bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 @Component({
   selector: 'scale-sidebar-nav-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['active', 'bold', 'condensed', 'nestingLevel', 'styles']
+  inputs: ['active', 'bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 export class ScaleSidebarNavItem {
   protected el: HTMLElement;

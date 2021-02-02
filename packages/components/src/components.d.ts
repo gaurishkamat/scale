@@ -4629,6 +4629,10 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
+         */
+        "current": string | null;
+        /**
           * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
         "nestingLevel": number;
@@ -11040,6 +11044,10 @@ declare namespace LocalJSX {
           * Used normally for third level items, remove the bottom border
          */
         "condensed"?: boolean;
+        /**
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
+         */
+        "current"?: string | null;
         /**
           * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
