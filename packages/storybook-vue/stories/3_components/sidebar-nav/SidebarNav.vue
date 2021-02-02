@@ -1,17 +1,11 @@
-<template>
-  <scale-sidebar-nav
-    :aria-label="ariaLabel"
-    :styles="styles"
-  >
-    <slot></slot>
-  </scale-sidebar-nav>
-</template>
-
 <script>
 export default {
   props: {
-    ariaLabel: String,
-    styles: { type: Object }
+    ariaLabel: { type: String },
+    collapsible: { type: Boolean, default: false },
+    collapsibleMediaQuery: { type: String, default: '' },
+    collapsibleLabel: { type: String, default: 'Menu' },
+    styles: { type: String }
   }
 }
 </script>

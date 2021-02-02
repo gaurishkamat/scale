@@ -14,10 +14,11 @@ TODO
   - [x] arrow opacity
   - [x] inner padding
   - [x] outer padding
-- [ ] mobile version toggle
+- [x] mobile version toggle
+- [ ] current -> sr-only (for screenreader), "she suggested this" (below)
+- [-] aria-selected="true" ? (current – we already have?)
 - [ ] implement `collapsibleMediaQuery` via matchMedia
-- [ ] sr-only (for screenreader), "she suggested this" (below)
-- [ ] aria-selected="true" ? (current – we already have?)
+- [ ] add -collapsible and -item to storybook
 
 ---
 <style>.sr-only { position:absolute; left:-10000px; overflow:hidden; }</style>
@@ -45,7 +46,7 @@ export class SidebarNav {
   /** Automatically set `collapsible` based on this media query */
   @Prop() collapsibleMediaQuery?: string;
   /** Label for toggle button */
-  @Prop() collapsibleLabel?: string = 'Explore this topic';
+  @Prop() collapsibleLabel?: string = 'Menu';
   /** (optional) Extra styles */
   @Prop() styles?: string;
 
@@ -97,20 +98,26 @@ export class SidebarNav {
     return (
       <Host>
         <style>{this.styles}</style>
-        {this.collapsible === true && (
-          <button
-            class="sidebar-nav__toggle-button"
-            aria-expanded={this.collapsed ? 'false' : 'true'}
-            onClick={this.toggle}
-          >
-            {this.collapsibleLabel}
-          </button>
-        )}
-        <nav class={this.getCssClassMap()} {...label} {...hidden}>
-          <ul class="sidebar-nav__list" role="list">
-            <slot />
-          </ul>
-        </nav>
+        <div class={this.getCssClassMap()}>
+          {this.collapsible === true && (
+            <button
+              class="sidebar-nav__toggle-button"
+              aria-expanded={this.collapsed ? 'false' : 'true'}
+              onClick={this.toggle}
+            >
+              {this.collapsibleLabel}
+              <scale-icon-navigation-collapse-down
+                class="sidebar-nav__icon"
+                size={16}
+              />
+            </button>
+          )}
+          <nav {...label} {...hidden}>
+            <ul class="sidebar-nav__list" role="list">
+              <slot />
+            </ul>
+          </nav>
+        </div>
       </Host>
     );
   }

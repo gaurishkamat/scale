@@ -6171,6 +6171,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Label and icon get the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold label and icon"
         },
@@ -6179,20 +6183,12 @@
           "description": "Used normally for third level items"
         },
         {
-          "name": "current",
-          "description": "Label and icon get the active color"
-        },
-        {
           "name": "expanded",
           "description": "Set this to `true` to expand"
         },
         {
           "name": "href",
           "description": "The URL where the link should point to"
-        },
-        {
-          "name": "icon-size",
-          "description": "The width and height of the icon in pixels"
         },
         {
           "name": "label",
@@ -6220,16 +6216,16 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Text gets the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold text"
         },
         {
           "name": "condensed",
           "description": "Used normally for third level items, remove the bottom border"
-        },
-        {
-          "name": "current",
-          "description": "Text gets the active color"
         },
         {
           "name": "nesting-level",

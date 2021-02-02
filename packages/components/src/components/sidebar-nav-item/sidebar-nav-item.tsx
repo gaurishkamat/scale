@@ -13,7 +13,7 @@ export class SidebarNavItem {
   /** Bold text */
   @Prop() bold: boolean = false;
   /** Text gets the active color */
-  @Prop() current: boolean = false;
+  @Prop() active: boolean = false;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
   /** (optional) Extra styles */
@@ -42,7 +42,7 @@ export class SidebarNavItem {
       'sidebar-nav-item',
       this.bold && 'sidebar-nav-item--bold',
       this.condensed && 'sidebar-nav-item--condensed',
-      this.current && 'sidebar-nav-item--current'
+      this.active && 'sidebar-nav-item--active'
     );
   }
 }

@@ -19,13 +19,11 @@ export class SidebarNavCollapsible {
   /** Set this to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
   /** Label and icon get the active color */
-  @Prop() current?: boolean = false;
+  @Prop() active?: boolean = false;
   /** Bold label and icon */
   @Prop() bold: boolean = false;
   /** Used normally for third level items */
   @Prop() condensed: boolean = false;
-  /** The width and height of the icon in pixels */
-  @Prop() iconSize: number = 16;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
   /** (optional) Extra styles */
@@ -78,7 +76,7 @@ export class SidebarNavCollapsible {
               <scale-icon-navigation-collapse-down
                 class="sidebar-nav-collapsible__icon"
                 selected={this.bold}
-                size={this.iconSize}
+                size={16}
               />
             </a>
           </div>
@@ -94,7 +92,7 @@ export class SidebarNavCollapsible {
     return classNames(
       'sidebar-nav-collapsible',
       this.condensed && 'sidebar-nav-collapsible--condensed',
-      this.current && 'sidebar-nav-collapsible--current'
+      this.active && 'sidebar-nav-collapsible--active'
     );
   }
 }

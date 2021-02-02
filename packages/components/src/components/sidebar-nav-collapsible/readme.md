@@ -12,12 +12,11 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 
 | Property       | Attribute       | Description                                                                 | Type      | Default     |
 | -------------- | --------------- | --------------------------------------------------------------------------- | --------- | ----------- |
+| `active`       | `active`        | Label and icon get the active color                                         | `boolean` | `false`     |
 | `bold`         | `bold`          | Bold label and icon                                                         | `boolean` | `false`     |
 | `condensed`    | `condensed`     | Used normally for third level items                                         | `boolean` | `false`     |
-| `current`      | `current`       | Label and icon get the active color                                         | `boolean` | `false`     |
 | `expanded`     | `expanded`      | Set this to `true` to expand                                                | `boolean` | `undefined` |
 | `href`         | `href`          | The URL where the link should point to                                      | `string`  | `'#'`       |
-| `iconSize`     | `icon-size`     | The width and height of the icon in pixels                                  | `number`  | `16`        |
 | `label`        | `label`         | The text for the button                                                     | `string`  | `undefined` |
 | `nestingLevel` | `nesting-level` | Nesting level within the <scale-sidebar-nav> parent, gets set automatically | `number`  | `undefined` |
 | `styles`       | `styles`        | (optional) Extra styles                                                     | `string`  | `undefined` |

@@ -20,10 +20,9 @@ import ScaleSidebarNav from './SidebarNav.vue';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleSidebarNav },
   props: {
     width: { type: String },
-    ...ScaleSidebarNav.props,
+    ...ScaleSidebarNav.props
   },
   computed: {
     wrapperStyles() {
@@ -35,14 +34,16 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="wrapperStyles">
       <scale-sidebar-nav
-        collapsible
-        collapsible-label="Toggle this"
+        :arial-label="ariaLabel"
+        :collapsible="collapsible"
+        :collapsible-label="collapsibleLabel"
+        :collapsible-media-query="collapsibleMediaQuery"
         :styles="styles"
       >
         <scale-sidebar-nav-item>
           <a href="#">Overview</a>
         </scale-sidebar-nav-item>
-        <scale-sidebar-nav-collapsible label="Reference" current>
+        <scale-sidebar-nav-collapsible label="Reference" active>
           <scale-sidebar-nav-collapsible label="Function A">
             <scale-sidebar-nav-item>
               <a href="#">Endpoint 1</a>
@@ -55,7 +56,7 @@ export const Template = (args, { argTypes }) => ({
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
           <scale-sidebar-nav-collapsible label="Function B">
-            <scale-sidebar-nav-item>
+            <scale-sidebar-nav-item active>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -90,7 +91,7 @@ export const Template = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name='Standard'>
+  <Story name='Standard' args={{ collapsible: true, collapsibleLabel: 'Explore this topic' }}>
     {Template.bind({})}
   </Story>
 </Canvas>

@@ -4,11 +4,11 @@
   border-bottom-color: #e0e0e0;
 }
 
-.sidebar-nav-item--current {
+.sidebar-nav-item--active {
   position: relative;
   color: #e20074;
 }
-.sidebar-nav-item--current::before {
+.sidebar-nav-item--active::before {
   content: '';
   display: block;
   position: absolute;
@@ -19,7 +19,7 @@
   background-color: #e20074;
 }
 
-.sidebar-nav-item--condensed.sidebar-nav-item--current::before {
+.sidebar-nav-item--condensed.sidebar-nav-item--active::before {
   left: -1px;
 }
 

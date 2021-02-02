@@ -53,12 +53,12 @@
   box-shadow: inset 0 0 0 2px #009de0;
 }
 
-.sidebar-nav-collapsible--current .sidebar-nav-collapsible__button {
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button {
   position: relative;
   color: #e20074;
 }
 
-.sidebar-nav-collapsible--current .sidebar-nav-collapsible__button::before {
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::before {
   content: '';
   display: block;
   position: absolute;

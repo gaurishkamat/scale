@@ -4579,6 +4579,10 @@ export namespace Components {
     }
     interface ScaleSidebarNavCollapsible {
         /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
+        /**
           * Bold label and icon
          */
         "bold": boolean;
@@ -4587,10 +4591,6 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
-          * Label and icon get the active color
-         */
-        "current"?: boolean;
-        /**
           * Set this to `true` to expand
          */
         "expanded": boolean;
@@ -4598,10 +4598,6 @@ export namespace Components {
           * The URL where the link should point to
          */
         "href": string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize": number;
         /**
           * The text for the button
          */
@@ -4621,6 +4617,10 @@ export namespace Components {
     }
     interface ScaleSidebarNavItem {
         /**
+          * Text gets the active color
+         */
+        "active": boolean;
+        /**
           * Bold text
          */
         "bold": boolean;
@@ -4628,10 +4628,6 @@ export namespace Components {
           * Used normally for third level items, remove the bottom border
          */
         "condensed": boolean;
-        /**
-          * Text gets the active color
-         */
-        "current": boolean;
         /**
           * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
@@ -10995,6 +10991,10 @@ declare namespace LocalJSX {
     }
     interface ScaleSidebarNavCollapsible {
         /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
+        /**
           * Bold label and icon
          */
         "bold"?: boolean;
@@ -11003,10 +11003,6 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
-          * Label and icon get the active color
-         */
-        "current"?: boolean;
-        /**
           * Set this to `true` to expand
          */
         "expanded"?: boolean;
@@ -11014,10 +11010,6 @@ declare namespace LocalJSX {
           * The URL where the link should point to
          */
         "href"?: string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize"?: number;
         /**
           * The text for the button
          */
@@ -11037,6 +11029,10 @@ declare namespace LocalJSX {
     }
     interface ScaleSidebarNavItem {
         /**
+          * Text gets the active color
+         */
+        "active"?: boolean;
+        /**
           * Bold text
          */
         "bold"?: boolean;
@@ -11044,10 +11040,6 @@ declare namespace LocalJSX {
           * Used normally for third level items, remove the bottom border
          */
         "condensed"?: boolean;
-        /**
-          * Text gets the active color
-         */
-        "current"?: boolean;
         /**
           * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
