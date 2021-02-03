@@ -62,8 +62,8 @@ export class SidebarNavCollapsible {
     return (
       <Host>
         <style>{this.styles}</style>
-        <Tag class={this.getCssClassMap()} role="listitem">
-          <div class="sidebar-nav-collapsible__wrapper">
+        <Tag class={this.getCssClassMap()} role="listitem" part="base">
+          <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
             <a
               href={this.href}
               class="sidebar-nav-collapsible__button"
@@ -71,16 +71,22 @@ export class SidebarNavCollapsible {
               onKeyDown={this.handleKeydown}
               role="button"
               aria-expanded={this.expanded ? 'true' : 'false'}
+              part={classNames('button', this.active && 'button-active')}
             >
               {this.label}
               <scale-icon-navigation-collapse-down
                 class="sidebar-nav-collapsible__icon"
                 selected={this.bold}
                 size={16}
+                part="icon"
               />
             </a>
           </div>
-          <ul hidden={!this.expanded} class="sidebar-nav-collapsible__list">
+          <ul
+            hidden={!this.expanded}
+            class="sidebar-nav-collapsible__list"
+            part="list"
+          >
             <slot />
           </ul>
         </Tag>

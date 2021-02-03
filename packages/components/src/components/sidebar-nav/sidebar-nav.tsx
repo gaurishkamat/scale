@@ -94,12 +94,13 @@ export class SidebarNav {
     return (
       <Host>
         <style>{this.styles}</style>
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} part="base">
           {this.collapsible === true && (
             <button
               class="sidebar-nav__toggle-button"
               aria-expanded={this.collapsed ? 'false' : 'true'}
               onClick={this.toggle}
+              part="button"
             >
               {this.collapsibleLabel}
               <scale-icon-navigation-collapse-down
@@ -108,8 +109,8 @@ export class SidebarNav {
               />
             </button>
           )}
-          <nav {...label} {...hidden}>
-            <ul class="sidebar-nav__list" role="list">
+          <nav {...label} {...hidden} part="nav">
+            <ul class="sidebar-nav__list" role="list" part="list">
               <slot />
             </ul>
           </nav>

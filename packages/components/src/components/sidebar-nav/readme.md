@@ -16,6 +16,15 @@
 | `styles`                | `styles`                  | (optional) Extra styles                                                                                                                                                     | `string`  | `undefined`           |
 
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"base"`   |             |
+| `"button"` |             |
+| `"list"`   |             |
+
+
 ## Dependencies
 
 ### Depends on

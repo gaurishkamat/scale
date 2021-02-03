@@ -92,7 +92,7 @@ export class SidebarNavItem {
     return (
       <Host>
         <style>{this.styles}</style>
-        <li class={this.getCssClassMap()} role="listitem">
+        <li class={this.getCssClassMap()} role="listitem" part="base">
           <slot />
         </li>
       </Host>
