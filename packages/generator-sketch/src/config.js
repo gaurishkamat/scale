@@ -53,6 +53,7 @@ module.exports = {
         if (label) label.resizingConstraint = 42;
       }
       if (/^Breadcrumb/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 9;
         findLayers(symbol.layers[0], l => (l.resizingConstraint = 9));
       }

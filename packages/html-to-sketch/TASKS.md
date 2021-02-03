@@ -83,18 +83,17 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
     - [x] Textarea fix groupLayout weirdo bug
     - [x] Fix progress bar description layout
     - [x] Fix dropdown override resizing
+    - [z] Dropdown
+        - [z] pressed states should have an open dropdown, solid icon and (except the error state) a magenta pressed outline (#CB0068)
+    - [x] Breadcrumb fix positioning of "Current Page"
+        - [x] 8px too far left
+        - [-] Driven by weird things in Sketch's autolayout system -_-
+    - [x] Text field disabled bg should be white
+    - [x] Textarea disabled bg should be white
 
     - [ ] Test doc extra tests
         - [ ] Override text field texts
         - [ ] Override text area texts  
-    - [ ] Breadcrumb fix positioning of "Current Page"
-        - [ ] 8px too far left
-        - [ ] Driven by weird things in Sketch's autolayout system -_-
-    - [ ] Dropdown
-        - [ ] pressed states should have an open dropdown, solid icon and (except the error state) a magenta pressed outline (#CB0068)
-        - [ ] Open example document
-        - [ ] Make a template with open dropdown
-        - [ ] Add extra states
     - [ ] Accordion
     - [ ] Tab Nav
     - [ ] Table

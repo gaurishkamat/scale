@@ -1019,11 +1019,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     const style = new Style();
 
     if (backgroundColor) {
-			if ((node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') && node.getAttribute("disabled") !== null) {
-				style.addColorFill('rgba(239, 239, 239, 0.3)');
-			} else {
-	      style.addColorFill(backgroundColor);
-			}
+      style.addColorFill(backgroundColor);
     }
 
     if (isImage) {
