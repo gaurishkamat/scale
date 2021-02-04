@@ -19,7 +19,7 @@ export class SidebarNavItem {
   /** Bold text */
   @Prop() bold: boolean = false;
   /** Text gets the active color */
-  @Prop() active: boolean = false;
+  @Prop({ mutable: true, reflect: true }) active: boolean = false;
   /**
    * Mark the child link as "current" with `aria-current=page`.
    * Provide the text hint if needed, default is: "Zurzeit aktiv"
@@ -40,10 +40,21 @@ export class SidebarNavItem {
   @Watch('current')
   currentChanged(newValue: string | null) {
     this.handleAriaCurrentInSlottedA(newValue);
+    this.syncActiveToCurrent(newValue);
   }
 
   componentDidLoad() {
     this.handleAriaCurrentInSlottedA(this.current);
+    if (this.current != null) {
+      this.syncActiveToCurrent(this.current);
+    }
+  }
+
+  /**
+   * If an item is `current`, it should be `active` as well
+   */
+  syncActiveToCurrent(newValue: string | null) {
+    this.active = newValue === null ? false : true;
   }
 
   /**
