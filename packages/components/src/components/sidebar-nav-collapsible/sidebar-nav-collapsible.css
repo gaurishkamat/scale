@@ -58,7 +58,8 @@
   color: #e20074;
 }
 
-.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::before {
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::before,
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::after {
   content: '';
   display: block;
   position: absolute;
@@ -67,6 +68,12 @@
   width: 2px;
   height: 100%;
   background-color: #e20074;
+}
+
+/* Accessibility: extra transparent line for Windows HCM */
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::after {
+  background-color: transparent;
+  transform: translateX(2px);
 }
 
 :host([nesting-level='1']) .sidebar-nav-collapsible__button,

@@ -30,7 +30,7 @@ export class SidebarNavCollapsible {
   @Prop() styles?: string;
 
   @Watch('nestingLevel')
-  nestingLevelChanged(newValue) {
+  nestingLevelChanged(newValue: number) {
     if (newValue === 1) {
       this.bold = true;
     }

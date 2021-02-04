@@ -8,7 +8,8 @@
   position: relative;
   color: #e20074;
 }
-.sidebar-nav-item--active::before {
+.sidebar-nav-item--active::before,
+.sidebar-nav-item--active::after {
   content: '';
   display: block;
   position: absolute;
@@ -19,8 +20,15 @@
   background-color: #e20074;
 }
 
-.sidebar-nav-item--condensed.sidebar-nav-item--active::before {
+.sidebar-nav-item--condensed.sidebar-nav-item--active::before,
+.sidebar-nav-item--condensed.sidebar-nav-item--active::after {
   left: -1px;
+}
+
+/* Accessibility: extra transparent line for Windows HCM */
+.sidebar-nav-item--active::after {
+  background-color: transparent;
+  transform: translateX(2px);
 }
 
 :host([nesting-level='1']) .sidebar-nav-item,
