@@ -90,6 +90,7 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
         - [-] Driven by weird things in Sketch's autolayout system -_-
     - [x] Text field disabled bg should be white
     - [x] Textarea disabled bg should be white
+    - [x] Border sizing issue
 
     - [ ] Test doc extra tests
         - [ ] Override text field texts

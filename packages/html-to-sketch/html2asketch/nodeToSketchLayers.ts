@@ -1147,16 +1147,13 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     };
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
-    const borderAddWidth = parseFloat(borderLeftWidth) + parseFloat(borderRightWidth);
-    const borderAddHeight = parseFloat(borderTopWidth) + parseFloat(borderBottomWidth);
-    rectangle._width += borderAddWidth;
-    rectangle._height += borderAddHeight;
-    rectangle._x -= parseFloat(borderLeftWidth);
-    rectangle._y -= parseFloat(borderTopWidth);
+    const borderAddWidth = Math.max(parseFloat(borderLeftWidth), parseFloat(borderRightWidth), parseFloat(borderTopWidth), parseFloat(borderBottomWidth));
     rectangle.setStyle(style);
     rectangle.setName("Background");
 
-    if (borderAddWidth > 0 || borderAddHeight > 0) {
+    const overflowHidden = styles.overflow === 'hidden' || node.tagName == 'IFRAME';
+
+    if (overflowHidden && borderAddWidth > 0) {
       const borderRect = new Rectangle({ 
         width: rectangle._width,
         height: rectangle._height,
@@ -1187,7 +1184,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     shapeGroup.setName('Background');
     shapeGroup.addLayer(rectangle);
 
-		if (styles.overflow === 'hidden' || node.tagName == 'IFRAME') {
+		if (overflowHidden) {
 			shapeGroup.setHasClippingMask(true);
 		}
 

@@ -616,7 +616,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   console.log(`New document version`, version);
   await documentDB.run("UPDATE document SET document_version = ? WHERE document_id = ?", [version, sketch.document.do_objectID]);
 
-  sketch.build(`./sketch/${documentName}.sketch`).then(() => {
+  sketch.build(`./sketch/${documentName}.sketch`, 9).then(() => {
     console.log(`Built ./sketch/${documentName}.sketch`);
   });
 
