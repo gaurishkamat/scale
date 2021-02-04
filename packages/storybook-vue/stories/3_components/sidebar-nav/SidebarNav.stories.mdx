@@ -51,7 +51,7 @@ export const Template = (args, { argTypes }) => ({
         </scale-sidebar-nav-item>
         <scale-sidebar-nav-collapsible label="Reference" expanded>
           <scale-sidebar-nav-collapsible label="Function A" expanded>
-            <scale-sidebar-nav-item active current>
+            <scale-sidebar-nav-item current>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
             <scale-sidebar-nav-item>
@@ -98,20 +98,20 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story name='Standard' args={{ collapsibleLabel: 'Explore this topic' }}>
-    {Template.bind({})}
+    {Template.bind()}
   </Story>
 </Canvas>
 
 <ArgsTable story='Standard' />
 
 ```html
-<scale-sidebar-nav aria-label="primary">
+<scale-sidebar-nav collapsible-label="Explore this topic">
   <scale-sidebar-nav-item>
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>
-  <scale-sidebar-nav-collapsible label="Reference">
-    <scale-sidebar-nav-collapsible label="Function A">
-      <scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-collapsible label="Function A" expanded>
+      <scale-sidebar-nav-item current>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
       <scale-sidebar-nav-item>
@@ -123,24 +123,13 @@ export const Template = (args, { argTypes }) => ({
     </scale-sidebar-nav-collapsible>
     <scale-sidebar-nav-collapsible label="Function B">
       <scale-sidebar-nav-item>
-        <a href="#">Endpoint 1</a>
+        <a href="#">Endpoint 4</a>
       </scale-sidebar-nav-item>
       <scale-sidebar-nav-item>
-        <a href="#">Endpoint 2</a>
+        <a href="#">Endpoint 5</a>
       </scale-sidebar-nav-item>
       <scale-sidebar-nav-item>
-        <a href="#">Endpoint 3</a>
-      </scale-sidebar-nav-item>
-    </scale-sidebar-nav-collapsible>
-    <scale-sidebar-nav-collapsible label="Function C">
-      <scale-sidebar-nav-item current>
-        <a href="#">Endpoint 1</a>
-      </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item>
-        <a href="#">Endpoint 2</a>
-      </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item>
-        <a href="#">Endpoint 3</a>
+        <a href="#">Endpoint 6</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
   </scale-sidebar-nav-collapsible>
@@ -155,6 +144,108 @@ export const Template = (args, { argTypes }) => ({
       <a href="#">Links baz</a>
     </scale-sidebar-nav-item>
   </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 1
+
+<Canvas withSource="none">
+  <Story name='Active on Level 1'>
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item active>
+            <a href="#">Resources</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item active>
+    <a href="#">Resources</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 2
+
+<Canvas withSource="none">
+  <Story name='Active on Level 2'>
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-collapsible label="Reference" expanded>
+            <scale-sidebar-nav-item current>
+              <a href="#">Day</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Night</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-item current>
+      <a href="#">Day</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">Night</a>
+    </scale-sidebar-nav-item>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Custom Media Query
+
+<Canvas withSource="none">
+  <Story name='Custom Media Query' args={{ collapsibleLabel: 'Menu', collapsibleMediaQuery: '(max-width: 44em)' }}>
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav collapsible-label="Menu" collapsible-media-query="(max-width: 44em)">
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <!-- ... -->
   <scale-sidebar-nav-item>
     <a href="#">Console</a>
   </scale-sidebar-nav-item>
