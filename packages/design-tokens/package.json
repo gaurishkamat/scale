@@ -1,0 +1,19 @@
+{
+  "name": "@scaleds/design-tokens-telekom",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "version": "1.15.0",
+  "description": "Design Tokens for the Scale Design System by Telekom",
+  "files": [],
+  "scripts": {
+    "build": "todo"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.5"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "color": "^3.1.3"
+  }
+}
