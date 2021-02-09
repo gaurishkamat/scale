@@ -27,7 +27,7 @@ function getDeclarationsArrayForPath(path, values) {
 }
 
 const pxToRem = (x) => `${x / 16}rem`;
-const pctToUnitless = (x) => `${x / 100}`;
+const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
 const px = (x) => `${x}px`;
 
 /**
