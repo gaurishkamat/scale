@@ -40,9 +40,13 @@ export namespace Components {
          */
         "dependent": boolean;
         /**
-          * (optional) Injected jss styles
+          * If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant
          */
-        "styles"?: any;
+        "expanded": boolean;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleAlert {
         /**
@@ -6511,9 +6515,13 @@ declare namespace LocalJSX {
          */
         "dependent"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant
          */
-        "styles"?: any;
+        "expanded"?: boolean;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleAlert {
         /**

@@ -291,6 +291,7 @@ export const ScaleAccordion = /*@__PURE__*/ Vue.extend({
   props: {
     styles: {} as PropOptions<Components.ScaleAccordion['styles']>,
     dependent: {} as PropOptions<Components.ScaleAccordion['dependent']>,
+    expanded: {} as PropOptions<Components.ScaleAccordion['expanded']>,
   },
 
 

@@ -81,8 +81,12 @@
           "description": "If `true`, only one scale-collapsible within the accordion can be open at a time"
         },
         {
+          "name": "expanded",
+          "description": "If `true`, scale-collapsibles within the accordion will all be open initially"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected css styles"
         }
       ]
     },

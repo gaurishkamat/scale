@@ -88,13 +88,13 @@ export class AppNavigationSectorMobile {
 
 export declare interface ScaleAccordion extends Components.ScaleAccordion {}
 @ProxyCmp({
-  inputs: ['dependent', 'styles']
+  inputs: ['dependent', 'expanded', 'styles']
 })
 @Component({
   selector: 'scale-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dependent', 'styles']
+  inputs: ['dependent', 'expanded', 'styles']
 })
 export class ScaleAccordion {
   protected el: HTMLElement;
