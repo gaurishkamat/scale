@@ -50,6 +50,51 @@ export const Template = (args, { argTypes }) => ({
 })
 
 
+export const RangeTemplate = (args, { argTypes }) => ({
+  components: { ScaleDatePicker },
+  template: `
+    <div style="height: 380px; display: inline-flex;">
+        <scale-date-picker
+            ref="start"
+            identifier="start"
+            label="Start"
+            style="margin-right: 8px;"
+            :value="$data.start"
+            :max="$data.end"
+            @scaleChange="scaleChangeStart"
+        ></scale-date-picker>
+        <scale-date-picker
+            ref="end"
+            identifier="end"
+            label="End"
+            :value="$data.end"
+            :min="$data.start"
+            @scaleChange="scaleChangeEnd"
+        ></scale-date-picker>
+    </div>
+  `,
+  methods: {
+    scaleChangeStart: function(e) {
+        this.$data.start = e.detail.value;
+        setTimeout(() => {
+            if(!this.$data.end) {
+                this.$refs.end.$el.show()
+            }
+        }, 1000)
+    },
+    scaleChangeEnd: function(e) {
+        this.$data.end = e.detail.value;
+    },
+  },
+  data() {
+    return {
+        start: '',
+        end: ''
+    }
+  },
+})
+
+
 # DatePicker
 
 ## Standard
@@ -153,4 +198,89 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-date-picker label="Disabled" disabled></scale-date-picker>
+```
+
+## Date Range Picker
+
+<Canvas withSource="none">
+    <Story
+        name="Date Range Picker"
+    >
+        {RangeTemplate.bind({})}
+    </Story>
+</Canvas>
+
+
+```js
+const RangeTemplate = (args, { argTypes }) => ({
+  components: { ScaleDatePicker },
+  template: `
+    <div style="height: 380px; display: inline-flex;">
+        <scale-date-picker
+            ref="start"
+            identifier="start"
+            label="Start"
+            style="margin-right: 8px;"
+            :value="$data.start"
+            :max="$data.end"
+            @scaleChange="scaleChangeStart"
+        ></scale-date-picker>
+        <scale-date-picker
+            ref="end"
+            identifier="end"
+            label="End"
+            :value="$data.end"
+            :min="$data.start"
+            @scaleChange="scaleChangeEnd"
+        ></scale-date-picker>
+    </div>
+  `,
+  methods: {
+    scaleChangeStart: function(e) {
+        this.$data.start = e.detail.value;
+        setTimeout(() => {
+            if(!this.$data.end) {
+                this.$refs.end.$el.show()
+            }
+        }, 1000)
+    },
+    scaleChangeEnd: function(e) {
+        this.$data.end = e.detail.value;
+    },
+  },
+  data() {
+    return {
+        start: '',
+        end: ''
+    }
+  },
+})
+```
+
+```html
+<duet-date-picker label="Start" identifier="startDate"></duet-date-picker>
+
+<duet-date-picker label="End" identifier="endDate"></duet-date-picker>
+
+<script>
+  var startPicker = document.getElementById("startDate")
+  var endPicker = document.getElementById("startDate")
+  var startDate, endDate
+
+  // When the start date picker is changed, set end date's min to equal date
+  startPicker.addEventListener("duetChange", function(e) {
+    startDate = e.detail.valueAsDate
+    endPicker.min = e.detail.value
+
+    if (!endDate) {
+      endPicker.show()
+    }
+  })
+
+  // When the end date picker is changed, set start date's max to equal date
+  endPicker.addEventListener("duetChange", function(e) {
+    endDate = e.detail.valueAsDate
+    startPicker.max = e.detail.value
+  })
+</script>
 ```
