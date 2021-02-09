@@ -1,13 +1,13 @@
-import Color from 'color'
+import Color from 'color';
 
-export const EMPTY = Object.create(null)
-export const SPACING = 'spacing'
-export const TYPOGRAPHY = 'typography'
-export const COLOR = 'color'
-export const SHADOW = 'shadow'
-export const RADII = 'radii'
-export const OPACITY = 'opacity'
-export const MOTION = 'motion'
+export const EMPTY = Object.create(null);
+export const SPACING = 'spacing';
+export const TYPOGRAPHY = 'typography';
+export const COLOR = 'color';
+export const SHADOW = 'shadow';
+export const RADII = 'radii';
+export const OPACITY = 'opacity';
+export const MOTION = 'motion';
 
 /*
   TODO
@@ -16,61 +16,61 @@ export const MOTION = 'motion'
   - [ ] add all tokens - with output processing
   - [ ] add type variants
   - [x] setup package.json files and "modules" correctly
-  - [ ] setup prettier
+  - [x] setup prettier
   - [ ] add JSDoc types and type check
   - [ ] setup linting?
 */
 
-const tokens = {}
+const tokens = {};
 
 tokens[SPACING] = {
   scale: {
-    '1': 1,
-    '2': 2,
-    '4': 4,
-    '8': 8,
-    '12': 12,
-    '16': 16,
-    '24': 24,
-    '32': 32,
-    '40': 40,
-    '48': 48,
-    '64': 64,
-    '80': 80
-  }
-}
+    1: 1,
+    2: 2,
+    4: 4,
+    8: 8,
+    12: 12,
+    16: 16,
+    24: 24,
+    32: 32,
+    40: 40,
+    48: 48,
+    64: 64,
+    80: 80,
+  },
+};
 
 const family = {
   sans: 'TeleNeoWeb, sans-serif',
   mono: '"Office Code Pro D", monospace',
-  serif: null
-}
+  serif: null,
+};
 const size = {
-  '10': 10,
-  '12': 12,
-  '16': 16,
-  '20': 20,
-  '24': 24,
-  '32': 32,
-  '40': 40,
-  '56': 56
-}
+  10: 10,
+  12: 12,
+  16: 16,
+  20: 20,
+  24: 24,
+  32: 32,
+  40: 40,
+  56: 56,
+};
 const weight = {
   thin: 100,
   regular: 400,
   medium: 500,
   bold: 700,
-  extrabold: 800
-}
+  extrabold: 800,
+};
 const leading = {
-  '114': 114,
-  '120': 120,
-  '125': 125,
-  '133': 133,
-  '150': 150,
-  '160': 160
-}
-const tracking = EMPTY
+  114: 114,
+  120: 120,
+  125: 125,
+  133: 133,
+  150: 150,
+  160: 160,
+};
+const tracking = EMPTY;
 
 tokens[TYPOGRAPHY] = {
   family,
@@ -78,43 +78,43 @@ tokens[TYPOGRAPHY] = {
   weight,
   leading,
   tracking,
-  variants: {} // TODO
-}
+  variants: {}, // TODO
+};
 
 const palette = {
   magenta: Color('#e20074'),
   black: Color('#000000'),
   white: Color('#ffffff'),
-  gray: Color(0, 0, 0).alpha(0.5)
-}
+  gray: Color(0, 0, 0).alpha(0.5),
+};
 
 tokens[COLOR] = {
   palette,
   text: {}, // TODO
-  background: {} // TODO
-}
+  background: {}, // TODO
+};
 
 tokens[SHADOW] = {
-  level: {} // TODO
-}
+  level: {}, // TODO
+};
 
 tokens[RADII] = {
   scale: {
-    '1': 1,
-    '2': 2
-  }
-}
+    1: 1,
+    2: 2,
+  },
+};
 
 tokens[OPACITY] = {
   scale: {
-    '50': 0.5
-  }
-}
+    50: 0.5,
+  },
+};
 
 tokens[MOTION] = {
-  duration: {} // TODO
-}
+  duration: {}, // TODO
+};
 
 export default function () {
-  return { ...tokens } // a copy to avoid any outputs accidentally mutating it
+  return { ...tokens }; // a copy to avoid any outputs accidentally mutating it
 }
