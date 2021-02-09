@@ -1,16 +1,29 @@
-import color from 'color'
+import Color from 'color'
+
+export const EMPTY = Object.create(null)
+export const SPACING = 'spacing'
+export const TYPOGRAPHY = 'typography'
+export const COLOR = 'color'
+export const SHADOW = 'shadow'
+export const RADII = 'radii'
+export const OPACITY = 'opacity'
+export const MOTION = 'motion'
 
 /*
   TODO
   ----
-  - [ ] build CSS output
-  - [ ] setup package.json files and "modules" correctly
-  - [ ] add JSDoc types of TS directly
-  - [ ] setup linting
+  - [x] build CSS output
+  - [ ] add all tokens - with output processing
+  - [ ] add type variants
+  - [x] setup package.json files and "modules" correctly
   - [ ] setup prettier
+  - [ ] add JSDoc types and type check
+  - [ ] setup linting?
 */
 
-const Spacing = {
+const tokens = {}
+
+tokens[SPACING] = {
   scale: {
     '1': 1,
     '2': 2,
@@ -27,76 +40,81 @@ const Spacing = {
   }
 }
 
-const Typography = {
-  family: {
-    sans: 'TeleNeoWeb, sans-serif',
-    mono: 'Office Code Pro D, monospace',
-    serif: null
-  },
-  size: {
-    '10': 10,
-    '12': 12,
-    '16': 16,
-    '20': 20,
-    '24': 24,
-    '32': 32,
-    '40': 40,
-    '56': 56
-  },
-  weight: {
-    thin: 100,
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    extrabold: 800
-  },
-  leading: {
-    '114': 114,
-    '120': 120,
-    '125': 125,
-    '133': 133,
-    '150': 150,
-    '160': 160
-  },
-  tracking: null
+const family = {
+  sans: 'TeleNeoWeb, sans-serif',
+  mono: '"Office Code Pro D", monospace',
+  serif: null
+}
+const size = {
+  '10': 10,
+  '12': 12,
+  '16': 16,
+  '20': 20,
+  '24': 24,
+  '32': 32,
+  '40': 40,
+  '56': 56
+}
+const weight = {
+  thin: 100,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  extrabold: 800
+}
+const leading = {
+  '114': 114,
+  '120': 120,
+  '125': 125,
+  '133': 133,
+  '150': 150,
+  '160': 160
+}
+const tracking = EMPTY
+
+tokens[TYPOGRAPHY] = {
+  family,
+  size,
+  weight,
+  leading,
+  tracking,
+  variants: {} // TODO
 }
 
 const palette = {
-  magenta: color('#e20074'),
-  black: color('#000000'),
-  white: color('#ffffff')
+  magenta: Color('#e20074'),
+  black: Color('#000000'),
+  white: Color('#ffffff'),
+  gray: Color(0, 0, 0).alpha(0.5)
 }
 
-const Color = {
+tokens[COLOR] = {
   palette,
-  text: {},
-  background: {}
+  text: {}, // TODO
+  background: {} // TODO
 }
 
-const Shadow = {
-  levels: {}
+tokens[SHADOW] = {
+  level: {} // TODO
 }
 
-const Radii = {
-  scale: {},
+tokens[RADII] = {
+  scale: {
+    '1': 1,
+    '2': 2
+  }
 }
 
-const Opacity = {
-  scale: {}
+tokens[OPACITY] = {
+  scale: {
+    '50': 0.5
+  }
 }
 
-const Motion = {
-  duration: {}
+tokens[MOTION] = {
+  duration: {} // TODO
 }
 
 export default function () {
-  return {
-    Spacing,
-    Typography,
-    Color,
-    Shadow,
-    Radii,
-    Opacity,
-    Motion
-  }
+  return { ...tokens } // a copy to avoid any outputs accidentally mutating it
 }

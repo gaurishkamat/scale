@@ -1,27 +1,36 @@
-/*
-function generateTheme () {
-  const theme = themeFactory()
-  const root = postcss.root()
-  const _root = postcss.rule({ selector: ':root' })
+#!/usr/bin/env node
 
-  Object.keys(theme).forEach(key => {
-    _root.append(postcss.comment({ text: key }))
-    if (Array.isArray(theme[key])) {
-      theme[key].forEach((value, index) => {
-        _root.append(
-          postcss.decl({ prop: `--${key}-${index}`, value })
-        )
-      })
-    } else {
-      Object.entries(theme[key]).forEach((entry) => {
-        const [index, value] = entry
-        _root.append(
-          postcss.decl({ prop: `--${key}-${index}`, value })
-        )
-      })
-    }
-  })
+import { join } from 'path'
+import fs from 'fs-extra'
+import getTokens from '../main.js'
+import { generateCSS } from './css.js'
 
-  return root.append([_root]).toString()
+const FILENAME = 'design-tokens-telekom'
+const OUTPUT_PATH = './dist'
+
+main()
+
+async function main () {
+  await fs.emptyDir(OUTPUT_PATH)
+  await fs.mkdirp(OUTPUT_PATH)
+
+  const outputs = [
+    generateCSS
+  ]
+
+  try {
+    // Write a file for each output
+    await Promise.all(outputs.map(async (fn) => {
+      const tokens = getTokens() // fresh tokens for each iteration
+      const { ext, content } = fn(tokens)
+    
+      await fs.writeFile(
+        join(OUTPUT_PATH, `${FILENAME}.${ext}`),
+        content
+      )
+    }))
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
-*/
