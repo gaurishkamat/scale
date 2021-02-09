@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
+import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
 import { StyleSheet } from "jss";
 export namespace Components {
@@ -268,7 +269,7 @@ export namespace Components {
         /**
           * Button labels, day names, month names, etc, used for localization. Default is English.
          */
-        "localization"?: any;
+        "localization"?: DuetLocalizedText;
         /**
           * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
          */
@@ -6723,7 +6724,7 @@ declare namespace LocalJSX {
         /**
           * Button labels, day names, month names, etc, used for localization. Default is English.
          */
-        "localization"?: any;
+        "localization"?: DuetLocalizedText;
         /**
           * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
          */

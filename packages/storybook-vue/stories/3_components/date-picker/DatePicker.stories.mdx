@@ -14,6 +14,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="height: 380px;">
         <scale-date-picker
+            ref="picker"
             :name="name"
             :identifier="identifier"
             :role="role"
@@ -36,17 +37,84 @@ export const Template = (args, { argTypes }) => ({
             ></scale-date-picker>
     </div>
   `,
+  mounted () {
+      const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/
+      if (args.localization === 'de') {
+          this.$refs.picker.$el.dateAdapter = {
+              parse(value = "", createDate) {
+                  const matches = value.match(DATE_FORMAT)
+                  if (matches) {
+                      return createDate(matches[3], matches[2], matches[1])
+                  }
+              },
+              format(date) {
+                  return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+              },
+          }
+          this.$refs.picker.$el.localization = {
+              buttonLabel: "Datum wählen",
+              placeholder: "TT.MM.JJJJ",
+              selectedDateMessage: "Gewähltes Datum",
+              prevMonthLabel: "Vorheriger Monat",
+              nextMonthLabel: "Nächster Monat",
+              monthSelectLabel: "Monat",
+              yearSelectLabel: "Jahr",
+              closeLabel: "Fenster schließen",
+              keyboardInstruction:
+                  "Sie können mit den Pfeiltasten vor und zurück navigieren",
+              calendarHeading: "Datum wählen",
+              dayNames: [
+                  "Sonntag",
+                  "Montag",
+                  "Dienstag",
+                  "Mittwoch",
+                  "Donnerstag",
+                  "Freitag",
+                  "Samstag"
+              ],
+              monthNames: [
+                  "Januar",
+                  "Februar",
+                  "März",
+                  "April",
+                  "Mai",
+                  "Juni",
+                  "Juli",
+                  "August",
+                  "September",
+                  "Oktober",
+                  "November",
+                  "Dezember"
+              ],
+              monthNamesShort: [
+                  "Jan",
+                  "Feb",
+                  "Mär",
+                  "Apr",
+                  "Mai",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Okt",
+                  "Nov",
+                  "Dez"
+              ],
+              locale: "de-DE"
+          }
+      }
+  },
   methods: {
     scaleChange: function() {
       action('scaleChange')();
     },
     scaleFocus: function() {
-      action('scaleFocus')();
+        action('scaleFocus')();
     },
     scaleBlur: function() {
       action('scaleBlur')();
     },
-  },
+  }
 })
 
 
@@ -200,6 +268,94 @@ export const RangeTemplate = (args, { argTypes }) => ({
 <scale-date-picker label="Disabled" disabled></scale-date-picker>
 ```
 
+
+## Localization
+
+<Canvas withSource="none">
+    <Story
+        name="Localization"
+        args={{
+            label: "Localization",
+            localization: 'de'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-date-picker label="Localization" identifier="picker"></scale-date-picker>
+
+<script>
+  const picker = document.getElementById("picker")
+  picker.localization = {
+      buttonLabel: "Datum wählen",
+      placeholder: "TT.MM.JJJJ",
+      selectedDateMessage: "Gewähltes Datum",
+      prevMonthLabel: "Vorheriger Monat",
+      nextMonthLabel: "Nächster Monat",
+      monthSelectLabel: "Monat",
+      yearSelectLabel: "Jahr",
+      closeLabel: "Fenster schließen",
+      keyboardInstruction:
+          "Sie können mit den Pfeiltasten vor und zurück navigieren",
+      calendarHeading: "Datum wählen",
+      dayNames: [
+          "Sonntag",
+          "Montag",
+          "Dienstag",
+          "Mittwoch",
+          "Donnerstag",
+          "Freitag",
+          "Samstag"
+      ],
+      monthNames: [
+          "Januar",
+          "Februar",
+          "März",
+          "April",
+          "Mai",
+          "Juni",
+          "Juli",
+          "August",
+          "September",
+          "Oktober",
+          "November",
+          "Dezember"
+      ],
+      monthNamesShort: [
+          "Jan",
+          "Feb",
+          "Mär",
+          "Apr",
+          "Mai",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Okt",
+          "Nov",
+          "Dez"
+      ],
+      locale: "de-DE"
+    }
+
+    const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/
+    picker.dateAdapter = {
+      parse(value = "", createDate) {
+          const matches = value.match(DATE_FORMAT)
+          if (matches) {
+              return createDate(matches[3], matches[2], matches[1])
+          }
+      },
+      format(date) {
+          return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+      },
+    }
+</script>
+```
+
+
 ## Date Range Picker
 
 <Canvas withSource="none">
@@ -258,14 +414,14 @@ const RangeTemplate = (args, { argTypes }) => ({
 ```
 
 ```html
-<duet-date-picker label="Start" identifier="startDate"></duet-date-picker>
+<scale-date-picker label="Start" identifier="startDate"></scale-date-picker>
 
-<duet-date-picker label="End" identifier="endDate"></duet-date-picker>
+<scale-date-picker label="End" identifier="endDate"></scale-date-picker>
 
 <script>
-  var startPicker = document.getElementById("startDate")
-  var endPicker = document.getElementById("startDate")
-  var startDate, endDate
+  const startPicker = document.getElementById("startDate")
+  const endPicker = document.getElementById("startDate")
+  let startDate, endDate
 
   // When the start date picker is changed, set end date's min to equal date
   startPicker.addEventListener("duetChange", function(e) {

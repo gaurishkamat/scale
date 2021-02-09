@@ -476,10 +476,6 @@
           "description": "(optional) Label"
         },
         {
-          "name": "localization",
-          "description": "Button labels, day names, month names, etc, used for localization.\nDefault is English."
-        },
-        {
           "name": "max",
           "description": "Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the min property."
         },

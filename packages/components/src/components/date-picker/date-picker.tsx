@@ -16,6 +16,7 @@ import {
   DuetDatePicker,
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
+import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 
 let i = 0;
 
@@ -94,7 +95,7 @@ export class DatePicker {
    * Button labels, day names, month names, etc, used for localization.
    * Default is English.
    */
-  @Prop() localization?: any;
+  @Prop() localization?: DuetLocalizedText;
 
   /**
    * Date adapter, for custom parsing/formatting.

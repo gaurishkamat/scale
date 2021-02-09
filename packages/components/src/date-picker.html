@@ -31,35 +31,107 @@
   </head>
 
   <body>
-    <scale-date-picker name="daniel" value="2021-03-24"></scale-date-picker>
+    <scale-date-picker
+      label="date"
+      name="daniel"
+      value="2021-03-24"
+    ></scale-date-picker>
     <scale-button id="show">show</scale-button>
     <scale-button id="hide">hide</scale-button>
     <scale-button id="focus">focus</scale-button>
     <script>
-      const date = document.querySelector('scale-date-picker');
+      const picker = document.querySelector('scale-date-picker');
       const show = document.getElementById('show');
       const hide = document.getElementById('hide');
       const focus = document.getElementById('focus');
 
+      const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
+
+      picker.dateAdapter = {
+        parse(value = '', createDate) {
+          const matches = value.match(DATE_FORMAT);
+
+          if (matches) {
+            return createDate(matches[3], matches[2], matches[1]);
+          }
+        },
+        format(date) {
+          return `${date.getDate()}.${date.getMonth() +
+            1}.${date.getFullYear()}`;
+        },
+      };
+
+      picker.localization = {
+        buttonLabel: 'Datum wählen',
+        placeholder: 'DD-MM-YYYY',
+        selectedDateMessage: 'Gewähltes Datum',
+        prevMonthLabel: 'Vorheriger Monat',
+        nextMonthLabel: 'Nächster Monat',
+        monthSelectLabel: 'Monat',
+        yearSelectLabel: 'Jahr',
+        closeLabel: 'Fenster schließen',
+        keyboardInstruction:
+          'Sie können mit den Pfeiltasten vor und zurück navigieren',
+        calendarHeading: 'Datum wählen',
+        dayNames: [
+          'Sonntag',
+          'Montag',
+          'Dienstag',
+          'Mittwoch',
+          'Donnerstag',
+          'Freitag',
+          'Samstag',
+        ],
+        monthNames: [
+          'Januar',
+          'Februar',
+          'März',
+          'April',
+          'Mai',
+          'Juni',
+          'Juli',
+          'August',
+          'September',
+          'Oktober',
+          'November',
+          'Dezember',
+        ],
+        monthNamesShort: [
+          'Jan',
+          'Feb',
+          'Mär',
+          'Apr',
+          'Mai',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Okt',
+          'Nov',
+          'Dez',
+        ],
+        locale: 'de-DE',
+      };
+
       show.addEventListener('click', () => {
-        date.show();
+        picker.show();
       });
       hide.addEventListener('click', () => {
-        date.hide();
+        picker.hide();
       });
       focus.addEventListener('click', () => {
-        date.setFocus();
+        picker.setFocus();
       });
 
       // Listen for when date is selected
-      date.addEventListener('scaleChange', function(e) {
+      picker.addEventListener('scaleChange', function(e) {
         console.log('scaleChange selected date', e.detail.valueAsDate);
       });
-      date.addEventListener('scaleFocus', function(e) {
+      picker.addEventListener('scaleFocus', function(e) {
         console.log('scaleFocus', e);
       });
 
-      date.addEventListener('scaleBlur', function(e) {
+      picker.addEventListener('scaleBlur', function(e) {
         console.log('scaleBlur', e);
       });
     </script>
