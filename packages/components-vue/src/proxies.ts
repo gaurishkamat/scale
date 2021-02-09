@@ -323,10 +323,10 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleAppFooter['customClass']>,
     claimLang: {} as PropOptions<Components.ScaleAppFooter['claimLang']>,
     footerNavigation: {} as PropOptions<Components.ScaleAppFooter['footerNavigation']>,
     variant: {} as PropOptions<Components.ScaleAppFooter['variant']>,
+    styles: {} as PropOptions<Components.ScaleAppFooter['styles']>,
   },
 
 
@@ -338,7 +338,6 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
     claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
-    customClass: {} as PropOptions<Components.ScaleAppHeader['customClass']>,
     portalName: {} as PropOptions<Components.ScaleAppHeader['portalName']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppHeader['iconNavigation']>,

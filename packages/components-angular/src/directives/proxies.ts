@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppFooter extends Components.ScaleAppFooter {}
 @ProxyCmp({
-  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
+  inputs: ['claimLang', 'footerNavigation', 'styles', 'variant']
 })
 @Component({
   selector: 'scale-app-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
+  inputs: ['claimLang', 'footerNavigation', 'styles', 'variant']
 })
 export class ScaleAppFooter {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppFooter {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;

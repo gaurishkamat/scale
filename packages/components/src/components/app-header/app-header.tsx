@@ -11,7 +11,6 @@ import { findRootNode } from '../../utils/menu-utils';
 export class Header {
   mobileMenuToggle?: HTMLAnchorElement;
   @Prop() claimLang: string;
-  @Prop() customClass?: string = '';
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
@@ -342,7 +341,6 @@ export class Header {
   getCssClassMap(): CssClassMap {
     return classNames(
       'header',
-      this.customClass && this.customClass,
       this.scrolled && 'sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );

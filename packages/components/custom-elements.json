@@ -82,11 +82,11 @@
         },
         {
           "name": "expanded",
-          "description": "If `true`, scale-collapsibles within the accordion will all be open initially"
+          "description": "If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected css styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -143,12 +143,12 @@
           "description": ""
         },
         {
-          "name": "custom-class",
+          "name": "footer-navigation",
           "description": ""
         },
         {
-          "name": "footer-navigation",
-          "description": ""
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "variant",
@@ -173,10 +173,6 @@
         },
         {
           "name": "claim-lang",
-          "description": ""
-        },
-        {
-          "name": "custom-class",
           "description": ""
         },
         {

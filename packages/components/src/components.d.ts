@@ -88,8 +88,11 @@ export namespace Components {
     }
     interface ScaleAppFooter {
         "claimLang": string;
-        "customClass"?: string;
         "footerNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
         "variant"?: string;
     }
     interface ScaleAppHeader {
@@ -97,7 +100,6 @@ export namespace Components {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "claimLang": string;
-        "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "portalName"?: string;
@@ -6559,8 +6561,11 @@ declare namespace LocalJSX {
     }
     interface ScaleAppFooter {
         "claimLang"?: string;
-        "customClass"?: string;
         "footerNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
         "variant"?: string;
     }
     interface ScaleAppHeader {
@@ -6568,7 +6573,6 @@ declare namespace LocalJSX {
         "activeSectorId"?: string;
         "addonNavigation"?: any[];
         "claimLang"?: string;
-        "customClass"?: string;
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "portalName"?: string;
