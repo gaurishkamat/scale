@@ -13,15 +13,17 @@ export const MOTION = 'motion';
   TODO
   ----
   - [x] build CSS output
-  - [ ] add all tokens - with output processing
-  - [ ] add type variants
   - [x] setup package.json files and "modules" correctly
   - [x] setup prettier
+  - [ ] add all tokens - with output processing
+  - [ ] add type variants
+  - [ ] test integration
   - [ ] add JSDoc types and type check
-  - [ ] setup linting?
 */
 
 const tokens = {};
+
+/* SPACING */
 
 tokens[SPACING] = {
   scale: {
@@ -39,6 +41,8 @@ tokens[SPACING] = {
     80: 80,
   },
 };
+
+/* TYPOGRAPHY */
 
 const family = {
   sans: 'TeleNeoWeb, sans-serif',
@@ -81,6 +85,8 @@ tokens[TYPOGRAPHY] = {
   variants: {}, // TODO
 };
 
+/* COLOR */
+
 const palette = {
   magenta: Color('#e20074'),
   black: Color('#000000'),
@@ -94,9 +100,13 @@ tokens[COLOR] = {
   background: {}, // TODO
 };
 
+/* SHADOW */
+
 tokens[SHADOW] = {
   level: {}, // TODO
 };
+
+/* RADII */
 
 tokens[RADII] = {
   scale: {
@@ -105,11 +115,15 @@ tokens[RADII] = {
   },
 };
 
+/* OPACITY */
+
 tokens[OPACITY] = {
   scale: {
     50: 0.5,
   },
 };
+
+/* MOTION */
 
 tokens[MOTION] = {
   duration: {}, // TODO
