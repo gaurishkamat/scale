@@ -60,7 +60,7 @@ function procressValue(path, key, val) {
   }
 
   if (category === COLOR) {
-    return val.hsl(); // default is `rgb()`
+    return val; // default is `rgb()`
   }
 
   if (category === RADII) {

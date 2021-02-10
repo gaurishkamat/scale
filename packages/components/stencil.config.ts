@@ -68,6 +68,12 @@ export const config: Config = {
   },
   namespace: 'scale-components',
   globalScript: './global',
+  globalStyle: 'src/global/scale.css',
+  // plugins: [
+  //   postcss({
+  //     plugins: [atImport()]
+  //   })
+  // ],
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',

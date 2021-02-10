@@ -7,7 +7,7 @@
   "type": "module",
   "description": "Design Tokens for the Scale Design System",
   "files": [
-    "dist"
+    "dist/"
   ],
   "scripts": {
     "build": "node ./scripts/build.js",
