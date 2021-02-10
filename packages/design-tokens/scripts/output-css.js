@@ -1,6 +1,15 @@
 import postcss from 'postcss';
 import each from 'lodash/each.js';
-import { EMPTY, NAMESPACE_PREFIX, SPACING, TYPOGRAPHY, COLOR, RADIUS } from '../src/tokens.js';
+import kebabCase from 'lodash/kebabCase.js';
+import {
+  EMPTY,
+  NAMESPACE_PREFIX,
+  SPACING,
+  TYPOGRAPHY,
+  COLOR,
+  RADIUS,
+  SHADOW,
+} from '../src/tokens.js';
 
 /**
  * @typedef {Object} Declaration - A CSS declaration for postcss
@@ -18,7 +27,7 @@ function getDeclarationsArrayForPath(path, values) {
 
   each(values, (val, key) => {
     declarations.push({
-      prop: `--${NAMESPACE_PREFIX}-${path.join('-')}-${key}`,
+      prop: `--${NAMESPACE_PREFIX}-${path.join('-')}-${kebabCase(key)}`,
       value: procressValue(path, key, val),
     });
   });
@@ -60,7 +69,15 @@ function procressValue(path, key, val) {
   }
 
   if (category === COLOR) {
-    return val; // default is `rgb()`
+    return val;
+  }
+
+  if (category === SHADOW) {
+    return Array.from(val)
+      .map(({ x, y, blur, spread, color }) => {
+        return `${px(x)} ${px(y)} ${px(blur)} ${px(spread)} ${color}`;
+      })
+      .join(', ');
   }
 
   if (category === RADIUS) {

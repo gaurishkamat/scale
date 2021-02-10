@@ -1,4 +1,4 @@
-import Color from 'color';
+import { Color, Shadow } from './factories.js';
 
 export const EMPTY = Object.create(null);
 export const NAMESPACE_PREFIX = 'scl';
@@ -93,7 +93,6 @@ const palette = {
   magenta: Color('#e20074'),
   black: Color('#000000'),
   white: Color('#ffffff'),
-  gray: Color(0, 0, 0).alpha(0.5),
 };
 
 tokens[COLOR] = {
@@ -105,7 +104,13 @@ tokens[COLOR] = {
 /* SHADOW */
 
 tokens[SHADOW] = {
-  level: {}, // TODO
+  level: {
+    '0': [Shadow({ y: 2, blur: 8 }), Shadow({ y: 1, blur: 2 })],
+    '1': [Shadow({ y: 4, blur: 16 }), Shadow({ y: 2, blur: 4 })],
+    // TODO
+    '1_hover': [],
+    '1_active': [],
+  },
 };
 
 /* RADIUS */
@@ -129,7 +134,7 @@ tokens[OPACITY] = {
 
 tokens[MOTION] = {
   duration: {}, // TODO
-  easing: {} // TODO
+  easing: {}, // TODO
 };
 
 export default function () {
