@@ -10,7 +10,7 @@
 | Property    | Attribute   | Description                    | Type     | Default     |
 | ----------- | ----------- | ------------------------------ | -------- | ----------- |
 | `separator` | `separator` |                                | `string` | `undefined` |
-| `styles`    | `styles`    | (optional) Injected jss styles | `any`    | `undefined` |
+| `styles`    | `styles`    | (optional) Injected CSS styles | `string` | `undefined` |
 
 
 ## Dependencies

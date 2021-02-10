@@ -121,9 +121,9 @@ export namespace Components {
     interface ScaleBreadcrumb {
         "separator"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleButton {
         /**
@@ -6594,9 +6594,9 @@ declare namespace LocalJSX {
     interface ScaleBreadcrumb {
         "separator"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleButton {
         /**
