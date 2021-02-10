@@ -45,7 +45,7 @@ export const Template = (args, { argTypes }) => ({
       {{ iconOnly !== true ? label : null }}
       <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
-      <scale-icon-navigation-external-link v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
   `
 })
@@ -80,7 +80,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         args={{
             href: 'https://example.com',
             target: '_blank',
-            label: 'External link, opens in new tab',
+            label: 'Label',
             icon: 'external'
         }}
     >
@@ -211,8 +211,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         name='Large Link'
         args={{
             href: 'https://example.com',
-            target: '_blank',
-            title: 'External link, opens in new tab'
+            target: '_blank'
         }}
     >
         {Template.bind({})}
@@ -367,8 +366,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         args={{
             size: 'small',
             href: 'https://example.com',
-            target: '_blank',
-            title: 'External link, opens in new tab'
+            target: '_blank'
         }}
     >
         {Template.bind({})}
