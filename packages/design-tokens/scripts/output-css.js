@@ -1,6 +1,6 @@
 import postcss from 'postcss';
 import each from 'lodash/each.js';
-import { EMPTY, SPACING, TYPOGRAPHY, COLOR, RADII } from '../main.js';
+import { EMPTY, NAMESPACE_PREFIX, SPACING, TYPOGRAPHY, COLOR, RADIUS } from '../src/tokens.js';
 
 /**
  * @typedef {Object} Declaration - A CSS declaration for postcss
@@ -18,7 +18,7 @@ function getDeclarationsArrayForPath(path, values) {
 
   each(values, (val, key) => {
     declarations.push({
-      prop: `--${path.join('-')}-${key}`,
+      prop: `--${NAMESPACE_PREFIX}-${path.join('-')}-${key}`,
       value: procressValue(path, key, val),
     });
   });
@@ -63,7 +63,7 @@ function procressValue(path, key, val) {
     return val; // default is `rgb()`
   }
 
-  if (category === RADII) {
+  if (category === RADIUS) {
     return px(val);
   }
 

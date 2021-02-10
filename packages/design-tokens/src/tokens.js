@@ -1,11 +1,12 @@
 import Color from 'color';
 
 export const EMPTY = Object.create(null);
+export const NAMESPACE_PREFIX = 'scl';
 export const SPACING = 'spacing';
 export const TYPOGRAPHY = 'typography';
 export const COLOR = 'color';
 export const SHADOW = 'shadow';
-export const RADII = 'radii';
+export const RADIUS = 'radius';
 export const OPACITY = 'opacity';
 export const MOTION = 'motion';
 
@@ -17,8 +18,9 @@ export const MOTION = 'motion';
   - [x] setup prettier
   - [ ] add all tokens - with output processing
   - [ ] add type variants
-  - [ ] test integration
+  - [x] test integration
   - [ ] add JSDoc types and type check
+  - [ ] README
 */
 
 const tokens = {};
@@ -26,7 +28,7 @@ const tokens = {};
 /* SPACING */
 
 tokens[SPACING] = {
-  scale: {
+  size: {
     1: 1,
     2: 2,
     4: 4,
@@ -106,10 +108,10 @@ tokens[SHADOW] = {
   level: {}, // TODO
 };
 
-/* RADII */
+/* RADIUS */
 
-tokens[RADII] = {
-  scale: {
+tokens[RADIUS] = {
+  size: {
     1: 1,
     2: 2,
   },
@@ -118,7 +120,7 @@ tokens[RADII] = {
 /* OPACITY */
 
 tokens[OPACITY] = {
-  scale: {
+  alpha: {
     50: 0.5,
   },
 };
@@ -127,6 +129,7 @@ tokens[OPACITY] = {
 
 tokens[MOTION] = {
   duration: {}, // TODO
+  easing: {} // TODO
 };
 
 export default function () {

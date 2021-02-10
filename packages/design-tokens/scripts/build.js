@@ -2,7 +2,7 @@
 
 import { join } from 'path';
 import fs from 'fs-extra';
-import getTokens from '../main.js';
+import getTokens from '../src/tokens.js';
 import { generateCSS } from './output-css.js';
 
 const FILENAME = 'design-tokens-telekom';
