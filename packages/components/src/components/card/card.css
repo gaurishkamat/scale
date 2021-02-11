@@ -1,0 +1,59 @@
+.card {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--color-text-contrast, #ffffff);
+  transition: var(--transition-generic, all 0.2s ease-in-out);
+  border-radius: var(--radius-card, 0.5rem);
+  box-shadow: var(
+    --shadow-card,
+    0 4px 16px 0 rgba(0, 0, 0, 0.1),
+    0 2px 4px 0 rgba(0, 0, 0, 0.1)
+  );
+}
+
+.card__body {
+  padding: var(--spacing-box, 1.5rem);
+}
+
+.card__body ::slotted(*) {
+  margin: 0;
+}
+
+.card--interactive {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+.card--interactive:hover {
+  box-shadow: var(
+    --shadow-card-hover,
+    0 6px 24px 0 rgba(0, 0, 0, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.1)
+  );
+}
+
+.card--interactive:focus {
+  box-shadow: var(
+    --shadow-card-focus,
+    0 6px 24px 0 rgba(0, 0, 0, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.1),
+    0 0 0 2px #009de0;
+  );
+}
+
+.card--interactive:active {
+  border: none;
+  box-shadow: var(
+    --shadow-card-active,
+    0 2px 8px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.1) ;
+  );
+}
+
+.card--interactive .card__body ::slotted(*) {
+  margin: 0;
+}

@@ -169,10 +169,6 @@ export namespace Components {
     }
     interface ScaleCard {
         /**
-          * (optional) Card class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
@@ -181,9 +177,9 @@ export namespace Components {
          */
         "rel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link card target
          */
@@ -209,10 +205,6 @@ export namespace Components {
     }
     interface ScaleChartStackCard {
         /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
-        /**
           * Chart Data
          */
         "data": string | Array<Record<'type' | 'value' | 'percentage', string>>;
@@ -220,10 +212,6 @@ export namespace Components {
           * Chart Title
          */
         "heading": string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleCollapsible {
         /**
@@ -6638,10 +6626,6 @@ declare namespace LocalJSX {
     }
     interface ScaleCard {
         /**
-          * (optional) Card class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
@@ -6650,9 +6634,9 @@ declare namespace LocalJSX {
          */
         "rel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link card target
          */
@@ -6678,10 +6662,6 @@ declare namespace LocalJSX {
     }
     interface ScaleChartStackCard {
         /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
-        /**
           * Chart Data
          */
         "data"?: string | Array<Record<'type' | 'value' | 'percentage', string>>;
@@ -6689,10 +6669,6 @@ declare namespace LocalJSX {
           * Chart Title
          */
         "heading"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleCollapsible {
         /**

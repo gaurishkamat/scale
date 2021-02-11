@@ -27,7 +27,7 @@ import ScaleCard from './ScaleCard.vue';
       control: { type: 'text' }
     },
     styles: {
-      control: { disable: true }
+      control: { type: String }
     }
   }}
 />
@@ -46,7 +46,7 @@ export const Template = (args, { argTypes }) => ({
               :target="target"
               :label="label"
               :rel="rel"
-              :styles="JSON.stringify(styles)"
+              :styles="styles"
             >
                 <div v-if="slot.startsWith('<div')">
                     <div style="margin: -24px;">

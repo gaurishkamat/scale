@@ -19,7 +19,7 @@ export default {
     to: String,
     target: { type: String, default: "_self" },
     rel: { type: String, default: "_self" },
-    styles: { type: Object }
+    styles: { type: String }
   }
 };
 </script>

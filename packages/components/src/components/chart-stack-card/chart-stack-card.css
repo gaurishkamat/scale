@@ -1,0 +1,67 @@
+.chart-stack-card {
+  color: var(--color-text);
+}
+.chart-stack-card .header {
+  height: 24px;
+  font-size: 24px;
+  font-weight: var(--type-weight-extra-bold);
+  line-height: 26px;
+  margin-bottom: 24px;
+}
+
+.chart-stack-card .bar {
+  display: flex;
+  justifycontent: space-between;
+  marginbottom: 17px;
+}
+
+.chart-stack-card .bar__item {
+  background-color: #216bff;
+  height: 28px;
+  flex: 1;
+}
+
+.chart-stack-card .bar__item:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.chart-stack-card .bar__item:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.chart-stack-card .legend {
+  display: flex;
+  flex-direction: column;
+  height: 161px;
+}
+.chart-stack-card .spacer {
+  padding: 0 0.5rem;
+}
+.chart-stack-card .legend .legend__row__item {
+  display: flex;
+  line-height: 32px;
+}
+.chart-stack-card .legend .legend__row {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-stack-card .legend .legend__row:last-child {
+  padding-bottom: 2rem;
+}
+
+.chart-stack-card .legend .legend__item {
+  height: 10px;
+  width: 10px;
+  background-color: #216bff;
+  border-radius: 24px;
+  align-self: center;
+  margin: 0 6px 1px 0;
+}
+
+.chart-stack-card .legend .legend__label {
+  font-weight: var(--type-weight-bold);
+  fontsize: 17px;
+  line-height: 32px;
+}

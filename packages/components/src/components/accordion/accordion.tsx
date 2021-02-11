@@ -55,7 +55,7 @@ export class Accordion implements Base {
   render() {
     return (
       <Host>
-        <style>{this.styles}</style>
+        {this.styles && <style>{this.styles}</style>}
 
         <div class={this.getCssClassMap()}>
           <slot />
