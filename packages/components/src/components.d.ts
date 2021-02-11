@@ -191,13 +191,9 @@ export namespace Components {
     }
     interface ScaleCarousel {
         /**
-          * (optional) Carousel class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) carousel display direction
          */
@@ -6648,13 +6644,9 @@ declare namespace LocalJSX {
     }
     interface ScaleCarousel {
         /**
-          * (optional) Carousel class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) carousel display direction
          */
