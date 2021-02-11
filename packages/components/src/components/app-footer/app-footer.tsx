@@ -1,6 +1,5 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
 
 const readData = data => {
@@ -91,7 +90,7 @@ export class AppFooter {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'footer-container',
       this.variant && `footer--variant-${this.variant}`

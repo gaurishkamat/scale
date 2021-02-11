@@ -1,6 +1,5 @@
 import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
 import { styles } from './alert.styles';
@@ -101,7 +100,7 @@ export class Alert implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     const { classes } = this.stylesheet;
     return classNames(
       classes.alert,

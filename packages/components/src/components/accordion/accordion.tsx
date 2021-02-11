@@ -1,5 +1,4 @@
 import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classnames from 'classnames';
 import Base from '../../utils/base-interface';
 @Component({
@@ -65,7 +64,7 @@ export class Accordion implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     const name = 'accordion';
     return classnames(name);
   }

@@ -1,8 +1,6 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
 import Base from '../../utils/base-interface';
-import { CssClassMap } from '../../utils/utils';
-
 /*
   @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
 */
@@ -36,24 +34,6 @@ export class Breadcrumb implements Base {
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
       element => element.slot === ''
-    );
-  }
-
-  tmpDefaultIcon(size: number) {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        style={{ display: 'inline-flex' }}
-      >
-        <path
-          d="M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z"
-          fill-rule="evenodd"
-          fill="#6B6B6B"
-        ></path>
-      </svg>
     );
   }
 
@@ -110,7 +90,7 @@ export class Breadcrumb implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     const name = 'breadcrumb';
 
     return classNames(name);

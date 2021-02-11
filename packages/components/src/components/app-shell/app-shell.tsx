@@ -1,6 +1,5 @@
 import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
-import { CssClassMap } from '../../utils/utils';
 
 const levelEnhancer = (data, i = 0) => {
   let parsedData;
@@ -74,7 +73,7 @@ export class Shell {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'shell',
       this.customClass && this.customClass,
