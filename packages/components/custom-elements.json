@@ -497,16 +497,12 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Divider class"
-        },
-        {
           "name": "size",
           "description": "(optional) Divider size"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "vertical",

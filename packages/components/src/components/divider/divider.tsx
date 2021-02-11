@@ -1,50 +1,41 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './divider.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+const name = 'divider';
 @Component({
   tag: 'scale-divider',
   shadow: true,
 })
 export class Divider implements Base {
-  /** (optional) Divider class */
-  @Prop() customClass?: string = '';
   /** (optional) Divider size */
   @Prop() size?: string = '';
   /** (optional) Divider vertical */
   @Prop() vertical?: boolean = false;
 
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Divider', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   componentWillUpdate() {}
   disconnectedCallback() {}
 
   render() {
-    const { classes } = this.stylesheet;
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()} aria-hidden="true">
-          {!this.vertical ? <hr /> : <span class={classes.divider__vertical} />}
+        {this.styles && <style>{this.styles}</style>}
+
+        <div class={this.getCssClassMap()} aria-hidden>
+          {!this.vertical ? <hr /> : <span class={`${name}__vertical`} />}
         </div>
       </Host>
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.divider,
-      this.customClass && this.customClass,
-      this.size && classes[`divider--size-${this.size}`],
-      this.vertical && classes[`divider--vertical`]
+      name,
+      this.size && `${name}--size-${this.size}`,
+      this.vertical && `${name}--vertical`
     );
   }
 }

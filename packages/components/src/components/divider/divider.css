@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+.divider {
+  padding: var(--spacing-3, 0.75rem);
+}
+.divider hr {
+  border: 0;
+  margin: 0;
+  border-top: var(--size-divider, 1px) solid var(--color-divider, #d0d0d0);
+}
+.divider__vertical {
+  border-left: var(--size-divider, 1px) solid var(--color-divider, #d0d0d0);
+  min-height: var(--spacing-flow, 1.5rem);
+}
+
+.divider--vertical,
+.divider--vertical .divider__vertical {
+  height: inherit;
+  display: inline-flex;
+}
