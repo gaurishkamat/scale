@@ -222,13 +222,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
+  inputs: ['label', 'rel', 'styles', 'target', 'to']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
+  inputs: ['label', 'rel', 'styles', 'target', 'to']
 })
 export class ScaleCard {
   protected el: HTMLElement;
@@ -241,13 +241,13 @@ export class ScaleCard {
 
 export declare interface ScaleCarousel extends Components.ScaleCarousel {}
 @ProxyCmp({
-  inputs: ['customClass', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 @Component({
   selector: 'scale-carousel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 export class ScaleCarousel {
   protected el: HTMLElement;
@@ -260,13 +260,13 @@ export class ScaleCarousel {
 
 export declare interface ScaleChartStackCard extends Components.ScaleChartStackCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'data', 'heading', 'styles']
+  inputs: ['data', 'heading']
 })
 @Component({
   selector: 'scale-chart-stack-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'data', 'heading', 'styles']
+  inputs: ['data', 'heading']
 })
 export class ScaleChartStackCard {
   protected el: HTMLElement;

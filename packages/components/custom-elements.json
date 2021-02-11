@@ -335,10 +335,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Card class"
-        },
-        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
@@ -348,7 +344,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",
@@ -368,12 +364,8 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Carousel class"
-        },
-        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "vertical",
@@ -389,10 +381,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Custom class"
-        },
-        {
           "name": "data",
           "description": "Chart Data",
           "values": [
@@ -404,10 +392,6 @@
         {
           "name": "heading",
           "description": "Chart Title"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -424,7 +408,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },

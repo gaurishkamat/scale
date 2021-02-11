@@ -408,7 +408,6 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
 export const ScaleCard = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleCard['customClass']>,
     to: {} as PropOptions<Components.ScaleCard['to']>,
     label: {} as PropOptions<Components.ScaleCard['label']>,
     target: {} as PropOptions<Components.ScaleCard['target']>,
@@ -424,7 +423,6 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
 export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleCarousel['customClass']>,
     vertical: {} as PropOptions<Components.ScaleCarousel['vertical']>,
     styles: {} as PropOptions<Components.ScaleCarousel['styles']>,
   },
@@ -437,10 +435,8 @@ export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleChartStackCard['customClass']>,
     data: {} as PropOptions<Components.ScaleChartStackCard['data']>,
     heading: {} as PropOptions<Components.ScaleChartStackCard['heading']>,
-    styles: {} as PropOptions<Components.ScaleChartStackCard['styles']>,
   },
 
 

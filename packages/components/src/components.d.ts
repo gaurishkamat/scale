@@ -215,9 +215,9 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleDatePicker {
         /**
@@ -6672,9 +6672,9 @@ declare namespace LocalJSX {
          */
         "onScaleExpand"?: (event: CustomEvent<CollapsibleEventDetail>) => void;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleDatePicker {
         /**
