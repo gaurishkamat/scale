@@ -27,6 +27,7 @@ let i = 0;
 })
 export class Collapsible implements Base {
   headingElement: HTMLElement;
+  headingId: string;
   panelId: string;
 
   @Element() el: HTMLElement;
@@ -48,17 +49,13 @@ export class Collapsible implements Base {
   disconnectedCallback() {}
 
   componentWillLoad() {
-    this.panelId = 'collapsable-panel-' + i++;
+    const j = i++;
+    this.headingId = 'collapsable-heading-' + j;
+    this.panelId = 'collapsable-panel-' + j;
   }
 
   componentDidLoad() {
     this.setHeadingFromLightDOM();
-  }
-
-  connectedCallback() {
-    if (!this.el.hasAttribute('role')) {
-      this.el.setAttribute('role', 'region');
-    }
   }
 
   /**
@@ -103,6 +100,7 @@ export class Collapsible implements Base {
         <div class={this.getCssClassMap()}>
           <h2 aria-level={this.level} class={classes['collapsible__heading']}>
             <button
+              id={this.headingId}
               class={classes['collapsible__button']}
               onClick={this.handleClick}
               aria-expanded={this.expanded ? 'true' : 'false'}
@@ -118,6 +116,8 @@ export class Collapsible implements Base {
           </h2>
           <div
             id={this.panelId}
+            role="region"
+            aria-labelledby={this.headingId}
             hidden={!this.expanded}
             class={classes['collapsible__content']}
           >
