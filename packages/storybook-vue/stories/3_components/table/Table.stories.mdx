@@ -28,11 +28,11 @@ export const Template = (args, { argTypes }) => ({
       <table id="sortable-table">
         <thead>
           <tr>
-            <th :role="showSort ? 'button' : 'columnheader'" width="40%" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
-            <th role="columnheader" width="20%" aria-disabled class="tags">Tags</th>
-            <th :role="showSort ? 'button' : 'columnheader'" width="20%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
-            <th :role="showSort ? 'button' : 'columnheader'" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
-            <th :role="showSort ? 'button' : 'columnheader'" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
+            <th scope="col" width="40%" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th scope="col" width="20%" aria-disabled class="tags">Tags</th>
+            <th scope="col" width="20%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th scope="col" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th scope="col" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
               Euros
             </th>
           </tr>
