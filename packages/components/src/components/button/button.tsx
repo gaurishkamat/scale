@@ -1,10 +1,6 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './button.styles';
-import { CssInJs } from '../../utils/css-in-js';
 import { hasShadowDom } from '../../utils/utils';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 /*
@@ -14,13 +10,12 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-button',
+  styleUrl: 'button.css',
   shadow: true,
 })
 export class Button implements Base {
   @Element() hostElement: HTMLElement;
 
-  /** (optional) Custom class */
-  @Prop() customClass?: string = '';
   /** (optional) The size of the button */
   @Prop() size?: 'small' | 'large' = 'large';
   /** (optional) Button variant */
@@ -40,10 +35,8 @@ export class Button implements Base {
   /** (optional) The target attribute for the <a> tag */
   @Prop() target?: string = '_self';
 
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Button', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /**
    * Hack to make the button behave has expected when inside forms.
@@ -92,7 +85,8 @@ export class Button implements Base {
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         {this.href ? (
           <a
             class={this.getCssClassMap()}
@@ -118,18 +112,17 @@ export class Button implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
+    const name = 'button';
     return classNames(
-      classes.button,
-      this.customClass && classes[this.customClass],
-      this.size && classes[`button--size-${this.size}`],
-      this.variant && classes[`button--variant-${this.variant}`],
-      this.iconOnly && classes[`button--icon-only`],
+      name,
+      this.size && `${name}--size-${this.size}`,
+      this.variant && `${name}--variant-${this.variant}`,
+      this.iconOnly && `${name}--icon-only`,
       !this.iconOnly &&
         this.iconPosition &&
-        classes[`button--icon-${this.iconPosition}`],
-      this.disabled && !this.href && classes[`button--disabled`]
+        `${name}--icon-${this.iconPosition}`,
+      this.disabled && !this.href && `${name}--disabled`
     );
   }
 }

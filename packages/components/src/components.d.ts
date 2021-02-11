@@ -131,10 +131,6 @@ export namespace Components {
          */
         "ariaLabel": string;
         /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
-        /**
           * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
@@ -155,9 +151,9 @@ export namespace Components {
          */
         "size"?: 'small' | 'large';
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) The target attribute for the <a> tag
          */
@@ -6604,10 +6600,6 @@ declare namespace LocalJSX {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
-        /**
           * (optional) If `true`, the button is disabled
          */
         "disabled"?: boolean;
@@ -6628,9 +6620,9 @@ declare namespace LocalJSX {
          */
         "size"?: 'small' | 'large';
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) The target attribute for the <a> tag
          */

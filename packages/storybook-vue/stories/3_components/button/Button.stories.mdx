@@ -39,6 +39,7 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant"
       :icon-only="iconOnly"
       :aria-label="ariaLabel"
+      :styles="styles"
       @click="action('clicked')"
     >
       <scale-icon-action-search v-if="icon === 'before'" :size="size == 'small' ? 16 : 24" />

@@ -263,10 +263,6 @@
           "description": "(optional) aria-label attribute needed for icon-only buttons"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Custom class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) If `true`, the button is disabled"
         },
@@ -304,7 +300,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",

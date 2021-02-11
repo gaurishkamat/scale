@@ -388,7 +388,6 @@ export const ScaleBreadcrumb = /*@__PURE__*/ Vue.extend({
 export const ScaleButton = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleButton['customClass']>,
     size: {} as PropOptions<Components.ScaleButton['size']>,
     variant: {} as PropOptions<Components.ScaleButton['variant']>,
     disabled: {} as PropOptions<Components.ScaleButton['disabled']>,
