@@ -8,27 +8,21 @@
   position: relative;
   color: #e20074;
 }
-.sidebar-nav-item--active::before,
-.sidebar-nav-item--active::after {
+.sidebar-nav-item--active::before {
   content: '';
   display: block;
   position: absolute;
   top: 0;
   left: var(--left-current-border, 0);
-  width: 2px;
+  width: 0; /* The transparent border makes the 2px */
   height: 100%;
   background-color: #e20074;
+  /* Accessibility: extra transparent line for Windows HCM */
+  border-left: 2px solid transparent;
 }
 
-.sidebar-nav-item--condensed.sidebar-nav-item--active::before,
-.sidebar-nav-item--condensed.sidebar-nav-item--active::after {
+.sidebar-nav-item--condensed.sidebar-nav-item--active::before {
   left: -1px;
-}
-
-/* Accessibility: extra transparent line for Windows HCM */
-.sidebar-nav-item--active::after {
-  background-color: transparent;
-  transform: translateX(2px);
 }
 
 :host([nesting-level='1']) .sidebar-nav-item,
