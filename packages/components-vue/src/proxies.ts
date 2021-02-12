@@ -503,7 +503,6 @@ export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 export const ScaleIcon = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleIcon['customClass']>,
     name: {} as PropOptions<Components.ScaleIcon['name']>,
     path: {} as PropOptions<Components.ScaleIcon['path']>,
     size: {} as PropOptions<Components.ScaleIcon['size']>,
@@ -512,7 +511,6 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
     decorative: {} as PropOptions<Components.ScaleIcon['decorative']>,
     accessibilityTitle: {} as PropOptions<Components.ScaleIcon['accessibilityTitle']>,
-    styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
 
 

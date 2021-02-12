@@ -317,10 +317,6 @@ export namespace Components {
          */
         "accessibilityTitle"?: string;
         /**
-          * (optional) Tag custom class
-         */
-        "customClass"?: string;
-        /**
           * (optional) If `true` the svg element will get aria-hidden="true"
          */
         "decorative"?: boolean;
@@ -348,10 +344,6 @@ export namespace Components {
           * The SVG `stroke` attribute
          */
         "stroke"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleIconActionAdd {
         /**
@@ -6770,10 +6762,6 @@ declare namespace LocalJSX {
          */
         "accessibilityTitle"?: string;
         /**
-          * (optional) Tag custom class
-         */
-        "customClass"?: string;
-        /**
           * (optional) If `true` the svg element will get aria-hidden="true"
          */
         "decorative"?: boolean;
@@ -6801,10 +6789,6 @@ declare namespace LocalJSX {
           * The SVG `stroke` attribute
          */
         "stroke"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleIconActionAdd {
         /**

@@ -522,10 +522,6 @@
           "description": "(optional) When using the icon as standalone, make it meaningful for accessibility"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Tag custom class"
-        },
-        {
           "name": "decorative",
           "description": "(optional) If `true` the svg element will get aria-hidden=\"true\""
         },
@@ -552,10 +548,6 @@
         {
           "name": "stroke",
           "description": "The SVG `stroke` attribute"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },

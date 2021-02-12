@@ -1,19 +1,12 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './icon.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-icon',
-  // shadow: true,
+  styleUrl: './icon.css',
 })
 export class Icon implements Base {
-  /** (optional) Tag custom class */
-  @Prop() customClass?: string = '';
-
   /**
    * A name that will be used to reference an SVG object defined elsewhere,
    * via `<use xlink:href="">`. `icon-` will be prepended to the name, so if
@@ -42,10 +35,6 @@ export class Icon implements Base {
   @Prop() decorative?: boolean = false;
   /** (optional) When using the icon as standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Icon', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
   disconnectedCallback() {}
@@ -80,12 +69,7 @@ export class Icon implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(
-      classes.icon,
-      this.name && this.name,
-      this.customClass && this.customClass
-    );
+  getCssClassMap() {
+    return classNames('icon');
   }
 }

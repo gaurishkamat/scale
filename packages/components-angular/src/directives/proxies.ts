@@ -349,13 +349,13 @@ export class ScaleDivider {
 
 export declare interface ScaleIcon extends Components.ScaleIcon {}
 @ProxyCmp({
-  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke']
 })
 @Component({
   selector: 'scale-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke']
 })
 export class ScaleIcon {
   protected el: HTMLElement;
