@@ -3373,8 +3373,11 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNav['styles']>,
     ariaLabel: {} as PropOptions<Components.ScaleSidebarNav['ariaLabel']>,
+    collapsible: {} as PropOptions<Components.ScaleSidebarNav['collapsible']>,
+    collapsibleMediaQuery: {} as PropOptions<Components.ScaleSidebarNav['collapsibleMediaQuery']>,
+    collapsibleLabel: {} as PropOptions<Components.ScaleSidebarNav['collapsibleLabel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNav['styles']>,
   },
 
 
@@ -3385,15 +3388,15 @@ export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
     tag: {} as PropOptions<Components.ScaleSidebarNavCollapsible['tag']>,
     label: {} as PropOptions<Components.ScaleSidebarNavCollapsible['label']>,
     href: {} as PropOptions<Components.ScaleSidebarNavCollapsible['href']>,
-    isExpanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isExpanded']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isCurrent']>,
+    expanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['expanded']>,
+    active: {} as PropOptions<Components.ScaleSidebarNavCollapsible['active']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavCollapsible['bold']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavCollapsible['condensed']>,
-    iconSize: {} as PropOptions<Components.ScaleSidebarNavCollapsible['iconSize']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavCollapsible['nestingLevel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
   },
 
 
@@ -3404,10 +3407,12 @@ export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavItem['condensed']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavItem['bold']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavItem['isCurrent']>,
+    active: {} as PropOptions<Components.ScaleSidebarNavItem['active']>,
+    current: {} as PropOptions<Components.ScaleSidebarNavItem['current']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavItem['nestingLevel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
   },
 
 

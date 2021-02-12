@@ -1,16 +1,22 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleSidebarNav from './SidebarNav.vue';
+import ScaleSidebarNavCollapsible from './SidebarNavCollapsible.vue';
+import ScaleSidebarNavItem from './SidebarNavItem.vue';
 
 <Meta
   title='Components/Sidebar Navigation'
   component={ScaleSidebarNav}
+  subcomponents={{
+    'scale-sidebar-nav-collapsible': ScaleSidebarNavCollapsible,
+    'scale-sidebar-nav-item': ScaleSidebarNavItem
+  }}
   argTypes={{
     width: {
       control: {
         type: 'radio',
         options: ['256px', '25rem', '100%']
       },
-      defaultValue: '25rem',
+      defaultValue: '100%',
       description: 'Example width for wrapper element'
     },
     styles: {
@@ -20,10 +26,9 @@ import ScaleSidebarNav from './SidebarNav.vue';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleSidebarNav },
   props: {
     width: { type: String },
-    ...ScaleSidebarNav.props,
+    ...ScaleSidebarNav.props
   },
   computed: {
     wrapperStyles() {
@@ -35,36 +40,40 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="wrapperStyles">
       <scale-sidebar-nav
+        :arial-label="ariaLabel"
+        :collapsible="collapsible"
+        :collapsible-label="collapsibleLabel"
+        :collapsible-media-query="collapsibleMediaQuery"
         :styles="styles"
       >
-        <scale-sidebar-nav-item bold>
+        <scale-sidebar-nav-item>
           <a href="#">Overview</a>
         </scale-sidebar-nav-item>
-        <scale-sidebar-nav-collapsible label="Reference" bold>
-          <scale-sidebar-nav-collapsible label="Function A" condensed>
-            <scale-sidebar-nav-item condensed>
+        <scale-sidebar-nav-collapsible label="Reference" expanded>
+          <scale-sidebar-nav-collapsible label="Function A" expanded>
+            <scale-sidebar-nav-item current>
               <a href="#">Endpoint 1</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed is-current>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 2</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
+            <scale-sidebar-nav-item>
               <a href="#">Endpoint 3</a>
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
-          <scale-sidebar-nav-collapsible label="Function B" condensed>
-            <scale-sidebar-nav-item condensed>
-              <a href="#">Endpoint 1</a>
+          <scale-sidebar-nav-collapsible label="Function B">
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 4</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
-              <a href="#">Endpoint 2</a>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 5</a>
             </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item condensed>
-              <a href="#">Endpoint 3</a>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 6</a>
             </scale-sidebar-nav-item>
           </scale-sidebar-nav-collapsible>
         </scale-sidebar-nav-collapsible>
-        <scale-sidebar-nav-collapsible label="Etcetera" bold>
+        <scale-sidebar-nav-collapsible label="Etcetera">
           <scale-sidebar-nav-item>
             <a href="#">Some foo</a>
           </scale-sidebar-nav-item>
@@ -75,7 +84,7 @@ export const Template = (args, { argTypes }) => ({
             <a href="#">Links baz</a>
           </scale-sidebar-nav-item>
         </scale-sidebar-nav-collapsible>
-        <scale-sidebar-nav-item bold>
+        <scale-sidebar-nav-item>
           <a href="#">Console</a>
         </scale-sidebar-nav-item>
       </scale-sidebar-nav>
@@ -88,54 +97,43 @@ export const Template = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name='Standard'>
-    {Template.bind({})}
+  <Story name='Standard' args={{ collapsibleLabel: 'Explore this topic' }}>
+    {Template.bind()}
   </Story>
 </Canvas>
 
 <ArgsTable story='Standard' />
 
 ```html
-<scale-sidebar-nav aria-label="primary">
-  <scale-sidebar-nav-item bold>
+<scale-sidebar-nav collapsible-label="Explore this topic">
+  <scale-sidebar-nav-item>
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>
-  <scale-sidebar-nav-collapsible label="Reference" bold>
-    <scale-sidebar-nav-collapsible label="Function A" condensed>
-      <scale-sidebar-nav-item condensed>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-collapsible label="Function A" expanded>
+      <scale-sidebar-nav-item current>
         <a href="#">Endpoint 1</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed is-current>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 2</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
+      <scale-sidebar-nav-item>
         <a href="#">Endpoint 3</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
-    <scale-sidebar-nav-collapsible label="Function B" condensed>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 1</a>
+    <scale-sidebar-nav-collapsible label="Function B">
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 4</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 2</a>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 5</a>
       </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 3</a>
-      </scale-sidebar-nav-item>
-    </scale-sidebar-nav-collapsible>
-    <scale-sidebar-nav-collapsible label="Function C" condensed>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 1</a>
-      </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 2</a>
-      </scale-sidebar-nav-item>
-      <scale-sidebar-nav-item condensed>
-        <a href="#">Endpoint 3</a>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 6</a>
       </scale-sidebar-nav-item>
     </scale-sidebar-nav-collapsible>
   </scale-sidebar-nav-collapsible>
-  <scale-sidebar-nav-collapsible label="Etcetera" bold>
+  <scale-sidebar-nav-collapsible label="Etcetera">
     <scale-sidebar-nav-item>
       <a href="#">Some foo</a>
     </scale-sidebar-nav-item>
@@ -146,7 +144,109 @@ export const Template = (args, { argTypes }) => ({
       <a href="#">Links baz</a>
     </scale-sidebar-nav-item>
   </scale-sidebar-nav-collapsible>
-  <scale-sidebar-nav-item bold>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 1
+
+<Canvas withSource="none">
+  <Story name='Active on Level 1'>
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item current>
+            <a href="#">Resources</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item current>
+    <a href="#">Resources</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 2
+
+<Canvas withSource="none">
+  <Story name='Active on Level 2'>
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-collapsible label="Reference" expanded>
+            <scale-sidebar-nav-item current>
+              <a href="#">Day</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Night</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-item current>
+      <a href="#">Day</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">Night</a>
+    </scale-sidebar-nav-item>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Custom Media Query
+
+<Canvas withSource="none">
+  <Story name='Custom Media Query' args={{ collapsibleLabel: 'Menu', collapsibleMediaQuery: '(max-width: 44em)' }}>
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav collapsible-label="Menu" collapsible-media-query="(max-width: 44em)">
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <!-- ... -->
+  <scale-sidebar-nav-item>
     <a href="#">Console</a>
   </scale-sidebar-nav-item>
 </scale-sidebar-nav>

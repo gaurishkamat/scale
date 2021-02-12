@@ -6223,8 +6223,20 @@
           "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
         },
         {
+          "name": "collapsible",
+          "description": "Set to `true` to make the sidebar toggleable (useful for small screens)"
+        },
+        {
+          "name": "collapsible-label",
+          "description": "Label for toggle button"
+        },
+        {
+          "name": "collapsible-media-query",
+          "description": "Automatically set `collapsible` based on this media query"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },
@@ -6236,6 +6248,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Label and icon get the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold label and icon"
         },
@@ -6244,28 +6260,24 @@
           "description": "Used normally for third level items"
         },
         {
+          "name": "expanded",
+          "description": "Set this to `true` to expand"
+        },
+        {
           "name": "href",
           "description": "The URL where the link should point to"
-        },
-        {
-          "name": "icon-size",
-          "description": "The width and height of the icon in pixels"
-        },
-        {
-          "name": "is-current",
-          "description": "Label and icon get the active color"
-        },
-        {
-          "name": "is-expanded",
-          "description": "Set this to `true` to expand"
         },
         {
           "name": "label",
           "description": "The text for the button"
         },
         {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         },
         {
           "name": "tag",
@@ -6281,6 +6293,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Text gets the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold text"
         },
@@ -6289,12 +6305,16 @@
           "description": "Used normally for third level items, remove the bottom border"
         },
         {
-          "name": "is-current",
-          "description": "Text gets the active color"
+          "name": "current",
+          "description": "Mark the child link as \"current\" with `aria-current=page`.\nProvide the text hint if needed, default is: \"Zurzeit aktiv\""
+        },
+        {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },

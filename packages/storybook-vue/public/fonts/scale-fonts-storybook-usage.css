@@ -130,12 +130,6 @@
   text-decoration: none !important;
 }
 
-.addon-usage scale-sidebar-nav a,
-.addon-usage scale-sidebar-nav-item a {
-  font-family: inherit !important;
-  color: black !important;
-}
-
 .addon-usage p,
 .addon-usage ul,
 .addon-usage li,

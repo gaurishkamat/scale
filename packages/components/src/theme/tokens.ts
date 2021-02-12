@@ -63,6 +63,23 @@ const SPACING_7 = 3; // 48px
 const SPACING_8 = 4; // 64px
 const SPACING_9 = 5; // 80px
 
+/*
+  TODO: discuss proposal to remove `size` (Arturo)
+
+  const SPACING_10 = 0.0625; // 1px
+  const SPACING_20 = 0.125; // 2px
+  const SPACING_30 = 0.25; // 4px
+  const SPACING_40 = 0.5; // 8px
+  const SPACING_50 = 0.75; // 12px
+  const SPACING_60 = 1; // 16px
+  const SPACING_70 = 1.5; // 24px
+  const SPACING_80 = 2; // 32px
+  const SPACING_90 = 2.5 // 40px
+  const SPACING_100 = 3; // 48px
+  const SPACING_110 = 4; // 64px
+  const SPACING_120 = 5; // 80px
+*/
+
 /* Shadows */
 
 const SHADOW_LEVEL_0 =

@@ -4641,11 +4641,27 @@ export namespace Components {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -4655,35 +4671,35 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded": boolean;
+        /**
           * The URL where the link should point to
          */
         "href": string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize": number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label": string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active": boolean;
         /**
           * Bold text
          */
@@ -4693,13 +4709,17 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent": boolean;
+        "current": string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -11122,11 +11142,27 @@ declare namespace LocalJSX {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -11136,35 +11172,35 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
           * The URL where the link should point to
          */
         "href"?: string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize"?: number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label"?: string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active"?: boolean;
         /**
           * Bold text
          */
@@ -11174,13 +11210,17 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent"?: boolean;
+        "current"?: string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**

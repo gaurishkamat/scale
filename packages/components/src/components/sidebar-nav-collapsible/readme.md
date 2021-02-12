@@ -10,18 +10,41 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 
 ## Properties
 
-| Property     | Attribute     | Description                                | Type      | Default     |
-| ------------ | ------------- | ------------------------------------------ | --------- | ----------- |
-| `bold`       | `bold`        | Bold label and icon                        | `boolean` | `false`     |
-| `condensed`  | `condensed`   | Used normally for third level items        | `boolean` | `false`     |
-| `href`       | `href`        | The URL where the link should point to     | `string`  | `'#'`       |
-| `iconSize`   | `icon-size`   | The width and height of the icon in pixels | `number`  | `16`        |
-| `isCurrent`  | `is-current`  | Label and icon get the active color        | `boolean` | `false`     |
-| `isExpanded` | `is-expanded` | Set this to `true` to expand               | `boolean` | `undefined` |
-| `label`      | `label`       | The text for the button                    | `string`  | `undefined` |
-| `styles`     | `styles`      | (optional) Injected jss styles             | `any`     | `undefined` |
-| `tag`        | `tag`         | The parent wrapper                         | `string`  | `'li'`      |
+| Property       | Attribute       | Description                                                                 | Type      | Default     |
+| -------------- | --------------- | --------------------------------------------------------------------------- | --------- | ----------- |
+| `active`       | `active`        | Label and icon get the active color                                         | `boolean` | `false`     |
+| `bold`         | `bold`          | Bold label and icon                                                         | `boolean` | `false`     |
+| `condensed`    | `condensed`     | Used normally for third level items                                         | `boolean` | `false`     |
+| `expanded`     | `expanded`      | Set this to `true` to expand                                                | `boolean` | `undefined` |
+| `href`         | `href`          | The URL where the link should point to                                      | `string`  | `'#'`       |
+| `label`        | `label`         | The text for the button                                                     | `string`  | `undefined` |
+| `nestingLevel` | `nesting-level` | Nesting level within the <scale-sidebar-nav> parent, gets set automatically | `number`  | `undefined` |
+| `styles`       | `styles`        | (optional) Extra styles                                                     | `string`  | `undefined` |
+| `tag`          | `tag`           | The parent wrapper                                                          | `string`  | `'li'`      |
 
+
+## Shadow Parts
+
+| Part        | Description |
+| ----------- | ----------- |
+| `"base"`    |             |
+| `"icon"`    |             |
+| `"list"`    |             |
+| `"wrapper"` |             |
+
+
+## Dependencies
+
+### Depends on
+
+- [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
+
+### Graph
+```mermaid
+graph TD;
+  scale-sidebar-nav-collapsible --> scale-icon-navigation-collapse-down
+  style scale-sidebar-nav-collapsible fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
