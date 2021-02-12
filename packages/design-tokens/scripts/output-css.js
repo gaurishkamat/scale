@@ -7,8 +7,9 @@ import {
   SPACING,
   TYPOGRAPHY,
   COLOR,
-  RADIUS,
   SHADOW,
+  RADIUS,
+  MOTION
 } from '../src/tokens.js';
 
 /**
@@ -38,11 +39,12 @@ function getDeclarationsArrayForPath(path, values) {
 const pxToRem = (x) => `${x / 16}rem`;
 const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
 const px = (x) => `${x}px`;
+const ms = (x) => `${x}ms`
 
 /**
  * Transform a raw value into a CSS value.
  *
- * @param {string[]} path
+ * @param {string[]} path - [{category}, {group}] e.g. ['spacing', 'size']
  * @param {string} key
  * @param {any} val
  * @returns {string|number}
@@ -82,6 +84,10 @@ function procressValue(path, key, val) {
 
   if (category === RADIUS) {
     return px(val);
+  }
+
+  if (category === MOTION) {
+    return ms(val);
   }
 
   return val;

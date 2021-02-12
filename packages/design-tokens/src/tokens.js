@@ -133,8 +133,13 @@ tokens[OPACITY] = {
 /* MOTION */
 
 tokens[MOTION] = {
-  duration: {}, // TODO
-  easing: {}, // TODO
+  duration: {
+    immediate: 100,
+    fast: 200,
+    slower: 600,
+    deliberate: 800
+  },
+  easing: EMPTY // TODO
 };
 
 export default function () {
