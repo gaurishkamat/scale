@@ -1,19 +1,17 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from "@storybook/addon-docs/blocks";
 import { action } from "@storybook/addon-actions";
-import ScaleSwitch from './ScaleSwitch.vue';
+import ScaleSwitch from "./ScaleSwitch.vue";
 
-<Meta
-  title="Components/Switch"
-  component={ScaleSwitch}
-  argTypes={{
-    styles: {
-      control: {disable: true}
-    }
-  }}
-/>
+<Meta title="Components/Switch" component={ScaleSwitch} />
 
-export const Template = (args, {argTypes}) => ({
-  components: {ScaleSwitch},
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSwitch },
   props: ScaleSwitch.props,
   template: `
     <scale-switch
@@ -27,13 +25,20 @@ export const Template = (args, {argTypes}) => ({
     </scale-switch>
   `,
   methods: {
-    scaleChange: action('scaleChange'),
+    scaleChange: action("scaleChange"),
   },
-})
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Switch</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  }}
+>
+  <h1>Switch</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -42,15 +47,14 @@ export const Template = (args, {argTypes}) => ({
   <Story
     name="Standard"
     args={{
-      label: 'Standard'
+      label: "Standard",
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard"/>
-
+<ArgsTable story="Standard" />
 
 ## Standard disabled
 
@@ -59,7 +63,7 @@ export const Template = (args, {argTypes}) => ({
     name="Standard disabled"
     args={{
       disabled: true,
-      label: 'Standard disabled'
+      label: "Standard disabled",
     }}
   >
     {Template.bind({})}
@@ -67,9 +71,12 @@ export const Template = (args, {argTypes}) => ({
 </Canvas>
 
 ```html
-<scale-switch disabled @scaleChange="handleChange" label="Standard disabled"></scale-switch>
+<scale-switch
+  disabled
+  @scaleChange="handleChange"
+  label="Standard disabled"
+></scale-switch>
 ```
-
 
 ## Selected
 
@@ -78,7 +85,7 @@ export const Template = (args, {argTypes}) => ({
     name="Selected"
     args={{
       checked: true,
-      label: 'Selected'
+      label: "Selected",
     }}
   >
     {Template.bind({})}
@@ -86,25 +93,33 @@ export const Template = (args, {argTypes}) => ({
 </Canvas>
 
 ```html
-<scale-switch checked @scaleChange="handleChange" label="Selected"></scale-switch>
+<scale-switch
+  checked
+  @scaleChange="handleChange"
+  label="Selected"
+></scale-switch>
 ```
-
 
 ## Selected disabled
 
 <Canvas withSource="none">
-    <Story
-      name="Selected disabled"
-      args={{
-        disabled: true,
-        checked: true,
-        label: 'Selected disabled'
-      }}
-    >
-      {Template.bind({})}
-    </Story>
+  <Story
+    name="Selected disabled"
+    args={{
+      disabled: true,
+      checked: true,
+      label: "Selected disabled",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
-<scale-switch disabled checked @scaleChange="handleChange" label="Selected disabled"></scale-switch>
+<scale-switch
+  disabled
+  checked
+  @scaleChange="handleChange"
+  label="Selected disabled"
+></scale-switch>
 ```
