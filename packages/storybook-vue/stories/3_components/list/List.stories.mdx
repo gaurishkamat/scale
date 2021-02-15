@@ -17,7 +17,7 @@ import ScaleListItem from "./ScaleListItem.vue";
       control: { type: "boolean" },
     },
     styles: {
-      control: { disable: true },
+      control: { type: "string", disable: true },
     },
   }}
 />
@@ -55,8 +55,8 @@ export const TemplateCustomIcon = (args) => ({
       <scale-list-item marker="false"><scale-icon-navigation-right size="16" decorative /> Sit amet</scale-list-item>
       <scale-list-item marker="false"><scale-icon-navigation-right size="16" decorative /> Consetetur sadipscing</scale-list-item>
     </scale-list>
-  `
-})
+  `,
+});
 
 <div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
     <h1>List</h1>
@@ -76,10 +76,12 @@ export const TemplateCustomIcon = (args) => ({
 ```html
 <scale-list ordered>
   <scale-list-item>Lorem ipsum dolor</scale-list-item>
-  <scale-list-item>Sit amet
+  <scale-list-item
+    >Sit amet
     <scale-list ordered>
       <scale-list-item>Elementum nibh</scale-list-item>
-      <scale-list-item>Penatibus et magnis
+      <scale-list-item
+        >Penatibus et magnis
         <scale-list ordered>
           <scale-list-item>Nulla facilisi</scale-list-item>
           <scale-list-item>Aliquam etiam</scale-list-item>
@@ -102,10 +104,12 @@ export const TemplateCustomIcon = (args) => ({
 ```html
 <scale-list>
   <scale-list-item>Lorem ipsum dolor</scale-list-item>
-  <scale-list-item>Sit amet
+  <scale-list-item
+    >Sit amet
     <scale-list>
       <scale-list-item>Elementum nibh</scale-list-item>
-      <scale-list-item>Penatibus et magnis
+      <scale-list-item
+        >Penatibus et magnis
         <scale-list>
           <scale-list-item>Nulla facilisi</scale-list-item>
           <scale-list-item>Aliquam etiam</scale-list-item>

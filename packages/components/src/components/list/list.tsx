@@ -1,16 +1,16 @@
 import { Component, h, Prop, Host, Element, Watch } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './list.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
+
 import Base from '../../utils/base-interface';
 
 /**
  * @see https://github.com/carbon-design-system/carbon-web-components/tree/master/src/components/list
  */
+
+const name = 'list';
 @Component({
   tag: 'scale-list',
+  styleUrl: './list.css',
   shadow: true,
 })
 export class List implements Base {
@@ -20,10 +20,8 @@ export class List implements Base {
 
   /** (optional) Make the list ordered (ol) */
   @Prop() ordered?: boolean = false;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('List', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @Watch('ordered')
   orderedChanged(newValue) {
@@ -62,7 +60,8 @@ export class List implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <Tag class={this.getCssClassMap()}>
           <slot />
         </Tag>
@@ -70,12 +69,11 @@ export class List implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.list,
-      this.ordered && classes['list--type-ordered'],
-      this.isNested && classes['list--nested']
+      name,
+      this.ordered && `${name}--type-ordered`,
+      this.isNested && `${name}--nested`
     );
   }
 }

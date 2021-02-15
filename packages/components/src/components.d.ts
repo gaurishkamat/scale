@@ -4487,9 +4487,9 @@ export namespace Components {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleListItem {
         /**
@@ -4505,9 +4505,9 @@ export namespace Components {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleModal {
         /**
@@ -10948,9 +10948,9 @@ declare namespace LocalJSX {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleListItem {
         /**
@@ -10966,9 +10966,9 @@ declare namespace LocalJSX {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleModal {
         /**
