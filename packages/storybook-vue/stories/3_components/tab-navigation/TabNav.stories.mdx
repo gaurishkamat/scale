@@ -12,11 +12,11 @@ import ScaleTabNav from "./ScaleTabNav.vue";
   component={ScaleTabNav}
   argTypes={{
     styles: {
-      control: { disable: true }
+      control: { disable: true },
     },
     withIcon: {
-      table: { disable: true }
-    }
+      table: { disable: true },
+    },
   }}
 />
 
@@ -28,15 +28,24 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Tab Navigation</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  }}
+>
+  <h1>Tab Navigation</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Text & Icon
 
 <Canvas withSource="none">
-  <Story name="Text & Icon" args={{}}>{Template.bind({})}</Story>
+  <Story name="Text & Icon" args={{}}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html

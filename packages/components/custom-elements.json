@@ -6382,6 +6382,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6395,6 +6399,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size in tab headers."
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6408,6 +6416,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },

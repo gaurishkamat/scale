@@ -1,15 +1,13 @@
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './tab-header.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+const name = 'tab-header';
 let i = 0;
 
 @Component({
   tag: 'scale-tab-header',
+  styleUrl: './tab-header.css',
   shadow: true,
 })
 export class TabHeader implements Base {
@@ -20,10 +18,8 @@ export class TabHeader implements Base {
 
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
-  /** decorator Jss stylesheet */
-  @CssInJs('TabHeader', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @Prop() selected: boolean;
 
@@ -70,7 +66,8 @@ export class TabHeader implements Base {
         onFocus={() => (this.hasFocus = true)}
         onBlur={() => (this.hasFocus = false)}
       >
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <span ref={el => (this.container = el)} class={this.getCssClassMap()}>
           <slot />
         </span>
@@ -78,13 +75,12 @@ export class TabHeader implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes['tab-header'],
-      this.selected && classes['tab-header--selected'],
-      this.small && classes['tab-header--small'],
-      this.hasFocus && classes['tab-header--has-focus']
+      name,
+      this.selected && `${name}--selected`,
+      this.small && `${name}--small`,
+      this.hasFocus && `${name}--has-focus`
     );
   }
 }

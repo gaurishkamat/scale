@@ -4764,9 +4764,9 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabNav {
         /**
@@ -4774,9 +4774,9 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabPanel {
         /**
@@ -4784,9 +4784,9 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTable {
         /**
@@ -11224,9 +11224,9 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabNav {
         /**
@@ -11234,9 +11234,9 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabPanel {
         /**
@@ -11244,9 +11244,9 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTable {
         /**
