@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@stencil/react-output-target';
+import { postcss } from '@stencil/postcss';
 import { vueOutputTarget, ComponentModelConfig } from '@nowseemee/vue-output-target';
 import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
 
@@ -69,11 +70,11 @@ export const config: Config = {
   namespace: 'scale-components',
   globalScript: './global',
   globalStyle: 'src/global/scale.css',
-  // plugins: [
-  //   postcss({
-  //     plugins: [atImport()]
-  //   })
-  // ],
+  plugins: [
+    postcss({
+      plugins: [] // TODO
+    })
+  ],
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
