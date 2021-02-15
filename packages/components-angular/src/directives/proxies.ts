@@ -3920,13 +3920,13 @@ export class ScaleModal {
 
 export declare interface ScaleProgressBar extends Components.ScaleProgressBar {}
 @ProxyCmp({
-  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 @Component({
   selector: 'scale-progress-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 export class ScaleProgressBar {
   protected el: HTMLElement;

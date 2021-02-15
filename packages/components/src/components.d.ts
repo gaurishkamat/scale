@@ -4553,10 +4553,6 @@ export namespace Components {
          */
         "busy"?: boolean;
         /**
-          * (optional) Progress bar class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Progress bar customColor
          */
         "customColor"?: string;
@@ -4601,9 +4597,9 @@ export namespace Components {
          */
         "strokeWidth"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -11016,10 +11012,6 @@ declare namespace LocalJSX {
          */
         "busy"?: boolean;
         /**
-          * (optional) Progress bar class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Progress bar customColor
          */
         "customColor"?: string;
@@ -11064,9 +11056,9 @@ declare namespace LocalJSX {
          */
         "strokeWidth"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNav {
         /**

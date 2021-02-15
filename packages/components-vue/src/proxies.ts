@@ -3340,7 +3340,6 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
 export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleProgressBar['customClass']>,
     busy: {} as PropOptions<Components.ScaleProgressBar['busy']>,
     percentage: {} as PropOptions<Components.ScaleProgressBar['percentage']>,
     customColor: {} as PropOptions<Components.ScaleProgressBar['customColor']>,
