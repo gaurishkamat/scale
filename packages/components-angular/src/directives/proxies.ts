@@ -3838,13 +3838,13 @@ export class ScaleInput {
 
 export declare interface ScaleLink extends Components.ScaleLink {}
 @ProxyCmp({
-  inputs: ['block', 'customClass', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['block', 'customClass', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
 })
 export class ScaleLink {
   protected el: HTMLElement;

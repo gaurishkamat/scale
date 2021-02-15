@@ -24,7 +24,6 @@ export const Template = (args, {argTypes}) => ({
     template: `
         <scale-link
         :block="block"
-        :custom-lass="customClass"
         :disabled="disabled"
         :href="href"
         :icon="icon"
@@ -32,6 +31,7 @@ export const Template = (args, {argTypes}) => ({
         :icon-accessibility-title="iconAccessibilityTitle"
         :target="target"
         :variant="variant"
+        :styles="styles"
     >
     {{ label }}
     </scale-link>

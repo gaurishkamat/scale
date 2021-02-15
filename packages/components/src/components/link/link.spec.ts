@@ -1,14 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Link } from './link';
-import { styles } from './link.styles';
-import jss from 'jss';
 
 describe('Link', () => {
   let element;
-  let stylesheet;
   beforeEach(async () => {
     element = new Link();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   it('should match snapshot', async () => {
@@ -36,19 +32,10 @@ describe('Link', () => {
   });
 
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.variant = 'primary';
-    stylesheet.addRule('link--variant-primary', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['link--variant-primary']
-    );
+    expect(element.getCssClassMap()).toContain('link--variant-primary');
 
     element.disabled = true;
-    stylesheet.addRule('link--disabled', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['link--disabled']
-    );
+    expect(element.getCssClassMap()).toContain('link--disabled');
   });
 });

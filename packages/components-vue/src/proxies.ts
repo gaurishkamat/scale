@@ -3276,7 +3276,6 @@ export const ScaleInput = /*@__PURE__*/ Vue.extend({
 export const ScaleLink = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleLink['customClass']>,
     href: {} as PropOptions<Components.ScaleLink['href']>,
     disabled: {} as PropOptions<Components.ScaleLink['disabled']>,
     block: {} as PropOptions<Components.ScaleLink['block']>,

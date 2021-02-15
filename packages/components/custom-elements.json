@@ -5982,10 +5982,6 @@
           "description": "(optional) Block link"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Link class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Disabled link"
         },
@@ -6007,7 +6003,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",

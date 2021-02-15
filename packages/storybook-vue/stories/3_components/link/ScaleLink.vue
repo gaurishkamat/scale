@@ -1,7 +1,6 @@
 <template>
   <scale-link
     :block="block"
-    :custom-class="customClass"
     :disabled="JSON.stringify(disabled)"
     :href="href"
     :icon="icon"
@@ -9,6 +8,7 @@
     :icon-accessibility-title="iconAccessibilityTitle"
     :target="target"
     :variant="variant"
+    :styles="styles"
   >
     <slot></slot>
   </scale-link>
@@ -25,7 +25,8 @@ export default {
     iconSize: { type: Number, default: 16 },
     iconAccessibilityTitle: { type: String },
     target: { type: String, default: "_self" },
-    variant: String
-  }
+    variant: String,
+    styles: String,
+  },
 };
 </script>

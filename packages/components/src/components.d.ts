@@ -4449,10 +4449,6 @@ export namespace Components {
          */
         "block"?: boolean;
         /**
-          * (optional) Link class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled link
          */
         "disabled"?: boolean;
@@ -4473,9 +4469,9 @@ export namespace Components {
          */
         "iconSize"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link open a new tag
          */
@@ -10914,10 +10910,6 @@ declare namespace LocalJSX {
          */
         "block"?: boolean;
         /**
-          * (optional) Link class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled link
          */
         "disabled"?: boolean;
@@ -10938,9 +10930,9 @@ declare namespace LocalJSX {
          */
         "iconSize"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link open a new tag
          */
