@@ -6,11 +6,47 @@ import {
   NAMESPACE_PREFIX,
   SPACING,
   TYPOGRAPHY,
+  TYPE_VARIANT,
   COLOR,
   SHADOW,
   RADIUS,
-  MOTION
+  MOTION,
 } from '../src/tokens.js';
+
+const pxToRem = (x) => `${x / 16}rem`;
+const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
+const px = (x) => `${x}px`;
+const ms = (x) => `${x}ms`;
+
+export function generateCSS(tokens) {
+  const root = postcss.root();
+  const selector = postcss.rule({ selector: ':root' });
+
+  // Loop thru categories (first level)
+  each(tokens, (group, categoryName) => {
+    // Append a CSS comment
+    selector.append(postcss.comment({ text: categoryName.toUpperCase() }));
+
+    // Loop thru groups (second level)
+    each(group, (values, groupName) => {
+      if (values === EMPTY || values == null) {
+        return;
+      }
+      const path = [categoryName, groupName];
+
+      // Handle and set the actual values
+      getDeclarationsArrayForPath(path, values).forEach((declaration) => {
+        selector.append(postcss.decl(declaration));
+      });
+    });
+  });
+
+  return {
+    ext: 'css',
+    suffix: '',
+    content: root.append([selector]).toString(),
+  };
+}
 
 /**
  * @typedef {Object} Declaration - A CSS declaration for postcss
@@ -25,21 +61,20 @@ import {
  */
 function getDeclarationsArrayForPath(path, values) {
   const declarations = [];
+  const pathString = path
+    .filter((x) => x !== 'DEFAULT')
+    .map(kebabCase)
+    .join('-');
 
   each(values, (val, key) => {
     declarations.push({
-      prop: `--${NAMESPACE_PREFIX}-${path.join('-')}-${kebabCase(key)}`,
-      value: procressValue(path, key, val),
+      prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
+      value: processValue(path, key, val),
     });
   });
 
   return declarations;
 }
-
-const pxToRem = (x) => `${x / 16}rem`;
-const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
-const px = (x) => `${x}px`;
-const ms = (x) => `${x}ms`
 
 /**
  * Transform a raw value into a CSS value.
@@ -49,18 +84,19 @@ const ms = (x) => `${x}ms`
  * @param {any} val
  * @returns {string|number}
  */
-function procressValue(path, key, val) {
+function processValue(path, key, val) {
   if (val == null) {
     return '';
   }
-  const [category, group] = path;
+  const [categoryName, groupName] = path;
 
-  if (category === SPACING) {
+  if (categoryName === SPACING) {
     return pxToRem(val);
   }
 
-  if (category === TYPOGRAPHY) {
-    switch (group) {
+  if (categoryName === TYPOGRAPHY || categoryName === TYPE_VARIANT) {
+    const nameOrKey = categoryName === TYPOGRAPHY ? groupName : key;
+    switch (nameOrKey) {
       case 'size':
         return pxToRem(val);
       case 'leading':
@@ -70,11 +106,11 @@ function procressValue(path, key, val) {
     }
   }
 
-  if (category === COLOR) {
+  if (categoryName === COLOR) {
     return val;
   }
 
-  if (category === SHADOW) {
+  if (categoryName === SHADOW) {
     return Array.from(val)
       .map(({ x, y, blur, spread, color }) => {
         return `${px(x)} ${px(y)} ${px(blur)} ${px(spread)} ${color}`;
@@ -82,42 +118,13 @@ function procressValue(path, key, val) {
       .join(', ');
   }
 
-  if (category === RADIUS) {
+  if (categoryName === RADIUS) {
     return px(val);
   }
 
-  if (category === MOTION) {
+  if (categoryName === MOTION) {
     return ms(val);
   }
 
   return val;
-}
-
-export function generateCSS(tokens) {
-  const root = postcss.root();
-  const selector = postcss.rule({ selector: ':root' });
-
-  // Loop thru categories (first level)
-  each(tokens, (group, category) => {
-    // Append a CSS comment
-    selector.append(postcss.comment({ text: category.toUpperCase() }));
-
-    // Loop thru groups (second level)
-    each(group, (values, key) => {
-      if (values === EMPTY || values == null) {
-        return;
-      }
-      const path = [category, key];
-
-      // Handle and set the actual values
-      getDeclarationsArrayForPath(path, values).forEach((declaration) =>
-        selector.append(postcss.decl(declaration))
-      );
-    });
-  });
-
-  return {
-    ext: 'css',
-    content: root.append([selector]).toString(),
-  };
 }
