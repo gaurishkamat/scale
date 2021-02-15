@@ -2,6 +2,7 @@
 
 import { join } from 'path';
 import fs from 'fs-extra';
+import flatten from 'lodash/flatten.js';
 import getTokens from '../src/tokens.js';
 import { generateCSS } from './output-css.js';
 
@@ -17,13 +18,18 @@ async function main() {
   const outputs = [generateCSS];
 
   try {
+    const data = outputs.map((fn) => {
+      const tokens = getTokens(); // fresh tokens for each iteration
+      return fn(tokens);
+    });
+
     // Write a file for each output
     await Promise.all(
-      outputs.map(async (fn) => {
-        const tokens = getTokens(); // fresh tokens for each iteration
-        const { ext, content } = fn(tokens);
-
-        await fs.writeFile(join(OUTPUT_PATH, `${FILENAME}.${ext}`), content);
+      flatten(data).map(async ({ ext, suffix = '', content }) => {
+        await fs.writeFile(
+          join(OUTPUT_PATH, `${FILENAME}${suffix}.${ext}`),
+          content
+        );
       })
     );
   } catch (err) {
