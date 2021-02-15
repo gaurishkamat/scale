@@ -3413,7 +3413,6 @@ export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
 export const ScaleSlider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleSlider['customClass']>,
     value: {} as PropOptions<Components.ScaleSlider['value']>,
     min: {} as PropOptions<Components.ScaleSlider['min']>,
     max: {} as PropOptions<Components.ScaleSlider['max']>,

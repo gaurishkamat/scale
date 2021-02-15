@@ -7,24 +7,20 @@ import {
   Event,
   EventEmitter,
 } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './slider.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
+const name = 'slider';
 let i = 0;
 
 @Component({
   tag: 'scale-slider',
+  styleUrl: './slider.css',
   shadow: true,
 })
 export class Slider implements Base {
   sliderTrack?: HTMLDivElement;
 
-  /** (optional) Slider class */
-  @Prop() customClass?: string = '';
   /** (optional) the display value of the slider */
   @Prop() value?: number;
   /** t(optional) he minimal value of the slider */
@@ -50,10 +46,8 @@ export class Slider implements Base {
   /** (optional) Slider id */
   @Prop() sliderId?: string;
 
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Slider', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @State() dragging: boolean;
   @State() startX: number;
@@ -169,37 +163,38 @@ export class Slider implements Base {
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           {!!this.label && (
             <label
-              class="slider--label"
+              class={`${name}__label`}
               id={`${this.sliderId}-label`}
               htmlFor={this.sliderId}
             >
               {this.label}
             </label>
           )}
-          <div class="slider--track-wrapper">
+          <div class={`${name}__track-wrapper`}>
             <div
-              class="slider--track"
+              class={`${name}__track`}
               ref={el => (this.sliderTrack = el as HTMLDivElement)}
             >
               <div
-                class="slider--bar"
+                class={`${name}__bar`}
                 style={{
                   width: `${this.value}%`,
                   backgroundColor: this.customColor,
                 }}
               ></div>
               <div
-                class="slider--thumb-wrapper"
+                class={`${name}__thumb-wrapper`}
                 style={{ left: `${this.value}%` }}
                 onMouseDown={this.onButtonDown}
                 onTouchStart={this.onButtonDown}
               >
                 <div
-                  class="slider--thumb"
+                  class={`${name}__thumb`}
                   tabindex="0"
                   role="slider"
                   id={this.sliderId}
@@ -215,7 +210,7 @@ export class Slider implements Base {
               </div>
             </div>
             {this.showValue && (
-              <div class="slider--display-value">{this.value}%</div>
+              <div class={`${name}__display-value`}>{this.value}%</div>
             )}
           </div>
         </div>
@@ -223,14 +218,12 @@ export class Slider implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.slider,
-      this.customClass && this.customClass,
-      this.disabled && classes[`slider--disabled`],
-      this.trackSmall && classes[`slider--track-small`],
-      this.thumbLarge && classes[`slider--thumb-large`]
+      name,
+      this.disabled && `${name}--disabled`,
+      this.trackSmall && `${name}--track-small`,
+      this.thumbLarge && `${name}--thumb-large`
     );
   }
 }

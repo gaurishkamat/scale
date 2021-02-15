@@ -6286,10 +6286,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Slider class"
-        },
-        {
           "name": "custom-color",
           "description": "(optional) slider custom color"
         },
@@ -6323,7 +6319,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "thumb-large",

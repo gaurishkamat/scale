@@ -4689,10 +4689,6 @@ export namespace Components {
     }
     interface ScaleSlider {
         /**
-          * (optional) Slider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) slider custom color
          */
         "customColor"?: string;
@@ -4725,9 +4721,9 @@ export namespace Components {
          */
         "step"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) larger thumb
          */
@@ -11148,10 +11144,6 @@ declare namespace LocalJSX {
     }
     interface ScaleSlider {
         /**
-          * (optional) Slider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) slider custom color
          */
         "customColor"?: string;
@@ -11185,9 +11177,9 @@ declare namespace LocalJSX {
          */
         "step"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) larger thumb
          */

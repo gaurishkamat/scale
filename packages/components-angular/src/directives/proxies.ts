@@ -3996,13 +3996,13 @@ export class ScaleSidebarNavItem {
 import { Slider as ISlider } from '@scaleds/components-telekom/dist/types/components/slider/slider';
 export declare interface ScaleSlider extends Components.ScaleSlider {}
 @ProxyCmp({
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
+  inputs: ['customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
 })
 @Component({
   selector: 'scale-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
+  inputs: ['customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
   outputs: ['scaleChange']
 })
 export class ScaleSlider {
