@@ -4790,10 +4790,6 @@ export namespace Components {
     }
     interface ScaleTable {
         /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Display sort arrows on/off
          */
         "showSort"?: boolean;
@@ -4801,10 +4797,6 @@ export namespace Components {
           * (optional) Visual size
          */
         "size"?: 'default' | 'small' | string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTag {
         /**
@@ -11250,10 +11242,6 @@ declare namespace LocalJSX {
     }
     interface ScaleTable {
         /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Display sort arrows on/off
          */
         "showSort"?: boolean;
@@ -11261,10 +11249,6 @@ declare namespace LocalJSX {
           * (optional) Visual size
          */
         "size"?: 'default' | 'small' | string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTag {
         /**

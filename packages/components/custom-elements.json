@@ -6431,20 +6431,12 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Tag class"
-        },
-        {
           "name": "show-sort",
           "description": "(optional) Display sort arrows on/off"
         },
         {
           "name": "size",
           "description": "(optional) Visual size"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },

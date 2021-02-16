@@ -1,0 +1,182 @@
+.table {
+  display: block;
+  overflow: auto;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-grey-100, #f5f5f5);
+  color: var(--color-text, #262626);
+}
+.table table {
+  width: 100%;
+  white-space: nowrap;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.table th {
+  padding: 0 8px;
+  text-align: left;
+  line-height: 32px; /*  TODO: revise, this is weird */
+  color: var(--color-text, #262626);
+  font-size: var(--type-size-2, 0.75rem);
+}
+.table td {
+  padding: 0 8px;
+}
+.table tbody tr td {
+  padding: 8px;
+}
+.table tbody td {
+  border-bottom: 1px solid var(--color-divider, #d0d0d0);
+}
+.table tbody tr {
+}
+.table tfoot,
+.table tbody {
+  background: #ffffff;
+}
+.table tfoot tr td {
+  padding: 8px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-text, #262626);
+}
+.table .scale-sort-indicator svg {
+  display: none;
+}
+.table tbody tr:hover {
+  background: #ededed;
+}
+.table th:focus {
+  outline: none;
+}
+.table--size-default {
+}
+.table--size-default tbody tr td {
+  padding: 16px 8px;
+}
+.table--sortable {
+}
+.table--sortable th {
+  cursor: pointer;
+  padding: 0 8px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.table--sortable th:hover {
+  padding: 0 8px 0 0;
+  background: #ededed;
+}
+.table--sortable th:active {
+  background: #dcdcdc;
+}
+.table--sortable th:focus {
+  box-shadow: 0 0 0 var(--border-focus, 2px) var(--color-focus, #009de0) inset;
+}
+.table--sortable th .scale-sort-indicator svg {
+  display: block;
+}
+.table--sortable th[aria-disabled] {
+  padding: 0 8px;
+  pointer-events: none;
+}
+.table--sortable th:not([aria-sort]) {
+  padding: 0 8px;
+}
+.table--sortable th[aria-sort='none'] {
+  padding: 0 8px;
+}
+.table--sortable
+  th[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color-text, #262626);
+}
+.table--sortable th:hover .scale-sort-indicator polygon:first-of-type {
+  fill: var(--color-primary-hover, #f90984);
+}
+.table--sortable
+  th:hover[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color-primary-hover, #f90984);
+}
+.table--sortable
+  th:active[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color-primary-active, #cb0068);
+}
+.table--sortable th[aria-sort='ascending'] .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable th:hover[aria-sort='ascending'] .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable
+  th:active[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon {
+  fill: transparent;
+}
+.table--sortable
+  th[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable
+  th:hover[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable
+  th:active[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable th[aria-sort='descending'] .scale-sort-indicator polygon {
+  fill: var(--color-text, #262626);
+}
+.table--sortable
+  th:hover[aria-sort='descending']
+  .scale-sort-indicator
+  polygon {
+  fill: var(--color-primary-hover, #f90984);
+}
+.table--sortable
+  th:active[aria-sort='descending']
+  .scale-sort-indicator
+  polygon {
+  fill: var(--color-primary-active, #cb0068);
+}
+.table--sortable th .scale-sort-indicator {
+  width: 16px;
+  height: 16px;
+  margin: 0 0 0 4px;
+  display: inline-block;
+  position: relative;
+}
+.table--sortable th .scale-sort-indicator > svg {
+  top: 4px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+.table--sortable th .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable th[aria-sort='none']:hover {
+  padding: 0 8px 0 0;
+}
+.table--sortable th[aria-sort='none'] .scale-sort-indicator {
+  display: none;
+}
+.table--sortable th:not([aria-sort]):hover {
+  padding: 0 8px 0 0;
+}
+.table--sortable th:not([aria-sort]) .scale-sort-indicator {
+  display: none;
+}
+.table--sortable th:hover .scale-sort-indicator {
+  display: inline-block;
+}

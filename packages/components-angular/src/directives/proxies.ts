@@ -4115,13 +4115,13 @@ export class ScaleTabPanel {
 
 export declare interface ScaleTable extends Components.ScaleTable {}
 @ProxyCmp({
-  inputs: ['customClass', 'showSort', 'size', 'styles']
+  inputs: ['showSort', 'size']
 })
 @Component({
   selector: 'scale-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'showSort', 'size', 'styles']
+  inputs: ['showSort', 'size']
 })
 export class ScaleTable {
   protected el: HTMLElement;

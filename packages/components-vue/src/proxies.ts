@@ -3498,10 +3498,8 @@ export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
 export const ScaleTable = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleTable['customClass']>,
     showSort: {} as PropOptions<Components.ScaleTable['showSort']>,
     size: {} as PropOptions<Components.ScaleTable['size']>,
-    styles: {} as PropOptions<Components.ScaleTable['styles']>,
   },
 
 
