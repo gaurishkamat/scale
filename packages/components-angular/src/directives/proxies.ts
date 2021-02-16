@@ -4157,13 +4157,13 @@ export class ScaleTag {
 
 export declare interface ScaleText extends Components.ScaleText {}
 @ProxyCmp({
-  inputs: ['customClass', 'styles', 'tag', 'variant']
+  inputs: ['styles', 'tag', 'variant']
 })
 @Component({
   selector: 'scale-text',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'styles', 'tag', 'variant']
+  inputs: ['styles', 'tag', 'variant']
 })
 export class ScaleText {
   protected el: HTMLElement;

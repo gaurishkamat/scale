@@ -3528,7 +3528,6 @@ export const ScaleTag = /*@__PURE__*/ Vue.extend({
 export const ScaleText = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleText['customClass']>,
     variant: {} as PropOptions<Components.ScaleText['variant']>,
     tag: {} as PropOptions<Components.ScaleText['tag']>,
     styles: {} as PropOptions<Components.ScaleText['styles']>,

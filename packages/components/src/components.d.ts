@@ -4834,13 +4834,9 @@ export namespace Components {
     }
     interface ScaleText {
         /**
-          * (optional) Text class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Text tag
          */
@@ -11286,13 +11282,9 @@ declare namespace LocalJSX {
     }
     interface ScaleText {
         /**
-          * (optional) Text class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Text tag
          */
