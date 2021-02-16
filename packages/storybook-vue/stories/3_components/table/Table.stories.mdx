@@ -26,13 +26,14 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
     >
       <table id="sortable-table">
+        <caption class="sr-only">All sortable columns are focusable</caption>
         <thead>
           <tr>
-            <th scope="col" width="40%" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th scope="col" width="40%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
             <th scope="col" width="20%" aria-disabled class="tags">Tags</th>
-            <th scope="col" width="20%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
-            <th scope="col" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
-            <th scope="col" width="10%" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
+            <th scope="col" width="20%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
               Euros
             </th>
           </tr>
