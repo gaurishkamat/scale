@@ -72,7 +72,6 @@ tokens[TYPOGRAPHY] = {
   weight,
   leading,
   tracking,
-  variant: {}, // TODO
 };
 
 const defaultVariant = {
@@ -168,7 +167,7 @@ const palette = {
   grey_70: Color(alphaToHex(70)),
   grey_80: Color(alphaToHex(80)),
   grey_90: Color(alphaToHex(90)),
-  grey_100: Color(alphaToHex(100)), // shouldn't this be 95?
+  grey_100: Color(alphaToHex(100)),
   orange: Color('#FC9A55'),
   orange_0: Color('#FFFCDF'),
   orange_10: Color('#FFF4C6'),
