@@ -7,6 +7,7 @@
   position: relative;
   bottom: 0;
   box-sizing: border-box;
+  --footer-max-width: inherit;
 }
 
 .footer--variant-minimal .footer {
@@ -198,5 +199,12 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: 'branding copyright navigation';
+  }
+}
+
+@media (min-width: 1552px) {
+  .footer-content {
+    margin: 0 auto;
+    max-width: var(--footer-max-width);
   }
 }
