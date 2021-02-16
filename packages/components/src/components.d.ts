@@ -4800,10 +4800,6 @@ export namespace Components {
     }
     interface ScaleTag {
         /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Tag disabled
          */
         "disabled"?: boolean;
@@ -4824,9 +4820,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Tag target
          */
@@ -11252,10 +11248,6 @@ declare namespace LocalJSX {
     }
     interface ScaleTag {
         /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Tag disabled
          */
         "disabled"?: boolean;
@@ -11280,9 +11272,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Tag target
          */

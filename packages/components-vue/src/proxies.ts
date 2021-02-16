@@ -3510,7 +3510,6 @@ export const ScaleTable = /*@__PURE__*/ Vue.extend({
 export const ScaleTag = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleTag['customClass']>,
     size: {} as PropOptions<Components.ScaleTag['size']>,
     variant: {} as PropOptions<Components.ScaleTag['variant']>,
     href: {} as PropOptions<Components.ScaleTag['href']>,

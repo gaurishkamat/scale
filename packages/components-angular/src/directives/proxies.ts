@@ -4134,13 +4134,13 @@ export class ScaleTable {
 import { Tag as ITag } from '@scaleds/components-telekom/dist/types/components/tag/tag';
 export declare interface ScaleTag extends Components.ScaleTag {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
+  inputs: ['disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-tag',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
+  inputs: ['disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
   outputs: ['scaleClose']
 })
 export class ScaleTag {

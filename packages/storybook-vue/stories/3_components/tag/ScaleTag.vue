@@ -1,6 +1,5 @@
 <template>
   <scale-tag
-    :custom-class="customClass"
     :disabled="disabled"
     :dismissable="dismissable"
     :dismiss-text="dismissText"
@@ -10,6 +9,7 @@
     :variant="variant"
     @click="click"
     @scaleClose="click"
+    :styles="styles"
   >
     <slot></slot>
   </scale-tag>
@@ -20,20 +20,20 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
-    customClass: String,
     disabled: { type: Boolean, default: false },
     dismissable: { type: Boolean, default: false },
     href: String,
     dismissText: String,
     size: String,
     target: { type: String, default: "_self" },
-    variant: String
+    variant: String,
+    styles: String,
   },
   methods: {
-    click: function($event) {
+    click: function ($event) {
       action("click");
       this.$emit("click", $event);
-    }
-  }
+    },
+  },
 };
 </script>
