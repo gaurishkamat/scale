@@ -1,53 +1,41 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import {
+  ScaleAppShell,
+  ScaleAppFooter
+} from "@scaleds/components-react-telekom"
 
-import Header from "./header"
 import "./layout.css"
-import { ScaleAppShell } from "@scaleds/components-react-telekom"
+import "@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css"
+import {
+  addonNavigation,
+  footerNavigation,
+  iconNavigation,
+  mainNavigation,
+  sectorNavigation
+} from "./fixtures"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <ScaleAppShell>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+      <ScaleAppShell
+        mainNavigation={mainNavigation}
+        addonNavigation={addonNavigation}
+        iconNavigation={iconNavigation}
+        sectorNavigation={sectorNavigation}
+        footerNavigation={footerNavigation}
+        activeRouteId="Third Level 4"
+        activeSectorId="Personal38"
+      >
+        {children}
       </ScaleAppShell>
+      <ScaleAppFooter footerNavigation={footerNavigation} />
     </>
   )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

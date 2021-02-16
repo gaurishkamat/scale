@@ -1,4 +1,7 @@
-# Breadcrumb
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Breadcrumb</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A breadcrumb is a secondary navigation element that provides additional orientation. It helps users find their current position in the information architecture and allows them to easily navigate back.
 
@@ -33,3 +36,6 @@ The arrow icon visually separates the individual pages.
 
 The current page is highlighted at the right end of the breadcrumb. It has no interactive functionality.
 
+## Related components
+
+<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>

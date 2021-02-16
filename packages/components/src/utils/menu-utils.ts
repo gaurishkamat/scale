@@ -1,7 +1,7 @@
 import { MenuItem } from '../components/app-interfaces';
 
 export const findSelected = (
-  structure: MenuItem[],
+  structure: MenuItem[] = [],
   id: string,
   parent?: MenuItem
 ) =>

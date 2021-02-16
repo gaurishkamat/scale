@@ -1,5 +1,5 @@
 import { Config } from '@stencil/core';
-import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
+import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget, ComponentModelConfig } from '@nowseemee/vue-output-target';
 import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
 
@@ -51,9 +51,20 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   }
 ]
 
+const excludeComponents = [
+  'animatable-component',
+  'animatable-cube',
+  'duet-date-picker',
+];
+
 export const config: Config = {
   testing: {
-    testRegex: '/src/.*\\.spec\\.(ts|tsx)$',
+    testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
+    collectCoverageFrom: [
+      '**/src/**/*.{ts,tsx}',
+      '!**/node_modules/**',
+      '!**/*.{d,esm,iife,styles}.ts',
+    ],
   },
   namespace: 'scale-components',
   globalScript: './global',
@@ -61,13 +72,13 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
-      excludeComponents: ['animatable-component', 'animatable-cube']
+      excludeComponents
     }),
     vueOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-vue/src/proxies.ts',
       componentModels: vueComponentModels,
-      excludeComponents: ['animatable-component', 'animatable-cube']
+      excludeComponents
     }),
     angularOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
@@ -75,7 +86,7 @@ export const config: Config = {
       directivesArrayFile: '../components-angular/src/directives/proxies-list.tsx',
       directivesUtilsFile: '../components-angular/src/directives/proxies-utils.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
-      excludeComponents: ['animatable-component', 'animatable-cube'],
+      excludeComponents
     }),
     {
       type: 'dist',
@@ -97,12 +108,20 @@ export const config: Config = {
       copy: [
         { src: '../build/theme', dest: 'build/theme' , warn: true },
         { src: 'header.html', warn: true },
+        { src: 'date-picker.html', warn: true },
       ]
     },
     {
       type: 'docs-json',
       file: './dist/scale-components.json'
     },
-    { type: 'dist-hydrate-script' }
+    { type: 'dist-hydrate-script' },
+    {
+      type: 'dist',
+      esmLoaderPath: '../loader',
+      copy: [
+        { src: 'components/icons/scale-icons.json', warn: true }
+      ]
+    },
   ]
 }

@@ -1,6 +1,10 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
+  '@global scale-tab-header:focus': {
+    outline: 'none',
+  },
+
   'tab-header': {
     boxSizing: 'border-box',
     position: 'relative',
@@ -58,15 +62,15 @@ export const styles: JssStyle = {
       backgroundColor: ({ color }) => color.primary_active,
     },
 
-    '&:focus': {
-      boxShadow: ({ size, color }) =>
-        `0 0 0 ${size.border_focus}px ${color.focus}`,
-    },
-
     // For the icon
     '& ::slotted(*)': {
       marginRight: ({ spacing }) => spacing[2],
     },
+  },
+
+  'tab-header--has-focus': {
+    boxShadow: ({ size, color }) =>
+      `0 0 0 ${size.border_focus}px ${color.focus}`,
   },
 
   'tab-header--selected': {

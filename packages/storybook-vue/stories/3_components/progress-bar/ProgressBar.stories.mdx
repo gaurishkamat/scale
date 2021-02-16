@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleProgressBar from './ScaleProgressBar.vue';
 export const ICON_CIRCLE_CLOSE = 'M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1zm0 1.5c-5.25 0-9.5 4.25-9.5 9.5s4.25 9.5 9.5 9.5 9.5-4.25 9.5-9.5-4.25-9.5-9.5-9.5zM7.95 7.95c.3-.3.75-.3 1.05 0l3 3 3-3c.3-.3.75-.3 1.05 0s.3.75 0 1.05l-3 3 3 3c.3.3.3.75 0 1.05s-.75.3-1.05 0l-3-3-3 3c-.3.3-.75.3-1.05 0s-.3-.75 0-1.05l3-3-3-3c-.3-.3-.3-.75 0-1.05z';
 
@@ -102,11 +102,14 @@ export const TemplateInteractive = (args, {argTypes}) => ({
     })
 })
 
-# Progress Bar
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Progress Bar</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Determinate"
     args={{
@@ -116,14 +119,14 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Determinate' />
+<ArgsTable story='Determinate' />
 
 
 ## Progress custom
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Progress custom"
     args={{
@@ -134,7 +137,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar percentage="20" custom-color="#009DE0" label="Progress custom"></scale-progress-bar>
@@ -143,7 +146,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Progress with description
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Progress with description"
     args={{
@@ -154,7 +157,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar percentage="40" stroke-width="40" status-description="Progress status description text"></scale-progress-bar>
@@ -163,7 +166,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Complete default
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Complete default"
     args={{
@@ -176,7 +179,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" label="Complete default"></scale-progress-bar>
@@ -185,7 +188,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Complete green
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Complete green"
     args={{
@@ -199,7 +202,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar label="Complete green" percentage="40" icon="SVG-PATH" show-status="false" status-description="Upload complete" custom-color="#67c23a"></scale-progress-bar>
@@ -208,7 +211,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Complete error
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Complete error"
     args={{
@@ -222,7 +225,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail" label="Complete error"></scale-progress-bar>
@@ -231,7 +234,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 ## Interactive
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Interactive"
     args={{
@@ -245,7 +248,7 @@ export const TemplateInteractive = (args, {argTypes}) => ({
   >
     {TemplateInteractive.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-progress-bar percentage="40" has-error icon="SVG-PATH" show-status="false" status-description="Upload fail" label="Interactive"></scale-progress-bar>

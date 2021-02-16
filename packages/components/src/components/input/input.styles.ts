@@ -144,6 +144,12 @@ export const styles: JssStyle = {
           },
         },
       },
+      '&:hover .input__select-wrapper': {
+        '--icon-color': ({ color }) => color.primary_hover,
+      },
+      '&:active .input__select-wrapper': {
+        '--icon-color': ({ color }) => color.primary_active,
+      },
     },
   },
   'input--variant-static': {
@@ -356,7 +362,7 @@ export const styles: JssStyle = {
       },
     },
     '& input:checked:disabled ~ label': {
-      color: '#A4A4A4',
+      color: ({ palette }) => palette.grayDisabledBackground,
     },
   },
 
@@ -419,7 +425,7 @@ export const styles: JssStyle = {
       border: ({ palette }) => `1px solid ${palette.grayDisabledBackground}`,
     },
     '& input:disabled ~ label': {
-      color: ({ palette }) => palette.grayDisabledBackground,
+      color: ({ color }) => color.disabled_low_contrast,
     },
 
     // Checked Off - Error
@@ -443,7 +449,7 @@ export const styles: JssStyle = {
       background: '#A4A4A4',
     },
     '& input:checked:disabled ~ label': {
-      color: '#A4A4A4',
+      color: ({ color }) => color.disabled_low_contrast,
     },
   },
 
@@ -462,6 +468,11 @@ export const styles: JssStyle = {
   },
 
   'input--disabled': {
+    '&.animated': {
+      '& label.input__label': {
+        color: ({ background }) => background.disabled,
+      },
+    },
     [`
       & label,
       & .input__label,
@@ -469,12 +480,17 @@ export const styles: JssStyle = {
       & .input__input, 
       & .input__checkbox-container, 
       & .input__radio, 
-      & .input__select, 
-      & .input__textarea
+      & .input__select,
+      & .input__textarea,
+      & .input__helper-text
     `]: {
-      borderColor: '#D0D0D0',
-      color: ({ color }) => color.disabled,
+      borderColor: ({ background }) => background.disabled,
+      color: ({ background }) => background.disabled,
       cursor: 'not-allowed',
+      background: ({ color }) => color.text_contrast,
+    },
+    '& .input__select-wrapper': {
+      '--icon-color': '#D0D0D0',
     },
   },
 };

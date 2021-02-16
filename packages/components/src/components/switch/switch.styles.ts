@@ -46,9 +46,11 @@ export const styles: JssStyle = {
         '&:before': {
           fontSize: ({ type }) => type.size_2,
           content: '"0"',
+          color: ({ color }) => color.text,
         },
       },
       '& $switch__label': {
+        color: ({ color }) => color.text,
         marginLeft: ({ spacing }) => spacing['4'],
       },
     },
@@ -62,6 +64,11 @@ export const styles: JssStyle = {
       },
       '& $switch__label': {
         color: ({ color }) => color.primary_hover,
+      },
+      '& $switch__text': {
+        '&:before': {
+          color: ({ color }) => color.primary_hover,
+        },
       },
     },
     // Checked Off - focus
@@ -90,6 +97,7 @@ export const styles: JssStyle = {
         '&:before': {
           fontSize: ({ type }) => type.size_2,
           content: '"I"',
+          color: ({ color }) => color.text_contrast,
         },
       },
       '& $switch__label': {
@@ -106,7 +114,13 @@ export const styles: JssStyle = {
         backgroundColor: ({ background }) => background.disabled,
       },
       '& $switch__label': {
-        color: ({ color }) => color.disabled,
+        cursor: 'not-allowed',
+        color: ({ background }) => background.disabled,
+      },
+      '& $switch__text': {
+        '&:before': {
+          color: ({ background }) => background.disabled,
+        },
       },
     },
     // Checked On - available
@@ -126,6 +140,7 @@ export const styles: JssStyle = {
         '&:before': {
           fontSize: ({ type }) => type.size_2,
           content: '"I"',
+          color: ({ color }) => color.text_contrast,
         },
       },
     },
@@ -162,13 +177,14 @@ export const styles: JssStyle = {
         '&:before': {
           fontSize: ({ type }) => type.size_2,
           content: '"0"',
+          color: ({ color }) => color.primary_active,
         },
       },
     },
     // Checked On - disabled
     '& input:checked:disabled ~ $switch__wrapper:hover, & input:checked:disabled ~ $switch__wrapper': {
       '& $switch__label': {
-        color: ({ color }) => color.disabled,
+        color: ({ background }) => background.disabled,
       },
       '& $switch__container': {
         border: ({ background }) => `1px solid ${background.disabled}`,
@@ -177,6 +193,11 @@ export const styles: JssStyle = {
       },
       '& $switch__toggle': {
         backgroundColor: ({ color }) => color.text_contrast,
+      },
+      '& $switch__text': {
+        '&:before': {
+          color: ({ color }) => color.text_contrast,
+        },
       },
     },
   },

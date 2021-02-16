@@ -1,4 +1,7 @@
-# Checkbox
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Checkbox</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 With Checkboxes, users toggle options on or off. They can answer simple yes-no questions in this way. Furthermore, users can select one or more options from a number of choices.
 
@@ -36,11 +39,13 @@ Disable the checkbox if:
 
 ## Nested groups of checkboxes
 
+> Available soon
+
 When checkboxes are related to a parent checkbox, you can nest them. Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
 
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
-### Required input
+## Required input
 
 When checking a box is required, use an asterisk (*) in the text label.
 
@@ -48,4 +53,6 @@ When checking a box is required, use an asterisk (*) in the text label.
 
 ## Related components
 
-Select Box, Switch, Radio Button
+<a href="../?path=/usage/components-dropdown--standard">Dropdown, </a>
+<a href="../?path=/usage/components-switch--standard">Switch, </a>
+<a href="../?path=/usage/components-radiobutton--standard">Radio Button</a>

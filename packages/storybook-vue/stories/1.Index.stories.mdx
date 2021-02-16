@@ -1,38 +1,23 @@
-import { Meta } from "@storybook/addon-docs/blocks";
-import LinkTo from "@storybook/addon-links/react";
+import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
 
-<Meta title="Scale Design System" />
+import text_en from "./1.Index_en.md";
+import text_de from "./1.Index_de.md";
 
-![Welcome to Scale Design System](assets/Welcome-scale-design-system.png)
-
-## Design and Code Are One
-
-Scale is the Telekom design system for products and experiences. It consists of working code, design resources, human interface guidelines and a growing community of contributors.
-
-<LinkTo kind="getting-started-about-scale">
-  Learn how Scale helps teams deliver better products faster.
-</LinkTo>
-
-## Scale for Designers
-
-Designers use Scale components to build outstanding digital experiences in Sketch.
-
-<LinkTo kind="getting-started-scale-for-designers">
-  Get started for Designers
-</LinkTo>
-
-## Scale for Developers
-
-Developers use Scale web components in HTML, Angular, React and Vue Interfaces.
-
-<LinkTo kind="getting-started-scale-for-developers">
-  Get started for Developers
-</LinkTo>
-
-## Any questions?
-
-Review our <LinkTo kind="getting-started-faq">FAQ</LinkTo> or <LinkTo kind="community-your-feedback">Leave feedback.</LinkTo>
-
-## Contribute to Scale
-
-Read more about <LinkTo kind="community-contributing-to-scale">contributing to Scale.</LinkTo>
+<Meta title="Scale Design System"
+  parameters={{
+      docs: {
+          container: ({ context }) => {
+              const locale = context && context.globals && context.globals.locale
+              const alt = locale === 'en' ? 'Welcome to Scale Design System' : 'Wilkommen beim Scale Design System';
+              return (
+                  <>
+                      <img src="assets/welcome.png" alt={alt} style={{width: '100%'}}/>
+                      <DocsContainer context={context}>
+                          {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                      </DocsContainer>
+                  </>
+          )
+          }
+      },
+  }}
+/>

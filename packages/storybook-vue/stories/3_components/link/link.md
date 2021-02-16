@@ -38,7 +38,7 @@ Add an icon to label certain categories, e.g., links to external sites, document
 - A link text should be as short as possible – typically one to three words. However, a link needs to be long enough to clearly convey its purpose. In certain cases, you can link a full sentence, but avoid longer links wherever possible.
 - A link text should make sense without any additional context. Using "more information" or "click here" can cause problems for people using screen readers.
 
-## Sizes
+<!--## Sizes
 
 Choose the size based on the body text you are using.
 
@@ -52,4 +52,8 @@ Choose the size based on the body text you are using.
 
 16px
 
-![Image Name](/assets/3_components/link/link_small.png)
+![Image Name](/assets/3_components/link/link_small.png)-->
+
+## Related components
+
+<a href="../?path=/usage/components-button--large-standard">Button</a>

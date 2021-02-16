@@ -195,7 +195,7 @@
 @media (min-width: 1296px) {
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: 'branding copyright navigation';
   }
 }

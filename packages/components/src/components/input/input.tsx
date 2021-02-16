@@ -22,6 +22,9 @@ export interface InputChangeEventDetail {
 
 let i = 0;
 
+const SELECT_ICON =
+  'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z';
+
 @Component({
   tag: 'scale-input',
   shadow: false,
@@ -90,6 +93,8 @@ export class Input implements Base {
   @Prop() visibleSize?: number;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) Makes type `select` behave as a controlled component in React */
+  @Prop() controlled?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
@@ -118,13 +123,17 @@ export class Input implements Base {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
     }
+    // Default icon for `select` type
+    if (this.type === 'select' && this.icon == null) {
+      this.icon = SELECT_ICON;
+    }
   }
 
   componentDidLoad() {
     // Keep this.value up-to-date for type="select".
     // This is important also for React, where `value` is used to control the element state.
     if (this.type === 'select') {
-      const select = this.el.querySelector('select') as HTMLSelectElement;
+      const select = this.selectElement;
       const selectedValue =
         select.selectedIndex > -1
           ? select.options[select.selectedIndex].value
@@ -155,7 +164,18 @@ export class Input implements Base {
   }
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  componentDidRender() {
+    // When type `select` and `controlled` is true,
+    // make sure the <select> is always in sync with the value.
+    const value = this.value == null ? '' : this.value.toString();
+    if (
+      this.type === 'select' &&
+      this.controlled &&
+      this.selectElement.value.toString() !== value
+    ) {
+      this.selectElement.value = value;
+    }
+  }
 
   disconnectedCallback() {
     if (this.mutationObserver) {
@@ -187,6 +207,23 @@ export class Input implements Base {
   handleCheckboxClick = () => {
     if (!this.disabled) {
       this.checked = !this.checked;
+    }
+  };
+
+  // Handle change on <select> independently
+  // so we can allow "controlled" (React) behavior,
+  // in which only the `value` changing does update
+  // the actual <select> value, not the user's input.
+  handleSelectChange = (event: Event) => {
+    const target = event.target as HTMLInputElement | null;
+
+    if (this.controlled) {
+      this.scaleChange.emit({ value: target.value });
+      this.selectElement.value = String(this.value);
+      this.forceUpdate = String(Date.now());
+    } else {
+      this.value = target.value || '';
+      this.emitChange();
     }
   };
 
@@ -316,7 +353,7 @@ export class Input implements Base {
                 class={classNames('input__select')}
                 // @ts-ignore
                 value={this.value}
-                onChange={this.handleChange}
+                onChange={this.handleSelectChange}
                 onFocus={this.handleFocus}
                 onBlur={this.handleBlur}
                 onKeyDown={this.handleKeyDown}
@@ -406,7 +443,7 @@ export class Input implements Base {
       this.transparent && classes['input--transparent'],
       this.status && classes[`input--status-${this.status}`],
       this.size && classes[`input--size-${this.size}`],
-      this.value && 'animated'
+      this.value != null && this.value !== '' && 'animated'
     );
   }
 }

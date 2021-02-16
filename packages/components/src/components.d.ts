@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
+import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
+import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
+import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
 import { StyleSheet } from "jss";
 export namespace Components {
@@ -32,7 +35,13 @@ export namespace Components {
         "navigation": MenuItem[];
     }
     interface ScaleAccordion {
+        /**
+          * If `true`, only one scale-collapsible within the accordion can be open at a time
+         */
         "dependent": boolean;
+        /**
+          * (optional) Injected jss styles
+         */
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -162,25 +171,13 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -189,6 +186,10 @@ export namespace Components {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
@@ -223,15 +224,92 @@ export namespace Components {
         "styles"?: any;
     }
     interface ScaleCollapsible {
-        "close": () => Promise<void>;
-        "isExpanded"?: boolean;
-        "label": string;
-        "setFocus": () => Promise<void>;
+        /**
+          * Set to `true` to expand
+         */
+        "expanded": boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "tag"?: string;
+    }
+    interface ScaleDatePicker {
+        /**
+          * Date adapter, for custom parsing/formatting. Must be object with a `parse` function which accepts a `string` and returns a `Date`, and a `format` function which accepts a `Date` and returns a `string`. Default is IS0-8601 parsing and formatting.
+         */
+        "dateAdapter"?: any;
+        /**
+          * Forces the opening direction of the calendar modal to be always left or right. This setting can be useful when the input is smaller than the opening date picker would be as by default the picker always opens towards right.
+         */
+        "direction": DuetDatePickerDirection;
+        /**
+          * Makes the date picker input component disabled. This prevents users from being able to interact with the input, and conveys its inactive state to assistive technologies.
+         */
+        "disabled": boolean;
+        /**
+          * Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc. Default is Monday.
+         */
+        "firstDayOfWeek"?: any;
+        /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
+          * Hide the calendar modal. Set `moveFocusToButton` to false to prevent focus returning to the date picker's button. Default is true.
+         */
+        "hide": (moveFocusToButton?: boolean) => Promise<void>;
+        /**
+          * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
+         */
+        "identifier": string;
+        /**
+          * (optional) Label
+         */
+        "label": string;
+        /**
+          * Button labels, day names, month names, etc, used for localization. Default is English.
+         */
+        "localization"?: DuetLocalizedText;
+        /**
+          * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
+         */
+        "max": string;
+        /**
+          * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.
+         */
+        "min": string;
+        /**
+          * Name of the date picker input.
+         */
+        "name": string;
+        /**
+          * Should the input be marked as required?
+         */
+        "required": boolean;
+        /**
+          * Defines a specific role attribute for the date picker input.
+         */
+        "role": string;
+        /**
+          * Sets focus on the date picker's input. Use this method instead of the global `focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * Show the calendar modal, moving focus to the calendar inside.
+         */
+        "show": () => Promise<void>;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
+        /**
+          * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
+         */
+        "value": string;
     }
     interface ScaleDivider {
         /**
@@ -253,13 +331,17 @@ export namespace Components {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */
@@ -289,6 +371,3988 @@ export namespace Components {
          */
         "styles"?: any;
     }
+    interface ScaleIconActionAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionAddCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionAutoLogin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionBackspace {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionChangelog {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCircleAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCircleClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCopyPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCutPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDisabledMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDownload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDragAndDrop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionEdit {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFastForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFavorite {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFilter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFullScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionHidePassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionInstall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLoop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMenu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMinimizeScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMore {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMute {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionNotification {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPause {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPlay {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPopUpWindow {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPrint {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRandom {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRefresh {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRemove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRestart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSearch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionShoppingCart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionShowPassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSort {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSoundOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionStreamOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSuccess {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionThumbsDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionThumbsUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionTilesAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionUpload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionVolumeDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionVolumeUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionZoomIn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionZoomOut {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertCompliance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertError {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertHelp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertImprintDataprivacy {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertInformation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertLegal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertSecurity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertWarning {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationCallIncoming {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationCallOutgoing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationChat {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationEmail {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationEndCall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationFeedback {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationPhoneNumber {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationRecipient {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationVoiceMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentAchievement {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentApplications {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentBiometric {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentBookmark {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentCalendar {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentClipboard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentClock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentCreditCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDelivery {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDigitalBanking {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDigitalMedia {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDraftFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentESim {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentEu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentFeatures {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentFlexibleTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentHeart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentHistory {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInternational {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInternationalSms {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInterview {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentKey {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentLock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMediaFolder {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMoneyAt {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMusic {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentNews {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentPrepaidActivate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentPriceTag {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentRss {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentShop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSignal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSimCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSmile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentTransport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentUnlock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentVoucher {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentWallet {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceAddDevice {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceChangeCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceComputer {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDevicePhone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceRouter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceWatch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceFixedLineServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMediaReceiver {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileDevicesCombination {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileEquipment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobilePhoneInsurance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceNoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDevicePhotoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceRemoteController {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceReplacementMobilephone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceScreenRotate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceSmartSpeaker {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceTvAndMobile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeInternetAtHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeIot {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeNoWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeSmarthome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCircleTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCollapseDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCollapseUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationExternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationInternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationLeft {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationMyLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationRight {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationStart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconProcessOrderStatus {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconProcessProcessing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceDevicesService {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceMaintanance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceSettings {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceSupport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaCloud {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMeasureInternetSpeed {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productSeamlessConnectivity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productTelekomShopB {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productUsage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAnalytics {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAttachment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAudioFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileBilling {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileBussinesUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileCommunities {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileContacts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileContracts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileFamilies {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileHandshake {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileIdCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileImageFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_filePdfFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileSwitchUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileUser {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileVideos {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
     interface ScaleInput {
         /**
           * (optional) Active switch
@@ -298,6 +4362,10 @@ export namespace Components {
           * (optional) textarea column
          */
         "cols"?: number;
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
         /**
           * (optional) Input counter
          */
@@ -423,6 +4491,10 @@ export namespace Components {
          */
         "icon"?: string;
         /**
+          * (optional) Icon title for accessibility
+         */
+        "iconAccessibilityTitle"?: string;
+        /**
           * (optional) Icon size
          */
         "iconSize"?: number;
@@ -440,29 +4512,32 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker": boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**
@@ -566,11 +4641,27 @@ export namespace Components {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -580,35 +4671,35 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded": boolean;
+        /**
           * The URL where the link should point to
          */
         "href": string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize": number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label": string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active": boolean;
         /**
           * Bold text
          */
@@ -618,13 +4709,17 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent": boolean;
+        "current": string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -955,6 +5050,12 @@ declare global {
         prototype: HTMLScaleCollapsibleElement;
         new (): HTMLScaleCollapsibleElement;
     };
+    interface HTMLScaleDatePickerElement extends Components.ScaleDatePicker, HTMLStencilElement {
+    }
+    var HTMLScaleDatePickerElement: {
+        prototype: HTMLScaleDatePickerElement;
+        new (): HTMLScaleDatePickerElement;
+    };
     interface HTMLScaleDividerElement extends Components.ScaleDivider, HTMLStencilElement {
     }
     var HTMLScaleDividerElement: {
@@ -966,6 +5067,1092 @@ declare global {
     var HTMLScaleIconElement: {
         prototype: HTMLScaleIconElement;
         new (): HTMLScaleIconElement;
+    };
+    interface HTMLScaleIconActionAddElement extends Components.ScaleIconActionAdd, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionAddElement: {
+        prototype: HTMLScaleIconActionAddElement;
+        new (): HTMLScaleIconActionAddElement;
+    };
+    interface HTMLScaleIconActionAddCardElement extends Components.ScaleIconActionAddCard, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionAddCardElement: {
+        prototype: HTMLScaleIconActionAddCardElement;
+        new (): HTMLScaleIconActionAddCardElement;
+    };
+    interface HTMLScaleIconActionAutoLoginElement extends Components.ScaleIconActionAutoLogin, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionAutoLoginElement: {
+        prototype: HTMLScaleIconActionAutoLoginElement;
+        new (): HTMLScaleIconActionAutoLoginElement;
+    };
+    interface HTMLScaleIconActionBackspaceElement extends Components.ScaleIconActionBackspace, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionBackspaceElement: {
+        prototype: HTMLScaleIconActionBackspaceElement;
+        new (): HTMLScaleIconActionBackspaceElement;
+    };
+    interface HTMLScaleIconActionChangelogElement extends Components.ScaleIconActionChangelog, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionChangelogElement: {
+        prototype: HTMLScaleIconActionChangelogElement;
+        new (): HTMLScaleIconActionChangelogElement;
+    };
+    interface HTMLScaleIconActionCircleAddElement extends Components.ScaleIconActionCircleAdd, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionCircleAddElement: {
+        prototype: HTMLScaleIconActionCircleAddElement;
+        new (): HTMLScaleIconActionCircleAddElement;
+    };
+    interface HTMLScaleIconActionCircleCloseElement extends Components.ScaleIconActionCircleClose, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionCircleCloseElement: {
+        prototype: HTMLScaleIconActionCircleCloseElement;
+        new (): HTMLScaleIconActionCircleCloseElement;
+    };
+    interface HTMLScaleIconActionCloseElement extends Components.ScaleIconActionClose, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionCloseElement: {
+        prototype: HTMLScaleIconActionCloseElement;
+        new (): HTMLScaleIconActionCloseElement;
+    };
+    interface HTMLScaleIconActionCopyPasteElement extends Components.ScaleIconActionCopyPaste, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionCopyPasteElement: {
+        prototype: HTMLScaleIconActionCopyPasteElement;
+        new (): HTMLScaleIconActionCopyPasteElement;
+    };
+    interface HTMLScaleIconActionCutPasteElement extends Components.ScaleIconActionCutPaste, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionCutPasteElement: {
+        prototype: HTMLScaleIconActionCutPasteElement;
+        new (): HTMLScaleIconActionCutPasteElement;
+    };
+    interface HTMLScaleIconActionDisabledMicrophoneElement extends Components.ScaleIconActionDisabledMicrophone, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionDisabledMicrophoneElement: {
+        prototype: HTMLScaleIconActionDisabledMicrophoneElement;
+        new (): HTMLScaleIconActionDisabledMicrophoneElement;
+    };
+    interface HTMLScaleIconActionDownloadElement extends Components.ScaleIconActionDownload, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionDownloadElement: {
+        prototype: HTMLScaleIconActionDownloadElement;
+        new (): HTMLScaleIconActionDownloadElement;
+    };
+    interface HTMLScaleIconActionDragAndDropElement extends Components.ScaleIconActionDragAndDrop, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionDragAndDropElement: {
+        prototype: HTMLScaleIconActionDragAndDropElement;
+        new (): HTMLScaleIconActionDragAndDropElement;
+    };
+    interface HTMLScaleIconActionEditElement extends Components.ScaleIconActionEdit, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionEditElement: {
+        prototype: HTMLScaleIconActionEditElement;
+        new (): HTMLScaleIconActionEditElement;
+    };
+    interface HTMLScaleIconActionFastForwardElement extends Components.ScaleIconActionFastForward, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionFastForwardElement: {
+        prototype: HTMLScaleIconActionFastForwardElement;
+        new (): HTMLScaleIconActionFastForwardElement;
+    };
+    interface HTMLScaleIconActionFavoriteElement extends Components.ScaleIconActionFavorite, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionFavoriteElement: {
+        prototype: HTMLScaleIconActionFavoriteElement;
+        new (): HTMLScaleIconActionFavoriteElement;
+    };
+    interface HTMLScaleIconActionFilterElement extends Components.ScaleIconActionFilter, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionFilterElement: {
+        prototype: HTMLScaleIconActionFilterElement;
+        new (): HTMLScaleIconActionFilterElement;
+    };
+    interface HTMLScaleIconActionForwardElement extends Components.ScaleIconActionForward, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionForwardElement: {
+        prototype: HTMLScaleIconActionForwardElement;
+        new (): HTMLScaleIconActionForwardElement;
+    };
+    interface HTMLScaleIconActionFullScreenElement extends Components.ScaleIconActionFullScreen, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionFullScreenElement: {
+        prototype: HTMLScaleIconActionFullScreenElement;
+        new (): HTMLScaleIconActionFullScreenElement;
+    };
+    interface HTMLScaleIconActionHidePasswordElement extends Components.ScaleIconActionHidePassword, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionHidePasswordElement: {
+        prototype: HTMLScaleIconActionHidePasswordElement;
+        new (): HTMLScaleIconActionHidePasswordElement;
+    };
+    interface HTMLScaleIconActionInstallElement extends Components.ScaleIconActionInstall, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionInstallElement: {
+        prototype: HTMLScaleIconActionInstallElement;
+        new (): HTMLScaleIconActionInstallElement;
+    };
+    interface HTMLScaleIconActionLinkElement extends Components.ScaleIconActionLink, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionLinkElement: {
+        prototype: HTMLScaleIconActionLinkElement;
+        new (): HTMLScaleIconActionLinkElement;
+    };
+    interface HTMLScaleIconActionLogoutElement extends Components.ScaleIconActionLogout, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionLogoutElement: {
+        prototype: HTMLScaleIconActionLogoutElement;
+        new (): HTMLScaleIconActionLogoutElement;
+    };
+    interface HTMLScaleIconActionLoopElement extends Components.ScaleIconActionLoop, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionLoopElement: {
+        prototype: HTMLScaleIconActionLoopElement;
+        new (): HTMLScaleIconActionLoopElement;
+    };
+    interface HTMLScaleIconActionMenuElement extends Components.ScaleIconActionMenu, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMenuElement: {
+        prototype: HTMLScaleIconActionMenuElement;
+        new (): HTMLScaleIconActionMenuElement;
+    };
+    interface HTMLScaleIconActionMicrophoneElement extends Components.ScaleIconActionMicrophone, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMicrophoneElement: {
+        prototype: HTMLScaleIconActionMicrophoneElement;
+        new (): HTMLScaleIconActionMicrophoneElement;
+    };
+    interface HTMLScaleIconActionMinimizeScreenElement extends Components.ScaleIconActionMinimizeScreen, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMinimizeScreenElement: {
+        prototype: HTMLScaleIconActionMinimizeScreenElement;
+        new (): HTMLScaleIconActionMinimizeScreenElement;
+    };
+    interface HTMLScaleIconActionMoreElement extends Components.ScaleIconActionMore, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMoreElement: {
+        prototype: HTMLScaleIconActionMoreElement;
+        new (): HTMLScaleIconActionMoreElement;
+    };
+    interface HTMLScaleIconActionMoveElement extends Components.ScaleIconActionMove, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMoveElement: {
+        prototype: HTMLScaleIconActionMoveElement;
+        new (): HTMLScaleIconActionMoveElement;
+    };
+    interface HTMLScaleIconActionMuteElement extends Components.ScaleIconActionMute, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionMuteElement: {
+        prototype: HTMLScaleIconActionMuteElement;
+        new (): HTMLScaleIconActionMuteElement;
+    };
+    interface HTMLScaleIconActionNotificationElement extends Components.ScaleIconActionNotification, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionNotificationElement: {
+        prototype: HTMLScaleIconActionNotificationElement;
+        new (): HTMLScaleIconActionNotificationElement;
+    };
+    interface HTMLScaleIconActionPauseElement extends Components.ScaleIconActionPause, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionPauseElement: {
+        prototype: HTMLScaleIconActionPauseElement;
+        new (): HTMLScaleIconActionPauseElement;
+    };
+    interface HTMLScaleIconActionPinElement extends Components.ScaleIconActionPin, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionPinElement: {
+        prototype: HTMLScaleIconActionPinElement;
+        new (): HTMLScaleIconActionPinElement;
+    };
+    interface HTMLScaleIconActionPlayElement extends Components.ScaleIconActionPlay, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionPlayElement: {
+        prototype: HTMLScaleIconActionPlayElement;
+        new (): HTMLScaleIconActionPlayElement;
+    };
+    interface HTMLScaleIconActionPopUpWindowElement extends Components.ScaleIconActionPopUpWindow, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionPopUpWindowElement: {
+        prototype: HTMLScaleIconActionPopUpWindowElement;
+        new (): HTMLScaleIconActionPopUpWindowElement;
+    };
+    interface HTMLScaleIconActionPrintElement extends Components.ScaleIconActionPrint, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionPrintElement: {
+        prototype: HTMLScaleIconActionPrintElement;
+        new (): HTMLScaleIconActionPrintElement;
+    };
+    interface HTMLScaleIconActionRandomElement extends Components.ScaleIconActionRandom, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionRandomElement: {
+        prototype: HTMLScaleIconActionRandomElement;
+        new (): HTMLScaleIconActionRandomElement;
+    };
+    interface HTMLScaleIconActionRefreshElement extends Components.ScaleIconActionRefresh, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionRefreshElement: {
+        prototype: HTMLScaleIconActionRefreshElement;
+        new (): HTMLScaleIconActionRefreshElement;
+    };
+    interface HTMLScaleIconActionRemoveElement extends Components.ScaleIconActionRemove, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionRemoveElement: {
+        prototype: HTMLScaleIconActionRemoveElement;
+        new (): HTMLScaleIconActionRemoveElement;
+    };
+    interface HTMLScaleIconActionRestartElement extends Components.ScaleIconActionRestart, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionRestartElement: {
+        prototype: HTMLScaleIconActionRestartElement;
+        new (): HTMLScaleIconActionRestartElement;
+    };
+    interface HTMLScaleIconActionSearchElement extends Components.ScaleIconActionSearch, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionSearchElement: {
+        prototype: HTMLScaleIconActionSearchElement;
+        new (): HTMLScaleIconActionSearchElement;
+    };
+    interface HTMLScaleIconActionShoppingCartElement extends Components.ScaleIconActionShoppingCart, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionShoppingCartElement: {
+        prototype: HTMLScaleIconActionShoppingCartElement;
+        new (): HTMLScaleIconActionShoppingCartElement;
+    };
+    interface HTMLScaleIconActionShowPasswordElement extends Components.ScaleIconActionShowPassword, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionShowPasswordElement: {
+        prototype: HTMLScaleIconActionShowPasswordElement;
+        new (): HTMLScaleIconActionShowPasswordElement;
+    };
+    interface HTMLScaleIconActionSortElement extends Components.ScaleIconActionSort, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionSortElement: {
+        prototype: HTMLScaleIconActionSortElement;
+        new (): HTMLScaleIconActionSortElement;
+    };
+    interface HTMLScaleIconActionSoundOnElement extends Components.ScaleIconActionSoundOn, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionSoundOnElement: {
+        prototype: HTMLScaleIconActionSoundOnElement;
+        new (): HTMLScaleIconActionSoundOnElement;
+    };
+    interface HTMLScaleIconActionStreamOnElement extends Components.ScaleIconActionStreamOn, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionStreamOnElement: {
+        prototype: HTMLScaleIconActionStreamOnElement;
+        new (): HTMLScaleIconActionStreamOnElement;
+    };
+    interface HTMLScaleIconActionSuccessElement extends Components.ScaleIconActionSuccess, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionSuccessElement: {
+        prototype: HTMLScaleIconActionSuccessElement;
+        new (): HTMLScaleIconActionSuccessElement;
+    };
+    interface HTMLScaleIconActionThumbsDownElement extends Components.ScaleIconActionThumbsDown, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionThumbsDownElement: {
+        prototype: HTMLScaleIconActionThumbsDownElement;
+        new (): HTMLScaleIconActionThumbsDownElement;
+    };
+    interface HTMLScaleIconActionThumbsUpElement extends Components.ScaleIconActionThumbsUp, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionThumbsUpElement: {
+        prototype: HTMLScaleIconActionThumbsUpElement;
+        new (): HTMLScaleIconActionThumbsUpElement;
+    };
+    interface HTMLScaleIconActionTilesAddElement extends Components.ScaleIconActionTilesAdd, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionTilesAddElement: {
+        prototype: HTMLScaleIconActionTilesAddElement;
+        new (): HTMLScaleIconActionTilesAddElement;
+    };
+    interface HTMLScaleIconActionUploadElement extends Components.ScaleIconActionUpload, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionUploadElement: {
+        prototype: HTMLScaleIconActionUploadElement;
+        new (): HTMLScaleIconActionUploadElement;
+    };
+    interface HTMLScaleIconActionVolumeDownElement extends Components.ScaleIconActionVolumeDown, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionVolumeDownElement: {
+        prototype: HTMLScaleIconActionVolumeDownElement;
+        new (): HTMLScaleIconActionVolumeDownElement;
+    };
+    interface HTMLScaleIconActionVolumeUpElement extends Components.ScaleIconActionVolumeUp, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionVolumeUpElement: {
+        prototype: HTMLScaleIconActionVolumeUpElement;
+        new (): HTMLScaleIconActionVolumeUpElement;
+    };
+    interface HTMLScaleIconActionZoomInElement extends Components.ScaleIconActionZoomIn, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionZoomInElement: {
+        prototype: HTMLScaleIconActionZoomInElement;
+        new (): HTMLScaleIconActionZoomInElement;
+    };
+    interface HTMLScaleIconActionZoomOutElement extends Components.ScaleIconActionZoomOut, HTMLStencilElement {
+    }
+    var HTMLScaleIconActionZoomOutElement: {
+        prototype: HTMLScaleIconActionZoomOutElement;
+        new (): HTMLScaleIconActionZoomOutElement;
+    };
+    interface HTMLScaleIconAlertComplianceElement extends Components.ScaleIconAlertCompliance, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertComplianceElement: {
+        prototype: HTMLScaleIconAlertComplianceElement;
+        new (): HTMLScaleIconAlertComplianceElement;
+    };
+    interface HTMLScaleIconAlertErrorElement extends Components.ScaleIconAlertError, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertErrorElement: {
+        prototype: HTMLScaleIconAlertErrorElement;
+        new (): HTMLScaleIconAlertErrorElement;
+    };
+    interface HTMLScaleIconAlertHelpElement extends Components.ScaleIconAlertHelp, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertHelpElement: {
+        prototype: HTMLScaleIconAlertHelpElement;
+        new (): HTMLScaleIconAlertHelpElement;
+    };
+    interface HTMLScaleIconAlertImprintDataprivacyElement extends Components.ScaleIconAlertImprintDataprivacy, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertImprintDataprivacyElement: {
+        prototype: HTMLScaleIconAlertImprintDataprivacyElement;
+        new (): HTMLScaleIconAlertImprintDataprivacyElement;
+    };
+    interface HTMLScaleIconAlertInformationElement extends Components.ScaleIconAlertInformation, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertInformationElement: {
+        prototype: HTMLScaleIconAlertInformationElement;
+        new (): HTMLScaleIconAlertInformationElement;
+    };
+    interface HTMLScaleIconAlertLegalElement extends Components.ScaleIconAlertLegal, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertLegalElement: {
+        prototype: HTMLScaleIconAlertLegalElement;
+        new (): HTMLScaleIconAlertLegalElement;
+    };
+    interface HTMLScaleIconAlertSecurityElement extends Components.ScaleIconAlertSecurity, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertSecurityElement: {
+        prototype: HTMLScaleIconAlertSecurityElement;
+        new (): HTMLScaleIconAlertSecurityElement;
+    };
+    interface HTMLScaleIconAlertWarningElement extends Components.ScaleIconAlertWarning, HTMLStencilElement {
+    }
+    var HTMLScaleIconAlertWarningElement: {
+        prototype: HTMLScaleIconAlertWarningElement;
+        new (): HTMLScaleIconAlertWarningElement;
+    };
+    interface HTMLScaleIconCommunicationCallIncomingElement extends Components.ScaleIconCommunicationCallIncoming, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationCallIncomingElement: {
+        prototype: HTMLScaleIconCommunicationCallIncomingElement;
+        new (): HTMLScaleIconCommunicationCallIncomingElement;
+    };
+    interface HTMLScaleIconCommunicationCallOutgoingElement extends Components.ScaleIconCommunicationCallOutgoing, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationCallOutgoingElement: {
+        prototype: HTMLScaleIconCommunicationCallOutgoingElement;
+        new (): HTMLScaleIconCommunicationCallOutgoingElement;
+    };
+    interface HTMLScaleIconCommunicationChatElement extends Components.ScaleIconCommunicationChat, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationChatElement: {
+        prototype: HTMLScaleIconCommunicationChatElement;
+        new (): HTMLScaleIconCommunicationChatElement;
+    };
+    interface HTMLScaleIconCommunicationEmailElement extends Components.ScaleIconCommunicationEmail, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationEmailElement: {
+        prototype: HTMLScaleIconCommunicationEmailElement;
+        new (): HTMLScaleIconCommunicationEmailElement;
+    };
+    interface HTMLScaleIconCommunicationEndCallElement extends Components.ScaleIconCommunicationEndCall, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationEndCallElement: {
+        prototype: HTMLScaleIconCommunicationEndCallElement;
+        new (): HTMLScaleIconCommunicationEndCallElement;
+    };
+    interface HTMLScaleIconCommunicationFeedbackElement extends Components.ScaleIconCommunicationFeedback, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationFeedbackElement: {
+        prototype: HTMLScaleIconCommunicationFeedbackElement;
+        new (): HTMLScaleIconCommunicationFeedbackElement;
+    };
+    interface HTMLScaleIconCommunicationMessageElement extends Components.ScaleIconCommunicationMessage, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationMessageElement: {
+        prototype: HTMLScaleIconCommunicationMessageElement;
+        new (): HTMLScaleIconCommunicationMessageElement;
+    };
+    interface HTMLScaleIconCommunicationPhoneNumberElement extends Components.ScaleIconCommunicationPhoneNumber, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationPhoneNumberElement: {
+        prototype: HTMLScaleIconCommunicationPhoneNumberElement;
+        new (): HTMLScaleIconCommunicationPhoneNumberElement;
+    };
+    interface HTMLScaleIconCommunicationRecipientElement extends Components.ScaleIconCommunicationRecipient, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationRecipientElement: {
+        prototype: HTMLScaleIconCommunicationRecipientElement;
+        new (): HTMLScaleIconCommunicationRecipientElement;
+    };
+    interface HTMLScaleIconCommunicationVoiceMessageElement extends Components.ScaleIconCommunicationVoiceMessage, HTMLStencilElement {
+    }
+    var HTMLScaleIconCommunicationVoiceMessageElement: {
+        prototype: HTMLScaleIconCommunicationVoiceMessageElement;
+        new (): HTMLScaleIconCommunicationVoiceMessageElement;
+    };
+    interface HTMLScaleIconContentAchievementElement extends Components.ScaleIconContentAchievement, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentAchievementElement: {
+        prototype: HTMLScaleIconContentAchievementElement;
+        new (): HTMLScaleIconContentAchievementElement;
+    };
+    interface HTMLScaleIconContentApplicationsElement extends Components.ScaleIconContentApplications, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentApplicationsElement: {
+        prototype: HTMLScaleIconContentApplicationsElement;
+        new (): HTMLScaleIconContentApplicationsElement;
+    };
+    interface HTMLScaleIconContentBiometricElement extends Components.ScaleIconContentBiometric, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentBiometricElement: {
+        prototype: HTMLScaleIconContentBiometricElement;
+        new (): HTMLScaleIconContentBiometricElement;
+    };
+    interface HTMLScaleIconContentBookmarkElement extends Components.ScaleIconContentBookmark, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentBookmarkElement: {
+        prototype: HTMLScaleIconContentBookmarkElement;
+        new (): HTMLScaleIconContentBookmarkElement;
+    };
+    interface HTMLScaleIconContentCalendarElement extends Components.ScaleIconContentCalendar, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentCalendarElement: {
+        prototype: HTMLScaleIconContentCalendarElement;
+        new (): HTMLScaleIconContentCalendarElement;
+    };
+    interface HTMLScaleIconContentClipboardElement extends Components.ScaleIconContentClipboard, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentClipboardElement: {
+        prototype: HTMLScaleIconContentClipboardElement;
+        new (): HTMLScaleIconContentClipboardElement;
+    };
+    interface HTMLScaleIconContentClockElement extends Components.ScaleIconContentClock, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentClockElement: {
+        prototype: HTMLScaleIconContentClockElement;
+        new (): HTMLScaleIconContentClockElement;
+    };
+    interface HTMLScaleIconContentCreditCardElement extends Components.ScaleIconContentCreditCard, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentCreditCardElement: {
+        prototype: HTMLScaleIconContentCreditCardElement;
+        new (): HTMLScaleIconContentCreditCardElement;
+    };
+    interface HTMLScaleIconContentDeliveryElement extends Components.ScaleIconContentDelivery, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentDeliveryElement: {
+        prototype: HTMLScaleIconContentDeliveryElement;
+        new (): HTMLScaleIconContentDeliveryElement;
+    };
+    interface HTMLScaleIconContentDigitalBankingElement extends Components.ScaleIconContentDigitalBanking, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentDigitalBankingElement: {
+        prototype: HTMLScaleIconContentDigitalBankingElement;
+        new (): HTMLScaleIconContentDigitalBankingElement;
+    };
+    interface HTMLScaleIconContentDigitalMediaElement extends Components.ScaleIconContentDigitalMedia, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentDigitalMediaElement: {
+        prototype: HTMLScaleIconContentDigitalMediaElement;
+        new (): HTMLScaleIconContentDigitalMediaElement;
+    };
+    interface HTMLScaleIconContentDraftFileElement extends Components.ScaleIconContentDraftFile, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentDraftFileElement: {
+        prototype: HTMLScaleIconContentDraftFileElement;
+        new (): HTMLScaleIconContentDraftFileElement;
+    };
+    interface HTMLScaleIconContentESimElement extends Components.ScaleIconContentESim, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentESimElement: {
+        prototype: HTMLScaleIconContentESimElement;
+        new (): HTMLScaleIconContentESimElement;
+    };
+    interface HTMLScaleIconContentEuElement extends Components.ScaleIconContentEu, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentEuElement: {
+        prototype: HTMLScaleIconContentEuElement;
+        new (): HTMLScaleIconContentEuElement;
+    };
+    interface HTMLScaleIconContentFeaturesElement extends Components.ScaleIconContentFeatures, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentFeaturesElement: {
+        prototype: HTMLScaleIconContentFeaturesElement;
+        new (): HTMLScaleIconContentFeaturesElement;
+    };
+    interface HTMLScaleIconContentFlexibleTariffsElement extends Components.ScaleIconContentFlexibleTariffs, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentFlexibleTariffsElement: {
+        prototype: HTMLScaleIconContentFlexibleTariffsElement;
+        new (): HTMLScaleIconContentFlexibleTariffsElement;
+    };
+    interface HTMLScaleIconContentHeartElement extends Components.ScaleIconContentHeart, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentHeartElement: {
+        prototype: HTMLScaleIconContentHeartElement;
+        new (): HTMLScaleIconContentHeartElement;
+    };
+    interface HTMLScaleIconContentHistoryElement extends Components.ScaleIconContentHistory, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentHistoryElement: {
+        prototype: HTMLScaleIconContentHistoryElement;
+        new (): HTMLScaleIconContentHistoryElement;
+    };
+    interface HTMLScaleIconContentInternationalElement extends Components.ScaleIconContentInternational, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentInternationalElement: {
+        prototype: HTMLScaleIconContentInternationalElement;
+        new (): HTMLScaleIconContentInternationalElement;
+    };
+    interface HTMLScaleIconContentInternationalSmsElement extends Components.ScaleIconContentInternationalSms, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentInternationalSmsElement: {
+        prototype: HTMLScaleIconContentInternationalSmsElement;
+        new (): HTMLScaleIconContentInternationalSmsElement;
+    };
+    interface HTMLScaleIconContentInterviewElement extends Components.ScaleIconContentInterview, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentInterviewElement: {
+        prototype: HTMLScaleIconContentInterviewElement;
+        new (): HTMLScaleIconContentInterviewElement;
+    };
+    interface HTMLScaleIconContentKeyElement extends Components.ScaleIconContentKey, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentKeyElement: {
+        prototype: HTMLScaleIconContentKeyElement;
+        new (): HTMLScaleIconContentKeyElement;
+    };
+    interface HTMLScaleIconContentLockElement extends Components.ScaleIconContentLock, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentLockElement: {
+        prototype: HTMLScaleIconContentLockElement;
+        new (): HTMLScaleIconContentLockElement;
+    };
+    interface HTMLScaleIconContentMediaFolderElement extends Components.ScaleIconContentMediaFolder, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentMediaFolderElement: {
+        prototype: HTMLScaleIconContentMediaFolderElement;
+        new (): HTMLScaleIconContentMediaFolderElement;
+    };
+    interface HTMLScaleIconContentMoneyAtElement extends Components.ScaleIconContentMoneyAt, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentMoneyAtElement: {
+        prototype: HTMLScaleIconContentMoneyAtElement;
+        new (): HTMLScaleIconContentMoneyAtElement;
+    };
+    interface HTMLScaleIconContentMusicElement extends Components.ScaleIconContentMusic, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentMusicElement: {
+        prototype: HTMLScaleIconContentMusicElement;
+        new (): HTMLScaleIconContentMusicElement;
+    };
+    interface HTMLScaleIconContentNewsElement extends Components.ScaleIconContentNews, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentNewsElement: {
+        prototype: HTMLScaleIconContentNewsElement;
+        new (): HTMLScaleIconContentNewsElement;
+    };
+    interface HTMLScaleIconContentPrepaidActivateElement extends Components.ScaleIconContentPrepaidActivate, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentPrepaidActivateElement: {
+        prototype: HTMLScaleIconContentPrepaidActivateElement;
+        new (): HTMLScaleIconContentPrepaidActivateElement;
+    };
+    interface HTMLScaleIconContentPriceTagElement extends Components.ScaleIconContentPriceTag, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentPriceTagElement: {
+        prototype: HTMLScaleIconContentPriceTagElement;
+        new (): HTMLScaleIconContentPriceTagElement;
+    };
+    interface HTMLScaleIconContentRssElement extends Components.ScaleIconContentRss, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentRssElement: {
+        prototype: HTMLScaleIconContentRssElement;
+        new (): HTMLScaleIconContentRssElement;
+    };
+    interface HTMLScaleIconContentShopElement extends Components.ScaleIconContentShop, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentShopElement: {
+        prototype: HTMLScaleIconContentShopElement;
+        new (): HTMLScaleIconContentShopElement;
+    };
+    interface HTMLScaleIconContentSignalElement extends Components.ScaleIconContentSignal, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentSignalElement: {
+        prototype: HTMLScaleIconContentSignalElement;
+        new (): HTMLScaleIconContentSignalElement;
+    };
+    interface HTMLScaleIconContentSimCardElement extends Components.ScaleIconContentSimCard, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentSimCardElement: {
+        prototype: HTMLScaleIconContentSimCardElement;
+        new (): HTMLScaleIconContentSimCardElement;
+    };
+    interface HTMLScaleIconContentSmileElement extends Components.ScaleIconContentSmile, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentSmileElement: {
+        prototype: HTMLScaleIconContentSmileElement;
+        new (): HTMLScaleIconContentSmileElement;
+    };
+    interface HTMLScaleIconContentTariffsElement extends Components.ScaleIconContentTariffs, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentTariffsElement: {
+        prototype: HTMLScaleIconContentTariffsElement;
+        new (): HTMLScaleIconContentTariffsElement;
+    };
+    interface HTMLScaleIconContentTransportElement extends Components.ScaleIconContentTransport, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentTransportElement: {
+        prototype: HTMLScaleIconContentTransportElement;
+        new (): HTMLScaleIconContentTransportElement;
+    };
+    interface HTMLScaleIconContentUnlockElement extends Components.ScaleIconContentUnlock, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentUnlockElement: {
+        prototype: HTMLScaleIconContentUnlockElement;
+        new (): HTMLScaleIconContentUnlockElement;
+    };
+    interface HTMLScaleIconContentVoucherElement extends Components.ScaleIconContentVoucher, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentVoucherElement: {
+        prototype: HTMLScaleIconContentVoucherElement;
+        new (): HTMLScaleIconContentVoucherElement;
+    };
+    interface HTMLScaleIconContentWalletElement extends Components.ScaleIconContentWallet, HTMLStencilElement {
+    }
+    var HTMLScaleIconContentWalletElement: {
+        prototype: HTMLScaleIconContentWalletElement;
+        new (): HTMLScaleIconContentWalletElement;
+    };
+    interface HTMLScaleIconDeviceAddDeviceElement extends Components.ScaleIconDeviceAddDevice, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceAddDeviceElement: {
+        prototype: HTMLScaleIconDeviceAddDeviceElement;
+        new (): HTMLScaleIconDeviceAddDeviceElement;
+    };
+    interface HTMLScaleIconDeviceCameraElement extends Components.ScaleIconDeviceCamera, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceCameraElement: {
+        prototype: HTMLScaleIconDeviceCameraElement;
+        new (): HTMLScaleIconDeviceCameraElement;
+    };
+    interface HTMLScaleIconDeviceChangeCameraElement extends Components.ScaleIconDeviceChangeCamera, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceChangeCameraElement: {
+        prototype: HTMLScaleIconDeviceChangeCameraElement;
+        new (): HTMLScaleIconDeviceChangeCameraElement;
+    };
+    interface HTMLScaleIconDeviceComputerElement extends Components.ScaleIconDeviceComputer, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceComputerElement: {
+        prototype: HTMLScaleIconDeviceComputerElement;
+        new (): HTMLScaleIconDeviceComputerElement;
+    };
+    interface HTMLScaleIconDeviceDevicePhoneElement extends Components.ScaleIconDeviceDevicePhone, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceDevicePhoneElement: {
+        prototype: HTMLScaleIconDeviceDevicePhoneElement;
+        new (): HTMLScaleIconDeviceDevicePhoneElement;
+    };
+    interface HTMLScaleIconDeviceDeviceRouterElement extends Components.ScaleIconDeviceDeviceRouter, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceDeviceRouterElement: {
+        prototype: HTMLScaleIconDeviceDeviceRouterElement;
+        new (): HTMLScaleIconDeviceDeviceRouterElement;
+    };
+    interface HTMLScaleIconDeviceDeviceTvElement extends Components.ScaleIconDeviceDeviceTv, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceDeviceTvElement: {
+        prototype: HTMLScaleIconDeviceDeviceTvElement;
+        new (): HTMLScaleIconDeviceDeviceTvElement;
+    };
+    interface HTMLScaleIconDeviceDeviceWatchElement extends Components.ScaleIconDeviceDeviceWatch, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceDeviceWatchElement: {
+        prototype: HTMLScaleIconDeviceDeviceWatchElement;
+        new (): HTMLScaleIconDeviceDeviceWatchElement;
+    };
+    interface HTMLScaleIconDeviceFixedLineServicesElement extends Components.ScaleIconDeviceFixedLineServices, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceFixedLineServicesElement: {
+        prototype: HTMLScaleIconDeviceFixedLineServicesElement;
+        new (): HTMLScaleIconDeviceFixedLineServicesElement;
+    };
+    interface HTMLScaleIconDeviceMediaReceiverElement extends Components.ScaleIconDeviceMediaReceiver, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceMediaReceiverElement: {
+        prototype: HTMLScaleIconDeviceMediaReceiverElement;
+        new (): HTMLScaleIconDeviceMediaReceiverElement;
+    };
+    interface HTMLScaleIconDeviceMobileDevicesCombinationElement extends Components.ScaleIconDeviceMobileDevicesCombination, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceMobileDevicesCombinationElement: {
+        prototype: HTMLScaleIconDeviceMobileDevicesCombinationElement;
+        new (): HTMLScaleIconDeviceMobileDevicesCombinationElement;
+    };
+    interface HTMLScaleIconDeviceMobileEquipmentElement extends Components.ScaleIconDeviceMobileEquipment, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceMobileEquipmentElement: {
+        prototype: HTMLScaleIconDeviceMobileEquipmentElement;
+        new (): HTMLScaleIconDeviceMobileEquipmentElement;
+    };
+    interface HTMLScaleIconDeviceMobilePhoneInsuranceElement extends Components.ScaleIconDeviceMobilePhoneInsurance, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceMobilePhoneInsuranceElement: {
+        prototype: HTMLScaleIconDeviceMobilePhoneInsuranceElement;
+        new (): HTMLScaleIconDeviceMobilePhoneInsuranceElement;
+    };
+    interface HTMLScaleIconDeviceMobileServicesElement extends Components.ScaleIconDeviceMobileServices, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceMobileServicesElement: {
+        prototype: HTMLScaleIconDeviceMobileServicesElement;
+        new (): HTMLScaleIconDeviceMobileServicesElement;
+    };
+    interface HTMLScaleIconDeviceNoCameraElement extends Components.ScaleIconDeviceNoCamera, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceNoCameraElement: {
+        prototype: HTMLScaleIconDeviceNoCameraElement;
+        new (): HTMLScaleIconDeviceNoCameraElement;
+    };
+    interface HTMLScaleIconDevicePhotoCameraElement extends Components.ScaleIconDevicePhotoCamera, HTMLStencilElement {
+    }
+    var HTMLScaleIconDevicePhotoCameraElement: {
+        prototype: HTMLScaleIconDevicePhotoCameraElement;
+        new (): HTMLScaleIconDevicePhotoCameraElement;
+    };
+    interface HTMLScaleIconDeviceRemoteControllerElement extends Components.ScaleIconDeviceRemoteController, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceRemoteControllerElement: {
+        prototype: HTMLScaleIconDeviceRemoteControllerElement;
+        new (): HTMLScaleIconDeviceRemoteControllerElement;
+    };
+    interface HTMLScaleIconDeviceReplacementMobilephoneElement extends Components.ScaleIconDeviceReplacementMobilephone, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceReplacementMobilephoneElement: {
+        prototype: HTMLScaleIconDeviceReplacementMobilephoneElement;
+        new (): HTMLScaleIconDeviceReplacementMobilephoneElement;
+    };
+    interface HTMLScaleIconDeviceScreenRotateElement extends Components.ScaleIconDeviceScreenRotate, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceScreenRotateElement: {
+        prototype: HTMLScaleIconDeviceScreenRotateElement;
+        new (): HTMLScaleIconDeviceScreenRotateElement;
+    };
+    interface HTMLScaleIconDeviceSmartSpeakerElement extends Components.ScaleIconDeviceSmartSpeaker, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceSmartSpeakerElement: {
+        prototype: HTMLScaleIconDeviceSmartSpeakerElement;
+        new (): HTMLScaleIconDeviceSmartSpeakerElement;
+    };
+    interface HTMLScaleIconDeviceTvAndMobileElement extends Components.ScaleIconDeviceTvAndMobile, HTMLStencilElement {
+    }
+    var HTMLScaleIconDeviceTvAndMobileElement: {
+        prototype: HTMLScaleIconDeviceTvAndMobileElement;
+        new (): HTMLScaleIconDeviceTvAndMobileElement;
+    };
+    interface HTMLScaleIconHomeHomeElement extends Components.ScaleIconHomeHome, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeHomeElement: {
+        prototype: HTMLScaleIconHomeHomeElement;
+        new (): HTMLScaleIconHomeHomeElement;
+    };
+    interface HTMLScaleIconHomeInternetAtHomeElement extends Components.ScaleIconHomeInternetAtHome, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeInternetAtHomeElement: {
+        prototype: HTMLScaleIconHomeInternetAtHomeElement;
+        new (): HTMLScaleIconHomeInternetAtHomeElement;
+    };
+    interface HTMLScaleIconHomeIotElement extends Components.ScaleIconHomeIot, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeIotElement: {
+        prototype: HTMLScaleIconHomeIotElement;
+        new (): HTMLScaleIconHomeIotElement;
+    };
+    interface HTMLScaleIconHomeNoWifiElement extends Components.ScaleIconHomeNoWifi, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeNoWifiElement: {
+        prototype: HTMLScaleIconHomeNoWifiElement;
+        new (): HTMLScaleIconHomeNoWifiElement;
+    };
+    interface HTMLScaleIconHomeSmarthomeElement extends Components.ScaleIconHomeSmarthome, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeSmarthomeElement: {
+        prototype: HTMLScaleIconHomeSmarthomeElement;
+        new (): HTMLScaleIconHomeSmarthomeElement;
+    };
+    interface HTMLScaleIconHomeWifiElement extends Components.ScaleIconHomeWifi, HTMLStencilElement {
+    }
+    var HTMLScaleIconHomeWifiElement: {
+        prototype: HTMLScaleIconHomeWifiElement;
+        new (): HTMLScaleIconHomeWifiElement;
+    };
+    interface HTMLScaleIconNavigationCircleTopUpElement extends Components.ScaleIconNavigationCircleTopUp, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationCircleTopUpElement: {
+        prototype: HTMLScaleIconNavigationCircleTopUpElement;
+        new (): HTMLScaleIconNavigationCircleTopUpElement;
+    };
+    interface HTMLScaleIconNavigationCollapseDownElement extends Components.ScaleIconNavigationCollapseDown, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationCollapseDownElement: {
+        prototype: HTMLScaleIconNavigationCollapseDownElement;
+        new (): HTMLScaleIconNavigationCollapseDownElement;
+    };
+    interface HTMLScaleIconNavigationCollapseUpElement extends Components.ScaleIconNavigationCollapseUp, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationCollapseUpElement: {
+        prototype: HTMLScaleIconNavigationCollapseUpElement;
+        new (): HTMLScaleIconNavigationCollapseUpElement;
+    };
+    interface HTMLScaleIconNavigationExternalLinkElement extends Components.ScaleIconNavigationExternalLink, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationExternalLinkElement: {
+        prototype: HTMLScaleIconNavigationExternalLinkElement;
+        new (): HTMLScaleIconNavigationExternalLinkElement;
+    };
+    interface HTMLScaleIconNavigationInternalLinkElement extends Components.ScaleIconNavigationInternalLink, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationInternalLinkElement: {
+        prototype: HTMLScaleIconNavigationInternalLinkElement;
+        new (): HTMLScaleIconNavigationInternalLinkElement;
+    };
+    interface HTMLScaleIconNavigationLeftElement extends Components.ScaleIconNavigationLeft, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationLeftElement: {
+        prototype: HTMLScaleIconNavigationLeftElement;
+        new (): HTMLScaleIconNavigationLeftElement;
+    };
+    interface HTMLScaleIconNavigationLocationElement extends Components.ScaleIconNavigationLocation, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationLocationElement: {
+        prototype: HTMLScaleIconNavigationLocationElement;
+        new (): HTMLScaleIconNavigationLocationElement;
+    };
+    interface HTMLScaleIconNavigationMyLocationElement extends Components.ScaleIconNavigationMyLocation, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationMyLocationElement: {
+        prototype: HTMLScaleIconNavigationMyLocationElement;
+        new (): HTMLScaleIconNavigationMyLocationElement;
+    };
+    interface HTMLScaleIconNavigationRightElement extends Components.ScaleIconNavigationRight, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationRightElement: {
+        prototype: HTMLScaleIconNavigationRightElement;
+        new (): HTMLScaleIconNavigationRightElement;
+    };
+    interface HTMLScaleIconNavigationStartElement extends Components.ScaleIconNavigationStart, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationStartElement: {
+        prototype: HTMLScaleIconNavigationStartElement;
+        new (): HTMLScaleIconNavigationStartElement;
+    };
+    interface HTMLScaleIconNavigationTopUpElement extends Components.ScaleIconNavigationTopUp, HTMLStencilElement {
+    }
+    var HTMLScaleIconNavigationTopUpElement: {
+        prototype: HTMLScaleIconNavigationTopUpElement;
+        new (): HTMLScaleIconNavigationTopUpElement;
+    };
+    interface HTMLScaleIconProcessOrderStatusElement extends Components.ScaleIconProcessOrderStatus, HTMLStencilElement {
+    }
+    var HTMLScaleIconProcessOrderStatusElement: {
+        prototype: HTMLScaleIconProcessOrderStatusElement;
+        new (): HTMLScaleIconProcessOrderStatusElement;
+    };
+    interface HTMLScaleIconProcessProcessingElement extends Components.ScaleIconProcessProcessing, HTMLStencilElement {
+    }
+    var HTMLScaleIconProcessProcessingElement: {
+        prototype: HTMLScaleIconProcessProcessingElement;
+        new (): HTMLScaleIconProcessProcessingElement;
+    };
+    interface HTMLScaleIconServiceDevicesServiceElement extends Components.ScaleIconServiceDevicesService, HTMLStencilElement {
+    }
+    var HTMLScaleIconServiceDevicesServiceElement: {
+        prototype: HTMLScaleIconServiceDevicesServiceElement;
+        new (): HTMLScaleIconServiceDevicesServiceElement;
+    };
+    interface HTMLScaleIconServiceMaintananceElement extends Components.ScaleIconServiceMaintanance, HTMLStencilElement {
+    }
+    var HTMLScaleIconServiceMaintananceElement: {
+        prototype: HTMLScaleIconServiceMaintananceElement;
+        new (): HTMLScaleIconServiceMaintananceElement;
+    };
+    interface HTMLScaleIconServiceServicesElement extends Components.ScaleIconServiceServices, HTMLStencilElement {
+    }
+    var HTMLScaleIconServiceServicesElement: {
+        prototype: HTMLScaleIconServiceServicesElement;
+        new (): HTMLScaleIconServiceServicesElement;
+    };
+    interface HTMLScaleIconServiceSettingsElement extends Components.ScaleIconServiceSettings, HTMLStencilElement {
+    }
+    var HTMLScaleIconServiceSettingsElement: {
+        prototype: HTMLScaleIconServiceSettingsElement;
+        new (): HTMLScaleIconServiceSettingsElement;
+    };
+    interface HTMLScaleIconServiceSupportElement extends Components.ScaleIconServiceSupport, HTMLStencilElement {
+    }
+    var HTMLScaleIconServiceSupportElement: {
+        prototype: HTMLScaleIconServiceSupportElement;
+        new (): HTMLScaleIconServiceSupportElement;
+    };
+    interface HTMLScaleIconT_productMagentaCloudElement extends Components.ScaleIconT_productMagentaCloud, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productMagentaCloudElement: {
+        prototype: HTMLScaleIconT_productMagentaCloudElement;
+        new (): HTMLScaleIconT_productMagentaCloudElement;
+    };
+    interface HTMLScaleIconT_productMagentaTvElement extends Components.ScaleIconT_productMagentaTv, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productMagentaTvElement: {
+        prototype: HTMLScaleIconT_productMagentaTvElement;
+        new (): HTMLScaleIconT_productMagentaTvElement;
+    };
+    interface HTMLScaleIconT_productMagentaoneElement extends Components.ScaleIconT_productMagentaone, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productMagentaoneElement: {
+        prototype: HTMLScaleIconT_productMagentaoneElement;
+        new (): HTMLScaleIconT_productMagentaoneElement;
+    };
+    interface HTMLScaleIconT_productMeasureInternetSpeedElement extends Components.ScaleIconT_productMeasureInternetSpeed, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productMeasureInternetSpeedElement: {
+        prototype: HTMLScaleIconT_productMeasureInternetSpeedElement;
+        new (): HTMLScaleIconT_productMeasureInternetSpeedElement;
+    };
+    interface HTMLScaleIconT_productSeamlessConnectivityElement extends Components.ScaleIconT_productSeamlessConnectivity, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productSeamlessConnectivityElement: {
+        prototype: HTMLScaleIconT_productSeamlessConnectivityElement;
+        new (): HTMLScaleIconT_productSeamlessConnectivityElement;
+    };
+    interface HTMLScaleIconT_productTelekomShopBElement extends Components.ScaleIconT_productTelekomShopB, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productTelekomShopBElement: {
+        prototype: HTMLScaleIconT_productTelekomShopBElement;
+        new (): HTMLScaleIconT_productTelekomShopBElement;
+    };
+    interface HTMLScaleIconT_productUsageElement extends Components.ScaleIconT_productUsage, HTMLStencilElement {
+    }
+    var HTMLScaleIconT_productUsageElement: {
+        prototype: HTMLScaleIconT_productUsageElement;
+        new (): HTMLScaleIconT_productUsageElement;
+    };
+    interface HTMLScaleIconUser_fileAnalyticsElement extends Components.ScaleIconUser_fileAnalytics, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileAnalyticsElement: {
+        prototype: HTMLScaleIconUser_fileAnalyticsElement;
+        new (): HTMLScaleIconUser_fileAnalyticsElement;
+    };
+    interface HTMLScaleIconUser_fileAttachmentElement extends Components.ScaleIconUser_fileAttachment, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileAttachmentElement: {
+        prototype: HTMLScaleIconUser_fileAttachmentElement;
+        new (): HTMLScaleIconUser_fileAttachmentElement;
+    };
+    interface HTMLScaleIconUser_fileAudioFileElement extends Components.ScaleIconUser_fileAudioFile, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileAudioFileElement: {
+        prototype: HTMLScaleIconUser_fileAudioFileElement;
+        new (): HTMLScaleIconUser_fileAudioFileElement;
+    };
+    interface HTMLScaleIconUser_fileBillingElement extends Components.ScaleIconUser_fileBilling, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileBillingElement: {
+        prototype: HTMLScaleIconUser_fileBillingElement;
+        new (): HTMLScaleIconUser_fileBillingElement;
+    };
+    interface HTMLScaleIconUser_fileBussinesUsersElement extends Components.ScaleIconUser_fileBussinesUsers, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileBussinesUsersElement: {
+        prototype: HTMLScaleIconUser_fileBussinesUsersElement;
+        new (): HTMLScaleIconUser_fileBussinesUsersElement;
+    };
+    interface HTMLScaleIconUser_fileCommunitiesElement extends Components.ScaleIconUser_fileCommunities, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileCommunitiesElement: {
+        prototype: HTMLScaleIconUser_fileCommunitiesElement;
+        new (): HTMLScaleIconUser_fileCommunitiesElement;
+    };
+    interface HTMLScaleIconUser_fileContactsElement extends Components.ScaleIconUser_fileContacts, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileContactsElement: {
+        prototype: HTMLScaleIconUser_fileContactsElement;
+        new (): HTMLScaleIconUser_fileContactsElement;
+    };
+    interface HTMLScaleIconUser_fileContractsElement extends Components.ScaleIconUser_fileContracts, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileContractsElement: {
+        prototype: HTMLScaleIconUser_fileContractsElement;
+        new (): HTMLScaleIconUser_fileContractsElement;
+    };
+    interface HTMLScaleIconUser_fileFamiliesElement extends Components.ScaleIconUser_fileFamilies, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileFamiliesElement: {
+        prototype: HTMLScaleIconUser_fileFamiliesElement;
+        new (): HTMLScaleIconUser_fileFamiliesElement;
+    };
+    interface HTMLScaleIconUser_fileHandshakeElement extends Components.ScaleIconUser_fileHandshake, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileHandshakeElement: {
+        prototype: HTMLScaleIconUser_fileHandshakeElement;
+        new (): HTMLScaleIconUser_fileHandshakeElement;
+    };
+    interface HTMLScaleIconUser_fileIdCardElement extends Components.ScaleIconUser_fileIdCard, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileIdCardElement: {
+        prototype: HTMLScaleIconUser_fileIdCardElement;
+        new (): HTMLScaleIconUser_fileIdCardElement;
+    };
+    interface HTMLScaleIconUser_fileImageFileElement extends Components.ScaleIconUser_fileImageFile, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileImageFileElement: {
+        prototype: HTMLScaleIconUser_fileImageFileElement;
+        new (): HTMLScaleIconUser_fileImageFileElement;
+    };
+    interface HTMLScaleIconUser_fileLogoutElement extends Components.ScaleIconUser_fileLogout, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileLogoutElement: {
+        prototype: HTMLScaleIconUser_fileLogoutElement;
+        new (): HTMLScaleIconUser_fileLogoutElement;
+    };
+    interface HTMLScaleIconUser_filePdfFileElement extends Components.ScaleIconUser_filePdfFile, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_filePdfFileElement: {
+        prototype: HTMLScaleIconUser_filePdfFileElement;
+        new (): HTMLScaleIconUser_filePdfFileElement;
+    };
+    interface HTMLScaleIconUser_fileSwitchUsersElement extends Components.ScaleIconUser_fileSwitchUsers, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileSwitchUsersElement: {
+        prototype: HTMLScaleIconUser_fileSwitchUsersElement;
+        new (): HTMLScaleIconUser_fileSwitchUsersElement;
+    };
+    interface HTMLScaleIconUser_fileUserElement extends Components.ScaleIconUser_fileUser, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileUserElement: {
+        prototype: HTMLScaleIconUser_fileUserElement;
+        new (): HTMLScaleIconUser_fileUserElement;
+    };
+    interface HTMLScaleIconUser_fileVideosElement extends Components.ScaleIconUser_fileVideos, HTMLStencilElement {
+    }
+    var HTMLScaleIconUser_fileVideosElement: {
+        prototype: HTMLScaleIconUser_fileVideosElement;
+        new (): HTMLScaleIconUser_fileVideosElement;
     };
     interface HTMLScaleInputElement extends Components.ScaleInput, HTMLStencilElement {
     }
@@ -1097,8 +6284,190 @@ declare global {
         "scale-carousel": HTMLScaleCarouselElement;
         "scale-chart-stack-card": HTMLScaleChartStackCardElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
+        "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
+        "scale-icon-action-add": HTMLScaleIconActionAddElement;
+        "scale-icon-action-add-card": HTMLScaleIconActionAddCardElement;
+        "scale-icon-action-auto-login": HTMLScaleIconActionAutoLoginElement;
+        "scale-icon-action-backspace": HTMLScaleIconActionBackspaceElement;
+        "scale-icon-action-changelog": HTMLScaleIconActionChangelogElement;
+        "scale-icon-action-circle-add": HTMLScaleIconActionCircleAddElement;
+        "scale-icon-action-circle-close": HTMLScaleIconActionCircleCloseElement;
+        "scale-icon-action-close": HTMLScaleIconActionCloseElement;
+        "scale-icon-action-copy-paste": HTMLScaleIconActionCopyPasteElement;
+        "scale-icon-action-cut-paste": HTMLScaleIconActionCutPasteElement;
+        "scale-icon-action-disabled-microphone": HTMLScaleIconActionDisabledMicrophoneElement;
+        "scale-icon-action-download": HTMLScaleIconActionDownloadElement;
+        "scale-icon-action-drag-and-drop": HTMLScaleIconActionDragAndDropElement;
+        "scale-icon-action-edit": HTMLScaleIconActionEditElement;
+        "scale-icon-action-fast-forward": HTMLScaleIconActionFastForwardElement;
+        "scale-icon-action-favorite": HTMLScaleIconActionFavoriteElement;
+        "scale-icon-action-filter": HTMLScaleIconActionFilterElement;
+        "scale-icon-action-forward": HTMLScaleIconActionForwardElement;
+        "scale-icon-action-full-screen": HTMLScaleIconActionFullScreenElement;
+        "scale-icon-action-hide-password": HTMLScaleIconActionHidePasswordElement;
+        "scale-icon-action-install": HTMLScaleIconActionInstallElement;
+        "scale-icon-action-link": HTMLScaleIconActionLinkElement;
+        "scale-icon-action-logout": HTMLScaleIconActionLogoutElement;
+        "scale-icon-action-loop": HTMLScaleIconActionLoopElement;
+        "scale-icon-action-menu": HTMLScaleIconActionMenuElement;
+        "scale-icon-action-microphone": HTMLScaleIconActionMicrophoneElement;
+        "scale-icon-action-minimize-screen": HTMLScaleIconActionMinimizeScreenElement;
+        "scale-icon-action-more": HTMLScaleIconActionMoreElement;
+        "scale-icon-action-move": HTMLScaleIconActionMoveElement;
+        "scale-icon-action-mute": HTMLScaleIconActionMuteElement;
+        "scale-icon-action-notification": HTMLScaleIconActionNotificationElement;
+        "scale-icon-action-pause": HTMLScaleIconActionPauseElement;
+        "scale-icon-action-pin": HTMLScaleIconActionPinElement;
+        "scale-icon-action-play": HTMLScaleIconActionPlayElement;
+        "scale-icon-action-pop-up-window": HTMLScaleIconActionPopUpWindowElement;
+        "scale-icon-action-print": HTMLScaleIconActionPrintElement;
+        "scale-icon-action-random": HTMLScaleIconActionRandomElement;
+        "scale-icon-action-refresh": HTMLScaleIconActionRefreshElement;
+        "scale-icon-action-remove": HTMLScaleIconActionRemoveElement;
+        "scale-icon-action-restart": HTMLScaleIconActionRestartElement;
+        "scale-icon-action-search": HTMLScaleIconActionSearchElement;
+        "scale-icon-action-shopping-cart": HTMLScaleIconActionShoppingCartElement;
+        "scale-icon-action-show-password": HTMLScaleIconActionShowPasswordElement;
+        "scale-icon-action-sort": HTMLScaleIconActionSortElement;
+        "scale-icon-action-sound-on": HTMLScaleIconActionSoundOnElement;
+        "scale-icon-action-stream-on": HTMLScaleIconActionStreamOnElement;
+        "scale-icon-action-success": HTMLScaleIconActionSuccessElement;
+        "scale-icon-action-thumbs-down": HTMLScaleIconActionThumbsDownElement;
+        "scale-icon-action-thumbs-up": HTMLScaleIconActionThumbsUpElement;
+        "scale-icon-action-tiles-add": HTMLScaleIconActionTilesAddElement;
+        "scale-icon-action-upload": HTMLScaleIconActionUploadElement;
+        "scale-icon-action-volume-down": HTMLScaleIconActionVolumeDownElement;
+        "scale-icon-action-volume-up": HTMLScaleIconActionVolumeUpElement;
+        "scale-icon-action-zoom-in": HTMLScaleIconActionZoomInElement;
+        "scale-icon-action-zoom-out": HTMLScaleIconActionZoomOutElement;
+        "scale-icon-alert-compliance": HTMLScaleIconAlertComplianceElement;
+        "scale-icon-alert-error": HTMLScaleIconAlertErrorElement;
+        "scale-icon-alert-help": HTMLScaleIconAlertHelpElement;
+        "scale-icon-alert-imprint-dataprivacy": HTMLScaleIconAlertImprintDataprivacyElement;
+        "scale-icon-alert-information": HTMLScaleIconAlertInformationElement;
+        "scale-icon-alert-legal": HTMLScaleIconAlertLegalElement;
+        "scale-icon-alert-security": HTMLScaleIconAlertSecurityElement;
+        "scale-icon-alert-warning": HTMLScaleIconAlertWarningElement;
+        "scale-icon-communication-call-incoming": HTMLScaleIconCommunicationCallIncomingElement;
+        "scale-icon-communication-call-outgoing": HTMLScaleIconCommunicationCallOutgoingElement;
+        "scale-icon-communication-chat": HTMLScaleIconCommunicationChatElement;
+        "scale-icon-communication-email": HTMLScaleIconCommunicationEmailElement;
+        "scale-icon-communication-end-call": HTMLScaleIconCommunicationEndCallElement;
+        "scale-icon-communication-feedback": HTMLScaleIconCommunicationFeedbackElement;
+        "scale-icon-communication-message": HTMLScaleIconCommunicationMessageElement;
+        "scale-icon-communication-phone-number": HTMLScaleIconCommunicationPhoneNumberElement;
+        "scale-icon-communication-recipient": HTMLScaleIconCommunicationRecipientElement;
+        "scale-icon-communication-voice-message": HTMLScaleIconCommunicationVoiceMessageElement;
+        "scale-icon-content-achievement": HTMLScaleIconContentAchievementElement;
+        "scale-icon-content-applications": HTMLScaleIconContentApplicationsElement;
+        "scale-icon-content-biometric": HTMLScaleIconContentBiometricElement;
+        "scale-icon-content-bookmark": HTMLScaleIconContentBookmarkElement;
+        "scale-icon-content-calendar": HTMLScaleIconContentCalendarElement;
+        "scale-icon-content-clipboard": HTMLScaleIconContentClipboardElement;
+        "scale-icon-content-clock": HTMLScaleIconContentClockElement;
+        "scale-icon-content-credit-card": HTMLScaleIconContentCreditCardElement;
+        "scale-icon-content-delivery": HTMLScaleIconContentDeliveryElement;
+        "scale-icon-content-digital-banking": HTMLScaleIconContentDigitalBankingElement;
+        "scale-icon-content-digital-media": HTMLScaleIconContentDigitalMediaElement;
+        "scale-icon-content-draft-file": HTMLScaleIconContentDraftFileElement;
+        "scale-icon-content-e-sim": HTMLScaleIconContentESimElement;
+        "scale-icon-content-eu": HTMLScaleIconContentEuElement;
+        "scale-icon-content-features": HTMLScaleIconContentFeaturesElement;
+        "scale-icon-content-flexible-tariffs": HTMLScaleIconContentFlexibleTariffsElement;
+        "scale-icon-content-heart": HTMLScaleIconContentHeartElement;
+        "scale-icon-content-history": HTMLScaleIconContentHistoryElement;
+        "scale-icon-content-international": HTMLScaleIconContentInternationalElement;
+        "scale-icon-content-international-sms": HTMLScaleIconContentInternationalSmsElement;
+        "scale-icon-content-interview": HTMLScaleIconContentInterviewElement;
+        "scale-icon-content-key": HTMLScaleIconContentKeyElement;
+        "scale-icon-content-lock": HTMLScaleIconContentLockElement;
+        "scale-icon-content-media-folder": HTMLScaleIconContentMediaFolderElement;
+        "scale-icon-content-money-at": HTMLScaleIconContentMoneyAtElement;
+        "scale-icon-content-music": HTMLScaleIconContentMusicElement;
+        "scale-icon-content-news": HTMLScaleIconContentNewsElement;
+        "scale-icon-content-prepaid-activate": HTMLScaleIconContentPrepaidActivateElement;
+        "scale-icon-content-price-tag": HTMLScaleIconContentPriceTagElement;
+        "scale-icon-content-rss": HTMLScaleIconContentRssElement;
+        "scale-icon-content-shop": HTMLScaleIconContentShopElement;
+        "scale-icon-content-signal": HTMLScaleIconContentSignalElement;
+        "scale-icon-content-sim-card": HTMLScaleIconContentSimCardElement;
+        "scale-icon-content-smile": HTMLScaleIconContentSmileElement;
+        "scale-icon-content-tariffs": HTMLScaleIconContentTariffsElement;
+        "scale-icon-content-transport": HTMLScaleIconContentTransportElement;
+        "scale-icon-content-unlock": HTMLScaleIconContentUnlockElement;
+        "scale-icon-content-voucher": HTMLScaleIconContentVoucherElement;
+        "scale-icon-content-wallet": HTMLScaleIconContentWalletElement;
+        "scale-icon-device-add-device": HTMLScaleIconDeviceAddDeviceElement;
+        "scale-icon-device-camera": HTMLScaleIconDeviceCameraElement;
+        "scale-icon-device-change-camera": HTMLScaleIconDeviceChangeCameraElement;
+        "scale-icon-device-computer": HTMLScaleIconDeviceComputerElement;
+        "scale-icon-device-device-phone": HTMLScaleIconDeviceDevicePhoneElement;
+        "scale-icon-device-device-router": HTMLScaleIconDeviceDeviceRouterElement;
+        "scale-icon-device-device-tv": HTMLScaleIconDeviceDeviceTvElement;
+        "scale-icon-device-device-watch": HTMLScaleIconDeviceDeviceWatchElement;
+        "scale-icon-device-fixed-line-services": HTMLScaleIconDeviceFixedLineServicesElement;
+        "scale-icon-device-media-receiver": HTMLScaleIconDeviceMediaReceiverElement;
+        "scale-icon-device-mobile-devices-combination": HTMLScaleIconDeviceMobileDevicesCombinationElement;
+        "scale-icon-device-mobile-equipment": HTMLScaleIconDeviceMobileEquipmentElement;
+        "scale-icon-device-mobile-phone-insurance": HTMLScaleIconDeviceMobilePhoneInsuranceElement;
+        "scale-icon-device-mobile-services": HTMLScaleIconDeviceMobileServicesElement;
+        "scale-icon-device-no-camera": HTMLScaleIconDeviceNoCameraElement;
+        "scale-icon-device-photo-camera": HTMLScaleIconDevicePhotoCameraElement;
+        "scale-icon-device-remote-controller": HTMLScaleIconDeviceRemoteControllerElement;
+        "scale-icon-device-replacement-mobilephone": HTMLScaleIconDeviceReplacementMobilephoneElement;
+        "scale-icon-device-screen-rotate": HTMLScaleIconDeviceScreenRotateElement;
+        "scale-icon-device-smart-speaker": HTMLScaleIconDeviceSmartSpeakerElement;
+        "scale-icon-device-tv-and-mobile": HTMLScaleIconDeviceTvAndMobileElement;
+        "scale-icon-home-home": HTMLScaleIconHomeHomeElement;
+        "scale-icon-home-internet-at-home": HTMLScaleIconHomeInternetAtHomeElement;
+        "scale-icon-home-iot": HTMLScaleIconHomeIotElement;
+        "scale-icon-home-no-wifi": HTMLScaleIconHomeNoWifiElement;
+        "scale-icon-home-smarthome": HTMLScaleIconHomeSmarthomeElement;
+        "scale-icon-home-wifi": HTMLScaleIconHomeWifiElement;
+        "scale-icon-navigation-circle-top-up": HTMLScaleIconNavigationCircleTopUpElement;
+        "scale-icon-navigation-collapse-down": HTMLScaleIconNavigationCollapseDownElement;
+        "scale-icon-navigation-collapse-up": HTMLScaleIconNavigationCollapseUpElement;
+        "scale-icon-navigation-external-link": HTMLScaleIconNavigationExternalLinkElement;
+        "scale-icon-navigation-internal-link": HTMLScaleIconNavigationInternalLinkElement;
+        "scale-icon-navigation-left": HTMLScaleIconNavigationLeftElement;
+        "scale-icon-navigation-location": HTMLScaleIconNavigationLocationElement;
+        "scale-icon-navigation-my-location": HTMLScaleIconNavigationMyLocationElement;
+        "scale-icon-navigation-right": HTMLScaleIconNavigationRightElement;
+        "scale-icon-navigation-start": HTMLScaleIconNavigationStartElement;
+        "scale-icon-navigation-top-up": HTMLScaleIconNavigationTopUpElement;
+        "scale-icon-process-order-status": HTMLScaleIconProcessOrderStatusElement;
+        "scale-icon-process-processing": HTMLScaleIconProcessProcessingElement;
+        "scale-icon-service-devices-service": HTMLScaleIconServiceDevicesServiceElement;
+        "scale-icon-service-maintanance": HTMLScaleIconServiceMaintananceElement;
+        "scale-icon-service-services": HTMLScaleIconServiceServicesElement;
+        "scale-icon-service-settings": HTMLScaleIconServiceSettingsElement;
+        "scale-icon-service-support": HTMLScaleIconServiceSupportElement;
+        "scale-icon-t_product-magenta-cloud": HTMLScaleIconT_productMagentaCloudElement;
+        "scale-icon-t_product-magenta-tv": HTMLScaleIconT_productMagentaTvElement;
+        "scale-icon-t_product-magentaone": HTMLScaleIconT_productMagentaoneElement;
+        "scale-icon-t_product-measure-internet-speed": HTMLScaleIconT_productMeasureInternetSpeedElement;
+        "scale-icon-t_product-seamless-connectivity": HTMLScaleIconT_productSeamlessConnectivityElement;
+        "scale-icon-t_product-telekom-shop-b": HTMLScaleIconT_productTelekomShopBElement;
+        "scale-icon-t_product-usage": HTMLScaleIconT_productUsageElement;
+        "scale-icon-user_file-analytics": HTMLScaleIconUser_fileAnalyticsElement;
+        "scale-icon-user_file-attachment": HTMLScaleIconUser_fileAttachmentElement;
+        "scale-icon-user_file-audio-file": HTMLScaleIconUser_fileAudioFileElement;
+        "scale-icon-user_file-billing": HTMLScaleIconUser_fileBillingElement;
+        "scale-icon-user_file-bussines-users": HTMLScaleIconUser_fileBussinesUsersElement;
+        "scale-icon-user_file-communities": HTMLScaleIconUser_fileCommunitiesElement;
+        "scale-icon-user_file-contacts": HTMLScaleIconUser_fileContactsElement;
+        "scale-icon-user_file-contracts": HTMLScaleIconUser_fileContractsElement;
+        "scale-icon-user_file-families": HTMLScaleIconUser_fileFamiliesElement;
+        "scale-icon-user_file-handshake": HTMLScaleIconUser_fileHandshakeElement;
+        "scale-icon-user_file-id-card": HTMLScaleIconUser_fileIdCardElement;
+        "scale-icon-user_file-image-file": HTMLScaleIconUser_fileImageFileElement;
+        "scale-icon-user_file-logout": HTMLScaleIconUser_fileLogoutElement;
+        "scale-icon-user_file-pdf-file": HTMLScaleIconUser_filePdfFileElement;
+        "scale-icon-user_file-switch-users": HTMLScaleIconUser_fileSwitchUsersElement;
+        "scale-icon-user_file-user": HTMLScaleIconUser_fileUserElement;
+        "scale-icon-user_file-videos": HTMLScaleIconUser_fileVideosElement;
         "scale-input": HTMLScaleInputElement;
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
@@ -1145,7 +6514,13 @@ declare namespace LocalJSX {
         "navigation"?: MenuItem[];
     }
     interface ScaleAccordion {
+        /**
+          * If `true`, only one scale-collapsible within the accordion can be open at a time
+         */
         "dependent"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
         "styles"?: any;
     }
     interface ScaleAlert {
@@ -1271,25 +6646,13 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Link disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Link card
-         */
-        "href"?: string;
-        /**
-          * (optional) Link interactive
-         */
-        "interactive"?: boolean;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
         /**
-          * (optional) Padding off
+          * (optional) Link card rel
          */
-        "noPadding"?: boolean;
+        "rel"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -1298,6 +6661,10 @@ declare namespace LocalJSX {
           * (optional) Link card target
          */
         "target"?: string;
+        /**
+          * (optional) Link card
+         */
+        "to"?: string;
     }
     interface ScaleCarousel {
         /**
@@ -1332,15 +6699,96 @@ declare namespace LocalJSX {
         "styles"?: any;
     }
     interface ScaleCollapsible {
-        "isExpanded"?: boolean;
-        "label"?: string;
-        "onToggleHead"?: (event: CustomEvent<any>) => void;
-        "onToggler"?: (event: CustomEvent<any>) => void;
+        /**
+          * Set to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
+          * Emitted so parent <scale-accordion> knows about it
+         */
+        "onScaleExpand"?: (event: CustomEvent<CollapsibleEventDetail>) => void;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
-        "tag"?: string;
+    }
+    interface ScaleDatePicker {
+        /**
+          * Date adapter, for custom parsing/formatting. Must be object with a `parse` function which accepts a `string` and returns a `Date`, and a `format` function which accepts a `Date` and returns a `string`. Default is IS0-8601 parsing and formatting.
+         */
+        "dateAdapter"?: any;
+        /**
+          * Forces the opening direction of the calendar modal to be always left or right. This setting can be useful when the input is smaller than the opening date picker would be as by default the picker always opens towards right.
+         */
+        "direction"?: DuetDatePickerDirection;
+        /**
+          * Makes the date picker input component disabled. This prevents users from being able to interact with the input, and conveys its inactive state to assistive technologies.
+         */
+        "disabled"?: boolean;
+        /**
+          * Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc. Default is Monday.
+         */
+        "firstDayOfWeek"?: any;
+        /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
+          * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
+         */
+        "identifier"?: string;
+        /**
+          * (optional) Label
+         */
+        "label"?: string;
+        /**
+          * Button labels, day names, month names, etc, used for localization. Default is English.
+         */
+        "localization"?: DuetLocalizedText;
+        /**
+          * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
+         */
+        "max"?: string;
+        /**
+          * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.
+         */
+        "min"?: string;
+        /**
+          * Name of the date picker input.
+         */
+        "name"?: string;
+        /**
+          * Event emitted the date picker input is blurred.
+         */
+        "onScaleBlur"?: (event: CustomEvent<DuetDatePickerFocusEvent>) => void;
+        /**
+          * Event emitted when a date is selected.
+         */
+        "onScaleChange"?: (event: CustomEvent<DuetDatePickerChangeEvent>) => void;
+        /**
+          * Event emitted the date picker input is focused.
+         */
+        "onScaleFocus"?: (event: CustomEvent<DuetDatePickerFocusEvent>) => void;
+        /**
+          * Should the input be marked as required?
+         */
+        "required"?: boolean;
+        /**
+          * Defines a specific role attribute for the date picker input.
+         */
+        "role"?: string;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
+        /**
+          * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
+         */
+        "value"?: string;
     }
     interface ScaleDivider {
         /**
@@ -1362,13 +6810,17 @@ declare namespace LocalJSX {
     }
     interface ScaleIcon {
         /**
-          * (optional) When using the icon by itself, add a label to improve accessibility
+          * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
-        "ariaLabel"?: string;
+        "accessibilityTitle"?: string;
         /**
           * (optional) Tag custom class
          */
         "customClass"?: string;
+        /**
+          * (optional) If `true` the svg element will get aria-hidden="true"
+         */
+        "decorative"?: boolean;
         /**
           * The SVG `fill` attribute
          */
@@ -1398,6 +6850,3988 @@ declare namespace LocalJSX {
          */
         "styles"?: any;
     }
+    interface ScaleIconActionAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionAddCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionAutoLogin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionBackspace {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionChangelog {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCircleAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCircleClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionClose {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCopyPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionCutPaste {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDisabledMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDownload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionDragAndDrop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionEdit {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFastForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFavorite {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFilter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionForward {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionFullScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionHidePassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionInstall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionLoop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMenu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMicrophone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMinimizeScreen {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMore {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionMute {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionNotification {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPause {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPin {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPlay {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPopUpWindow {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionPrint {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRandom {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRefresh {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRemove {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionRestart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSearch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionShoppingCart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionShowPassword {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSort {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSoundOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionStreamOn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionSuccess {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionThumbsDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionThumbsUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionTilesAdd {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionUpload {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionVolumeDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionVolumeUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionZoomIn {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconActionZoomOut {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertCompliance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertError {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertHelp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertImprintDataprivacy {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertInformation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertLegal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertSecurity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconAlertWarning {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationCallIncoming {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationCallOutgoing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationChat {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationEmail {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationEndCall {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationFeedback {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationPhoneNumber {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationRecipient {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconCommunicationVoiceMessage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentAchievement {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentApplications {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentBiometric {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentBookmark {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentCalendar {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentClipboard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentClock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentCreditCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDelivery {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDigitalBanking {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDigitalMedia {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentDraftFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentESim {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentEu {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentFeatures {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentFlexibleTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentHeart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentHistory {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInternational {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInternationalSms {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentInterview {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentKey {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentLock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMediaFolder {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMoneyAt {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentMusic {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentNews {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentPrepaidActivate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentPriceTag {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentRss {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentShop {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSignal {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSimCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentSmile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentTariffs {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentTransport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentUnlock {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentVoucher {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconContentWallet {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceAddDevice {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceChangeCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceComputer {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDevicePhone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceRouter {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceDeviceWatch {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceFixedLineServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMediaReceiver {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileDevicesCombination {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileEquipment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobilePhoneInsurance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceMobileServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceNoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDevicePhotoCamera {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceRemoteController {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceReplacementMobilephone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceScreenRotate {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceSmartSpeaker {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconDeviceTvAndMobile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeInternetAtHome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeIot {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeNoWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeSmarthome {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconHomeWifi {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCircleTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCollapseDown {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationCollapseUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationExternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationInternalLink {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationLeft {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationMyLocation {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationRight {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationStart {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconNavigationTopUp {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconProcessOrderStatus {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconProcessProcessing {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceDevicesService {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceMaintanance {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceServices {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceSettings {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconServiceSupport {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaCloud {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaTv {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMagentaone {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productMeasureInternetSpeed {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productSeamlessConnectivity {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productTelekomShopB {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconT_productUsage {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAnalytics {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAttachment {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileAudioFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileBilling {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileBussinesUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileCommunities {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileContacts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileContracts {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileFamilies {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileHandshake {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileIdCard {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileImageFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileLogout {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_filePdfFile {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileSwitchUsers {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileUser {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
+    interface ScaleIconUser_fileVideos {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) If `true` the SVG element will get `aria-hidden="true"`
+         */
+        "decorative"?: boolean;
+        /**
+          * (optional) If `true`, the icon changes visually
+         */
+        "selected"?: boolean;
+        /**
+          * (optional) The width and height in pixels
+         */
+        "size"?: number;
+    }
     interface ScaleInput {
         /**
           * (optional) Active switch
@@ -1407,6 +10841,10 @@ declare namespace LocalJSX {
           * (optional) textarea column
          */
         "cols"?: number;
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
         /**
           * (optional) Input counter
          */
@@ -1552,6 +10990,10 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         /**
+          * (optional) Icon title for accessibility
+         */
+        "iconAccessibilityTitle"?: string;
+        /**
           * (optional) Icon size
          */
         "iconSize"?: number;
@@ -1569,29 +11011,32 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleList {
-        "styles"?: any;
         /**
-          * (optional) List variant
+          * (optional) Make the list ordered (ol)
          */
-        "variant"?: string;
-    }
-    interface ScaleListItem {
-        /**
-          * (optional) List item icon
-         */
-        "icon"?: string;
-        /**
-          * (optional) list Icon size
-         */
-        "iconSize"?: number;
+        "ordered"?: boolean;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleListItem {
         /**
-          * (optional) List item style type
+          * Index number, useful only for styling the `ordered` type
          */
-        "type"?: string;
+        "index"?: number;
+        /**
+          * If `false`, no marker or left padding will be visible
+         */
+        "marker"?: boolean;
+        /**
+          * Whether this is a child of an ordered scale-list, gets set automatically by its parent
+         */
+        "ordered"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: any;
     }
     interface ScaleModal {
         /**
@@ -1697,11 +11142,27 @@ declare namespace LocalJSX {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -1711,35 +11172,35 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
           * The URL where the link should point to
          */
         "href"?: string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize"?: number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label"?: string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active"?: boolean;
         /**
           * Bold text
          */
@@ -1749,13 +11210,17 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent"?: boolean;
+        "current"?: string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -2015,8 +11480,190 @@ declare namespace LocalJSX {
         "scale-carousel": ScaleCarousel;
         "scale-chart-stack-card": ScaleChartStackCard;
         "scale-collapsible": ScaleCollapsible;
+        "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
+        "scale-icon-action-add": ScaleIconActionAdd;
+        "scale-icon-action-add-card": ScaleIconActionAddCard;
+        "scale-icon-action-auto-login": ScaleIconActionAutoLogin;
+        "scale-icon-action-backspace": ScaleIconActionBackspace;
+        "scale-icon-action-changelog": ScaleIconActionChangelog;
+        "scale-icon-action-circle-add": ScaleIconActionCircleAdd;
+        "scale-icon-action-circle-close": ScaleIconActionCircleClose;
+        "scale-icon-action-close": ScaleIconActionClose;
+        "scale-icon-action-copy-paste": ScaleIconActionCopyPaste;
+        "scale-icon-action-cut-paste": ScaleIconActionCutPaste;
+        "scale-icon-action-disabled-microphone": ScaleIconActionDisabledMicrophone;
+        "scale-icon-action-download": ScaleIconActionDownload;
+        "scale-icon-action-drag-and-drop": ScaleIconActionDragAndDrop;
+        "scale-icon-action-edit": ScaleIconActionEdit;
+        "scale-icon-action-fast-forward": ScaleIconActionFastForward;
+        "scale-icon-action-favorite": ScaleIconActionFavorite;
+        "scale-icon-action-filter": ScaleIconActionFilter;
+        "scale-icon-action-forward": ScaleIconActionForward;
+        "scale-icon-action-full-screen": ScaleIconActionFullScreen;
+        "scale-icon-action-hide-password": ScaleIconActionHidePassword;
+        "scale-icon-action-install": ScaleIconActionInstall;
+        "scale-icon-action-link": ScaleIconActionLink;
+        "scale-icon-action-logout": ScaleIconActionLogout;
+        "scale-icon-action-loop": ScaleIconActionLoop;
+        "scale-icon-action-menu": ScaleIconActionMenu;
+        "scale-icon-action-microphone": ScaleIconActionMicrophone;
+        "scale-icon-action-minimize-screen": ScaleIconActionMinimizeScreen;
+        "scale-icon-action-more": ScaleIconActionMore;
+        "scale-icon-action-move": ScaleIconActionMove;
+        "scale-icon-action-mute": ScaleIconActionMute;
+        "scale-icon-action-notification": ScaleIconActionNotification;
+        "scale-icon-action-pause": ScaleIconActionPause;
+        "scale-icon-action-pin": ScaleIconActionPin;
+        "scale-icon-action-play": ScaleIconActionPlay;
+        "scale-icon-action-pop-up-window": ScaleIconActionPopUpWindow;
+        "scale-icon-action-print": ScaleIconActionPrint;
+        "scale-icon-action-random": ScaleIconActionRandom;
+        "scale-icon-action-refresh": ScaleIconActionRefresh;
+        "scale-icon-action-remove": ScaleIconActionRemove;
+        "scale-icon-action-restart": ScaleIconActionRestart;
+        "scale-icon-action-search": ScaleIconActionSearch;
+        "scale-icon-action-shopping-cart": ScaleIconActionShoppingCart;
+        "scale-icon-action-show-password": ScaleIconActionShowPassword;
+        "scale-icon-action-sort": ScaleIconActionSort;
+        "scale-icon-action-sound-on": ScaleIconActionSoundOn;
+        "scale-icon-action-stream-on": ScaleIconActionStreamOn;
+        "scale-icon-action-success": ScaleIconActionSuccess;
+        "scale-icon-action-thumbs-down": ScaleIconActionThumbsDown;
+        "scale-icon-action-thumbs-up": ScaleIconActionThumbsUp;
+        "scale-icon-action-tiles-add": ScaleIconActionTilesAdd;
+        "scale-icon-action-upload": ScaleIconActionUpload;
+        "scale-icon-action-volume-down": ScaleIconActionVolumeDown;
+        "scale-icon-action-volume-up": ScaleIconActionVolumeUp;
+        "scale-icon-action-zoom-in": ScaleIconActionZoomIn;
+        "scale-icon-action-zoom-out": ScaleIconActionZoomOut;
+        "scale-icon-alert-compliance": ScaleIconAlertCompliance;
+        "scale-icon-alert-error": ScaleIconAlertError;
+        "scale-icon-alert-help": ScaleIconAlertHelp;
+        "scale-icon-alert-imprint-dataprivacy": ScaleIconAlertImprintDataprivacy;
+        "scale-icon-alert-information": ScaleIconAlertInformation;
+        "scale-icon-alert-legal": ScaleIconAlertLegal;
+        "scale-icon-alert-security": ScaleIconAlertSecurity;
+        "scale-icon-alert-warning": ScaleIconAlertWarning;
+        "scale-icon-communication-call-incoming": ScaleIconCommunicationCallIncoming;
+        "scale-icon-communication-call-outgoing": ScaleIconCommunicationCallOutgoing;
+        "scale-icon-communication-chat": ScaleIconCommunicationChat;
+        "scale-icon-communication-email": ScaleIconCommunicationEmail;
+        "scale-icon-communication-end-call": ScaleIconCommunicationEndCall;
+        "scale-icon-communication-feedback": ScaleIconCommunicationFeedback;
+        "scale-icon-communication-message": ScaleIconCommunicationMessage;
+        "scale-icon-communication-phone-number": ScaleIconCommunicationPhoneNumber;
+        "scale-icon-communication-recipient": ScaleIconCommunicationRecipient;
+        "scale-icon-communication-voice-message": ScaleIconCommunicationVoiceMessage;
+        "scale-icon-content-achievement": ScaleIconContentAchievement;
+        "scale-icon-content-applications": ScaleIconContentApplications;
+        "scale-icon-content-biometric": ScaleIconContentBiometric;
+        "scale-icon-content-bookmark": ScaleIconContentBookmark;
+        "scale-icon-content-calendar": ScaleIconContentCalendar;
+        "scale-icon-content-clipboard": ScaleIconContentClipboard;
+        "scale-icon-content-clock": ScaleIconContentClock;
+        "scale-icon-content-credit-card": ScaleIconContentCreditCard;
+        "scale-icon-content-delivery": ScaleIconContentDelivery;
+        "scale-icon-content-digital-banking": ScaleIconContentDigitalBanking;
+        "scale-icon-content-digital-media": ScaleIconContentDigitalMedia;
+        "scale-icon-content-draft-file": ScaleIconContentDraftFile;
+        "scale-icon-content-e-sim": ScaleIconContentESim;
+        "scale-icon-content-eu": ScaleIconContentEu;
+        "scale-icon-content-features": ScaleIconContentFeatures;
+        "scale-icon-content-flexible-tariffs": ScaleIconContentFlexibleTariffs;
+        "scale-icon-content-heart": ScaleIconContentHeart;
+        "scale-icon-content-history": ScaleIconContentHistory;
+        "scale-icon-content-international": ScaleIconContentInternational;
+        "scale-icon-content-international-sms": ScaleIconContentInternationalSms;
+        "scale-icon-content-interview": ScaleIconContentInterview;
+        "scale-icon-content-key": ScaleIconContentKey;
+        "scale-icon-content-lock": ScaleIconContentLock;
+        "scale-icon-content-media-folder": ScaleIconContentMediaFolder;
+        "scale-icon-content-money-at": ScaleIconContentMoneyAt;
+        "scale-icon-content-music": ScaleIconContentMusic;
+        "scale-icon-content-news": ScaleIconContentNews;
+        "scale-icon-content-prepaid-activate": ScaleIconContentPrepaidActivate;
+        "scale-icon-content-price-tag": ScaleIconContentPriceTag;
+        "scale-icon-content-rss": ScaleIconContentRss;
+        "scale-icon-content-shop": ScaleIconContentShop;
+        "scale-icon-content-signal": ScaleIconContentSignal;
+        "scale-icon-content-sim-card": ScaleIconContentSimCard;
+        "scale-icon-content-smile": ScaleIconContentSmile;
+        "scale-icon-content-tariffs": ScaleIconContentTariffs;
+        "scale-icon-content-transport": ScaleIconContentTransport;
+        "scale-icon-content-unlock": ScaleIconContentUnlock;
+        "scale-icon-content-voucher": ScaleIconContentVoucher;
+        "scale-icon-content-wallet": ScaleIconContentWallet;
+        "scale-icon-device-add-device": ScaleIconDeviceAddDevice;
+        "scale-icon-device-camera": ScaleIconDeviceCamera;
+        "scale-icon-device-change-camera": ScaleIconDeviceChangeCamera;
+        "scale-icon-device-computer": ScaleIconDeviceComputer;
+        "scale-icon-device-device-phone": ScaleIconDeviceDevicePhone;
+        "scale-icon-device-device-router": ScaleIconDeviceDeviceRouter;
+        "scale-icon-device-device-tv": ScaleIconDeviceDeviceTv;
+        "scale-icon-device-device-watch": ScaleIconDeviceDeviceWatch;
+        "scale-icon-device-fixed-line-services": ScaleIconDeviceFixedLineServices;
+        "scale-icon-device-media-receiver": ScaleIconDeviceMediaReceiver;
+        "scale-icon-device-mobile-devices-combination": ScaleIconDeviceMobileDevicesCombination;
+        "scale-icon-device-mobile-equipment": ScaleIconDeviceMobileEquipment;
+        "scale-icon-device-mobile-phone-insurance": ScaleIconDeviceMobilePhoneInsurance;
+        "scale-icon-device-mobile-services": ScaleIconDeviceMobileServices;
+        "scale-icon-device-no-camera": ScaleIconDeviceNoCamera;
+        "scale-icon-device-photo-camera": ScaleIconDevicePhotoCamera;
+        "scale-icon-device-remote-controller": ScaleIconDeviceRemoteController;
+        "scale-icon-device-replacement-mobilephone": ScaleIconDeviceReplacementMobilephone;
+        "scale-icon-device-screen-rotate": ScaleIconDeviceScreenRotate;
+        "scale-icon-device-smart-speaker": ScaleIconDeviceSmartSpeaker;
+        "scale-icon-device-tv-and-mobile": ScaleIconDeviceTvAndMobile;
+        "scale-icon-home-home": ScaleIconHomeHome;
+        "scale-icon-home-internet-at-home": ScaleIconHomeInternetAtHome;
+        "scale-icon-home-iot": ScaleIconHomeIot;
+        "scale-icon-home-no-wifi": ScaleIconHomeNoWifi;
+        "scale-icon-home-smarthome": ScaleIconHomeSmarthome;
+        "scale-icon-home-wifi": ScaleIconHomeWifi;
+        "scale-icon-navigation-circle-top-up": ScaleIconNavigationCircleTopUp;
+        "scale-icon-navigation-collapse-down": ScaleIconNavigationCollapseDown;
+        "scale-icon-navigation-collapse-up": ScaleIconNavigationCollapseUp;
+        "scale-icon-navigation-external-link": ScaleIconNavigationExternalLink;
+        "scale-icon-navigation-internal-link": ScaleIconNavigationInternalLink;
+        "scale-icon-navigation-left": ScaleIconNavigationLeft;
+        "scale-icon-navigation-location": ScaleIconNavigationLocation;
+        "scale-icon-navigation-my-location": ScaleIconNavigationMyLocation;
+        "scale-icon-navigation-right": ScaleIconNavigationRight;
+        "scale-icon-navigation-start": ScaleIconNavigationStart;
+        "scale-icon-navigation-top-up": ScaleIconNavigationTopUp;
+        "scale-icon-process-order-status": ScaleIconProcessOrderStatus;
+        "scale-icon-process-processing": ScaleIconProcessProcessing;
+        "scale-icon-service-devices-service": ScaleIconServiceDevicesService;
+        "scale-icon-service-maintanance": ScaleIconServiceMaintanance;
+        "scale-icon-service-services": ScaleIconServiceServices;
+        "scale-icon-service-settings": ScaleIconServiceSettings;
+        "scale-icon-service-support": ScaleIconServiceSupport;
+        "scale-icon-t_product-magenta-cloud": ScaleIconT_productMagentaCloud;
+        "scale-icon-t_product-magenta-tv": ScaleIconT_productMagentaTv;
+        "scale-icon-t_product-magentaone": ScaleIconT_productMagentaone;
+        "scale-icon-t_product-measure-internet-speed": ScaleIconT_productMeasureInternetSpeed;
+        "scale-icon-t_product-seamless-connectivity": ScaleIconT_productSeamlessConnectivity;
+        "scale-icon-t_product-telekom-shop-b": ScaleIconT_productTelekomShopB;
+        "scale-icon-t_product-usage": ScaleIconT_productUsage;
+        "scale-icon-user_file-analytics": ScaleIconUser_fileAnalytics;
+        "scale-icon-user_file-attachment": ScaleIconUser_fileAttachment;
+        "scale-icon-user_file-audio-file": ScaleIconUser_fileAudioFile;
+        "scale-icon-user_file-billing": ScaleIconUser_fileBilling;
+        "scale-icon-user_file-bussines-users": ScaleIconUser_fileBussinesUsers;
+        "scale-icon-user_file-communities": ScaleIconUser_fileCommunities;
+        "scale-icon-user_file-contacts": ScaleIconUser_fileContacts;
+        "scale-icon-user_file-contracts": ScaleIconUser_fileContracts;
+        "scale-icon-user_file-families": ScaleIconUser_fileFamilies;
+        "scale-icon-user_file-handshake": ScaleIconUser_fileHandshake;
+        "scale-icon-user_file-id-card": ScaleIconUser_fileIdCard;
+        "scale-icon-user_file-image-file": ScaleIconUser_fileImageFile;
+        "scale-icon-user_file-logout": ScaleIconUser_fileLogout;
+        "scale-icon-user_file-pdf-file": ScaleIconUser_filePdfFile;
+        "scale-icon-user_file-switch-users": ScaleIconUser_fileSwitchUsers;
+        "scale-icon-user_file-user": ScaleIconUser_fileUser;
+        "scale-icon-user_file-videos": ScaleIconUser_fileVideos;
         "scale-input": ScaleInput;
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
@@ -2057,8 +11704,190 @@ declare module "@stencil/core" {
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
             "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
+            "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
+            "scale-icon-action-add": LocalJSX.ScaleIconActionAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionAddElement>;
+            "scale-icon-action-add-card": LocalJSX.ScaleIconActionAddCard & JSXBase.HTMLAttributes<HTMLScaleIconActionAddCardElement>;
+            "scale-icon-action-auto-login": LocalJSX.ScaleIconActionAutoLogin & JSXBase.HTMLAttributes<HTMLScaleIconActionAutoLoginElement>;
+            "scale-icon-action-backspace": LocalJSX.ScaleIconActionBackspace & JSXBase.HTMLAttributes<HTMLScaleIconActionBackspaceElement>;
+            "scale-icon-action-changelog": LocalJSX.ScaleIconActionChangelog & JSXBase.HTMLAttributes<HTMLScaleIconActionChangelogElement>;
+            "scale-icon-action-circle-add": LocalJSX.ScaleIconActionCircleAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionCircleAddElement>;
+            "scale-icon-action-circle-close": LocalJSX.ScaleIconActionCircleClose & JSXBase.HTMLAttributes<HTMLScaleIconActionCircleCloseElement>;
+            "scale-icon-action-close": LocalJSX.ScaleIconActionClose & JSXBase.HTMLAttributes<HTMLScaleIconActionCloseElement>;
+            "scale-icon-action-copy-paste": LocalJSX.ScaleIconActionCopyPaste & JSXBase.HTMLAttributes<HTMLScaleIconActionCopyPasteElement>;
+            "scale-icon-action-cut-paste": LocalJSX.ScaleIconActionCutPaste & JSXBase.HTMLAttributes<HTMLScaleIconActionCutPasteElement>;
+            "scale-icon-action-disabled-microphone": LocalJSX.ScaleIconActionDisabledMicrophone & JSXBase.HTMLAttributes<HTMLScaleIconActionDisabledMicrophoneElement>;
+            "scale-icon-action-download": LocalJSX.ScaleIconActionDownload & JSXBase.HTMLAttributes<HTMLScaleIconActionDownloadElement>;
+            "scale-icon-action-drag-and-drop": LocalJSX.ScaleIconActionDragAndDrop & JSXBase.HTMLAttributes<HTMLScaleIconActionDragAndDropElement>;
+            "scale-icon-action-edit": LocalJSX.ScaleIconActionEdit & JSXBase.HTMLAttributes<HTMLScaleIconActionEditElement>;
+            "scale-icon-action-fast-forward": LocalJSX.ScaleIconActionFastForward & JSXBase.HTMLAttributes<HTMLScaleIconActionFastForwardElement>;
+            "scale-icon-action-favorite": LocalJSX.ScaleIconActionFavorite & JSXBase.HTMLAttributes<HTMLScaleIconActionFavoriteElement>;
+            "scale-icon-action-filter": LocalJSX.ScaleIconActionFilter & JSXBase.HTMLAttributes<HTMLScaleIconActionFilterElement>;
+            "scale-icon-action-forward": LocalJSX.ScaleIconActionForward & JSXBase.HTMLAttributes<HTMLScaleIconActionForwardElement>;
+            "scale-icon-action-full-screen": LocalJSX.ScaleIconActionFullScreen & JSXBase.HTMLAttributes<HTMLScaleIconActionFullScreenElement>;
+            "scale-icon-action-hide-password": LocalJSX.ScaleIconActionHidePassword & JSXBase.HTMLAttributes<HTMLScaleIconActionHidePasswordElement>;
+            "scale-icon-action-install": LocalJSX.ScaleIconActionInstall & JSXBase.HTMLAttributes<HTMLScaleIconActionInstallElement>;
+            "scale-icon-action-link": LocalJSX.ScaleIconActionLink & JSXBase.HTMLAttributes<HTMLScaleIconActionLinkElement>;
+            "scale-icon-action-logout": LocalJSX.ScaleIconActionLogout & JSXBase.HTMLAttributes<HTMLScaleIconActionLogoutElement>;
+            "scale-icon-action-loop": LocalJSX.ScaleIconActionLoop & JSXBase.HTMLAttributes<HTMLScaleIconActionLoopElement>;
+            "scale-icon-action-menu": LocalJSX.ScaleIconActionMenu & JSXBase.HTMLAttributes<HTMLScaleIconActionMenuElement>;
+            "scale-icon-action-microphone": LocalJSX.ScaleIconActionMicrophone & JSXBase.HTMLAttributes<HTMLScaleIconActionMicrophoneElement>;
+            "scale-icon-action-minimize-screen": LocalJSX.ScaleIconActionMinimizeScreen & JSXBase.HTMLAttributes<HTMLScaleIconActionMinimizeScreenElement>;
+            "scale-icon-action-more": LocalJSX.ScaleIconActionMore & JSXBase.HTMLAttributes<HTMLScaleIconActionMoreElement>;
+            "scale-icon-action-move": LocalJSX.ScaleIconActionMove & JSXBase.HTMLAttributes<HTMLScaleIconActionMoveElement>;
+            "scale-icon-action-mute": LocalJSX.ScaleIconActionMute & JSXBase.HTMLAttributes<HTMLScaleIconActionMuteElement>;
+            "scale-icon-action-notification": LocalJSX.ScaleIconActionNotification & JSXBase.HTMLAttributes<HTMLScaleIconActionNotificationElement>;
+            "scale-icon-action-pause": LocalJSX.ScaleIconActionPause & JSXBase.HTMLAttributes<HTMLScaleIconActionPauseElement>;
+            "scale-icon-action-pin": LocalJSX.ScaleIconActionPin & JSXBase.HTMLAttributes<HTMLScaleIconActionPinElement>;
+            "scale-icon-action-play": LocalJSX.ScaleIconActionPlay & JSXBase.HTMLAttributes<HTMLScaleIconActionPlayElement>;
+            "scale-icon-action-pop-up-window": LocalJSX.ScaleIconActionPopUpWindow & JSXBase.HTMLAttributes<HTMLScaleIconActionPopUpWindowElement>;
+            "scale-icon-action-print": LocalJSX.ScaleIconActionPrint & JSXBase.HTMLAttributes<HTMLScaleIconActionPrintElement>;
+            "scale-icon-action-random": LocalJSX.ScaleIconActionRandom & JSXBase.HTMLAttributes<HTMLScaleIconActionRandomElement>;
+            "scale-icon-action-refresh": LocalJSX.ScaleIconActionRefresh & JSXBase.HTMLAttributes<HTMLScaleIconActionRefreshElement>;
+            "scale-icon-action-remove": LocalJSX.ScaleIconActionRemove & JSXBase.HTMLAttributes<HTMLScaleIconActionRemoveElement>;
+            "scale-icon-action-restart": LocalJSX.ScaleIconActionRestart & JSXBase.HTMLAttributes<HTMLScaleIconActionRestartElement>;
+            "scale-icon-action-search": LocalJSX.ScaleIconActionSearch & JSXBase.HTMLAttributes<HTMLScaleIconActionSearchElement>;
+            "scale-icon-action-shopping-cart": LocalJSX.ScaleIconActionShoppingCart & JSXBase.HTMLAttributes<HTMLScaleIconActionShoppingCartElement>;
+            "scale-icon-action-show-password": LocalJSX.ScaleIconActionShowPassword & JSXBase.HTMLAttributes<HTMLScaleIconActionShowPasswordElement>;
+            "scale-icon-action-sort": LocalJSX.ScaleIconActionSort & JSXBase.HTMLAttributes<HTMLScaleIconActionSortElement>;
+            "scale-icon-action-sound-on": LocalJSX.ScaleIconActionSoundOn & JSXBase.HTMLAttributes<HTMLScaleIconActionSoundOnElement>;
+            "scale-icon-action-stream-on": LocalJSX.ScaleIconActionStreamOn & JSXBase.HTMLAttributes<HTMLScaleIconActionStreamOnElement>;
+            "scale-icon-action-success": LocalJSX.ScaleIconActionSuccess & JSXBase.HTMLAttributes<HTMLScaleIconActionSuccessElement>;
+            "scale-icon-action-thumbs-down": LocalJSX.ScaleIconActionThumbsDown & JSXBase.HTMLAttributes<HTMLScaleIconActionThumbsDownElement>;
+            "scale-icon-action-thumbs-up": LocalJSX.ScaleIconActionThumbsUp & JSXBase.HTMLAttributes<HTMLScaleIconActionThumbsUpElement>;
+            "scale-icon-action-tiles-add": LocalJSX.ScaleIconActionTilesAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionTilesAddElement>;
+            "scale-icon-action-upload": LocalJSX.ScaleIconActionUpload & JSXBase.HTMLAttributes<HTMLScaleIconActionUploadElement>;
+            "scale-icon-action-volume-down": LocalJSX.ScaleIconActionVolumeDown & JSXBase.HTMLAttributes<HTMLScaleIconActionVolumeDownElement>;
+            "scale-icon-action-volume-up": LocalJSX.ScaleIconActionVolumeUp & JSXBase.HTMLAttributes<HTMLScaleIconActionVolumeUpElement>;
+            "scale-icon-action-zoom-in": LocalJSX.ScaleIconActionZoomIn & JSXBase.HTMLAttributes<HTMLScaleIconActionZoomInElement>;
+            "scale-icon-action-zoom-out": LocalJSX.ScaleIconActionZoomOut & JSXBase.HTMLAttributes<HTMLScaleIconActionZoomOutElement>;
+            "scale-icon-alert-compliance": LocalJSX.ScaleIconAlertCompliance & JSXBase.HTMLAttributes<HTMLScaleIconAlertComplianceElement>;
+            "scale-icon-alert-error": LocalJSX.ScaleIconAlertError & JSXBase.HTMLAttributes<HTMLScaleIconAlertErrorElement>;
+            "scale-icon-alert-help": LocalJSX.ScaleIconAlertHelp & JSXBase.HTMLAttributes<HTMLScaleIconAlertHelpElement>;
+            "scale-icon-alert-imprint-dataprivacy": LocalJSX.ScaleIconAlertImprintDataprivacy & JSXBase.HTMLAttributes<HTMLScaleIconAlertImprintDataprivacyElement>;
+            "scale-icon-alert-information": LocalJSX.ScaleIconAlertInformation & JSXBase.HTMLAttributes<HTMLScaleIconAlertInformationElement>;
+            "scale-icon-alert-legal": LocalJSX.ScaleIconAlertLegal & JSXBase.HTMLAttributes<HTMLScaleIconAlertLegalElement>;
+            "scale-icon-alert-security": LocalJSX.ScaleIconAlertSecurity & JSXBase.HTMLAttributes<HTMLScaleIconAlertSecurityElement>;
+            "scale-icon-alert-warning": LocalJSX.ScaleIconAlertWarning & JSXBase.HTMLAttributes<HTMLScaleIconAlertWarningElement>;
+            "scale-icon-communication-call-incoming": LocalJSX.ScaleIconCommunicationCallIncoming & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationCallIncomingElement>;
+            "scale-icon-communication-call-outgoing": LocalJSX.ScaleIconCommunicationCallOutgoing & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationCallOutgoingElement>;
+            "scale-icon-communication-chat": LocalJSX.ScaleIconCommunicationChat & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationChatElement>;
+            "scale-icon-communication-email": LocalJSX.ScaleIconCommunicationEmail & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationEmailElement>;
+            "scale-icon-communication-end-call": LocalJSX.ScaleIconCommunicationEndCall & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationEndCallElement>;
+            "scale-icon-communication-feedback": LocalJSX.ScaleIconCommunicationFeedback & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationFeedbackElement>;
+            "scale-icon-communication-message": LocalJSX.ScaleIconCommunicationMessage & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationMessageElement>;
+            "scale-icon-communication-phone-number": LocalJSX.ScaleIconCommunicationPhoneNumber & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationPhoneNumberElement>;
+            "scale-icon-communication-recipient": LocalJSX.ScaleIconCommunicationRecipient & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationRecipientElement>;
+            "scale-icon-communication-voice-message": LocalJSX.ScaleIconCommunicationVoiceMessage & JSXBase.HTMLAttributes<HTMLScaleIconCommunicationVoiceMessageElement>;
+            "scale-icon-content-achievement": LocalJSX.ScaleIconContentAchievement & JSXBase.HTMLAttributes<HTMLScaleIconContentAchievementElement>;
+            "scale-icon-content-applications": LocalJSX.ScaleIconContentApplications & JSXBase.HTMLAttributes<HTMLScaleIconContentApplicationsElement>;
+            "scale-icon-content-biometric": LocalJSX.ScaleIconContentBiometric & JSXBase.HTMLAttributes<HTMLScaleIconContentBiometricElement>;
+            "scale-icon-content-bookmark": LocalJSX.ScaleIconContentBookmark & JSXBase.HTMLAttributes<HTMLScaleIconContentBookmarkElement>;
+            "scale-icon-content-calendar": LocalJSX.ScaleIconContentCalendar & JSXBase.HTMLAttributes<HTMLScaleIconContentCalendarElement>;
+            "scale-icon-content-clipboard": LocalJSX.ScaleIconContentClipboard & JSXBase.HTMLAttributes<HTMLScaleIconContentClipboardElement>;
+            "scale-icon-content-clock": LocalJSX.ScaleIconContentClock & JSXBase.HTMLAttributes<HTMLScaleIconContentClockElement>;
+            "scale-icon-content-credit-card": LocalJSX.ScaleIconContentCreditCard & JSXBase.HTMLAttributes<HTMLScaleIconContentCreditCardElement>;
+            "scale-icon-content-delivery": LocalJSX.ScaleIconContentDelivery & JSXBase.HTMLAttributes<HTMLScaleIconContentDeliveryElement>;
+            "scale-icon-content-digital-banking": LocalJSX.ScaleIconContentDigitalBanking & JSXBase.HTMLAttributes<HTMLScaleIconContentDigitalBankingElement>;
+            "scale-icon-content-digital-media": LocalJSX.ScaleIconContentDigitalMedia & JSXBase.HTMLAttributes<HTMLScaleIconContentDigitalMediaElement>;
+            "scale-icon-content-draft-file": LocalJSX.ScaleIconContentDraftFile & JSXBase.HTMLAttributes<HTMLScaleIconContentDraftFileElement>;
+            "scale-icon-content-e-sim": LocalJSX.ScaleIconContentESim & JSXBase.HTMLAttributes<HTMLScaleIconContentESimElement>;
+            "scale-icon-content-eu": LocalJSX.ScaleIconContentEu & JSXBase.HTMLAttributes<HTMLScaleIconContentEuElement>;
+            "scale-icon-content-features": LocalJSX.ScaleIconContentFeatures & JSXBase.HTMLAttributes<HTMLScaleIconContentFeaturesElement>;
+            "scale-icon-content-flexible-tariffs": LocalJSX.ScaleIconContentFlexibleTariffs & JSXBase.HTMLAttributes<HTMLScaleIconContentFlexibleTariffsElement>;
+            "scale-icon-content-heart": LocalJSX.ScaleIconContentHeart & JSXBase.HTMLAttributes<HTMLScaleIconContentHeartElement>;
+            "scale-icon-content-history": LocalJSX.ScaleIconContentHistory & JSXBase.HTMLAttributes<HTMLScaleIconContentHistoryElement>;
+            "scale-icon-content-international": LocalJSX.ScaleIconContentInternational & JSXBase.HTMLAttributes<HTMLScaleIconContentInternationalElement>;
+            "scale-icon-content-international-sms": LocalJSX.ScaleIconContentInternationalSms & JSXBase.HTMLAttributes<HTMLScaleIconContentInternationalSmsElement>;
+            "scale-icon-content-interview": LocalJSX.ScaleIconContentInterview & JSXBase.HTMLAttributes<HTMLScaleIconContentInterviewElement>;
+            "scale-icon-content-key": LocalJSX.ScaleIconContentKey & JSXBase.HTMLAttributes<HTMLScaleIconContentKeyElement>;
+            "scale-icon-content-lock": LocalJSX.ScaleIconContentLock & JSXBase.HTMLAttributes<HTMLScaleIconContentLockElement>;
+            "scale-icon-content-media-folder": LocalJSX.ScaleIconContentMediaFolder & JSXBase.HTMLAttributes<HTMLScaleIconContentMediaFolderElement>;
+            "scale-icon-content-money-at": LocalJSX.ScaleIconContentMoneyAt & JSXBase.HTMLAttributes<HTMLScaleIconContentMoneyAtElement>;
+            "scale-icon-content-music": LocalJSX.ScaleIconContentMusic & JSXBase.HTMLAttributes<HTMLScaleIconContentMusicElement>;
+            "scale-icon-content-news": LocalJSX.ScaleIconContentNews & JSXBase.HTMLAttributes<HTMLScaleIconContentNewsElement>;
+            "scale-icon-content-prepaid-activate": LocalJSX.ScaleIconContentPrepaidActivate & JSXBase.HTMLAttributes<HTMLScaleIconContentPrepaidActivateElement>;
+            "scale-icon-content-price-tag": LocalJSX.ScaleIconContentPriceTag & JSXBase.HTMLAttributes<HTMLScaleIconContentPriceTagElement>;
+            "scale-icon-content-rss": LocalJSX.ScaleIconContentRss & JSXBase.HTMLAttributes<HTMLScaleIconContentRssElement>;
+            "scale-icon-content-shop": LocalJSX.ScaleIconContentShop & JSXBase.HTMLAttributes<HTMLScaleIconContentShopElement>;
+            "scale-icon-content-signal": LocalJSX.ScaleIconContentSignal & JSXBase.HTMLAttributes<HTMLScaleIconContentSignalElement>;
+            "scale-icon-content-sim-card": LocalJSX.ScaleIconContentSimCard & JSXBase.HTMLAttributes<HTMLScaleIconContentSimCardElement>;
+            "scale-icon-content-smile": LocalJSX.ScaleIconContentSmile & JSXBase.HTMLAttributes<HTMLScaleIconContentSmileElement>;
+            "scale-icon-content-tariffs": LocalJSX.ScaleIconContentTariffs & JSXBase.HTMLAttributes<HTMLScaleIconContentTariffsElement>;
+            "scale-icon-content-transport": LocalJSX.ScaleIconContentTransport & JSXBase.HTMLAttributes<HTMLScaleIconContentTransportElement>;
+            "scale-icon-content-unlock": LocalJSX.ScaleIconContentUnlock & JSXBase.HTMLAttributes<HTMLScaleIconContentUnlockElement>;
+            "scale-icon-content-voucher": LocalJSX.ScaleIconContentVoucher & JSXBase.HTMLAttributes<HTMLScaleIconContentVoucherElement>;
+            "scale-icon-content-wallet": LocalJSX.ScaleIconContentWallet & JSXBase.HTMLAttributes<HTMLScaleIconContentWalletElement>;
+            "scale-icon-device-add-device": LocalJSX.ScaleIconDeviceAddDevice & JSXBase.HTMLAttributes<HTMLScaleIconDeviceAddDeviceElement>;
+            "scale-icon-device-camera": LocalJSX.ScaleIconDeviceCamera & JSXBase.HTMLAttributes<HTMLScaleIconDeviceCameraElement>;
+            "scale-icon-device-change-camera": LocalJSX.ScaleIconDeviceChangeCamera & JSXBase.HTMLAttributes<HTMLScaleIconDeviceChangeCameraElement>;
+            "scale-icon-device-computer": LocalJSX.ScaleIconDeviceComputer & JSXBase.HTMLAttributes<HTMLScaleIconDeviceComputerElement>;
+            "scale-icon-device-device-phone": LocalJSX.ScaleIconDeviceDevicePhone & JSXBase.HTMLAttributes<HTMLScaleIconDeviceDevicePhoneElement>;
+            "scale-icon-device-device-router": LocalJSX.ScaleIconDeviceDeviceRouter & JSXBase.HTMLAttributes<HTMLScaleIconDeviceDeviceRouterElement>;
+            "scale-icon-device-device-tv": LocalJSX.ScaleIconDeviceDeviceTv & JSXBase.HTMLAttributes<HTMLScaleIconDeviceDeviceTvElement>;
+            "scale-icon-device-device-watch": LocalJSX.ScaleIconDeviceDeviceWatch & JSXBase.HTMLAttributes<HTMLScaleIconDeviceDeviceWatchElement>;
+            "scale-icon-device-fixed-line-services": LocalJSX.ScaleIconDeviceFixedLineServices & JSXBase.HTMLAttributes<HTMLScaleIconDeviceFixedLineServicesElement>;
+            "scale-icon-device-media-receiver": LocalJSX.ScaleIconDeviceMediaReceiver & JSXBase.HTMLAttributes<HTMLScaleIconDeviceMediaReceiverElement>;
+            "scale-icon-device-mobile-devices-combination": LocalJSX.ScaleIconDeviceMobileDevicesCombination & JSXBase.HTMLAttributes<HTMLScaleIconDeviceMobileDevicesCombinationElement>;
+            "scale-icon-device-mobile-equipment": LocalJSX.ScaleIconDeviceMobileEquipment & JSXBase.HTMLAttributes<HTMLScaleIconDeviceMobileEquipmentElement>;
+            "scale-icon-device-mobile-phone-insurance": LocalJSX.ScaleIconDeviceMobilePhoneInsurance & JSXBase.HTMLAttributes<HTMLScaleIconDeviceMobilePhoneInsuranceElement>;
+            "scale-icon-device-mobile-services": LocalJSX.ScaleIconDeviceMobileServices & JSXBase.HTMLAttributes<HTMLScaleIconDeviceMobileServicesElement>;
+            "scale-icon-device-no-camera": LocalJSX.ScaleIconDeviceNoCamera & JSXBase.HTMLAttributes<HTMLScaleIconDeviceNoCameraElement>;
+            "scale-icon-device-photo-camera": LocalJSX.ScaleIconDevicePhotoCamera & JSXBase.HTMLAttributes<HTMLScaleIconDevicePhotoCameraElement>;
+            "scale-icon-device-remote-controller": LocalJSX.ScaleIconDeviceRemoteController & JSXBase.HTMLAttributes<HTMLScaleIconDeviceRemoteControllerElement>;
+            "scale-icon-device-replacement-mobilephone": LocalJSX.ScaleIconDeviceReplacementMobilephone & JSXBase.HTMLAttributes<HTMLScaleIconDeviceReplacementMobilephoneElement>;
+            "scale-icon-device-screen-rotate": LocalJSX.ScaleIconDeviceScreenRotate & JSXBase.HTMLAttributes<HTMLScaleIconDeviceScreenRotateElement>;
+            "scale-icon-device-smart-speaker": LocalJSX.ScaleIconDeviceSmartSpeaker & JSXBase.HTMLAttributes<HTMLScaleIconDeviceSmartSpeakerElement>;
+            "scale-icon-device-tv-and-mobile": LocalJSX.ScaleIconDeviceTvAndMobile & JSXBase.HTMLAttributes<HTMLScaleIconDeviceTvAndMobileElement>;
+            "scale-icon-home-home": LocalJSX.ScaleIconHomeHome & JSXBase.HTMLAttributes<HTMLScaleIconHomeHomeElement>;
+            "scale-icon-home-internet-at-home": LocalJSX.ScaleIconHomeInternetAtHome & JSXBase.HTMLAttributes<HTMLScaleIconHomeInternetAtHomeElement>;
+            "scale-icon-home-iot": LocalJSX.ScaleIconHomeIot & JSXBase.HTMLAttributes<HTMLScaleIconHomeIotElement>;
+            "scale-icon-home-no-wifi": LocalJSX.ScaleIconHomeNoWifi & JSXBase.HTMLAttributes<HTMLScaleIconHomeNoWifiElement>;
+            "scale-icon-home-smarthome": LocalJSX.ScaleIconHomeSmarthome & JSXBase.HTMLAttributes<HTMLScaleIconHomeSmarthomeElement>;
+            "scale-icon-home-wifi": LocalJSX.ScaleIconHomeWifi & JSXBase.HTMLAttributes<HTMLScaleIconHomeWifiElement>;
+            "scale-icon-navigation-circle-top-up": LocalJSX.ScaleIconNavigationCircleTopUp & JSXBase.HTMLAttributes<HTMLScaleIconNavigationCircleTopUpElement>;
+            "scale-icon-navigation-collapse-down": LocalJSX.ScaleIconNavigationCollapseDown & JSXBase.HTMLAttributes<HTMLScaleIconNavigationCollapseDownElement>;
+            "scale-icon-navigation-collapse-up": LocalJSX.ScaleIconNavigationCollapseUp & JSXBase.HTMLAttributes<HTMLScaleIconNavigationCollapseUpElement>;
+            "scale-icon-navigation-external-link": LocalJSX.ScaleIconNavigationExternalLink & JSXBase.HTMLAttributes<HTMLScaleIconNavigationExternalLinkElement>;
+            "scale-icon-navigation-internal-link": LocalJSX.ScaleIconNavigationInternalLink & JSXBase.HTMLAttributes<HTMLScaleIconNavigationInternalLinkElement>;
+            "scale-icon-navigation-left": LocalJSX.ScaleIconNavigationLeft & JSXBase.HTMLAttributes<HTMLScaleIconNavigationLeftElement>;
+            "scale-icon-navigation-location": LocalJSX.ScaleIconNavigationLocation & JSXBase.HTMLAttributes<HTMLScaleIconNavigationLocationElement>;
+            "scale-icon-navigation-my-location": LocalJSX.ScaleIconNavigationMyLocation & JSXBase.HTMLAttributes<HTMLScaleIconNavigationMyLocationElement>;
+            "scale-icon-navigation-right": LocalJSX.ScaleIconNavigationRight & JSXBase.HTMLAttributes<HTMLScaleIconNavigationRightElement>;
+            "scale-icon-navigation-start": LocalJSX.ScaleIconNavigationStart & JSXBase.HTMLAttributes<HTMLScaleIconNavigationStartElement>;
+            "scale-icon-navigation-top-up": LocalJSX.ScaleIconNavigationTopUp & JSXBase.HTMLAttributes<HTMLScaleIconNavigationTopUpElement>;
+            "scale-icon-process-order-status": LocalJSX.ScaleIconProcessOrderStatus & JSXBase.HTMLAttributes<HTMLScaleIconProcessOrderStatusElement>;
+            "scale-icon-process-processing": LocalJSX.ScaleIconProcessProcessing & JSXBase.HTMLAttributes<HTMLScaleIconProcessProcessingElement>;
+            "scale-icon-service-devices-service": LocalJSX.ScaleIconServiceDevicesService & JSXBase.HTMLAttributes<HTMLScaleIconServiceDevicesServiceElement>;
+            "scale-icon-service-maintanance": LocalJSX.ScaleIconServiceMaintanance & JSXBase.HTMLAttributes<HTMLScaleIconServiceMaintananceElement>;
+            "scale-icon-service-services": LocalJSX.ScaleIconServiceServices & JSXBase.HTMLAttributes<HTMLScaleIconServiceServicesElement>;
+            "scale-icon-service-settings": LocalJSX.ScaleIconServiceSettings & JSXBase.HTMLAttributes<HTMLScaleIconServiceSettingsElement>;
+            "scale-icon-service-support": LocalJSX.ScaleIconServiceSupport & JSXBase.HTMLAttributes<HTMLScaleIconServiceSupportElement>;
+            "scale-icon-t_product-magenta-cloud": LocalJSX.ScaleIconT_productMagentaCloud & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaCloudElement>;
+            "scale-icon-t_product-magenta-tv": LocalJSX.ScaleIconT_productMagentaTv & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaTvElement>;
+            "scale-icon-t_product-magentaone": LocalJSX.ScaleIconT_productMagentaone & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaoneElement>;
+            "scale-icon-t_product-measure-internet-speed": LocalJSX.ScaleIconT_productMeasureInternetSpeed & JSXBase.HTMLAttributes<HTMLScaleIconT_productMeasureInternetSpeedElement>;
+            "scale-icon-t_product-seamless-connectivity": LocalJSX.ScaleIconT_productSeamlessConnectivity & JSXBase.HTMLAttributes<HTMLScaleIconT_productSeamlessConnectivityElement>;
+            "scale-icon-t_product-telekom-shop-b": LocalJSX.ScaleIconT_productTelekomShopB & JSXBase.HTMLAttributes<HTMLScaleIconT_productTelekomShopBElement>;
+            "scale-icon-t_product-usage": LocalJSX.ScaleIconT_productUsage & JSXBase.HTMLAttributes<HTMLScaleIconT_productUsageElement>;
+            "scale-icon-user_file-analytics": LocalJSX.ScaleIconUser_fileAnalytics & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAnalyticsElement>;
+            "scale-icon-user_file-attachment": LocalJSX.ScaleIconUser_fileAttachment & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAttachmentElement>;
+            "scale-icon-user_file-audio-file": LocalJSX.ScaleIconUser_fileAudioFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAudioFileElement>;
+            "scale-icon-user_file-billing": LocalJSX.ScaleIconUser_fileBilling & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileBillingElement>;
+            "scale-icon-user_file-bussines-users": LocalJSX.ScaleIconUser_fileBussinesUsers & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileBussinesUsersElement>;
+            "scale-icon-user_file-communities": LocalJSX.ScaleIconUser_fileCommunities & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileCommunitiesElement>;
+            "scale-icon-user_file-contacts": LocalJSX.ScaleIconUser_fileContacts & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileContactsElement>;
+            "scale-icon-user_file-contracts": LocalJSX.ScaleIconUser_fileContracts & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileContractsElement>;
+            "scale-icon-user_file-families": LocalJSX.ScaleIconUser_fileFamilies & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileFamiliesElement>;
+            "scale-icon-user_file-handshake": LocalJSX.ScaleIconUser_fileHandshake & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileHandshakeElement>;
+            "scale-icon-user_file-id-card": LocalJSX.ScaleIconUser_fileIdCard & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileIdCardElement>;
+            "scale-icon-user_file-image-file": LocalJSX.ScaleIconUser_fileImageFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileImageFileElement>;
+            "scale-icon-user_file-logout": LocalJSX.ScaleIconUser_fileLogout & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileLogoutElement>;
+            "scale-icon-user_file-pdf-file": LocalJSX.ScaleIconUser_filePdfFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_filePdfFileElement>;
+            "scale-icon-user_file-switch-users": LocalJSX.ScaleIconUser_fileSwitchUsers & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileSwitchUsersElement>;
+            "scale-icon-user_file-user": LocalJSX.ScaleIconUser_fileUser & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileUserElement>;
+            "scale-icon-user_file-videos": LocalJSX.ScaleIconUser_fileVideos & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileVideosElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;

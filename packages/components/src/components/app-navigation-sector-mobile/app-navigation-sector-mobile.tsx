@@ -9,9 +9,13 @@ export class NavigationSectorMobile {
   @Prop() hide: () => void;
   @Prop() navigation: MenuItem[];
   @Prop() activeSectorId?: string;
-  @State() selected: MenuItem =
-    this.navigation.find(({ id }) => id === this.activeSectorId) ||
-    this.navigation[0];
+  // @ts-ignore
+  @State() selected: MenuItem = this.navigation
+    ? // @ts-ignore
+      this.navigation.find(({ id }) => id === this.activeSectorId) ||
+      // @ts-ignore
+      this.navigation[0]
+    : ({} as MenuItem);
 
   @Watch('activeSectorId')
   handleActiveSegment(newValue) {
@@ -29,7 +33,7 @@ export class NavigationSectorMobile {
   render() {
     return (
       <ul class="sector-navigation-mobile">
-        {this.navigation.map(item => (
+        {(this.navigation || []).map(item => (
           <li class="sector-navigation-mobile__item">
             <a
               class={`sector-navigation-mobile__item-link${
@@ -44,7 +48,7 @@ export class NavigationSectorMobile {
                   this.hide();
                 }
               }}
-              aria-current={this.selected.id === item.id}
+              aria-current={this.selected.id === item.id ? 'true' : 'false'}
             >
               {item.name}
               {this.selected.id === item.id && (

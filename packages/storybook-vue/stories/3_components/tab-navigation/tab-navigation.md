@@ -1,4 +1,7 @@
-# Tab Navigation
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tab Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tabs allow users to quickly switch between different sections of a topic.
 
@@ -62,7 +65,7 @@ The label clearly describes the content which a particular tab represents. Since
 *	Arrange the tabs according to the needs of our users.
 *	Don't mix different types of tabs: for one set of tabs, decide on either having icons or not.
 
-
 ## Related components
 
-Icons
+<a href="../?path=/usage/components-accordion--standard">Accordion, </a>
+<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation</a>

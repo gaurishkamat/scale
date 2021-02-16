@@ -38,22 +38,24 @@ export class Icon implements Base {
   @Prop() stroke?: string = 'transparent';
   /** (optional) If `true` the icon can receive focus */
   @Prop() focusable?: boolean = false;
-  /** (optional) When using the icon by itself, add a label to improve accessibility */
-  @Prop({ reflect: true }) ariaLabel?: string;
-
+  /** (optional) If `true` the svg element will get aria-hidden="true" */
+  @Prop() decorative?: boolean = false;
+  /** (optional) When using the icon as standalone, make it meaningful for accessibility */
+  @Prop() accessibilityTitle?: string;
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Icon', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     const pathAttributes = {
       fill: this.fill,
       stroke: this.stroke,
     };
+    const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {};
 
     return (
       <Host style={{ display: 'inline-flex' }}>
@@ -64,7 +66,10 @@ export class Icon implements Base {
           width={this.size}
           height={this.size}
           viewBox="0 0 24 24"
+          role="img"
+          {...ariaHidden}
         >
+          {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
           {this.path ? (
             <path d={this.path} {...pathAttributes} />
           ) : (

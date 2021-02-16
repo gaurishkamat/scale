@@ -24,7 +24,7 @@ export class ChartStackCard implements Base {
   @CssInJs('ChartStackCard', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   readData = data => {
     try {

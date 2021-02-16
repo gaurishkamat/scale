@@ -2,20 +2,14 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   list: {
-    paddingLeft: ({ spacing }) => spacing.flow,
+    paddingLeft: 0,
   },
-  // WIP This only works *without* `scale-list-item`
-  'list--variant-ordered': {
-    // listStyle: 'none',
-    // paddingLeft: 0,
-    // counterReset: 'scale-counter',
-    '& ::slotted(li)': {
-      counterIncrement: 'scale-counter',
-    },
-    '& ::slotted(li)::before': {
-      content: 'counter(scale-counter) "."',
-      fontWeight: ({ type }) => type.weight_bold,
-      paddingRight: ({ spacing }) => spacing.inline,
-    },
+
+  'list--nested': {
+    marginTop: 0,
+    marginBottom: 0,
+    paddingLeft: ({ spacing }) => spacing[2],
   },
+
+  'list--type-ordered': {},
 };

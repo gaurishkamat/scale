@@ -2,6 +2,12 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   button: {
+    // Accessibility: allows some "external" typographic styles to leak in
+    // https://www.w3.org/TR/WCAG21/#text-spacing
+    lineHeight: 'inherit',
+    wordSpacing: 'inherit',
+    letterSpacing: 'inherit',
+
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -14,14 +20,13 @@ export const styles: JssStyle = {
     border: 0,
     paddingLeft: ({ spacing }) => spacing.x_button,
     paddingRight: ({ spacing }) => spacing.x_button,
-    fontFamily: ({ type }) => type.family,
+    fontFamily: 'inherit',
     fontWeight: ({ type }) => type.weight_bold,
     fontSize: ({ type }) => type.size_3,
+    // @ts-ignore
     lineHeight: ({ type }) => type.leading_5,
     minHeight: ({ size }) => size.button,
     transition: ({ transition }) => transition.generic,
-    // Accessibility: allows some "external" typographic styles to leak in
-    all: 'inherit',
 
     // Focus state, the same for all variants
     '&:not($button--disabled):focus': {
@@ -73,7 +78,7 @@ export const styles: JssStyle = {
     },
     '$button--disabled&': {
       background: ({ background }) => background.disabled,
-      color: ({ color }) => color.disabled,
+      color: ({ color }) => color.disabled_low_contrast,
     },
   },
 
@@ -93,8 +98,8 @@ export const styles: JssStyle = {
       color: ({ color }) => color.primary_active,
     },
     '$button--disabled&': {
-      borderColor: ({ color }) => color.disabled,
-      color: ({ color }) => color.disabled,
+      borderColor: ({ background }) => background.disabled,
+      color: ({ background }) => background.disabled,
     },
   },
 

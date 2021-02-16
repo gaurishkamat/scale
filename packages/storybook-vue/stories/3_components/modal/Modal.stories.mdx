@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
 
 <Meta
@@ -77,9 +77,7 @@ export const Template = (args, context) => ({
         </template>
         <template v-if="longBody">
           <p>Hello. Welcome. What a pleasure it is to have you.</p>
-          <p>
-            <scale-input label="Please enter your favorite color" helper-text="Any valid CSS value"></scale-input>
-          </p>
+          <scale-input label="Please enter your favorite color" helper-text="Any valid CSS value"></scale-input>
           <p>It is not a disaster. It's not a disaster, alright? She's not going to the cops, she's not telling a living soul. You wanna know why? One word: blowback. If she blabs, it'll be a disaster - for her. That DEA brother-in-law? Screwed! You were right under his nose. He'll be lucky if they let him bust glue sniffers at the hobby shop. The kids? Paging Dr. Phil! 'My daddy's a drug dealer and my mommy turned him in!' And the house? Gone! The feds will come in and RICO her and the kids out on the street. Good luck arguing with them on that, noooo. It's not gonna happen. She's bluffing. And she knows it.</p>
           <p>Today's your lucky day. Look around, kiddo - it's all yours. You are now the owner of this fine establishment. Free? Oh ladies, cover your ears. No... not free. Look, hey... this is a squeaky clean, highly profitable (at least potentially), local institution. Look the bottom with favor by the chamber of commerce, better business bureau at three-hundred and twelve thousand dollars, it's a steal.</p>
           <p>Don't you get it? On the outside it's a nail salon right, on the inside it's the best money laundering a growing boy could ask for. Wait, wait! Come back here. Sit. Come on, come on... humor me here for a second. You know you need to launder your money, right? Do you understand the basics of it - placement, layering, integration. Well, you wanna stay out of jail don't ya? You wanna keep your money and your freedom. Cause I got three little letters for ya, I - R - S. If they can get Capone, they can get you.</p>
@@ -103,11 +101,14 @@ export const Template = (args, context) => ({
   `
 })
 
-# Modal
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Modal</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{
@@ -118,9 +119,9 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
@@ -136,7 +137,7 @@ export const Template = (args, context) => ({
 
 ## Standard Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard Small'
     args={{
@@ -148,7 +149,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -164,7 +165,7 @@ export const Template = (args, context) => ({
 
 ## Standard Large
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard Large'
     args={{
@@ -176,7 +177,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="large" :opened="opened" @scaleClose="opened = false">
@@ -192,7 +193,7 @@ export const Template = (args, context) => ({
 
 ## With No Actions
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='No Actions'
     args={{
@@ -204,7 +205,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -214,7 +215,7 @@ export const Template = (args, context) => ({
 
 ## With No Body
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='With No Body'
     args={{
@@ -226,7 +227,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
@@ -241,7 +242,7 @@ export const Template = (args, context) => ({
 
 ## Scrolling With Actions
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Scrolling With Actions'
     args={{
@@ -252,7 +253,7 @@ export const Template = (args, context) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">

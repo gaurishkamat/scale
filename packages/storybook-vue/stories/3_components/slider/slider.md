@@ -1,4 +1,7 @@
-# Slider
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Slider</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A slider lets users control a value or a range of values.
 
@@ -48,3 +51,6 @@ Telekom sliders use Magenta as an accent color. If you need to apply a color cod
 
 ![Image Name](/assets/3_components/slider/slider_disabled.png)
 
+## Related components
+
+<a href="../?path=/usage/components-text-field--standard">Text Field</a>

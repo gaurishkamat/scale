@@ -1,0 +1,97 @@
+[
+  {
+    "elementSelector": "#scale-design-system--page",
+    "en": "Scale Design System",
+    "de": "Scale Design System"
+  },
+  {
+    "elementSelector": "#about-scale--page",
+    "en": "About Scale",
+    "de": "Das Design System Scale"
+  },
+  {
+    "elementSelector": "#faq--page",
+    "en": "FAQ",
+    "de": "FAQ"
+  },
+  {
+    "elementSelector": "#scale-for-designers",
+    "en": "Scale for Designers",
+    "de": "Design mit Scale"
+  },
+  {
+    "elementSelector": "#scale-for-designers-getting-started--page",
+    "en": "Getting Started",
+    "de": "Erste Schritte"
+  },
+  {
+    "elementSelector": "#scale-for-designers-grid--page",
+    "en": "Grid",
+    "de": "Gestaltungsraster"
+  },
+  {
+    "elementSelector": "#scale-for-designers-spacing--page",
+    "en": "Spacing",
+    "de": "Abstände"
+  },
+  {
+    "elementSelector": "#scale-for-designers-typography--page",
+    "en": "Typography",
+    "de": "Typografie"
+  },
+  {
+    "elementSelector": "#scale-for-developers",
+    "en": "Scale for Developers",
+    "de": "Entwicklung mit Scale"
+  },
+  {
+    "elementSelector": "#scale-for-developers-setup--page",
+    "en": "Setup",
+    "de": "Setup"
+  },
+  {
+    "elementSelector": "#scale-for-developers-icon-library--page",
+    "en": "Icon Library",
+    "de": "Icon Library"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-angular--page",
+    "en": "Scale and Angular",
+    "de": "Scale und Angular"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-react--page",
+    "en": "Scale and React",
+    "de": "Scale und React"
+  },
+  {
+    "elementSelector": "#components",
+    "en": "Components",
+    "de": "Komponenten"
+  },
+  {
+    "elementSelector": "#community",
+    "en": "Community",
+    "de": "Community2"
+  },
+  {
+    "elementSelector": "#community-contributing-to-scale--page",
+    "en": "Contributing to Scale",
+    "de": "An Scale mitwirken"
+  },
+  {
+    "elementSelector": "#community-your-feedback--page",
+    "en": "Your Feedback",
+    "de": "Feedback"
+  }
+]

@@ -22,7 +22,7 @@ export class TabPanel implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('TabPanel', styles) stylesheet: StyleSheet;
 
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   render() {

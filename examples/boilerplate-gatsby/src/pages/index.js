@@ -1,21 +1,19 @@
-import React from "react"
+import React, { useRef } from "react"
 import {
   ScaleButton,
   ScaleCard,
   ScaleLink,
   ScaleTag,
-  ScaleTable,
   ScaleInput,
-  ScaleText,
-  ScaleChartStackCard
+  ScaleDatePicker
 } from "@scaleds/components-react-telekom"
 import { Link } from "gatsby"
-import { useTable, useSortBy } from "react-table"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
+  const dateRef = useRef(null)
   return (
     <Layout>
       <SEO title="Home" />
@@ -26,17 +24,17 @@ const IndexPage = () => {
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
       </ScaleLink>
-      <h3>Button</h3>
-      <ScaleButton variant="primary">Click!</ScaleButton>
-      <h3>ChartStackCard</h3>
-      <ScaleChartStackCard
-        heading="Operating Systems"
-        data={[
-          { type: "Android", value: "55.000", percentage: "55" },
-          { type: "IOS", value: "35.000", percentage: "35" },
-          { type: "Other", value: "10.000", percentage: "10" }
-        ]}
+      <ScaleDatePicker
+        ref={dateRef}
+        onScaleChange={console.log}
+        onScaleFocus={console.log}
+        onScaleBlur={console.log}
+        value="2021-03-24"
       />
+      <h3>Button</h3>
+      <ScaleButton variant="primary" onClick={() => dateRef.current.show()}>
+        Show date picker
+      </ScaleButton>
       <h3>Card</h3>
       <ScaleCard>A title</ScaleCard>
       <h3>Tag</h3>
@@ -45,7 +43,7 @@ const IndexPage = () => {
       </ScaleTag>
       <h3>Input</h3>
       <ScaleInput
-        styles={{ input: { "& input": { color: "blue" } } }}
+        styles={JSON.stringify({ input: { "& input": { color: "blue" } } })}
         value="initial value"
         onScaleChange={console.log}
       />

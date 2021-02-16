@@ -5,7 +5,6 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 import { CssInJs } from '../../utils/css-in-js';
 import { styles } from './accordion.styles';
-import { Collapsible } from '../collapsible/collapsible';
 
 @Component({
   tag: 'scale-accordion',
@@ -13,64 +12,37 @@ import { Collapsible } from '../collapsible/collapsible';
 })
 export class Accordion implements Base {
   @Element() el: HTMLElement;
+
+  /** (optional) Injected jss styles */
   @Prop() styles?: any;
+  /** decorator Jss stylesheet */
   @CssInJs('Accordion', styles) stylesheet: StyleSheet;
 
+  /** If `true`, only one scale-collapsible within the accordion can be open at a time */
   @Prop() dependent: boolean = false;
 
-  @Listen('toggler')
-  collapsibleHandler(event: CustomEvent<Collapsible>) {
-    if (this.dependent) {
-      const current = event.target;
-      const children = this.el.querySelectorAll('scale-collapsible');
-      Array.from(children).forEach(child => {
-        // tslint:disable-next-line: no-unused-expression
-        child !== current && child.close();
-      });
+  /**
+   * Handle `dependent`
+   */
+  @Listen('scaleExpand')
+  collapsibleHandler(event: CustomEvent) {
+    event.stopPropagation();
+    const { expanded } = event.detail;
+    if (!this.dependent || expanded === false) {
+      return;
     }
+    this.getCollapsibleChildren().forEach(child => {
+      if (child !== event.target && child.hasAttribute('expanded')) {
+        child.expanded = false;
+      }
+    });
   }
 
-  @Listen('toggleHead')
-  collapsibleKeyHandler(event: CustomEvent) {
-    const current = event.target;
-    const children = this.el.querySelectorAll('scale-collapsible');
-
-    switch (event.detail.key) {
-      case `ArrowDown`:
-        Array.from(children).forEach((child, i) => {
-          if (child === current) {
-            i === children.length - 1
-              ? children[0].setFocus()
-              : children[i + 1].setFocus();
-          }
-        });
-        break;
-
-      case `ArrowUp`:
-        event.preventDefault();
-        Array.from(children).forEach((child, i) => {
-          if (child === current) {
-            i === 0
-              ? children[children.length - 1].setFocus()
-              : children[i - 1].setFocus();
-          }
-        });
-        break;
-
-      case `Home`:
-        children[0].setFocus();
-        break;
-
-      case `End`:
-        children[children.length - 1].setFocus();
-        break;
-    }
+  getCollapsibleChildren(): HTMLScaleCollapsibleElement[] {
+    return Array.from(this.el.querySelectorAll('scale-collapsible'));
   }
 
-  componentWillLoad() {}
-
-  componentDidLoad() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
   componentWillUpdate() {}
 
   render() {

@@ -7,44 +7,31 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                    | Type      | Default     |
-| ------------ | ------------- | ------------------------------ | --------- | ----------- |
-| `isExpanded` | `is-expanded` |                                | `boolean` | `undefined` |
-| `label`      | `label`       |                                | `string`  | `'label'`   |
-| `styles`     | `styles`      | (optional) Injected jss styles | `any`     | `undefined` |
-| `tag`        | `tag`         |                                | `string`  | `'li'`      |
+| Property   | Attribute  | Description                    | Type      | Default     |
+| ---------- | ---------- | ------------------------------ | --------- | ----------- |
+| `expanded` | `expanded` | Set to `true` to expand        | `boolean` | `undefined` |
+| `styles`   | `styles`   | (optional) Injected jss styles | `any`     | `undefined` |
 
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `toggleHead` |             | `CustomEvent<any>` |
-| `toggler`    |             | `CustomEvent<any>` |
+| Event         | Description                                        | Type                                  |
+| ------------- | -------------------------------------------------- | ------------------------------------- |
+| `scaleExpand` | Emitted so parent <scale-accordion> knows about it | `CustomEvent<CollapsibleEventDetail>` |
 
 
-## Methods
+## Dependencies
 
-### `close() => Promise<void>`
+### Depends on
 
+- [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
 
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-### `setFocus() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
+### Graph
+```mermaid
+graph TD;
+  scale-collapsible --> scale-icon-navigation-collapse-down
+  style scale-collapsible fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

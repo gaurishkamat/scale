@@ -1,24 +1,21 @@
 import { JssStyle } from 'jss';
 export const styles: JssStyle = {
+  card__border: {
+    border: '1px solid transparent',
+  },
   card: {
     boxSizing: 'border-box',
     overflow: 'hidden',
-    background: ({ color }) => color.white,
+    background: ({ color }) => color.text_contrast,
     width: '100%',
     transition: ({ transition }) => transition.generic,
     borderRadius: ({ radii }) => radii.card,
     boxShadow: ({ shadow }) => shadow.card,
-    border: '1px solid transparent',
   },
   card__body: {
     padding: ({ spacing }) => spacing.box,
     '& ::slotted(*)': {
       margin: 0,
-    },
-  },
-  'card--no-padding': {
-    '& $card__body': {
-      padding: 0,
     },
   },
   'card--interactive': {
@@ -40,13 +37,6 @@ export const styles: JssStyle = {
     },
     '& $card__body ::slotted(*)': {
       margin: 0,
-    },
-  },
-  'card--disabled': {
-    '&, &:hover, &:focus, &:active': {
-      opacity: ({ opacity }) => opacity.disabled,
-      cursor: 'not-allowed',
-      outline: 'none',
     },
   },
 };

@@ -1,4 +1,7 @@
-# Text Field
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Text Field</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A text field allows users to enter a single line of text.
 
@@ -84,5 +87,4 @@ Important: Use either only small or only large elements within groups.
 
 ## Related components
 
-<a href="https://www.brand-design.telekom.com/scale/?path=/usage/components-textarea--standard" target="_blank">Text area</a>
-
+<a href="../?path=/usage/components-text-area--standard">Text area</a>

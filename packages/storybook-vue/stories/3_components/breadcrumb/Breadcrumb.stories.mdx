@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview, Description } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleBreadcrumb from './ScaleBreadcrumb.vue';
 
 <Meta
@@ -27,56 +27,35 @@ export const Template = (args, { argTypes }) => ({
       <a href="#3">Active Page</a>
       <template v-if="separator === true" #separator>
         <span slot="separator">
-          <scale-icon-navigation-right color="#6B6B6B"></scale-icon-navigation-right>
+          <scale-icon-navigation-right size={12} color="#6B6B6B"></scale-icon-navigation-right>
         </span>
       </template>
     </scale-breadcrumb>
   `
 })
 
-# Breadcrumb
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Breadcrumb</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name='Standard'
     args={{}}
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story='Standard' />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-breadcrumb separator="---">
   <a href="#1">First link</a>
   <a href="#2">Second link</a>
   <a href="#3">Third link</a>
-</scale-breadcrumb>
-```
-
-## With Custom Separator Element
-
-<Preview withSource="none">
-  <Story
-    name='With Custom Separator Element'
-    args={{
-      separator: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Preview>
-
-```html
-<scale-breadcrumb>
-  <a href="#1">First link</a>
-  <a href="#2">Second link</a>
-  <a href="#3">Third link</a>
-  <span slot="separator">
-    <scale-icon-navigation-right></scale-icon-navigation-right>
-  </span>
 </scale-breadcrumb>
 ```

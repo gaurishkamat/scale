@@ -37,7 +37,7 @@ export class Switch implements Base {
     }
   }
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     const { classes } = this.stylesheet;

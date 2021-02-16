@@ -1,4 +1,7 @@
-# Switch
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Switch</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Switches allow users to quickly turn an item on or off. Like a physical light switch, they provide an immediate result.
 
@@ -27,4 +30,6 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 
 ## Related components
 
-Checkbox, Select Box, Radio Button
+<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="../?path=/usage/components-dropdown--standard">Dropdown, </a>
+<a href="../?path=/usage/components-radiobutton--standard">Radio Button</a>

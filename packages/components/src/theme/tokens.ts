@@ -18,8 +18,7 @@ const GRAY_1 = '#262626';
 // const GRAY_2 = '#383838';
 const GRAY_3 = '#6B6B6B';
 const GRAY_4 = '#7C7C7C';
-// not AA on white background
-// const GRAY_5_DECORATIVE = '#A4A4A4';
+const GRAY_5_DECORATIVE = '#A4A4A4';
 const GRAY_6_DECORATIVE = '#D0D0D0';
 const GRAY_7_DECORATIVE = '#DCDCDC';
 // const GRAY_8_DECORATIVE = '#EDEDED';
@@ -63,6 +62,23 @@ const SPACING_6 = 2; // 32px
 const SPACING_7 = 3; // 48px
 const SPACING_8 = 4; // 64px
 const SPACING_9 = 5; // 80px
+
+/*
+  TODO: discuss proposal to remove `size` (Arturo)
+
+  const SPACING_10 = 0.0625; // 1px
+  const SPACING_20 = 0.125; // 2px
+  const SPACING_30 = 0.25; // 4px
+  const SPACING_40 = 0.5; // 8px
+  const SPACING_50 = 0.75; // 12px
+  const SPACING_60 = 1; // 16px
+  const SPACING_70 = 1.5; // 24px
+  const SPACING_80 = 2; // 32px
+  const SPACING_90 = 2.5 // 40px
+  const SPACING_100 = 3; // 48px
+  const SPACING_110 = 4; // 64px
+  const SPACING_120 = 5; // 80px
+*/
 
 /* Shadows */
 
@@ -145,10 +161,12 @@ const color = {
   link_active: BLUE_DARK,
   link_visited: BLUE_DARK,
   disabled: GRAY_4,
+  disabled_low_contrast: GRAY_5_DECORATIVE,
   error: RED_FUNCTIONAL,
   focus: BLUE_FUNCTIONAL,
   divider: GRAY_6_DECORATIVE,
   table_line: GRAY_6_DECORATIVE,
+  breadcrumb_separator: GRAY_3,
   border_slider_thumb: GRAY_3,
   border_tab: GRAY_6_DECORATIVE,
   slider_track: GRAY_4,
@@ -215,11 +233,6 @@ const type_variants = {
   h3_mobile: typeVariant(FONT_SIZE_5, LEADING_4, FONT_WEIGHT_EXTRABOLD),
   h2_mobile: typeVariant(FONT_SIZE_6, LEADING_2, FONT_WEIGHT_EXTRABOLD),
   h1_mobile: typeVariant(FONT_SIZE_7, LEADING_2, FONT_WEIGHT_EXTRABOLD),
-  // TODO remove by removing scale-text from collapsible usage, and using plain span
-  collapsible: {
-    ...typeVariant(FONT_SIZE_4, LEADING_3, FONT_WEIGHT_EXTRABOLD),
-    marginBottom: 0,
-  },
 };
 
 const spacing = {

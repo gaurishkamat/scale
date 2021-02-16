@@ -8,6 +8,7 @@
 
   },
   "rules": {
+    "no-console": true,
     "only-arrow-functions": false,
     "prefer-for-of": false,
     "no-empty": false,

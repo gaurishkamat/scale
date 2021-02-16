@@ -58,7 +58,3 @@ Display content of the same type (e.g., blogposts, products, or cards) with a un
 ### Design your own card
 
 You can design cards for a variety of situations. The purpose of the card component is to give you the flexibility to build your card according to our principles – as best suits your particular use case.
-
-## Related components
-
-Divider, Data Table

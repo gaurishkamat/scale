@@ -114,44 +114,44 @@ export const styles: JssStyle = {
         },
       },
 
-      '&[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+      '&[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.text,
       },
       '&:hover .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.primary_hover,
       },
-      '&:hover[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+      '&:hover[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.primary_hover,
       },
-      '&:active[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+      '&:active[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
         fill: ({ color }) => color.primary_active,
       },
 
-      '&[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: 'transparent',
-      },
-      '&:hover[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: 'transparent',
-      },
-      '&:active[aria-sort="descending"] .scale-sort-indicator polygon': {
-        fill: 'transparent',
-      },
-      '&[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: 'transparent',
-      },
-      '&:hover[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: 'transparent',
-      },
-      '&:active[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type': {
-        fill: 'transparent',
-      },
       '&[aria-sort="ascending"] .scale-sort-indicator polygon': {
-        fill: ({ color }) => color.text,
+        fill: 'transparent',
       },
       '&:hover[aria-sort="ascending"] .scale-sort-indicator polygon': {
-        fill: ({ color }) => color.primary_hover,
+        fill: 'transparent',
       },
       '&:active[aria-sort="ascending"] .scale-sort-indicator polygon': {
+        fill: 'transparent',
+      },
+      '&[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+        fill: 'transparent',
+      },
+      '&:hover[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+        fill: 'transparent',
+      },
+      '&:active[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
+        fill: 'transparent',
+      },
+      '&[aria-sort="descending"] .scale-sort-indicator polygon': {
+        fill: ({ color }) => color.text,
+      },
+      '&:hover[aria-sort="descending"] .scale-sort-indicator polygon': {
+        fill: ({ color }) => color.primary_hover,
+      },
+      '&:active[aria-sort="descending"] .scale-sort-indicator polygon': {
         fill: ({ color }) => color.primary_active,
       },
       '& .scale-sort-indicator': {

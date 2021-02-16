@@ -1,8 +1,8 @@
 import {
   Meta,
   Story,
-  Props,
-  Preview,
+  ArgsTable,
+  Canvas,
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleTabNav from "./ScaleTabNav.vue";
@@ -28,13 +28,16 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-# Tab Navigation
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Tab Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Text & Icon
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Text & Icon" args={{}}>{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav>
@@ -65,15 +68,15 @@ export const Template = (args, { argTypes }) => ({
 </scale-tab-nav>
 ```
 
-<Props story="Text & Icon" />
+<ArgsTable story="Text & Icon" />
 
 ## Text & Icon, Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Text & Icon, Small" args={{ small: true }}>
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav small>
@@ -106,11 +109,11 @@ export const Template = (args, { argTypes }) => ({
 
 ## Text Only
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Text Only" args={{ withIcon: false }}>
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav>
@@ -135,11 +138,11 @@ export const Template = (args, { argTypes }) => ({
 
 ## Text Only, Small
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Text Only, Small" args={{ small: true, withIcon: false }}>
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-tab-nav small>

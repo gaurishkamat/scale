@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
-
 export default {
   props: {
     styles: { type: Object },

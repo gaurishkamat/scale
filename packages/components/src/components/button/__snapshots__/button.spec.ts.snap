@@ -1,50 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should match snapshot 1`] = `
-<scale-button>
+<scale-button icon-position="before">
   <mock:shadow-root>
     <style>
-      .button-0-0-8 {
-  border: none;
+      .button-0-0-9 {
+  border: 0;
   cursor: pointer;
-  height: unset;
   display: inline-flex;
   outline: none;
   position: relative;
-  box-shadow: none;
   box-sizing: border-box;
-  min-height: 40px;
-  text-align: center;
   align-items: center;
-  flex-shrink: 0;
-  padding-top: 8px;
+  font-family: inherit;
   user-select: none;
-  white-space: nowrap;
-  padding-left: 24px;
-  border-radius: 8px;
-  padding-right: 24px;
-  letter-spacing: 0.02857em;
-  padding-bottom: 8px;
-  text-transform: none;
-  vertical-align: middle;
+  word-spacing: inherit;
+  letter-spacing: inherit;
   justify-content: center;
   text-decoration: none;
-  color: #000;
-  --icon-color: #000;
-  background: #E0E0E0;
-  font-family: TeleNeoWeb;
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-weight: 700;
   font-size: 1rem;
-  line-height: 1.5;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 40px;
+  transition: all .2s ease-in-out;
 }
-.button-0-0-8:before {
-  width: 0;
-  height: 100%;
-  content: "";
-  display: block;
+.button-0-0-9:not(.button--disabled-0-0-16):focus {
+  box-shadow: 0 0 0 2px #009DE0;
 }
-.button-0-0-8:after {
+.button-0-0-9.button--icon-before-0-0-13 ::slotted(*) {
+  margin-right: 0.5rem;
+}
+.button-0-0-9.button--icon-after-0-0-14 ::slotted(*) {
+  margin-left: 0.5rem;
+}
+.button-0-0-9:after {
   top: 0;
   left: 0;
   width: 100%;
@@ -54,96 +45,60 @@ exports[`Button should match snapshot 1`] = `
   display: block;
   position: absolute;
   box-sizing: border-box;
-  border-radius: 8px;
   pointer-events: none;
+  border-radius: 0.5rem;
 }
-.button-0-0-8:hover {
-  box-shadow: none;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-color: #F90984;
-  background: #F90984;
-  color: #FFF;
-  --icon-color: #FFF;
-}
-.button-0-0-8, .button-0-0-8:focus {
-  border-color: #E20074;
-  background: #E20074;
-  color: #FFF;
-  --icon-color: #FFF;
-}
-.button-0-0-8:focus {
-  box-shadow: 0 0 0 2px #009DE0;
-}
-.button-0-0-8:active, .button-0-0-8.selected {
-  border-color: #CB0068;
-  background: #CB0068;
-  color: #FFF;
-  --icon-color: #FFF;
-}
-.button--disabled-0-0-9 {}
-.button--disabled-0-0-9, .button--disabled-0-0-9:hover {
-  cursor: not-allowed;
-  opacity: 1;
-  background: #D0D0D0;
-  color: #7C7C7C;
-  --icon-color: #7C7C7C;
-}
-.button--disabled-0-0-9.button--variant-secondary-0-0-13, .button--disabled-0-0-9.button--variant-secondary-0-0-13:hover {
-  background: none;
-  border: 1px solid #D0D0D0;
-  color: #7C7C7C;
-  --icon-color: #7C7C7C;
-}
-.button__before-0-0-10 {
-  display: flex;
-  align-items: center;
-  margin-right: .5rem;
-}
-.button__after-0-0-11 {
-  display: flex;
-  align-items: center;
-  margin-left: .5rem;
-}
-.button--icon-only-0-0-12 {
-  padding: 8px;
-}
-.button--variant-secondary-0-0-13 {
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-.button--variant-secondary-0-0-13:after {
-  display: none;
-}
-.button--variant-secondary-0-0-13, .button--variant-secondary-0-0-13:focus, .button--variant-secondary-0-0-13.focus {
-  background: none;
-  border: 1px solid #262626;
-  color: #262626;
-  --icon-color: #262626;
-}
-.button--variant-secondary-0-0-13:hover, .button--variant-secondary-0-0-13.hover {
-  background: none;
-  border-color: #F90984;
-  color: #F90984;
-  --icon-color: #F90984;
-}
-.button--variant-secondary-0-0-13:active, .button--variant-secondary-0-0-13.active, .button--variant-secondary-0-0-13.selected {
-  background: none;
-  border-color: #CB0068;
-  color: #CB0068;
-  --icon-color: #CB0068;
-}
-.button--size-small-0-0-14 {
-  min-height: 32px;
+.button--size-small-0-0-10 {
   font-size: 0.75rem;
   line-height: 1.3333;
-}
-.button--size-small-0-0-14.button--icon-only-0-0-12 {
-  min-width: 32px;
   min-height: 32px;
 }
+.button--variant-primary-0-0-11 {
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #E20074;
+  color: #FFFFFF;
+}
+.button--variant-primary-0-0-11:not(.button--disabled-0-0-16):hover {
+  background: #F90984;
+}
+.button--variant-primary-0-0-11:not(.button--disabled-0-0-16):active {
+  background: #CB0068;
+}
+.button--disabled-0-0-16.button--variant-primary-0-0-11 {
+  background: #D0D0D0;
+  color: #A4A4A4;
+}
+.button--variant-secondary-0-0-12 {
+  background: transparent;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 1px solid currentColor;
+  color: #262626;
+}
+.button--variant-secondary-0-0-12:not(.button--disabled-0-0-16):hover {
+  border-color: #F90984;
+  color: #F90984;
+}
+.button--variant-secondary-0-0-12:not(.button--disabled-0-0-16):active {
+  border-color: #CB0068;
+  color: #CB0068;
+}
+.button--disabled-0-0-16.button--variant-secondary-0-0-12 {
+  border-color: #D0D0D0;
+  color: #D0D0D0;
+}
+.button--icon-before-0-0-13 {}
+.button--icon-after-0-0-14 {}
+.button--icon-only-0-0-15 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.button--disabled-0-0-16 {
+  cursor: not-allowed;
+}
     </style>
-    <button class="button-0-0-8" tabindex="0">
+    <button class="button--icon-before-0-0-13 button--variant-primary-0-0-11 button-0-0-9">
       <slot></slot>
     </button>
   </mock:shadow-root>

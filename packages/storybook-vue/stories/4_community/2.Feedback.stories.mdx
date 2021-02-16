@@ -1,13 +1,19 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
 
-<Meta title="Community/Your Feedback" />
+import text_en from "./2.Feedback_en.md";
+import text_de from "./2.Feedback_de.md";
 
-# Your Feedback to Scale
-
-The Scale design system is always evolving. To be better we need your feedback:
-
-## How to Provide Feedback
-
-- Leave a comment on [our repository](https://gitlab.com/scale-ds/scale-telekom)
-- Open an issue on [our repository](https://gitlab.com/scale-ds/scale-telekom)
-- For feedback about design and design requirements, send an e-mail to Dennys.Hess@telekom.de
+<Meta title="Community/Your Feedback"
+  parameters={{
+      docs: {
+          container: ({ context }) => {
+              const locale = context && context.globals && context.globals.locale
+              return (
+                  <DocsContainer context={context}>
+                      {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                  </DocsContainer>
+              )
+          }
+      },
+  }}
+/>

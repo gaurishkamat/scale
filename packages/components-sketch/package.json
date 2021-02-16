@@ -3,11 +3,11 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "1.14.0",
+  "version": "1.15.0",
   "description": "",
   "license": "MIT",
   "scripts": {
-    "prestart": "rimraf public/dist && cp -r ../components/dist public/dist",
+    "prestart": "rimraf public/components && cp -r ../components/dist public/components",
     "start": "nodemon app.js"
   },
   "dependencies": {

@@ -14,45 +14,42 @@ export class Card implements Base {
   /** (optional) Card class */
   @Prop() customClass?: string = '';
   /** (optional) Link card */
-  @Prop() href?: string = '';
+  @Prop() to?: string = '';
   /** (optional) Label of the card */
   @Prop() label?: string = '';
   /** (optional) Link card target */
   @Prop() target?: string = '_self';
-  /** (optional) Link interactive */
-  @Prop() interactive?: boolean = false;
-  /** (optional) Link disabled */
-  @Prop() disabled?: boolean = false;
-  /** (optional) Padding off */
-  @Prop() noPadding?: boolean = false;
+  /** (optional) Link card rel */
+  @Prop() rel?: string = '';
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
   @CssInJs('Card', styles) stylesheet: StyleSheet;
 
   componentWillUpdate() {}
-  componentDidUnload() {}
+  disconnectedCallback() {}
 
   render() {
     const { classes } = this.stylesheet;
-    const Tag = !!this.href ? 'a' : 'div';
+    const Tag = !!this.to ? 'a' : 'div';
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <Tag
-          class={this.getCssClassMap()}
-          {...(!!this.href ? { href: this.href } : {})}
-          {...(!!this.href ? { target: this.target } : {})}
-          {...(!!this.interactive ? { tabindex: 1 } : {})}
-          role="group"
-          aria-label={this.label}
-          aria-disabled={this.disabled}
-        >
-          <div class={classes.card__body}>
-            <slot />
-          </div>
-        </Tag>
+        <div class={classes.card__border}>
+          <Tag
+            class={this.getCssClassMap()}
+            role="group"
+            {...(!!this.to ? { tabindex: 0, href: this.to } : {})}
+            {...(!!this.target ? { target: this.target } : {})}
+            {...(!!this.rel ? { rel: this.rel } : {})}
+            {...(!!this.label ? { ['aria-label']: this.label } : {})}
+          >
+            <div class={classes.card__body}>
+              <slot />
+            </div>
+          </Tag>
+        </div>
       </Host>
     );
   }
@@ -63,9 +60,7 @@ export class Card implements Base {
     return classNames(
       classes.card,
       this.customClass && this.customClass,
-      (!!this.href || this.interactive) && classes[`card--interactive`],
-      this.disabled && classes['card--disabled'],
-      this.noPadding && classes['card--no-padding']
+      !!this.to && classes[`card--interactive`]
     );
   }
 }

@@ -1,4 +1,7 @@
-# Tag
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tag</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
@@ -82,6 +85,3 @@ Only use small tags if you don't have enough space for the standard size.
 * Don't mix interactive and static tags within a product or service.
 * Decide on one size for your tags.
 * Use a clear keyword for the label.
-
-
-

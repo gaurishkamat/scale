@@ -78,11 +78,11 @@
       "attributes": [
         {
           "name": "dependent",
-          "description": ""
+          "description": "If `true`, only one scale-collapsible within the accordion can be open at a time"
         },
         {
           "name": "styles",
-          "description": ""
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -343,24 +343,12 @@
           "description": "(optional) Card class"
         },
         {
-          "name": "disabled",
-          "description": "(optional) Link disabled"
-        },
-        {
-          "name": "href",
-          "description": "(optional) Link card"
-        },
-        {
-          "name": "interactive",
-          "description": "(optional) Link interactive"
-        },
-        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
         {
-          "name": "no-padding",
-          "description": "(optional) Padding off"
+          "name": "rel",
+          "description": "(optional) Link card rel"
         },
         {
           "name": "styles",
@@ -369,6 +357,10 @@
         {
           "name": "target",
           "description": "(optional) Link card target"
+        },
+        {
+          "name": "to",
+          "description": "(optional) Link card"
         }
       ]
     },
@@ -431,20 +423,89 @@
       },
       "attributes": [
         {
-          "name": "is-expanded",
-          "description": ""
-        },
-        {
-          "name": "label",
-          "description": ""
+          "name": "expanded",
+          "description": "Set to `true` to expand"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-date-picker",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "date-adapter",
+          "description": "Date adapter, for custom parsing/formatting.\nMust be object with a `parse` function which accepts a `string` and returns a `Date`,\nand a `format` function which accepts a `Date` and returns a `string`.\nDefault is IS0-8601 parsing and formatting."
         },
         {
-          "name": "tag",
-          "description": ""
+          "name": "direction",
+          "description": "Forces the opening direction of the calendar modal to be always left or right.\nThis setting can be useful when the input is smaller than the opening date picker\nwould be as by default the picker always opens towards right.",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "Makes the date picker input component disabled. This prevents users from being able to\ninteract with the input, and conveys its inactive state to assistive technologies."
+        },
+        {
+          "name": "first-day-of-week",
+          "description": "Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc.\nDefault is Monday."
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Helper text"
+        },
+        {
+          "name": "identifier",
+          "description": "Adds a unique identifier for the date picker input. Use this instead of html `id` attribute."
+        },
+        {
+          "name": "label",
+          "description": "(optional) Label"
+        },
+        {
+          "name": "max",
+          "description": "Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the min property."
+        },
+        {
+          "name": "min",
+          "description": "Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the max property."
+        },
+        {
+          "name": "name",
+          "description": "Name of the date picker input."
+        },
+        {
+          "name": "required",
+          "description": "Should the input be marked as required?"
+        },
+        {
+          "name": "role",
+          "description": "Defines a specific role attribute for the date picker input."
+        },
+        {
+          "name": "size",
+          "description": "(optional) Size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Status"
+        },
+        {
+          "name": "value",
+          "description": "Date value. Must be in IS0-8601 format: YYYY-MM-DD."
         }
       ]
     },
@@ -481,12 +542,16 @@
       },
       "attributes": [
         {
-          "name": "aria-label",
-          "description": "(optional) When using the icon by itself, add a label to improve accessibility"
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon as standalone, make it meaningful for accessibility"
         },
         {
           "name": "custom-class",
           "description": "(optional) Tag custom class"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the svg element will get aria-hidden=\"true\""
         },
         {
           "name": "fill",
@@ -519,6 +584,5255 @@
       ]
     },
     {
+      "name": "scale-icon-action-add",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-add-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-auto-login",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-backspace",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-changelog",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-circle-add",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-circle-close",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-close",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-copy-paste",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-cut-paste",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-disabled-microphone",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-download",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-drag-and-drop",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-edit",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-fast-forward",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-favorite",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-filter",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-forward",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-full-screen",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-hide-password",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-install",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-link",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-logout",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-loop",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-menu",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-microphone",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-minimize-screen",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-more",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-move",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-mute",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-notification",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-pause",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-pin",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-play",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-pop-up-window",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-print",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-random",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-refresh",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-remove",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-restart",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-search",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-shopping-cart",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-show-password",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-sort",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-sound-on",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-stream-on",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-success",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-thumbs-down",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-thumbs-up",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-tiles-add",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-upload",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-volume-down",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-volume-up",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-zoom-in",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-action-zoom-out",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-compliance",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-error",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-help",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-imprint-dataprivacy",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-information",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-legal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-security",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-alert-warning",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-call-incoming",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-call-outgoing",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-chat",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-email",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-end-call",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-feedback",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-message",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-phone-number",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-recipient",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-communication-voice-message",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-achievement",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-applications",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-biometric",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-bookmark",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-calendar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-clipboard",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-clock",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-credit-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-delivery",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-digital-banking",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-digital-media",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-draft-file",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-e-sim",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-eu",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-features",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-flexible-tariffs",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-heart",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-history",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-international",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-international-sms",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-interview",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-key",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-lock",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-media-folder",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-money-at",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-music",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-news",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-prepaid-activate",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-price-tag",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-rss",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-shop",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-signal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-sim-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-smile",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-tariffs",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-transport",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-unlock",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-voucher",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-content-wallet",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-add-device",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-camera",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-change-camera",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-computer",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-device-phone",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-device-router",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-device-tv",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-device-watch",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-fixed-line-services",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-media-receiver",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-mobile-devices-combination",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-mobile-equipment",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-mobile-phone-insurance",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-mobile-services",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-no-camera",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-photo-camera",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-remote-controller",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-replacement-mobilephone",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-screen-rotate",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-smart-speaker",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-device-tv-and-mobile",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-home",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-internet-at-home",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-iot",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-no-wifi",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-smarthome",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-home-wifi",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-circle-top-up",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-collapse-down",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-collapse-up",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-external-link",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-internal-link",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-left",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-location",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-my-location",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-right",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-start",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-navigation-top-up",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-process-order-status",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-process-processing",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-service-devices-service",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-service-maintanance",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-service-services",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-service-settings",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-service-support",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-magenta-cloud",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-magenta-tv",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-magentaone",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-measure-internet-speed",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-seamless-connectivity",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-telekom-shop-b",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-t_product-usage",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-analytics",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-attachment",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-audio-file",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-billing",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-bussines-users",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-communities",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-contacts",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-contracts",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-families",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-handshake",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-id-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-image-file",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-logout",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-pdf-file",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-switch-users",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-user",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
+      "name": "scale-icon-user_file-videos",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "decorative",
+          "description": "(optional) If `true` the SVG element will get `aria-hidden=\"true\"`"
+        },
+        {
+          "name": "selected",
+          "description": "(optional) If `true`, the icon changes visually"
+        },
+        {
+          "name": "size",
+          "description": "(optional) The width and height in pixels"
+        }
+      ]
+    },
+    {
       "name": "scale-input",
       "description": {
         "kind": "markdown",
@@ -532,6 +5846,10 @@
         {
           "name": "cols",
           "description": "(optional) textarea column"
+        },
+        {
+          "name": "controlled",
+          "description": "(optional) Makes type `select` behave as a controlled component in React"
         },
         {
           "name": "counter",
@@ -712,6 +6030,10 @@
           "description": "(optional) Icon only"
         },
         {
+          "name": "icon-accessibility-title",
+          "description": "(optional) Icon title for accessibility"
+        },
+        {
           "name": "icon-size",
           "description": "(optional) Icon size"
         },
@@ -737,12 +6059,12 @@
       },
       "attributes": [
         {
-          "name": "styles",
-          "description": ""
+          "name": "ordered",
+          "description": "(optional) Make the list ordered (ol)"
         },
         {
-          "name": "variant",
-          "description": "(optional) List variant"
+          "name": "styles",
+          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -754,20 +6076,20 @@
       },
       "attributes": [
         {
-          "name": "icon",
-          "description": "(optional) List item icon"
+          "name": "index",
+          "description": "Index number, useful only for styling the `ordered` type"
         },
         {
-          "name": "icon-size",
-          "description": "(optional) list Icon size"
+          "name": "marker",
+          "description": "If `false`, no marker or left padding will be visible"
+        },
+        {
+          "name": "ordered",
+          "description": "Whether this is a child of an ordered scale-list, gets set automatically by its parent"
         },
         {
           "name": "styles",
           "description": "(optional) Injected jss styles"
-        },
-        {
-          "name": "type",
-          "description": "(optional) List item style type"
         }
       ]
     },
@@ -901,8 +6223,20 @@
           "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
         },
         {
+          "name": "collapsible",
+          "description": "Set to `true` to make the sidebar toggleable (useful for small screens)"
+        },
+        {
+          "name": "collapsible-label",
+          "description": "Label for toggle button"
+        },
+        {
+          "name": "collapsible-media-query",
+          "description": "Automatically set `collapsible` based on this media query"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },
@@ -914,6 +6248,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Label and icon get the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold label and icon"
         },
@@ -922,28 +6260,24 @@
           "description": "Used normally for third level items"
         },
         {
+          "name": "expanded",
+          "description": "Set this to `true` to expand"
+        },
+        {
           "name": "href",
           "description": "The URL where the link should point to"
-        },
-        {
-          "name": "icon-size",
-          "description": "The width and height of the icon in pixels"
-        },
-        {
-          "name": "is-current",
-          "description": "Label and icon get the active color"
-        },
-        {
-          "name": "is-expanded",
-          "description": "Set this to `true` to expand"
         },
         {
           "name": "label",
           "description": "The text for the button"
         },
         {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         },
         {
           "name": "tag",
@@ -959,6 +6293,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Text gets the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold text"
         },
@@ -967,12 +6305,16 @@
           "description": "Used normally for third level items, remove the bottom border"
         },
         {
-          "name": "is-current",
-          "description": "Text gets the active color"
+          "name": "current",
+          "description": "Mark the child link as \"current\" with `aria-current=page`.\nProvide the text hint if needed, default is: \"Zurzeit aktiv\""
+        },
+        {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },

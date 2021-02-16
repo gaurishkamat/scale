@@ -1,37 +1,109 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Watch, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './sidebar-nav-item.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
+
+const SR_ACTIVE_TEXT = ' Zurzeit aktiv';
 
 @Component({
   tag: 'scale-sidebar-nav-item',
+  styleUrl: 'sidebar-nav-item.css',
   shadow: true,
 })
-export class SidebarNavItem implements Base {
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('SidebarNavItem', styles) stylesheet: StyleSheet;
+export class SidebarNavItem {
+  srOnlyElement: HTMLElement;
+
+  @Element() el: HTMLElement;
 
   /** Used normally for third level items, remove the bottom border */
   @Prop() condensed: boolean = false;
   /** Bold text */
   @Prop() bold: boolean = false;
   /** Text gets the active color */
-  @Prop() isCurrent: boolean = false;
+  @Prop({ mutable: true, reflect: true }) active: boolean = false;
+  /**
+   * Mark the child link as "current" with `aria-current=page`.
+   * Provide the text hint if needed, default is: "Zurzeit aktiv"
+   */
+  @Prop() current: string | null = null;
+  /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
+  @Prop() nestingLevel: number;
+  /** (optional) Extra styles */
+  @Prop() styles?: string;
 
-  componentWillLoad() {}
-  componentDidUnload() {}
-  componentWillUpdate() {}
+  @Watch('nestingLevel')
+  nestingLevelChanged(newValue: number) {
+    if (newValue === 1) {
+      this.bold = true;
+    }
+  }
+
+  @Watch('current')
+  currentChanged(newValue: string | null) {
+    this.handleAriaCurrentInSlottedA(newValue);
+    this.syncActiveToCurrent(newValue);
+  }
+
+  componentDidLoad() {
+    this.handleAriaCurrentInSlottedA(this.current);
+    if (this.current != null) {
+      this.syncActiveToCurrent(this.current);
+    }
+  }
+
+  /**
+   * If an item is `current`, it should be `active` as well
+   */
+  syncActiveToCurrent(newValue: string | null) {
+    this.active = newValue === null ? false : true;
+  }
+
+  /**
+   * When `current` is set, this will:
+   * - set the aria-current=page attribute on the link
+   * - append a text-only hint for screen readers
+   * so we end up with something like this:
+   * <a href="..." aria-current="page">
+   *    Example<span style="...visible to SR only..."> Active link</span>
+   * </a>
+   * @param current this.current
+   */
+  handleAriaCurrentInSlottedA(current: string | null) {
+    const a = this.el.querySelector('a');
+
+    if (this.srOnlyElement != null) {
+      a.removeChild(this.srOnlyElement);
+      this.srOnlyElement = null;
+    }
+    if (current === null && a != null) {
+      a.removeAttribute('aria-current');
+      return;
+    }
+    if (current != null && a != null) {
+      this.srOnlyElement = this.createScreenReaderOnlySpan();
+      a.appendChild(this.srOnlyElement);
+      a.setAttribute('aria-current', 'page');
+    }
+  }
+
+  createScreenReaderOnlySpan() {
+    const text = this.current !== '' ? ` ${this.current}` : SR_ACTIVE_TEXT;
+    const span = document.createElement('span');
+    // .sr-only but inline
+    Object.assign(span.style, {
+      position: 'absolute',
+      left: '-10000px',
+      overflow: 'hidden',
+    });
+    span.textContent = text;
+
+    return span;
+  }
 
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <li class={this.getCssClassMap()}>
+        <style>{this.styles}</style>
+        <li class={this.getCssClassMap()} role="listitem" part="base">
           <slot />
         </li>
       </Host>
@@ -39,12 +111,11 @@ export class SidebarNavItem implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes['sidebar-nav-item'],
-      this.bold && classes['sidebar-nav-item--bold'],
-      this.condensed && classes['sidebar-nav-item--condensed'],
-      this.isCurrent && classes['sidebar-nav-item--current']
+      'sidebar-nav-item',
+      this.bold && 'sidebar-nav-item--bold',
+      this.condensed && 'sidebar-nav-item--condensed',
+      this.active && 'sidebar-nav-item--active'
     );
   }
 }

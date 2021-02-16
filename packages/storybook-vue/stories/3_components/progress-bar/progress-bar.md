@@ -1,4 +1,7 @@
-# Progress Bar
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Progress Bar</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A progress bar indicates that the system is running a process. This make users feel in control and can help to estimate how long it takes to accomplish a task.
 
@@ -14,6 +17,8 @@ For processes where you know the duration, use determinate progress bars. The la
 ![Image Name](assets/3_components/progress-bar/pb_determinate_procent-done.png)
 
 ### Indeterminate
+
+> Available soon
 
 If you cannot determine the duration of a process, use the indeterminate progress bar. This indicates that the system is operating, but doesn't give any idea how long it could take. Therefore, you should always avoid using this type of progress bar whenever possible.
 

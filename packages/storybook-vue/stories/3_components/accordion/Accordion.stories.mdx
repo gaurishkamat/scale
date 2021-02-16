@@ -1,13 +1,11 @@
 import {
   Meta,
   Story,
-  Props,
-  Preview,
+  ArgsTable,
+  Canvas,
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleAccordion from "./ScaleAccordion.vue";
-export const ICON =
-  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
   title="Components/Accordion"
@@ -28,18 +26,19 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-accordion
       :styles="styles"
-      :dependent="JSON.stringify(dependent)"
+      :dependent="dependent"
     >
       <scale-collapsible>
-        <scale-text slot="headline" variant="collapsible">This is one headline</scale-text>
-        <p slot="content">This is one content</p>
+        <h3>Leo integer malesuada nunc vel risus</h3>
+        <p>Freegan kinfolk <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock bespoke small batch pabst. 90's tumblr whatever direct trade, organic master cleanse copper mug schlitz palo santo bushwick ethical pop-up chambray portland. Sartorial austin iceland street art, pug asymmetrical marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin food truck everyday carry 3 wolf moon.</p>
       </scale-collapsible>
       <scale-collapsible>
-        <scale-text slot="headline" variant="collapsible">This is another headline</scale-text>
-        <div slot="content">
-          <scale-text variant="h3">More info</scale-text>
-          <scale-text variant="body">Collapsibles can contain several nodes</scale-text>
-        </div>
+        <h3>Dolor purus non enim</h3>
+        <p>Bespoke austin pork belly yuccie pop-up. <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers microdosing etsy hashtag seitan photo booth bitters.</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h3>
+        <p>Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh four loko selfies you probably haven't heard of them locavore bushwick. Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf godard skateboard celiac taxidermy tacos offal.</p>
       </scale-collapsible>
     </scale-accordion>
   `,
@@ -49,15 +48,32 @@ export const Template = (args, { argTypes }) => ({
 
 ## Standard
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story name="Standard">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-<Props story="Standard" />
+<ArgsTable story="Standard" />
+
+```html
+<scale-accordion>
+  <scale-collapsible>
+    <h3>Leo integer malesuada nunc vel risus</h3>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>Dolor purus non enim</h3>
+    <p>Bespoke austin pork belly yuccie pop-up…</p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h3>
+    <p>Biodiesel chia af hoodie tumeric bespoke letterpress…</p>
+  </scale-collapsible>
+</scale-accordion>
+```
 
 ## Dependent
 
-<Preview withSource="none">
+<Canvas withSource="none">
   <Story
     name="Dependent"
     args={{
@@ -66,20 +82,21 @@ export const Template = (args, { argTypes }) => ({
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ```html
 <scale-accordion dependent>
   <scale-collapsible>
-    <scale-text slot="headline" variant="collapsible">This is one headline</scale-text>
-    <p slot="content">This is one content</p>
+    <h3>Leo integer malesuada nunc vel risus</h3>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
   </scale-collapsible>
   <scale-collapsible>
-    <scale-text slot="headline" variant="collapsible">This is another headline</scale-text>
-    <div slot="content">
-      <scale-text variant="h3">More info</scale-text>
-      <scale-text variant="body">Collapsibles can contain several nodes</scale-text>
-    </div>
+    <h3>Dolor purus non enim</h3>
+    <p>Bespoke austin pork belly yuccie pop-up…</p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h3>
+    <p>Biodiesel chia af hoodie tumeric bespoke letterpress…</p>
   </scale-collapsible>
 </scale-accordion>
 ```
