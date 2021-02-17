@@ -1,9 +1,12 @@
 import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
+import { CssClassMap, isPseudoClassSupported } from '../../utils/utils';
 import classNames from 'classnames';
 
 const name = 'switch';
 let i = 0;
+
+// For chrome that applies :focus upon click, and :focus-visible isn't widely supported
+const isFocusVisibleSupported = isPseudoClassSupported(':focus-visible');
 
 @Component({
   tag: 'scale-switch',
@@ -61,6 +64,11 @@ export class Switch {
   }
 
   getCssClassMap(): CssClassMap {
-    return classNames(name, this.disabled && `${name}--disabled`);
+    return classNames(
+      name,
+      this.disabled && `${name}--disabled`,
+      isFocusVisibleSupported && `${name}--focus-visible-supported`,
+      !isFocusVisibleSupported && `${name}--focus-visible-not-supported`
+    );
   }
 }

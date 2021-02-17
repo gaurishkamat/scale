@@ -80,7 +80,11 @@
   transition: var(--transition-generic, all 0.2s ease-in-out);
 }
 
-.switch input:focus ~ .switch__wrapper {
+.switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
+  box-shadow: 0 0 0 var(--focus-size, 2px) var(--color-focus, #009de0);
+}
+
+.switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
   box-shadow: 0 0 0 var(--focus-size, 2px) var(--color-focus, #009de0);
 }
 
