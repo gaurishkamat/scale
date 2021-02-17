@@ -36,10 +36,12 @@ export class Shell {
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
-  @Prop() customClass?: string = '';
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
   @State() scrolled: boolean = false;
+
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @Listen('scroll', { target: 'window' })
   onScroll() {
@@ -53,6 +55,8 @@ export class Shell {
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           <scale-app-header
             scrolled={this.scrolled}
@@ -74,10 +78,6 @@ export class Shell {
   }
 
   getCssClassMap() {
-    return classNames(
-      'shell',
-      this.customClass && this.customClass,
-      this.scrolled && 'sticky'
-    );
+    return classNames('shell', this.scrolled && 'sticky');
   }
 }

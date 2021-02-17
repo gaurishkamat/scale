@@ -69,7 +69,7 @@ export class AppFooter {
   render() {
     return (
       <Host>
-        <style>{this.styles}</style>
+        {this.styles && <style>{this.styles}</style>}
 
         <div class={this.getCssClassMap()}>
           <div class="footer-mask"></div>
