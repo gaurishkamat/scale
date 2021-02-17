@@ -4035,13 +4035,13 @@ export class ScaleSsrSlotFix {
 import { Switch as ISwitch } from '@scaleds/components-telekom/dist/types/components/switch/switch';
 export declare interface ScaleSwitch extends Components.ScaleSwitch {}
 @ProxyCmp({
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles']
+  inputs: ['checked', 'disabled', 'inputId', 'label']
 })
 @Component({
   selector: 'scale-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles'],
+  inputs: ['checked', 'disabled', 'inputId', 'label'],
   outputs: ['scaleChange']
 })
 export class ScaleSwitch {

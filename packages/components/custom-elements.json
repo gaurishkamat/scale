@@ -6399,10 +6399,6 @@
           "description": "(optional) Active switch"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Switch class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Disabled switch"
         },
@@ -6413,10 +6409,6 @@
         {
           "name": "label",
           "description": "(optional) switch label"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },
