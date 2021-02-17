@@ -98,7 +98,6 @@ export namespace Components {
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "portalName"?: string;
-        "scrolled": boolean;
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {
@@ -6502,7 +6501,6 @@ declare namespace LocalJSX {
         "iconNavigation"?: any[];
         "mainNavigation"?: any[];
         "portalName"?: string;
-        "scrolled"?: boolean;
         "sectorNavigation"?: any[];
     }
     interface ScaleAppShell {

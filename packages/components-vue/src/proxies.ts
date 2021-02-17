@@ -344,7 +344,6 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
     addonNavigation: {} as PropOptions<Components.ScaleAppHeader['addonNavigation']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppHeader['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppHeader['activeSectorId']>,
-    scrolled: {} as PropOptions<Components.ScaleAppHeader['scrolled']>,
   },
 
 
