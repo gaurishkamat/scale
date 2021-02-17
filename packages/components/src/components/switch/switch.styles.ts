@@ -1,6 +1,7 @@
 import { JssStyle } from 'jss';
 export const styles: JssStyle = {
   switch: {
+    display: 'inline-block',
     '& label': {
       cursor: 'pointer',
     },
