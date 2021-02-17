@@ -60,4 +60,4 @@ Wenn du mehr über die Gestaltung von Telekom Icons erfahren möchtest, lies bit
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-button--large-standard">Button</a>
+<a href="?path=/usage/components-button--large-standard">Button</a>

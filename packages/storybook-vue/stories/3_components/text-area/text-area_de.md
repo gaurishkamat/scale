@@ -59,4 +59,4 @@ Ist die Text-Area deaktiviert, können Nutzer*innen keinen Text eingeben, bezieh
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-text-field--standard">Text-Field</a>
+<a href="?path=/usage/components-text-field--standard">Text-Field</a>

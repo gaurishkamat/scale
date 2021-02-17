@@ -28,6 +28,6 @@ Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eign
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
-<a href="../?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="../?path=/usage/components-radiobutton--standard">Radio-Button</a>
+<a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
+<a href="?path=/usage/components-radiobutton--standard">Radio-Button</a>

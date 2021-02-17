@@ -55,6 +55,6 @@ Da es auf mobilen Geräten kein Mouseover gibt, bleibt der Pfeil eines Submenüs
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
-<a href="../?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
-<a href="../?path=/usage/components-accordion--standard">Accordion</a>
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
+<a href="?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
+<a href="?path=/usage/components-accordion--standard">Accordion</a>

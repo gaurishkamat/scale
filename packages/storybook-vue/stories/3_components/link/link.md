@@ -56,4 +56,4 @@ Choose the size based on the body text you are using.
 
 ## Related components
 
-<a href="../?path=/usage/components-button--large-standard">Button</a>
+<a href="?path=/usage/components-button--large-standard">Button</a>

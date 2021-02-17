@@ -97,5 +97,5 @@ Icons make it easier to grasp information when positioned in the right place. Fo
 
 ## Related components
 
-<a href="../?path=/usage/components-link--standard">Link, </a>
-<a href="../?path=/usage/components-icon--standard">Icon</a>
+<a href="?path=/usage/components-link--standard">Link, </a>
+<a href="?path=/usage/components-icon--standard">Icon</a>

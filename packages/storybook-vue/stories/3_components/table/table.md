@@ -56,5 +56,5 @@ Always align the content of the first column to the left. Depending on the conte
 
 ## Related components
 
-<a href="../?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="../?path=/usage/components-list--ordered">List</a>
+<a href="?path=/usage/components-accordion--standard">Accordion, </a>
+<a href="?path=/usage/components-list--ordered">List</a>
