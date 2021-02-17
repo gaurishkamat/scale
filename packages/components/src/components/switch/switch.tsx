@@ -1,20 +1,16 @@
 import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './switch.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
+const name = 'switch';
 let i = 0;
 
 @Component({
   tag: 'scale-switch',
+  styleUrl: './switch.css',
   shadow: false,
 })
-export class Switch implements Base {
-  /** (optional) Switch class */
-  @Prop() customClass?: string = '';
+export class Switch {
   /** (optional) Active switch */
   @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) Disabled switch */
@@ -23,10 +19,6 @@ export class Switch implements Base {
   @Prop() inputId?: string;
   /** (optional) switch label */
   @Prop() label?: string;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Switch', styles) stylesheet: StyleSheet;
 
   /** Emitted when the switch was clicked */
   @Event() scaleChange!: EventEmitter;
@@ -40,12 +32,10 @@ export class Switch implements Base {
   disconnectedCallback() {}
 
   render() {
-    const { classes } = this.stylesheet;
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
-          <label>
+          <label id={`${this.inputId}-label`}>
             <input
               type="checkbox"
               checked={this.checked}
@@ -59,20 +49,11 @@ export class Switch implements Base {
                 this.scaleChange.emit({ value: this.checked });
               }}
             />
-            <div class={classes['switch__wrapper']}>
-              <div class={classes['switch__container']}>
-                <div class={classes['switch__toggle']} />
-                <div class={classes['switch__text']} />
-              </div>
-              {!!this.label && (
-                <span
-                  class={classes['switch__label']}
-                  id={`${this.inputId}-label`}
-                >
-                  {this.label}
-                </span>
-              )}
+            <div class={`${name}__wrapper`}>
+              <div class={`${name}__toggle`} />
+              <div class={`${name}__text`} />
             </div>
+            {this.label && <span class={`${name}__label`}>{this.label}</span>}
           </label>
         </div>
       </Host>
@@ -80,11 +61,6 @@ export class Switch implements Base {
   }
 
   getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(
-      classes.switch,
-      this.customClass && this.customClass,
-      this.disabled && 'disabled'
-    );
+    return classNames(name, this.disabled && `${name}--disabled`);
   }
 }
