@@ -61,8 +61,10 @@ Damit Nutzer*innen eine Card sofort als solche erkennen können, muss der Inhalt
 Funktionen müssen immer auch über die Tastatur nutzbar sein. Bietest du mehrere zusätzliche Funktionen an, achte darauf dass sie kurz und aussagekräftig  beschriftet sind und mit der Tastatur in korrekter Reihenfolge fokussiert und bedient werden können.
 
 ### Screenreader
-Dient ein Bild in der Card rein gestalterischen Zwecken, zeichne es mit einem leeren Alternativtext aus (alt =" "). Ist das Bild Träger einer relevanten Information, formuliere einen entsprechenden Alternativtext. So wird die Information durch Screenreader auch für blinde Nutzer*innen zugänglich.Informationen zu korrekten Alternativtexten findest du hier
+Dient ein Bild in der Card rein gestalterischen Zwecken, zeichne es mit einem leeren Alternativtext aus (alt =" "). Ist das Bild Träger einer relevanten Information, formuliere einen entsprechenden Alternativtext. So wird die Information durch Screenreader auch für blinde Nutzer*innen zugänglich.Informationen zu korrekten Alternativtexten findest du hier:
+
 https://bik-fuer-alle.de/alternativtexte-fuer-grafiken.html
+
 https://www.barrierefreies-webdesign.de/knowhow/textalternative/herausforderung.html
 
 ## Best Practice
