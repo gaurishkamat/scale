@@ -50,9 +50,9 @@ Interaktive Icons
 
 ## Barrierefreiheit
 
-Interaktive Icons ohne Label müssen immer einen Alt-Text haben, den Screen Reader erkennen können (zum Beispiel Pfeile in einer Paginierung).
+### Besonderheit im Code 
 
-![Image Name](assets/3_components/icon/icon_accessibility.png)
+Sobald alleinstehende Icons in Interfaces relevante Informationen übermitteln, formuliere einen entsprechenden Alternativtext im Code-Property "accessibilityTitle". So wird die Information durch Screenreader auch für blinde Nutzer*innen zugänglich. Steht das Icon zusammen mit einem aussagekräftigen Text-Label, setze keinen Alternativtext.
 
 ## Gestaltung von Icons
 

@@ -6,18 +6,16 @@ Ein Divider ist eine feine Linie, mit der du Elemente in Gruppen unterteilen und
 
 Divider sind subtil: Sie sind gut erkennbar, aber nie dominant.
 
-### Verwende einen Divider, wenn
+### Verwende einen Divider
 
-*	Weißraum nicht ausreicht, um Inhalte zu strukturieren oder
-*	es nicht möglich ist, Weißraum zu nutzen, zum Beispiel bei Platzmangel.
+* als Layoutgrafik – ergänzend zu Weißraum, um gruppierte Elemente zusätzlich von ihrer Umgebung abzugrenzen.
 
 
 ### Verwende Divider besser nicht, wenn
 
-sie nicht unbedingt benötigt werden. Zu viele Divider lassen das Design unruhig und fragmentiert erscheinen.
+* der Divider die Funktion einer informationstragende Grafik hat. Informationstragende Grafiken vermitteln eine Information oder einen Zusammenhang auf den nicht verzichtet werden kann, da sie zu einem allgemeinen Verständnis beitragen.
 
 
 ## Varianten
 
 ![Image Name](assets/3_components/divider/divider_de.png)
-
