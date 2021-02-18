@@ -2,33 +2,33 @@ import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-do
 import ScaleButton from "./ScaleButton.vue";
 
 <Meta
-  title='Components/Button'
-  component={ScaleButton}
-  argTypes={{
-    variant: {
-      control: { type: 'select', options: ['primary', 'secondary'] }
-    },
-    type: {
-      control: { type: 'select', options: ['reset', 'submit', 'button'] }
-    },
-    label: {
-      defaultValue: 'Label',
-      control: { type: 'text' }
-    },
-    disabled: {
-      control: { type: 'boolean' }
-    }
-  }}
+    title='Components/Button'
+    component={ScaleButton}
+    argTypes={{
+        variant: {
+            control: { type: 'select', options: ['primary', 'secondary'] }
+        },
+        type: {
+            control: { type: 'select', options: ['reset', 'submit', 'button'] }
+        },
+        label: {
+            defaultValue: 'Label',
+            control: { type: 'text' }
+        },
+        disabled: {
+            control: { type: 'boolean' }
+        }
+    }}
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleButton },
-  props: {
-    label: String,
-    icon: String,
-    ...ScaleButton.props
-  },
-  template: `
+    components: { ScaleButton },
+    props: {
+        label: String,
+        icon: String,
+        ...ScaleButton.props
+    },
+    template: `
     <scale-button
       :title="title"
       :disabled="disabled"
@@ -37,7 +37,6 @@ export const Template = (args, { argTypes }) => ({
       :target="target"
       :type="type"
       :variant="variant"
-      :type="type"
       :icon-only="iconOnly"
       :aria-label="ariaLabel"
       @click="action('clicked')"
@@ -46,6 +45,7 @@ export const Template = (args, { argTypes }) => ({
       {{ iconOnly !== true ? label : null }}
       <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
   `
 })
@@ -55,44 +55,72 @@ export const Template = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name='Large Standard'
-    args={{
-      label: 'Label'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Standard'
+        args={{
+            label: 'Label'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <ArgsTable story='Large Standard' />
 
 
+## External Link
+
+If the button with a link is used to point the user to an external address, then the user should be informed of this.
+We recommend using an icon (visually) and an additional caption for screen readers.
+If the icon is an `img` element, its `alt` attribute should be empty.
+
+<Canvas withSource="none">
+    <Story
+        name='External link'
+        args={{
+            href: 'https://example.com',
+            target: '_blank',
+            label: 'Label',
+            icon: 'external'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+  External link, opens in new tab
+  <scale-icon-navigation-external-link size="24" />
+</scale-button>
+```
+
+
 ## Large Secondary
 
 <Canvas withSource="none">
-  <Story
-    name='Large Secondary'
-    args={{
-      variant: 'secondary'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Secondary'
+        args={{
+            variant: 'secondary'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ## Large Secondary Disabled
 
 <Canvas withSource="none">
-  <Story
-    name='Large Secondary Disabled'
-    args={{
-      variant: 'secondary',
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Secondary Disabled'
+        args={{
+            variant: 'secondary',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -103,14 +131,14 @@ export const Template = (args, { argTypes }) => ({
 ## Large Disabled
 
 <Canvas withSource="none">
-  <Story
-    name='Large Disabled'
-    args={{
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Disabled'
+        args={{
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -121,14 +149,14 @@ export const Template = (args, { argTypes }) => ({
 ## Large With Icon Before
 
 <Canvas withSource="none">
-  <Story
-    name='Large With Icon Before'
-    args={{
-      icon: 'before'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large With Icon Before'
+        args={{
+            icon: 'before'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -141,14 +169,14 @@ export const Template = (args, { argTypes }) => ({
 ## Large With Icon After
 
 <Canvas withSource="none">
-  <Story
-    name='Large With Icon After'
-    args={{
-      icon: 'after'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large With Icon After'
+        args={{
+            icon: 'after'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -159,16 +187,16 @@ export const Template = (args, { argTypes }) => ({
 ## Large Icon Only
 
 <Canvas withSource="none">
-  <Story
-    name='Large Icon Only'
-    args={{
-      iconOnly: true,
-      title: 'Search',
-      ariaLabel: 'Search'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Icon Only'
+        args={{
+            iconOnly: true,
+            title: 'Search',
+            ariaLabel: 'Search'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -179,16 +207,15 @@ export const Template = (args, { argTypes }) => ({
 ## Large Link
 
 <Canvas withSource="none">
-  <Story
-    name='Large Link'
-    args={{
-      href: 'https://example.com',
-      target: '_blank',
-      title: 'External link, opens in new tab'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Large Link'
+        args={{
+            href: 'https://example.com',
+            target: '_blank'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -197,15 +224,15 @@ export const Template = (args, { argTypes }) => ({
 
 
 <Canvas withSource="none">
-  <Story
-    name='Small Standard'
-    args={{
-      size: 'small',
-      label: 'Label'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Standard'
+        args={{
+            size: 'small',
+            label: 'Label'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 
@@ -217,15 +244,15 @@ export const Template = (args, { argTypes }) => ({
 ## Small Secondary
 
 <Canvas withSource="none">
-  <Story
-    name='Small Secondary'
-    args={{
-      size: 'small',
-      variant: 'secondary'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Secondary'
+        args={{
+            size: 'small',
+            variant: 'secondary'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 
@@ -236,16 +263,16 @@ export const Template = (args, { argTypes }) => ({
 ## Small Secondary Disabled
 
 <Canvas withSource="none">
-  <Story
-    name='Small Secondary Disabled'
-    args={{
-      size: 'small',
-      variant: 'secondary',
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Secondary Disabled'
+        args={{
+            size: 'small',
+            variant: 'secondary',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -256,15 +283,15 @@ export const Template = (args, { argTypes }) => ({
 ## Small Disabled
 
 <Canvas withSource="none">
-  <Story
-    name='Small Disabled'
-    args={{
-      size: 'small',
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Disabled'
+        args={{
+            size: 'small',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -275,15 +302,15 @@ export const Template = (args, { argTypes }) => ({
 ## Small With Icon Before
 
 <Canvas withSource="none">
-  <Story
-    name='Small With Icon Before'
-    args={{
-      size: 'small',
-      icon: 'before'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small With Icon Before'
+        args={{
+            size: 'small',
+            icon: 'before'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -294,15 +321,15 @@ export const Template = (args, { argTypes }) => ({
 ## Small With Icon After
 
 <Canvas withSource="none">
-  <Story
-    name='Small With Icon After'
-    args={{
-      size: 'small',
-      icon: 'after'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small With Icon After'
+        args={{
+            size: 'small',
+            icon: 'after'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -313,17 +340,17 @@ export const Template = (args, { argTypes }) => ({
 ## Small Icon Only
 
 <Canvas withSource="none">
-  <Story
-    name='Small Icon Only'
-    args={{
-      size: 'small',
-      iconOnly: true,
-      title: 'Search',
-      ariaLabel: 'Search'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Icon Only'
+        args={{
+            size: 'small',
+            iconOnly: true,
+            title: 'Search',
+            ariaLabel: 'Search'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -334,17 +361,16 @@ export const Template = (args, { argTypes }) => ({
 ## Small Link
 
 <Canvas withSource="none">
-  <Story
-    name='Small Link'
-    args={{
-      size: 'small',
-      href: 'https://example.com',
-      target: '_blank',
-      title: 'External link, opens in new tab'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Link'
+        args={{
+            size: 'small',
+            href: 'https://example.com',
+            target: '_blank'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html

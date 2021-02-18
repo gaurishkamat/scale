@@ -54,6 +54,6 @@ Verwende ein Sternchen (*) hinter dem Text, wenn eine Checkbox angekreuzt werden
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="../?path=/usage/components-switch--standard">Switch, </a>
-<a href="../?path=/usage/components-radiobutton--standard">Radio-Button</a>
+<a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
+<a href="?path=/usage/components-switch--standard">Switch, </a>
+<a href="?path=/usage/components-radiobutton--standard">Radio-Button</a>

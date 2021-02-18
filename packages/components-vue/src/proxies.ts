@@ -25,6 +25,7 @@ const customElementTags: string[] = [
  'scale-carousel',
  'scale-chart-stack-card',
  'scale-collapsible',
+ 'scale-date-picker',
  'scale-divider',
  'scale-icon',
  'scale-icon-action-add',
@@ -457,6 +458,37 @@ export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-collapsible', ['scaleExpand']),
+});
+
+
+export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleDatePicker['name']>,
+    identifier: {} as PropOptions<Components.ScaleDatePicker['identifier']>,
+    disabled: {} as PropOptions<Components.ScaleDatePicker['disabled']>,
+    role: {} as PropOptions<Components.ScaleDatePicker['role']>,
+    direction: {} as PropOptions<Components.ScaleDatePicker['direction']>,
+    required: {} as PropOptions<Components.ScaleDatePicker['required']>,
+    value: {} as PropOptions<Components.ScaleDatePicker['value']>,
+    min: {} as PropOptions<Components.ScaleDatePicker['min']>,
+    max: {} as PropOptions<Components.ScaleDatePicker['max']>,
+    firstDayOfWeek: {} as PropOptions<Components.ScaleDatePicker['firstDayOfWeek']>,
+    localization: {} as PropOptions<Components.ScaleDatePicker['localization']>,
+    dateAdapter: {} as PropOptions<Components.ScaleDatePicker['dateAdapter']>,
+    helperText: {} as PropOptions<Components.ScaleDatePicker['helperText']>,
+    status: {} as PropOptions<Components.ScaleDatePicker['status']>,
+    label: {} as PropOptions<Components.ScaleDatePicker['label']>,
+    size: {} as PropOptions<Components.ScaleDatePicker['size']>,
+  },
+
+
+  methods: {
+    setFocus: createCommonMethod('setFocus') as Components.ScaleDatePicker['setFocus'],
+    show: createCommonMethod('show') as Components.ScaleDatePicker['show'],
+    hide: createCommonMethod('hide') as Components.ScaleDatePicker['hide'],
+  },
+  render: createCommonRender('scale-date-picker', ['scaleChange', 'scaleBlur', 'scaleFocus']),
 });
 
 
@@ -3341,8 +3373,11 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNav['styles']>,
     ariaLabel: {} as PropOptions<Components.ScaleSidebarNav['ariaLabel']>,
+    collapsible: {} as PropOptions<Components.ScaleSidebarNav['collapsible']>,
+    collapsibleMediaQuery: {} as PropOptions<Components.ScaleSidebarNav['collapsibleMediaQuery']>,
+    collapsibleLabel: {} as PropOptions<Components.ScaleSidebarNav['collapsibleLabel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNav['styles']>,
   },
 
 
@@ -3353,15 +3388,15 @@ export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
     tag: {} as PropOptions<Components.ScaleSidebarNavCollapsible['tag']>,
     label: {} as PropOptions<Components.ScaleSidebarNavCollapsible['label']>,
     href: {} as PropOptions<Components.ScaleSidebarNavCollapsible['href']>,
-    isExpanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isExpanded']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavCollapsible['isCurrent']>,
+    expanded: {} as PropOptions<Components.ScaleSidebarNavCollapsible['expanded']>,
+    active: {} as PropOptions<Components.ScaleSidebarNavCollapsible['active']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavCollapsible['bold']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavCollapsible['condensed']>,
-    iconSize: {} as PropOptions<Components.ScaleSidebarNavCollapsible['iconSize']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavCollapsible['nestingLevel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNavCollapsible['styles']>,
   },
 
 
@@ -3372,10 +3407,12 @@ export const ScaleSidebarNavCollapsible = /*@__PURE__*/ Vue.extend({
 export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
     condensed: {} as PropOptions<Components.ScaleSidebarNavItem['condensed']>,
     bold: {} as PropOptions<Components.ScaleSidebarNavItem['bold']>,
-    isCurrent: {} as PropOptions<Components.ScaleSidebarNavItem['isCurrent']>,
+    active: {} as PropOptions<Components.ScaleSidebarNavItem['active']>,
+    current: {} as PropOptions<Components.ScaleSidebarNavItem['current']>,
+    nestingLevel: {} as PropOptions<Components.ScaleSidebarNavItem['nestingLevel']>,
+    styles: {} as PropOptions<Components.ScaleSidebarNavItem['styles']>,
   },
 
 

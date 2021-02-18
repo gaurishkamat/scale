@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
+import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
+import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
 import { StyleSheet } from "jss";
 export namespace Components {
@@ -230,6 +232,84 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleDatePicker {
+        /**
+          * Date adapter, for custom parsing/formatting. Must be object with a `parse` function which accepts a `string` and returns a `Date`, and a `format` function which accepts a `Date` and returns a `string`. Default is IS0-8601 parsing and formatting.
+         */
+        "dateAdapter"?: any;
+        /**
+          * Forces the opening direction of the calendar modal to be always left or right. This setting can be useful when the input is smaller than the opening date picker would be as by default the picker always opens towards right.
+         */
+        "direction": DuetDatePickerDirection;
+        /**
+          * Makes the date picker input component disabled. This prevents users from being able to interact with the input, and conveys its inactive state to assistive technologies.
+         */
+        "disabled": boolean;
+        /**
+          * Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc. Default is Monday.
+         */
+        "firstDayOfWeek"?: any;
+        /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
+          * Hide the calendar modal. Set `moveFocusToButton` to false to prevent focus returning to the date picker's button. Default is true.
+         */
+        "hide": (moveFocusToButton?: boolean) => Promise<void>;
+        /**
+          * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
+         */
+        "identifier": string;
+        /**
+          * (optional) Label
+         */
+        "label": string;
+        /**
+          * Button labels, day names, month names, etc, used for localization. Default is English.
+         */
+        "localization"?: DuetLocalizedText;
+        /**
+          * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
+         */
+        "max": string;
+        /**
+          * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.
+         */
+        "min": string;
+        /**
+          * Name of the date picker input.
+         */
+        "name": string;
+        /**
+          * Should the input be marked as required?
+         */
+        "required": boolean;
+        /**
+          * Defines a specific role attribute for the date picker input.
+         */
+        "role": string;
+        /**
+          * Sets focus on the date picker's input. Use this method instead of the global `focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * Show the calendar modal, moving focus to the calendar inside.
+         */
+        "show": () => Promise<void>;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
+        /**
+          * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
+         */
+        "value": string;
     }
     interface ScaleDivider {
         /**
@@ -4561,11 +4641,27 @@ export namespace Components {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -4575,35 +4671,35 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded": boolean;
+        /**
           * The URL where the link should point to
          */
         "href": string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize": number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label": string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active": boolean;
         /**
           * Bold text
          */
@@ -4613,13 +4709,17 @@ export namespace Components {
          */
         "condensed": boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent": boolean;
+        "current": string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel": number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -4949,6 +5049,12 @@ declare global {
     var HTMLScaleCollapsibleElement: {
         prototype: HTMLScaleCollapsibleElement;
         new (): HTMLScaleCollapsibleElement;
+    };
+    interface HTMLScaleDatePickerElement extends Components.ScaleDatePicker, HTMLStencilElement {
+    }
+    var HTMLScaleDatePickerElement: {
+        prototype: HTMLScaleDatePickerElement;
+        new (): HTMLScaleDatePickerElement;
     };
     interface HTMLScaleDividerElement extends Components.ScaleDivider, HTMLStencilElement {
     }
@@ -6178,6 +6284,7 @@ declare global {
         "scale-carousel": HTMLScaleCarouselElement;
         "scale-chart-stack-card": HTMLScaleChartStackCardElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
+        "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-icon-action-add": HTMLScaleIconActionAddElement;
@@ -6604,6 +6711,84 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: any;
+    }
+    interface ScaleDatePicker {
+        /**
+          * Date adapter, for custom parsing/formatting. Must be object with a `parse` function which accepts a `string` and returns a `Date`, and a `format` function which accepts a `Date` and returns a `string`. Default is IS0-8601 parsing and formatting.
+         */
+        "dateAdapter"?: any;
+        /**
+          * Forces the opening direction of the calendar modal to be always left or right. This setting can be useful when the input is smaller than the opening date picker would be as by default the picker always opens towards right.
+         */
+        "direction"?: DuetDatePickerDirection;
+        /**
+          * Makes the date picker input component disabled. This prevents users from being able to interact with the input, and conveys its inactive state to assistive technologies.
+         */
+        "disabled"?: boolean;
+        /**
+          * Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc. Default is Monday.
+         */
+        "firstDayOfWeek"?: any;
+        /**
+          * (optional) Helper text
+         */
+        "helperText"?: string;
+        /**
+          * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
+         */
+        "identifier"?: string;
+        /**
+          * (optional) Label
+         */
+        "label"?: string;
+        /**
+          * Button labels, day names, month names, etc, used for localization. Default is English.
+         */
+        "localization"?: DuetLocalizedText;
+        /**
+          * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.
+         */
+        "max"?: string;
+        /**
+          * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.
+         */
+        "min"?: string;
+        /**
+          * Name of the date picker input.
+         */
+        "name"?: string;
+        /**
+          * Event emitted the date picker input is blurred.
+         */
+        "onScaleBlur"?: (event: CustomEvent<DuetDatePickerFocusEvent>) => void;
+        /**
+          * Event emitted when a date is selected.
+         */
+        "onScaleChange"?: (event: CustomEvent<DuetDatePickerChangeEvent>) => void;
+        /**
+          * Event emitted the date picker input is focused.
+         */
+        "onScaleFocus"?: (event: CustomEvent<DuetDatePickerFocusEvent>) => void;
+        /**
+          * Should the input be marked as required?
+         */
+        "required"?: boolean;
+        /**
+          * Defines a specific role attribute for the date picker input.
+         */
+        "role"?: string;
+        /**
+          * (optional) Size
+         */
+        "size"?: string;
+        /**
+          * (optional) Status
+         */
+        "status"?: string;
+        /**
+          * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
+         */
+        "value"?: string;
     }
     interface ScaleDivider {
         /**
@@ -10957,11 +11142,27 @@ declare namespace LocalJSX {
          */
         "ariaLabel"?: string;
         /**
-          * (optional) Injected jss styles
+          * Set to `true` to make the sidebar toggleable (useful for small screens)
          */
-        "styles"?: any;
+        "collapsible"?: boolean;
+        /**
+          * Label for toggle button
+         */
+        "collapsibleLabel"?: string;
+        /**
+          * Automatically set `collapsible` based on this media query
+         */
+        "collapsibleMediaQuery"?: string;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSidebarNavCollapsible {
+        /**
+          * Label and icon get the active color
+         */
+        "active"?: boolean;
         /**
           * Bold label and icon
          */
@@ -10971,35 +11172,35 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
+          * Set this to `true` to expand
+         */
+        "expanded"?: boolean;
+        /**
           * The URL where the link should point to
          */
         "href"?: string;
-        /**
-          * The width and height of the icon in pixels
-         */
-        "iconSize"?: number;
-        /**
-          * Label and icon get the active color
-         */
-        "isCurrent"?: boolean;
-        /**
-          * Set this to `true` to expand
-         */
-        "isExpanded"?: boolean;
         /**
           * The text for the button
          */
         "label"?: string;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
         /**
           * The parent wrapper
          */
         "tag"?: string;
     }
     interface ScaleSidebarNavItem {
+        /**
+          * Text gets the active color
+         */
+        "active"?: boolean;
         /**
           * Bold text
          */
@@ -11009,13 +11210,17 @@ declare namespace LocalJSX {
          */
         "condensed"?: boolean;
         /**
-          * Text gets the active color
+          * Mark the child link as "current" with `aria-current=page`. Provide the text hint if needed, default is: "Zurzeit aktiv"
          */
-        "isCurrent"?: boolean;
+        "current"?: string | null;
         /**
-          * (optional) Injected jss styles
+          * Nesting level within the <scale-sidebar-nav> parent, gets set automatically
          */
-        "styles"?: any;
+        "nestingLevel"?: number;
+        /**
+          * (optional) Extra styles
+         */
+        "styles"?: string;
     }
     interface ScaleSlider {
         /**
@@ -11275,6 +11480,7 @@ declare namespace LocalJSX {
         "scale-carousel": ScaleCarousel;
         "scale-chart-stack-card": ScaleChartStackCard;
         "scale-collapsible": ScaleCollapsible;
+        "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-icon-action-add": ScaleIconActionAdd;
@@ -11498,6 +11704,7 @@ declare module "@stencil/core" {
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
             "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
+            "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-icon-action-add": LocalJSX.ScaleIconActionAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionAddElement>;

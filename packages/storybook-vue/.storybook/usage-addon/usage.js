@@ -14,6 +14,8 @@ import card_en from "raw-loader!../../stories/3_components/card/card.md";
 import card_de from "raw-loader!../../stories/3_components/card/card_de.md";
 import checkbox_en from "raw-loader!../../stories/3_components/checkbox/checkbox.md";
 import checkbox_de from "raw-loader!../../stories/3_components/checkbox/checkbox_de.md";
+import date_picker_en from "raw-loader!../../stories/3_components/date-picker/date-picker.md";
+import date_picker_de from "raw-loader!../../stories/3_components/date-picker/date-picker_de.md";
 import divider_en from "raw-loader!../../stories/3_components/divider/divider.md";
 import divider_de from "raw-loader!../../stories/3_components/divider/divider_de.md";
 import icon_en from "raw-loader!../../stories/3_components/icon/icon.md";
@@ -84,6 +86,8 @@ const Usage = props => {
     checkbox_de,
     divider_en,
     divider_de,
+    "datepicker_en": date_picker_en,
+    "datepicker_de": date_picker_de,
     "icon-library_en": icon_en,
     "icon-library_de": icon_de,
     icon_en,

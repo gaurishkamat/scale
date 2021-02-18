@@ -299,6 +299,34 @@ export class ScaleCollapsible {
   }
 }
 
+import { DatePicker as IDatePicker } from '@scaleds/components-telekom/dist/types/components/date-picker/date-picker';
+export declare interface ScaleDatePicker extends Components.ScaleDatePicker {}
+@ProxyCmp({
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'helperText', 'identifier', 'label', 'localization', 'max', 'min', 'name', 'required', 'role', 'size', 'status', 'value'],
+  methods: ['setFocus', 'show', 'hide']
+})
+@Component({
+  selector: 'scale-date-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['dateAdapter', 'direction', 'disabled', 'firstDayOfWeek', 'helperText', 'identifier', 'label', 'localization', 'max', 'min', 'name', 'required', 'role', 'size', 'status', 'value'],
+  outputs: ['scaleChange', 'scaleBlur', 'scaleFocus']
+})
+export class ScaleDatePicker {
+  /** Event emitted when a date is selected. */
+  scaleChange!: IDatePicker['scaleChange'];
+  /** Event emitted the date picker input is blurred. */
+  scaleBlur!: IDatePicker['scaleBlur'];
+  /** Event emitted the date picker input is focused. */
+  scaleFocus!: IDatePicker['scaleFocus'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange', 'scaleBlur', 'scaleFocus']);
+  }
+}
+
 
 export declare interface ScaleDivider extends Components.ScaleDivider {}
 @ProxyCmp({
@@ -3911,13 +3939,13 @@ export class ScaleProgressBar {
 
 export declare interface ScaleSidebarNav extends Components.ScaleSidebarNav {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['ariaLabel', 'collapsible', 'collapsibleLabel', 'collapsibleMediaQuery', 'styles']
 })
 @Component({
   selector: 'scale-sidebar-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'styles']
+  inputs: ['ariaLabel', 'collapsible', 'collapsibleLabel', 'collapsibleMediaQuery', 'styles']
 })
 export class ScaleSidebarNav {
   protected el: HTMLElement;
@@ -3930,13 +3958,13 @@ export class ScaleSidebarNav {
 
 export declare interface ScaleSidebarNavCollapsible extends Components.ScaleSidebarNavCollapsible {}
 @ProxyCmp({
-  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['active', 'bold', 'condensed', 'expanded', 'href', 'label', 'nestingLevel', 'styles', 'tag']
 })
 @Component({
   selector: 'scale-sidebar-nav-collapsible',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bold', 'condensed', 'href', 'iconSize', 'isCurrent', 'isExpanded', 'label', 'styles', 'tag']
+  inputs: ['active', 'bold', 'condensed', 'expanded', 'href', 'label', 'nestingLevel', 'styles', 'tag']
 })
 export class ScaleSidebarNavCollapsible {
   protected el: HTMLElement;
@@ -3949,13 +3977,13 @@ export class ScaleSidebarNavCollapsible {
 
 export declare interface ScaleSidebarNavItem extends Components.ScaleSidebarNavItem {}
 @ProxyCmp({
-  inputs: ['bold', 'condensed', 'isCurrent', 'styles']
+  inputs: ['active', 'bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 @Component({
   selector: 'scale-sidebar-nav-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['bold', 'condensed', 'isCurrent', 'styles']
+  inputs: ['active', 'bold', 'condensed', 'current', 'nestingLevel', 'styles']
 })
 export class ScaleSidebarNavItem {
   protected el: HTMLElement;

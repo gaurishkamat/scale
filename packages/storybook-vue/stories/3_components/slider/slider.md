@@ -53,4 +53,4 @@ Telekom sliders use Magenta as an accent color. If you need to apply a color cod
 
 ## Related components
 
-<a href="../?path=/usage/components-text-field--standard">Text Field</a>
+<a href="?path=/usage/components-text-field--standard">Text Field</a>

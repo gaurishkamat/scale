@@ -433,6 +433,83 @@
       ]
     },
     {
+      "name": "scale-date-picker",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "date-adapter",
+          "description": "Date adapter, for custom parsing/formatting.\nMust be object with a `parse` function which accepts a `string` and returns a `Date`,\nand a `format` function which accepts a `Date` and returns a `string`.\nDefault is IS0-8601 parsing and formatting."
+        },
+        {
+          "name": "direction",
+          "description": "Forces the opening direction of the calendar modal to be always left or right.\nThis setting can be useful when the input is smaller than the opening date picker\nwould be as by default the picker always opens towards right.",
+          "values": [
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "Makes the date picker input component disabled. This prevents users from being able to\ninteract with the input, and conveys its inactive state to assistive technologies."
+        },
+        {
+          "name": "first-day-of-week",
+          "description": "Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc.\nDefault is Monday."
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Helper text"
+        },
+        {
+          "name": "identifier",
+          "description": "Adds a unique identifier for the date picker input. Use this instead of html `id` attribute."
+        },
+        {
+          "name": "label",
+          "description": "(optional) Label"
+        },
+        {
+          "name": "max",
+          "description": "Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the min property."
+        },
+        {
+          "name": "min",
+          "description": "Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.\nThis setting can be used alone or together with the max property."
+        },
+        {
+          "name": "name",
+          "description": "Name of the date picker input."
+        },
+        {
+          "name": "required",
+          "description": "Should the input be marked as required?"
+        },
+        {
+          "name": "role",
+          "description": "Defines a specific role attribute for the date picker input."
+        },
+        {
+          "name": "size",
+          "description": "(optional) Size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Status"
+        },
+        {
+          "name": "value",
+          "description": "Date value. Must be in IS0-8601 format: YYYY-MM-DD."
+        }
+      ]
+    },
+    {
       "name": "scale-divider",
       "description": {
         "kind": "markdown",
@@ -6146,8 +6223,20 @@
           "description": "From mdn: A brief description of the purpose of the navigation,\nomitting the term \"navigation\", as the screen reader will read\nboth the role and the contents of the label."
         },
         {
+          "name": "collapsible",
+          "description": "Set to `true` to make the sidebar toggleable (useful for small screens)"
+        },
+        {
+          "name": "collapsible-label",
+          "description": "Label for toggle button"
+        },
+        {
+          "name": "collapsible-media-query",
+          "description": "Automatically set `collapsible` based on this media query"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },
@@ -6159,6 +6248,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Label and icon get the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold label and icon"
         },
@@ -6167,28 +6260,24 @@
           "description": "Used normally for third level items"
         },
         {
+          "name": "expanded",
+          "description": "Set this to `true` to expand"
+        },
+        {
           "name": "href",
           "description": "The URL where the link should point to"
-        },
-        {
-          "name": "icon-size",
-          "description": "The width and height of the icon in pixels"
-        },
-        {
-          "name": "is-current",
-          "description": "Label and icon get the active color"
-        },
-        {
-          "name": "is-expanded",
-          "description": "Set this to `true` to expand"
         },
         {
           "name": "label",
           "description": "The text for the button"
         },
         {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         },
         {
           "name": "tag",
@@ -6204,6 +6293,10 @@
       },
       "attributes": [
         {
+          "name": "active",
+          "description": "Text gets the active color"
+        },
+        {
           "name": "bold",
           "description": "Bold text"
         },
@@ -6212,12 +6305,16 @@
           "description": "Used normally for third level items, remove the bottom border"
         },
         {
-          "name": "is-current",
-          "description": "Text gets the active color"
+          "name": "current",
+          "description": "Mark the child link as \"current\" with `aria-current=page`.\nProvide the text hint if needed, default is: \"Zurzeit aktiv\""
+        },
+        {
+          "name": "nesting-level",
+          "description": "Nesting level within the <scale-sidebar-nav> parent, gets set automatically"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Extra styles"
         }
       ]
     },

@@ -1,20 +1,15 @@
-import { Component, h, Prop, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
+import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import classNames from 'classnames';
-import { styles } from './sidebar-nav.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-sidebar-nav',
+  styleUrl: 'sidebar-nav.css',
   shadow: true,
 })
-export class SidebarNav implements Base {
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('SidebarNav', styles) stylesheet: StyleSheet;
+export class SidebarNav {
+  mq: MediaQueryList;
+
+  @Element() el: HTMLElement;
 
   /**
    * From mdn: A brief description of the purpose of the navigation,
@@ -22,29 +17,112 @@ export class SidebarNav implements Base {
    * both the role and the contents of the label.
    */
   @Prop() ariaLabel?: string;
+  /** Set to `true` to make the sidebar toggleable (useful for small screens) */
+  @Prop({ mutable: true, reflect: true }) collapsible?: boolean = false;
+  /** Automatically set `collapsible` based on this media query */
+  @Prop() collapsibleMediaQuery?: string = '(max-width: 30em)';
+  /** Label for toggle button */
+  @Prop() collapsibleLabel?: string = 'Menu';
+  /** (optional) Extra styles */
+  @Prop() styles?: string;
 
-  componentWillLoad() {}
-  disconnectedCallback() {}
-  componentWillUpdate() {}
+  @State() collapsed: boolean = true;
+
+  componentDidLoad() {
+    this.setNestingLevelOnChildren();
+    this.setMatchMedia();
+  }
+
+  disconnectedCallback() {
+    if (this.mq != null) {
+      this.mq.removeListener(this.handleMediaQueryChange);
+    }
+  }
+
+  /**
+   * Set `nesting-level` and `condensed` attributes in
+   * <scale-sidebar-nav-collapsible> and <scale-sidebar-nav-item> children,
+   * so styling different levels "automatically" is possible.
+   */
+  setNestingLevelOnChildren() {
+    function setNestingLevel(el: Element, level: number = 1) {
+      Array.from(el.children).forEach(child => {
+        if (child.tagName.toUpperCase() === 'SCALE-SIDEBAR-NAV-COLLAPSIBLE') {
+          setNestingLevel(child, level + 1);
+          if (!child.hasAttribute('nesting-level')) {
+            child.setAttribute('nesting-level', String(level));
+          }
+          if (level === 2 && !child.hasAttribute('condensed')) {
+            child.setAttribute('condensed', 'true');
+          }
+        }
+        if (child.tagName.toUpperCase() === 'SCALE-SIDEBAR-NAV-ITEM') {
+          if (!child.hasAttribute('nesting-level')) {
+            child.setAttribute('nesting-level', String(level));
+          }
+          if (level === 3 && !child.hasAttribute('condensed')) {
+            child.setAttribute('condensed', 'true');
+          }
+        }
+      });
+    }
+
+    setNestingLevel(this.el);
+  }
+
+  setMatchMedia() {
+    if (this.collapsibleMediaQuery) {
+      this.mq = window.matchMedia(this.collapsibleMediaQuery);
+      // Recent versions of Safari throw with `addEventListener`
+      // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
+      this.mq.addListener(this.handleMediaQueryChange);
+    }
+  }
+
+  handleMediaQueryChange = (event: MediaQueryListEvent) => {
+    this.collapsible = event.matches;
+  };
+
+  toggle = () => {
+    this.collapsed = !this.collapsed;
+  };
 
   render() {
-    const { classes } = this.stylesheet;
     const label = this.ariaLabel ? { 'aria-label': this.ariaLabel } : {};
+    const hidden = this.collapsible ? { hidden: this.collapsed } : {};
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <nav class={this.getCssClassMap()} {...label}>
-          <ul class={classes['sidebar-nav__list']}>
-            <slot />
-          </ul>
-        </nav>
+        <style>{this.styles}</style>
+        <div class={this.getCssClassMap()} part="base">
+          {this.collapsible === true && (
+            <button
+              class="sidebar-nav__toggle-button"
+              aria-expanded={this.collapsed ? 'false' : 'true'}
+              onClick={this.toggle}
+              part="button"
+            >
+              {this.collapsibleLabel}
+              <scale-icon-navigation-collapse-down
+                class="sidebar-nav__icon"
+                size={16}
+              />
+            </button>
+          )}
+          <nav {...label} {...hidden} part="nav">
+            <ul class="sidebar-nav__list" role="list" part="list">
+              <slot />
+            </ul>
+          </nav>
+        </div>
       </Host>
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(classes['sidebar-nav']);
+  getCssClassMap() {
+    return classNames(
+      'sidebar-nav',
+      this.collapsible && 'sidebar-nav--collapsible'
+    );
   }
 }

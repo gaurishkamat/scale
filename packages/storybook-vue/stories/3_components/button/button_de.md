@@ -101,5 +101,5 @@ Icons erleichtern das Erfassen von Informationen, wenn sie an der richtigen Stel
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-link--standard">Link, </a>
-<a href="../?path=/usage/components-icon--standard">Icon</a>
+<a href="?path=/usage/components-link--standard">Link, </a>
+<a href="?path=/usage/components-icon--standard">Icon</a>
