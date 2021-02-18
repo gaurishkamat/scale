@@ -1,6 +1,5 @@
 <template>
   <scale-slider
-    :custom-class="customClass"
     :custom-color="customColor"
     :disabled="disabled"
     :label="label"
@@ -18,7 +17,6 @@
 <script>
 export default {
   props: {
-    customClass: String,
     customColor: String,
     disabled: { type: Boolean, default: false },
     label: String,

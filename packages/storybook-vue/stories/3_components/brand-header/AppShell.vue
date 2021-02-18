@@ -6,7 +6,6 @@
     :icon-navigation="iconNavigation"
     :sector-navigation="sectorNavigation"
     :addon-navigation="addonNavigation"
-    :custom-class="customClass"
     :active-route-id="activeRouteId"
     :active-sector-id="activeRouteId"
   >
@@ -23,7 +22,6 @@ export default {
     iconNavigation: String,
     sectorNavigation: String,
     addonNavigation: String,
-    customClass: String,
     activeRouteId: String,
     activeSectorId: String
   }

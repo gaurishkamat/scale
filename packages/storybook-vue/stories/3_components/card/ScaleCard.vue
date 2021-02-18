@@ -1,6 +1,5 @@
 <template>
   <scale-card
-    :custom-class="customClass"
     :label="label"
     :to="to"
     :target="target"
@@ -14,7 +13,6 @@
 <script>
 export default {
   props: {
-    customClass: String,
     label: String,
     to: String,
     target: { type: String, default: "_self" },

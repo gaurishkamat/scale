@@ -41,7 +41,6 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="{ maxWidth: slot.startsWith('<div') ? '300px'  : 'auto' }">
         <scale-card
-              :custom-class="customClass"
               :to="to"
               :target="target"
               :label="label"

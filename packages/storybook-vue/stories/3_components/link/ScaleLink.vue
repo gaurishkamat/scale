@@ -18,7 +18,6 @@
 export default {
   props: {
     block: { type: Boolean, default: false },
-    customClass: String,
     disabled: { type: Boolean, default: false },
     href: String,
     icon: String,

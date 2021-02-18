@@ -20,7 +20,6 @@
 export default {
   props: {
     icon: String,
-    customClass: String,
     customColor: String,
     disabled: { type: Boolean, default: false },
     label: String,
