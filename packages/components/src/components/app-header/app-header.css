@@ -191,10 +191,10 @@
   fill: #e20074 !important;
 }
 @media (min-width: 1024px) {
-  .header.sticky .header__nav-before {
+  .header .header__nav-before {
     top: 55px;
   }
-  .header.sticky .header__nav-after {
+  .header .header__nav-after {
     top: 55px;
   }
   .header .mobile-menu,
