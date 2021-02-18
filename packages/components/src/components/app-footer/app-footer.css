@@ -1,4 +1,6 @@
 .footer {
+  --footer-max-width: inherit;
+
   width: 100%;
   background: var(--scl-color-black);
   color: var(--scl-color-white);
@@ -7,7 +9,6 @@
   position: relative;
   bottom: 0;
   box-sizing: border-box;
-  --footer-max-width: inherit;
 }
 
 .footer--variant-minimal .footer {

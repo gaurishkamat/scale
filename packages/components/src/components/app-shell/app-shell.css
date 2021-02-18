@@ -5,9 +5,9 @@
 }
 
 .content {
-  background: #fff;
-  padding-left: 24px;
-  padding-right: 24px;
+  background: var(--header-content-background, #fff);
+  padding-left: var(--header-content-side-padding, 24px);
+  padding-right: var(--header-content-side-padding, 24px);
 }
 
 .shell {
