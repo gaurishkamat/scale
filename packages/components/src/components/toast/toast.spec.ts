@@ -1,14 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Toast } from './toast';
-import { styles } from './toast.styles';
-import jss from 'jss';
 
 describe('Toast', () => {
   let element;
-  let stylesheet;
   beforeEach(async () => {
     element = new Toast();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
     jest.useFakeTimers();
     jest.mock('date-fns');
   });
@@ -88,37 +84,19 @@ describe('Toast', () => {
   });
 
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.variant = 'primary';
-    stylesheet.addRule('toast--variant-primary', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['toast--variant-primary']
-    );
+    expect(element.getCssClassMap()).toContain('toast--variant-primary');
 
     element.size = 'small';
-    stylesheet.addRule('toast--size-small', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['toast--size-small']
-    );
+    expect(element.getCssClassMap()).toContain('toast--size-small');
 
     element.opened = true;
-    stylesheet.addRule('toast--opened', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['toast--opened']
-    );
+    expect(element.getCssClassMap()).toContain('toast--opened');
 
     element.hideToast = false;
-    stylesheet.addRule('toast--show', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['toast--show']
-    );
+    expect(element.getCssClassMap()).toContain('toast--show');
 
     element.hideToast = true;
-    stylesheet.addRule('toast--hide', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['toast--hide']
-    );
+    expect(element.getCssClassMap()).toContain('toast--hide');
   });
 });

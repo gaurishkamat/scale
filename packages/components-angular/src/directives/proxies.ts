@@ -4176,14 +4176,14 @@ export class ScaleText {
 
 export declare interface ScaleToast extends Components.ScaleToast {}
 @ProxyCmp({
-  inputs: ['animated', 'autoHide', 'customClass', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant'],
+  inputs: ['animated', 'autoHide', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant'],
   methods: ['open']
 })
 @Component({
   selector: 'scale-toast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['animated', 'autoHide', 'customClass', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant']
+  inputs: ['animated', 'autoHide', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant']
 })
 export class ScaleToast {
   protected el: HTMLElement;

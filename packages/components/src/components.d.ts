@@ -10,7 +10,6 @@ import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
-import { StyleSheet } from "jss";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
@@ -4855,10 +4854,6 @@ export namespace Components {
          */
         "autoHide"?: boolean | number;
         /**
-          * (optional) Toast class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Toast fade duration
          */
         "fadeDuration"?: number;
@@ -4883,9 +4878,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
         /**
           * (optional) Toast time
          */
@@ -11302,10 +11297,6 @@ declare namespace LocalJSX {
          */
         "autoHide"?: boolean | number;
         /**
-          * (optional) Toast class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Toast fade duration
          */
         "fadeDuration"?: number;
@@ -11326,9 +11317,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
         /**
           * (optional) Toast time
          */

@@ -6514,10 +6514,6 @@
           "description": "(optional) Toast autohide time"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Toast class"
-        },
-        {
           "name": "fade-duration",
           "description": "(optional) Toast fade duration"
         },
@@ -6536,6 +6532,10 @@
         {
           "name": "size",
           "description": "(optional) Toast size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "time",

@@ -3540,7 +3540,6 @@ export const ScaleText = /*@__PURE__*/ Vue.extend({
 export const ScaleToast = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleToast['customClass']>,
     size: {} as PropOptions<Components.ScaleToast['size']>,
     variant: {} as PropOptions<Components.ScaleToast['variant']>,
     opened: {} as PropOptions<Components.ScaleToast['opened']>,
