@@ -88,17 +88,24 @@
   box-shadow: 0 0 0 var(--focus-size, 2px) var(--color-focus, #009de0);
 }
 
-.switch input:checked ~ .switch__wrapper,
-.switch input:active ~ .switch__wrapper {
+.switch input:checked ~ .switch__wrapper {
   --switch-color-state: var(--switch-color-on);
   --switch-color-background: var(--switch-color-state);
   --switch-color-toggle: var(--switch-color-state-contrast);
   --switch-color-text: var(--switch-color-state-contrast);
 }
 
+/* Needs to placed after :checked but before :active */
 .switch:hover,
 .switch:hover input ~ .switch__wrapper {
   --switch-color-state: var(--switch-color-hover);
+}
+
+.switch input:active ~ .switch__wrapper {
+  --switch-color-state: var(--switch-color-on);
+  --switch-color-background: var(--switch-color-state);
+  --switch-color-toggle: var(--switch-color-state-contrast);
+  --switch-color-text: var(--switch-color-state-contrast);
 }
 
 /* disabled states */
