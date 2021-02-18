@@ -51,7 +51,7 @@ export class Header {
   hasSlotMenuMain: boolean;
   hasSlotMenuIcon: boolean;
   hasSlotMenuSector: boolean;
-  hasSlotMenuMeta: boolean;
+  hasSlotMenuAddon: boolean;
 
   @Listen('scroll', { target: 'window' })
   onScroll() {
@@ -247,8 +247,8 @@ export class Header {
   menuAddon() {
     return (
       <ul class="addon-navigation">
-        {this.hasSlotMenuSector ? (
-          <slot name="menu-meta"></slot>
+        {this.hasSlotMenuAddon ? (
+          <slot name="menu-addon"></slot>
         ) : (
           this.data.addonNavigation.map(item => (
             <li class="addon-navigation__item">
@@ -346,8 +346,8 @@ export class Header {
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
-    this.hasSlotMenuMeta = !!this.hostElement.querySelector(
-      '[slot="menu-meta"]'
+    this.hasSlotMenuAddon = !!this.hostElement.querySelector(
+      '[slot="menu-addon"]'
     );
   }
 
