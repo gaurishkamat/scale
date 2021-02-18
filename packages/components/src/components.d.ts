@@ -50,10 +50,6 @@ export namespace Components {
     }
     interface ScaleAlert {
         /**
-          * (optional) Alert class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Alert title
          */
         "headline": string;
@@ -74,9 +70,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Alert timeout
          */
@@ -6470,10 +6466,6 @@ declare namespace LocalJSX {
     }
     interface ScaleAlert {
         /**
-          * (optional) Alert class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Alert title
          */
         "headline"?: string;
@@ -6490,9 +6482,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Alert timeout
          */

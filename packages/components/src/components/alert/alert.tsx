@@ -1,20 +1,14 @@
 import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
-
-import { styles } from './alert.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-
 @Component({
   tag: 'scale-alert',
+  styleUrl: './alert.css',
   shadow: true,
 })
 export class Alert implements Base {
   @Element() hostElement: HTMLStencilElement;
-  /** (optional) Alert class */
-  @Prop() customClass?: string = '';
   /** (optional) Alert size */
   @Prop() size?: string = '';
   /** (optional) Alert variant */
@@ -27,14 +21,10 @@ export class Alert implements Base {
   @Prop() timeout?: boolean | number = false;
   /** (optional) Alert icon */
   @Prop() icon?: string = '';
-
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Alert', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   defaultTimeout = 2000;
-
   hasSlotClose: boolean;
 
   componentWillLoad() {
@@ -66,8 +56,6 @@ export class Alert implements Base {
   };
 
   render() {
-    const { classes } = this.stylesheet;
-
     this.onCloseAlertWithTimeout();
 
     if (!this.opened) {
@@ -76,19 +64,20 @@ export class Alert implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
-          <div class={classes.alert__body}>
-            <div class={classes.alert__icon}>{this.icon}</div>
-            <div class={classes.alert__content}>
-              <div class={classes.alert__headline}>{this.headline}</div>
+          <div class="alert__body">
+            <div class="alert__icon">{this.icon}</div>
+            <div class="alert__content">
+              <div class="alert__headline">{this.headline}</div>
               <slot />
             </div>
           </div>
 
-          <a class={classes.alert__close} onClick={this.close}>
+          <a class="alert__close" onClick={this.close}>
             {this.hasSlotClose ? (
-              <div class={classes['alert__close-icon']}>
+              <div class="alert__close-icon">
                 <slot name="close" />
               </div>
             ) : (
@@ -101,12 +90,10 @@ export class Alert implements Base {
   }
 
   getCssClassMap() {
-    const { classes } = this.stylesheet;
     return classNames(
-      classes.alert,
-      this.customClass && this.customClass,
-      this.size && classes[`alert--size-${this.size}`],
-      this.variant && classes[`alert--variant-${this.variant}`]
+      'alert',
+      this.size && `alert--size-${this.size}`,
+      this.variant && `alert--variant-${this.variant}`
     );
   }
 }

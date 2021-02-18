@@ -98,10 +98,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Alert class"
-        },
-        {
           "name": "headline",
           "description": "(optional) Alert title"
         },
@@ -119,7 +115,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "timeout",
@@ -213,10 +209,6 @@
           "description": ""
         },
         {
-          "name": "custom-class",
-          "description": ""
-        },
-        {
           "name": "icon-navigation",
           "description": ""
         },
@@ -231,6 +223,10 @@
         {
           "name": "sector-navigation",
           "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },

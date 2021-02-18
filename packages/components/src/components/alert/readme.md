@@ -7,16 +7,15 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                | Default     |
-| ------------- | -------------- | ------------------------------ | ------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Alert class         | `string`            | `''`        |
-| `headline`    | `headline`     | (optional) Alert title         | `string`            | `undefined` |
-| `icon`        | `icon`         | (optional) Alert icon          | `string`            | `''`        |
-| `opened`      | `opened`       | (optional) Alert opened        | `boolean`           | `undefined` |
-| `size`        | `size`         | (optional) Alert size          | `string`            | `''`        |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`               | `undefined` |
-| `timeout`     | `timeout`      | (optional) Alert timeout       | `boolean \| number` | `false`     |
-| `variant`     | `variant`      | (optional) Alert variant       | `string`            | `''`        |
+| Property   | Attribute  | Description                    | Type                | Default     |
+| ---------- | ---------- | ------------------------------ | ------------------- | ----------- |
+| `headline` | `headline` | (optional) Alert title         | `string`            | `undefined` |
+| `icon`     | `icon`     | (optional) Alert icon          | `string`            | `''`        |
+| `opened`   | `opened`   | (optional) Alert opened        | `boolean`           | `undefined` |
+| `size`     | `size`     | (optional) Alert size          | `string`            | `''`        |
+| `styles`   | `styles`   | (optional) Injected CSS styles | `string`            | `undefined` |
+| `timeout`  | `timeout`  | (optional) Alert timeout       | `boolean \| number` | `false`     |
+| `variant`  | `variant`  | (optional) Alert variant       | `string`            | `''`        |
 
 
 ## Methods

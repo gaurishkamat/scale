@@ -302,7 +302,6 @@ export const ScaleAccordion = /*@__PURE__*/ Vue.extend({
 export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleAlert['customClass']>,
     size: {} as PropOptions<Components.ScaleAlert['size']>,
     variant: {} as PropOptions<Components.ScaleAlert['variant']>,
     headline: {} as PropOptions<Components.ScaleAlert['headline']>,
@@ -363,9 +362,9 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
-    customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppShell['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppShell['activeSectorId']>,
+    styles: {} as PropOptions<Components.ScaleAppShell['styles']>,
   },
 
 
