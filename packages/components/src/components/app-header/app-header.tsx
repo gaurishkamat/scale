@@ -208,7 +208,7 @@ export class Header {
     );
   }
 
-  menuSegment() {
+  menuSector() {
     return (
       <ul class="segment-navigation">
         {this.hasSlotMenuSector ? (
@@ -363,7 +363,7 @@ export class Header {
               <div class="header__brand-branding">
                 <app-logo claim claimLang={this.claimLang}></app-logo>
               </div>
-              <div class="header__brand-sector">{this.menuSegment()}</div>
+              <div class="header__brand-sector">{this.menuSector()}</div>
               <div class="header__brand-meta">{this.menuAddon()}</div>
             </div>
           </div>
