@@ -28,6 +28,7 @@
 }
 
 .switch .switch__wrapper {
+  position: relative;
   border: 1px solid var(--switch-color-state);
   border-radius: calc(var(--switch-size) / 2);
   width: calc(2 * var(--switch-size) - var(--switch-offset));
@@ -61,15 +62,16 @@
 .switch .switch__toggle {
   position: absolute;
   border-radius: 50%;
-  height: calc(var(--switch-size) - (2 * var(--switch-offset)));
-  width: calc(var(--switch-size) - (2 * var(--switch-offset)));
+  padding: calc(0.5 * var(--switch-size) - var(--switch-offset));
+  margin: calc(-0.5 * var(--switch-size) + var(--switch-offset));
   background: var(--switch-color-toggle);
-  left: var(--switch-offset);
-  top: var(--switch-offset);
+  left: calc(0.5 * var(--switch-size) - 0.5 * var(--switch-offset));
+  top: 50%;
   transition: var(--transition-generic, all 0.2s ease-in-out);
 }
 
-.switch input:checked + .switch__wrapper .switch__toggle {
+.switch input:not(:checked):active + .switch__wrapper .switch__toggle,
+.switch input:checked:not(:active) + .switch__wrapper .switch__toggle {
   transform: translateX(var(--switch-size));
 }
 
