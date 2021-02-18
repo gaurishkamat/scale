@@ -34,10 +34,10 @@ export class Header {
   mobileMenuToggle?: HTMLAnchorElement;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
-  @Prop() mainNavigation?: any[] = [];
-  @Prop() iconNavigation?: any[] = [];
-  @Prop() sectorNavigation?: any[] = [];
-  @Prop() addonNavigation?: any[] = [];
+  @Prop() mainNavigation?: any = [];
+  @Prop() iconNavigation?: any = [];
+  @Prop() sectorNavigation?: any = [];
+  @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
   @State() activeSegment: any =
@@ -178,32 +178,34 @@ export class Header {
               </li>
             ))
         )}
-        <li
-          class={classNames(
-            'meta-navigation__item mobile-menu',
-            this.mobileMenu && 'open'
-          )}
-        >
-          <a
-            ref={el => (this.mobileMenuToggle = el)}
-            class="meta-navigation__item-link"
-            onClick={event => this.handleMobileMenu(event)}
-            tabIndex={0}
-            onKeyDown={event => {
-              if (['Enter', ' ', 'Escape', 'Esc'].includes(event.key)) {
-                event.preventDefault();
-                this.handleMobileMenu(event);
-              }
-            }}
+        {!this.hasSlotMenuMain && (
+          <li
+            class={classNames(
+              'meta-navigation__item mobile-menu',
+              this.mobileMenu && 'open'
+            )}
           >
-            <scale-icon
-              name={this.mobileMenu ? 'menu-close' : 'menu'}
-            ></scale-icon>
-            <span class="meta-navigation__item-label">
-              {this.mobileMenu ? openedName : defaultName}
-            </span>
-          </a>
-        </li>
+            <a
+              ref={el => (this.mobileMenuToggle = el)}
+              class="meta-navigation__item-link"
+              onClick={event => this.handleMobileMenu(event)}
+              tabIndex={0}
+              onKeyDown={event => {
+                if (['Enter', ' ', 'Escape', 'Esc'].includes(event.key)) {
+                  event.preventDefault();
+                  this.handleMobileMenu(event);
+                }
+              }}
+            >
+              <scale-icon
+                name={this.mobileMenu ? 'menu-close' : 'menu'}
+              ></scale-icon>
+              <span class="meta-navigation__item-label">
+                {this.mobileMenu ? openedName : defaultName}
+              </span>
+            </a>
+          </li>
+        )}
       </ul>
     );
   }
