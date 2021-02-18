@@ -3458,12 +3458,10 @@ export const ScaleSsrSlotFix = /*@__PURE__*/ Vue.extend({
 export const ScaleSwitch = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleSwitch['customClass']>,
     checked: {} as PropOptions<Components.ScaleSwitch['checked']>,
     disabled: {} as PropOptions<Components.ScaleSwitch['disabled']>,
     inputId: {} as PropOptions<Components.ScaleSwitch['inputId']>,
     label: {} as PropOptions<Components.ScaleSwitch['label']>,
-    styles: {} as PropOptions<Components.ScaleSwitch['styles']>,
   },
 
 

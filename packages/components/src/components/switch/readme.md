@@ -7,14 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type      | Default     |
-| ------------- | -------------- | ------------------------------ | --------- | ----------- |
-| `checked`     | `checked`      | (optional) Active switch       | `boolean` | `false`     |
-| `customClass` | `custom-class` | (optional) Switch class        | `string`  | `''`        |
-| `disabled`    | `disabled`     | (optional) Disabled switch     | `boolean` | `false`     |
-| `inputId`     | `input-id`     | (optional) Input id            | `string`  | `undefined` |
-| `label`       | `label`        | (optional) switch label        | `string`  | `undefined` |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`     | `undefined` |
+| Property   | Attribute  | Description                | Type      | Default     |
+| ---------- | ---------- | -------------------------- | --------- | ----------- |
+| `checked`  | `checked`  | (optional) Active switch   | `boolean` | `false`     |
+| `disabled` | `disabled` | (optional) Disabled switch | `boolean` | `false`     |
+| `inputId`  | `input-id` | (optional) Input id        | `string`  | `undefined` |
+| `label`    | `label`    | (optional) switch label    | `string`  | `undefined` |
 
 
 ## Events
