@@ -49,7 +49,7 @@ export class Header {
   @State() scrolled: boolean = false;
   data: Record<string, any[]>;
   hasSlotMenuMain: boolean;
-  hasSlotMenuRight: boolean;
+  hasSlotMenuIcon: boolean;
   hasSlotMenuSector: boolean;
   hasSlotMenuMeta: boolean;
 
@@ -155,14 +155,14 @@ export class Header {
     );
   }
 
-  menuMeta() {
+  menuIcon() {
     const { defaultName, openedName } = this.data.iconNavigation.find(
       ({ id }) => id === 'menu'
     ) || { defaultName: 'Menu', openedName: 'Close' };
     return (
       <ul class="meta-navigation">
-        {this.hasSlotMenuRight ? (
-          <slot name="menu-right"></slot>
+        {this.hasSlotMenuIcon ? (
+          <slot name="menu-icon"></slot>
         ) : (
           this.data.iconNavigation
             .filter(({ id }) => id !== 'menu')
@@ -340,8 +340,8 @@ export class Header {
       '[slot="menu-main"]'
     );
 
-    this.hasSlotMenuRight = !!this.hostElement.querySelector(
-      '[slot="menu-right"]'
+    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
+      '[slot="menu-icon"]'
     );
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
@@ -376,7 +376,7 @@ export class Header {
               </div>
               <div class="header__nav-menu-wrapper">
                 <div class="header__nav-menu-main">{this.menuMain()}</div>
-                <div class="header__nav-menu-right">{this.menuMeta()}</div>
+                <div class="header__nav-menu-icon">{this.menuIcon()}</div>
               </div>
             </div>
           </nav>
