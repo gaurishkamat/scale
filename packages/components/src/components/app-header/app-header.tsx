@@ -48,7 +48,7 @@ export class Header {
   @State() visibleMegaMenu: string = '';
   @State() scrolled: boolean = false;
   data: Record<string, any[]>;
-  hasSlotMenuLeft: boolean;
+  hasSlotMenuMain: boolean;
   hasSlotMenuRight: boolean;
   hasSlotMenuSector: boolean;
   hasSlotMenuMeta: boolean;
@@ -92,8 +92,8 @@ export class Header {
       this.visibleMegaMenu !== null;
     return (
       <ul class="main-navigation">
-        {this.hasSlotMenuLeft ? (
-          <slot name="menu-left"></slot>
+        {this.hasSlotMenuMain ? (
+          <slot name="menu-main"></slot>
         ) : (
           this.data.mainNavigation.map(item => (
             <li
@@ -336,8 +336,8 @@ export class Header {
       addonNavigation: maybeJSONParse(this.addonNavigation),
     };
 
-    this.hasSlotMenuLeft = !!this.hostElement.querySelector(
-      '[slot="menu-left"]'
+    this.hasSlotMenuMain = !!this.hostElement.querySelector(
+      '[slot="menu-main"]'
     );
 
     this.hasSlotMenuRight = !!this.hostElement.querySelector(
@@ -375,7 +375,7 @@ export class Header {
                 <app-logo color="#e20074"></app-logo>
               </div>
               <div class="header__nav-menu-wrapper">
-                <div class="header__nav-menu-left">{this.menuMain()}</div>
+                <div class="header__nav-menu-main">{this.menuMain()}</div>
                 <div class="header__nav-menu-right">{this.menuMeta()}</div>
               </div>
             </div>
