@@ -112,11 +112,14 @@ export namespace Components {
         "addonNavigation"?: any;
         "brandTitle"?: string;
         "claimLang"?: string;
-        "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
@@ -6525,11 +6528,14 @@ declare namespace LocalJSX {
         "addonNavigation"?: any;
         "brandTitle"?: string;
         "claimLang"?: string;
-        "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;

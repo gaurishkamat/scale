@@ -55,7 +55,7 @@ export default {
     focusable: { type: Boolean, default: false },
     decorative: { type: Boolean, default: false },
     accessibilityTitle: { type: String },
-    styles: { type: Object }
+    styles: { type: String }
   }
 }
 </script>
