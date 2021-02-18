@@ -1,27 +1,33 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@stencil/react-output-target';
-import { vueOutputTarget, ComponentModelConfig } from '@nowseemee/vue-output-target';
-import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-output-target';
+import {
+  vueOutputTarget,
+  ComponentModelConfig,
+} from '@nowseemee/vue-output-target';
+import {
+  angularOutputTarget,
+  ValueAccessorConfig,
+} from '@stencil/angular-output-target';
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
     elements: ['scale-input'],
     event: 'scaleChange',
-    targetAttr: 'value'
+    targetAttr: 'value',
   },
   {
     elements: ['scale-slider'],
     event: 'scaleChange',
-    targetAttr: 'value'
+    targetAttr: 'value',
   },
-]
+];
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: ['scale-input'],
     event: 'scaleChange',
     targetAttr: 'value',
-    type: 'text'
+    type: 'text',
   },
   // Tests won't pass for these
   // https://github.com/ionic-team/stencil-ds-output-targets/blob/master/packages/example-project/component-library-angular/__tests__/my-checkbox.spec.ts
@@ -47,9 +53,9 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     elementSelectors: ['scale-slider'],
     event: 'scaleChange',
     targetAttr: 'value',
-    type: 'number'
-  }
-]
+    type: 'number',
+  },
+];
 
 const excludeComponents = [
   'animatable-component',
@@ -72,56 +78,53 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-react/src/components.ts',
-      excludeComponents
+      excludeComponents,
     }),
     vueOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       proxiesFile: '../components-vue/src/proxies.ts',
       componentModels: vueComponentModels,
-      excludeComponents
+      excludeComponents,
     }),
     angularOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
       directivesProxyFile: '../components-angular/src/directives/proxies.ts',
-      directivesArrayFile: '../components-angular/src/directives/proxies-list.tsx',
-      directivesUtilsFile: '../components-angular/src/directives/proxies-utils.ts',
+      directivesArrayFile:
+        '../components-angular/src/directives/proxies-list.tsx',
+      directivesUtilsFile:
+        '../components-angular/src/directives/proxies-utils.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
-      excludeComponents
+      excludeComponents,
     }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [
-        { src: '../build/theme' , dest: '..', warn: true }
-      ]
+      copy: [{ src: '../build/theme', dest: '..', warn: true }],
     },
     {
-      type: 'docs-readme'
+      type: 'docs-readme',
     },
     {
       type: 'docs-vscode',
-      file: 'custom-elements.json'
+      file: 'custom-elements.json',
     },
     {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: '../build/theme', dest: 'build/theme' , warn: true },
-        { src: 'header.html', warn: true },
-        { src: 'date-picker.html', warn: true },
-      ]
+        { src: '../build/theme', dest: 'build/theme', warn: true },
+        { src: './html/*', dest: './', warn: true },
+      ],
     },
     {
       type: 'docs-json',
-      file: './dist/scale-components.json'
+      file: './dist/scale-components.json',
     },
     { type: 'dist-hydrate-script' },
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [
-        { src: 'components/icons/scale-icons.json', warn: true }
-      ]
+      copy: [{ src: 'components/icons/scale-icons.json', warn: true }],
     },
-  ]
-}
+  ],
+};
