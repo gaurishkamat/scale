@@ -87,7 +87,6 @@ export const Template = (args, { argTypes }) => ({
     name='With Link'
     args={{
       slot: 'A card with a link to example.com',
-      label: 'Example Card',
       to: 'https://example.com',
       target: '_blank',
       rel: 'noopener noreferrer'
@@ -113,7 +112,6 @@ export const Template = (args, { argTypes }) => ({
         <div style="padding: 24px;">A card with a full width image</div>
       </div>
       `,
-      label: 'Example Card',
       to: 'https://example.com',
       target: '_blank',
       rel: 'noopener noreferrer'
@@ -133,3 +131,45 @@ export const Template = (args, { argTypes }) => ({
   </scale-card>
 </div>
 ```
+
+
+## With further functions
+
+
+<Canvas withSource="none">
+    <Story
+        name='With further functions'
+        args={{
+            label: 'Example Card with further functions',
+        }}
+    >
+        {(args, { argTypes }) => ({
+            components: { ScaleCard },
+            props: {
+                slot: String,
+                ...ScaleCard.props
+            },
+            template: `
+                <div :style="{ maxWidth: '300px' }">
+                    <scale-card
+                          :custom-class="customClass"
+                          :to="to"
+                          :target="target"
+                          :label="label"
+                          :rel="rel"
+                          :styles="JSON.stringify(styles)"
+                        >
+                          <article style="margin: -24px;">
+                              <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
+                              <div style="padding: 24px;">
+                                <div style="padding: 0 0 24px 0;">A card with with further functions</div>
+                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>CTA #1</scale-button></div><EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
+                                <div style="display: flex; justify-content: flex-end;"><scale-link href="#more" tabindex=0>More...</scale-link></div>
+                              </div>
+                          </article>
+                    </scale-card>
+                </div>
+              `
+        })}
+    </Story>
+</Canvas>
