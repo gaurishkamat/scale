@@ -1,19 +1,17 @@
 import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 /**
  * @todo styles for custom icon (no-marker prop?)
  * @see https://github.com/carbon-design-system/carbon-web-components/tree/master/src/components/list
  */
 
-const name = 'list-item';
 @Component({
   tag: 'scale-list-item',
   styleUrl: './list-item.css',
   shadow: true,
 })
-export class ListItem implements Base {
+export class ListItem {
   @Element() el: HTMLElement;
 
   /** Whether this is a child of an ordered scale-list, gets set automatically by its parent */
@@ -27,9 +25,6 @@ export class ListItem implements Base {
 
   @State() hasNestedChild: boolean = false;
   @State() isNested: boolean = false;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   componentWillLoad() {
     this.isNested = this.isNestedCheck();
@@ -58,7 +53,7 @@ export class ListItem implements Base {
 
         <div class={this.getCssClassMap()} data-index={this.index}>
           <slot />
-          <div class={`${name}__nested-list`} hidden={!this.hasNestedChild}>
+          <div class={`list-item__nested-list`} hidden={!this.hasNestedChild}>
             <slot name="nested" onSlotchange={this.handleSlotChange}></slot>
           </div>
         </div>
@@ -70,10 +65,10 @@ export class ListItem implements Base {
     const orderType = this.ordered ? 'ordered' : 'unordered';
 
     return classNames(
-      name,
-      this.isNested && `${name}--nested`,
-      `${name}--${orderType}`,
-      !this.marker && `${name}--no-marker`
+      'list-item',
+      this.isNested && 'list-item--nested',
+      `list-item--${orderType}`,
+      !this.marker && 'list-item--no-marker'
     );
   }
 }

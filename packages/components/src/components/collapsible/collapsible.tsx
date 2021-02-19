@@ -9,13 +9,11 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 export interface CollapsibleEventDetail {
   expanded: boolean;
 }
 
-const name = 'collapsible';
 let i = 0;
 
 @Component({
@@ -23,7 +21,7 @@ let i = 0;
   styleUrl: './collapsible.css',
   shadow: true,
 })
-export class Collapsible implements Base {
+export class Collapsible {
   headingElement: HTMLElement;
   headingId: string;
   panelId: string;
@@ -40,9 +38,6 @@ export class Collapsible implements Base {
 
   /** Emitted so parent <scale-accordion> knows about it */
   @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   componentWillLoad() {
     const j = i++;
@@ -93,10 +88,10 @@ export class Collapsible implements Base {
         {this.styles && <style>{this.styles}</style>}
 
         <div class={this.getCssClassMap()}>
-          <h2 aria-level={this.level} class={`${name}__heading`}>
+          <h2 aria-level={this.level} class="collapsible__heading">
             <button
               id={this.headingId}
-              class={`${name}__button`}
+              class="collapsible__button"
               onClick={this.handleClick}
               aria-expanded={this.expanded ? 'true' : 'false'}
               aria-controls={this.panelId}
@@ -104,7 +99,7 @@ export class Collapsible implements Base {
               <scale-icon-navigation-collapse-down
                 size={16}
                 decorative
-                class={`${name}__icon`}
+                class="collapsible__icon"
               />
               <span ref={el => (this.headingElement = el)} />
             </button>
@@ -114,7 +109,7 @@ export class Collapsible implements Base {
             role="region"
             aria-labelledby={this.headingId}
             hidden={!this.expanded}
-            class={`${name}__content`}
+            class="collapsible__content"
           >
             <slot />
           </div>
@@ -124,6 +119,6 @@ export class Collapsible implements Base {
   }
 
   getCssClassMap() {
-    return classNames(name, this.expanded && `${name}--expanded`);
+    return classNames('collapsible', this.expanded && 'collapsible--expanded');
   }
 }

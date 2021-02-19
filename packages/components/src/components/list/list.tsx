@@ -1,19 +1,16 @@
 import { Component, h, Prop, Host, Element, Watch } from '@stencil/core';
 import classNames from 'classnames';
 
-import Base from '../../utils/base-interface';
-
 /**
  * @see https://github.com/carbon-design-system/carbon-web-components/tree/master/src/components/list
  */
 
-const name = 'list';
 @Component({
   tag: 'scale-list',
   styleUrl: './list.css',
   shadow: true,
 })
-export class List implements Base {
+export class List {
   isNested: boolean = false;
 
   @Element() el: HTMLElement;
@@ -27,9 +24,6 @@ export class List implements Base {
   orderedChanged(newValue) {
     this.propagatePropsToChildren(newValue);
   }
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   componentDidLoad() {
     this.propagatePropsToChildren(this.ordered);
@@ -71,9 +65,9 @@ export class List implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.ordered && `${name}--type-ordered`,
-      this.isNested && `${name}--nested`
+      'list',
+      this.ordered && 'list--type-ordered',
+      this.isNested && 'list--nested'
     );
   }
 }

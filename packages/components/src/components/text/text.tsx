@@ -1,9 +1,6 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 import { getTheme } from '../../theme/theme';
-
-const name = 'text';
 
 const variantStyles = () => {
   const result = {};
@@ -21,7 +18,7 @@ const variantStyles = () => {
   styleUrl: './text.css',
   shadow: true,
 })
-export class Text implements Base {
+export class Text {
   variants: object = variantStyles();
   /** (optional) Text variant */
   @Prop() variant?: string = 'body';
@@ -29,10 +26,6 @@ export class Text implements Base {
   @Prop() tag?: string = '';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
-  componentWillRender() {}
 
   render() {
     const Tag = this.tag || 'p';
@@ -49,6 +42,6 @@ export class Text implements Base {
   }
 
   getCssClassMap() {
-    return classNames(name, this.variant && `${name}--variant-${this.variant}`);
+    return classNames('text', this.variant && `text--variant-${this.variant}`);
   }
 }

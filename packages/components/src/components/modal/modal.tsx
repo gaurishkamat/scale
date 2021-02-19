@@ -15,7 +15,6 @@ import { StyleSheet } from 'jss';
 import { CssClassMap } from '../../utils/utils';
 import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
-import Base from '../../utils/base-interface';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 import { animateTo, KEYFRAMES } from '../../utils/animate';
 
@@ -32,7 +31,7 @@ const supportsResizeObserver = 'ResizeObserver' in window;
   tag: 'scale-modal',
   shadow: true,
 })
-export class Modal implements Base {
+export class Modal {
   closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   modalContainer: HTMLElement;
   modalWindow: HTMLElement;
@@ -57,7 +56,6 @@ export class Modal implements Base {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
-
   /** (optional) Injected jss styles */
   @Prop() styles?: any;
   /** decorator Jss stylesheet */
@@ -84,8 +82,6 @@ export class Modal implements Base {
       this.opened = false;
     }
   }
-
-  componentWillUpdate() {}
 
   disconnectedCallback() {
     if (this.resizeObserver) {
@@ -274,7 +270,6 @@ export class Modal implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes.modal,
-      this.customClass && this.customClass,
       this.isOpen && classes['modal--is-open'],
       this.hasActionsSlot && classes['modal--has-actions'],
       classes[`modal--align-actions-${this.alignActions}`],

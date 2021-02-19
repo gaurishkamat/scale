@@ -1,8 +1,5 @@
 import { Component, h, Prop, Host } from '@stencil/core';
-
 import classNames from 'classnames';
-
-const name = 'chart-stack-card';
 @Component({
   tag: 'scale-chart-stack-card',
   styleUrl: 'chart-stack-card.css',
@@ -12,9 +9,6 @@ export class ChartStackCard {
   @Prop() data: string | Array<Record<'type' | 'value' | 'percentage', string>>;
   /** Chart Title */
   @Prop() heading: string;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   readData = data => {
     try {
@@ -48,7 +42,7 @@ export class ChartStackCard {
   render() {
     return (
       <Host>
-        <div class="chart-stack-card">
+        <div class={this.getCssClassMap()}>
           <scale-card styles={this.getCardStyle()}>
             <div class="header">{this.heading}</div>
             <div class="bar">
@@ -97,6 +91,6 @@ export class ChartStackCard {
   }
 
   getCssClassMap() {
-    return classNames(name);
+    return classNames('chart-stack-card');
   }
 }

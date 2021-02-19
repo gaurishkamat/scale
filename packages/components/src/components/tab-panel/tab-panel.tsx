@@ -1,24 +1,20 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 let i = 0;
-const name = 'tab-panel';
+
 @Component({
   tag: 'scale-tab-panel',
   styleUrl: './tab-panel.css',
   shadow: true,
 })
-export class TabPanel implements Base {
+export class TabPanel {
   generatedId: number = i++;
 
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  disconnectedCallback() {}
-  componentWillUpdate() {}
 
   render() {
     return (
@@ -33,6 +29,6 @@ export class TabPanel implements Base {
   }
 
   getCssClassMap() {
-    return classNames(name, this.small && `${name}--small`);
+    return classNames('tab-panel', this.small && 'tab-panel--small');
   }
 }

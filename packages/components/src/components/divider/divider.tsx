@@ -1,24 +1,17 @@
 import { Component, Prop, h, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
-
-const name = 'divider';
 @Component({
   tag: 'scale-divider',
   styleUrl: './divider.css',
   shadow: true,
 })
-export class Divider implements Base {
+export class Divider {
   /** (optional) Divider size */
   @Prop() size?: string = '';
   /** (optional) Divider vertical */
   @Prop() vertical?: boolean = false;
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -26,7 +19,7 @@ export class Divider implements Base {
         {this.styles && <style>{this.styles}</style>}
 
         <div class={this.getCssClassMap()} aria-hidden>
-          {!this.vertical ? <hr /> : <span class={`${name}__vertical`} />}
+          {!this.vertical ? <hr /> : <span class="divider__vertical" />}
         </div>
       </Host>
     );
@@ -34,9 +27,9 @@ export class Divider implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.size && `${name}--size-${this.size}`,
-      this.vertical && `${name}--vertical`
+      'divider',
+      this.size && `divider--size-${this.size}`,
+      this.vertical && `divider--vertical`
     );
   }
 }

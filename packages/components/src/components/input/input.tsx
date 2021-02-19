@@ -10,7 +10,6 @@ import {
   Element,
 } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -26,7 +25,7 @@ const SELECT_ICON =
   styleUrl: './input.css',
   shadow: false,
 })
-export class Input implements Base {
+export class Input {
   selectElement: HTMLSelectElement;
   mutationObserver: MutationObserver;
 

@@ -1,15 +1,12 @@
 import { Component, Prop, h, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
-
-const name = 'progress-bar';
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
   styleUrl: './progress-bar.css',
   shadow: true,
 })
-export class ProgressBar implements Base {
+export class ProgressBar {
   /** (optional) Progress bar busy switch */
   @Prop() busy?: boolean = false;
   /** (required) Progress bar percentage */
@@ -73,42 +70,40 @@ export class ProgressBar implements Base {
 
         <div class={this.getCssClassMap()}>
           {!!this.label && (
-            <label class={`${name}__label`} htmlFor={this.progressBarId}>
+            <label class="progress-bar__label" htmlFor={this.progressBarId}>
               {this.label}
             </label>
           )}
-          <div class={`${name}-wrapper`}>
+          <div class="progress-bar-wrapper">
             <div
-              class={`${name}__outer`}
+              class="progress-bar__outer"
               style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={this.percentage}
               aria-busy={this.busy}
-              aria-valuetext={`${this.percentage}%`}
+              aria-valuetext="${this.percentage}%"
               aria-label={this.label}
               id={this.progressBarId}
             >
-              <div class={`${name}__inner`} style={this.progressStyle()}>
+              <div class="progress-bar__inner" style={this.progressStyle()}>
                 {!!this.statusInside && (
-                  <div
-                    class={`${name}__inner-status`}
-                    aria-hidden="true"
-                  >{`${this.percentage}%`}</div>
+                  <div class="progress-bar__inner-status" aria-hidden="true">
+                    '${this.percentage}%'
+                  </div>
                 )}
               </div>
             </div>
 
             {!!this.showStatus && (
-              <div
-                class={`${name}__status`}
-                aria-hidden="true"
-              >{`${this.percentage}%`}</div>
+              <div class="progress-bar__status" aria-hidden="true">
+                '${this.percentage}%'
+              </div>
             )}
             {!!this.icon && (
               <scale-icon
-                class={`${name}__status`}
+                class="progress-bar__status"
                 aria-hidden="true"
                 path={this.icon}
                 size={16}
@@ -117,12 +112,12 @@ export class ProgressBar implements Base {
           </div>
         </div>
         {!!this.statusDescription && (
-          <div class={`${name}__status-description`} role="alert">
+          <div class="progress-bar__status-description" role="alert">
             {this.statusDescription}
           </div>
         )}
         {
-          <span aria-live="polite" class={`${name}__aria-live`}>
+          <span aria-live="polite" class="progress-bar__aria-live">
             {this.percentage !== Math.round(this.percentage / 10) * 10
               ? `${Math.round(this.percentage / 10) * 10}%`
               : null}
@@ -134,9 +129,9 @@ export class ProgressBar implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.hasError && `${name}--has-error`,
-      this.disabled && `${name}--disabled`
+      'progress-bar',
+      this.hasError && 'progress-bar--has-error',
+      this.disabled && 'progress-bar--disabled'
     );
   }
 }

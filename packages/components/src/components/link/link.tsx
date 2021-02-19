@@ -1,14 +1,12 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
-const name = ' link';
 @Component({
   tag: 'scale-link',
   styleUrl: './link.css',
   shadow: true,
 })
-export class Link implements Base {
+export class Link {
   /** (optional) Link href */
   @Prop() href: string;
   /** (optional) Disabled link */
@@ -27,12 +25,8 @@ export class Link implements Base {
   @Prop() icon?: string;
   /** (optional) Icon title for accessibility */
   @Prop() iconAccessibilityTitle?: string;
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -44,7 +38,7 @@ export class Link implements Base {
           {...(!this.disabled ? { target: this.target } : {})}
           aria-disabled={this.disabled}
         >
-          <span class={`${name}__wrapper`}>
+          <span class="link__wrapper">
             <slot />
             {this.icon && this.icon !== '' && (
               <scale-icon
@@ -61,10 +55,10 @@ export class Link implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.variant && `${name}--variant-${this.variant}`,
-      this.disabled && `${name}--disabled`,
-      this.block && `${name}--block`
+      'link',
+      this.variant && `$link--variant-${this.variant}`,
+      this.disabled && 'link--disabled',
+      this.block && 'link--block'
     );
   }
 }

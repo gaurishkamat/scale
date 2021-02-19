@@ -8,7 +8,6 @@ import {
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 /**
  * @see https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-tabs/howto-tabs.js
@@ -19,13 +18,11 @@ const ARROW_RIGHT = 'ArrowRight';
 const HOME = 'Home';
 const END = 'End';
 
-const name = 'tab-nav';
-
 @Component({
   tag: 'scale-tab-nav',
   shadow: true,
 })
-export class TabNav implements Base {
+export class TabNav {
   @Element() el: HTMLElement;
 
   /** True for smaller height and font size in tab headers. */
@@ -80,9 +77,6 @@ export class TabNav implements Base {
     event.preventDefault();
     this.selectTab(nextTab);
   }
-
-  disconnectedCallback() {}
-  componentWillUpdate() {}
 
   connectedCallback() {
     if (!this.el.hasAttribute('role')) {
@@ -187,6 +181,6 @@ export class TabNav implements Base {
   }
 
   getCssClassMap() {
-    return classNames(name, this.small && `${name}--small`);
+    return classNames('tab-nav', this.small && 'tab-nav--small');
   }
 }

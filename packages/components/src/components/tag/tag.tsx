@@ -1,14 +1,11 @@
 import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
-
-const name = 'tag';
 @Component({
   tag: 'scale-tag',
   styleUrl: './tag.css',
   shadow: true,
 })
-export class Tag implements Base {
+export class Tag {
   /** (optional) Tag size */
   @Prop() size?: string = '';
   /** (optional) Tag variant */
@@ -75,12 +72,12 @@ export class Tag implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.size && `${name}--size-${this.size}`,
-      this.variant && `${name}--variant-${this.variant}`,
-      !!this.href && `${name}--link`,
-      !!this.dismissable && `${name}--dismissable`,
-      !!this.disabled && `${name}--disabled`
+      'tag',
+      this.size && `tag--size-${this.size}`,
+      this.variant && `tag--variant-${this.variant}`,
+      !!this.href && 'tag--link',
+      !!this.dismissable && 'tag--dismissable',
+      !!this.disabled && 'tag--disabled'
     );
   }
 }

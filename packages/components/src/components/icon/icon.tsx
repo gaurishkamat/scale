@@ -1,12 +1,11 @@
 import { Component, Prop, h, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-icon',
   styleUrl: './icon.css',
 })
-export class Icon implements Base {
+export class Icon {
   /**
    * A name that will be used to reference an SVG object defined elsewhere,
    * via `<use xlink:href="">`. `icon-` will be prepended to the name, so if
@@ -35,9 +34,6 @@ export class Icon implements Base {
   @Prop() decorative?: boolean = false;
   /** (optional) When using the icon as standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     const pathAttributes = {

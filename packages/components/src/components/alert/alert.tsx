@@ -1,13 +1,12 @@
 import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 @Component({
   tag: 'scale-alert',
   styleUrl: './alert.css',
   shadow: true,
 })
-export class Alert implements Base {
+export class Alert {
   @Element() hostElement: HTMLStencilElement;
   /** (optional) Alert size */
   @Prop() size?: string = '';
@@ -30,8 +29,6 @@ export class Alert implements Base {
   componentWillLoad() {
     this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
   }
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   close = () => {
     this.opened = false;

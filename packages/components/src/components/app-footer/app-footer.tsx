@@ -21,7 +21,6 @@ export class AppFooter {
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 

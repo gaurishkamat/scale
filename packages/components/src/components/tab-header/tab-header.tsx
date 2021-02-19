@@ -1,8 +1,6 @@
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 
-const name = 'tab-header';
 let i = 0;
 
 @Component({
@@ -10,7 +8,7 @@ let i = 0;
   styleUrl: './tab-header.css',
   shadow: true,
 })
-export class TabHeader implements Base {
+export class TabHeader {
   generatedId: number = i++;
   container: HTMLElement;
 
@@ -20,7 +18,6 @@ export class TabHeader implements Base {
   @Prop() small: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
   @Prop() selected: boolean;
 
   @State() hasFocus: boolean = false;
@@ -53,9 +50,6 @@ export class TabHeader implements Base {
     children.forEach(child => child[action]('selected', ''));
   }
 
-  disconnectedCallback() {}
-  componentWillUpdate() {}
-
   render() {
     return (
       <Host
@@ -77,10 +71,10 @@ export class TabHeader implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.selected && `${name}--selected`,
-      this.small && `${name}--small`,
-      this.hasFocus && `${name}--has-focus`
+      'tab-header',
+      this.selected && 'tab-header--selected',
+      this.small && 'tab-header--small',
+      this.hasFocus && 'tab-header--has-focus'
     );
   }
 }

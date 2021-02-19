@@ -1,6 +1,5 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import Base from '../../utils/base-interface';
 /*
   @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
 */
@@ -10,11 +9,9 @@ import Base from '../../utils/base-interface';
   styleUrl: 'breadcrumb.css',
   shadow: true,
 })
-export class Breadcrumb implements Base {
+export class Breadcrumb {
   @Element() hostElement: HTMLElement;
-
   @Prop() separator?: string;
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -27,9 +24,6 @@ export class Breadcrumb implements Base {
     }
     this.separatorSlot = this.hostElement.querySelector('[slot="separator"]');
   }
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
@@ -91,8 +85,6 @@ export class Breadcrumb implements Base {
   }
 
   getCssClassMap() {
-    const name = 'breadcrumb';
-
-    return classNames(name);
+    return classNames('breadcrumb');
   }
 }

@@ -1,8 +1,6 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
-import Base from '../../utils/base-interface';
-
 /*
   TODO
   - [ ] update storybook (remove link disabled?)
@@ -13,7 +11,7 @@ import Base from '../../utils/base-interface';
   styleUrl: 'button.css',
   shadow: true,
 })
-export class Button implements Base {
+export class Button {
   @Element() hostElement: HTMLElement;
 
   /** (optional) The size of the button */
@@ -34,7 +32,6 @@ export class Button implements Base {
   @Prop() href?: string;
   /** (optional) The target attribute for the <a> tag */
   @Prop() target?: string = '_self';
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -59,9 +56,6 @@ export class Button implements Base {
       }
     }
   };
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   connectedCallback() {
     this.setIconPositionProp();
@@ -113,16 +107,15 @@ export class Button implements Base {
   }
 
   getCssClassMap() {
-    const name = 'button';
     return classNames(
-      name,
-      this.size && `${name}--size-${this.size}`,
-      this.variant && `${name}--variant-${this.variant}`,
-      this.iconOnly && `${name}--icon-only`,
+      'button',
+      this.size && `button--size-${this.size}`,
+      this.variant && `button--variant-${this.variant}`,
+      this.iconOnly && `button--icon-only`,
       !this.iconOnly &&
         this.iconPosition &&
-        `${name}--icon-${this.iconPosition}`,
-      this.disabled && !this.href && `${name}--disabled`
+        `button--icon-${this.iconPosition}`,
+      this.disabled && !this.href && `button--disabled`
     );
   }
 }

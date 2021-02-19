@@ -1,15 +1,12 @@
 import { Component, Prop, h, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
 
-import Base from '../../utils/base-interface';
-
-const name = 'table';
 @Component({
   tag: 'scale-table',
   styleUrl: './table.css',
   shadow: false,
 })
-export class Table implements Base {
+export class Table {
   @Element() hostElement: HTMLElement;
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
@@ -32,8 +29,6 @@ export class Table implements Base {
       );
     });
   }
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -45,9 +40,9 @@ export class Table implements Base {
 
   getCssClassMap() {
     return classNames(
-      name,
-      this.size && `${name}--size-${this.size}`,
-      this.showSort && `${name}--sortable`
+      'table',
+      this.size && `table--size-${this.size}`,
+      this.showSort && 'table--sortable'
     );
   }
 }

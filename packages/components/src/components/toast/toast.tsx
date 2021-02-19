@@ -9,14 +9,13 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { formatDistance, subSeconds } from 'date-fns';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-toast',
   styleUrl: './toast.css',
   shadow: true,
 })
-export class Toast implements Base {
+export class Toast {
   /** (optional) Toast size */
   @Prop() size?: string = '';
   /** (optional) Toast variant */
@@ -35,6 +34,8 @@ export class Toast implements Base {
   @Prop() positionRight?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
+  /** (optional) Injected CSS styles */
+  @Prop({ reflect: true }) styles?: string;
 
   /** (optional) Toast state progress */
   @State() progress: number = 0;
@@ -43,11 +44,7 @@ export class Toast implements Base {
 
   @Element() element: HTMLElement;
 
-  /** (optional) Injected CSS styles */
-  @Prop({ reflect: true }) styles?: string;
-
   hideToast: boolean = false;
-
   timerId = null;
 
   disconnectedCallback() {
@@ -58,7 +55,6 @@ export class Toast implements Base {
       this.progress = 0;
     }
   }
-  componentWillUpdate() {}
 
   close = () => {
     clearInterval(this.timerId);
@@ -188,9 +184,9 @@ export class Toast implements Base {
       'toast',
       this.size && `toast--size-${this.size}`,
       this.variant && `toast--variant-${this.variant}`,
-      !!this.opened && `toast--opened`,
-      !!!this.hideToast && `toast--show`,
-      !!this.hideToast && `toast--hide`
+      !!this.opened && 'toast--opened',
+      !!!this.hideToast && 'toast--show',
+      !!this.hideToast && 'toast--hide'
     );
   }
 }

@@ -39,7 +39,6 @@ export class Shell {
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
   @State() scrolled: boolean = false;
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -47,10 +46,6 @@ export class Shell {
   onScroll() {
     this.scrolled = window.pageYOffset > 2;
   }
-
-  componentWillLoad() {}
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -78,6 +73,6 @@ export class Shell {
   }
 
   getCssClassMap() {
-    return classNames('shell', this.scrolled && 'sticky');
+    return classNames('shell', this.scrolled && 'shell--sticky');
   }
 }

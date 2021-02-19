@@ -1,3 +1,7 @@
+.card-border {
+  /* a11y: add border for high contrast mode */
+  border: 1px solid transparent;
+}
 .card {
   width: 100%;
   overflow: hidden;
@@ -10,8 +14,6 @@
     0 4px 16px 0 rgba(0, 0, 0, 0.1),
     0 2px 4px 0 rgba(0, 0, 0, 0.1)
   );
-  /* a11y: add border for high contrast mode */
-  border: 1px solid transparent;
 }
 
 .card__body {
