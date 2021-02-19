@@ -4,9 +4,6 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card__border {
-  border: 1px solid transparent;
-}
 .card {
   width: 100%;
   overflow: hidden;
@@ -15,6 +12,7 @@ exports[`Card should match snapshot 1`] = `
   transition: all .2s ease-in-out;
   border-radius: 0.5rem;
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
+  border: 1px solid transparent;
 }
 .card__body {
   padding: 1.5rem;
@@ -43,12 +41,10 @@ exports[`Card should match snapshot 1`] = `
   margin: 0;
 }
     </style>
-    <div class="card__border">
       <div class="card" role="group" target="_self">
         <div class="card__body">
           <slot></slot>
         </div>
-      </div>
     </div>
   </mock:shadow-root>
   Label
