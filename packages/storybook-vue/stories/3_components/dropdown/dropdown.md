@@ -83,6 +83,6 @@ When space is limited, use the small dropdown consistently.
 
 ## Related components
 
-<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
-<a href="../?path=/usage/components-switch--standard">Switch, </a>
-<a href="../?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="?path=/usage/components-switch--standard">Switch, </a>
+<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>

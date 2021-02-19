@@ -1,4 +1,7 @@
-# Text-List
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Text-List</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Eine Liste gliedert zusammengehörige Inhalte in einer vertikalen Struktur. Sie macht es Nutzer*innen einfacher, die für sie relevanten Informationen zu finden.
 
@@ -43,4 +46,4 @@ Diese Liste beinhaltet Begriffe und darunter die jeweilige Definition.
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-table--standard">Table</a>
+<a href="?path=/usage/components-table--standard">Table</a>

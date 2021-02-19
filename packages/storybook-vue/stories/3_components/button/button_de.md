@@ -1,4 +1,7 @@
-# Button
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Button</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Der Button ist das wichtigste Interaktionselement eines User Interfaces. Per Klick/Tap lösen Nutzer*innen die dazugehörige Aktion aus.
 
@@ -101,5 +104,5 @@ Icons erleichtern das Erfassen von Informationen, wenn sie an der richtigen Stel
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-link--standard">Link, </a>
-<a href="../?path=/usage/components-icon--standard">Icon</a>
+<a href="?path=/usage/components-link--standard">Link, </a>
+<a href="?path=/usage/components-icon--standard">Icon</a>

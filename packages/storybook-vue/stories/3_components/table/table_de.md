@@ -1,4 +1,7 @@
-# Table
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Table</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tabellen helfen Nutzer*innen, Daten leicht zu erfassen und zu vergleichen.
 
@@ -52,5 +55,5 @@ Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darste
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="../?path=/usage/components-list--ordered">List</a>
+<a href="?path=/usage/components-accordion--standard">Accordion, </a>
+<a href="?path=/usage/components-list--ordered">List</a>

@@ -1,4 +1,7 @@
-# Table
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Table</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Tables help the user grasp and compare data easily.
 
@@ -56,5 +59,5 @@ Always align the content of the first column to the left. Depending on the conte
 
 ## Related components
 
-<a href="../?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="../?path=/usage/components-list--ordered">List</a>
+<a href="?path=/usage/components-accordion--standard">Accordion, </a>
+<a href="?path=/usage/components-list--ordered">List</a>

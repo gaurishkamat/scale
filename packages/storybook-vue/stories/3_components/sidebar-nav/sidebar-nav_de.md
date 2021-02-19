@@ -1,4 +1,7 @@
-# Sidebar-Navigation
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Sidebar-Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Die Sidebar-Navigation ergänzt die Hauptnavigation bei umfangreichen Informationsarchitekturen. Sie hilft Nutzer*innen, Inhalte innerhalb eines Bereichs der Webseite schnell zu finden.
 
@@ -55,6 +58,6 @@ Da es auf mobilen Geräten kein Mouseover gibt, bleibt der Pfeil eines Submenüs
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
-<a href="../?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
-<a href="../?path=/usage/components-accordion--standard">Accordion</a>
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
+<a href="?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
+<a href="?path=/usage/components-accordion--standard">Accordion</a>

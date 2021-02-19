@@ -4783,10 +4783,6 @@ export namespace Components {
          */
         "checked"?: boolean;
         /**
-          * (optional) Switch class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled switch
          */
         "disabled"?: boolean;
@@ -4798,10 +4794,6 @@ export namespace Components {
           * (optional) switch label
          */
         "label"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTabHeader {
         "selected": boolean;
@@ -11285,10 +11277,6 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean;
         /**
-          * (optional) Switch class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled switch
          */
         "disabled"?: boolean;
@@ -11304,10 +11292,6 @@ declare namespace LocalJSX {
           * Emitted when the switch was clicked
          */
         "onScaleChange"?: (event: CustomEvent<any>) => void;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTabHeader {
         "selected"?: boolean;

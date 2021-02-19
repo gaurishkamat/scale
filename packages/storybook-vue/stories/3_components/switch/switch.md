@@ -30,6 +30,6 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 
 ## Related components
 
-<a href="../?path=/usage/components-checkbox--standard">Checkbox, </a>
-<a href="../?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="../?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
+<a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
+<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>

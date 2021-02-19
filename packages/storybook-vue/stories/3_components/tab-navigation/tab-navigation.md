@@ -67,5 +67,5 @@ The label clearly describes the content which a particular tab represents. Since
 
 ## Related components
 
-<a href="../?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation</a>
+<a href="?path=/usage/components-accordion--standard">Accordion, </a>
+<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation</a>

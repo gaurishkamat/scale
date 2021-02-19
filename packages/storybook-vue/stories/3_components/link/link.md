@@ -1,4 +1,7 @@
-# Link
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Link</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A link is an interactive piece of text. It typically forwards users to another location or file.
 
@@ -56,4 +59,4 @@ Choose the size based on the body text you are using.
 
 ## Related components
 
-<a href="../?path=/usage/components-button--large-standard">Button</a>
+<a href="?path=/usage/components-button--large-standard">Button</a>

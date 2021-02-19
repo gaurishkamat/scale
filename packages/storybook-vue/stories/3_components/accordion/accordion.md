@@ -1,4 +1,7 @@
-# Accordion
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Accordion</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Accordions help organize and present large amounts of content with an efficient use of space. They allow users to move through content and explore which topics to read.
 
@@ -42,5 +45,5 @@ You can add a simple body text or also insert headlines, split text into paragra
 
 ## Related components
 
-<a href="../?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
-<a href="../?path=/usage/components-sidebar-navigation--standard">Sidebar Navigation</a>
+<a href="?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
+<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar Navigation</a>

@@ -47,4 +47,4 @@ Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, 
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-text-field--standard">Text-Field</a>
+<a href="?path=/usage/components-text-field--standard">Text-Field</a>

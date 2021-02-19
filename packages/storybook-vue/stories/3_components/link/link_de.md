@@ -1,4 +1,7 @@
-# Link
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Link</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Ein Text-Link ist ein interaktives Element, das Nutzer*innen per Klick/Tap zu einem bestimmten Ort oder Dokument führt.
 
@@ -54,4 +57,4 @@ Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 
 ## Verwandte Komponenten
 
-<a href="../?path=/usage/components-button--large-standard">Button</a>
+<a href="?path=/usage/components-button--large-standard">Button</a>
