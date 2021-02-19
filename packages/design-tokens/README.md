@@ -33,24 +33,33 @@ The source is written in (type-checked, not yet) JavaScript, in `src/tokens.js`.
 
 The `yarn build` command triggers a custom script that builds the output files in the dist/ folder.
 
+The tokens are organized in categories, and each category has sections, which include the actual key/value pairs.
+
+`CATEGORY-SECTION-KEY: VALUE`
+
+The name of the token is determined by this structure. For example, if we look at the `family` section within the `font` category, we'll find at least the `sans` and `mono` values, so the tokens —in the CSS output— look like this:
+
+```css
+:root {
+  /* --{namespace}-{category}-{section}-{key}: {value} */
+  --scl-font-family-sans: TeleNeoWeb, sans-serif;
+  --scl-font-family-mono: monospace;
+}
+```
+
+Sometimes you don't need a section, for this there's the special keyword `DEFAULT` we can use to omit the section name in the resulting token name.
+
 ### Example
 
 ```js
-tokens.spacing = {
+tokens.color = {
   DEFAULT: {
-    1: 1,
-    2: 2,
-    4: 4,
-    8: 8,
-    12: 12,
-    16: 16,
-    24: 24,
-    32: 32,
-    40: 40,
-    48: 48,
-    64: 64,
-    80: 80,
+    primary: palette.magenta,
   },
+  text: {
+    default: palette.grey90,
+    offset: palette.white,
+  }
 };
 ```
 
@@ -58,22 +67,14 @@ Yields the following CSS:
 
 ```css
 :root {
-    /* SPACING */
-    --scl-spacing-1: 0.0625rem;
-    --scl-spacing-2: 0.125rem;
-    --scl-spacing-4: 0.25rem;
-    --scl-spacing-8: 0.5rem;
-    --scl-spacing-12: 0.75rem;
-    --scl-spacing-16: 1rem;
-    --scl-spacing-24: 1.5rem;
-    --scl-spacing-32: 2rem;
-    --scl-spacing-40: 2.5rem;
-    --scl-spacing-48: 3rem;
-    --scl-spacing-64: 4rem;
-    --scl-spacing-80: 5rem;
+    /* COLOR */
+    --scl-color-magenta: rgb(226, 0, 116);
+    --scl-color-text-default: rgb(26, 26, 26);
+    --scl-color-text-offset: rgb(255, 255, 255);
 }
 ```
 
 ## TODO
 
 - [ ] add JSDoc types and "type check" command
+- [ ] document new "internal protocol" to suggest token modifications
