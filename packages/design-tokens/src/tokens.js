@@ -1,6 +1,5 @@
 import { Color, Shadow, alphaToHex } from './factories.js';
 
-export const EMPTY = Object.create(null);
 export const NAMESPACE_PREFIX = 'scl';
 export const SPACING = 'spacing';
 export const TYPOGRAPHY = 'font';
@@ -64,7 +63,7 @@ const lineHeight = {
   150: '150%',
   160: '160%',
 };
-const letterSpacing = EMPTY;
+const letterSpacing = null;
 
 tokens[TYPOGRAPHY] = {
   family,
@@ -387,7 +386,7 @@ tokens[MOTION] = {
     slower: 600,
     deliberate: 800,
   },
-  easing: EMPTY,
+  easing: null,
 };
 
 /* Z-INDEX */

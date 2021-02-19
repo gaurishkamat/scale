@@ -2,7 +2,6 @@ import postcss from 'postcss';
 import each from 'lodash/each.js';
 import kebabCase from 'lodash/kebabCase.js';
 import {
-  EMPTY,
   NAMESPACE_PREFIX,
   SPACING,
   TYPOGRAPHY,
@@ -29,7 +28,7 @@ export function generateCSS(tokens) {
 
     // Loop thru groups (second level)
     each(group, (values, groupName) => {
-      if (values === EMPTY || values == null) {
+      if (values == null) {
         return;
       }
       const path = [categoryName, groupName];
