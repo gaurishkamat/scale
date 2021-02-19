@@ -4,10 +4,10 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card__border-0-0-5 {
+      .card__border {
   border: 1px solid transparent;
 }
-.card-0-0-6 {
+.card {
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -16,36 +16,36 @@ exports[`Card should match snapshot 1`] = `
   border-radius: 0.5rem;
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
 }
-.card__body-0-0-7 {
+.card__body {
   padding: 1.5rem;
 }
-.card__body-0-0-7 ::slotted(*) {
+.card__body ::slotted(*) {
   margin: 0;
 }
-.card--interactive-0-0-8 {
+.card--interactive {
   color: inherit;
   cursor: pointer;
   display: block;
   outline: none;
   text-decoration: none;
 }
-.card--interactive-0-0-8:hover {
+.card--interactive:hover {
   box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-8:focus {
+.card--interactive:focus {
   box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10), 0 3px 6px 0 rgba(0,0,0,0.10),0 0 0 2px #009DE0;
 }
-.card--interactive-0-0-8:active {
+.card--interactive:active {
   border: none;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10);
 }
-.card--interactive-0-0-8 .card__body-0-0-7 ::slotted(*) {
+.card--interactive .card__body ::slotted(*) {
   margin: 0;
 }
     </style>
-    <div class="card__border-0-0-5">
-      <div class="card-0-0-6" role="group" target="_self">
-        <div class="card__body-0-0-7">
+    <div class="card__border">
+      <div class="card" role="group" target="_self">
+        <div class="card__body">
           <slot></slot>
         </div>
       </div>

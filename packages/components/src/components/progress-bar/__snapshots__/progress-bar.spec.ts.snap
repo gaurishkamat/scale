@@ -4,39 +4,39 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
 <scale-progress-bar text-inside="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-12 {
+      .progress-bar {
   width: 100%;
   max-width: 30rem;
 }
-.progress-bar--has-error-0-0-13 {}
-.progress-bar--has-error-0-0-13 .progress-bar__outer-0-0-17 {
+.progress-bar--has-error {}
+.progress-bar--has-error .progress-bar__outer {
   border: 1px solid #D90000;
 }
-.progress-bar--has-error-0-0-13 .progress-bar__status-description-0-0-21 {
+.progress-bar--has-error .progress-bar__status-description {
   color: #D90000;
 }
-.progress-bar--has-error-0-0-13 scale-icon {
+.progress-bar--has-error scale-icon {
   --icon-color: #D90000;
 }
-.progress-bar--disabled-0-0-14 {
+.progress-bar--disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.progress-bar--disabled-0-0-14 .progress-bar__label {
+.progress-bar--disabled .progress-bar__label {
   color: #7C7C7C;
 }
-.progress-bar__label-0-0-15 {
+.progress-bar__label {
   display: block;
   padding: 0.5rem 0;
 }
-.progress-bar-wrapper-0-0-16 {
+.progress-bar-wrapper {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-16 scale-icon {}
-.progress-bar__outer-0-0-17 {
+.progress-bar-wrapper scale-icon {}
+.progress-bar__outer {
   width: 100%;
   height: 8px;
   margin: 8px 8px 8px 0;
@@ -45,7 +45,7 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   border-radius: 100px;
   border: 1px solid #6c6c6c;
 }
-.progress-bar__inner-0-0-18 {
+.progress-bar__inner {
   top: 0;
   left: 0;
   height: 100%;
@@ -57,22 +57,22 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   animation-fill-mode: both;
   background: #e20074;
 }
-.progress-bar__inner-status-0-0-19 {
+.progress-bar__inner-status {
   color: #fff;
   padding: 0 12px;
   font-size: 0.75rem;
 }
-.progress-bar__status-0-0-20 {
+.progress-bar__status {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 800;
 }
-.progress-bar__status-description-0-0-21 {
+.progress-bar__status-description {
   color: #6c6c6c;
   font-size: 0.75rem;
   font-weight: 700;
 }
-.progress-bar__aria-live-0-0-22 {
+.progress-bar__aria-live {
   clip: rect(0 0 0 0);
   width: 1px;
   border: 0;
@@ -93,14 +93,14 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
       }
     }
     </style>
-    <div class="progress-bar-0-0-12">
-      <div class="progress-bar-wrapper-0-0-16">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer-0-0-17" id="progress-bar-3" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner-0-0-18" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+    <div class="progress-bar">
+      <div class="progress-bar-wrapper">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-3" role="progressbar" style="height: 6px;">
+          <div class="progress-bar__inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
         </div>
       </div>
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live-0-0-22"></span>
+    <span aria-live="polite" class="progress-bar__aria-live"></span>
   </mock:shadow-root>
   Label
 </scale-progress-bar>
@@ -110,39 +110,39 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
 <scale-progress-bar show-status="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-12 {
+      .progress-bar {
   width: 100%;
   max-width: 30rem;
 }
-.progress-bar--has-error-0-0-13 {}
-.progress-bar--has-error-0-0-13 .progress-bar__outer-0-0-17 {
+.progress-bar--has-error {}
+.progress-bar--has-error .progress-bar__outer {
   border: 1px solid #D90000;
 }
-.progress-bar--has-error-0-0-13 .progress-bar__status-description-0-0-21 {
+.progress-bar--has-error .progress-bar__status-description {
   color: #D90000;
 }
-.progress-bar--has-error-0-0-13 scale-icon {
+.progress-bar--has-error scale-icon {
   --icon-color: #D90000;
 }
-.progress-bar--disabled-0-0-14 {
+.progress-bar--disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.progress-bar--disabled-0-0-14 .progress-bar__label {
+.progress-bar--disabled .progress-bar__label {
   color: #7C7C7C;
 }
-.progress-bar__label-0-0-15 {
+.progress-bar__label {
   display: block;
   padding: 0.5rem 0;
 }
-.progress-bar-wrapper-0-0-16 {
+.progress-bar-wrapper {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-16 scale-icon {}
-.progress-bar__outer-0-0-17 {
+.progress-bar-wrapper scale-icon {}
+.progress-bar__outer {
   width: 100%;
   height: 8px;
   margin: 8px 8px 8px 0;
@@ -151,7 +151,7 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   border-radius: 100px;
   border: 1px solid #6c6c6c;
 }
-.progress-bar__inner-0-0-18 {
+.progress-bar__inner {
   top: 0;
   left: 0;
   height: 100%;
@@ -163,22 +163,22 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   animation-fill-mode: both;
   background: #e20074;
 }
-.progress-bar__inner-status-0-0-19 {
+.progress-bar__inner-status {
   color: #fff;
   padding: 0 12px;
   font-size: 0.75rem;
 }
-.progress-bar__status-0-0-20 {
+.progress-bar__status {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 800;
 }
-.progress-bar__status-description-0-0-21 {
+.progress-bar__status-description {
   color: #6c6c6c;
   font-size: 0.75rem;
   font-weight: 700;
 }
-.progress-bar__aria-live-0-0-22 {
+.progress-bar__aria-live {
   clip: rect(0 0 0 0);
   width: 1px;
   border: 0;
@@ -199,17 +199,17 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
       }
     }
     </style>
-    <div class="progress-bar-0-0-12">
-      <div class="progress-bar-wrapper-0-0-16">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer-0-0-17" id="progress-bar-2" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner-0-0-18" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+    <div class="progress-bar">
+      <div class="progress-bar-wrapper">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-2" role="progressbar" style="height: 6px;">
+          <div class="progress-bar__inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
         </div>
-        <div aria-hidden="true" class="progress-bar__status-0-0-20">
+        <div aria-hidden="true" class="progress-bar__status">
           0%
         </div>
       </div>
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live-0-0-22"></span>
+    <span aria-live="polite" class="progress-bar__aria-live"></span>
   </mock:shadow-root>
   Label
 </scale-progress-bar>
@@ -219,39 +219,39 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
 <scale-progress-bar stroke-width="24">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-12 {
+      .progress-bar {
   width: 100%;
   max-width: 30rem;
 }
-.progress-bar--has-error-0-0-13 {}
-.progress-bar--has-error-0-0-13 .progress-bar__outer-0-0-17 {
+.progress-bar--has-error {}
+.progress-bar--has-error .progress-bar__outer {
   border: 1px solid #D90000;
 }
-.progress-bar--has-error-0-0-13 .progress-bar__status-description-0-0-21 {
+.progress-bar--has-error .progress-bar__status-description {
   color: #D90000;
 }
-.progress-bar--has-error-0-0-13 scale-icon {
+.progress-bar--has-error scale-icon {
   --icon-color: #D90000;
 }
-.progress-bar--disabled-0-0-14 {
+.progress-bar--disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.progress-bar--disabled-0-0-14 .progress-bar__label {
+.progress-bar--disabled .progress-bar__label {
   color: #7C7C7C;
 }
-.progress-bar__label-0-0-15 {
+.progress-bar__label {
   display: block;
   padding: 0.5rem 0;
 }
-.progress-bar-wrapper-0-0-16 {
+.progress-bar-wrapper {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-16 scale-icon {}
-.progress-bar__outer-0-0-17 {
+.progress-bar-wrapper scale-icon {}
+.progress-bar__outer {
   width: 100%;
   height: 8px;
   margin: 8px 8px 8px 0;
@@ -260,7 +260,7 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   border-radius: 100px;
   border: 1px solid #6c6c6c;
 }
-.progress-bar__inner-0-0-18 {
+.progress-bar__inner {
   top: 0;
   left: 0;
   height: 100%;
@@ -272,22 +272,22 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   animation-fill-mode: both;
   background: #e20074;
 }
-.progress-bar__inner-status-0-0-19 {
+.progress-bar__inner-status {
   color: #fff;
   padding: 0 12px;
   font-size: 0.75rem;
 }
-.progress-bar__status-0-0-20 {
+.progress-bar__status {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 800;
 }
-.progress-bar__status-description-0-0-21 {
+.progress-bar__status-description {
   color: #6c6c6c;
   font-size: 0.75rem;
   font-weight: 700;
 }
-.progress-bar__aria-live-0-0-22 {
+.progress-bar__aria-live {
   clip: rect(0 0 0 0);
   width: 1px;
   border: 0;
@@ -308,14 +308,14 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
       }
     }
     </style>
-    <div class="progress-bar-0-0-12">
-      <div class="progress-bar-wrapper-0-0-16">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer-0-0-17" id="progress-bar-1" role="progressbar" style="height: 24px;">
-          <div class="progress-bar__inner-0-0-18" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+    <div class="progress-bar">
+      <div class="progress-bar-wrapper">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-1" role="progressbar" style="height: 24px;">
+          <div class="progress-bar__inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
         </div>
       </div>
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live-0-0-22"></span>
+    <span aria-live="polite" class="progress-bar__aria-live"></span>
   </mock:shadow-root>
   Label
 </scale-progress-bar>
@@ -325,39 +325,39 @@ exports[`ProgressBar should match snapshot 1`] = `
 <scale-progress-bar>
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-12 {
+      .progress-bar {
   width: 100%;
   max-width: 30rem;
 }
-.progress-bar--has-error-0-0-13 {}
-.progress-bar--has-error-0-0-13 .progress-bar__outer-0-0-17 {
+.progress-bar--has-error {}
+.progress-bar--has-error .progress-bar__outer {
   border: 1px solid #D90000;
 }
-.progress-bar--has-error-0-0-13 .progress-bar__status-description-0-0-21 {
+.progress-bar--has-error .progress-bar__status-description {
   color: #D90000;
 }
-.progress-bar--has-error-0-0-13 scale-icon {
+.progress-bar--has-error scale-icon {
   --icon-color: #D90000;
 }
-.progress-bar--disabled-0-0-14 {
+.progress-bar--disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.progress-bar--disabled-0-0-14 .progress-bar__label {
+.progress-bar--disabled .progress-bar__label {
   color: #7C7C7C;
 }
-.progress-bar__label-0-0-15 {
+.progress-bar__label {
   display: block;
   padding: 0.5rem 0;
 }
-.progress-bar-wrapper-0-0-16 {
+.progress-bar-wrapper {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar-wrapper-0-0-16 scale-icon {}
-.progress-bar__outer-0-0-17 {
+.progress-bar-wrapper scale-icon {}
+.progress-bar__outer {
   width: 100%;
   height: 8px;
   margin: 8px 8px 8px 0;
@@ -366,7 +366,7 @@ exports[`ProgressBar should match snapshot 1`] = `
   border-radius: 100px;
   border: 1px solid #6c6c6c;
 }
-.progress-bar__inner-0-0-18 {
+.progress-bar__inner {
   top: 0;
   left: 0;
   height: 100%;
@@ -378,22 +378,22 @@ exports[`ProgressBar should match snapshot 1`] = `
   animation-fill-mode: both;
   background: #e20074;
 }
-.progress-bar__inner-status-0-0-19 {
+.progress-bar__inner-status {
   color: #fff;
   padding: 0 12px;
   font-size: 0.75rem;
 }
-.progress-bar__status-0-0-20 {
+.progress-bar__status {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 800;
 }
-.progress-bar__status-description-0-0-21 {
+.progress-bar__status-description {
   color: #6c6c6c;
   font-size: 0.75rem;
   font-weight: 700;
 }
-.progress-bar__aria-live-0-0-22 {
+.progress-bar__aria-live {
   clip: rect(0 0 0 0);
   width: 1px;
   border: 0;
@@ -414,14 +414,14 @@ exports[`ProgressBar should match snapshot 1`] = `
       }
     }
     </style>
-    <div class="progress-bar-0-0-12">
-      <div class="progress-bar-wrapper-0-0-16">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer-0-0-17" id="progress-bar-0" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner-0-0-18" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+    <div class="progress-bar">
+      <div class="progress-bar-wrapper">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-0" role="progressbar" style="height: 6px;">
+          <div class="progress-bar__inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
         </div>
       </div>
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live-0-0-22"></span>
+    <span aria-live="polite" class="progress-bar__aria-live"></span>
   </mock:shadow-root>
   Label
 </scale-progress-bar>

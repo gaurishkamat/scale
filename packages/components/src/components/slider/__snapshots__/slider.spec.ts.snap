@@ -4,16 +4,16 @@ exports[`Slider should match snapshot 1`] = `
 <scale-slider>
   <mock:shadow-root>
     <style>
-      .slider-0-0-5 {
+      .slider {
   width: 100%;
   display: block;
   align-items: center;
 }
-.slider-0-0-5 .slider--track-wrapper {
+.slider .slider--track-wrapper {
   display: flex;
   align-items: center;
 }
-.slider-0-0-5 .slider--track {
+.slider .slider--track {
   width: 303px;
   border: 1px solid #6c6c6c;
   height: 6px;
@@ -24,14 +24,14 @@ exports[`Slider should match snapshot 1`] = `
   align-items: center;
   border-radius: 100px;
 }
-.slider-0-0-5 .slider--bar {
+.slider .slider--bar {
   height: 6px;
   z-index: -1;
   position: absolute;
   border-radius: 100px;
   background-color: #E20074;
 }
-.slider-0-0-5 .slider--thumb-wrapper {
+.slider .slider--thumb-wrapper {
   width: 32px;
   height: 32px;
   display: flex;
@@ -44,7 +44,7 @@ exports[`Slider should match snapshot 1`] = `
   justify-content: center;
   background-color: transparent;
 }
-.slider-0-0-5 .slider--thumb {
+.slider .slider--thumb {
   width: 16px;
   border: 1px solid;
   height: 16px;
@@ -56,62 +56,62 @@ exports[`Slider should match snapshot 1`] = `
   background-color: #fff;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10), 0 1px 2px 0 rgba(0,0,0,0.10);
 }
-.slider-0-0-5 .slider--display-value {
+.slider .slider--display-value {
   color: #6c6c6c;
   margin-left: 24px;
   font-weight: 700;
   font-size: 0.75rem;
 }
-.slider-0-0-5 .slider--thumb:hover {
+.slider .slider--thumb:hover {
   border-color: #F90984;
 }
-.slider-0-0-5 .slider--thumb:active {
+.slider .slider--thumb:active {
   border-color: #CB0068;
 }
-.slider-0-0-5 .slider--thumb:focus {
+.slider .slider--thumb:focus {
   box-shadow: 0 0 0 2px #009DE0;
 }
-.slider-0-0-5 .slider--thumb-wrapper:hover {
+.slider .slider--thumb-wrapper:hover {
   cursor: grab;
 }
-.slider-0-0-5 .slider--thumb-wrapper:active {
+.slider .slider--thumb-wrapper:active {
   cursor: grabbing;
 }
-.slider--track-small-0-0-6 {}
-.slider--track-small-0-0-6 .slider--track {
+.slider--track-small {}
+.slider--track-small .slider--track {
   border: 1px solid transparent;
   height: 1px;
   background-color: #7c7c7c;
 }
-.slider--track-small-0-0-6 .slider--bar {
+.slider--track-small .slider--bar {
   border: 1px solid transparent;
   height: 3px;
   z-index: 1;
 }
-.slider--thumb-large-0-0-7 {}
-.slider--thumb-large-0-0-7 .slider--thumb {
+.slider--thumb-large {}
+.slider--thumb-large .slider--thumb {
   width: 24px;
   height: 24px;
 }
-.slider--disabled-0-0-8 {}
-.slider--disabled-0-0-8 .slider--track-wrapper {
+.slider--disabled {}
+.slider--disabled .slider--track-wrapper {
   cursor: not-allowed;
 }
-.slider--disabled-0-0-8 .slider--bar {
+.slider--disabled .slider--bar {
   background-color: #7c7c7c;
 }
-.slider--disabled-0-0-8 .slider--thumb {
+.slider--disabled .slider--thumb {
   display: none;
 }
-.slider--disabled-0-0-8 .slider--thumb-wrapper {}
-.slider--disabled-0-0-8 .slider--label {
+.slider--disabled .slider--thumb-wrapper {}
+.slider--disabled .slider--label {
   color: #7C7C7C;
 }
-.slider--disabled-0-0-8 .slider--thumb-wrapper:hover {
+.slider--disabled .slider--thumb-wrapper:hover {
   cursor: not-allowed;
 }
     </style>
-    <div class="slider-0-0-5">
+    <div class="slider">
       <div class="slider--track-wrapper">
         <div class="slider--track">
           <div class="slider--bar" style="width: undefined%;"></div>

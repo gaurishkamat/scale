@@ -4,7 +4,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
     <style>
-      .link-0-0-5 {
+      .link {
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -12,35 +12,35 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   color: #007DB3;
   border-bottom: 1px solid currentColor;
 }
-.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:hover.link:not(.link--disabled) {
   color: #007DB3;
 }
-.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+.link:focus:not(.link--disabled) {
   border-bottom: 2px solid currentColor;
 }
-.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:active.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:visited.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link__wrapper-0-0-6 {
+.link__wrapper {
   display: inline-flex;
   align-items: center;
 }
-.link__wrapper-0-0-6 > *:not(:first-child) {
+.link__wrapper > *:not(:first-child) {
   margin-inline-start: 0.25rem;
 }
-.link--block-0-0-7 {
+.link--block {
   display: block;
 }
-.link--disabled-0-0-8 {
+.link--disabled {
   cursor: not-allowed;
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" href="http://example.com" target="_self">
-      <span class="link__wrapper-0-0-6">
+    <a class="link" href="http://example.com" target="_self">
+      <span class="link__wrapper">
         <slot></slot>
       </span>
     </a>
@@ -53,7 +53,7 @@ exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
   <mock:shadow-root>
     <style>
-      .link-0-0-5 {
+      .link {
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -61,35 +61,35 @@ exports[`Link should have link href value when href value is set 1`] = `
   color: #007DB3;
   border-bottom: 1px solid currentColor;
 }
-.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:hover.link:not(.link--disabled) {
   color: #007DB3;
 }
-.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+.link:focus:not(.link--disabled) {
   border-bottom: 2px solid currentColor;
 }
-.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:active.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:visited.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link__wrapper-0-0-6 {
+.link__wrapper {
   display: inline-flex;
   align-items: center;
 }
-.link__wrapper-0-0-6 > *:not(:first-child) {
+.link__wrapper > *:not(:first-child) {
   margin-inline-start: 0.25rem;
 }
-.link--block-0-0-7 {
+.link--block {
   display: block;
 }
-.link--disabled-0-0-8 {
+.link--disabled {
   cursor: not-allowed;
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" href="http://example.com" target="_self">
-      <span class="link__wrapper-0-0-6">
+    <a class="link" href="http://example.com" target="_self">
+      <span class="link__wrapper">
         <slot></slot>
       </span>
     </a>
@@ -102,7 +102,7 @@ exports[`Link should match snapshot 1`] = `
 <scale-link>
   <mock:shadow-root>
     <style>
-      .link-0-0-5 {
+      .link {
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -110,35 +110,35 @@ exports[`Link should match snapshot 1`] = `
   color: #007DB3;
   border-bottom: 1px solid currentColor;
 }
-.link-0-0-5:hover.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:hover.link:not(.link--disabled) {
   color: #007DB3;
 }
-.link-0-0-5:focus:not(.link--disabled-0-0-8) {
+.link:focus:not(.link--disabled) {
   border-bottom: 2px solid currentColor;
 }
-.link-0-0-5:active.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:active.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link-0-0-5:visited.link-0-0-5:not(.link--disabled-0-0-8) {
+.link:visited.link:not(.link--disabled) {
   color: #0070A0;
 }
-.link__wrapper-0-0-6 {
+.link__wrapper {
   display: inline-flex;
   align-items: center;
 }
-.link__wrapper-0-0-6 > *:not(:first-child) {
+.link__wrapper > *:not(:first-child) {
   margin-inline-start: 0.25rem;
 }
-.link--block-0-0-7 {
+.link--block {
   display: block;
 }
-.link--disabled-0-0-8 {
+.link--disabled {
   cursor: not-allowed;
   color: #7C7C7C;
 }
     </style>
-    <a class="link-0-0-5" target="_self">
-      <span class="link__wrapper-0-0-6">
+    <a class="link" target="_self">
+      <span class="link__wrapper">
         <slot></slot>
       </span>
     </a>

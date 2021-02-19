@@ -4,7 +4,7 @@ exports[`Button should match snapshot 1`] = `
 <scale-button icon-position="before">
   <mock:shadow-root>
     <style>
-      .button-0-0-9 {
+      .button {
   border: 0;
   cursor: pointer;
   display: inline-flex;
@@ -26,16 +26,16 @@ exports[`Button should match snapshot 1`] = `
   min-height: 40px;
   transition: all .2s ease-in-out;
 }
-.button-0-0-9:not(.button--disabled-0-0-16):focus {
+.button:not(.button--disabled):focus {
   box-shadow: 0 0 0 2px #009DE0;
 }
-.button-0-0-9.button--icon-before-0-0-13 ::slotted(*) {
+.button.button--icon-before ::slotted(*) {
   margin-right: 0.5rem;
 }
-.button-0-0-9.button--icon-after-0-0-14 ::slotted(*) {
+.button.button--icon-after ::slotted(*) {
   margin-left: 0.5rem;
 }
-.button-0-0-9:after {
+.button:after {
   top: 0;
   left: 0;
   width: 100%;
@@ -48,57 +48,57 @@ exports[`Button should match snapshot 1`] = `
   pointer-events: none;
   border-radius: 0.5rem;
 }
-.button--size-small-0-0-10 {
+.button--size-small {
   font-size: 0.75rem;
   line-height: 1.3333;
   min-height: 32px;
 }
-.button--variant-primary-0-0-11 {
+.button--variant-primary {
   text-align: center;
   border-radius: 0.5rem;
   background: #E20074;
   color: #FFFFFF;
 }
-.button--variant-primary-0-0-11:not(.button--disabled-0-0-16):hover {
+.button--variant-primary:not(.button--disabled):hover {
   background: #F90984;
 }
-.button--variant-primary-0-0-11:not(.button--disabled-0-0-16):active {
+.button--variant-primary:not(.button--disabled):active {
   background: #CB0068;
 }
-.button--disabled-0-0-16.button--variant-primary-0-0-11 {
+.button--disabled.button--variant-primary {
   background: #D0D0D0;
   color: #A4A4A4;
 }
-.button--variant-secondary-0-0-12 {
+.button--variant-secondary {
   background: transparent;
   text-align: center;
   border-radius: 0.5rem;
   border: 1px solid currentColor;
   color: #262626;
 }
-.button--variant-secondary-0-0-12:not(.button--disabled-0-0-16):hover {
+.button--variant-secondary:not(.button--disabled):hover {
   border-color: #F90984;
   color: #F90984;
 }
-.button--variant-secondary-0-0-12:not(.button--disabled-0-0-16):active {
+.button--variant-secondary:not(.button--disabled):active {
   border-color: #CB0068;
   color: #CB0068;
 }
-.button--disabled-0-0-16.button--variant-secondary-0-0-12 {
+.button--disabled.button--variant-secondary {
   border-color: #D0D0D0;
   color: #D0D0D0;
 }
-.button--icon-before-0-0-13 {}
-.button--icon-after-0-0-14 {}
-.button--icon-only-0-0-15 {
+.button--icon-before {}
+.button--icon-after {}
+.button--icon-only {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.button--disabled-0-0-16 {
+.button--disabled {
   cursor: not-allowed;
 }
     </style>
-    <button class="button--icon-before-0-0-13 button--variant-primary-0-0-11 button-0-0-9">
+    <button class="button--icon-before button--variant-primary button">
       <slot></slot>
     </button>
   </mock:shadow-root>

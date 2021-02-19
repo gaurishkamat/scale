@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartStack should match snapshot 1`] = `
-<scale-chart-stack-card class="chart-stack-0-0-2" data="[{&quot;type&quot;:&quot;Android&quot;,&quot;value&quot;:&quot;55&quot;,&quot;percentage&quot;:&quot;55&quot;},{&quot;type&quot;:&quot;IOS&quot;,&quot;value&quot;:&quot;35&quot;,&quot;percentage&quot;:&quot;35&quot;},{&quot;type&quot;:&quot;Other&quot;,&quot;value&quot;:&quot;10&quot;,&quot;percentage&quot;:&quot;10&quot;}]" heading="Operating System">
+<scale-chart-stack-card class="chart-stack" data="[{&quot;type&quot;:&quot;Android&quot;,&quot;value&quot;:&quot;55&quot;,&quot;percentage&quot;:&quot;55&quot;},{&quot;type&quot;:&quot;IOS&quot;,&quot;value&quot;:&quot;35&quot;,&quot;percentage&quot;:&quot;35&quot;},{&quot;type&quot;:&quot;Other&quot;,&quot;value&quot;:&quot;10&quot;,&quot;percentage&quot;:&quot;10&quot;}]" heading="Operating System">
   <scale-card>
     <div class="header">
       Operating System

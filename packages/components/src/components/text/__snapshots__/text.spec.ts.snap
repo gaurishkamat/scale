@@ -4,158 +4,158 @@ exports[`Text should match snapshot 1`] = `
 <scale-text>
   <mock:shadow-root>
     <style>
-      .text-0-0-2 {
+      .text {
   margin: 0;
   margin-bottom: 0.5rem;
 }
-.text--variant-label-0-0-3 {
+.text--variant-label {
   font-size: 0.75rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-label-floating-0-0-4 {
+.text--variant-label-floating {
   font-size: 0.625rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: normal;
 }
-.text--variant-code-0-0-5 {
+.text--variant-code {
   font-size: 0.75rem;
   font-family: TeleNeoWeb;
   font-weight: 400;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-caption-0-0-6 {
+.text--variant-caption {
   font-size: 0.75rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-helper-text-0-0-7 {
+.text--variant-helper-text {
   font-size: 0.75rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-smaller-0-0-8 {
+.text--variant-smaller {
   font-size: 0.75rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-body-0-0-9 {
+.text--variant-body {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: normal;
 }
-.text--variant-body-long-0-0-10 {
+.text--variant-body-long {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: normal;
 }
-.text--variant-body-short-0-0-11 {
+.text--variant-body-short {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: normal;
 }
-.text--variant-body-large-0-0-12 {
+.text--variant-body-large {
   font-size: 1.25rem;
   font-family: TeleNeoWeb;
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: normal;
 }
-.text--variant-h6-0-0-13 {
+.text--variant-h6 {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.5;
   letter-spacing: normal;
 }
-.text--variant-h5-0-0-14 {
+.text--variant-h5 {
   font-size: 1.25rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: normal;
 }
-.text--variant-h4-0-0-15 {
+.text--variant-h4 {
   font-size: 1.5rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-h3-0-0-16 {
+.text--variant-h3 {
   font-size: 2rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: normal;
 }
-.text--variant-h2-0-0-17 {
+.text--variant-h2 {
   font-size: 2.5rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: normal;
 }
-.text--variant-h1-0-0-18 {
+.text--variant-h1 {
   font-size: 3.5rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.1428571429;
   letter-spacing: normal;
 }
-.text--variant-h6-mobile-0-0-19 {
+.text--variant-h6-mobile {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: normal;
 }
-.text--variant-h5-mobile-0-0-20 {
+.text--variant-h5-mobile {
   font-size: 1rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.5;
   letter-spacing: normal;
 }
-.text--variant-h4-mobile-0-0-21 {
+.text--variant-h4-mobile {
   font-size: 1.25rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: normal;
 }
-.text--variant-h3-mobile-0-0-22 {
+.text--variant-h3-mobile {
   font-size: 1.5rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.3333;
   letter-spacing: normal;
 }
-.text--variant-h2-mobile-0-0-23 {
+.text--variant-h2-mobile {
   font-size: 2rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: normal;
 }
-.text--variant-h1-mobile-0-0-24 {
+.text--variant-h1-mobile {
   font-size: 2.5rem;
   font-family: TeleNeoWeb;
   font-weight: 800;
@@ -163,7 +163,7 @@ exports[`Text should match snapshot 1`] = `
   letter-spacing: normal;
 }
     </style>
-    <p class="text--variant-body-0-0-9 text-0-0-2">
+    <p class="text--variant-body text">
       <slot></slot>
     </p>
   </mock:shadow-root>

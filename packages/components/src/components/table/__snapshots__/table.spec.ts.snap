@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table should match snapshot 1`] = `
-<scale-table class="table--size-default-0-0-5 table-0-0-4">
+<scale-table class="table--size-default table">
   <!---->
   <div>
     Table header

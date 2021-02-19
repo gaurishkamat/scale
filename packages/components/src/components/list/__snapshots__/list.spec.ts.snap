@@ -4,17 +4,17 @@ exports[`List should match snapshot 1`] = `
 <scale-list>
   <mock:shadow-root>
     <style>
-      .list-0-0-4 {
+      .list {
   padding-left: 0;
 }
-.list--nested-0-0-5 {
+.list--nested {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0.5rem;
 }
-.list--type-ordered-0-0-6 {}
+.list--type-ordered {}
     </style>
-    <ul class="list-0-0-4">
+    <ul class="list">
       <slot></slot>
     </ul>
   </mock:shadow-root>
