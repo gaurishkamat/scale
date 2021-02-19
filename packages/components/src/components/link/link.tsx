@@ -62,7 +62,7 @@ export class Link implements Base {
   getCssClassMap() {
     return classNames(
       name,
-      this.variant && `${name}-${this.variant}`,
+      this.variant && `${name}--variant-${this.variant}`,
       this.disabled && `${name}--disabled`,
       this.block && `${name}--block`
     );

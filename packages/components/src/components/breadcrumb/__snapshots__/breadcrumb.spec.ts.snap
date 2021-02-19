@@ -3,51 +3,6 @@
 exports[`Breadcrumb should match snapshot 1`] = `
 <scale-breadcrumb>
   <mock:shadow-root>
-    <style>
-      .breadcrumb {
-  margin-left: -0.5rem;
-}
-.breadcrumb ol {
-  display: flex;
-  list-style: none;
-  margin-top: 0;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-.breadcrumb li {
-  display: inline-flex;
-  font-size: 0.875rem;
-  align-items: center;
-}
-.separator {
-  display: flex;
-}
-.separator path {
-  fill: #6B6B6B;
-}
-.item {
-  padding: 0.25rem 0.5rem;
-}
-.link {
-  text-decoration: none;
-  color: #6B6B6B;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.5rem;
-}
-.link:hover {
-  color: #F90984;
-}
-.link:active {
-  color: #CB0068;
-}
-.link:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #009DE0;
-}
-.current {
-  color: #262626;
-}
-    </style>
     <nav aria-label="Breadcrumb" class="breadcrumb">
       <ol></ol>
     </nav>

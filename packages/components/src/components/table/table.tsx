@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import Base from '../../utils/base-interface';
 
-const name = ' table';
+const name = 'table';
 @Component({
   tag: 'scale-table',
   styleUrl: './table.css',
@@ -46,7 +46,7 @@ export class Table implements Base {
   getCssClassMap() {
     return classNames(
       name,
-      this.size && `${name}--size${this.size}`,
+      this.size && `${name}--size-${this.size}`,
       this.showSort && `${name}--sortable`
     );
   }

@@ -24,9 +24,11 @@ describe('Divider', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  element.size = 'small';
-  expect(element.getCssClassMap()).toContain('divider--size-small');
+  it('should...', async () => {
+    element.size = 'small';
+    expect(element.getCssClassMap()).toContain('divider--size-small');
 
-  element.vertical = true;
-  expect(element.getCssClassMap()).toContain('divider--vertical');
+    element.vertical = true;
+    expect(element.getCssClassMap()).toContain('divider--vertical');
+  })
 });
