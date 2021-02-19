@@ -1,17 +1,13 @@
-import * as d3 from 'd3-color';
+import color from 'color';
 
 /**
  * @todo a proper type for a "color object"
  * @param {string} specifier - CSS Color Module Level 3 specifier string
- * @returns {Object} "{ h, s, l, opacity }"
+ * @returns {Object} "{ model: string, color: number[], valpha: number }"
  */
 export function Color(specifier) {
-  if (d3.color(specifier) === null) {
-    throw new Error(
-      `Color '${specifier}' is not a valid CSS specifier string (Color Module Level 3)`
-    );
-  }
-  return d3.hsl(specifier);
+  // No checks needd, already throws if `specifier` is invalid
+  return color(specifier);
 }
 
 /**
