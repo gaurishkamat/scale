@@ -4533,9 +4533,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Modal variant
          */
@@ -10963,9 +10963,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Modal variant
          */
