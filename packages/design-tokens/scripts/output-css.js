@@ -22,16 +22,16 @@ export function generateCSS(tokens) {
   const selector = postcss.rule({ selector: ':root' });
 
   // Loop thru categories (first level)
-  each(tokens, (group, categoryName) => {
+  each(tokens, (section, categoryName) => {
     // Append a CSS comment
     selector.append(postcss.comment({ text: categoryName.toUpperCase() }));
 
-    // Loop thru groups (second level)
-    each(group, (values, groupName) => {
+    // Loop thru sections (second level)
+    each(section, (values, sectionName) => {
       if (values == null) {
         return;
       }
-      const path = [categoryName, groupName];
+      const path = [categoryName, sectionName];
 
       // Handle and set the actual values
       getDeclarationsArrayForPath(path, values).forEach((declaration) => {
@@ -78,7 +78,7 @@ function getDeclarationsArrayForPath(path, values) {
 /**
  * Transform a raw value into a CSS value.
  *
- * @param {string[]} path - [{category}, {group}] e.g. ['spacing', 'size']
+ * @param {string[]} path - [{category}, {section}] e.g. ['spacing', 'size']
  * @param {string} key
  * @param {any} val
  * @returns {string|number}
@@ -87,14 +87,14 @@ function processValue(path, key, val) {
   if (val == null) {
     return '';
   }
-  const [categoryName, groupName] = path;
+  const [categoryName, sectionName] = path;
 
   if (categoryName === SPACING) {
     return pxToRem(val);
   }
 
   if (categoryName === TYPOGRAPHY || categoryName === TYPE_VARIANT) {
-    const nameOrKey = categoryName === TYPOGRAPHY ? groupName : key;
+    const nameOrKey = categoryName === TYPOGRAPHY ? sectionName : key;
     switch (nameOrKey) {
       case 'size':
         return pxToRem(val);
@@ -122,7 +122,7 @@ function processValue(path, key, val) {
   }
 
   if (categoryName === MOTION) {
-    return groupName === 'duration' ? ms(val) : val;
+    return sectionName === 'duration' ? ms(val) : val;
   }
 
   return val;
