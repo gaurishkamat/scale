@@ -388,7 +388,9 @@ tokens[MOTION] = {
     slower: 600,
     deliberate: 800,
   },
-  easing: null,
+  easing: {
+    default: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+  },
 };
 
 /* Z-INDEX */

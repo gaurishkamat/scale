@@ -122,7 +122,7 @@ function processValue(path, key, val) {
   }
 
   if (categoryName === MOTION) {
-    return ms(val);
+    return groupName === 'duration' ? ms(val) : val;
   }
 
   return val;
