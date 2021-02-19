@@ -153,7 +153,7 @@ tokens[TYPE_VARIANT] = {
 
 const palette = {
   magenta: Color('#e20074'),
-  black: Color('#000000'),
+  black: Color(alphaToHex(90)),
   white: Color('#ffffff'),
   grey: Color(alphaToHex(60)),
   grey0: Color(alphaToHex(5)),
@@ -166,7 +166,6 @@ const palette = {
   grey70: Color(alphaToHex(70)),
   grey80: Color(alphaToHex(80)),
   grey90: Color(alphaToHex(90)),
-  grey100: Color(alphaToHex(100)),
   orange: Color('#FC9A55'),
   orange0: Color('#FFFCDF'),
   orange10: Color('#FFF4C6'),
