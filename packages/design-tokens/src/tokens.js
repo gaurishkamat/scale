@@ -309,20 +309,20 @@ tokens[COLOR] = {
     ...palette,
   },
   text: {
-    default: palette.grey_90,
+    default: palette.grey90,
     offset: palette.white,
     muted: palette.grey,
     link: palette.blue,
     linkHover: palette.blue,
-    linkActive: palette.blue_80,
-    linkVisited: palette.blue_80,
-    error: palette.red_80,
+    linkActive: palette.blue80,
+    linkVisited: palette.blue80,
+    error: palette.red80,
   },
   background: {
     default: palette.white,
-    light: palette.grey_0,
-    darker: palette.grey_20,
-    disabled: palette.grey_20,
+    light: palette.grey0,
+    darker: palette.grey20,
+    disabled: palette.grey20,
     error: palette.red,
     success: palette.green,
     pending: palette.orange,
@@ -389,7 +389,7 @@ tokens[MOTION] = {
     deliberate: 800,
   },
   easing: {
-    default: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+    default: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
   },
 };
 
