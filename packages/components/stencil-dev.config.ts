@@ -3,6 +3,7 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'scale-components',
   // globalScript: './global', // For web-animations?
+  globalStyle: 'src/global/scale.css',
   outputTargets: [
     {
       type: 'www',
