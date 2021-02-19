@@ -5,6 +5,7 @@ import Base from '../../utils/base-interface';
 const name = 'divider';
 @Component({
   tag: 'scale-divider',
+  styleUrl: './divider.css',
   shadow: true,
 })
 export class Divider implements Base {
