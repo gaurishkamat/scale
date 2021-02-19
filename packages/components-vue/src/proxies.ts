@@ -3235,7 +3235,6 @@ export const ScaleIconUser_fileVideos = /*@__PURE__*/ Vue.extend({
 export const ScaleInput = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleInput['customClass']>,
     type: {} as PropOptions<Components.ScaleInput['type']>,
     name: {} as PropOptions<Components.ScaleInput['name']>,
     variant: {} as PropOptions<Components.ScaleInput['variant']>,

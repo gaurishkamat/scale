@@ -5820,10 +5820,6 @@
           "description": "(optional) Input counter"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Input text class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Input disabled"
         },
@@ -5899,7 +5895,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "transparent",

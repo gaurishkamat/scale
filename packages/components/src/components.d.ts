@@ -4343,10 +4343,6 @@ export namespace Components {
          */
         "counter"?: boolean;
         /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -4407,9 +4403,9 @@ export namespace Components {
          */
         "status"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) input background transparent
          */
@@ -10755,10 +10751,6 @@ declare namespace LocalJSX {
          */
         "counter"?: boolean;
         /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -10839,9 +10831,9 @@ declare namespace LocalJSX {
          */
         "status"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) input background transparent
          */
