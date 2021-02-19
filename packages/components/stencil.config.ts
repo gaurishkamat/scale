@@ -8,6 +8,7 @@ import {
   angularOutputTarget,
   ValueAccessorConfig,
 } from '@stencil/angular-output-target';
+import { postcss } from '@stencil/postcss';
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
@@ -74,6 +75,12 @@ export const config: Config = {
   },
   namespace: 'scale-components',
   globalScript: './global',
+  globalStyle: 'src/global/scale.css',
+  plugins: [
+    postcss({
+      plugins: [] // TODO
+    })
+  ],
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: '@scaleds/components-telekom',
