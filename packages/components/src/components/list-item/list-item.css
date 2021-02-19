@@ -23,16 +23,13 @@
   background: currentColor;
   box-sizing: border-box;
   border-radius: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: var(--spacing-2, 0.5rem);
+  height: var(--spacing-2, 0.5rem);
 }
 
 .list-item--nested.list-item--unordered:before {
   border: 1px solid currentColor;
   background: transparent;
-}
-
-.list-item--ordered {
 }
 
 .list-item--ordered:before {
@@ -56,6 +53,6 @@
   display: none;
 }
 
-.list-item--no-marker > :slotted(*) {
+.list-item--no-marker > ::slotted(*) {
   margin-right: var(--spacing-2, 0.5rem);
 }
