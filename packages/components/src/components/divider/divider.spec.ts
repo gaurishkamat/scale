@@ -30,5 +30,5 @@ describe('Divider', () => {
 
     element.vertical = true;
     expect(element.getCssClassMap()).toContain('divider--vertical');
-  })
+  });
 });
