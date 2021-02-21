@@ -3,9 +3,11 @@
 exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
-    <div class="card" role="group" target="_self">
-      <div class="card__body">
-        <slot></slot>
+    <div class="card-border">
+      <div class="card" role="group" target="_self">
+        <div class="card__body">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </mock:shadow-root>

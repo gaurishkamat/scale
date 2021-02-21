@@ -83,14 +83,14 @@ export class ProgressBar {
               aria-valuemax={100}
               aria-valuenow={this.percentage}
               aria-busy={this.busy}
-              aria-valuetext="${this.percentage}%"
+              aria-valuetext={`${this.percentage}%`}
               aria-label={this.label}
               id={this.progressBarId}
             >
               <div class="progress-bar__inner" style={this.progressStyle()}>
                 {!!this.statusInside && (
                   <div class="progress-bar__inner-status" aria-hidden="true">
-                    '${this.percentage}%'
+                    {this.percentage}%
                   </div>
                 )}
               </div>
@@ -98,7 +98,7 @@ export class ProgressBar {
 
             {!!this.showStatus && (
               <div class="progress-bar__status" aria-hidden="true">
-                '${this.percentage}%'
+                {this.percentage}%
               </div>
             )}
             {!!this.icon && (
