@@ -70,7 +70,10 @@
   transition: var(--transition-generic, all 0.2s ease-in-out);
 }
 
-.switch input:not(:checked):not(:disabled):active ~ .switch__wrapper .switch__toggle,
+.switch
+  input:not(:checked):not(:disabled):active
+  ~ .switch__wrapper
+  .switch__toggle,
 .switch input:checked:not(:active) ~ .switch__wrapper .switch__toggle {
   transform: translateX(var(--switch-size));
 }
