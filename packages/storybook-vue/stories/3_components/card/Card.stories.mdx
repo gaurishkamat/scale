@@ -163,7 +163,7 @@ export const Template = (args, { argTypes }) => ({
                               <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
                               <div style="padding: 24px;">
                                 <div style="padding: 0 0 24px 0;">A card with with further functions</div>
-                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>CTA #1</scale-button></div><EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
+                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div><EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
                                 <div style="display: flex; justify-content: flex-end;"><scale-link href="#more" tabindex=0>More...</scale-link></div>
                               </div>
                           </article>
@@ -173,3 +173,18 @@ export const Template = (args, { argTypes }) => ({
         })}
     </Story>
 </Canvas>
+
+```html
+<div :style="{ maxWidth: '300px' }">
+    <scale-card label="Example Card with further functions">
+      <article style="margin: -24px;">
+          <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
+          <div style="padding: 24px;">
+            <div style="padding: 0 0 24px 0;">A card with with further functions</div>
+            <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div><EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
+            <div style="display: flex; justify-content: flex-end;"><scale-link href="#more" tabindex=0>More...</scale-link></div>
+          </div>
+      </article>
+    </scale-card>
+</div>
+```
