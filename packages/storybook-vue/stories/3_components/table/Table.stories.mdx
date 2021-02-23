@@ -147,29 +147,26 @@ export const Template = (args, { argTypes }) => ({
         this.sortTable(th);
       }
     },
-    sortTable: function (className) {
-      const getNextSort = (sort) => {
-        if (!sort || ["none", "other"].includes(sort)) {
-          return "descending";
-        }
-        if (sort === "descending") {
-          return "ascending";
-        }
-        return "none";
-      };
-      const ths = document.getElementsByClassName(className);
-      const th = ths[ths.length - 1];
-      const currentSort = th.getAttribute("aria-sort");
-      const nextSort = getNextSort(currentSort);
-      const tableHeaders = Array.from(document.getElementsByTagName("TH"));
-      const columnIndex = tableHeaders.findIndex((x) => x === th);
-      tableHeaders.forEach((tableHeader) => {
-        tableHeader.setAttribute("aria-sort", "none");
-      });
-      th.setAttribute("aria-sort", nextSort);
-      var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("sortable-table");
-      switching = true;
+    sortTable: function(className) {
+      const getNextSort = sort => {
+          if (sort === 'ascending') {
+              return 'descending';
+          }
+          return 'ascending';
+      }
+      const ths = document.getElementsByClassName(className)
+      const th = ths[ths.length - 1]
+      const currentSort = th.getAttribute('aria-sort')
+      const nextSort = getNextSort(currentSort)
+      const tableHeaders = Array.from(document.getElementsByTagName('TH'))
+      const columnIndex = tableHeaders.findIndex(x => x === th)
+      tableHeaders.forEach(tableHeader => {
+        tableHeader.setAttribute('aria-sort', 'none');
+      })
+      th.setAttribute('aria-sort', nextSort)
+      var table, rows, switching, i, x, y, shouldSwitch
+      table = document.getElementById('sortable-table')
+      switching = true
       try {
         while (switching) {
           switching = false;
