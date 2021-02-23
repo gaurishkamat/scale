@@ -144,13 +144,10 @@ export const Template = (args, { argTypes }) => ({
     },
     sortTable: function(className) {
       const getNextSort = sort => {
-        if (!sort || ['none', 'other'].includes(sort)) {
-          return 'descending';
-        }
-        if (sort === 'descending') {
+          if (sort === 'ascending') {
+              return 'descending';
+          }
           return 'ascending';
-        }
-        return 'none';
       }
       const ths = document.getElementsByClassName(className)
       const th = ths[ths.length - 1]
