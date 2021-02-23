@@ -291,6 +291,7 @@ export const ScaleAccordion = /*@__PURE__*/ Vue.extend({
   props: {
     styles: {} as PropOptions<Components.ScaleAccordion['styles']>,
     dependent: {} as PropOptions<Components.ScaleAccordion['dependent']>,
+    expanded: {} as PropOptions<Components.ScaleAccordion['expanded']>,
   },
 
 
@@ -301,7 +302,6 @@ export const ScaleAccordion = /*@__PURE__*/ Vue.extend({
 export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleAlert['customClass']>,
     size: {} as PropOptions<Components.ScaleAlert['size']>,
     variant: {} as PropOptions<Components.ScaleAlert['variant']>,
     headline: {} as PropOptions<Components.ScaleAlert['headline']>,
@@ -322,10 +322,10 @@ export const ScaleAlert = /*@__PURE__*/ Vue.extend({
 export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleAppFooter['customClass']>,
     claimLang: {} as PropOptions<Components.ScaleAppFooter['claimLang']>,
     footerNavigation: {} as PropOptions<Components.ScaleAppFooter['footerNavigation']>,
     variant: {} as PropOptions<Components.ScaleAppFooter['variant']>,
+    styles: {} as PropOptions<Components.ScaleAppFooter['styles']>,
   },
 
 
@@ -337,7 +337,6 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
     claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
-    customClass: {} as PropOptions<Components.ScaleAppHeader['customClass']>,
     portalName: {} as PropOptions<Components.ScaleAppHeader['portalName']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppHeader['iconNavigation']>,
@@ -363,9 +362,9 @@ export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
     addonNavigation: {} as PropOptions<Components.ScaleAppShell['addonNavigation']>,
-    customClass: {} as PropOptions<Components.ScaleAppShell['customClass']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppShell['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppShell['activeSectorId']>,
+    styles: {} as PropOptions<Components.ScaleAppShell['styles']>,
   },
 
 
@@ -388,7 +387,6 @@ export const ScaleBreadcrumb = /*@__PURE__*/ Vue.extend({
 export const ScaleButton = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleButton['customClass']>,
     size: {} as PropOptions<Components.ScaleButton['size']>,
     variant: {} as PropOptions<Components.ScaleButton['variant']>,
     disabled: {} as PropOptions<Components.ScaleButton['disabled']>,
@@ -409,7 +407,6 @@ export const ScaleButton = /*@__PURE__*/ Vue.extend({
 export const ScaleCard = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleCard['customClass']>,
     to: {} as PropOptions<Components.ScaleCard['to']>,
     label: {} as PropOptions<Components.ScaleCard['label']>,
     target: {} as PropOptions<Components.ScaleCard['target']>,
@@ -425,7 +422,6 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
 export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleCarousel['customClass']>,
     vertical: {} as PropOptions<Components.ScaleCarousel['vertical']>,
     styles: {} as PropOptions<Components.ScaleCarousel['styles']>,
   },
@@ -438,10 +434,8 @@ export const ScaleCarousel = /*@__PURE__*/ Vue.extend({
 export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleChartStackCard['customClass']>,
     data: {} as PropOptions<Components.ScaleChartStackCard['data']>,
     heading: {} as PropOptions<Components.ScaleChartStackCard['heading']>,
-    styles: {} as PropOptions<Components.ScaleChartStackCard['styles']>,
   },
 
 
@@ -495,7 +489,6 @@ export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
 export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleDivider['customClass']>,
     size: {} as PropOptions<Components.ScaleDivider['size']>,
     vertical: {} as PropOptions<Components.ScaleDivider['vertical']>,
     styles: {} as PropOptions<Components.ScaleDivider['styles']>,
@@ -509,7 +502,6 @@ export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 export const ScaleIcon = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleIcon['customClass']>,
     name: {} as PropOptions<Components.ScaleIcon['name']>,
     path: {} as PropOptions<Components.ScaleIcon['path']>,
     size: {} as PropOptions<Components.ScaleIcon['size']>,
@@ -518,7 +510,6 @@ export const ScaleIcon = /*@__PURE__*/ Vue.extend({
     focusable: {} as PropOptions<Components.ScaleIcon['focusable']>,
     decorative: {} as PropOptions<Components.ScaleIcon['decorative']>,
     accessibilityTitle: {} as PropOptions<Components.ScaleIcon['accessibilityTitle']>,
-    styles: {} as PropOptions<Components.ScaleIcon['styles']>,
   },
 
 
@@ -3244,7 +3235,6 @@ export const ScaleIconUser_fileVideos = /*@__PURE__*/ Vue.extend({
 export const ScaleInput = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleInput['customClass']>,
     type: {} as PropOptions<Components.ScaleInput['type']>,
     name: {} as PropOptions<Components.ScaleInput['name']>,
     variant: {} as PropOptions<Components.ScaleInput['variant']>,
@@ -3284,7 +3274,6 @@ export const ScaleInput = /*@__PURE__*/ Vue.extend({
 export const ScaleLink = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleLink['customClass']>,
     href: {} as PropOptions<Components.ScaleLink['href']>,
     disabled: {} as PropOptions<Components.ScaleLink['disabled']>,
     block: {} as PropOptions<Components.ScaleLink['block']>,
@@ -3349,7 +3338,6 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
 export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleProgressBar['customClass']>,
     busy: {} as PropOptions<Components.ScaleProgressBar['busy']>,
     percentage: {} as PropOptions<Components.ScaleProgressBar['percentage']>,
     customColor: {} as PropOptions<Components.ScaleProgressBar['customColor']>,
@@ -3423,7 +3411,6 @@ export const ScaleSidebarNavItem = /*@__PURE__*/ Vue.extend({
 export const ScaleSlider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleSlider['customClass']>,
     value: {} as PropOptions<Components.ScaleSlider['value']>,
     min: {} as PropOptions<Components.ScaleSlider['min']>,
     max: {} as PropOptions<Components.ScaleSlider['max']>,
@@ -3509,10 +3496,8 @@ export const ScaleTabPanel = /*@__PURE__*/ Vue.extend({
 export const ScaleTable = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleTable['customClass']>,
     showSort: {} as PropOptions<Components.ScaleTable['showSort']>,
     size: {} as PropOptions<Components.ScaleTable['size']>,
-    styles: {} as PropOptions<Components.ScaleTable['styles']>,
   },
 
 
@@ -3523,7 +3508,6 @@ export const ScaleTable = /*@__PURE__*/ Vue.extend({
 export const ScaleTag = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleTag['customClass']>,
     size: {} as PropOptions<Components.ScaleTag['size']>,
     variant: {} as PropOptions<Components.ScaleTag['variant']>,
     href: {} as PropOptions<Components.ScaleTag['href']>,
@@ -3542,7 +3526,6 @@ export const ScaleTag = /*@__PURE__*/ Vue.extend({
 export const ScaleText = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleText['customClass']>,
     variant: {} as PropOptions<Components.ScaleText['variant']>,
     tag: {} as PropOptions<Components.ScaleText['tag']>,
     styles: {} as PropOptions<Components.ScaleText['styles']>,
@@ -3556,7 +3539,6 @@ export const ScaleText = /*@__PURE__*/ Vue.extend({
 export const ScaleToast = /*@__PURE__*/ Vue.extend({
 
   props: {
-    customClass: {} as PropOptions<Components.ScaleToast['customClass']>,
     size: {} as PropOptions<Components.ScaleToast['size']>,
     variant: {} as PropOptions<Components.ScaleToast['variant']>,
     opened: {} as PropOptions<Components.ScaleToast['opened']>,

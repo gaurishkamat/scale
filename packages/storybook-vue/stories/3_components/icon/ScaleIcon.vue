@@ -31,7 +31,6 @@
       </svg>
     </div>
     <scale-icon
-      :custom-class="customClass"
       :name="name"
       :path="path"
       :size="size"
@@ -48,7 +47,6 @@
 <script>
 export default {
   props: {
-    customClass: String,
     name: String,
     path: String,
     size: { type: Number, default: 24 },
@@ -57,7 +55,7 @@ export default {
     focusable: { type: Boolean, default: false },
     decorative: { type: Boolean, default: false },
     accessibilityTitle: { type: String },
-    styles: { type: Object }
+    styles: { type: String }
   }
 }
 </script>

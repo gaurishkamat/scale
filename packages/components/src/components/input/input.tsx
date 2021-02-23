@@ -9,12 +9,7 @@ import {
   Watch,
   Element,
 } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './input.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -27,15 +22,14 @@ const SELECT_ICON =
 
 @Component({
   tag: 'scale-input',
+  styleUrl: './input.css',
   shadow: false,
 })
-export class Input implements Base {
+export class Input {
   selectElement: HTMLSelectElement;
   mutationObserver: MutationObserver;
 
   @Element() el: HTMLElement;
-  /** (optional) Input text class */
-  @Prop() customClass?: string = '';
   /** (optional) Input type */
   @Prop() type?:
     | 'email'
@@ -96,10 +90,8 @@ export class Input implements Base {
   /** (optional) Makes type `select` behave as a controlled component in React */
   @Prop() controlled?: boolean = false;
 
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Input', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /** Emitted when a keyboard input occurred. */
   @Event() scaleInput!: EventEmitter<KeyboardEvent>;
@@ -260,7 +252,6 @@ export class Input implements Base {
 
   render() {
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
-    const { classes } = this.stylesheet;
 
     const ariaInvalidAttr =
       this.status === 'error' ? { 'aria-invalid': true } : {};
@@ -401,7 +392,7 @@ export class Input implements Base {
           {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
           {this.type === 'textarea' && this.variant === 'animated' && (
             <span
-              class={classes['input__textarea-label-safety-background']}
+              class="input__textarea-label-safety-background"
               aria-hidden="true"
             />
           )}
@@ -428,21 +419,18 @@ export class Input implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-
+  getCssClassMap() {
     return classNames(
-      classes.input,
-      this.customClass && this.customClass,
-      this.type && classes[`input--type-${this.type}`],
-      this.hasFocus && classes['input--has-focus'],
-      this.checked && classes[`input--checked`],
-      this.resize && classes[`input--resize-${this.resize}`],
-      this.variant && classes[`input--variant-${this.variant}`],
-      this.disabled && classes[`input--disabled`],
-      this.transparent && classes['input--transparent'],
-      this.status && classes[`input--status-${this.status}`],
-      this.size && classes[`input--size-${this.size}`],
+      'input',
+      this.type && `input--type-${this.type}`,
+      this.hasFocus && 'input--has-focus',
+      this.checked && `input--checked`,
+      this.resize && `input--resize-${this.resize}`,
+      this.variant && `input--variant-${this.variant}`,
+      this.disabled && `input--disabled`,
+      this.transparent && 'input--transparent',
+      this.status && `input--status-${this.status}`,
+      this.size && `input--size-${this.size}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

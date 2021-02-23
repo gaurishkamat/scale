@@ -1,20 +1,12 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './progress-bar.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
-
 let i = 0;
-
 @Component({
   tag: 'scale-progress-bar',
+  styleUrl: './progress-bar.css',
   shadow: true,
 })
-export class ProgressBar implements Base {
-  /** (optional) Progress bar class */
-  @Prop() customClass?: string = '';
+export class ProgressBar {
   /** (optional) Progress bar busy switch */
   @Prop() busy?: boolean = false;
   /** (required) Progress bar percentage */
@@ -39,10 +31,8 @@ export class ProgressBar implements Base {
   @Prop() progressBarId?: string;
   /** (optional) Progress bar label */
   @Prop() label?: string;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('ProgressBar', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   componentWillLoad() {
     if (this.progressBarId == null) {
@@ -73,24 +63,20 @@ export class ProgressBar implements Base {
   };
 
   render() {
-    const { classes } = this.stylesheet;
-
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
         <style>{this.transitions(this.percentage)}</style>
+
         <div class={this.getCssClassMap()}>
           {!!this.label && (
-            <label
-              class={classes['progress-bar__label']}
-              htmlFor={this.progressBarId}
-            >
+            <label class="progress-bar__label" htmlFor={this.progressBarId}>
               {this.label}
             </label>
           )}
-          <div class={classes['progress-bar-wrapper']}>
+          <div class="progress-bar-wrapper">
             <div
-              class={classes['progress-bar__outer']}
+              class="progress-bar__outer"
               style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
               aria-valuemin={0}
@@ -101,28 +87,23 @@ export class ProgressBar implements Base {
               aria-label={this.label}
               id={this.progressBarId}
             >
-              <div
-                class={classes['progress-bar__inner']}
-                style={this.progressStyle()}
-              >
+              <div class="progress-bar__inner" style={this.progressStyle()}>
                 {!!this.statusInside && (
-                  <div
-                    class={classes['progress-bar__inner-status']}
-                    aria-hidden="true"
-                  >{`${this.percentage}%`}</div>
+                  <div class="progress-bar__inner-status" aria-hidden="true">
+                    {this.percentage}%
+                  </div>
                 )}
               </div>
             </div>
 
             {!!this.showStatus && (
-              <div
-                class={classes['progress-bar__status']}
-                aria-hidden="true"
-              >{`${this.percentage}%`}</div>
+              <div class="progress-bar__status" aria-hidden="true">
+                {this.percentage}%
+              </div>
             )}
             {!!this.icon && (
               <scale-icon
-                class={classes['progress-bar__status']}
+                class="progress-bar__status"
                 aria-hidden="true"
                 path={this.icon}
                 size={16}
@@ -131,12 +112,12 @@ export class ProgressBar implements Base {
           </div>
         </div>
         {!!this.statusDescription && (
-          <div class={classes['progress-bar__status-description']} role="alert">
+          <div class="progress-bar__status-description" role="alert">
             {this.statusDescription}
           </div>
         )}
         {
-          <span aria-live="polite" class={classes['progress-bar__aria-live']}>
+          <span aria-live="polite" class="progress-bar__aria-live">
             {this.percentage !== Math.round(this.percentage / 10) * 10
               ? `${Math.round(this.percentage / 10) * 10}%`
               : null}
@@ -146,14 +127,11 @@ export class ProgressBar implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-
+  getCssClassMap() {
     return classNames(
-      classes['progress-bar'],
-      this.customClass && this.customClass,
-      this.hasError && classes[`progress-bar--has-error`],
-      this.disabled && classes[`progress-bar--disabled`]
+      'progress-bar',
+      this.hasError && 'progress-bar--has-error',
+      this.disabled && 'progress-bar--disabled'
     );
   }
 }

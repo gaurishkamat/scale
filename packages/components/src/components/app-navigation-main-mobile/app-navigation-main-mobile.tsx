@@ -29,6 +29,7 @@ export class MainNavigationMobile {
     bubbles: true,
   })
   closeMenu: EventEmitter;
+
   @Watch('activeRouteId')
   handleActiveRoute(newValue) {
     this.selected = findSelected(this.navigation, newValue, null).selected;

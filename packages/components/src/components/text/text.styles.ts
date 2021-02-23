@@ -1,8 +1,0 @@
-import { JssStyle } from 'jss';
-
-export const styles: JssStyle = {
-  text: {
-    margin: 0,
-    marginBottom: ({ spacing }) => spacing[2],
-  },
-};

@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property           | Attribute           | Description | Type     | Default      |
-| ------------------ | ------------------- | ----------- | -------- | ------------ |
-| `claimLang`        | `claim-lang`        |             | `string` | `undefined`  |
-| `customClass`      | `custom-class`      |             | `string` | `''`         |
-| `footerNavigation` | `footer-navigation` |             | `any`    | `[]`         |
-| `variant`          | `variant`           |             | `string` | `'standard'` |
+| Property           | Attribute           | Description                    | Type     | Default      |
+| ------------------ | ------------------- | ------------------------------ | -------- | ------------ |
+| `claimLang`        | `claim-lang`        |                                | `string` | `undefined`  |
+| `footerNavigation` | `footer-navigation` |                                | `any`    | `[]`         |
+| `styles`           | `styles`            | (optional) Injected CSS styles | `string` | `undefined`  |
+| `variant`          | `variant`           |                                | `string` | `'standard'` |
 
 
 ## Dependencies

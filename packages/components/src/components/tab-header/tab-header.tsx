@@ -1,18 +1,14 @@
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './tab-header.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 let i = 0;
 
 @Component({
   tag: 'scale-tab-header',
+  styleUrl: './tab-header.css',
   shadow: true,
 })
-export class TabHeader implements Base {
+export class TabHeader {
   generatedId: number = i++;
   container: HTMLElement;
 
@@ -20,11 +16,8 @@ export class TabHeader implements Base {
 
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
-  /** decorator Jss stylesheet */
-  @CssInJs('TabHeader', styles) stylesheet: StyleSheet;
-
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
   @Prop() selected: boolean;
 
   @State() hasFocus: boolean = false;
@@ -57,9 +50,6 @@ export class TabHeader implements Base {
     children.forEach(child => child[action]('selected', ''));
   }
 
-  disconnectedCallback() {}
-  componentWillUpdate() {}
-
   render() {
     return (
       <Host
@@ -70,7 +60,8 @@ export class TabHeader implements Base {
         onFocus={() => (this.hasFocus = true)}
         onBlur={() => (this.hasFocus = false)}
       >
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <span ref={el => (this.container = el)} class={this.getCssClassMap()}>
           <slot />
         </span>
@@ -78,13 +69,12 @@ export class TabHeader implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes['tab-header'],
-      this.selected && classes['tab-header--selected'],
-      this.small && classes['tab-header--small'],
-      this.hasFocus && classes['tab-header--has-focus']
+      'tab-header',
+      this.selected && 'tab-header--selected',
+      this.small && 'tab-header--small',
+      this.hasFocus && 'tab-header--has-focus'
     );
   }
 }

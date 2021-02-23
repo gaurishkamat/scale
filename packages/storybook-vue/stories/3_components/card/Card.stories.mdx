@@ -27,7 +27,7 @@ import ScaleCard from './ScaleCard.vue';
       control: { type: 'text' }
     },
     styles: {
-      control: { disable: true }
+      control: { type: String }
     }
   }}
 />
@@ -41,12 +41,11 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div :style="{ maxWidth: slot.startsWith('<div') ? '300px'  : 'auto' }">
         <scale-card
-              :custom-class="customClass"
               :to="to"
               :target="target"
               :label="label"
               :rel="rel"
-              :styles="JSON.stringify(styles)"
+              :styles="styles"
             >
                 <div v-if="slot.startsWith('<div')">
                     <div style="margin: -24px;">

@@ -1,6 +1,5 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
 
 const readData = data => {
@@ -19,10 +18,11 @@ const readData = data => {
   shadow: true,
 })
 export class AppFooter {
-  @Prop() customClass?: string = '';
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   footerMenu() {
     return (
@@ -68,6 +68,8 @@ export class AppFooter {
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           <div class="footer-mask"></div>
           <footer class="footer">
@@ -87,10 +89,9 @@ export class AppFooter {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'footer-container',
-      this.customClass && this.customClass,
       this.variant && `footer--variant-${this.variant}`
     );
   }

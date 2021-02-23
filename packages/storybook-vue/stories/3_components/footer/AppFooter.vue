@@ -2,7 +2,6 @@
   <scale-app-footer
     :claim-lang="claimLang"
     :footer-navigation="footerNavigation"
-    :custom-class="customClass"
     :variant="variant"
   ></scale-app-footer>
 </template>
@@ -12,7 +11,6 @@ export default {
   props: {
     claimLang: String,
     footerNavigation: String,
-    customClass: String,
     variant: String
   }
 };

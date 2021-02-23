@@ -1,0 +1,58 @@
+:host(scale-list-item) {
+  display: block;
+}
+
+.list-item {
+  position: relative;
+  font-size: var(--type-size-3, 1rem);
+  line-height: var(--type-leading-3, 1.5);
+  padding-left: calc(0.25ch + var(--spacing-4, 1rem));
+}
+
+.list-item:before {
+  left: 0;
+  content: '';
+  position: absolute;
+}
+
+.list-item--unordered:before {
+  top: 0.5em;
+  border: 1px solid currentColor;
+  display: block;
+  transform: scale(0.66);
+  background: currentColor;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: var(--spacing-2, 0.5rem);
+  height: var(--spacing-2, 0.5rem);
+}
+
+.list-item--nested.list-item--unordered:before {
+  border: 1px solid currentColor;
+  background: transparent;
+}
+
+.list-item--ordered:before {
+  content: attr(data-index) '.';
+  font-size: var(--type-size-3, 1rem);
+  font-weight: var(--type-weight-bold, 700);
+}
+
+.list-item--nested.list-item--ordered:before {
+  font-size: var(--type-size-2, 0.75rem);
+  padding-top: calc(var(--type-size-3, 1rem) - var(--type-size-2, 0.75rem));
+}
+
+.list-item--no-marker {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.list-item--no-marker:before {
+  display: none;
+}
+
+.list-item--no-marker > ::slotted(*) {
+  margin-right: var(--spacing-2, 0.5rem);
+}

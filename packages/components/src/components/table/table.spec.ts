@@ -1,15 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Table } from './table';
-import { styles } from './table.styles';
-import jss from 'jss';
-
 describe('Table', () => {
   let element;
-  let stylesheet;
 
   beforeEach(async () => {
     element = new Table();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   it('should match snapshot', async () => {
@@ -50,13 +45,7 @@ describe('Table', () => {
   });
 
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.size = 'big';
-    stylesheet.addRule('table--size-big', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['table--size-big']
-    );
+    expect(element.getCssClassMap()).toContain('table--size-big');
   });
 });

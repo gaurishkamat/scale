@@ -1,6 +1,5 @@
 import { Component, h, Prop, Host, State, Listen } from '@stencil/core';
 import classNames from 'classnames';
-import { CssClassMap } from '../../utils/utils';
 
 const levelEnhancer = (data, i = 0) => {
   let parsedData;
@@ -37,23 +36,22 @@ export class Shell {
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
-  @Prop() customClass?: string = '';
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
   @State() scrolled: boolean = false;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @Listen('scroll', { target: 'window' })
   onScroll() {
     this.scrolled = window.pageYOffset > 2;
   }
 
-  componentWillLoad() {}
-  componentWillUpdate() {}
-  disconnectedCallback() {}
-
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           <scale-app-header
             scrolled={this.scrolled}
@@ -74,11 +72,7 @@ export class Shell {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    return classNames(
-      'shell',
-      this.customClass && this.customClass,
-      this.scrolled && 'sticky'
-    );
+  getCssClassMap() {
+    return classNames('shell', this.scrolled && 'shell--sticky');
   }
 }

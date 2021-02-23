@@ -7,12 +7,7 @@ import {
   Listen,
   Watch,
 } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './tab-nav.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 /**
  * @see https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-tabs/howto-tabs.js
@@ -27,15 +22,13 @@ const END = 'End';
   tag: 'scale-tab-nav',
   shadow: true,
 })
-export class TabNav implements Base {
+export class TabNav {
   @Element() el: HTMLElement;
 
   /** True for smaller height and font size in tab headers. */
   @Prop() small: boolean = false;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: StyleSheet;
-  /** decorator Jss stylesheet */
-  @CssInJs('TabNav', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @Watch('small')
   smallChanged() {
@@ -84,9 +77,6 @@ export class TabNav implements Base {
     event.preventDefault();
     this.selectTab(nextTab);
   }
-
-  disconnectedCallback() {}
-  componentWillUpdate() {}
 
   connectedCallback() {
     if (!this.el.hasAttribute('role')) {
@@ -180,7 +170,8 @@ export class TabNav implements Base {
   render() {
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           <slot name="tab" />
           <slot name="panel" />
@@ -189,11 +180,7 @@ export class TabNav implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(
-      classes['tab-nav'],
-      this.small && classes['tab-nav--small']
-    );
+  getCssClassMap() {
+    return classNames('tab-nav', this.small && 'tab-nav--small');
   }
 }

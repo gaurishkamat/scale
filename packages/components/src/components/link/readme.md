@@ -58,13 +58,12 @@
 | Property                 | Attribute                  | Description                             | Type      | Default     |
 | ------------------------ | -------------------------- | --------------------------------------- | --------- | ----------- |
 | `block`                  | `block`                    | (optional) Block link                   | `boolean` | `false`     |
-| `customClass`            | `custom-class`             | (optional) Link class                   | `string`  | `''`        |
 | `disabled`               | `disabled`                 | (optional) Disabled link                | `boolean` | `false`     |
 | `href`                   | `href`                     | (optional) Link href                    | `string`  | `undefined` |
 | `icon`                   | `icon`                     | (optional) Icon only                    | `string`  | `undefined` |
 | `iconAccessibilityTitle` | `icon-accessibility-title` | (optional) Icon title for accessibility | `string`  | `undefined` |
 | `iconSize`               | `icon-size`                | (optional) Icon size                    | `number`  | `24`        |
-| `styles`                 | `styles`                   | (optional) Injected jss styles          | `any`     | `undefined` |
+| `styles`                 | `styles`                   | (optional) Injected CSS styles          | `string`  | `undefined` |
 | `target`                 | `target`                   | (optional) Link open a new tag          | `string`  | `'_self'`   |
 | `variant`                | `variant`                  | (optional) Link variant                 | `string`  | `''`        |
 

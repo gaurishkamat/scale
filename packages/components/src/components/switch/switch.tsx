@@ -2,7 +2,6 @@ import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 import { CssClassMap, isPseudoClassSupported } from '../../utils/utils';
 import classNames from 'classnames';
 
-const name = 'switch';
 let i = 0;
 
 // For chrome that applies :focus upon click, and :focus-visible isn't widely supported
@@ -31,8 +30,6 @@ export class Switch {
       this.inputId = 'switch-' + i++;
     }
   }
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -52,11 +49,11 @@ export class Switch {
                 this.scaleChange.emit({ value: this.checked });
               }}
             />
-            <div class={`${name}__wrapper`}>
-              <div class={`${name}__toggle`} />
-              <div class={`${name}__text`} />
+            <div class="switch__wrapper">
+              <div class="switch__toggle" />
+              <div class="switch__text" />
             </div>
-            {this.label && <span class={`${name}__label`}>{this.label}</span>}
+            {this.label && <span class="switch__label">{this.label}</span>}
           </label>
         </div>
       </Host>
@@ -65,10 +62,10 @@ export class Switch {
 
   getCssClassMap(): CssClassMap {
     return classNames(
-      name,
-      this.disabled && `${name}--disabled`,
-      isFocusVisibleSupported && `${name}--focus-visible-supported`,
-      !isFocusVisibleSupported && `${name}--focus-visible-not-supported`
+      'switch',
+      this.disabled && 'switch--disabled',
+      isFocusVisibleSupported && 'switch--focus-visible-supported',
+      !isFocusVisibleSupported && 'switch--focus-visible-not-supported'
     );
   }
 }

@@ -1,6 +1,5 @@
 import { Component, h, Prop, Host, State, Listen, Watch } from '@stencil/core';
 import classNames from 'classnames';
-import { CssClassMap } from '../../utils/utils';
 import { renderIcon } from '../../utils/render-icon';
 import { findRootNode } from '../../utils/menu-utils';
 
@@ -11,7 +10,6 @@ import { findRootNode } from '../../utils/menu-utils';
 export class Header {
   mobileMenuToggle?: HTMLAnchorElement;
   @Prop() claimLang: string;
-  @Prop() customClass?: string = '';
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any[] = [];
   @Prop() iconNavigation?: any[] = [];
@@ -339,10 +337,9 @@ export class Header {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'header',
-      this.customClass && this.customClass,
       this.scrolled && 'sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );

@@ -10,78 +10,15 @@ exports[`Alert should match snapshot 1`] = `
 exports[`Alert should match snapshot when opened 1`] = `
 <scale-alert opened="">
   <mock:shadow-root>
-    <style>
-      .alert-0-0-12 {
-  color: #333;
-  width: 100%;
-  display: flex;
-  padding: 1rem;
-  position: relative;
-  background: #eee;
-  box-sizing: border-box;
-  text-align: left;
-  justify-content: space-between;
-}
-.alert__body-0-0-13 {
-  display: flex;
-}
-.alert__headline-0-0-14 {
-  color: white;
-  margin: 0;
-  font-size: 1rem;
-}
-.alert__icon-0-0-15 {
-  width: 24px;
-  height: 24px;
-  margin: 0 0.5rem 0 0;
-  display: flex;
-  background: none;
-  align-items: center;
-  border-radius: 4px;
-  justify-content: center;
-}
-.alert__close-0-0-16 {
-  cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-}
-.alert__close-0-0-16hover {
-  opacity: 1;
-}
-.alert--variant-primary-0-0-17 {
-  color: #fff;
-  background: blue;
-}
-.alert--variant-secondary-0-0-18 {
-  color: #333;
-  background: #eee;
-}
-.alert--variant-variant-warning-0-0-19 {
-  color: #fff;
-  background: orange;
-}
-.alert--variant-danger-0-0-20 {
-  color: #fff;
-  background: red;
-}
-.alert--variant-success-0-0-21 {
-  color: #fff;
-  background: green;
-}
-.alert--variant-info-0-0-22 {
-  color: #fff;
-  background: lightblue;
-}
-    </style>
-    <div class="alert-0-0-12">
-      <div class="alert__body-0-0-13">
-        <div class="alert__icon-0-0-15"></div>
-        <div>
-          <div class="alert__headline-0-0-14"></div>
+    <div class="alert">
+      <div class="alert__body">
+        <div class="alert__icon"></div>
+        <div class="alert__content">
+          <div class="alert__headline"></div>
           <slot></slot>
         </div>
       </div>
-      <a class="alert__close-0-0-16">
+      <a class="alert__close">
         x
       </a>
     </div>
@@ -93,79 +30,16 @@ exports[`Alert should match snapshot when opened 1`] = `
 exports[`Alert should match snapshot with hasSlotClose 1`] = `
 <scale-alert opened="">
   <mock:shadow-root>
-    <style>
-      .alert-0-0-12 {
-  color: #333;
-  width: 100%;
-  display: flex;
-  padding: 1rem;
-  position: relative;
-  background: #eee;
-  box-sizing: border-box;
-  text-align: left;
-  justify-content: space-between;
-}
-.alert__body-0-0-13 {
-  display: flex;
-}
-.alert__headline-0-0-14 {
-  color: white;
-  margin: 0;
-  font-size: 1rem;
-}
-.alert__icon-0-0-15 {
-  width: 24px;
-  height: 24px;
-  margin: 0 0.5rem 0 0;
-  display: flex;
-  background: none;
-  align-items: center;
-  border-radius: 4px;
-  justify-content: center;
-}
-.alert__close-0-0-16 {
-  cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-}
-.alert__close-0-0-16hover {
-  opacity: 1;
-}
-.alert--variant-primary-0-0-17 {
-  color: #fff;
-  background: blue;
-}
-.alert--variant-secondary-0-0-18 {
-  color: #333;
-  background: #eee;
-}
-.alert--variant-variant-warning-0-0-19 {
-  color: #fff;
-  background: orange;
-}
-.alert--variant-danger-0-0-20 {
-  color: #fff;
-  background: red;
-}
-.alert--variant-success-0-0-21 {
-  color: #fff;
-  background: green;
-}
-.alert--variant-info-0-0-22 {
-  color: #fff;
-  background: lightblue;
-}
-    </style>
-    <div class="alert-0-0-12">
-      <div class="alert__body-0-0-13">
-        <div class="alert__icon-0-0-15"></div>
-        <div>
-          <div class="alert__headline-0-0-14"></div>
+    <div class="alert">
+      <div class="alert__body">
+        <div class="alert__icon"></div>
+        <div class="alert__content">
+          <div class="alert__headline"></div>
           <slot></slot>
         </div>
       </div>
-      <a class="alert__close-0-0-16">
-        <div>
+      <a class="alert__close">
+        <div class="alert__close-icon">
           <slot name="close"></slot>
         </div>
       </a>

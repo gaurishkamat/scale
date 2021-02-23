@@ -8,12 +8,7 @@ import {
   Element,
   EventEmitter,
 } from '@stencil/core';
-import { StyleSheet } from 'jss';
 import classNames from 'classnames';
-import { styles } from './collapsible.styles';
-import { CssClassMap } from '../../utils/utils';
-import { CssInJs } from '../../utils/css-in-js';
-import Base from '../../utils/base-interface';
 
 export interface CollapsibleEventDetail {
   expanded: boolean;
@@ -23,9 +18,10 @@ let i = 0;
 
 @Component({
   tag: 'scale-collapsible',
+  styleUrl: './collapsible.css',
   shadow: true,
 })
-export class Collapsible implements Base {
+export class Collapsible {
   headingElement: HTMLElement;
   headingId: string;
   panelId: string;
@@ -34,19 +30,14 @@ export class Collapsible implements Base {
 
   /** Set to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Collapsible', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /** Default aria-level for heading */
   @State() level: number = 2;
 
   /** Emitted so parent <scale-accordion> knows about it */
   @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   componentWillLoad() {
     const j = i++;
@@ -92,16 +83,15 @@ export class Collapsible implements Base {
   };
 
   render() {
-    const { classes } = this.stylesheet;
-
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
-          <h2 aria-level={this.level} class={classes['collapsible__heading']}>
+          <h2 aria-level={this.level} class="collapsible__heading">
             <button
               id={this.headingId}
-              class={classes['collapsible__button']}
+              class="collapsible__button"
               onClick={this.handleClick}
               aria-expanded={this.expanded ? 'true' : 'false'}
               aria-controls={this.panelId}
@@ -109,7 +99,7 @@ export class Collapsible implements Base {
               <scale-icon-navigation-collapse-down
                 size={16}
                 decorative
-                class={classes['collapsible__icon']}
+                class="collapsible__icon"
               />
               <span ref={el => (this.headingElement = el)} />
             </button>
@@ -119,7 +109,7 @@ export class Collapsible implements Base {
             role="region"
             aria-labelledby={this.headingId}
             hidden={!this.expanded}
-            class={classes['collapsible__content']}
+            class="collapsible__content"
           >
             <slot />
           </div>
@@ -128,11 +118,7 @@ export class Collapsible implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(
-      classes['collapsible'],
-      this.expanded && classes['collapsible--expanded']
-    );
+  getCssClassMap() {
+    return classNames('collapsible', this.expanded && 'collapsible--expanded');
   }
 }

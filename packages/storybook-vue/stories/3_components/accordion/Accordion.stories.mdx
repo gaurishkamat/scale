@@ -15,6 +15,10 @@ import ScaleAccordion from "./ScaleAccordion.vue";
       defaultValue: false,
       control: { type: "boolean" },
     },
+    expanded: {
+      defaultValue: false,
+      control: { type: "boolean" },
+    },
   }}
 />
 
@@ -27,6 +31,7 @@ export const Template = (args, { argTypes }) => ({
     <scale-accordion
       :styles="styles"
       :dependent="dependent"
+      :expanded="expanded"
     >
       <scale-collapsible>
         <h3>Leo integer malesuada nunc vel risus</h3>
@@ -89,6 +94,37 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-accordion dependent>
+  <scale-collapsible>
+    <h3>Leo integer malesuada nunc vel risus</h3>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>Dolor purus non enim</h3>
+    <p>Bespoke austin pork belly yuccie pop-up…</p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h3>
+    <p>Biodiesel chia af hoodie tumeric bespoke letterpress…</p>
+  </scale-collapsible>
+</scale-accordion>
+```
+
+
+## Expanded
+
+<Canvas withSource="none">
+  <Story
+    name="Expanded"
+    args={{
+      expanded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-accordion expanded>
   <scale-collapsible>
     <h3>Leo integer malesuada nunc vel risus</h3>
     <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>

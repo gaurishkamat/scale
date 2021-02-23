@@ -7,18 +7,18 @@
 
 ## Properties
 
-| Property           | Attribute           | Description | Type     | Default |
-| ------------------ | ------------------- | ----------- | -------- | ------- |
-| `activeRouteId`    | `active-route-id`   |             | `string` | `''`    |
-| `activeSectorId`   | `active-sector-id`  |             | `string` | `''`    |
-| `addonNavigation`  | `addon-navigation`  |             | `any`    | `[]`    |
-| `brandTitle`       | `brand-title`       |             | `string` | `''`    |
-| `claimLang`        | `claim-lang`        |             | `string` | `'de'`  |
-| `customClass`      | `custom-class`      |             | `string` | `''`    |
-| `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`    |
-| `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`    |
-| `portalName`       | `portal-name`       |             | `string` | `''`    |
-| `sectorNavigation` | `sector-navigation` |             | `any`    | `[]`    |
+| Property           | Attribute           | Description                    | Type     | Default     |
+| ------------------ | ------------------- | ------------------------------ | -------- | ----------- |
+| `activeRouteId`    | `active-route-id`   |                                | `string` | `''`        |
+| `activeSectorId`   | `active-sector-id`  |                                | `string` | `''`        |
+| `addonNavigation`  | `addon-navigation`  |                                | `any`    | `[]`        |
+| `brandTitle`       | `brand-title`       |                                | `string` | `''`        |
+| `claimLang`        | `claim-lang`        |                                | `string` | `'de'`      |
+| `iconNavigation`   | `icon-navigation`   |                                | `any`    | `[]`        |
+| `mainNavigation`   | `main-navigation`   |                                | `any`    | `[]`        |
+| `portalName`       | `portal-name`       |                                | `string` | `''`        |
+| `sectorNavigation` | `sector-navigation` |                                | `any`    | `[]`        |
+| `styles`           | `styles`            | (optional) Injected CSS styles | `string` | `undefined` |
 
 
 ## Dependencies

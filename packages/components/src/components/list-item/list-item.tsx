@@ -1,20 +1,17 @@
 import { Component, h, Prop, Host, Element, State } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './list-item.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 /**
  * @todo styles for custom icon (no-marker prop?)
  * @see https://github.com/carbon-design-system/carbon-web-components/tree/master/src/components/list
  */
+
 @Component({
   tag: 'scale-list-item',
+  styleUrl: './list-item.css',
   shadow: true,
 })
-export class ListItem implements Base {
+export class ListItem {
   @Element() el: HTMLElement;
 
   /** Whether this is a child of an ordered scale-list, gets set automatically by its parent */
@@ -23,16 +20,11 @@ export class ListItem implements Base {
   @Prop({ mutable: true }) index?: number;
   /** If `false`, no marker or left padding will be visible */
   @Prop() marker: boolean = true;
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('ListItem', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @State() hasNestedChild: boolean = false;
   @State() isNested: boolean = false;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   componentWillLoad() {
     this.isNested = this.isNestedCheck();
@@ -55,17 +47,13 @@ export class ListItem implements Base {
   };
 
   render() {
-    const { classes } = this.stylesheet;
-
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()} data-index={this.index}>
           <slot />
-          <div
-            class={classes['list-item__nested-list']}
-            hidden={!this.hasNestedChild}
-          >
+          <div class={`list-item__nested-list`} hidden={!this.hasNestedChild}>
             <slot name="nested" onSlotchange={this.handleSlotChange}></slot>
           </div>
         </div>
@@ -73,13 +61,14 @@ export class ListItem implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
+    const orderType = this.ordered ? 'ordered' : 'unordered';
+
     return classNames(
-      classes['list-item'],
-      this.isNested && classes['list-item--nested'],
-      classes[`list-item--${!this.ordered ? 'un' : ''}ordered`],
-      this.marker === false && classes['list-item--no-marker']
+      'list-item',
+      this.isNested && 'list-item--nested',
+      `list-item--${orderType}`,
+      !this.marker && 'list-item--no-marker'
     );
   }
 }

@@ -1,16 +1,22 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
-import ScaleTag from './ScaleTag.vue';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import ScaleTag from "./ScaleTag.vue";
 
 <Meta
-  title='Components/Tag'
+  title="Components/Tag"
   component={ScaleTag}
   argTypes={{
     label: {
-      control: { type: 'text' }
+      control: { type: "text" },
     },
     styles: {
-      control: { disable: true }
-    }
+      control: { disable: true },
+    },
   }}
 />
 
@@ -18,11 +24,10 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTag },
   props: {
     label: String,
-    ...ScaleTag.props
+    ...ScaleTag.props,
   },
   template: `
     <scale-tag
-    :custom-class="customClass"
     :disabled="disabled"
     :dismissable="dismissable"
     :href="href"
@@ -32,12 +37,12 @@ export const Template = (args, { argTypes }) => ({
     >
     {{ label }}
     </scale-tag>
-  `
-})
+  `,
+});
 
-export const TemplateInteractive = (args, {argTypes}) => ({
-    components:{ ScaleTag },
-    template: `
+export const TemplateInteractive = (args, { argTypes }) => ({
+  components: { ScaleTag },
+  template: `
       <ul aria-label="fruits" style="display: flex; list-style: none; padding: 0;">
           <li v-for="fruit in fruits" :key="fruit" style="margin-right: 4px;">
             <scale-tag
@@ -51,50 +56,62 @@ export const TemplateInteractive = (args, {argTypes}) => ({
           </li>
       </ul>
   `,
-    methods: {
-        removeFruit(fruit) {
-            this.fruits = this.fruits.filter((x) => x !== fruit)
-            setTimeout(() => {
-                this.$el.querySelector("#root > ul > li > scale-tag") && this.$el.querySelector("#root > ul > li > scale-tag").shadowRoot.querySelector("span > button").focus()
-            })
-        }
+  methods: {
+    removeFruit(fruit) {
+      this.fruits = this.fruits.filter((x) => x !== fruit);
+      setTimeout(() => {
+        this.$el.querySelector("#root > ul > li > scale-tag") &&
+          this.$el
+            .querySelector("#root > ul > li > scale-tag")
+            .shadowRoot.querySelector("span > button")
+            .focus();
+      });
     },
-    data: () => ({
-        fruits: ['Melon', 'Banana', 'Pear']
-    })
-})
+  },
+  data: () => ({
+    fruits: ["Melon", "Banana", "Pear"],
+  }),
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Chip</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  }}
+>
+  <h1>Chip</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
-      label: 'A tag'
+      label: "A tag",
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard"/>
+<ArgsTable story="Standard" />
 
 ## A dissmisable tag
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="A dissmisable tag"
     args={{
-        label: 'A dissmisable tag',
-        dismissable: true
-    }}>
+      label: "A dissmisable tag",
+      dismissable: true,
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -104,14 +121,15 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## A small tag
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="A small tag"
     args={{
-        label: 'A small tag',
-        size: 'small'
-    }}>
+      label: "A small tag",
+      size: "small",
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -121,15 +139,16 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## A small dismissable tag
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="A small dismissable tag"
     args={{
-        label: 'A small dismissable tag',
-        size: 'small',
-        dismissable: true
-    }}>
+      label: "A small dismissable tag",
+      size: "small",
+      dismissable: true,
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -139,15 +158,16 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## Disable dissmisable tag
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Disabled dismissable tag"
     args={{
-        label: 'Disabled dismissable tag',
-        disabled: true,
-        dismissable: true,
-    }}>
+      label: "Disabled dismissable tag",
+      disabled: true,
+      dismissable: true,
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -157,14 +177,15 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## Variant secondary tag
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Variant secondary tag"
     args={{
-        label: 'Variant secondary tag',
-        variant: 'secondary'
-    }}>
+      label: "Variant secondary tag",
+      variant: "secondary",
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -174,52 +195,59 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## Variant secondary link
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Variant secondary link"
     args={{
-        label: 'Variant secondary link',
-        variant: 'secondary',
-        href: 'https://www.example.com',
-        target: '_blank'
-    }}>
+      label: "Variant secondary link",
+      variant: "secondary",
+      href: "https://www.example.com",
+      target: "_blank",
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
-<scale-tag variant="secondary" href="https://www.example.com" target="_blank">Variant secondary link</scale-tag>
+<scale-tag variant="secondary" href="https://www.example.com" target="_blank"
+  >Variant secondary link</scale-tag
+>
 ```
 
 ## Variant secondary dismissable
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Variant secondary dismissable"
     args={{
-        label: 'Variant secondary dismissable',
-        variant: 'secondary',
-        dismissable: true
-    }}>
+      label: "Variant secondary dismissable",
+      variant: "secondary",
+      dismissable: true,
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
-<scale-tag variant="secondary" dismissable>Variant secondary dismissable</scale-tag>
+<scale-tag variant="secondary" dismissable
+  >Variant secondary dismissable</scale-tag
+>
 ```
 
 ## Variant secondary small
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Variant secondary small"
     args={{
-        label: 'Variant secondary small',
-        variant: 'secondary',
-        size: 'small'
-    }}>
+      label: "Variant secondary small",
+      variant: "secondary",
+      size: "small",
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
@@ -229,28 +257,27 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 ## Variant secondary dismissable small
 
 <Canvas withSource="none">
-    <Story
+  <Story
     name="Variant secondary dismissable small"
     args={{
-        label: 'Variant secondary dismissable small',
-        variant: 'secondary',
-        dismissable: true,
-        size: 'small'
-    }}>
+      label: "Variant secondary dismissable small",
+      variant: "secondary",
+      dismissable: true,
+      size: "small",
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
-<scale-tag variant="secondary" dismissable size="small">Variant secondary dismissable small</scale-tag>
+<scale-tag variant="secondary" dismissable size="small"
+  >Variant secondary dismissable small</scale-tag
+>
 ```
 
 ## Complete example
 
 <Canvas withSource="none">
-    <Story
-        name="Complete example"
-    >
-        {TemplateInteractive.bind({})}
-    </Story>
+  <Story name="Complete example">{TemplateInteractive.bind({})}</Story>
 </Canvas>

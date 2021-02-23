@@ -93,7 +93,7 @@ export class SidebarNav {
 
     return (
       <Host>
-        <style>{this.styles}</style>
+        {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()} part="base">
           {this.collapsible === true && (
             <button

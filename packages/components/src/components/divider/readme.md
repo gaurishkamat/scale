@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type      | Default     |
-| ------------- | -------------- | ------------------------------ | --------- | ----------- |
-| `customClass` | `custom-class` | (optional) Divider class       | `string`  | `''`        |
-| `size`        | `size`         | (optional) Divider size        | `string`  | `''`        |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`     | `undefined` |
-| `vertical`    | `vertical`     | (optional) Divider vertical    | `boolean` | `false`     |
+| Property   | Attribute  | Description                    | Type      | Default     |
+| ---------- | ---------- | ------------------------------ | --------- | ----------- |
+| `size`     | `size`     | (optional) Divider size        | `string`  | `''`        |
+| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
+| `vertical` | `vertical` | (optional) Divider vertical    | `boolean` | `false`     |
 
 
 ----------------------------------------------

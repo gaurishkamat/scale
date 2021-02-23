@@ -81,8 +81,12 @@
           "description": "If `true`, only one scale-collapsible within the accordion can be open at a time"
         },
         {
+          "name": "expanded",
+          "description": "If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant"
+        },
+        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -93,10 +97,6 @@
         "value": ""
       },
       "attributes": [
-        {
-          "name": "custom-class",
-          "description": "(optional) Alert class"
-        },
         {
           "name": "headline",
           "description": "(optional) Alert title"
@@ -115,7 +115,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "timeout",
@@ -139,12 +139,12 @@
           "description": ""
         },
         {
-          "name": "custom-class",
+          "name": "footer-navigation",
           "description": ""
         },
         {
-          "name": "footer-navigation",
-          "description": ""
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "variant",
@@ -169,10 +169,6 @@
         },
         {
           "name": "claim-lang",
-          "description": ""
-        },
-        {
-          "name": "custom-class",
           "description": ""
         },
         {
@@ -213,10 +209,6 @@
           "description": ""
         },
         {
-          "name": "custom-class",
-          "description": ""
-        },
-        {
           "name": "icon-navigation",
           "description": ""
         },
@@ -231,6 +223,10 @@
         {
           "name": "sector-navigation",
           "description": ""
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -247,7 +243,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -261,10 +257,6 @@
         {
           "name": "aria-label",
           "description": "(optional) aria-label attribute needed for icon-only buttons"
-        },
-        {
-          "name": "custom-class",
-          "description": "(optional) Custom class"
         },
         {
           "name": "disabled",
@@ -304,7 +296,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",
@@ -339,10 +331,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Card class"
-        },
-        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
@@ -352,7 +340,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",
@@ -372,12 +360,8 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Carousel class"
-        },
-        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "vertical",
@@ -393,10 +377,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Custom class"
-        },
-        {
           "name": "data",
           "description": "Chart Data",
           "values": [
@@ -408,10 +388,6 @@
         {
           "name": "heading",
           "description": "Chart Title"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -428,7 +404,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -517,16 +493,12 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Divider class"
-        },
-        {
           "name": "size",
           "description": "(optional) Divider size"
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "vertical",
@@ -544,10 +516,6 @@
         {
           "name": "accessibility-title",
           "description": "(optional) When using the icon as standalone, make it meaningful for accessibility"
-        },
-        {
-          "name": "custom-class",
-          "description": "(optional) Tag custom class"
         },
         {
           "name": "decorative",
@@ -576,10 +544,6 @@
         {
           "name": "stroke",
           "description": "The SVG `stroke` attribute"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -5856,10 +5820,6 @@
           "description": "(optional) Input counter"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Input text class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Input disabled"
         },
@@ -5935,7 +5895,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "transparent",
@@ -6014,10 +5974,6 @@
           "description": "(optional) Block link"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Link class"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Disabled link"
         },
@@ -6039,7 +5995,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",
@@ -6064,7 +6020,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6089,7 +6045,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6138,7 +6094,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "variant",
@@ -6156,10 +6112,6 @@
         {
           "name": "busy",
           "description": "(optional) Progress bar busy switch"
-        },
-        {
-          "name": "custom-class",
-          "description": "(optional) Progress bar class"
         },
         {
           "name": "custom-color",
@@ -6207,7 +6159,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6326,10 +6278,6 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Slider class"
-        },
-        {
           "name": "custom-color",
           "description": "(optional) slider custom color"
         },
@@ -6363,7 +6311,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "thumb-large",
@@ -6426,6 +6374,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6439,6 +6391,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size in tab headers."
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6452,6 +6408,10 @@
         {
           "name": "small",
           "description": "True for smaller height and font size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         }
       ]
     },
@@ -6463,20 +6423,12 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Tag class"
-        },
-        {
           "name": "show-sort",
           "description": "(optional) Display sort arrows on/off"
         },
         {
           "name": "size",
           "description": "(optional) Visual size"
-        },
-        {
-          "name": "styles",
-          "description": "(optional) Injected jss styles"
         }
       ]
     },
@@ -6487,10 +6439,6 @@
         "value": ""
       },
       "attributes": [
-        {
-          "name": "custom-class",
-          "description": "(optional) Tag class"
-        },
         {
           "name": "disabled",
           "description": "(optional) Tag disabled"
@@ -6513,7 +6461,7 @@
         },
         {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "target",
@@ -6533,12 +6481,8 @@
       },
       "attributes": [
         {
-          "name": "custom-class",
-          "description": "(optional) Text class"
-        },
-        {
           "name": "styles",
-          "description": "(optional) Injected jss styles"
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "tag",
@@ -6566,10 +6510,6 @@
           "description": "(optional) Toast autohide time"
         },
         {
-          "name": "custom-class",
-          "description": "(optional) Toast class"
-        },
-        {
           "name": "fade-duration",
           "description": "(optional) Toast fade duration"
         },
@@ -6588,6 +6528,10 @@
         {
           "name": "size",
           "description": "(optional) Toast size"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
         },
         {
           "name": "time",

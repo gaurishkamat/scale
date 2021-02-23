@@ -1,0 +1,9 @@
+.list {
+  padding-left: 0;
+}
+
+.list--nested {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: var(--spacing-2, 0.5rem);
+}

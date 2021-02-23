@@ -1,0 +1,7 @@
+.tab-panel {
+  padding-top: var(--spacing-5, 1.5rem);
+}
+
+.tab-panel--small {
+  padding-top: var(--spacing-4, 1rem);
+}

@@ -2,7 +2,7 @@
 export default {
   props: {
     ordered: { type: Boolean },
-    styles: { type: Object }
+    styles: { type: String }
   },
   render() {
     return this.$slots.default

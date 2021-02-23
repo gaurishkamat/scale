@@ -1,18 +1,11 @@
 import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './tag.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
-
 @Component({
   tag: 'scale-tag',
+  styleUrl: './tag.css',
   shadow: true,
 })
-export class Tag implements Base {
-  /** (optional) Tag class */
-  @Prop() customClass?: string = '';
+export class Tag {
   /** (optional) Tag size */
   @Prop() size?: string = '';
   /** (optional) Tag variant */
@@ -27,11 +20,9 @@ export class Tag implements Base {
   @Prop() disabled?: boolean = false;
   /** (optional) Dismiss label */
   @Prop() dismissText?: string = 'dismiss';
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Tag', styles) stylesheet: StyleSheet;
   /** (optional) Close icon click event */
   @Event() scaleClose: EventEmitter<MouseEvent>;
 
@@ -60,7 +51,8 @@ export class Tag implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <Element class={this.getCssClassMap()} {...linkProps}>
           <slot />
 
@@ -78,16 +70,14 @@ export class Tag implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.tag,
-      this.customClass && this.customClass,
-      this.size && classes[`tag--size-${this.size}`],
-      this.variant && classes[`tag--variant-${this.variant}`],
-      !!this.href && classes[`tag--link`],
-      !!this.dismissable && classes[`tag--dismissable`],
-      !!this.disabled && classes[`tag--disabled`]
+      'tag',
+      this.size && `tag--size-${this.size}`,
+      this.variant && `tag--variant-${this.variant}`,
+      !!this.href && 'tag--link',
+      !!this.dismissable && 'tag--dismissable',
+      !!this.disabled && 'tag--disabled'
     );
   }
 }

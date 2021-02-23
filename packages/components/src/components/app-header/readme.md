@@ -13,7 +13,6 @@
 | `activeSectorId`   | `active-sector-id` |             | `string`  | `undefined` |
 | `addonNavigation`  | --                 |             | `any[]`   | `[]`        |
 | `claimLang`        | `claim-lang`       |             | `string`  | `undefined` |
-| `customClass`      | `custom-class`     |             | `string`  | `''`        |
 | `iconNavigation`   | --                 |             | `any[]`   | `[]`        |
 | `mainNavigation`   | --                 |             | `any[]`   | `[]`        |
 | `portalName`       | `portal-name`      |             | `string`  | `''`        |
