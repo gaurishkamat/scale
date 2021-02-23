@@ -21,7 +21,7 @@
   transition: var(--transition-generic, all 0.2s ease-in-out);
 }
 .button:not(.button--disabled):focus {
-  box-shadow: 0 0 0 var(--size-border-focus) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--size-border-focus, 2px) var(--color-focus, #009de0);
 }
 .button.button--icon-before ::slotted(*) {
   margin-right: var(--spacing-2, 0.5rem);

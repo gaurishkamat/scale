@@ -65,15 +65,15 @@
   font-size: var(--font-size-2, 0.75rem);
 }
 
-.slider .slider-thumb:hover {
+.slider .slider__thumb:hover {
   border-color: var(--color-primary-hover, #f90984);
 }
 
-.slider .slider-thumb:active {
+.slider .slider__thumb:active {
   border-color: var(--color-primary-active, #cb0068);
 }
 
-.slider .slider-thumb:focus {
+.slider .slider__thumb:focus {
   box-shadow: 0 0 0 2px var(--color-focus, #009de0);
 }
 

@@ -1,4 +1,4 @@
-scale-tab-header:focus {
+:host {
   outline: none;
 }
 .tab-header {
@@ -52,11 +52,11 @@ scale-tab-header:focus {
 .tab-header:active:after {
   background-color: var(--color-primary-active, #cb0068);
 }
-.tab-header :slotted(*) {
+.tab-header ::slotted(*) {
   margin-right: var(--spacing-2, 0.5rem);
 }
 .tab-header--has-focus {
-  box-shadow: 0 0 0 var(--size-border-focus) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--size-border-focus, 2px) var(--color-focus, #009de0);
 }
 .tab-header--selected {
   color: #e20074;
