@@ -86,66 +86,66 @@ tokens[TYPE_VARIANT] = {
     ...defaultVariant,
   },
   body_short: {
-    lineHeight: lineHeight['125'],
     ...defaultVariant,
+    lineHeight: lineHeight['125'],
   },
   body_large: {
+    ...defaultVariant,
     size: size['20'],
     lineHeight: lineHeight['160'],
-    ...defaultVariant,
   },
   label: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['120'],
-    ...defaultVariant,
   },
   label_smaller: {
+    ...defaultVariant,
     size: size['10'],
     lineHeight: lineHeight['120'],
-    ...defaultVariant,
   },
   caption: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['133'],
-    ...defaultVariant,
   },
   smaller: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['125'],
-    ...defaultVariant,
   },
   heading_6: {
+    ...defaultVariant,
     weight: weight.bold,
     lineHeight: lineHeight['133'],
-    ...defaultVariant,
   },
   heading_5: {
-    weight: weight.extrabold,
     ...defaultVariant,
+    weight: weight.extrabold,
   },
   heading_4: {
+    ...defaultVariant,
     size: size['20'],
     lineHeight: lineHeight['120'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_3: {
+    ...defaultVariant,
     size: size['24'],
     lineHeight: lineHeight['133'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_2: {
+    ...defaultVariant,
     size: size['32'],
     lineHeight: lineHeight['125'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_1: {
+    ...defaultVariant,
     size: size['40'],
     lineHeight: lineHeight['120'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
 };
 
@@ -305,6 +305,7 @@ tokens[COLOR] = {
     primary: palette.magenta,
     primaryHover: Color('#F90984'), // TODO remove? MAGENTA_HOVER
     primaryActive: Color('#CB0068'), // TODO remove? MAGENTA_ACTIVE
+    focus: palette.blue50,
     ...palette,
   },
   text: {
@@ -388,7 +389,8 @@ tokens[MOTION] = {
     deliberate: 800,
   },
   easing: {
-    default: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+    default: 'cubic-bezier(0.42, 0, 0.58, 1)',
+    enter: 'cubic-bezier(0.390, 0.575, 0.565, 1)',
   },
 };
 
