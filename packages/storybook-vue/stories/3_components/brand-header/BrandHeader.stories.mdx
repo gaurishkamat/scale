@@ -139,8 +139,8 @@ import AppShell from './AppShell.vue';
     }}
   >
     {() => ({
-        components: { AppHeader },
-        props: AppHeader.props,
+        components: { AppShell },
+        props: AppShell.props,
         template: `
         <div style="margin: -1rem;">
           <scale-app-shell>
@@ -216,7 +216,6 @@ import AppShell from './AppShell.vue';
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
                 :addon-navigation="addonNavigation"
-                :custom-class="customClass"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
@@ -282,7 +281,6 @@ import AppShell from './AppShell.vue';
                 :main-navigation="mainNavigation"
                 :icon-navigation="iconNavigation"
                 :addon-navigation="addonNavigation"
-                :custom-class="customClass"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
@@ -347,7 +345,6 @@ import AppShell from './AppShell.vue';
                 :main-navigation="mainNavigation"
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
-                :custom-class="customClass"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
