@@ -168,7 +168,19 @@
           "description": ""
         },
         {
+          "name": "addon-navigation",
+          "description": ""
+        },
+        {
           "name": "claim-lang",
+          "description": ""
+        },
+        {
+          "name": "icon-navigation",
+          "description": ""
+        },
+        {
+          "name": "main-navigation",
           "description": ""
         },
         {
@@ -176,7 +188,7 @@
           "description": ""
         },
         {
-          "name": "scrolled",
+          "name": "sector-navigation",
           "description": ""
         }
       ]

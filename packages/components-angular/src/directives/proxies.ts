@@ -146,13 +146,13 @@ export class ScaleAppFooter {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;

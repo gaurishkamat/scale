@@ -56,28 +56,6 @@ import AppShell from './AppShell.vue';
   }}
 />
 
-export const Template = (args, { argTypes }) => ({
-  components: { AppShell },
-  props: AppShell.props,
-  template: `
-    <div style="margin: -1rem;">
-      <scale-app-shell
-        :portal-name="portalName"
-        :claim-lang="claimLang"
-        :main-navigation="mainNavigation"
-        :icon-navigation="iconNavigation"
-        :sector-navigation="sectorNavigation"
-        :addon-navigation="addonNavigation"
-        :active-route-id="activeRouteId"
-        :active-sector-id="activeSectorId"
-      >
-        <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
-        <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
-      </scale-app-shell>
-    </div>
-  `
-})
-
 # Brand Header & Navigation
 
 ## Standard
@@ -98,7 +76,27 @@ export const Template = (args, { argTypes }) => ({
       activeSectorId: 'Personal38',
     }}
   >
-    {Template.bind({})}
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div style="margin: -1rem;">
+          <scale-app-shell
+            :portal-name="portalName"
+            :claim-lang="claimLang"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+          >
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })}
   </Story>
 </Canvas>
 
@@ -119,4 +117,263 @@ export const Template = (args, { argTypes }) => ({
   <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
   <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
 </scale-app-shell>
+```
+
+
+## Custom Main Navigation
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Main Navigation'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div style="margin: -1rem;">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-main"><h1>main nav slot</h1></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })}
+  </Story>
+</Canvas>
+
+```html
+  <scale-app-shell>
+    <scale-app-header
+        slot="header"
+        id="header"
+        :main-navigation="mainNavigation"
+        :icon-navigation="iconNavigation"
+        :sector-navigation="sectorNavigation"
+        :addon-navigation="addonNavigation"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
+    >
+        <div slot="menu-main"><h1>main nav slot</h1></div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+    <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+  </scale-app-shell>
+```
+
+
+## Custom Icon Navigation
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Icon Navigation'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div style="margin: -1rem;">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-icon"><h1>icon nav slot</h1></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })
+    }
+  </Story>
+</Canvas>
+
+```html
+  <scale-app-shell>
+    <scale-app-header
+        slot="header"
+        id="header"
+        :main-navigation="mainNavigation"
+        :sector-navigation="sectorNavigation"
+        :addon-navigation="addonNavigation"
+        :custom-class="customClass"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
+    >
+        <div slot="menu-icon"><h1>icon nav slot</h1></div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+    <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+  </scale-app-shell>
+```
+
+
+## Custom Sector Navigation
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Sector Navigation'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div style="margin: -1rem;">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-sector"><h1>sector nav slot</h1></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })}
+  </Story>
+</Canvas>
+
+```html
+  <scale-app-shell>
+    <scale-app-header
+        slot="header"
+        id="header"
+        :main-navigation="mainNavigation"
+        :icon-navigation="iconNavigation"
+        :addon-navigation="addonNavigation"
+        :custom-class="customClass"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
+    >
+        <div slot="menu-sector"><h1>sector nav slot</h1></div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+    <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+  </scale-app-shell>
+```
+
+
+## Custom Addon Navigation
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Addon Navigation'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div style="margin: -1rem;">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-addon"><h1>addon nav slot</h1></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })}
+  </Story>
+</Canvas>
+
+```html
+  <scale-app-shell>
+    <scale-app-header
+        slot="header"
+        id="header"
+        :main-navigation="mainNavigation"
+        :icon-navigation="iconNavigation"
+        :sector-navigation="sectorNavigation"
+        :custom-class="customClass"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
+    >
+        <div slot="menu-addon"><h1>addon nav slot</h1></div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+    <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+  </scale-app-shell>
 ```

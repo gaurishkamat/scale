@@ -7,17 +7,16 @@
 
 ## Properties
 
-| Property           | Attribute          | Description | Type      | Default     |
-| ------------------ | ------------------ | ----------- | --------- | ----------- |
-| `activeRouteId`    | `active-route-id`  |             | `string`  | `undefined` |
-| `activeSectorId`   | `active-sector-id` |             | `string`  | `undefined` |
-| `addonNavigation`  | --                 |             | `any[]`   | `[]`        |
-| `claimLang`        | `claim-lang`       |             | `string`  | `undefined` |
-| `iconNavigation`   | --                 |             | `any[]`   | `[]`        |
-| `mainNavigation`   | --                 |             | `any[]`   | `[]`        |
-| `portalName`       | `portal-name`      |             | `string`  | `''`        |
-| `scrolled`         | `scrolled`         |             | `boolean` | `false`     |
-| `sectorNavigation` | --                 |             | `any[]`   | `[]`        |
+| Property           | Attribute           | Description | Type     | Default     |
+| ------------------ | ------------------- | ----------- | -------- | ----------- |
+| `activeRouteId`    | `active-route-id`   |             | `string` | `undefined` |
+| `activeSectorId`   | `active-sector-id`  |             | `string` | `undefined` |
+| `addonNavigation`  | `addon-navigation`  |             | `any`    | `[]`        |
+| `claimLang`        | `claim-lang`        |             | `string` | `undefined` |
+| `iconNavigation`   | `icon-navigation`   |             | `any`    | `[]`        |
+| `mainNavigation`   | `main-navigation`   |             | `any`    | `[]`        |
+| `portalName`       | `portal-name`       |             | `string` | `''`        |
+| `sectorNavigation` | `sector-navigation` |             | `any`    | `[]`        |
 
 
 ## Dependencies

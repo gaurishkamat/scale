@@ -1,5 +1,5 @@
 <template>
-  <scale-app-shell
+  <scale-app-header
     :portal-name="portalName"
     :claim-lang="claimLang"
     :main-navigation="mainNavigation"
@@ -9,9 +9,12 @@
     :active-route-id="activeRouteId"
     :active-sector-id="activeRouteId"
   >
+    <slot name="menu-main"></slot>
+    <slot name="menu-icon"></slot>
+    <slot name="menu-sector"></slot>
+    <slot name="menu-addon"></slot>
     <slot></slot>
-    <slot name="header"></slot>
-  </scale-app-shell>
+  </scale-app-header>
 </template>
 
 <script>
