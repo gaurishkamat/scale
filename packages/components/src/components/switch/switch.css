@@ -72,9 +72,12 @@
 
 .switch
   input:not(:checked):not(:disabled):active
-  ~ .switch__wrapper
+  + .switch__wrapper
   .switch__toggle,
-.switch input:checked:not(:active) ~ .switch__wrapper .switch__toggle {
+.switch
+  input:checked:not(:disabled):not(:active)
+  + .switch__wrapper
+  .switch__toggle {
   transform: translateX(var(--switch-size));
 }
 
@@ -106,7 +109,7 @@
   --switch-color-state: var(--switch-color-hover);
 }
 
-.switch input:disabled:active ~ .switch__wrapper {
+.switch input:not(:disabled):active ~ .switch__wrapper {
   --switch-color-state: var(--switch-color-on);
   --switch-color-background: var(--switch-color-state);
   --switch-color-toggle: var(--switch-color-state-contrast);
