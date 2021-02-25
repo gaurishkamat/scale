@@ -305,6 +305,7 @@ tokens[COLOR] = {
     primary: palette.magenta,
     primaryHover: Color('#F90984'), // TODO remove? MAGENTA_HOVER
     primaryActive: Color('#CB0068'), // TODO remove? MAGENTA_ACTIVE
+    focus: palette.blue50,
     ...palette,
   },
   text: {
