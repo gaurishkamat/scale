@@ -93,12 +93,12 @@ export namespace Components {
     interface ScaleAppHeader {
         "activeRouteId": string;
         "activeSectorId"?: string;
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "claimLang": string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
         "portalName"?: string;
-        "sectorNavigation"?: any[];
+        "sectorNavigation"?: any;
     }
     interface ScaleAppShell {
         "activeRouteId"?: string;
@@ -6496,12 +6496,12 @@ declare namespace LocalJSX {
     interface ScaleAppHeader {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "claimLang"?: string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
         "portalName"?: string;
-        "sectorNavigation"?: any[];
+        "sectorNavigation"?: any;
     }
     interface ScaleAppShell {
         "activeRouteId"?: string;
