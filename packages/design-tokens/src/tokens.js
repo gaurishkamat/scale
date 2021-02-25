@@ -86,66 +86,66 @@ tokens[TYPE_VARIANT] = {
     ...defaultVariant,
   },
   body_short: {
-    lineHeight: lineHeight['125'],
     ...defaultVariant,
+    lineHeight: lineHeight['125'],
   },
   body_large: {
+    ...defaultVariant,
     size: size['20'],
     lineHeight: lineHeight['160'],
-    ...defaultVariant,
   },
   label: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['120'],
-    ...defaultVariant,
   },
   label_smaller: {
+    ...defaultVariant,
     size: size['10'],
     lineHeight: lineHeight['120'],
-    ...defaultVariant,
   },
   caption: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['133'],
-    ...defaultVariant,
   },
   smaller: {
+    ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['125'],
-    ...defaultVariant,
   },
   heading_6: {
+    ...defaultVariant,
     weight: weight.bold,
     lineHeight: lineHeight['133'],
-    ...defaultVariant,
   },
   heading_5: {
-    weight: weight.extrabold,
     ...defaultVariant,
+    weight: weight.extrabold,
   },
   heading_4: {
+    ...defaultVariant,
     size: size['20'],
     lineHeight: lineHeight['120'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_3: {
+    ...defaultVariant,
     size: size['24'],
     lineHeight: lineHeight['133'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_2: {
+    ...defaultVariant,
     size: size['32'],
     lineHeight: lineHeight['125'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
   heading_1: {
+    ...defaultVariant,
     size: size['40'],
     lineHeight: lineHeight['120'],
     weight: weight.extrabold,
-    ...defaultVariant,
   },
 };
 
