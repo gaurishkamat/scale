@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "restricted"
   },
-  "version": "1.15.1",
+  "version": "1.15.2",
   "type": "module",
   "description": "Design Tokens for the Scale Design System",
   "files": [
