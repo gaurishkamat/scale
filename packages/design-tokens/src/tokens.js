@@ -388,7 +388,8 @@ tokens[MOTION] = {
     deliberate: 800,
   },
   easing: {
-    default: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+    default: 'cubic-bezier(0.42, 0, 0.58, 1)',
+    enter: 'cubic-bezier(0.390, 0.575, 0.565, 1)',
   },
 };
 
