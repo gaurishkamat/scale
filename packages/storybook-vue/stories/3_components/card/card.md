@@ -67,7 +67,10 @@ Functionality must always be accessible via the keyboard. If you offer several a
 ### Screen reader
 
 If an image on the card is purely for design purposes, mark it with an empty alternative text (alt = " "). If the image contains relevant information, use an appropriate alt text. This way, the information is also accessible to blind users with screen readers. You can find information on correct alt texts here:
+
 https://bik-fuer-alle.de/alternativtexte-fuer-grafiken.html
+
+https://www.barrierefreies-webdesign.de/knowhow/textalternative/herausforderung.html 
 
 ## Best practice
 

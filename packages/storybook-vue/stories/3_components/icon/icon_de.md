@@ -52,7 +52,11 @@ Interaktive Icons
 
 ### Besonderheit im Code 
 
-Sobald alleinstehende Icons in Interfaces relevante Informationen übermitteln, formuliere einen entsprechenden Alternativtext im Code-Property "accessibilityTitle". So wird die Information durch Screenreader auch für blinde Nutzer*innen zugänglich. Steht das Icon zusammen mit einem aussagekräftigen Text-Label, setze keinen Alternativtext.
+Sobald alleinstehende Icons in Interfaces relevante Informationen übermitteln, formuliere einen entsprechenden Alternativtext im Code-Property "accessibilityTitle". So wird die Information durch Screenreader auch für blinde Nutzer*innen zugänglich.
+
+Alternativtexte müssen vergeben werden, wenn das Icon keine sichtbare Beschriftung hat (Vgl. Schließen-Icon) oder eine zusätzliche Information enthält (bspw. dass es sich um einen externen Link handelt).
+
+Steht das Icon zusammen mit einem aussagekräftigen Text-Label (Vgl. Download, Edit, Delete im oberen Beispiel), setze keinen Alternativtext. In dem Fall dient das Icon nur der visuellen Unterstützung.
 
 ## Gestaltung von Icons
 
