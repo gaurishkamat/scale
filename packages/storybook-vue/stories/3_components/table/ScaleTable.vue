@@ -1,10 +1,5 @@
 <template>
-  <scale-table
-    :customClass="customClass"
-    :show-sort="showSort"
-    :size="size"
-    :styles="styles"
-  >
+  <scale-table :show-sort="showSort" :size="size">
     <slot></slot>
   </scale-table>
 </template>
@@ -12,10 +7,8 @@
 <script>
 export default {
   props: {
-    customClass: String,
     showSort: Boolean,
     size: String,
-    styles: String
-  }
+  },
 };
 </script>

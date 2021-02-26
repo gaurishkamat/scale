@@ -24,7 +24,6 @@ export const Template = (args, {argTypes}) => ({
     template: `
         <scale-link
         :block="block"
-        :custom-lass="customClass"
         :disabled="disabled"
         :href="href"
         :icon="icon"
@@ -32,13 +31,17 @@ export const Template = (args, {argTypes}) => ({
         :icon-accessibility-title="iconAccessibilityTitle"
         :target="target"
         :variant="variant"
+        :styles="styles"
     >
     {{ label }}
     </scale-link>
     `
 })
 
-# Link
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Link</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 

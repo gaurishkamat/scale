@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type     | Default  |
-| ------------- | -------------- | ------------------------------ | -------- | -------- |
-| `customClass` | `custom-class` | (optional) Text class          | `string` | `''`     |
-| `styles`      | `styles`       | (optional) Injected jss styles | `any`    | `{}`     |
-| `tag`         | `tag`          | (optional) Text tag            | `string` | `''`     |
-| `variant`     | `variant`      | (optional) Text variant        | `string` | `'body'` |
+| Property  | Attribute | Description                    | Type     | Default     |
+| --------- | --------- | ------------------------------ | -------- | ----------- |
+| `styles`  | `styles`  | (optional) Injected CSS styles | `string` | `undefined` |
+| `tag`     | `tag`     | (optional) Text tag            | `string` | `''`        |
+| `variant` | `variant` | (optional) Text variant        | `string` | `'body'`    |
 
 
 ----------------------------------------------

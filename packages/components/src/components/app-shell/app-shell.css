@@ -23,7 +23,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .shell.sticky .content {
+  .shell.shell--sticky .content {
     padding-top: calc(
       var(--header-brand-collapsed-height) + var(--header-nav-height)
     );

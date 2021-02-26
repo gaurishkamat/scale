@@ -1,18 +1,11 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './card.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
-
 @Component({
   tag: 'scale-card',
+  styleUrl: 'card.css',
   shadow: true,
 })
-export class Card implements Base {
-  /** (optional) Card class */
-  @Prop() customClass?: string = '';
+export class Card {
   /** (optional) Link card */
   @Prop() to?: string = '';
   /** (optional) Label of the card */
@@ -21,22 +14,16 @@ export class Card implements Base {
   @Prop() target?: string = '_self';
   /** (optional) Link card rel */
   @Prop() rel?: string = '';
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Card', styles) stylesheet: StyleSheet;
-
-  componentWillUpdate() {}
-  disconnectedCallback() {}
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   render() {
-    const { classes } = this.stylesheet;
     const Tag = !!this.to ? 'a' : 'div';
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <div class={classes.card__border}>
+        {this.styles && <style>{this.styles}</style>}
+        <div class="card-border">
           <Tag
             class={this.getCssClassMap()}
             role="group"
@@ -45,7 +32,7 @@ export class Card implements Base {
             {...(!!this.rel ? { rel: this.rel } : {})}
             {...(!!this.label ? { ['aria-label']: this.label } : {})}
           >
-            <div class={classes.card__body}>
+            <div class="card__body">
               <slot />
             </div>
           </Tag>
@@ -54,13 +41,7 @@ export class Card implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-
-    return classNames(
-      classes.card,
-      this.customClass && this.customClass,
-      !!this.to && classes[`card--interactive`]
-    );
+  getCssClassMap() {
+    return classNames('card', !!this.to && 'card--interactive');
   }
 }

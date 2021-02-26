@@ -11,11 +11,6 @@ import {
   Listen,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { StyleSheet } from 'jss';
-import { CssClassMap } from '../../utils/utils';
-import { styles } from './modal.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import Base from '../../utils/base-interface';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 import { animateTo, KEYFRAMES } from '../../utils/animate';
 
@@ -30,9 +25,10 @@ const supportsResizeObserver = 'ResizeObserver' in window;
 
 @Component({
   tag: 'scale-modal',
+  styleUrl: './modal.css',
   shadow: true,
 })
-export class Modal implements Base {
+export class Modal {
   closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   modalContainer: HTMLElement;
   modalWindow: HTMLElement;
@@ -41,6 +37,7 @@ export class Modal implements Base {
   resizeObserver: ResizeObserver;
 
   @Element() hostElement: HTMLElement;
+
   /** (optional) Custom class */
   @Prop() customClass?: string = '';
   /** Modal heading */
@@ -57,11 +54,8 @@ export class Modal implements Base {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
-
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Modal', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = false;
@@ -84,8 +78,6 @@ export class Modal implements Base {
       this.opened = false;
     }
   }
-
-  componentWillUpdate() {}
 
   disconnectedCallback() {
     if (this.resizeObserver) {
@@ -199,17 +191,16 @@ export class Modal implements Base {
   }
 
   render() {
-    const { classes } = this.stylesheet;
-
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <div
           ref={el => (this.modalContainer = el)}
           class={this.getCssClassMap()}
         >
           <div
-            class={classes['modal__backdrop']}
+            class="modal__backdrop"
             onClick={() => (this.opened = false)}
           ></div>
           <div
@@ -218,16 +209,16 @@ export class Modal implements Base {
             tabindex="0"
           ></div>
           <div
-            class={classes['modal__window']}
+            class="modal__window"
             ref={el => (this.modalWindow = el)}
             role="dialog"
             aria-modal="true"
           >
-            <div class={classes['modal__header']}>
-              <h2 class={classes['modal__heading']}>{this.heading}</h2>
+            <div class="modal__header">
+              <h2 class="modal__heading">{this.heading}</h2>
               <button
                 ref={el => (this.closeButton = el)}
-                class={classes['modal__close-button']}
+                class="modal__close-button"
                 onClick={() => (this.opened = false)}
                 aria-label={this.closeButtonLabel}
               >
@@ -248,15 +239,12 @@ export class Modal implements Base {
                 </slot>
               </button>
             </div>
-            <div
-              ref={el => (this.modalBody = el)}
-              class={classes['modal__body-wrapper']}
-            >
-              <div class={classes['modal__body']}>
+            <div ref={el => (this.modalBody = el)} class="modal__body-wrapper">
+              <div class="modal__body">
                 <slot></slot>
               </div>
             </div>
-            <div class={classes['modal__actions']}>
+            <div class="modal__actions">
               <slot name="action"></slot>
             </div>
           </div>
@@ -270,18 +258,16 @@ export class Modal implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.modal,
-      this.customClass && this.customClass,
-      this.isOpen && classes['modal--is-open'],
-      this.hasActionsSlot && classes['modal--has-actions'],
-      classes[`modal--align-actions-${this.alignActions}`],
-      this.hasScroll && classes['modal--has-scroll'],
-      this.hasBody && classes['modal--has-body'],
-      this.size && classes[`modal--size-${this.size}`],
-      this.variant && classes[`modal--variant-${this.variant}`]
+      'modal',
+      this.isOpen && 'modal--is-open',
+      this.hasActionsSlot && 'modal--has-actions',
+      `modal--align-actions-${this.alignActions}`,
+      this.hasScroll && 'modal--has-scroll',
+      this.hasBody && 'modal--has-body',
+      this.size && `modal--size-${this.size}`,
+      this.variant && `modal--variant-${this.variant}`
     );
   }
 }

@@ -3,7 +3,7 @@
 exports[`Input should match snapshot 1`] = `
 <scale-input>
   <!---->
-  <div class="input--variant-static-0-0-13 input-0-0-12">
+  <div class="input input--type-text input--variant-static">
     <label class="input__label" htmlfor="input-0"></label>
     <input aria-describedby="helper-message-1" class="input__input" id="input-0" type="text" value="">
   </div>

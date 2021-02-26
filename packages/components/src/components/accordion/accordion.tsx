@@ -1,26 +1,17 @@
 import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
-import classNames from 'classnames';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
-import { CssInJs } from '../../utils/css-in-js';
-import { styles } from './accordion.styles';
-
+import classnames from 'classnames';
 @Component({
   tag: 'scale-accordion',
   shadow: true,
 })
-export class Accordion implements Base {
+export class Accordion {
   @Element() el: HTMLElement;
-
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Accordion', styles) stylesheet: StyleSheet;
-
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
   /** If `true`, only one scale-collapsible within the accordion can be open at a time */
   @Prop() dependent: boolean = false;
-
+  /** If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant */
+  @Prop() expanded: boolean = false;
   /**
    * Handle `dependent`
    */
@@ -38,16 +29,26 @@ export class Accordion implements Base {
     });
   }
 
+  connectedCallback() {
+    /**
+     * Handle `expanded`
+     */
+    if (!this.dependent) {
+      this.getCollapsibleChildren().forEach(child => {
+        child.expanded = this.expanded;
+      });
+    }
+  }
+
   getCollapsibleChildren(): HTMLScaleCollapsibleElement[] {
     return Array.from(this.el.querySelectorAll('scale-collapsible'));
   }
 
-  disconnectedCallback() {}
-  componentWillUpdate() {}
-
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
           <slot />
         </div>
@@ -55,8 +56,7 @@ export class Accordion implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(classes['accordion']);
+  getCssClassMap() {
+    return classnames('accordion');
   }
 }

@@ -88,13 +88,13 @@ export class AppNavigationSectorMobile {
 
 export declare interface ScaleAccordion extends Components.ScaleAccordion {}
 @ProxyCmp({
-  inputs: ['dependent', 'styles']
+  inputs: ['dependent', 'expanded', 'styles']
 })
 @Component({
   selector: 'scale-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dependent', 'styles']
+  inputs: ['dependent', 'expanded', 'styles']
 })
 export class ScaleAccordion {
   protected el: HTMLElement;
@@ -107,14 +107,14 @@ export class ScaleAccordion {
 
 export declare interface ScaleAlert extends Components.ScaleAlert {}
 @ProxyCmp({
-  inputs: ['customClass', 'headline', 'icon', 'opened', 'size', 'styles', 'timeout', 'variant'],
+  inputs: ['headline', 'icon', 'opened', 'size', 'styles', 'timeout', 'variant'],
   methods: ['open']
 })
 @Component({
   selector: 'scale-alert',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'headline', 'icon', 'opened', 'size', 'styles', 'timeout', 'variant']
+  inputs: ['headline', 'icon', 'opened', 'size', 'styles', 'timeout', 'variant']
 })
 export class ScaleAlert {
   protected el: HTMLElement;
@@ -127,13 +127,13 @@ export class ScaleAlert {
 
 export declare interface ScaleAppFooter extends Components.ScaleAppFooter {}
 @ProxyCmp({
-  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
+  inputs: ['claimLang', 'footerNavigation', 'styles', 'variant']
 })
 @Component({
   selector: 'scale-app-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claimLang', 'customClass', 'footerNavigation', 'variant']
+  inputs: ['claimLang', 'footerNavigation', 'styles', 'variant']
 })
 export class ScaleAppFooter {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppFooter {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'scrolled', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -165,13 +165,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'customClass', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;
@@ -203,13 +203,13 @@ export class ScaleBreadcrumb {
 
 export declare interface ScaleButton extends Components.ScaleButton {}
 @ProxyCmp({
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['ariaLabel', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
 })
 @Component({
   selector: 'scale-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'customClass', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
+  inputs: ['ariaLabel', 'disabled', 'href', 'iconOnly', 'iconPosition', 'size', 'styles', 'target', 'type', 'variant']
 })
 export class ScaleButton {
   protected el: HTMLElement;
@@ -222,13 +222,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
+  inputs: ['label', 'rel', 'styles', 'target', 'to']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'label', 'rel', 'styles', 'target', 'to']
+  inputs: ['label', 'rel', 'styles', 'target', 'to']
 })
 export class ScaleCard {
   protected el: HTMLElement;
@@ -241,13 +241,13 @@ export class ScaleCard {
 
 export declare interface ScaleCarousel extends Components.ScaleCarousel {}
 @ProxyCmp({
-  inputs: ['customClass', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 @Component({
   selector: 'scale-carousel',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 export class ScaleCarousel {
   protected el: HTMLElement;
@@ -260,13 +260,13 @@ export class ScaleCarousel {
 
 export declare interface ScaleChartStackCard extends Components.ScaleChartStackCard {}
 @ProxyCmp({
-  inputs: ['customClass', 'data', 'heading', 'styles']
+  inputs: ['data', 'heading']
 })
 @Component({
   selector: 'scale-chart-stack-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'data', 'heading', 'styles']
+  inputs: ['data', 'heading']
 })
 export class ScaleChartStackCard {
   protected el: HTMLElement;
@@ -330,13 +330,13 @@ export class ScaleDatePicker {
 
 export declare interface ScaleDivider extends Components.ScaleDivider {}
 @ProxyCmp({
-  inputs: ['customClass', 'size', 'styles', 'vertical']
+  inputs: ['size', 'styles', 'vertical']
 })
 @Component({
   selector: 'scale-divider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'size', 'styles', 'vertical']
+  inputs: ['size', 'styles', 'vertical']
 })
 export class ScaleDivider {
   protected el: HTMLElement;
@@ -349,13 +349,13 @@ export class ScaleDivider {
 
 export declare interface ScaleIcon extends Components.ScaleIcon {}
 @ProxyCmp({
-  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke']
 })
 @Component({
   selector: 'scale-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['accessibilityTitle', 'customClass', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke', 'styles']
+  inputs: ['accessibilityTitle', 'decorative', 'fill', 'focusable', 'name', 'path', 'size', 'stroke']
 })
 export class ScaleIcon {
   protected el: HTMLElement;
@@ -3807,13 +3807,13 @@ export class ScaleIconUser_fileVideos {
 import { Input as IInput } from '@scaleds/components-telekom/dist/types/components/input/input';
 export declare interface ScaleInput extends Components.ScaleInput {}
 @ProxyCmp({
-  inputs: ['checked', 'cols', 'controlled', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize']
+  inputs: ['checked', 'cols', 'controlled', 'counter', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize']
 })
 @Component({
   selector: 'scale-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'cols', 'controlled', 'counter', 'customClass', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize'],
+  inputs: ['checked', 'cols', 'controlled', 'counter', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'maxLength', 'minLength', 'multiple', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'type', 'value', 'variant', 'visibleSize'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleInput {
@@ -3838,13 +3838,13 @@ export class ScaleInput {
 
 export declare interface ScaleLink extends Components.ScaleLink {}
 @ProxyCmp({
-  inputs: ['block', 'customClass', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['block', 'customClass', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
 })
 export class ScaleLink {
   protected el: HTMLElement;
@@ -3920,13 +3920,13 @@ export class ScaleModal {
 
 export declare interface ScaleProgressBar extends Components.ScaleProgressBar {}
 @ProxyCmp({
-  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 @Component({
   selector: 'scale-progress-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['busy', 'customClass', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
+  inputs: ['busy', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
 })
 export class ScaleProgressBar {
   protected el: HTMLElement;
@@ -3996,13 +3996,13 @@ export class ScaleSidebarNavItem {
 import { Slider as ISlider } from '@scaleds/components-telekom/dist/types/components/slider/slider';
 export declare interface ScaleSlider extends Components.ScaleSlider {}
 @ProxyCmp({
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
+  inputs: ['customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value']
 })
 @Component({
   selector: 'scale-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
+  inputs: ['customColor', 'disabled', 'label', 'max', 'min', 'showValue', 'sliderId', 'step', 'styles', 'thumbLarge', 'trackSmall', 'value'],
   outputs: ['scaleChange']
 })
 export class ScaleSlider {
@@ -4035,13 +4035,13 @@ export class ScaleSsrSlotFix {
 import { Switch as ISwitch } from '@scaleds/components-telekom/dist/types/components/switch/switch';
 export declare interface ScaleSwitch extends Components.ScaleSwitch {}
 @ProxyCmp({
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles']
+  inputs: ['checked', 'disabled', 'inputId', 'label']
 })
 @Component({
   selector: 'scale-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'customClass', 'disabled', 'inputId', 'label', 'styles'],
+  inputs: ['checked', 'disabled', 'inputId', 'label'],
   outputs: ['scaleChange']
 })
 export class ScaleSwitch {
@@ -4115,13 +4115,13 @@ export class ScaleTabPanel {
 
 export declare interface ScaleTable extends Components.ScaleTable {}
 @ProxyCmp({
-  inputs: ['customClass', 'showSort', 'size', 'styles']
+  inputs: ['showSort', 'size']
 })
 @Component({
   selector: 'scale-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'showSort', 'size', 'styles']
+  inputs: ['showSort', 'size']
 })
 export class ScaleTable {
   protected el: HTMLElement;
@@ -4134,13 +4134,13 @@ export class ScaleTable {
 import { Tag as ITag } from '@scaleds/components-telekom/dist/types/components/tag/tag';
 export declare interface ScaleTag extends Components.ScaleTag {}
 @ProxyCmp({
-  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
+  inputs: ['disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-tag',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
+  inputs: ['disabled', 'dismissText', 'dismissable', 'href', 'size', 'styles', 'target', 'variant'],
   outputs: ['scaleClose']
 })
 export class ScaleTag {
@@ -4157,13 +4157,13 @@ export class ScaleTag {
 
 export declare interface ScaleText extends Components.ScaleText {}
 @ProxyCmp({
-  inputs: ['customClass', 'styles', 'tag', 'variant']
+  inputs: ['styles', 'tag', 'variant']
 })
 @Component({
   selector: 'scale-text',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['customClass', 'styles', 'tag', 'variant']
+  inputs: ['styles', 'tag', 'variant']
 })
 export class ScaleText {
   protected el: HTMLElement;
@@ -4176,14 +4176,14 @@ export class ScaleText {
 
 export declare interface ScaleToast extends Components.ScaleToast {}
 @ProxyCmp({
-  inputs: ['animated', 'autoHide', 'customClass', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant'],
+  inputs: ['animated', 'autoHide', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant'],
   methods: ['open']
 })
 @Component({
   selector: 'scale-toast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['animated', 'autoHide', 'customClass', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant']
+  inputs: ['animated', 'autoHide', 'fadeDuration', 'opened', 'positionRight', 'positionTop', 'size', 'styles', 'time', 'variant']
 })
 export class ScaleToast {
   protected el: HTMLElement;

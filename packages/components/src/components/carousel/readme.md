@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                           | Type      | Default     |
-| ------------- | -------------- | ------------------------------------- | --------- | ----------- |
-| `customClass` | `custom-class` | (optional) Carousel class             | `string`  | `''`        |
-| `styles`      | `styles`       | (optional) Injected jss styles        | `any`     | `undefined` |
-| `vertical`    | `vertical`     | (optional) carousel display direction | `boolean` | `false`     |
+| Property   | Attribute  | Description                           | Type      | Default     |
+| ---------- | ---------- | ------------------------------------- | --------- | ----------- |
+| `styles`   | `styles`   | (optional) Injected CSS styles        | `string`  | `undefined` |
+| `vertical` | `vertical` | (optional) carousel display direction | `boolean` | `false`     |
 
 
 ----------------------------------------------

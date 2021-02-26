@@ -2,14 +2,14 @@
 
 exports[`Switch should match snapshot 1`] = `
 <scale-switch>
-  <div class="switch-0-0-7">
-    <input aria-labelledby="switch-0-label" id="switch-0" type="checkbox">
-    <div class="switch__wrapper-0-0-8">
-      <div class="switch__container-0-0-10">
-        <div class="switch__toggle-0-0-11"></div>
-        <div class="switch__text-0-0-12"></div>
+  <div class="switch switch--focus-visible-not-supported">
+    <label id="switch-0-label">
+      <input aria-labelledby="switch-0-label" id="switch-0" type="checkbox">
+      <div class="switch__wrapper">
+        <div class="switch__toggle"></div>
+        <div class="switch__text"></div>
       </div>
-    </div>
+    </label>
   </div>
 </scale-switch>
 `;

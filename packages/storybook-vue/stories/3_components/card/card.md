@@ -1,6 +1,6 @@
 # Card
 
-Cards group related pieces of information together and represent one conceptional unit. They make it easier for users to quickly scan content and find relevant information.
+A card shows a brief summary of a topic. This makes it easier for users to find relevant information and understand it quickly.
 
 ## General
 
@@ -12,14 +12,14 @@ Cards can hold any kind of content in a flexibly sized container. One card commu
 
 Cards are best suited to:
 
-*	encourage and enable users to browse your content (e.g., shop, social media, etc.) or
-*	provide summaries of different kinds of content (e.g., dashboards).
+*	to present content in an easily understandable way to encourage users to take a closer look at pages (e.g., shop, social media, etc.) and
+*	to provide content summaries (for example in dashboards).
 
 ### When not to use
 
 Don't use cards:
 
-*	solely for aesthetic reasons or
+*	soley as an aesthetic element or
 *	as purely navigational elements.
 
 
@@ -27,23 +27,50 @@ Don't use cards:
 
 ### Card with an interactive container
 
-The card acts as a preview and point of entry for more detailed information. The card itself is the primary interaction area. Additional interaction elements are not needed. Including additional interactive elements, like buttons or text links, will generate a second action area.
+A card acts as a preview and point of entry for more detailed information. The entire card is clickable.
 
 ![Image Name](assets/3_components/card/card-interactive.png)
 
 ### Card with a static container
 
-A card with a static container also communicates one important message. Generally, no crucial information follows after the card. Although the container is not an interactive component, it can still contain interactive elements like functions or text links to related information.
+For different card types (with and without a following page, with and without additional interactive elements, etc.), only use cards in static containers within an entire website. This way, you can handle all the content flexibly.
 
-![Image Name](assets/3_components/card/cards-static.png)
+Example 1.
+
+Even if the card container itself is not interactive, the card can contain interactive elements such as functions or text links to related information.
+
+![Image Name](assets/3_components/card/cards-static-bsp1.png)
+
+Example 2.
+
+The headline should be clickable if the card serves as a preview and point of entry for more detailed information.
+
+![Image Name](assets/3_components/card/cards-static-bsp2.png)
 
 ## Layout
 
 ### Card Padding
 
-By default, cards have an inner padding to align typography and visual elements within the card. If you want to place images in the bleed, turn the padding off.
+By default, a card has padding to align the typography and visual elements. If you want to place images in the bleed, turn the padding off.
 
 ![Image Name](assets/3_components/card/cards-padding.png)
+
+
+## Accessibility
+
+### General
+So users can immediately recognize a card, the content needs to visually form a compact unit. It is especially important that cards without pictures are immediately recognizable as one topic. A helpful tip: install the free screen reader NVDA. Once you’re familiar with how it works, close your eyes and test for yourself whether the screen reader clearly reads your cards in their entirety.
+
+### Navigating with a keyboard
+Functionality must always be accessible via the keyboard. If you offer several additional interactions, make sure to label them concisely and definitively, so users can focus on and operate them with the keyboard in the proper order.
+
+### Screen reader
+
+If an image on the card is purely for design purposes, mark it with an empty alternative text (alt = " "). If the image contains relevant information, use an appropriate alt text. This way, the information is also accessible to blind users with screen readers. You can find information on correct alt texts here:
+
+https://bik-fuer-alle.de/alternativtexte-fuer-grafiken.html
+
+https://www.barrierefreies-webdesign.de/knowhow/textalternative/herausforderung.html 
 
 ## Best practice
 
@@ -53,8 +80,8 @@ Decide whether you want to use cards with an interactive or static container in 
 
 ### Be consistent
 
-Display content of the same type (e.g., blogposts, products, or cards) with a uniform structure. This provides a balanced appearance so users can easily compare content.
+Always display content of the same type (e.g., blogposts, products, or events) with the same structure. This provides a balanced appearance so users can easily compare content.
 
 ### Design your own card
 
-You can design cards for a variety of situations. The purpose of the card component is to give you the flexibility to build your card according to our principles – as best suits your particular use case.
+The card component offers the flexibility to design cards according to our principles for different use cases.

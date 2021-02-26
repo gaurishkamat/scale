@@ -1,14 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { ProgressBar } from './progress-bar';
-import { styles } from './progress-bar.styles';
-import jss from 'jss';
 
 describe('ProgressBar', () => {
   let element;
-  let stylesheet;
   beforeEach(async () => {
     element = new ProgressBar();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   it('should match snapshot', async () => {
@@ -44,13 +40,7 @@ describe('ProgressBar', () => {
   });
 
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.hasError = true;
-    stylesheet.addRule('progress-bar--has-error', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['progress-bar--has-error']
-    );
+    expect(element.getCssClassMap()).toContain('progress-bar--has-error');
   });
 });

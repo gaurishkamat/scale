@@ -1,13 +1,20 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from "@storybook/addon-docs/blocks";
 import ScaleTable from "./ScaleTable.vue";
-export const ICON = 'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+export const ICON =
+  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
-  title='Components/Table'
+  title="Components/Table"
   component={ScaleTable}
   argTypes={{
     size: {
-      control: { type: 'select', options: ['default', 'small'] }
+      control: { type: "select", options: ["default", "small"] },
     },
   }}
 />
@@ -16,14 +23,12 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTable },
   props: {
     label: String,
-    ...ScaleTable.props
+    ...ScaleTable.props,
   },
   template: `
     <scale-table
-      :customClass="customClass"
       :show-sort="showSort"
       :size="size"
-      :styles="styles"
     >
       <table id="sortable-table">
         <caption class="sr-only">All sortable columns are focusable</caption>
@@ -138,19 +143,16 @@ export const Template = (args, { argTypes }) => ({
   `,
   methods: {
     handleKeyUp: function (e, th) {
-      if (['Space', 'Enter'].includes(e.code)) {
+      if (["Space", "Enter"].includes(e.code)) {
         this.sortTable(th);
       }
     },
     sortTable: function(className) {
       const getNextSort = sort => {
-        if (!sort || ['none', 'other'].includes(sort)) {
-          return 'descending';
-        }
-        if (sort === 'descending') {
+          if (sort === 'ascending') {
+              return 'descending';
+          }
           return 'ascending';
-        }
-        return 'none';
       }
       const ths = document.getElementsByClassName(className)
       const th = ths[ths.length - 1]
@@ -166,23 +168,23 @@ export const Template = (args, { argTypes }) => ({
       table = document.getElementById('sortable-table')
       switching = true
       try {
-      while (switching) {
-        switching = false;
-        rows = table.rows;
+        while (switching) {
+          switching = false;
+          rows = table.rows;
           for (i = 1; i < rows.length - 1; i++) {
             shouldSwitch = false;
-            x = rows[i].getElementsByTagName('TD')[columnIndex];
-            y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
+            x = rows[i].getElementsByTagName("TD")[columnIndex];
+            y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
             if (
-              !['ascending', 'descending'].includes(nextSort) ||
-              x.parentElement.parentElement.tagName === 'TFOOT' ||
-              y.parentElement.parentElement.tagName === 'TFOOT'
+              !["ascending", "descending"].includes(nextSort) ||
+              x.parentElement.parentElement.tagName === "TFOOT" ||
+              y.parentElement.parentElement.tagName === "TFOOT"
             ) {
               break;
             }
             if (
-              (nextSort === 'descending' ? y : x).innerHTML.toLowerCase() >
-              (nextSort === 'descending' ? x : y).innerHTML.toLowerCase()
+              (nextSort === "descending" ? y : x).innerHTML.toLowerCase() >
+              (nextSort === "descending" ? x : y).innerHTML.toLowerCase()
             ) {
               shouldSwitch = true;
               break;
@@ -193,34 +195,33 @@ export const Template = (args, { argTypes }) => ({
             switching = true;
           }
         }
-      } catch(error){}
-    }
-  }
-})
+      } catch (error) {}
+    },
+  },
+});
 
-# Data Table
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Table</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name='Standard'
-    args={{}}
-  >
+  <Story name="Standard" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
-
+<ArgsTable story="Standard" />
 
 ## Small
 
 <Canvas withSource="none">
   <Story
-    name='Small'
+    name="Small"
     args={{
-      size: 'small',
+      size: "small",
     }}
   >
     {Template.bind({})}
@@ -256,14 +257,13 @@ export const Template = (args, { argTypes }) => ({
 </scale-table>
 ```
 
-
 ## With Sorting Icons
 
 Please switch to the Canvas view for a working example
 
 <Canvas withSource="none">
   <Story
-    name='With Sorting Icons'
+    name="With Sorting Icons"
     args={{
       showSort: true,
     }}
@@ -272,7 +272,6 @@ Please switch to the Canvas view for a working example
   </Story>
 </Canvas>
 
-
 ```html
 <scale-table show-sort>
   <table>
@@ -280,12 +279,39 @@ Please switch to the Canvas view for a working example
     <thead>
       <tr>
         <!-- aria-sort can be descending or ascending -->
-        <th tabindex="0" aria-sort="descending" @keyup="handleKeyUp($event, 'title')" @click="sortTable('title')" id="title">Title</th>
+        <th
+          tabindex="0"
+          aria-sort="descending"
+          @keyup="handleKeyUp($event, 'title')"
+          @click="sortTable('title')"
+          id="title"
+        >
+          Title
+        </th>
         <!-- aria-disabled disables sorting -->
         <th aria-disabled>Tags</th>
-        <th tabindex="0" @keyup="handleKeyUp($event, 'stats')" @click="sortTable('stats')" id="stats">Stats</th>
-        <th tabindex="0" @keyup="handleKeyUp($event, 'time')" @click="sortTable('time')" id="time">Time</th>
-        <th tabindex="0" @keyup="handleKeyUp($event, 'euros')" @click="sortTable('euros')" id="euros">
+        <th
+          tabindex="0"
+          @keyup="handleKeyUp($event, 'stats')"
+          @click="sortTable('stats')"
+          id="stats"
+        >
+          Stats
+        </th>
+        <th
+          tabindex="0"
+          @keyup="handleKeyUp($event, 'time')"
+          @click="sortTable('time')"
+          id="time"
+        >
+          Time
+        </th>
+        <th
+          tabindex="0"
+          @keyup="handleKeyUp($event, 'euros')"
+          @click="sortTable('euros')"
+          id="euros"
+        >
           Euros
         </th>
       </tr>

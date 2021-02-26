@@ -15,15 +15,17 @@ describe('Switch', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
 
     const firstButton = await page.evaluateHandle(
-      'document.querySelector("#root > scale-switch > div > div")'
+      'document.querySelector("#root > scale-switch > div")'
     );
 
     await firstButton.hover();
+    await page.waitFor(1000);
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
 
     await page.mouse.move(25, 25);
     await page.mouse.down();
+    await page.waitFor(1000);
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });

@@ -60,6 +60,15 @@
   <body>
     <h1>Components</h1>
 
+    <h3>Alert</h3>
+    <scale-alert headline="Alert Headline">Some alert content</scale-alert>
+
+    <h3>Toast</h3>
+    <scale-toast>
+      <h4 slot="header">Toast header</h4>
+      <p>Toast description text</p>
+    </scale-toast>
+
     <h3>Chart - Stack</h3>
     <scale-chart-stack-card
       heading="Operating System"
@@ -818,10 +827,18 @@
     </script>
 
     <h3>Switch</h3>
-    <scale-switch></scale-switch>
+    <scale-switch label="Switch label"></scale-switch>
     <h3>Switch disabled</h3>
-    <scale-switch active="true" disabled="true"></scale-switch>
-    <scale-switch active="false" disabled="true"></scale-switch>
+    <scale-switch
+      checked="true"
+      disabled="true"
+      label="Switch - checked + disabled"
+    ></scale-switch>
+    <scale-switch
+      checked="false"
+      disabled="true"
+      label="Switch - not checked + disabled"
+    ></scale-switch>
 
     <h3>Slider</h3>
     <scale-slider

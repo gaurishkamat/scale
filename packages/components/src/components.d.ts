@@ -10,7 +10,6 @@ import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
-import { StyleSheet } from "jss";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
@@ -40,15 +39,15 @@ export namespace Components {
          */
         "dependent": boolean;
         /**
-          * (optional) Injected jss styles
+          * If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant
          */
-        "styles"?: any;
+        "expanded": boolean;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleAlert {
-        /**
-          * (optional) Alert class
-         */
-        "customClass"?: string;
         /**
           * (optional) Alert title
          */
@@ -70,9 +69,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Alert timeout
          */
@@ -84,21 +83,22 @@ export namespace Components {
     }
     interface ScaleAppFooter {
         "claimLang": string;
-        "customClass"?: string;
         "footerNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
         "variant"?: string;
     }
     interface ScaleAppHeader {
         "activeRouteId": string;
         "activeSectorId"?: string;
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "claimLang": string;
-        "customClass"?: string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
         "portalName"?: string;
-        "scrolled": boolean;
-        "sectorNavigation"?: any[];
+        "sectorNavigation"?: any;
     }
     interface ScaleAppShell {
         "activeRouteId"?: string;
@@ -106,28 +106,27 @@ export namespace Components {
         "addonNavigation"?: any;
         "brandTitle"?: string;
         "claimLang"?: string;
-        "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleButton {
         /**
           * (optional) aria-label attribute needed for icon-only buttons
          */
         "ariaLabel": string;
-        /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
         /**
           * (optional) If `true`, the button is disabled
          */
@@ -149,9 +148,9 @@ export namespace Components {
          */
         "size"?: 'small' | 'large';
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) The target attribute for the <a> tag
          */
@@ -167,10 +166,6 @@ export namespace Components {
     }
     interface ScaleCard {
         /**
-          * (optional) Card class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
@@ -179,9 +174,9 @@ export namespace Components {
          */
         "rel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link card target
          */
@@ -193,23 +188,15 @@ export namespace Components {
     }
     interface ScaleCarousel {
         /**
-          * (optional) Carousel class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
     }
     interface ScaleChartStackCard {
-        /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
         /**
           * Chart Data
          */
@@ -218,10 +205,6 @@ export namespace Components {
           * Chart Title
          */
         "heading": string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleCollapsible {
         /**
@@ -229,9 +212,9 @@ export namespace Components {
          */
         "expanded": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleDatePicker {
         /**
@@ -313,17 +296,13 @@ export namespace Components {
     }
     interface ScaleDivider {
         /**
-          * (optional) Divider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Divider size
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Divider vertical
          */
@@ -334,10 +313,6 @@ export namespace Components {
           * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
         "accessibilityTitle"?: string;
-        /**
-          * (optional) Tag custom class
-         */
-        "customClass"?: string;
         /**
           * (optional) If `true` the svg element will get aria-hidden="true"
          */
@@ -366,10 +341,6 @@ export namespace Components {
           * The SVG `stroke` attribute
          */
         "stroke"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleIconActionAdd {
         /**
@@ -4371,10 +4342,6 @@ export namespace Components {
          */
         "counter"?: boolean;
         /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -4435,9 +4402,9 @@ export namespace Components {
          */
         "status"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) input background transparent
          */
@@ -4475,10 +4442,6 @@ export namespace Components {
          */
         "block"?: boolean;
         /**
-          * (optional) Link class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled link
          */
         "disabled"?: boolean;
@@ -4499,9 +4462,9 @@ export namespace Components {
          */
         "iconSize"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link open a new tag
          */
@@ -4517,9 +4480,9 @@ export namespace Components {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleListItem {
         /**
@@ -4535,9 +4498,9 @@ export namespace Components {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleModal {
         /**
@@ -4569,9 +4532,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Modal variant
          */
@@ -4582,10 +4545,6 @@ export namespace Components {
           * (optional) Progress bar busy switch
          */
         "busy"?: boolean;
-        /**
-          * (optional) Progress bar class
-         */
-        "customClass"?: string;
         /**
           * (optional) Progress bar customColor
          */
@@ -4631,9 +4590,9 @@ export namespace Components {
          */
         "strokeWidth"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -4723,10 +4682,6 @@ export namespace Components {
     }
     interface ScaleSlider {
         /**
-          * (optional) Slider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) slider custom color
          */
         "customColor"?: string;
@@ -4759,9 +4714,9 @@ export namespace Components {
          */
         "step"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) larger thumb
          */
@@ -4783,10 +4738,6 @@ export namespace Components {
          */
         "checked"?: boolean;
         /**
-          * (optional) Switch class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled switch
          */
         "disabled"?: boolean;
@@ -4798,10 +4749,6 @@ export namespace Components {
           * (optional) switch label
          */
         "label"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTabHeader {
         "selected": boolean;
@@ -4810,9 +4757,9 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabNav {
         /**
@@ -4820,9 +4767,9 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabPanel {
         /**
@@ -4830,15 +4777,11 @@ export namespace Components {
          */
         "small": boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTable {
-        /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
         /**
           * (optional) Display sort arrows on/off
          */
@@ -4847,16 +4790,8 @@ export namespace Components {
           * (optional) Visual size
          */
         "size"?: 'default' | 'small' | string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTag {
-        /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
         /**
           * (optional) Tag disabled
          */
@@ -4878,9 +4813,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Tag target
          */
@@ -4892,13 +4827,9 @@ export namespace Components {
     }
     interface ScaleText {
         /**
-          * (optional) Text class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Text tag
          */
@@ -4917,10 +4848,6 @@ export namespace Components {
           * (optional) Toast autohide time
          */
         "autoHide"?: boolean | number;
-        /**
-          * (optional) Toast class
-         */
-        "customClass"?: string;
         /**
           * (optional) Toast fade duration
          */
@@ -4946,9 +4873,9 @@ export namespace Components {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
         /**
           * (optional) Toast time
          */
@@ -6519,15 +6446,15 @@ declare namespace LocalJSX {
          */
         "dependent"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant
          */
-        "styles"?: any;
+        "expanded"?: boolean;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleAlert {
-        /**
-          * (optional) Alert class
-         */
-        "customClass"?: string;
         /**
           * (optional) Alert title
          */
@@ -6545,9 +6472,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Alert timeout
          */
@@ -6559,21 +6486,22 @@ declare namespace LocalJSX {
     }
     interface ScaleAppFooter {
         "claimLang"?: string;
-        "customClass"?: string;
         "footerNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
         "variant"?: string;
     }
     interface ScaleAppHeader {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
-        "addonNavigation"?: any[];
+        "addonNavigation"?: any;
         "claimLang"?: string;
-        "customClass"?: string;
-        "iconNavigation"?: any[];
-        "mainNavigation"?: any[];
+        "iconNavigation"?: any;
+        "mainNavigation"?: any;
         "portalName"?: string;
-        "scrolled"?: boolean;
-        "sectorNavigation"?: any[];
+        "sectorNavigation"?: any;
     }
     interface ScaleAppShell {
         "activeRouteId"?: string;
@@ -6581,28 +6509,27 @@ declare namespace LocalJSX {
         "addonNavigation"?: any;
         "brandTitle"?: string;
         "claimLang"?: string;
-        "customClass"?: string;
         "iconNavigation"?: any;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
     }
     interface ScaleBreadcrumb {
         "separator"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleButton {
         /**
           * (optional) aria-label attribute needed for icon-only buttons
          */
         "ariaLabel"?: string;
-        /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
         /**
           * (optional) If `true`, the button is disabled
          */
@@ -6624,9 +6551,9 @@ declare namespace LocalJSX {
          */
         "size"?: 'small' | 'large';
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) The target attribute for the <a> tag
          */
@@ -6642,10 +6569,6 @@ declare namespace LocalJSX {
     }
     interface ScaleCard {
         /**
-          * (optional) Card class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Label of the card
          */
         "label"?: string;
@@ -6654,9 +6577,9 @@ declare namespace LocalJSX {
          */
         "rel"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link card target
          */
@@ -6668,23 +6591,15 @@ declare namespace LocalJSX {
     }
     interface ScaleCarousel {
         /**
-          * (optional) Carousel class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
     }
     interface ScaleChartStackCard {
-        /**
-          * (optional) Custom class
-         */
-        "customClass"?: string;
         /**
           * Chart Data
          */
@@ -6693,10 +6608,6 @@ declare namespace LocalJSX {
           * Chart Title
          */
         "heading"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleCollapsible {
         /**
@@ -6708,9 +6619,9 @@ declare namespace LocalJSX {
          */
         "onScaleExpand"?: (event: CustomEvent<CollapsibleEventDetail>) => void;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleDatePicker {
         /**
@@ -6792,17 +6703,13 @@ declare namespace LocalJSX {
     }
     interface ScaleDivider {
         /**
-          * (optional) Divider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Divider size
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Divider vertical
          */
@@ -6813,10 +6720,6 @@ declare namespace LocalJSX {
           * (optional) When using the icon as standalone, make it meaningful for accessibility
          */
         "accessibilityTitle"?: string;
-        /**
-          * (optional) Tag custom class
-         */
-        "customClass"?: string;
         /**
           * (optional) If `true` the svg element will get aria-hidden="true"
          */
@@ -6845,10 +6748,6 @@ declare namespace LocalJSX {
           * The SVG `stroke` attribute
          */
         "stroke"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleIconActionAdd {
         /**
@@ -10850,10 +10749,6 @@ declare namespace LocalJSX {
          */
         "counter"?: boolean;
         /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -10934,9 +10829,9 @@ declare namespace LocalJSX {
          */
         "status"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) input background transparent
          */
@@ -10974,10 +10869,6 @@ declare namespace LocalJSX {
          */
         "block"?: boolean;
         /**
-          * (optional) Link class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled link
          */
         "disabled"?: boolean;
@@ -10998,9 +10889,9 @@ declare namespace LocalJSX {
          */
         "iconSize"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Link open a new tag
          */
@@ -11016,9 +10907,9 @@ declare namespace LocalJSX {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleListItem {
         /**
@@ -11034,9 +10925,9 @@ declare namespace LocalJSX {
          */
         "ordered"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleModal {
         /**
@@ -11070,9 +10961,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Modal variant
          */
@@ -11083,10 +10974,6 @@ declare namespace LocalJSX {
           * (optional) Progress bar busy switch
          */
         "busy"?: boolean;
-        /**
-          * (optional) Progress bar class
-         */
-        "customClass"?: string;
         /**
           * (optional) Progress bar customColor
          */
@@ -11132,9 +11019,9 @@ declare namespace LocalJSX {
          */
         "strokeWidth"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
     }
     interface ScaleSidebarNav {
         /**
@@ -11224,10 +11111,6 @@ declare namespace LocalJSX {
     }
     interface ScaleSlider {
         /**
-          * (optional) Slider class
-         */
-        "customClass"?: string;
-        /**
           * (optional) slider custom color
          */
         "customColor"?: string;
@@ -11261,9 +11144,9 @@ declare namespace LocalJSX {
          */
         "step"?: number;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) larger thumb
          */
@@ -11285,10 +11168,6 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean;
         /**
-          * (optional) Switch class
-         */
-        "customClass"?: string;
-        /**
           * (optional) Disabled switch
          */
         "disabled"?: boolean;
@@ -11304,10 +11183,6 @@ declare namespace LocalJSX {
           * Emitted when the switch was clicked
          */
         "onScaleChange"?: (event: CustomEvent<any>) => void;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTabHeader {
         "selected"?: boolean;
@@ -11316,9 +11191,9 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabNav {
         /**
@@ -11326,9 +11201,9 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTabPanel {
         /**
@@ -11336,15 +11211,11 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
     }
     interface ScaleTable {
-        /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
         /**
           * (optional) Display sort arrows on/off
          */
@@ -11353,16 +11224,8 @@ declare namespace LocalJSX {
           * (optional) Visual size
          */
         "size"?: 'default' | 'small' | string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
     }
     interface ScaleTag {
-        /**
-          * (optional) Tag class
-         */
-        "customClass"?: string;
         /**
           * (optional) Tag disabled
          */
@@ -11388,9 +11251,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Tag target
          */
@@ -11402,13 +11265,9 @@ declare namespace LocalJSX {
     }
     interface ScaleText {
         /**
-          * (optional) Text class
+          * (optional) Injected CSS styles
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: any;
+        "styles"?: string;
         /**
           * (optional) Text tag
          */
@@ -11427,10 +11286,6 @@ declare namespace LocalJSX {
           * (optional) Toast autohide time
          */
         "autoHide"?: boolean | number;
-        /**
-          * (optional) Toast class
-         */
-        "customClass"?: string;
         /**
           * (optional) Toast fade duration
          */
@@ -11452,9 +11307,9 @@ declare namespace LocalJSX {
          */
         "size"?: string;
         /**
-          * (optional) Injected jss styles
+          * (optional) Injected CSS styles
          */
-        "styles"?: StyleSheet;
+        "styles"?: string;
         /**
           * (optional) Toast time
          */

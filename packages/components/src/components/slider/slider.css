@@ -1,0 +1,125 @@
+.slider {
+  width: 100%;
+  display: block;
+  align-items: center;
+}
+
+.slider .slider__track-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.slider .slider__track {
+  width: 303px;
+  border: 1px solid #6c6c6c;
+  height: 6px;
+  margin: 16px 0;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 100px;
+}
+
+.slider .slider__bar {
+  height: 6px;
+  z-index: -1;
+  position: absolute;
+  border-radius: 100px;
+  background-color: var(--color-primary, #e20074);
+}
+
+.slider .slider__thumb-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  z-index: 100;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  margin-left: -16px;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.slider .slider__thumb {
+  width: 16px;
+  border: 1px solid;
+  height: 16px;
+  outline: none;
+  box-sizing: border-box;
+  border-color: #6c6c6c;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: var(
+    --shadow-ground,
+    0 2px 8px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.1)
+  );
+}
+
+.slider .slider__display-value {
+  color: #6c6c6c;
+  margin-left: 24px;
+  font-weight: var(--type-weight-bold, 700);
+  font-size: var(--font-size-2, 0.75rem);
+}
+
+.slider .slider__thumb:hover {
+  border-color: var(--color-primary-hover, #f90984);
+}
+
+.slider .slider__thumb:active {
+  border-color: var(--color-primary-active, #cb0068);
+}
+
+.slider .slider__thumb:focus {
+  box-shadow: 0 0 0 2px var(--color-focus, #009de0);
+}
+
+.slider .slider__thumb-wrapper:hover {
+  cursor: grab;
+}
+
+.slider .slider__thumb-wrapper:active {
+  cursor: grabbing;
+}
+
+.slider--track-small .slider__track {
+  border: none;
+  height: 1px;
+  border-top: 1px solid transparent;
+  background-color: var(--color-disabled, #7c7c7c);
+}
+
+.slider--track-small .slider__bar {
+  border: 1px solid transparent;
+  height: 3px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.slider--thumb-large .slider__thumb {
+  width: 24px;
+  height: 24px;
+}
+
+.slider--disabled .slider__track-wrapper {
+  cursor: not-allowed;
+}
+
+.slider--disabled .slider__bar {
+  background-color: var(--color-disabled, #7c7c7c);
+}
+
+.slider--disabled .slider__thumb {
+  display: none;
+}
+
+.slider--disabled .slider__label {
+  color: var(--color-disabled, #7c7c7c);
+}
+
+.slider--disabled .slider__thumb-wrapper:hover {
+  cursor: not-allowed;
+}

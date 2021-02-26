@@ -1,14 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Alert } from './alert';
-import { styles } from './alert.styles';
-import jss from 'jss';
 
 describe('Alert', () => {
   let element;
-  let stylesheet;
+
   beforeEach(async () => {
     element = new Alert();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
     jest.useFakeTimers();
   });
 
@@ -84,19 +81,10 @@ describe('Alert', () => {
   });
 
   it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
     element.size = 'small';
-    stylesheet.addRule('alert--size-small', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['alert--size-small']
-    );
+    expect(element.getCssClassMap()).toContain('alert--size-small');
 
     element.variant = 'primary';
-    stylesheet.addRule('alert--variant-primary', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['alert--variant-primary']
-    );
+    expect(element.getCssClassMap()).toContain('alert--variant-primary');
   });
 });

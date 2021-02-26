@@ -10,7 +10,7 @@
 | Property   | Attribute  | Description                    | Type      | Default     |
 | ---------- | ---------- | ------------------------------ | --------- | ----------- |
 | `expanded` | `expanded` | Set to `true` to expand        | `boolean` | `undefined` |
-| `styles`   | `styles`   | (optional) Injected jss styles | `any`     | `undefined` |
+| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 
 
 ## Events

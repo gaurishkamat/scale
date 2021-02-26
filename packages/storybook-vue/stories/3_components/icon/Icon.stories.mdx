@@ -59,7 +59,6 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-icon
-      :custom-class="customClass"
       :name="name"
       :path="path"
       :size="size"
@@ -97,7 +96,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name='With Path Attribute'
     args={{
-      path: PATH
+      path: PATH,
+      accessibilityTitle: 'feedback message'
     }}
   >
     {Template.bind({})}

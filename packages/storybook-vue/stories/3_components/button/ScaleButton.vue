@@ -9,6 +9,7 @@
     :variant="variant"
     :icon-only="iconOnly"
     :aria-label="ariaLabel"
+    :styles="styles"
     @click="handler"
   >
     <slot></slot>
@@ -18,7 +19,7 @@
 <script>
 import { action } from "@storybook/addon-actions";
 
-const handler = action('click');
+const handler = action("click");
 
 export default {
   props: {
@@ -31,10 +32,11 @@ export default {
     variant: String,
     size: String,
     iconOnly: Boolean,
-    ariaLabel: String
+    ariaLabel: String,
+    styles: String,
   },
   methods: {
-    handler
-  }
+    handler,
+  },
 };
 </script>

@@ -39,6 +39,7 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant"
       :icon-only="iconOnly"
       :aria-label="ariaLabel"
+      :styles="styles"
       @click="action('clicked')"
     >
       <scale-icon-action-search v-if="icon === 'before'" :size="size == 'small' ? 16 : 24" />
@@ -50,7 +51,10 @@ export const Template = (args, { argTypes }) => ({
   `
 })
 
-# Button
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Button</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
@@ -66,35 +70,6 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story='Large Standard' />
-
-
-## External Link
-
-If the button with a link is used to point the user to an external address, then the user should be informed of this.
-We recommend using an icon (visually) and an additional caption for screen readers.
-If the icon is an `img` element, its `alt` attribute should be empty.
-
-<Canvas withSource="none">
-    <Story
-        name='External link'
-        args={{
-            href: 'https://example.com',
-            target: '_blank',
-            label: 'Label',
-            icon: 'external'
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-```html
-<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
-  External link, opens in new tab
-  <scale-icon-navigation-external-link size="24" />
-</scale-button>
-```
-
 
 ## Large Secondary
 
@@ -375,4 +350,33 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 
 ```html
 <scale-button size="large" href="https://example.com" target="_blank">Label</scale-button>
+```
+
+
+
+## External Link
+
+If the button with a link is used to point the user to an external address, then the user should be informed of this.
+We recommend using an icon (visually) and an additional caption for screen readers.
+If the icon is an `img` element, its `alt` attribute should be empty.
+
+<Canvas withSource="none">
+    <Story
+        name='External link'
+        args={{
+            href: 'https://example.com',
+            target: '_blank',
+            label: 'Label',
+            icon: 'external'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+  External link, opens in new tab
+  <scale-icon-navigation-external-link size="24" />
+</scale-button>
 ```

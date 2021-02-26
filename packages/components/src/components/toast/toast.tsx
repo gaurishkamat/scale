@@ -7,21 +7,15 @@ import {
   Element,
   Host,
 } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { formatDistance, subSeconds } from 'date-fns';
-import { styles } from './toast.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-toast',
+  styleUrl: './toast.css',
   shadow: true,
 })
-export class Toast implements Base {
-  /** (optional) Toast class */
-  @Prop() customClass?: string = '';
+export class Toast {
   /** (optional) Toast size */
   @Prop() size?: string = '';
   /** (optional) Toast variant */
@@ -40,6 +34,8 @@ export class Toast implements Base {
   @Prop() positionRight?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
+  /** (optional) Injected CSS styles */
+  @Prop({ reflect: true }) styles?: string;
 
   /** (optional) Toast state progress */
   @State() progress: number = 0;
@@ -48,13 +44,7 @@ export class Toast implements Base {
 
   @Element() element: HTMLElement;
 
-  /** (optional) Injected jss styles */
-  @Prop({ reflect: true }) styles?: StyleSheet;
-  /** decorator Jss stylesheet */
-  @CssInJs('Toast', styles) stylesheet: StyleSheet;
-
   hideToast: boolean = false;
-
   timerId = null;
 
   disconnectedCallback() {
@@ -65,7 +55,6 @@ export class Toast implements Base {
       this.progress = 0;
     }
   }
-  componentWillUpdate() {}
 
   close = () => {
     clearInterval(this.timerId);
@@ -103,31 +92,28 @@ export class Toast implements Base {
   }
 
   render() {
-    const { classes } = this.stylesheet;
     this.setToastTimeout();
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
         <style>{this.transitions(this.toastHeightWithOffset)}</style>
         <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
+
         <div class={this.getCssClassMap()}>
-          <div class={classes.toast__header}>
+          <div class="toast__header">
             <slot name="header" />
-            header
+
             <small>{this.getTime()}</small>
             <a onClick={this.close}>
               <span aria-hidden="true">&times;</span>
             </a>
           </div>
           {this.autoHide && (
-            <div
-              class={classes.toast__progress}
-              style={{ width: `${this.progress}%` }}
-            >
+            <div class="toast__progress" style={{ width: `${this.progress}%` }}>
               &nbsp;
             </div>
           )}
-          <div class={classes.toast__body}>
+          <div class="toast__body">
             <slot />
           </div>
         </div>
@@ -160,25 +146,25 @@ export class Toast implements Base {
   `;
 
   animationStyle = offset => {
-    this.stylesheet.addRule('toast--show', {
-      right: `${this.positionRight}px`,
-      animation: `fadeIn ${this.fadeDuration / 1000}s ease-in-out`,
-      top: `${this.positionTop}px`,
-      opacity: 1,
-    });
-    this.stylesheet.addRule('toast--hide', {
-      right: `${this.positionRight}px`,
-      animation: `fadeOut ${this.fadeDuration / 1000}s ease-in-out`,
-      top: `-${offset}px`,
-      opacity: 0,
-    });
+    return `
+      .toast--show {
+        right: ${this.positionRight}px;
+        animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
+        top: ${this.positionTop}px;
+        opacity: 1;
+      },
+      .toast--show {
+        right: ${this.positionRight}px;
+        animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
+        top: -${offset}px;
+        opacity: 0;
+      }
+    `;
   };
 
   getToastHeightWithOffset() {
-    const { classes } = this.stylesheet;
-    const toastHeight = this.element.shadowRoot.querySelector(
-      `.${classes.toast}`
-    ).scrollHeight;
+    const toastHeight = this.element.shadowRoot.querySelector('.toast')
+      .scrollHeight;
     this.toastHeightWithOffset = toastHeight + this.positionTop;
   }
 
@@ -193,16 +179,14 @@ export class Toast implements Base {
     }
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.toast,
-      this.customClass && this.customClass,
-      this.size && classes[`toast--size-${this.size}`],
-      this.variant && classes[`toast--variant-${this.variant}`],
-      !!this.opened && classes[`toast--opened`],
-      !!!this.hideToast && classes[`toast--show`],
-      !!this.hideToast && classes[`toast--hide`]
+      'toast',
+      this.size && `toast--size-${this.size}`,
+      this.variant && `toast--variant-${this.variant}`,
+      !!this.opened && 'toast--opened',
+      !!!this.hideToast && 'toast--show',
+      !!this.hideToast && 'toast--hide'
     );
   }
 }

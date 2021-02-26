@@ -1,4 +1,7 @@
-# Text List
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Text List</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 A list arranges related pieces of information in a vertical group. This makes it easier for users to scan the content for relevant information.
 

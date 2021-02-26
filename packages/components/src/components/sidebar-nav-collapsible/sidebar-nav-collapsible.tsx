@@ -61,7 +61,7 @@ export class SidebarNavCollapsible {
 
     return (
       <Host>
-        <style>{this.styles}</style>
+        {this.styles && <style>{this.styles}</style>}
         <Tag class={this.getCssClassMap()} role="listitem" part="base">
           <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
             <a

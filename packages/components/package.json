@@ -24,6 +24,7 @@
     "prebuild": "yarn build:theme",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
+    "dev": "stencil build --dev --watch --serve -c stencil-dev.config.ts",
     "test": "stencil test --max-workers=2",
     "format": "prettier --write \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint": "yarn lint:types && yarn lint:style && yarn lint:format",
@@ -47,7 +48,8 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-typescript": "^4.0.0",
     "@stencil/angular-output-target": "^0.0.5",
-    "@stencil/core": "^2.3.0",
+    "@stencil/core": "~2.3.0",
+    "@stencil/postcss": "^2.0.0",
     "@stencil/react-output-target": "^0.0.9",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
@@ -81,6 +83,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
+    "@scaleds/design-tokens-telekom": "^1.15.0",
     "classnames": "^2.2.6",
     "web-animations-js": "^2.3.2"
   }

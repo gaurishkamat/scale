@@ -10,7 +10,6 @@
 | Property            | Attribute            | Description                                     | Type      | Default     |
 | ------------------- | -------------------- | ----------------------------------------------- | --------- | ----------- |
 | `busy`              | `busy`               | (optional) Progress bar busy switch             | `boolean` | `false`     |
-| `customClass`       | `custom-class`       | (optional) Progress bar class                   | `string`  | `''`        |
 | `customColor`       | `custom-color`       | (optional) Progress bar customColor             | `string`  | `undefined` |
 | `disabled`          | `disabled`           | (optional) Progress bar disabled                | `boolean` | `undefined` |
 | `hasError`          | `has-error`          | (optional) Progress bar error                   | `boolean` | `undefined` |
@@ -22,7 +21,7 @@
 | `statusDescription` | `status-description` | (optional) Progress bar status description text | `string`  | `undefined` |
 | `statusInside`      | `status-inside`      | (optional) Progress text display inside bar     | `boolean` | `undefined` |
 | `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width            | `number`  | `6`         |
-| `styles`            | `styles`             | (optional) Injected jss styles                  | `any`     | `undefined` |
+| `styles`            | `styles`             | (optional) Injected CSS styles                  | `string`  | `undefined` |
 
 
 ## Dependencies

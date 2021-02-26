@@ -1,14 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Carousel } from './carousel';
-import { styles } from './carousel.styles';
-import jss from 'jss';
 
 describe('Carousel', () => {
   let element;
-  let stylesheet;
+
   beforeEach(async () => {
     element = new Carousel();
-    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   it('should match snapshot', async () => {
@@ -50,15 +47,5 @@ describe('Carousel', () => {
     element.value = -200;
     element.setTransformValue();
     expect(element.setTransformValue()).toBe('translateX(-200%)');
-  });
-
-  it('should handle css classes', () => {
-    element.customClass = 'custom';
-    expect(element.getCssClassMap()).toContain('custom');
-
-    element.vertical = true;
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['carousel--vertical']
-    );
   });
 });

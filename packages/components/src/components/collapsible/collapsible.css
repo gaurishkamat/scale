@@ -1,0 +1,83 @@
+.collapsible {
+  position: relative;
+  margin: var(--spacing-4, 1rem) 0;
+}
+
+.collapsible--expanded:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border: 1px solid transparent;
+  content: '';
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  bottom: calc(-1 * var(--spacing-4, 1rem));
+}
+
+.collapsible__heading {
+  margin: 0;
+}
+
+.collapsible__button {
+  color: currentColor;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  padding-top: 0;
+  border-color: transparent;
+  border-style: solid;
+  padding-right: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  font-size: var(--type-size-4, 1.25rem);
+  font-weight: var(--type-weight-extra-bold, 800);
+  line-height: var(--type-leading-3, 1.25);
+  border-width: var(--size-border-focus, 2px);
+  border-radius: var(--border-radius-chip, 0.25rem);
+  padding-left: var(--spacing-1, 0.25rem);
+  /*  Accessibility: allows some "external" typographic styles to leak in
+   https://www.w3.org/TR/WCAG21/#text-spacing */
+  font-family: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+}
+
+.collapsible__button > span {
+  margin-left: var(--spacing-inline, 0.5rem);
+}
+
+.collapsible__button:hover {
+  cursor: pointer;
+  color: var(--color-primary, #e20074);
+  background-color: var(--background-light, #f4f4f4);
+}
+
+.collapsible__button:active {
+  color: var(--color-primary-active, #cb0068);
+}
+
+.collapsible__button:focus {
+  outline: none;
+  border-color: var(--color-focus, #009de0);
+}
+
+.collapsible__icon {
+  transform: rotate(0.75turn);
+  flex-shrink: 0;
+  margin-top: calc(var(--spacing-1, 0.25rem) + 1px);
+}
+
+.collapsible__button[aria-expanded='true'] .collapsible__icon {
+  transform: none;
+}
+
+.collapsible__content {
+  padding-right: var(--spacing-7, 3rem);
+  padding-left: var(--spacing-6, 2rem);
+  /* These should collapse with tags like p, that's what we want */
+  margin-top: var(--spacing-4, 1rem);
+  margin-bottom: var(--spacing-5, 1.5rem);
+}

@@ -1,29 +1,19 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
-
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './breadcrumb.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
-
 /*
   @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
 */
 
 @Component({
   tag: 'scale-breadcrumb',
+  styleUrl: 'breadcrumb.css',
   shadow: true,
 })
-export class Breadcrumb implements Base {
+export class Breadcrumb {
   @Element() hostElement: HTMLElement;
-
   @Prop() separator?: string;
-
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Breadcrumb', styles) stylesheet: StyleSheet;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   @State() linksArray = [];
   @State() separatorSlot: HTMLElement = null;
@@ -35,35 +25,13 @@ export class Breadcrumb implements Base {
     this.separatorSlot = this.hostElement.querySelector('[slot="separator"]');
   }
 
-  componentWillUpdate() {}
-  disconnectedCallback() {}
-
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
       element => element.slot === ''
     );
   }
 
-  tmpDefaultIcon(size: number) {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        style={{ display: 'inline-flex' }}
-      >
-        <path
-          d="M7.4 19.95c-.25-.35-.2-.8.1-1.05l8.8-6.9-8.75-6.9a.691.691 0 01-.1-1.05c.25-.3.75-.4 1.05-.1L18.7 12 8.45 20.1c-.3.25-.8.2-1.05-.15z"
-          fill-rule="evenodd"
-          fill="#6B6B6B"
-        ></path>
-      </svg>
-    );
-  }
-
   render() {
-    const { classes } = this.stylesheet;
     const isLast = index => index === this.linksArray.length - 1;
     // Set aria-current="page" to the last item if it's a link
     const getCurrentAttr = index =>
@@ -71,18 +39,19 @@ export class Breadcrumb implements Base {
 
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        {this.styles && <style>{this.styles}</style>}
+
         <nav aria-label="Breadcrumb" class={this.getCssClassMap()}>
           <ol>
             {this.linksArray.map((element, index) => {
               const separator =
                 this.separatorSlot != null ? (
                   <span
-                    class={classes.separator}
+                    class="separator"
                     innerHTML={this.separatorSlot.innerHTML}
                   />
                 ) : (
-                  <span class={classes.separator}>
+                  <span class="separator">
                     {this.separator || (
                       <scale-icon-navigation-right size={12} color="#6B6B6B" />
                     )}
@@ -93,25 +62,19 @@ export class Breadcrumb implements Base {
                   {element.href ? (
                     <a
                       href={element.href}
-                      class={classNames(
-                        isLast(index) && classes.current,
-                        classes.link
-                      )}
+                      class={classNames(isLast(index) && 'current', 'link')}
                       {...getCurrentAttr(index)}
                     >
                       {element.textContent}
                     </a>
                   ) : (
                     <span
-                      class={classNames(
-                        isLast(index) && classes.current,
-                        classes.item
-                      )}
+                      class={classNames(isLast(index) && 'current', 'item')}
                     >
                       {element.textContent}
                     </span>
                   )}
-                  {!isLast(index) ? separator : null}
+                  {isLast(index) ? null : separator}
                 </li>
               );
             })}
@@ -121,8 +84,7 @@ export class Breadcrumb implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(classes.breadcrumb);
+  getCssClassMap() {
+    return classNames('breadcrumb');
   }
 }

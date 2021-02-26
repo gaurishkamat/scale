@@ -1,27 +1,17 @@
 import { Component, Prop, h, Element, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
-import { styles } from './table.styles';
-import { CssInJs } from '../../utils/css-in-js';
-import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-table',
+  styleUrl: './table.css',
   shadow: false,
 })
-export class Table implements Base {
+export class Table {
   @Element() hostElement: HTMLElement;
-  /** (optional) Tag class */
-  @Prop() customClass?: string = '';
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
   /** (optional) Visual size */
   @Prop() size?: 'default' | 'small' | string = 'default';
-  /** (optional) Injected jss styles */
-  @Prop() styles?: any;
-  /** decorator Jss stylesheet */
-  @CssInJs('Table', styles) stylesheet: StyleSheet;
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
@@ -39,8 +29,6 @@ export class Table implements Base {
       );
     });
   }
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
@@ -50,13 +38,11 @@ export class Table implements Base {
     );
   }
 
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
+  getCssClassMap() {
     return classNames(
-      classes.table,
-      this.customClass && this.customClass,
-      this.size && classes[`table--size-${this.size}`],
-      this.showSort && classes[`table--sortable`]
+      'table',
+      this.size && `table--size-${this.size}`,
+      this.showSort && 'table--sortable'
     );
   }
 }

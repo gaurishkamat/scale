@@ -3,30 +3,7 @@
 exports[`Divider should match snapshot 1`] = `
 <scale-divider>
   <mock:shadow-root>
-    <style>
-      .\\:host-0-0-5 {
-  width: 100%;
-  height: 100%;
-}
-.divider-0-0-6 {
-  padding: 0.75rem;
-}
-.divider-0-0-6 hr {
-  border: 0;
-  margin: 0;
-  border-top: 1px solid #D0D0D0;
-}
-.divider__vertical-0-0-7 {
-  border-left: 1px solid #D0D0D0;
-  min-height: 1.5rem;
-}
-.divider--vertical-0-0-8 {}
-.divider--vertical-0-0-8, .divider--vertical-0-0-8 divider__vertical {
-  height: inherit;
-  display: inline-flex;
-}
-    </style>
-    <div aria-hidden="" class="divider-0-0-6">
+    <div aria-hidden="" class="divider">
       <hr>
     </div>
   </mock:shadow-root>
@@ -36,31 +13,8 @@ exports[`Divider should match snapshot 1`] = `
 exports[`Divider should match snapshot when horizontal false 1`] = `
 <scale-divider vertical="true">
   <mock:shadow-root>
-    <style>
-      .\\:host-0-0-5 {
-  width: 100%;
-  height: 100%;
-}
-.divider-0-0-6 {
-  padding: 0.75rem;
-}
-.divider-0-0-6 hr {
-  border: 0;
-  margin: 0;
-  border-top: 1px solid #D0D0D0;
-}
-.divider__vertical-0-0-7 {
-  border-left: 1px solid #D0D0D0;
-  min-height: 1.5rem;
-}
-.divider--vertical-0-0-8 {}
-.divider--vertical-0-0-8, .divider--vertical-0-0-8 divider__vertical {
-  height: inherit;
-  display: inline-flex;
-}
-    </style>
-    <div aria-hidden="" class="divider--vertical-0-0-8 divider-0-0-6">
-      <span class="divider__vertical-0-0-7"></span>
+    <div aria-hidden="" class="divider divider--vertical">
+      <span class="divider__vertical"></span>
     </div>
   </mock:shadow-root>
 </scale-divider>
