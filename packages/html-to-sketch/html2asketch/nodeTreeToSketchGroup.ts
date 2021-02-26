@@ -5,6 +5,7 @@ import {isNodeVisible} from './helpers/visibility';
 import { removeJssNameFromClass } from './helpers/utils';
 import createXPathFromElement from './helpers/createXPathFromElement';
 
+
 (console as any).debugObjs = [];
 
 export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
@@ -24,7 +25,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // Collect layers for the node level itself
   const layers = nodeToSketchLayers(node, group, {...options, layerOpacity: false}) || [];
 
-  // const printLayers = (l:any) => l._name + '[ ' + (l._layers || []).map(printLayers).join(', ') + ' ]';
+  const printLayers = (l:any) => l._name + '[ ' + (l._layers || []).map(printLayers).join(', ') + ' ]';
 
   const replaceSlotsWithLayers = (node:any, layers:any[]) => {
     if (layers.length === 0) return;
@@ -74,8 +75,9 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       // console.log(printLayers(root));
       // The issue here is that the slotted content doesn't have its shadow roots expanded
       const previousLayers = root._layers;
-      root._layers = [];
       (root as any)._isShadow = true;
+      // console.log("Throwing away " + root._layers.length + " layers");
+      root._layers = [];
       // Process children
       const children = Array.from(childNode.shadowRoot.children)
         .filter(isNodeVisible)

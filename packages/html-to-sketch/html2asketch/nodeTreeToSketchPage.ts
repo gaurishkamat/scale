@@ -13,7 +13,7 @@ function findComponentPath(node: HTMLElement): string {
 }
 
 function traverse(node: HTMLElement): void {
-  if (/^scale-/i.test(node.nodeName)) {
+  if (/^scale-icon/i.test(node.nodeName)) {
     const componentPath = findComponentPath(node);
     const componentName = node.getAttribute('data-sketch-symbol') || (componentPath + " / " + node.nodeName.replace(/^scale-/i, '').toLowerCase());
     node.setAttribute('data-sketch-symbol', `${componentName}`);

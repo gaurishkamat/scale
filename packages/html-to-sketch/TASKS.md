@@ -91,22 +91,93 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
     - [x] Text field disabled bg should be white
     - [x] Textarea disabled bg should be white
     - [x] Border sizing issue
+    - [x] Remove unwanted symbols
+    - [x] Table v1
+    - [x] Build version number as symbol
+        - [x] Generate symbol in index.js
+        - [x] Set symbol name and text content to doc name, build version and date. 
+    - [x] Horizontal slider
+    - [x] Fix naming for card
+    - [x] Add components to testdoc
+    - [x] Resizing
+        - Progress bar, slider, text field, textarea, link, 
+        - [~] Accordion
+        - [x] Tab Navigation
+        - [x] Button
+            - [x] Text only
+            - [x] Icon only
+            - [x] Text & Icon 
+    - [x] Office server latest build
+        - [x] Change config to point to the office server URL
+        - [x] scp built file and RSS to office server at end of build
+    - [x] Table disable resize
 
+    - [ ] Resizing
+        - [ ] Card
+    - [ ] slider
+        - [ ] symbol naming (can be divided into "track small" and "track large" and one level down "size s"/"size L" instead of "undefined"
+    - [ ] Tag
+        - naming according to storybook
+            - Standard
+            - A dismissible tag
+            - A small tag
+            - A small dismissible tag
+            - Variant secondary tag
+            - Variant secondary link
+            - Variant secondary dismissible
+            - Variant secondary small
+            - Variant secondary link small
+            - Variant secondary dismissible small
+            - Complete example
+    - [ ] Textarea
+        - naming according to storybook
+            - Standard
+            - Placeholder
+            - Helper Text
+            - With Error
+            - Disabled
+            - Max Length With Counter
+            - More Rows
+    - [ ] Text field
+        - naming according to storybook
+            - Standard
+            - Text With Events
+            - Placeholder
+            - Helper Text
+            - Small
+            - With Error
+            - Disabled
+            - Max Length With Counter
+    - [ ] Accordion
+        - [ ] Naming: sketch files + storybook must be aligned.
+        - Standard
+        - Dependent
+    - [ ] Sidebar Nav
+    - [ ] Tab Nav - v1
+        - [ ] Find why "Not Selected" tabs are not generated in html-to-sketch.
+        - [ ] Naming: sketch files + storybook must be aligned.
+            - Text & Icon
+            - Text & Icon, Small
+            - Text Only
+            - Text Only, Small
+    - [ ] Modal
     - [ ] Test doc extra tests
         - [ ] Override text field texts
         - [ ] Override text area texts  
-    - [ ] Accordion
-    - [ ] Tab Nav
-    - [ ] Table
-    - [ ] Modal
-
     - [ ] Naming sketch files + storybook need to be aligned
         - [ ] Dropdown
         - [ ] Tag
         - [ ] Textarea
-
-    - Later
-        - [ ] Sidebar Nav
+    - [ ] Progress Bar
+        - [ ] Naming: sketch files + storybook must be aligned.
+            - Determinate
+            - Progress Custom
+            - Progress Custom with description
+            - Complete default
+            - Complete green
+            - Complete error
+            - Interactive
+            
 
 
 

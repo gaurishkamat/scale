@@ -1,7 +1,7 @@
 const { findLayer, findLayers } = require('./utils');
 
 module.exports = {
-  libraryServerPath: "http://localhost:5000/",
+  libraryServerPath: "https://office.heichen.hk/shared/Public/telekom/",
 
   libraryTitle: "Scale Telekom Components",
   libraryDescription: "Scale Telekom Components design library",
@@ -41,16 +41,31 @@ module.exports = {
 
     try {
       if (/^Accordion/.test(symbol.name)) {
-        symbol.layers[0].resizingConstraint = 9;
+        symbol.layers[0].resizingConstraint = 10;
+        var icon = findLayer(symbol, s => s.name === "Icon");
+        if (icon) icon.resizingConstraint = 9;
+        var label = findLayer(symbol, s => s.name === "Accordion Label");
+        if (label) label.resizingConstraint = 9;
+        var bg = findLayer(symbol, s => s.name === "Background");
+        if (bg) bg.resizingConstraint = 10;
       }
       if (/^(Button)/.test(symbol.name)) {
-        symbol.layers[0].resizingConstraint = 45;
         var button = findLayer(symbol, s => s.name === "button.button");
+        if (button) {
+          button.resizingConstraint = 11;
+          button.layers.pop();
+        }
+        var slot = findLayer(symbol, s => s.name === "slot");
+        if (slot) slot.resizingConstraint = 45;
         var icon = findLayer(symbol, s => s.name === "Icon");
+        if (icon) icon.resizingConstraint = 9;
         var label = findLayer(symbol, s => s.name === "Button Label");
-        if (button) button.resizingConstraint = 10;
-        if (icon) icon.resizingConstraint = 58;
-        if (label) label.resizingConstraint = 42;
+        if (icon) {
+          if (label) label.resizingConstraint = 9;
+          else icon.resizingConstraint = 45;
+        } else {
+          if (label) label.resizingConstraint = 45;
+        }
       }
       if (/^Breadcrumb/.test(symbol.name)) {
         symbol.groupLayout = undefined;
@@ -62,7 +77,7 @@ module.exports = {
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
       }
-      if (/^Divider \/ \d+ Horizontal/.test(symbol.name)) {
+      if (/^Divider \/ \d+ Standard/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 47;
       }
       if (/^Divider \/ \d+ Vertical/.test(symbol.name)) {
@@ -71,17 +86,34 @@ module.exports = {
       if (/^(Dropdown)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 11;
-        var label = findLayer(symbol, s => s.name === "Select Box Label");
         var icon = findLayer(symbol, s => s.name === "Icon");
         icon.resizingConstraint = 44;
+        var label = findLayer(symbol, s => s.name === "Dropdown Label");
         if (label) {
-          label.resizingConstraint = 12;
-          label.glyphBounds = "{{0, 3}, {140, 12}}";
+          label.resizingConstraint = 10;
+          label.frame.width = 144;
+          label.glyphBounds = "{{0, 3}, {136, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name === "Dropdown Value");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 144;
+          label.glyphBounds = "{{0, 3}, {136, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name === "Information Label");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 186;
+          label.glyphBounds = "{{0, 3}, {186, 12}}";
           label.textBehaviour = 2;
         }
       }
       if (/^Link/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
+        var underline = findLayer(symbol, s => s.name === 'border-bottom');
+        if (underline) underline.resizingConstraint = 58;
       }
       if (/^Modal/.test(symbol.name)) {
         symbol.layers[0].layers[1].resizingConstraint = 45;
@@ -91,11 +123,18 @@ module.exports = {
         symbol.layers[0].resizingConstraint = 9;
         var desc = findLayer(symbol, s => s.name === 'Description');
         if (desc) desc.resizingConstraint = 9;
+        var desc = findLayer(symbol, s => s.name === 'Progress Bar Label');
+        if (desc) desc.resizingConstraint = 9;
+        var desc = findLayer(symbol, s => s.name === 'div.progress-bar');
+        if (desc) desc.resizingConstraint = 9;
+        var desc = findLayer(symbol, s => s.name === 'div.progress-bar-wrapper');
+        if (desc) desc.resizingConstraint = 9;
       }
       if (/^Slider/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 10;
 
         var track = findLayer(symbol, s => s.name === "div.slider--track");
+        var bar = findLayer(symbol, s => s.name === "div.slider--bar");
         var count = findLayer(symbol, s => /^\d+/.test(s.name));
         var label = findLayer(symbol, s => s.name === "Slider Label");
 
@@ -106,12 +145,30 @@ module.exports = {
           count.name = "Counter Label";
         }
 
+        if (bar) bar.resizingConstraint = 59;
+
         track.resizingConstraint = 58;
-        track.layers[1].frame.width += 6;
-        track.layers[2].resizingConstraint = 45;
+        var knob = findLayer(track, s => /div\#slider/.test(s.name));
+        if (knob) knob.resizingConstraint = 45;
       }
       if (/^Switch/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
+      }
+      if (/^Table/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
+        symbol.layers.forEach(l => l.resizingConstraint = 9);
+      }
+      if (/^(Tab Nav)/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
+        symbol.layers[0].resizingConstraint = 9;
+        var label = findLayer(symbol, s => s.name === "Header Label");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 120;
+          label.glyphBounds = "{{0, 3}, {120, 24}}";
+          label.textBehaviour = 2;
+        }
+
       }
       if (/^Tag/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
@@ -141,7 +198,38 @@ module.exports = {
           textarea.resizingConstraint = 18;
           findLayers(textarea, l => l.resizingConstraint = 18);
         }
-        
+
+        var bg = findLayer(symbol, s => /safety-background/.test(s.name));
+        if (bg) bg.resizingConstraint = 18;
+
+        var label = findLayer(symbol, s => s.name === "Label");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 148;
+          label.glyphBounds = "{{0, 3}, {148, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name === "Input Value");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 148;
+          label.glyphBounds = "{{0, 3}, {148, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name.startsWith("Information"));
+        if (label) {
+          if (label.name === 'Information') {
+            label.resizingConstraint = 34;
+            label.frame.width = 162;
+            label.glyphBounds = "{{0, 3}, {162, 12}}";
+          } else {
+            label.resizingConstraint = 10;
+            label.frame.width = 108;
+            label.glyphBounds = "{{0, 3}, {108, 12}}";
+          }
+          label.textBehaviour = 2;
+        }
+
       }
 
       if (/^(Text Field)/.test(symbol.name)) {
@@ -166,6 +254,29 @@ module.exports = {
           input.resizingConstraint = 10;
           findLayers(input, l => l.resizingConstraint = 10);
         }
+
+        var label = findLayer(symbol, s => s.name === "Label");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 148;
+          label.glyphBounds = "{{0, 3}, {148, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name === "Input Value");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 148;
+          label.glyphBounds = "{{0, 3}, {148, 12}}";
+          label.textBehaviour = 2;
+        }
+        var label = findLayer(symbol, s => s.name === "Information");
+        if (label) {
+          label.resizingConstraint = 10;
+          label.frame.width = 108;
+          label.glyphBounds = "{{0, 3}, {108, 12}}";
+          label.textBehaviour = 2;
+        }
+
       }
 
       if (/^(Text List)/.test(symbol.name)) {

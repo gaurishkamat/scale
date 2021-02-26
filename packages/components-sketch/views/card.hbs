@@ -4,7 +4,7 @@
     <h1 class="title--artboard">Card</h1>
     
     <h2 class="title--artboard-section">Standard</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="Standard">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-card data-sketch-key="card-1">
@@ -31,14 +31,12 @@
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <scale-card disabled="true" data-sketch-key="card-5">
-                <div>Card Label</div>
-            </scale-card>
+            &mdash;
         </div>
     </div>
 
     <h2 class="title--artboard-section">With Link</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="With Link">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-card to="https://example.com" target="_blank" rel="noopener noreferrer" data-sketch-key="card-6">
@@ -65,21 +63,19 @@
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <scale-card to="https://example.com" target="_blank" rel="noopener noreferrer"  disabled="true" data-sketch-key="card-10">
-                <div>Card Label</div>
-            </scale-card>
+            &mdash;
         </div>
     </div>
 
     <h2 class="title--artboard-section">With Image</h2>
-    <div class="agent-states--grid">
+    <div class="agent-states--grid" data-category="With Image">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
             <scale-card to="https://example.com" target="_blank" rel="noopener noreferrer" data-sketch-key="card-11">
                 <div>
                     <div style="margin: -24px;">
                         <img src="/placeholder.png" alt="placeholder" style="margin-bottom: -4px; width: 100%;">
-                        <div style="padding: 24px;">A card with a full width image</div>
+                        <div style="padding: 24px;">Card Label</div>
                     </div>
                 </div>
             </scale-card>
@@ -90,7 +86,7 @@
                 <div>
                     <div style="margin: -24px;">
                         <img src="/placeholder.png" alt="placeholder" style="margin-bottom: -4px; width: 100%;">
-                        <div style="padding: 24px;">A card with a full width image</div>
+                        <div style="padding: 24px;">Card Label</div>
                     </div>
                 </div>
             </scale-card>
@@ -101,7 +97,7 @@
                 <div>
                     <div style="margin: -24px;">
                         <img src="/placeholder.png" alt="placeholder" style="margin-bottom: -4px; width: 100%;">
-                        <div style="padding: 24px;">A card with a full width image</div>
+                        <div style="padding: 24px;">Card Label</div>
                     </div>
                 </div>
             </scale-card>
@@ -112,21 +108,14 @@
                 <div>
                     <div style="margin: -24px;">
                         <img src="/placeholder.png" alt="placeholder" style="margin-bottom: -4px; width: 100%;">
-                        <div style="padding: 24px;">A card with a full width image</div>
+                        <div style="padding: 24px;">Card Label</div>
                     </div>
                 </div>
             </scale-card>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <scale-card to="https://example.com" target="_blank" rel="noopener noreferrer"  disabled="true" data-sketch-key="card-15">
-                <div>
-                    <div style="margin: -24px;">
-                        <img src="/placeholder.png" alt="placeholder" style="margin-bottom: -4px; width: 100%;">
-                        <div style="padding: 24px;">A card with a full width image</div>
-                    </div>
-                </div>
-            </scale-card>
+            &mdash;
         </div>
     </div>
 
@@ -136,8 +125,8 @@
 <script src="/symbol_names.js"></script>
 <script>
     Array.from(document.querySelectorAll("scale-card")).forEach(btn => {
-        btn.dataset.sketchSymbol = `Card / 02 Interactive / ${
-                order(2, 'Padding ' + (btn.dataset.noPadding == null ? 'on' : 'off'))
+        btn.dataset.sketchSymbol = `Card / ${
+                order(2, getCategoryName(btn))
             } / ${
                 order(4, getStateName(btn))
             }`;

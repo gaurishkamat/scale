@@ -1,44 +1,67 @@
 <div data-sketch-artboard="Tab Navigation" class="artboard">
     <h1 class="title--artboard">Tab Navigation</h1>
 
-    <scale-tab-nav>
-        <scale-tab-header slot="tab">
-            <scale-icon-home-home size="16" /> General
-        </scale-tab-header>
-        <scale-tab-panel slot="panel">
-            Freegan kinfolk farm-to-table humblebrag cred…
-        </scale-tab-panel>
-        <scale-tab-header slot="tab">
-            <scale-icon-user_file-analytics size="16" /> Usage
-        </scale-tab-header>
-        <scale-tab-panel slot="panel">
-            Bespoke austin pork belly yuccie pop-up. Before they sold out…
-        </scale-tab-panel>
-        <scale-tab-header slot="tab">
-            <scale-icon-content-heart size="16" /> Style
-        </scale-tab-header>
-        <scale-tab-panel slot="panel">
-            Biodiesel chia af hoodie tumeric bespoke letterpress…
-        </scale-tab-panel>
-        <scale-tab-header slot="tab">
-            <scale-icon-action-random size="16" /> Code
-        </scale-tab-header>
-        <scale-tab-panel slot="panel">
-            Asymmetrical tattooed chia, banh mi blog microdosing…
-        </scale-tab-panel>
-    </scale-tab-nav>
+    <h2 class="title--artboard-section">Tab Navigation Example</h2>
+    <div>
+        <scale-tab-nav data-sketch-key="scale-tab-nav-example" data-sketch-symbol="Tab Navigation / 01 Example">
+            <scale-tab-header slot="tab" aria-selected="true">
+                <scale-icon-home-home size="16"></scale-icon-home-home> Header Label
+            </scale-tab-header>
+            <scale-tab-panel slot="panel">
+                Tab Panel Label
+            </scale-tab-panel>
+            <scale-tab-header slot="tab" aria-selected="false">
+                <scale-icon-user_file-analytics size="16"></scale-icon-user_file-analytics> Tab Header 2
+            </scale-tab-header>
+            <scale-tab-panel slot="panel">
+                Tab Panel Label 2
+            </scale-tab-panel>
+            <scale-tab-header slot="tab" aria-selected="false">
+                <scale-icon-content-heart size="16"></scale-icon-content-heart> Tab Header 3
+            </scale-tab-header>
+            <scale-tab-panel slot="panel">
+                Tab Panel Label 3
+            </scale-tab-panel>
+            <scale-tab-header slot="tab" aria-selected="false">
+                <scale-icon-action-random size="16"></scale-icon-action-random> Tab Header 4
+            </scale-tab-header>
+            <scale-tab-panel slot="panel">
+                Tab Panel Label 4
+            </scale-tab-panel>
+        </scale-tab-nav>
+    </div>
+
+    <br><br><br>
+
+    <h2 class="title--artboard-section">Tab Header</h2>
+    <div class="agent-states--grid">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:enabled</p>
+            <scale-tab-nav>
+                <scale-tab-header slot="tab" data-sketch-key="scale-tab-nav-header-standard"
+                    data-sketch-symbol="Tab Navigation / 02 Tab Header / 01 Selected / 01 Standard">
+                    <scale-icon-home-home size="16"></scale-icon-home-home> Header Label
+                </scale-tab-header>
+                <scale-tab-panel slot="panel" data-sketch-key="scale-tab-nav-panel"
+                    data-sketch-symbol="Tab Navigation / 03 Tab Panel">
+                    Tab Panel Label
+                </scale-tab-panel>
+                <scale-tab-header slot="tab" data-sketch-key="scale-tab-nav-header-not-selected-standard" aria-selected="false"
+                    data-sketch-symbol="Tab Navigation / 02 Tab Header / 02 Not Selected / 01 Standard">
+                    <scale-icon-home-home size="16"></scale-icon-home-home> Header Label
+                </scale-tab-header>
+                <scale-tab-panel slot="panel">
+                    Tab Panel Label
+                </scale-tab-panel>
+            </scale-tab-nav>
+        </div>
+
+    </div>
+
 
 </div>
 
 <script src="/symbol_names.js"></script>
 <script>
-    Array.from(document.querySelectorAll("scale-tab-nav")).forEach(btn => {
-        btn.dataset.sketchSymbol = `Tab Navigation / 01 Example`
-    });
-    Array.from([document.querySelector("scale-tab-header")]).forEach(btn => {
-        btn.dataset.sketchSymbol = `Tab Navigation / 02 Tab Header`
-    });
-    Array.from([document.querySelector("scale-tab-panel")]).forEach(btn => {
-        btn.dataset.sketchSymbol = `Tab Navigation / 02 Tab Panel`
-    });
+    setTimeout(() => document.body.click(), 200);
 </script>

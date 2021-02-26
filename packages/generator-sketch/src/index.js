@@ -4,6 +4,7 @@ const {
   Rect,
   Style,
   Artboard,
+  Text,
   Bitmap,
   SharedStyle,
   SymbolMaster,
@@ -615,6 +616,25 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   version++;
   console.log(`New document version`, version);
   await documentDB.run("UPDATE document SET document_version = ? WHERE document_id = ?", [version, sketch.document.do_objectID]);
+
+  var versionSymbol = new SymbolMaster({
+    id: `${documentName}-version-master`,
+    symbolID: `${documentName}-version`,
+    name: 'Z Build Version'
+  });
+  versionSymbol.frame.x = 0;
+  versionSymbol.frame.y = y;
+  versionSymbol.addLayer(new Text({
+    string: `${documentName} - version ${version}, built on ${new Date().toLocaleString()}`,
+    name: "Version",
+    fontSize: 24,
+    color: "#404040"
+  }));
+  symbolsPage.addLayer(versionSymbol);
+
+  if (fs.existsSync(`./${documentName}.png`)) {
+    Sketch.addPreview(`./${documentName}.png`);
+  }
 
   sketch.build(`./sketch/${documentName}.sketch`, 9).then(() => {
     console.log(`Built ./sketch/${documentName}.sketch`);
