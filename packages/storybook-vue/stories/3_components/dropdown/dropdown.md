@@ -81,6 +81,10 @@ When space is limited, use the small dropdown consistently.
 
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
+## Known issues
+The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).
+The display error is on the browser side.
+
 ## Related components
 
 <a href="?path=/usage/components-checkbox--standard">Checkbox, </a>

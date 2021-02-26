@@ -77,6 +77,10 @@ Wenn nur wenig Platz zur Verfügung steht, setze das kleine Dropdown ein.
 
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
+## Bekannte Einschränkungen
+Das Dropdown im ist fertig zum Gebrauch. Die Komponente im disabled State wird im Firefox 85.0.2 (64-Bit) im HCM (Hochkontrastmodus) fehlerhaft mit weißem Hintergrund dargestellt.
+Der Darstellungsfehler liegt auf Seiten des Browsers.
+
 ## Verwandte Komponenten
 
 <a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
