@@ -3,38 +3,38 @@
 }
 .input .input__helper-text,
 .input .input__counter {
-  font-weight: var(--type-weight-bold, 700);
+  font-weight: var(--scl-font-weight-bold);
 }
 .input .input__input,
 .input .input__select {
   width: 100%;
-  height: var(--input-large-height, 48px);
-  margin: 6px 0;
+  height: var(--scl-spacing-48);
+  margin: var(--scl-spacing-4) 0 var(--scl-spacing-8);
   display: flex;
   outline: none;
-  padding: var(--input-large-padding-y, 12px) var(--input-large-padding-x, 12px);
+  padding: var(--scl-spacing-12) var(--scl-spacing-12);
   z-index: 1;
   box-sizing: border-box;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   font-family: inherit;
-  border-radius: 4px;
-  border: 1px solid var(--palette-grey, #262626);
-  font-size: var(--type-size-3, 1rem);
+  font-size: var(--scl-font-size-16);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-black);
 }
 .input .input__textarea {
   width: 100%;
-  margin: 6px 0;
+  margin: var(--scl-spacing-4) 0 var(--scl-spacing-8);
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--input-large-padding-y, 12px) var(--input-large-padding-x, 12px);
+  padding: var(--scl-spacing-12) var(--scl-spacing-12);
   z-index: 1;
   box-sizing: border-box;
-  transition: border-color 0.2s ease-in-out;
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   font-family: inherit;
-  border-radius: 4px;
-  font-size: var(--type-size-3, 1rem);
-  border: 1px solid var(--palette-grey, #262626);
+  font-size: var(--scl-font-size-16);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
 }
 .input .input__select {
   appearance: none;
@@ -45,30 +45,30 @@
 }
 .input .input__counter {
   display: flex;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   margin-left: auto;
-  padding-right: 12px;
+  padding-right: var(--scl-spacing-12);
   justify-content: flex-end;
-  font-size: var(--type-variants-helper-text-font-size, 0.75rem);
-  line-height: var(--type-variants-helper-text-line-height, 1.3333);
-  color: var(--palette-grey, #262626);
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-text-default);
 }
 .input .input__helper-text {
-  transition: var(--transition-default, all 0.2s ease-in-out);
-  padding-left: 12px;
-  font-size: var(--type-variants-helper-text-font-size, 0.75rem);
-  line-height: var(--type-variants-helper-text-line-height, 1.3333);
-  color: var(--palette-helper-text, #007db3);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  padding-left: var(--scl-spacing-12);
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-blue-70);
 }
 .input .input__meta {
   display: flex;
   justify-content: space-between;
 }
 .input:not(.input--disabled):hover .input__select-wrapper {
-  --icon-color: var(--color-primary-hover, #f90984);
+  --icon-color: var(--scl-color-primary-hover, #f90984);
 }
 .input:not(.input--disabled):active .input__select-wrapper {
-  --icon-color: var(--color-primary-active, #cb0068);
+  --icon-color: var(--scl-color-primary-active, #cb0068);
 }
 .input:not(.input--disabled) .input__input:hover,
 .input:not(.input--disabled) .input__input:focus,
@@ -76,22 +76,22 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--palette-magenta-hover, #f90984);
+  border-color: var(--scl-color-primary-hover, #f90984);
 }
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:focus {
-  box-shadow: 0 0 0 var(--size-border-focus, 2px) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .input:not(.input--disabled) .input__input:focus::placeholder,
 .input:not(.input--disabled) .input__select:focus::placeholder,
 .input:not(.input--disabled) .input__textarea:focus::placeholder {
-  color: #6c6c6c;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  color: var(--scl-color-grey-60);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
-  right: 12px;
+  right: var(--scl-spacing-12);
   position: absolute;
   transform: translateY(-50%);
   pointer-events: none;
@@ -101,81 +101,86 @@
 .input .input__textarea::placeholder,
 .input ::placeholder {
   color: transparent;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
 }
 .input--variant-static .input__label {
-  color: #6c6c6c;
+  color: var(--scl-color-grey-60);
   display: flex;
-  font-weight: 500;
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--variant-animated .input__input,
 .input--variant-animated .input__select {
-  padding: 12px 12px 0 11px;
+  padding: var(--scl-spacing-12) var(--scl-spacing-12) 0 calc(var(--scl-spacing-12) - 1px);
 }
 .input--variant-animated .input__textarea {
-  padding-top: 24px;
+  padding-top: var(--scl-spacing-24);
 }
 .input--variant-animated .input__label {
   top: 0;
   left: 0;
-  color: #6c6c6c;
+  color: var(--scl-color-grey-60);
   display: flex;
-  z-index: 10;
+  z-index: var(--scl-z-index-10);
   position: absolute;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   pointer-events: none;
-  font-size: var(--type-size-3, 1rem);
-  transform: translate(13px, calc((48px - 1rem) / 2));
-  font-weight: 500;
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
+  transform: translate(var(--scl-spacing-12), calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2));
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--variant-animated.input--has-focus .input__label,
 .input--variant-animated.animated .input__label {
-  color: #6c6c6c;
-  transform: translate(12px, 8px);
-  transition: var(--transition-default, all 0.2s ease-in-out);
-  font-size: 0.625rem;
-  font-weight: var(--type-weight-bold, 700);
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-bold);
 }
 .input--status-error .input__input,
 .input--status-error .input__textarea,
 .input--status-error .input__select {
-  border: 2px solid var(--palette-error, #d90000);
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
 }
 .input--status-error .input__helper-text {
-  color: var(--palette-error, #d90000);
+  color: var(--scl-color-text-error);
 }
 .input--status-error .input__counter {
-  color: var(--palette-error, #d90000);
+  color: var(--scl-color-text-error);
 }
 .input--size-small .input__input {
-  height: var(--input-small-height, 40px);
+  height: var(--scl-spacing-40);
 }
 .input--size-small .input__select {
-  height: var(--input-small-height, 40px);
+  height: var(--scl-spacing-40);
 }
 .input--size-small .input__label {
   top: 0;
   left: 0;
-  color: #6c6c6c;
+  color: var(--scl-color-grey-60);
   display: flex;
-  z-index: 10;
+  z-index: var(--scl-z-index-10);
   position: absolute;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   pointer-events: none;
-  font-size: var(--type-size-3, 1rem);
-  transform: translate(
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(
     13px,
     calc((var(--input-small-height, 40px) - 1rem) / 2)
+  ); */
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-40) - var(--scl-font-size-16)) / 2)
   );
-  font-weight: 500;
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--size-small.input--has-focus .input__label,
 .input--size-small.animated .input__label {
-  color: #6c6c6c;
-  transform: translate(12px, 4px);
-  transition: var(--transition-default, all 0.2s ease-in-out);
-  font-size: 0.625rem;
-  font-weight: 500;
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--transparent .input__input,
 .input--transparent .input__textarea,
@@ -198,37 +203,39 @@
   width: 100%;
 }
 .input--type-checkbox .input__helper-text {
-  padding-left: 2rem;
+  padding-left: var(--scl-spacing-32);
 }
 .input--type-checkbox label {
-  color: var(--palette-grey, #262626);
-  font-weight: 500;
+  color: var(--scl-color-text-default);
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
-  width: 24px;
-  height: 24px;
+  width: var(--scl-spacing-24);
+  height: var(--scl-spacing-24);
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: 0.5rem;
+  margin-right: var(--scl-spacing-8);
 }
 .input--type-checkbox input:disabled ~ label {
-  color: var(--background-disabled, #d0d0d0);
+  /* FIXME make sure color is right */
+  color: var(--scl-color-background-disabled);
 }
 .input--type-checkbox input:checked:disabled ~ label {
-  color: var(--palette, #d0d0d0);
+  color: var(--scl-color-background-disabled);
 }
 .input--type-checkbox
   input:checked:disabled
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  background: var(--background-disabled, #d0d0d0);
+  background: var(--scl-color-background-disabled);
 }
+/* TODO this could removed once scale-icon is removed */
 .input--type-checkbox
   input:checked:disabled
   ~ .input__checkbox-container
   scale-icon {
-  --icon-color: #a4a4a4;
+  --icon-color: var(--scl-color-grey-30);
 }
 .input--type-checkbox
   input:checked:not([disabled]):hover
@@ -239,8 +246,8 @@
   ~ .input__checkbox-container:hover
   .input__checkbox-placeholder {
   box-shadow: none;
-  border-color: var(--color-primary-hover, #f90984);
-  background: var(--color-primary-hover, #f90984);
+  border-color: var(--scl-color-primary-hover, #f90984);
+  background: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-checkbox
   input:checked:not([disabled]):active
@@ -250,9 +257,10 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container:active
   .input__checkbox-placeholder {
-  border-color: #cb0068;
-  background: #cb0068;
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
 }
+/* TODO this could removed once scale-icon is removed */
 .input--type-checkbox
   input:checked:not([disabled]):active
   ~ .input__checkbox-container
@@ -261,26 +269,26 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container:active
   scale-icon {
-  --icon-color: #fff;
+  --icon-color: var(--scl-color-white);
 }
 .input--type-checkbox
   input:checked:not([disabled])
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  border: 1px solid #e20074;
-  background: #e20074;
+  border: var(--scl-spacing-1) solid var(--scl-color-primary, #e20074);
+  background: var(--scl-color-primary, #e20074);
 }
 .input--type-checkbox
   input:disabled
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  border-color: var(--background-disabled, #d0d0d0);
+  border-color: var(--scl-color-background-disabled);
 }
 .input--type-checkbox
   input:focus
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  box-shadow: 0 0 0 2px #009de0;
+    box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .input--type-checkbox
   input:not([disabled]):hover
@@ -291,7 +299,7 @@
   ~ .input__checkbox-container:hover
   .input__checkbox-placeholder {
   box-shadow: none;
-  border-color: var(--color-primary-hover, #f90984);
+  border-color: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-checkbox
   input:not([disabled]):hover
@@ -301,7 +309,7 @@
   input:not([disabled])
   ~ .input__checkbox-container:hover
   ~ label {
-  color: var(--color-primary-hover, #f90984);
+  color: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-checkbox
   input:not([disabled]):active
@@ -311,9 +319,10 @@
   input:not([disabled])
   ~ .input__checkbox-container:active
   .input__checkbox-placeholder {
-  border-color: #cb0068;
-  background: #cb0068;
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
 }
+/* TODO this could removed once scale-icon is removed */
 .input--type-checkbox
   input:not([disabled]):active
   ~ .input__checkbox-container
@@ -322,7 +331,7 @@
   input:not([disabled])
   ~ .input__checkbox-container:active
   scale-icon {
-  --icon-color: #cb0068;
+  --icon-color: var(--scl-color-primary-active, #cb0068);
 }
 .input--type-checkbox
   input:not([disabled]):active
@@ -332,35 +341,36 @@
   input:not([disabled])
   ~ .input__checkbox-container:active
   ~ label {
-  color: #cb0068;
+  color: var(--scl-color-primary-active, #cb0068);
 }
 .input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
-  width: var(--checkbox-width, 16px);
-  height: var(--checkbox-height, 16px);
-  margin: 2px;
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  margin: var(--scl-spacing-2);
   box-sizing: border-box;
-  transition: var(--transition-default, all 0.2s ease-in-out);
-  margin-left: 4px;
-  border-radius: 4px;
-  border: 1px solid var(--palette-grey, #262626);
-  background: #fff;
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  margin-left: var(--scl-spacing-4);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  background: var(--scl-color-background-default);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
-  top: 6px;
-  left: 6px;
-  width: 12px;
-  height: 12px;
+  top: calc(0.5 * var(--scl-spacing-12));
+  left: calc(0.5 * var(--scl-spacing-12));
+  width: var(--scl-spacing-12);
+  height: var(--scl-spacing-12);
   position: absolute;
   user-select: none;
-  --icon-color: #fff;
+  /* TODO this could removed once scale-icon is removed */
+  --icon-color: var(--scl-color-background-default);
 }
 .input--type-checkbox .input__checkbox-container ~ label {
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
   .input__checkbox-placeholder {
-  border: 2px solid var(--palette-error, #d90000);
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
 }
 .input--type-radio {
   display: flex;
@@ -371,72 +381,72 @@
   width: 100%;
 }
 .input--type-radio .input__helper-text {
-  margin-top: 0.25rem;
-  padding-left: var(--spacing-5, 1.5rem);
+  margin-top: var(--scl-spacing-4);
+  padding-left: var(--scl-spacing-24);
 }
 .input--type-radio label {
-  color: var(--palette-grey, #262626);
-  transition: var(--transition-default, all 0.2s ease-in-out);
-  font-weight: 500;
+  color: var(--scl-color-text-default);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  font-weight: var(--scl-font-weight-medium);
 }
 .input--type-radio input {
-  width: 16px;
-  height: 16px;
-  transition: var(--transition-default, all 0.2s ease-in-out);
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: #fff;
-  border: 1px solid var(--palette-grey, #262626);
-  margin: 0 0.5rem 0 0;
+  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  margin: 0 var(--scl-spacing-8) 0 0;
 }
 .input--type-radio input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #009de0;
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .input--type-radio:hover input:not(:checked):not([disabled]) {
   box-shadow: none;
-  border-color: var(--color-primary-hover, #f90984);
+  border-color: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-radio:hover input:not(:checked):not([disabled]) ~ label {
-  color: var(--color-primary-hover, #f90984);
+  color: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-radio input:active {
-  border: 8px solid #cb0068;
+  border: var(--scl-spacing-8) solid var(--scl-color-primary-active);
 }
 .input--type-radio input:not(:checked):not([disabled]):active ~ label {
-  color: #cb0068;
+  color: var(--scl-color-primary-active);
 }
 .input--type-radio input:disabled {
-  border: 1px solid var(--background-disabled, #d0d0d0);
+  border: var(--scl-spacing-1) solid var(--scl-color-background-disabled);
 }
 .input--type-radio input:disabled ~ label {
-  color: #a4a4a4;
+  color: var(--scl-color-grey-30);
 }
 .input--type-radio.input--status-error input {
-  border: 2px solid var(--palette-error, #d90000);
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
 }
 .input--type-radio input:checked {
-  border: 6px solid #e20074;
+  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-primary);
 }
 .input--type-radio input:checked:active {
-  border: 6px solid #cb0068;
+  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-primary-active, #cb0068);
 }
 .input--type-radio input:checked:disabled {
-  background: #a4a4a4;
-  border: 6px solid var(--background-disabled, #d0d0d0);
+  background: var(--scl-color-grey-30);
+  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-background-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {
-  color: #a4a4a4;
+  color: var(--scl-color-grey-30);
 }
 .input__textarea-label-safety-background {
-  top: 2px;
-  left: 2px;
-  right: 2px;
+  top: var(--scl-spacing-2);
+  left: var(--scl-spacing-2);
+  right: var(--scl-spacing-2);
   position: absolute;
   pointer-events: none;
-  border-radius: var(--radius-input, 0.25rem);
-  height: var(--spacing-5, 1.5rem);
-  background-color: var(--background-default, #ffffff);
+  border-radius: var(--scl-radius-4);
+  height: var(--scl-spacing-24);
+  background-color: var(--scl-color-background-default, #ffffff);
 }
 .input--disabled .input__textarea-label-safety-background {
   background-color: transparent;
@@ -451,13 +461,14 @@
 .input--disabled .input__textarea,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
-  border-color: var(--background-disabled, #d0d0d0);
-  color: var(--background-disabled, #d0d0d0);
-  background: var(--color-text-contrast, #ffffff);
+  border-color: var(--scl-color-background-disabled);
+  color: var(--scl-color-background-disabled);
+  background: var(--scl-color-text-offset);
 }
+/* TODO this could removed once scale-icon is removed */
 .input--disabled .input__select-wrapper {
-  --icon-color: var(--background-disabled, #d0d0d0);
+  --icon-color: var(--scl-color-background-disabled);
 }
 .input--disabled.animated label.input__label {
-  color: var(--background-disabled, #d0d0d0);
+  color: var(--scl-color-background-disabled);
 }
