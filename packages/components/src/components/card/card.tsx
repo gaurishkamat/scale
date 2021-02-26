@@ -26,8 +26,8 @@ export class Card {
         <div class="card-border">
           <Tag
             class={this.getCssClassMap()}
-            role="group"
-            {...(!!this.to ? { tabindex: 0, href: this.to } : {})}
+            {...(!this.to ? { role: 'group' } : {})}
+            {...(!!this.to ? { href: this.to } : {})}
             {...(!!this.target ? { target: this.target } : {})}
             {...(!!this.rel ? { rel: this.rel } : {})}
             {...(!!this.label ? { ['aria-label']: this.label } : {})}
