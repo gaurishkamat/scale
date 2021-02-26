@@ -15,7 +15,8 @@
   padding: var(--scl-spacing-12) var(--scl-spacing-12);
   z-index: 1;
   box-sizing: border-box;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
   border-radius: var(--scl-radius-4);
@@ -30,7 +31,8 @@
   padding: var(--scl-spacing-12) var(--scl-spacing-12);
   z-index: 1;
   box-sizing: border-box;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
   border-radius: var(--scl-radius-4);
@@ -45,7 +47,8 @@
 }
 .input .input__counter {
   display: flex;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   margin-left: auto;
   padding-right: var(--scl-spacing-12);
   justify-content: flex-end;
@@ -54,7 +57,8 @@
   color: var(--scl-color-text-default);
 }
 .input .input__helper-text {
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   padding-left: var(--scl-spacing-12);
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
@@ -87,7 +91,8 @@
 .input:not(.input--disabled) .input__select:focus::placeholder,
 .input:not(.input--disabled) .input__textarea:focus::placeholder {
   color: var(--scl-color-grey-60);
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
@@ -101,7 +106,8 @@
 .input .input__textarea::placeholder,
 .input ::placeholder {
   color: transparent;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
 }
 .input--variant-static .input__label {
   color: var(--scl-color-grey-60);
@@ -110,7 +116,8 @@
 }
 .input--variant-animated .input__input,
 .input--variant-animated .input__select {
-  padding: var(--scl-spacing-12) var(--scl-spacing-12) 0 calc(var(--scl-spacing-12) - 1px);
+  padding: var(--scl-spacing-12) var(--scl-spacing-12) 0
+    calc(var(--scl-spacing-12) - 1px);
 }
 .input--variant-animated .input__textarea {
   padding-top: var(--scl-spacing-24);
@@ -122,18 +129,23 @@
   display: flex;
   z-index: var(--scl-z-index-10);
   position: absolute;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   pointer-events: none;
   font-size: var(--scl-font-size-16);
   /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
-  transform: translate(var(--scl-spacing-12), calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2));
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2)
+  );
   font-weight: var(--scl-font-weight-medium);
 }
 .input--variant-animated.input--has-focus .input__label,
 .input--variant-animated.animated .input__label {
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-bold);
 }
@@ -161,7 +173,8 @@
   display: flex;
   z-index: var(--scl-z-index-10);
   position: absolute;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   pointer-events: none;
   font-size: var(--scl-font-size-16);
   /* previously: transform: translate(
@@ -178,7 +191,8 @@
 .input--size-small.animated .input__label {
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-medium);
 }
@@ -288,7 +302,7 @@
   input:focus
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-    box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .input--type-checkbox
   input:not([disabled]):hover
@@ -348,7 +362,8 @@
   height: var(--scl-spacing-16);
   margin: var(--scl-spacing-2);
   box-sizing: border-box;
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   margin-left: var(--scl-spacing-4);
   border-radius: var(--scl-radius-4);
   border: var(--scl-spacing-1) solid var(--scl-color-text-default);
@@ -365,7 +380,8 @@
   --icon-color: var(--scl-color-background-default);
 }
 .input--type-checkbox .input__checkbox-container ~ label {
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
@@ -386,13 +402,15 @@
 }
 .input--type-radio label {
   color: var(--scl-color-text-default);
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-radio input {
   width: var(--scl-spacing-16);
   height: var(--scl-spacing-16);
-  transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-default);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: #fff;
@@ -429,11 +447,13 @@
   border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-primary);
 }
 .input--type-radio input:checked:active {
-  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-primary-active, #cb0068);
+  border: calc(0.5 * var(--scl-spacing-12)) solid
+    var(--scl-color-primary-active, #cb0068);
 }
 .input--type-radio input:checked:disabled {
   background: var(--scl-color-grey-30);
-  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-background-disabled);
+  border: calc(0.5 * var(--scl-spacing-12)) solid
+    var(--scl-color-background-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {
   color: var(--scl-color-grey-30);
