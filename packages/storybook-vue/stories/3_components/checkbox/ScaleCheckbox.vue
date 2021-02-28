@@ -1,7 +1,6 @@
 <template>
-  <scale-input
+  <scale-checkbox
     :name="name"
-    :type="type"
     :label="label"
     :helper-text="helperText"
     :disabled="disabled"
@@ -13,7 +12,7 @@
     @scaleChange="scaleChange"
   >
     <slot></slot>
-  </scale-input>
+  </scale-checkbox>
 </template>
 
 <script>
@@ -22,7 +21,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   props: {
     name: { type: String },
-    type: { type: String },
     label: { type: String },
     helperText: { type: String },
     disabled: { type: Boolean },

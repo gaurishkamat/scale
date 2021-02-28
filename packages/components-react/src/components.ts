@@ -21,6 +21,7 @@ export const ScaleButton = /*@__PURE__*/createReactComponent<JSX.ScaleButton, HT
 export const ScaleCard = /*@__PURE__*/createReactComponent<JSX.ScaleCard, HTMLScaleCardElement>('scale-card');
 export const ScaleCarousel = /*@__PURE__*/createReactComponent<JSX.ScaleCarousel, HTMLScaleCarouselElement>('scale-carousel');
 export const ScaleChartStackCard = /*@__PURE__*/createReactComponent<JSX.ScaleChartStackCard, HTMLScaleChartStackCardElement>('scale-chart-stack-card');
+export const ScaleCheckbox = /*@__PURE__*/createReactComponent<JSX.ScaleCheckbox, HTMLScaleCheckboxElement>('scale-checkbox');
 export const ScaleCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleCollapsible, HTMLScaleCollapsibleElement>('scale-collapsible');
 export const ScaleDatePicker = /*@__PURE__*/createReactComponent<JSX.ScaleDatePicker, HTMLScaleDatePickerElement>('scale-date-picker');
 export const ScaleDivider = /*@__PURE__*/createReactComponent<JSX.ScaleDivider, HTMLScaleDividerElement>('scale-divider');
