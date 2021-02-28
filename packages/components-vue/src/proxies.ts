@@ -216,6 +216,7 @@ const customElementTags: string[] = [
  'scale-list-item',
  'scale-modal',
  'scale-progress-bar',
+ 'scale-radio-button',
  'scale-sidebar-nav',
  'scale-sidebar-nav-collapsible',
  'scale-sidebar-nav-item',
@@ -3383,6 +3384,25 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-progress-bar', []),
+});
+
+
+export const ScaleRadioButton = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleRadioButton['name']>,
+    label: {} as PropOptions<Components.ScaleRadioButton['label']>,
+    helperText: {} as PropOptions<Components.ScaleRadioButton['helperText']>,
+    status: {} as PropOptions<Components.ScaleRadioButton['status']>,
+    disabled: {} as PropOptions<Components.ScaleRadioButton['disabled']>,
+    checked: {} as PropOptions<Components.ScaleRadioButton['checked']>,
+    value: {} as PropOptions<Components.ScaleRadioButton['value']>,
+    inputId: {} as PropOptions<Components.ScaleRadioButton['inputId']>,
+    styles: {} as PropOptions<Components.ScaleRadioButton['styles']>,
+  },
+
+
+  render: createCommonRender('scale-radio-button', ['scaleChange']),
 });
 
 

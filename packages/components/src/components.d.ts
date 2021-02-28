@@ -10,6 +10,7 @@ import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
+import { InputChangeEventDetail as InputChangeEventDetail1 } from "./components/radio-button/radio-button";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
@@ -4660,6 +4661,44 @@ export namespace Components {
          */
         "styles"?: string;
     }
+    interface ScaleRadioButton {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -6335,6 +6374,12 @@ declare global {
         prototype: HTMLScaleProgressBarElement;
         new (): HTMLScaleProgressBarElement;
     };
+    interface HTMLScaleRadioButtonElement extends Components.ScaleRadioButton, HTMLStencilElement {
+    }
+    var HTMLScaleRadioButtonElement: {
+        prototype: HTMLScaleRadioButtonElement;
+        new (): HTMLScaleRadioButtonElement;
+    };
     interface HTMLScaleSidebarNavElement extends Components.ScaleSidebarNav, HTMLStencilElement {
     }
     var HTMLScaleSidebarNavElement: {
@@ -6632,6 +6677,7 @@ declare global {
         "scale-list-item": HTMLScaleListItemElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
+        "scale-radio-button": HTMLScaleRadioButtonElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
         "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
@@ -11342,6 +11388,48 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
     }
+    interface ScaleRadioButton {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -12031,6 +12119,7 @@ declare namespace LocalJSX {
         "scale-list-item": ScaleListItem;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
+        "scale-radio-button": ScaleRadioButton;
         "scale-sidebar-nav": ScaleSidebarNav;
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
         "scale-sidebar-nav-item": ScaleSidebarNavItem;
@@ -12258,6 +12347,7 @@ declare module "@stencil/core" {
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
+            "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
             "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;

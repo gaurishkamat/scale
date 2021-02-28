@@ -6249,6 +6249,51 @@
       ]
     },
     {
+      "name": "scale-radio-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "(optional) Active switch"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        }
+      ]
+    },
+    {
       "name": "scale-sidebar-nav",
       "description": {
         "kind": "markdown",
