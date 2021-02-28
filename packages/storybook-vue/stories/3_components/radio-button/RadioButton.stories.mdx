@@ -16,10 +16,9 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleRadioButton.props
   },
   template: `
-    <scale-input
+    <scale-radio-button
       :status="status"
       :name="name"
-      :type="type"
       :label="label"
       :helper-text="helperText"
       :disabled="disabled"
@@ -27,7 +26,7 @@ export const Template = (args, { argTypes }) => ({
       :value="value"
       :input-id="inputId"
       @scaleChange="scaleChange"
-    ></scale-input>
+    ></scale-radio-button>
   `,
   methods: {
     scaleChange: action("scaleChange"),
@@ -45,8 +44,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "Radio",
-      type: "radio"
+      label: "Radio"
     }}
   >
     {Template.bind({})}
@@ -63,7 +61,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard Disabled"
     args={{
       label: "Standard Disabled",
-      type: "radio",
       disabled: true
     }}
   >
@@ -72,7 +69,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="radio" disabled @scaleChange="handleChange"></scale-input>
+<scale-radio-button disabled @scaleChange="handleChange"></scale-radio-button>
 ```
 
 
@@ -83,7 +80,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected"
     args={{
       label: "Selected",
-      type: "radio",
       checked: true
     }}
   >
@@ -92,7 +88,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="radio" checked @scaleChange="handleChange"></scale-input>
+<scale-radio-button checked @scaleChange="handleChange"></scale-radio-button>
 ```
 
 
@@ -103,7 +99,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected Disabled"
     args={{
       label: "Selected Disabled",
-      type: "radio",
       checked: true,
       disabled: true
     }}
@@ -113,7 +108,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="radio" checked disabled @scaleChange="handleChange"></scale-input>
+<scale-radio-button checked disabled @scaleChange="handleChange"></scale-radio-button>
 ```
 
 
@@ -124,7 +119,6 @@ export const Template = (args, { argTypes }) => ({
     name="Error"
     args={{
       label: "Standard with error",
-      type: "radio",
       status: "error",
       helperText: "This is the error message"
     }}
@@ -134,5 +128,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="radio" status="error" helper-text="This is the error message" @scaleChange="handleChange"></scale-input>
+<scale-radio-button status="error" helper-text="This is the error message" @scaleChange="handleChange"></scale-radio-button>
 ```
