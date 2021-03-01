@@ -23,16 +23,8 @@ export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
           "password",
           "tel",
           "text",
-          "checkbox",
-          "radio",
-          "select",
-          "textarea",
-          "url"
         ]
       }
-    },
-    variant: {
-      control: { type: "select", options: ["animated", "static"] }
     }
   }}
 />
@@ -44,9 +36,8 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleTextField.props
   },
   template: `
-    <scale-input
+    <scale-text-field
       :name="name"
-      :variant="variant"
       :type="type"
       :label="label"
       :helper-text="helperText"
@@ -64,7 +55,7 @@ export const Template = (args, { argTypes }) => ({
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
       @scaleKeyDown="scaleKeyDown"
-    ></scale-input>
+    ></scale-text-field>
   `,
   methods: {
     scaleChange: action("scaleChange"),
@@ -85,8 +76,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "An input",
-      variant: "animated"
+      label: "An input"
     }}
   >
     {Template.bind({})}
@@ -102,8 +92,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Text With Events"
     args={{
-      label: "Text With Events",
-      variant: "animated"
+      label: "Text With Events"
     }}
   >
     {Template.bind({})}
@@ -111,7 +100,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="text" variant="animated" @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-input>
+<scale-text-field @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-text-field>
 ```
 
 
@@ -122,8 +111,7 @@ export const Template = (args, { argTypes }) => ({
     name="Placeholder"
     args={{
       label: "Placeholder",
-      placeholder: "this is the placeholder",
-      variant: "animated"
+      placeholder: "this is the placeholder"
     }}
   >
     {Template.bind({})}
@@ -131,7 +119,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="text" label="Placeholder" placeholder="this is the placeholder"></scale-input>
+<scale-text-field label="Placeholder" placeholder="this is the placeholder"></scale-text-field>
 ```
 
 
@@ -142,8 +130,7 @@ export const Template = (args, { argTypes }) => ({
     name="Helper Text"
     args={{
       label: "Helper Text",
-      helperText: "Make sure to fill this",
-      variant: "animated"
+      helperText: "Make sure to fill this"
     }}
   >
     {Template.bind({})}
@@ -151,7 +138,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="text" label="Helper Text" helperText="Make sure to fill this"></scale-input>
+<scale-text-field label="Helper Text" helperText="Make sure to fill this"></scale-text-field>
 ```
 
 
@@ -162,8 +149,7 @@ export const Template = (args, { argTypes }) => ({
     name="Small"
     args={{
       label: "Small",
-      size: 'small',
-      variant: 'animated'
+      size: 'small'
     }}
   >
     {Template.bind({})}
@@ -171,7 +157,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="text" label="Small" size="small"></scale-input>
+<scale-text-field label="Small" size="small"></scale-text-field>
 ```
 
 
@@ -183,8 +169,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "With Error",
       status: "error",
-      helperText: "something is wrong",
-      variant: "animated"
+      helperText: "something is wrong"
     }}
   >
     {Template.bind({})}
@@ -192,7 +177,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="text" label="With Error" helper-text="something is wrong" status="error"></scale-input>
+<scale-text-field label="With Error" helper-text="something is wrong" status="error"></scale-text-field>
 ```
 
 
@@ -203,8 +188,7 @@ export const Template = (args, { argTypes }) => ({
     name="Disabled"
     args={{
       label: "Disabled",
-      disabled: true,
-      variant: 'animated'
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -212,7 +196,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" label="Disabled" disabled></scale-input>
+<scale-text-field label="Disabled" disabled></scale-text-field>
 ```
 
 
@@ -224,8 +208,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Max Length With Counter",
       maxLength: 10,
-      counter: true,
-      variant: 'animated'
+      counter: true
     }}
   >
     {Template.bind({})}
@@ -233,5 +216,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" label="Max Length With Counter" max-length="10" counter></scale-input>
+<scale-text-field label="Max Length With Counter" max-length="10" counter></scale-text-field>
 ```

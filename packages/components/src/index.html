@@ -312,42 +312,36 @@
     ></scale-input>
 
     <h3>Input with change handler</h3>
-    <scale-input></scale-input>
+    <scale-text-field></scale-text-field>
 
     <script>
       document
-        .querySelector('scale-input')
+        .querySelector('scale-text-field')
         .addEventListener('scaleChange', console.log);
     </script>
 
     <h3>Static input with label</h3>
-    <scale-input variant="static" label="Text"></scale-input>
+    <scale-text-field label="Text"></scale-text-field>
 
     <h3>Animated input</h3>
-    <scale-input
-      label="First Name"
-      placeholder="Hello"
-      variant="animated"
-    ></scale-input>
+    <scale-text-field label="First Name" placeholder="Hello"></scale-text-field>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input
+    <scale-text-field
       label="Last Name"
       max-length="24"
       counter
       transparent="true"
-      variant="animated"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       id="input-error"
       label="address"
       required="true"
       max-length="24"
-      variant="animated"
       counter
-    ></scale-input>
+    ></scale-text-field>
     <button id="show-error">Toggle error</button>
     <script>
       document.getElementById('show-error').addEventListener('click', () => {
@@ -360,47 +354,47 @@
       });
     </script>
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       label="address"
-      variant="animated"
       required="true"
       status="error"
       max-length="24"
       counter
-    ></scale-input>
+    ></scale-text-field>
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       label="address"
       required="true"
-      variant="animated"
       status="error"
       helper-text="please fill out this field"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - place holder text</h3>
-    <scale-input
+    <scale-text-field
       type="string"
-      variant="inline"
-      variant="static"
       label="input text with placeholder"
       placeholder="placeholder"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - disabled</h3>
-    <scale-input
+    <scale-text-field
       type="string"
       disabled="true"
       label="input text disabled"
-    ></scale-input>
+    ></scale-text-field>
 
-    <scale-input type="email" label="email"></scale-input>
-    <scale-input type="number" label="number"></scale-input>
-    <scale-input type="password" label="password"></scale-input>
-    <scale-input type="tel" label="telephone"></scale-input>
-    <scale-input type="url" label="url"></scale-input>
-    <scale-input type="hidden"></scale-input>
-    <scale-input size="small" label="small input"></scale-input>
-    <scale-input label="Name" size="small" variant="animated"></scale-input>
+    <scale-text-field type="email" label="email"></scale-text-field>
+    <scale-text-field type="number" label="number"></scale-text-field>
+    <scale-text-field type="password" label="password"></scale-text-field>
+    <scale-text-field
+      type="tel"
+      value="555"
+      label="telephone"
+    ></scale-text-field>
+    <scale-text-field type="text" label="url"></scale-text-field>
+    <scale-text-field type="hidden"></scale-text-field>
+    <scale-text-field size="small" label="small input"></scale-text-field>
+    <scale-text-field label="Name" size="small"></scale-text-field>
 
     <h3>Tag</h3>
     <scale-tag>default</scale-tag>
