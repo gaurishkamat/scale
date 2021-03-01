@@ -415,10 +415,6 @@
           "description": "(optional) Active switch"
         },
         {
-          "name": "controlled",
-          "description": "(optional) Makes type `select` behave as a controlled component in React"
-        },
-        {
           "name": "disabled",
           "description": "(optional) Input disabled"
         },
