@@ -44,7 +44,7 @@ export class Checkbox {
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-' + i++;
+      this.inputId = 'input-checkbox-' + i++;
     }
   }
 
