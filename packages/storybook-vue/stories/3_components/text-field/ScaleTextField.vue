@@ -1,7 +1,6 @@
 <template>
-  <scale-input
+  <scale-text-field
     :name="name"
-    :variant="variant"
     :type="type"
     :label="label"
     :helper-text="helperText"
@@ -21,7 +20,7 @@
     @scaleKeyDown="scaleKeyDown"
   >
     <slot></slot>
-  </scale-input>
+  </scale-text-field>
 </template>
 
 <script>
@@ -30,7 +29,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   props: {
     name: { type: String },
-    variant: { type: String },
     type: { type: String },
     label: { type: String },
     helperText: { type: String },
