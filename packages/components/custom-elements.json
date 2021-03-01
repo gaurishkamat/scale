@@ -519,6 +519,79 @@
       ]
     },
     {
+      "name": "scale-dropdown",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "controlled",
+          "description": "(optional) Makes type `select` behave as a controlled component in React"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Input checkbox checked icon"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "multiple",
+          "description": "(optional) select multiple options"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) input background transparent"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        },
+        {
+          "name": "visible-size",
+          "description": "(optional) the number of visible options in a select drop-down list"
+        }
+      ]
+    },
+    {
       "name": "scale-icon",
       "description": {
         "kind": "markdown",
