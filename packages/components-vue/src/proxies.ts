@@ -227,7 +227,7 @@ const customElementTags: string[] = [
  'scale-table',
  'scale-tag',
  'scale-text',
- 'scale-text-field',
+ 'scale-textarea',
  'scale-toast',
 ];
 Vue.config.ignoredElements = [...Vue.config.ignoredElements, ...customElementTags];
@@ -3536,29 +3536,31 @@ export const ScaleText = /*@__PURE__*/ Vue.extend({
 });
 
 
-export const ScaleTextField = /*@__PURE__*/ Vue.extend({
+export const ScaleTextarea = /*@__PURE__*/ Vue.extend({
 
   props: {
-    type: {} as PropOptions<Components.ScaleTextField['type']>,
-    name: {} as PropOptions<Components.ScaleTextField['name']>,
-    label: {} as PropOptions<Components.ScaleTextField['label']>,
-    size: {} as PropOptions<Components.ScaleTextField['size']>,
-    helperText: {} as PropOptions<Components.ScaleTextField['helperText']>,
-    status: {} as PropOptions<Components.ScaleTextField['status']>,
-    maxLength: {} as PropOptions<Components.ScaleTextField['maxLength']>,
-    minLength: {} as PropOptions<Components.ScaleTextField['minLength']>,
-    placeholder: {} as PropOptions<Components.ScaleTextField['placeholder']>,
-    disabled: {} as PropOptions<Components.ScaleTextField['disabled']>,
-    required: {} as PropOptions<Components.ScaleTextField['required']>,
-    counter: {} as PropOptions<Components.ScaleTextField['counter']>,
-    value: {} as PropOptions<Components.ScaleTextField['value']>,
-    inputId: {} as PropOptions<Components.ScaleTextField['inputId']>,
-    transparent: {} as PropOptions<Components.ScaleTextField['transparent']>,
-    styles: {} as PropOptions<Components.ScaleTextField['styles']>,
+    name: {} as PropOptions<Components.ScaleTextarea['name']>,
+    label: {} as PropOptions<Components.ScaleTextarea['label']>,
+    size: {} as PropOptions<Components.ScaleTextarea['size']>,
+    rows: {} as PropOptions<Components.ScaleTextarea['rows']>,
+    cols: {} as PropOptions<Components.ScaleTextarea['cols']>,
+    helperText: {} as PropOptions<Components.ScaleTextarea['helperText']>,
+    status: {} as PropOptions<Components.ScaleTextarea['status']>,
+    maxLength: {} as PropOptions<Components.ScaleTextarea['maxLength']>,
+    minLength: {} as PropOptions<Components.ScaleTextarea['minLength']>,
+    placeholder: {} as PropOptions<Components.ScaleTextarea['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleTextarea['disabled']>,
+    required: {} as PropOptions<Components.ScaleTextarea['required']>,
+    counter: {} as PropOptions<Components.ScaleTextarea['counter']>,
+    resize: {} as PropOptions<Components.ScaleTextarea['resize']>,
+    value: {} as PropOptions<Components.ScaleTextarea['value']>,
+    inputId: {} as PropOptions<Components.ScaleTextarea['inputId']>,
+    transparent: {} as PropOptions<Components.ScaleTextarea['transparent']>,
+    styles: {} as PropOptions<Components.ScaleTextarea['styles']>,
   },
 
 
-  render: createCommonRender('scale-text-field', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
+  render: createCommonRender('scale-textarea', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 

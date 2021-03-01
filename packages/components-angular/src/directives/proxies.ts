@@ -4173,29 +4173,29 @@ export class ScaleText {
   }
 }
 
-import { TextField as ITextField } from '@scaleds/components-telekom/dist/types/components/text-field/text-field';
-export declare interface ScaleTextField extends Components.ScaleTextField {}
+import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
+export declare interface ScaleTextarea extends Components.ScaleTextarea {}
 @ProxyCmp({
-  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value']
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
 })
 @Component({
-  selector: 'scale-text-field',
+  selector: 'scale-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value'],
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
-export class ScaleTextField {
+export class ScaleTextarea {
   /** Emitted when a keyboard input occurred. */
-  scaleInput!: ITextField['scaleInput'];
+  scaleInput!: ITextarea['scaleInput'];
   /** Emitted when the value has changed. */
-  scaleChange!: ITextField['scaleChange'];
+  scaleChange!: ITextarea['scaleChange'];
   /** Emitted when the input has focus. */
-  scaleFocus!: ITextField['scaleFocus'];
+  scaleFocus!: ITextarea['scaleFocus'];
   /** Emitted when the input loses focus. */
-  scaleBlur!: ITextField['scaleBlur'];
+  scaleBlur!: ITextarea['scaleBlur'];
   /** Emitted on keydown. */
-  scaleKeyDown!: ITextField['scaleKeyDown'];
+  scaleKeyDown!: ITextarea['scaleKeyDown'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
