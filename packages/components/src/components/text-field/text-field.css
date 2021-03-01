@@ -151,3 +151,16 @@
 .input--disabled.animated label.input__label {
   color: var(--scl-color-background-disabled);
 }
+
+/*Hide Arrows From Input Number*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
