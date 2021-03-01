@@ -10,6 +10,7 @@ import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
+import { InputChangeEventDetail as InputChangeEventDetail1 } from "./components/textarea/textarea";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
@@ -4839,7 +4840,11 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleTextField {
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
         /**
           * (optional) Input counter
          */
@@ -4881,6 +4886,14 @@ export namespace Components {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -4896,16 +4909,6 @@ export namespace Components {
           * (optional) input background transparent
          */
         "transparent"?: boolean;
-        /**
-          * (optional) Input type
-         */
-        "type"?: | 'email'
-    | 'hidden'
-    | 'number'
-    | 'password'
-    | 'tel'
-    | 'text'
-    | 'url';
         /**
           * (optional) Input value
          */
@@ -6261,11 +6264,11 @@ declare global {
         prototype: HTMLScaleTextElement;
         new (): HTMLScaleTextElement;
     };
-    interface HTMLScaleTextFieldElement extends Components.ScaleTextField, HTMLStencilElement {
+    interface HTMLScaleTextareaElement extends Components.ScaleTextarea, HTMLStencilElement {
     }
-    var HTMLScaleTextFieldElement: {
-        prototype: HTMLScaleTextFieldElement;
-        new (): HTMLScaleTextFieldElement;
+    var HTMLScaleTextareaElement: {
+        prototype: HTMLScaleTextareaElement;
+        new (): HTMLScaleTextareaElement;
     };
     interface HTMLScaleToastElement extends Components.ScaleToast, HTMLStencilElement {
     }
@@ -6491,7 +6494,7 @@ declare global {
         "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
-        "scale-text-field": HTMLScaleTextFieldElement;
+        "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
     }
 }
@@ -11356,7 +11359,11 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
-    interface ScaleTextField {
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
         /**
           * (optional) Input counter
          */
@@ -11418,6 +11425,14 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -11433,16 +11448,6 @@ declare namespace LocalJSX {
           * (optional) input background transparent
          */
         "transparent"?: boolean;
-        /**
-          * (optional) Input type
-         */
-        "type"?: | 'email'
-    | 'hidden'
-    | 'number'
-    | 'password'
-    | 'tel'
-    | 'text'
-    | 'url';
         /**
           * (optional) Input value
          */
@@ -11708,7 +11713,7 @@ declare namespace LocalJSX {
         "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
-        "scale-text-field": ScaleTextField;
+        "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
     }
 }
@@ -11933,7 +11938,7 @@ declare module "@stencil/core" {
             "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
-            "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
+            "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
         }
     }

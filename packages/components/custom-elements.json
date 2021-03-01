@@ -6507,12 +6507,16 @@
       ]
     },
     {
-      "name": "scale-text-field",
+      "name": "scale-textarea",
       "description": {
         "kind": "markdown",
         "value": ""
       },
       "attributes": [
+        {
+          "name": "cols",
+          "description": "(optional) textarea column"
+        },
         {
           "name": "counter",
           "description": "(optional) Input counter"
@@ -6554,6 +6558,28 @@
           "description": "(optional) Input required"
         },
         {
+          "name": "resize",
+          "description": "(optional) textarea resize",
+          "values": [
+            {
+              "name": "horizontal"
+            },
+            {
+              "name": "none"
+            },
+            {
+              "name": "unset"
+            },
+            {
+              "name": "vertical"
+            }
+          ]
+        },
+        {
+          "name": "rows",
+          "description": "(optional) textarea row"
+        },
+        {
           "name": "size",
           "description": "(optional) Input size"
         },
@@ -6568,33 +6594,6 @@
         {
           "name": "transparent",
           "description": "(optional) input background transparent"
-        },
-        {
-          "name": "type",
-          "description": "(optional) Input type",
-          "values": [
-            {
-              "name": "email"
-            },
-            {
-              "name": "hidden"
-            },
-            {
-              "name": "number"
-            },
-            {
-              "name": "password"
-            },
-            {
-              "name": "tel"
-            },
-            {
-              "name": "text"
-            },
-            {
-              "name": "url"
-            }
-          ]
         },
         {
           "name": "value",
