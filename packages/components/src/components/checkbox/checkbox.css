@@ -1,6 +1,13 @@
 .input {
   position: relative;
 }
+
+.input__checkbox-label-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .input .input__helper-text {
   font-weight: var(--scl-font-weight-bold);
 }
@@ -46,7 +53,7 @@
 .input--type-checkbox .input__helper-text {
   padding-left: var(--scl-spacing-32);
 }
-.input--type-checkbox label {
+.input--type-checkbox .input__checkbox-label {
   color: var(--scl-color-text-default);
   font-weight: var(--scl-font-weight-medium);
 }
@@ -58,11 +65,11 @@
   align-items: center;
   margin-right: var(--scl-spacing-8);
 }
-.input--type-checkbox input:disabled ~ label {
+.input--type-checkbox input:disabled ~ .input__checkbox-label {
   /* FIXME make sure color is right */
   color: var(--scl-color-background-disabled);
 }
-.input--type-checkbox input:checked:disabled ~ label {
+.input--type-checkbox input:checked:disabled ~ .input__checkbox-label {
   color: var(--scl-color-background-disabled);
 }
 .input--type-checkbox
@@ -145,11 +152,11 @@
 .input--type-checkbox
   input:not([disabled]):hover
   ~ .input__checkbox-container
-  ~ label,
+  ~ .input__checkbox-label,
 .input--type-checkbox
   input:not([disabled])
   ~ .input__checkbox-container:hover
-  ~ label {
+  ~ .input__checkbox-label {
   color: var(--scl-color-primary-hover, #f90984);
 }
 .input--type-checkbox
@@ -177,11 +184,11 @@
 .input--type-checkbox
   input:not([disabled]):active
   ~ .input__checkbox-container
-  ~ label,
+  ~ .input__checkbox-label,
 .input--type-checkbox
   input:not([disabled])
   ~ .input__checkbox-container:active
-  ~ label {
+  ~ .input__checkbox-label {
   color: var(--scl-color-primary-active, #cb0068);
 }
 .input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
@@ -206,7 +213,7 @@
   /* TODO this could removed once scale-icon is removed */
   --icon-color: var(--scl-color-background-default);
 }
-.input--type-checkbox .input__checkbox-container ~ label {
+.input--type-checkbox .input__checkbox-container ~ .input__checkbox-label {
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-default);
 }
@@ -216,7 +223,7 @@
   border: var(--scl-spacing-2) solid var(--scl-color-background-error);
 }
 
-.input--disabled label,
+.input--disabled .input__checkbox-label,
 .input--disabled input,
 .input--disabled .input__checkbox-container,
 .input--disabled .input__helper-text {

@@ -6,13 +6,8 @@ import {
   h,
   Host,
   Prop,
-  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-
-interface InputChangeEventDetail {
-  value: string | number | boolean | undefined | null;
-}
 
 let i = 0;
 
@@ -40,46 +35,18 @@ export class Checkbox {
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
   /** (optional) Input checkbox checked icon */
-  @Prop() icon?: string;
-  /** (optional) Makes type `select` behave as a controlled component in React */
-  @Prop() controlled?: boolean = false;
+  @Prop() icon?: string =
+    'M9 20.215L1.695 12.91a1.25 1.25 0 011.765-1.77L9 16.68l12-12a1.25 1.25 0 011.765 1.765z';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event() scaleChange!: EventEmitter;
 
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
     }
   }
-
-  // We're not watching `value` like we used to
-  // because we get unwanted `scaleChange` events
-  // because how we keep this.value up-to-date for type="select"
-  // `this.value = selectedValue`
-  emitChange() {
-    this.scaleChange.emit({
-      value: this.value == null ? this.value : this.value.toString(),
-    });
-  }
-
-  @Watch('checked')
-  checkedChanged() {
-    this.scaleChange.emit({ value: this.checked });
-  }
-
-  // Handle checkbox/radio change (click on label)
-  handleCheckChange = event => {
-    this.checked = event.target.checked;
-  };
-
-  // Handle click on checkbox visual element
-  handleCheckboxClick = () => {
-    if (!this.disabled) {
-      this.checked = !this.checked;
-    }
-  };
 
   render() {
     const ariaInvalidAttr =
@@ -90,38 +57,41 @@ export class Checkbox {
     return (
       <Host checked={this.checked}>
         <div class={this.getCssClassMap()}>
-          <input
-            type="checkbox"
-            name={this.name}
-            id={this.inputId}
-            onChange={this.handleCheckChange}
-            value={this.value}
-            checked={this.checked}
-            disabled={this.disabled}
-            {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
-          />
-          <div
-            class={classNames('input__checkbox-container')}
-            onClick={this.handleCheckboxClick}
-          >
-            <span class={classNames('input__checkbox-placeholder')}></span>
-            {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-            {!!this.icon && this.checked && (
-              <scale-icon path={this.icon} size={12}></scale-icon>
-            )}
-          </div>
-          <label htmlFor={this.inputId}>{this.label}</label>
-          {!!this.helperText && (
-            <div
-              class="input__meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              <div class="input__helper-text">{this.helperText}</div>
+          <label class="input__checkbox-label-wrapper" htmlFor={this.inputId}>
+            <input
+              type="checkbox"
+              name={this.name}
+              id={this.inputId}
+              onChange={(e: any) => {
+                this.checked = e.target.checked;
+                // bubble event through the shadow dom
+                this.scaleChange.emit({ value: this.checked });
+              }}
+              value={this.value}
+              checked={this.checked}
+              disabled={this.disabled}
+              {...ariaInvalidAttr}
+              {...ariaDescribedByAttr}
+            />
+            <div class={classNames('input__checkbox-container')}>
+              <span class={classNames('input__checkbox-placeholder')}></span>
+              {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
+              {!!this.icon && this.checked && (
+                <scale-icon path={this.icon} size={12}></scale-icon>
+              )}
             </div>
-          )}
+            <span class="input__checkbox-label">{this.label}</span>
+            {!!this.helperText && (
+              <div
+                class="input__meta"
+                id={helperTextId}
+                aria-live="polite"
+                aria-relevant="additions removals"
+              >
+                <div class="input__helper-text">{this.helperText}</div>
+              </div>
+            )}
+          </label>
         </div>
       </Host>
     );

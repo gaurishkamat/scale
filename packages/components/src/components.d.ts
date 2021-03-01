@@ -212,10 +212,6 @@ export namespace Components {
          */
         "checked"?: boolean;
         /**
-          * (optional) Makes type `select` behave as a controlled component in React
-         */
-        "controlled"?: boolean;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -6946,10 +6942,6 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean;
         /**
-          * (optional) Makes type `select` behave as a controlled component in React
-         */
-        "controlled"?: boolean;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -6976,7 +6968,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        "onScaleChange"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Input status
          */
