@@ -325,7 +325,7 @@ tokens[COLOR] = {
 */
 tokens[SHADOW] = {
   focus: {
-    default: `0 0 0 2px ${palette.blue50}`
+    default: `0 0 0 2px ${palette.blue50}`,
   },
   level: {
     0: [Shadow({ y: 2, blur: 8 }), Shadow({ y: 1, blur: 2 })],
