@@ -27,6 +27,7 @@ const customElementTags: string[] = [
  'scale-collapsible',
  'scale-date-picker',
  'scale-divider',
+ 'scale-dropdown',
  'scale-icon',
  'scale-icon-action-add',
  'scale-icon-action-add-card',
@@ -497,6 +498,32 @@ export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-divider', []),
+});
+
+
+export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleDropdown['name']>,
+    label: {} as PropOptions<Components.ScaleDropdown['label']>,
+    size: {} as PropOptions<Components.ScaleDropdown['size']>,
+    helperText: {} as PropOptions<Components.ScaleDropdown['helperText']>,
+    status: {} as PropOptions<Components.ScaleDropdown['status']>,
+    placeholder: {} as PropOptions<Components.ScaleDropdown['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleDropdown['disabled']>,
+    required: {} as PropOptions<Components.ScaleDropdown['required']>,
+    value: {} as PropOptions<Components.ScaleDropdown['value']>,
+    inputId: {} as PropOptions<Components.ScaleDropdown['inputId']>,
+    icon: {} as PropOptions<Components.ScaleDropdown['icon']>,
+    multiple: {} as PropOptions<Components.ScaleDropdown['multiple']>,
+    visibleSize: {} as PropOptions<Components.ScaleDropdown['visibleSize']>,
+    transparent: {} as PropOptions<Components.ScaleDropdown['transparent']>,
+    controlled: {} as PropOptions<Components.ScaleDropdown['controlled']>,
+    styles: {} as PropOptions<Components.ScaleDropdown['styles']>,
+  },
+
+
+  render: createCommonRender('scale-dropdown', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 

@@ -1,8 +1,6 @@
 <template>
-  <scale-input
+  <scale-dropdown
     :name="name"
-    :variant="variant"
-    :type="type"
     :label="label"
     :helper-text="helperText"
     :status="status"
@@ -21,7 +19,7 @@
     @scaleKeyDown="scaleKeyDown"
   >
     <slot></slot>
-  </scale-input>
+  </scale-dropdown>
 </template>
 
 <script>
@@ -31,8 +29,6 @@ export default {
   props: {
     icon: { type: String },
     name: { type: String },
-    variant: { type: String },
-    type: { type: String },
     label: { type: String },
     helperText: { type: String },
     status: { type: String },

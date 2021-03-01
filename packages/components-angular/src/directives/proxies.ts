@@ -346,6 +346,37 @@ export class ScaleDivider {
   }
 }
 
+import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
+export declare interface ScaleDropdown extends Components.ScaleDropdown {}
+@ProxyCmp({
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+})
+@Component({
+  selector: 'scale-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleDropdown {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: IDropdown['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: IDropdown['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: IDropdown['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: IDropdown['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: IDropdown['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
+  }
+}
+
 
 export declare interface ScaleIcon extends Components.ScaleIcon {}
 @ProxyCmp({
