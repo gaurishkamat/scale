@@ -182,7 +182,6 @@ export class TextField {
   getCssClassMap() {
     return classNames(
       'input',
-      `input--variant-animated`,
       this.type && `input--type-${this.type}`,
       this.hasFocus && 'input--has-focus',
       this.disabled && `input--disabled`,
