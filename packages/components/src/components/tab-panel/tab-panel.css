@@ -1,7 +1,7 @@
 .tab-panel {
-  padding-top: var(--spacing-5, 1.5rem);
+  padding-top: var(--scl-spacing-24);
 }
 
 .tab-panel--small {
-  padding-top: var(--spacing-4, 1rem);
+  padding-top: var(--scl-spacing-16);
 }
