@@ -1,12 +1,12 @@
 .sidebar-nav-item {
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #e0e0e0;
+  border-bottom-color: var(--scl-color-grey-10);
 }
 
 .sidebar-nav-item--active {
   position: relative;
-  color: #e20074;
+  color: var(--scl-color-primary); /* TODO: shouldn't this be hover color? */
 }
 .sidebar-nav-item--active::before {
   content: '';
@@ -16,7 +16,7 @@
   left: var(--left-current-border, 0);
   width: 0; /* The transparent border makes the 2px */
   height: 100%;
-  background-color: #e20074;
+  background-color: var(--scl-color-primary);
   /* Accessibility: extra transparent line for Windows HCM */
   border-left: 2px solid transparent;
 }
@@ -27,7 +27,7 @@
 
 :host([nesting-level='1']) .sidebar-nav-item,
 .sidebar-nav-item--bold {
-  font-weight: 700;
+  font-weight: var(--scl-font-weight-bold);
 }
 
 ::slotted(a) {
@@ -47,15 +47,15 @@
 }
 
 ::slotted(a:hover) {
-  color: #e20074;
+  color: var(--scl-color-primary);
 }
 
 ::slotted(a:focus) {
-  box-shadow: inset 0 0 0 2px #009de0;
+  box-shadow: inset var(--scl-shadow-focus-default);
 }
 
 ::slotted(a:active) {
-  color: #cb0068;
+  color: var(--scl-color-primary-active);
 }
 
 .sidebar-nav-item--condensed {

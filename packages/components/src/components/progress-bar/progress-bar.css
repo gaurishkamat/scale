@@ -21,9 +21,7 @@
 }
 
 .progress-bar--disabled .progress-bar__label {
-  color: var(
-    --scl-color-grey-50
-  ); /* FIXME: original was: #7c7c7c, scl-color-grey-50 is currently #808080  */
+  color: var(--scl-color-restricted);
 }
 
 .progress-bar__label {
