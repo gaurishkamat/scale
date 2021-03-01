@@ -70,6 +70,7 @@
   transition: var(--transition-generic, all 0.2s ease-in-out);
 }
 
+.switch input:checked:disabled + .switch__wrapper .switch__toggle,
 .switch
   input:not(:checked):not(:disabled):active
   + .switch__wrapper
@@ -110,10 +111,21 @@
 }
 
 .switch input:not(:disabled):active ~ .switch__wrapper {
-  --switch-color-state: var(--switch-color-on);
+  --switch-color-state: var(--switch-color-active);
   --switch-color-background: var(--switch-color-state);
   --switch-color-toggle: var(--switch-color-state-contrast);
   --switch-color-text: var(--switch-color-state-contrast);
+}
+
+.switch input:checked:not(:disabled):active ~ .switch__wrapper {
+  --switch-color-state: var(--switch-color-active);
+  --switch-color-background: var(--switch-color-state-contrast);
+  --switch-color-toggle: var(--switch-color-active);
+  --switch-color-text: var(--switch-color-active);
+}
+
+.switch input:not(:disabled):active ~ .switch__label {
+  --switch-color-text: var(--switch-color-active);
 }
 
 /* disabled states */
