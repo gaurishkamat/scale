@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton should match snapshot 1`] = `
+<scale-radio-button>
+  <div class="input input--type-radio">
+    <input aria-describedby="helper-message-1" id="input-0" type="radio" value="">
+    <label htmlfor="input-0"></label>
+  </div>
+</scale-radio-button>
+`;

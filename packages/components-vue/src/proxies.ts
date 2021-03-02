@@ -24,9 +24,11 @@ const customElementTags: string[] = [
  'scale-card',
  'scale-carousel',
  'scale-chart-stack-card',
+ 'scale-checkbox',
  'scale-collapsible',
  'scale-date-picker',
  'scale-divider',
+ 'scale-dropdown',
  'scale-icon',
  'scale-icon-action-add',
  'scale-icon-action-add-card',
@@ -215,6 +217,7 @@ const customElementTags: string[] = [
  'scale-list-item',
  'scale-modal',
  'scale-progress-bar',
+ 'scale-radio-button',
  'scale-sidebar-nav',
  'scale-sidebar-nav-collapsible',
  'scale-sidebar-nav-item',
@@ -227,6 +230,8 @@ const customElementTags: string[] = [
  'scale-table',
  'scale-tag',
  'scale-text',
+ 'scale-text-field',
+ 'scale-textarea',
  'scale-toast',
 ];
 Vue.config.ignoredElements = [...Vue.config.ignoredElements, ...customElementTags];
@@ -442,6 +447,27 @@ export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
 });
 
 
+export const ScaleCheckbox = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleCheckbox['name']>,
+    label: {} as PropOptions<Components.ScaleCheckbox['label']>,
+    helperText: {} as PropOptions<Components.ScaleCheckbox['helperText']>,
+    status: {} as PropOptions<Components.ScaleCheckbox['status']>,
+    disabled: {} as PropOptions<Components.ScaleCheckbox['disabled']>,
+    checked: {} as PropOptions<Components.ScaleCheckbox['checked']>,
+    value: {} as PropOptions<Components.ScaleCheckbox['value']>,
+    inputId: {} as PropOptions<Components.ScaleCheckbox['inputId']>,
+    icon: {} as PropOptions<Components.ScaleCheckbox['icon']>,
+    controlled: {} as PropOptions<Components.ScaleCheckbox['controlled']>,
+    styles: {} as PropOptions<Components.ScaleCheckbox['styles']>,
+  },
+
+
+  render: createCommonRender('scale-checkbox', ['scaleChange']),
+});
+
+
 export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
 
   props: {
@@ -495,6 +521,32 @@ export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-divider', []),
+});
+
+
+export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleDropdown['name']>,
+    label: {} as PropOptions<Components.ScaleDropdown['label']>,
+    size: {} as PropOptions<Components.ScaleDropdown['size']>,
+    helperText: {} as PropOptions<Components.ScaleDropdown['helperText']>,
+    status: {} as PropOptions<Components.ScaleDropdown['status']>,
+    placeholder: {} as PropOptions<Components.ScaleDropdown['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleDropdown['disabled']>,
+    required: {} as PropOptions<Components.ScaleDropdown['required']>,
+    value: {} as PropOptions<Components.ScaleDropdown['value']>,
+    inputId: {} as PropOptions<Components.ScaleDropdown['inputId']>,
+    icon: {} as PropOptions<Components.ScaleDropdown['icon']>,
+    multiple: {} as PropOptions<Components.ScaleDropdown['multiple']>,
+    visibleSize: {} as PropOptions<Components.ScaleDropdown['visibleSize']>,
+    transparent: {} as PropOptions<Components.ScaleDropdown['transparent']>,
+    controlled: {} as PropOptions<Components.ScaleDropdown['controlled']>,
+    styles: {} as PropOptions<Components.ScaleDropdown['styles']>,
+  },
+
+
+  render: createCommonRender('scale-dropdown', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 
@@ -3357,6 +3409,25 @@ export const ScaleProgressBar = /*@__PURE__*/ Vue.extend({
 });
 
 
+export const ScaleRadioButton = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleRadioButton['name']>,
+    label: {} as PropOptions<Components.ScaleRadioButton['label']>,
+    helperText: {} as PropOptions<Components.ScaleRadioButton['helperText']>,
+    status: {} as PropOptions<Components.ScaleRadioButton['status']>,
+    disabled: {} as PropOptions<Components.ScaleRadioButton['disabled']>,
+    checked: {} as PropOptions<Components.ScaleRadioButton['checked']>,
+    value: {} as PropOptions<Components.ScaleRadioButton['value']>,
+    inputId: {} as PropOptions<Components.ScaleRadioButton['inputId']>,
+    styles: {} as PropOptions<Components.ScaleRadioButton['styles']>,
+  },
+
+
+  render: createCommonRender('scale-radio-button', ['scaleChange']),
+});
+
+
 export const ScaleSidebarNav = /*@__PURE__*/ Vue.extend({
 
   props: {
@@ -3532,6 +3603,60 @@ export const ScaleText = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-text', []),
+});
+
+
+export const ScaleTextField = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    type: {} as PropOptions<Components.ScaleTextField['type']>,
+    name: {} as PropOptions<Components.ScaleTextField['name']>,
+    label: {} as PropOptions<Components.ScaleTextField['label']>,
+    size: {} as PropOptions<Components.ScaleTextField['size']>,
+    helperText: {} as PropOptions<Components.ScaleTextField['helperText']>,
+    status: {} as PropOptions<Components.ScaleTextField['status']>,
+    maxLength: {} as PropOptions<Components.ScaleTextField['maxLength']>,
+    minLength: {} as PropOptions<Components.ScaleTextField['minLength']>,
+    placeholder: {} as PropOptions<Components.ScaleTextField['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleTextField['disabled']>,
+    required: {} as PropOptions<Components.ScaleTextField['required']>,
+    counter: {} as PropOptions<Components.ScaleTextField['counter']>,
+    value: {} as PropOptions<Components.ScaleTextField['value']>,
+    inputId: {} as PropOptions<Components.ScaleTextField['inputId']>,
+    transparent: {} as PropOptions<Components.ScaleTextField['transparent']>,
+    styles: {} as PropOptions<Components.ScaleTextField['styles']>,
+  },
+
+
+  render: createCommonRender('scale-text-field', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
+});
+
+
+export const ScaleTextarea = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleTextarea['name']>,
+    label: {} as PropOptions<Components.ScaleTextarea['label']>,
+    size: {} as PropOptions<Components.ScaleTextarea['size']>,
+    rows: {} as PropOptions<Components.ScaleTextarea['rows']>,
+    cols: {} as PropOptions<Components.ScaleTextarea['cols']>,
+    helperText: {} as PropOptions<Components.ScaleTextarea['helperText']>,
+    status: {} as PropOptions<Components.ScaleTextarea['status']>,
+    maxLength: {} as PropOptions<Components.ScaleTextarea['maxLength']>,
+    minLength: {} as PropOptions<Components.ScaleTextarea['minLength']>,
+    placeholder: {} as PropOptions<Components.ScaleTextarea['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleTextarea['disabled']>,
+    required: {} as PropOptions<Components.ScaleTextarea['required']>,
+    counter: {} as PropOptions<Components.ScaleTextarea['counter']>,
+    resize: {} as PropOptions<Components.ScaleTextarea['resize']>,
+    value: {} as PropOptions<Components.ScaleTextarea['value']>,
+    inputId: {} as PropOptions<Components.ScaleTextarea['inputId']>,
+    transparent: {} as PropOptions<Components.ScaleTextarea['transparent']>,
+    styles: {} as PropOptions<Components.ScaleTextarea['styles']>,
+  },
+
+
+  render: createCommonRender('scale-textarea', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 

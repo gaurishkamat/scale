@@ -16,9 +16,8 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleCheckbox.props
   },
   template: `
-    <scale-input
+    <scale-checkbox
       :name="name"
-      :type="type"
       :label="label"
       :helper-text="helperText"
       :disabled="disabled"
@@ -28,7 +27,7 @@ export const Template = (args, { argTypes }) => ({
       :input-id="inputId"
       :icon="icon"
       @scaleChange="scaleChange"
-    ></scale-input>
+    ></scale-checkbox>
   `,
   methods: {
     scaleChange: function() {
@@ -50,7 +49,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Checkbox",
-      type: "checkbox",
       icon: ICON
     }}
   >
@@ -68,7 +66,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard Disabled"
     args={{
       label: "Standard Disabled",
-      type: "checkbox",
       icon: ICON,
       disabled: true
     }}
@@ -78,7 +75,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" disabled @scaleChange="handleChange"></scale-input>
+<scale-checkbox icon="SVG-PATH" disabled @scaleChange="handleChange"></scale-checkbox>
 ```
 
 ## Selected
@@ -88,7 +85,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected"
     args={{
       label: "Selected",
-      type: "checkbox",
       icon: ICON,
       checked: true
     }}
@@ -98,7 +94,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" checked @scaleChange="handleChange"></scale-input>
+<scale-checkbox icon="SVG-PATH" checked @scaleChange="handleChange"></scale-checkbox>
 ```
 
 ## Selected Disabled
@@ -108,7 +104,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected Disabled"
     args={{
       label: "Selected Disabled",
-      type: "checkbox",
       icon: ICON,
       checked: true,
       disabled: true,
@@ -119,7 +114,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" checked disabled @scaleChange="handleChange"></scale-input>
+<scale-checkbox icon="SVG-PATH" checked disabled @scaleChange="handleChange"></scale-checkbox>
 ```
 
 
@@ -130,7 +125,6 @@ export const Template = (args, { argTypes }) => ({
     name="Error"
     args={{
       label: "Standard with error",
-      type: "checkbox",
       icon: ICON,
       status: "error",
       helperText: "This is the error message"
@@ -141,5 +135,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input type="checkbox" icon="SVG-PATH" status="error" @scaleChange="handleChange"></scale-input>
+<scale-checkbox icon="SVG-PATH" status="error" @scaleChange="handleChange"></scale-checkbox>
 ```

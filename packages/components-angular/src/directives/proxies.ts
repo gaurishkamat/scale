@@ -276,6 +276,29 @@ export class ScaleChartStackCard {
   }
 }
 
+import { Checkbox as ICheckbox } from '@scaleds/components-telekom/dist/types/components/checkbox/checkbox';
+export declare interface ScaleCheckbox extends Components.ScaleCheckbox {}
+@ProxyCmp({
+  inputs: ['checked', 'controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleCheckbox {
+  /** Emitted when the value has changed. */
+  scaleChange!: ICheckbox['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
+  }
+}
+
 import { Collapsible as ICollapsible } from '@scaleds/components-telekom/dist/types/components/collapsible/collapsible';
 export declare interface ScaleCollapsible extends Components.ScaleCollapsible {}
 @ProxyCmp({
@@ -343,6 +366,37 @@ export class ScaleDivider {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
+export declare interface ScaleDropdown extends Components.ScaleDropdown {}
+@ProxyCmp({
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+})
+@Component({
+  selector: 'scale-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleDropdown {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: IDropdown['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: IDropdown['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: IDropdown['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: IDropdown['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: IDropdown['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
   }
 }
 
@@ -3936,6 +3990,29 @@ export class ScaleProgressBar {
   }
 }
 
+import { RadioButton as IRadioButton } from '@scaleds/components-telekom/dist/types/components/radio-button/radio-button';
+export declare interface ScaleRadioButton extends Components.ScaleRadioButton {}
+@ProxyCmp({
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-radio-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleRadioButton {
+  /** Emitted when the value has changed. */
+  scaleChange!: IRadioButton['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
+  }
+}
+
 
 export declare interface ScaleSidebarNav extends Components.ScaleSidebarNav {}
 @ProxyCmp({
@@ -4170,6 +4247,68 @@ export class ScaleText {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+import { TextField as ITextField } from '@scaleds/components-telekom/dist/types/components/text-field/text-field';
+export declare interface ScaleTextField extends Components.ScaleTextField {}
+@ProxyCmp({
+  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value']
+})
+@Component({
+  selector: 'scale-text-field',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleTextField {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: ITextField['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: ITextField['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: ITextField['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: ITextField['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: ITextField['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
+  }
+}
+
+import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
+export declare interface ScaleTextarea extends Components.ScaleTextarea {}
+@ProxyCmp({
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
+})
+@Component({
+  selector: 'scale-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleTextarea {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: ITextarea['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: ITextarea['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: ITextarea['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: ITextarea['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: ITextarea['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
   }
 }
 
