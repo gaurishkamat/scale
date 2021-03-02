@@ -120,6 +120,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
       copy: [
         { src: '../build/theme', dest: 'build/theme', warn: true },
+        { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
       ],
     },
