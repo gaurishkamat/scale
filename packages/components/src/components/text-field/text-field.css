@@ -8,7 +8,7 @@
 .input .input__input {
   width: 100%;
   height: var(--scl-spacing-48);
-  margin: var(--scl-spacing-4) 0 var(--scl-spacing-8);
+  margin: 0;
   display: flex;
   outline: none;
   padding: var(--scl-spacing-12) var(--scl-spacing-12) 0
@@ -44,6 +44,7 @@
 .input .input__meta {
   display: flex;
   justify-content: space-between;
+  margin-top: var(--scl-spacing-4);
 }
 
 .input:not(.input--disabled) .input__input:hover,
