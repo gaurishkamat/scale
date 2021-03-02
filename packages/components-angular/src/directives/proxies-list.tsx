@@ -219,6 +219,7 @@ d.AppLogo,
   d.ScaleTable,
   d.ScaleTag,
   d.ScaleText,
+  d.ScaleTextField,
   d.ScaleTextarea,
   d.ScaleToast
 ];

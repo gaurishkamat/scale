@@ -227,6 +227,7 @@ const customElementTags: string[] = [
  'scale-table',
  'scale-tag',
  'scale-text',
+ 'scale-text-field',
  'scale-textarea',
  'scale-toast',
 ];
@@ -3533,6 +3534,32 @@ export const ScaleText = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-text', []),
+});
+
+
+export const ScaleTextField = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    type: {} as PropOptions<Components.ScaleTextField['type']>,
+    name: {} as PropOptions<Components.ScaleTextField['name']>,
+    label: {} as PropOptions<Components.ScaleTextField['label']>,
+    size: {} as PropOptions<Components.ScaleTextField['size']>,
+    helperText: {} as PropOptions<Components.ScaleTextField['helperText']>,
+    status: {} as PropOptions<Components.ScaleTextField['status']>,
+    maxLength: {} as PropOptions<Components.ScaleTextField['maxLength']>,
+    minLength: {} as PropOptions<Components.ScaleTextField['minLength']>,
+    placeholder: {} as PropOptions<Components.ScaleTextField['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleTextField['disabled']>,
+    required: {} as PropOptions<Components.ScaleTextField['required']>,
+    counter: {} as PropOptions<Components.ScaleTextField['counter']>,
+    value: {} as PropOptions<Components.ScaleTextField['value']>,
+    inputId: {} as PropOptions<Components.ScaleTextField['inputId']>,
+    transparent: {} as PropOptions<Components.ScaleTextField['transparent']>,
+    styles: {} as PropOptions<Components.ScaleTextField['styles']>,
+  },
+
+
+  render: createCommonRender('scale-text-field', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 
