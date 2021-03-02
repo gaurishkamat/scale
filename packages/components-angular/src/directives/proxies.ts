@@ -3967,6 +3967,29 @@ export class ScaleProgressBar {
   }
 }
 
+import { RadioButton as IRadioButton } from '@scaleds/components-telekom/dist/types/components/radio-button/radio-button';
+export declare interface ScaleRadioButton extends Components.ScaleRadioButton {}
+@ProxyCmp({
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-radio-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleRadioButton {
+  /** Emitted when the value has changed. */
+  scaleChange!: IRadioButton['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
+  }
+}
+
 
 export declare interface ScaleSidebarNav extends Components.ScaleSidebarNav {}
 @ProxyCmp({

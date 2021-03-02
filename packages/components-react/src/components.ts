@@ -213,6 +213,7 @@ export const ScaleList = /*@__PURE__*/createReactComponent<JSX.ScaleList, HTMLSc
 export const ScaleListItem = /*@__PURE__*/createReactComponent<JSX.ScaleListItem, HTMLScaleListItemElement>('scale-list-item');
 export const ScaleModal = /*@__PURE__*/createReactComponent<JSX.ScaleModal, HTMLScaleModalElement>('scale-modal');
 export const ScaleProgressBar = /*@__PURE__*/createReactComponent<JSX.ScaleProgressBar, HTMLScaleProgressBarElement>('scale-progress-bar');
+export const ScaleRadioButton = /*@__PURE__*/createReactComponent<JSX.ScaleRadioButton, HTMLScaleRadioButtonElement>('scale-radio-button');
 export const ScaleSidebarNav = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNav, HTMLScaleSidebarNavElement>('scale-sidebar-nav');
 export const ScaleSidebarNavCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavCollapsible, HTMLScaleSidebarNavCollapsibleElement>('scale-sidebar-nav-collapsible');
 export const ScaleSidebarNavItem = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavItem, HTMLScaleSidebarNavItemElement>('scale-sidebar-nav-item');
