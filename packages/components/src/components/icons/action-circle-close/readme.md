@@ -16,6 +16,19 @@
 | `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`             |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-modal](../../modal)
+
+### Graph
+```mermaid
+graph TD;
+  scale-modal --> scale-icon-action-circle-close
+  style scale-icon-action-circle-close fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
