@@ -10,7 +10,6 @@ import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
-import { InputChangeEventDetail as InputChangeEventDetail1 } from "./components/text-field/text-field";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
