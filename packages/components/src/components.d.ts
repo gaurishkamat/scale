@@ -6,11 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
-import { InputChangeEventDetail } from "./components/checkbox/checkbox";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
-import { InputChangeEventDetail as InputChangeEventDetail1 } from "./components/input/input";
+import { InputChangeEventDetail } from "./components/input/input";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;
