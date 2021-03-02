@@ -8,7 +8,7 @@
 
 .input .input__textarea {
   width: 100%;
-  margin: var(--scl-spacing-4) 0 var(--scl-spacing-8);
+  margin: 0;
   resize: vertical;
   display: flex;
   outline: none;
@@ -45,6 +45,7 @@
 .input .input__meta {
   display: flex;
   justify-content: space-between;
+  margin-top: var(--scl-spacing-4);
 }
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
