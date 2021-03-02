@@ -24,6 +24,7 @@ const customElementTags: string[] = [
  'scale-card',
  'scale-carousel',
  'scale-chart-stack-card',
+ 'scale-checkbox',
  'scale-collapsible',
  'scale-date-picker',
  'scale-divider',
@@ -443,6 +444,27 @@ export const ScaleChartStackCard = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-chart-stack-card', []),
+});
+
+
+export const ScaleCheckbox = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleCheckbox['name']>,
+    label: {} as PropOptions<Components.ScaleCheckbox['label']>,
+    helperText: {} as PropOptions<Components.ScaleCheckbox['helperText']>,
+    status: {} as PropOptions<Components.ScaleCheckbox['status']>,
+    disabled: {} as PropOptions<Components.ScaleCheckbox['disabled']>,
+    checked: {} as PropOptions<Components.ScaleCheckbox['checked']>,
+    value: {} as PropOptions<Components.ScaleCheckbox['value']>,
+    inputId: {} as PropOptions<Components.ScaleCheckbox['inputId']>,
+    icon: {} as PropOptions<Components.ScaleCheckbox['icon']>,
+    controlled: {} as PropOptions<Components.ScaleCheckbox['controlled']>,
+    styles: {} as PropOptions<Components.ScaleCheckbox['styles']>,
+  },
+
+
+  render: createCommonRender('scale-checkbox', ['scaleChange']),
 });
 
 

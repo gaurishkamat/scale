@@ -206,6 +206,52 @@ export namespace Components {
          */
         "heading": string;
     }
+    interface ScaleCheckbox {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleCollapsible {
         /**
           * Set to `true` to expand
@@ -5221,6 +5267,12 @@ declare global {
         prototype: HTMLScaleChartStackCardElement;
         new (): HTMLScaleChartStackCardElement;
     };
+    interface HTMLScaleCheckboxElement extends Components.ScaleCheckbox, HTMLStencilElement {
+    }
+    var HTMLScaleCheckboxElement: {
+        prototype: HTMLScaleCheckboxElement;
+        new (): HTMLScaleCheckboxElement;
+    };
     interface HTMLScaleCollapsibleElement extends Components.ScaleCollapsible, HTMLStencilElement {
     }
     var HTMLScaleCollapsibleElement: {
@@ -6484,6 +6536,7 @@ declare global {
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
         "scale-chart-stack-card": HTMLScaleChartStackCardElement;
+        "scale-checkbox": HTMLScaleCheckboxElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
         "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
@@ -6886,6 +6939,56 @@ declare namespace LocalJSX {
           * Chart Title
          */
         "heading"?: string;
+    }
+    interface ScaleCheckbox {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
     }
     interface ScaleCollapsible {
         /**
@@ -11926,6 +12029,7 @@ declare namespace LocalJSX {
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
         "scale-chart-stack-card": ScaleChartStackCard;
+        "scale-checkbox": ScaleCheckbox;
         "scale-collapsible": ScaleCollapsible;
         "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
@@ -12154,6 +12258,7 @@ declare module "@stencil/core" {
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
             "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
+            "scale-checkbox": LocalJSX.ScaleCheckbox & JSXBase.HTMLAttributes<HTMLScaleCheckboxElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
             "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;

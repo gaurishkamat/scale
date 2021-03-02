@@ -276,6 +276,29 @@ export class ScaleChartStackCard {
   }
 }
 
+import { Checkbox as ICheckbox } from '@scaleds/components-telekom/dist/types/components/checkbox/checkbox';
+export declare interface ScaleCheckbox extends Components.ScaleCheckbox {}
+@ProxyCmp({
+  inputs: ['checked', 'controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleCheckbox {
+  /** Emitted when the value has changed. */
+  scaleChange!: ICheckbox['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
+  }
+}
+
 import { Collapsible as ICollapsible } from '@scaleds/components-telekom/dist/types/components/collapsible/collapsible';
 export declare interface ScaleCollapsible extends Components.ScaleCollapsible {}
 @ProxyCmp({

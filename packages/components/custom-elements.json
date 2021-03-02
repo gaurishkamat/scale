@@ -404,6 +404,59 @@
       ]
     },
     {
+      "name": "scale-checkbox",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "(optional) Active switch"
+        },
+        {
+          "name": "controlled",
+          "description": "(optional) Makes type `select` behave as a controlled component in React"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Input checkbox checked icon"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        }
+      ]
+    },
+    {
       "name": "scale-collapsible",
       "description": {
         "kind": "markdown",
