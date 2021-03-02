@@ -4204,6 +4204,37 @@ export class ScaleTextField {
   }
 }
 
+import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
+export declare interface ScaleTextarea extends Components.ScaleTextarea {}
+@ProxyCmp({
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
+})
+@Component({
+  selector: 'scale-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleTextarea {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: ITextarea['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: ITextarea['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: ITextarea['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: ITextarea['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: ITextarea['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
+  }
+}
+
 
 export declare interface ScaleToast extends Components.ScaleToast {}
 @ProxyCmp({

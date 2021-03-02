@@ -4911,6 +4911,80 @@ export namespace Components {
          */
         "value"?: string | number | null;
     }
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleToast {
         /**
           * (optional) Animated toast
@@ -6267,6 +6341,12 @@ declare global {
         prototype: HTMLScaleTextFieldElement;
         new (): HTMLScaleTextFieldElement;
     };
+    interface HTMLScaleTextareaElement extends Components.ScaleTextarea, HTMLStencilElement {
+    }
+    var HTMLScaleTextareaElement: {
+        prototype: HTMLScaleTextareaElement;
+        new (): HTMLScaleTextareaElement;
+    };
     interface HTMLScaleToastElement extends Components.ScaleToast, HTMLStencilElement {
     }
     var HTMLScaleToastElement: {
@@ -6492,6 +6572,7 @@ declare global {
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
         "scale-text-field": HTMLScaleTextFieldElement;
+        "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
     }
 }
@@ -11448,6 +11529,100 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleToast {
         /**
           * (optional) Animated toast
@@ -11709,6 +11884,7 @@ declare namespace LocalJSX {
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
         "scale-text-field": ScaleTextField;
+        "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
     }
 }
@@ -11934,6 +12110,7 @@ declare module "@stencil/core" {
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
             "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
+            "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
         }
     }

@@ -1,8 +1,6 @@
 <template>
   <scale-input
     :name="name"
-    :variant="variant"
-    :type="type"
     :label="label"
     :size="size"
     :rows="rows"
@@ -34,8 +32,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   props: {
     name: { type: String },
-    variant: { type: String },
-    type: { type: String },
     label: { type: String },
     size: { type: String },
     rows: { type: Number },

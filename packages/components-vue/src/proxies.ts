@@ -228,6 +228,7 @@ const customElementTags: string[] = [
  'scale-tag',
  'scale-text',
  'scale-text-field',
+ 'scale-textarea',
  'scale-toast',
 ];
 Vue.config.ignoredElements = [...Vue.config.ignoredElements, ...customElementTags];
@@ -3559,6 +3560,34 @@ export const ScaleTextField = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-text-field', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
+});
+
+
+export const ScaleTextarea = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    name: {} as PropOptions<Components.ScaleTextarea['name']>,
+    label: {} as PropOptions<Components.ScaleTextarea['label']>,
+    size: {} as PropOptions<Components.ScaleTextarea['size']>,
+    rows: {} as PropOptions<Components.ScaleTextarea['rows']>,
+    cols: {} as PropOptions<Components.ScaleTextarea['cols']>,
+    helperText: {} as PropOptions<Components.ScaleTextarea['helperText']>,
+    status: {} as PropOptions<Components.ScaleTextarea['status']>,
+    maxLength: {} as PropOptions<Components.ScaleTextarea['maxLength']>,
+    minLength: {} as PropOptions<Components.ScaleTextarea['minLength']>,
+    placeholder: {} as PropOptions<Components.ScaleTextarea['placeholder']>,
+    disabled: {} as PropOptions<Components.ScaleTextarea['disabled']>,
+    required: {} as PropOptions<Components.ScaleTextarea['required']>,
+    counter: {} as PropOptions<Components.ScaleTextarea['counter']>,
+    resize: {} as PropOptions<Components.ScaleTextarea['resize']>,
+    value: {} as PropOptions<Components.ScaleTextarea['value']>,
+    inputId: {} as PropOptions<Components.ScaleTextarea['inputId']>,
+    transparent: {} as PropOptions<Components.ScaleTextarea['transparent']>,
+    styles: {} as PropOptions<Components.ScaleTextarea['styles']>,
+  },
+
+
+  render: createCommonRender('scale-textarea', ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']),
 });
 
 

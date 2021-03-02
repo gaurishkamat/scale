@@ -220,5 +220,6 @@ d.AppLogo,
   d.ScaleTag,
   d.ScaleText,
   d.ScaleTextField,
+  d.ScaleTextarea,
   d.ScaleToast
 ];
