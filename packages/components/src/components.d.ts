@@ -9,8 +9,7 @@ import { MenuItem } from "./components/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
-import { InputChangeEventDetail } from "./components/dropdown/dropdown";
-import { InputChangeEventDetail as InputChangeEventDetail1 } from "./components/input/input";
+import { InputChangeEventDetail } from "./components/input/input";
 export namespace Components {
     interface AppLogo {
         "claim": boolean;

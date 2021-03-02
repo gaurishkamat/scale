@@ -10,7 +10,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 
-export interface InputChangeEventDetail {
+interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
