@@ -308,6 +308,72 @@ export namespace Components {
          */
         "vertical"?: boolean;
     }
+    interface ScaleDropdown {
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
+    }
     interface ScaleIcon {
         /**
           * (optional) When using the icon as standalone, make it meaningful for accessibility
@@ -5135,6 +5201,12 @@ declare global {
         prototype: HTMLScaleDividerElement;
         new (): HTMLScaleDividerElement;
     };
+    interface HTMLScaleDropdownElement extends Components.ScaleDropdown, HTMLStencilElement {
+    }
+    var HTMLScaleDropdownElement: {
+        prototype: HTMLScaleDropdownElement;
+        new (): HTMLScaleDropdownElement;
+    };
     interface HTMLScaleIconElement extends Components.ScaleIcon, HTMLStencilElement {
     }
     var HTMLScaleIconElement: {
@@ -6371,6 +6443,7 @@ declare global {
         "scale-collapsible": HTMLScaleCollapsibleElement;
         "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
+        "scale-dropdown": HTMLScaleDropdownElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-icon-action-add": HTMLScaleIconActionAddElement;
         "scale-icon-action-add-card": HTMLScaleIconActionAddCardElement;
@@ -6874,6 +6947,92 @@ declare namespace LocalJSX {
           * (optional) Divider vertical
          */
         "vertical"?: boolean;
+    }
+    interface ScaleDropdown {
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleIcon {
         /**
@@ -11683,6 +11842,7 @@ declare namespace LocalJSX {
         "scale-collapsible": ScaleCollapsible;
         "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
+        "scale-dropdown": ScaleDropdown;
         "scale-icon": ScaleIcon;
         "scale-icon-action-add": ScaleIconActionAdd;
         "scale-icon-action-add-card": ScaleIconActionAddCard;
@@ -11909,6 +12069,7 @@ declare module "@stencil/core" {
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
             "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
+            "scale-dropdown": LocalJSX.ScaleDropdown & JSXBase.HTMLAttributes<HTMLScaleDropdownElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-icon-action-add": LocalJSX.ScaleIconActionAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionAddElement>;
             "scale-icon-action-add-card": LocalJSX.ScaleIconActionAddCard & JSXBase.HTMLAttributes<HTMLScaleIconActionAddCardElement>;
