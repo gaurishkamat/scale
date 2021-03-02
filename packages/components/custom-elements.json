@@ -6507,6 +6507,102 @@
       ]
     },
     {
+      "name": "scale-text-field",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "counter",
+          "description": "(optional) Input counter"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "max-length",
+          "description": "(optional) Input max length"
+        },
+        {
+          "name": "min-length",
+          "description": "(optional) Input min length"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) input background transparent"
+        },
+        {
+          "name": "type",
+          "description": "(optional) Input type",
+          "values": [
+            {
+              "name": "email"
+            },
+            {
+              "name": "hidden"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "text"
+            },
+            {
+              "name": "url"
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        }
+      ]
+    },
+    {
       "name": "scale-textarea",
       "description": {
         "kind": "markdown",
