@@ -1,5 +1,5 @@
 /*
-  tokens to discuss adding
+  tokens "missing"
   ------------------------
   --scl-spacing-56
   --scl-color-background-overlay
@@ -52,6 +52,12 @@
   overflow-y: auto;
   flex-shrink: 1;
 }
+
+/*
+  we're rudimentarily creating a grid here
+  in the following modal--size-*,
+  with 6, 8 and 12 columns
+*/
 
 .modal--size-small .modal__window {
   max-width: calc(
