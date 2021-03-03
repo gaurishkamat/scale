@@ -12,7 +12,7 @@ ol {
 
 li {
   display: inline-flex;
-  font-size: 0.875rem; /* FIXME? var(--scl-spacing-16); */
+  font-size: var(--scl-spacing-14, 0.875rem);
   align-items: center;
 }
 
