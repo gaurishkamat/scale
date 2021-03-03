@@ -5,5 +5,5 @@
 .list--nested {
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: var(--spacing-2, 0.5rem);
+  padding-left: var(--scl-spacing-8);
 }
