@@ -12,7 +12,7 @@
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
     <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
-    <link rel="stylesheet" href="/build/scale-components.css" />
+    <link rel="stylesheet" href="/build/design-tokens-telekom.css" />
     <style type="text/css" media="screen, print">
       html {
         margin: 0;
@@ -61,6 +61,15 @@
   <body>
     <h1>Components</h1>
 
+    <h3>Alert</h3>
+    <scale-alert headline="Alert Headline">Some alert content</scale-alert>
+
+    <h3>Toast</h3>
+    <scale-toast>
+      <h4 slot="header">Toast header</h4>
+      <p>Toast description text</p>
+    </scale-toast>
+
     <h3>Chart - Stack</h3>
     <scale-chart-stack-card
       heading="Operating System"
@@ -68,10 +77,8 @@
     ></scale-chart-stack-card>
 
     <h3>Select</h3>
-    <scale-input
-      variant="animated"
+    <scale-dropdown
       label="basic select with animated label"
-      type="select"
       input-id="select box"
       transparent="true"
     >
@@ -79,23 +86,16 @@
       <option value="1">item 1</option>
       <option value="2">item 2</option>
       <option value="3">item 3</option>
-    </scale-input>
+    </scale-dropdown>
     <h3>Basic select with static label</h3>
-    <scale-input
-      variant="static"
-      label="basic select"
-      type="select"
-      input-id="select box"
-    >
+    <scale-dropdown label="basic select" input-id="select box">
       <option value="1">item A</option>
       <option value="2">item B</option>
       <option value="3">item C</option>
-    </scale-input>
+    </scale-dropdown>
     <h3>Select with icon</h3>
-    <scale-input
-      variant="animated"
+    <scale-dropdown
       label="select with icon"
-      type="select"
       input-id="select box"
       icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
     >
@@ -103,12 +103,10 @@
       <option value="1">item A</option>
       <option value="2">item B</option>
       <option value="3">item C</option>
-    </scale-input>
+    </scale-dropdown>
     <h3>Select with opt group</h3>
-    <scale-input
-      variant="static"
+    <scale-dropdown
       label="multi select with opt group"
-      type="select"
       input-id="select box"
       icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
     >
@@ -120,14 +118,12 @@
         <option value="one">option one</option>
         <option value="two">option two</option>
       </optgroup>
-    </scale-input>
+    </scale-dropdown>
     <h3>Select with icon</h3>
-    <scale-input
-      variant="animated"
+    <scale-dropdown
       label="select with error"
       status="error"
       helper-text="error occurs"
-      type="select"
       input-id="select box"
       icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z"
     >
@@ -135,12 +131,10 @@
       <option value="1">item A</option>
       <option value="2">item B</option>
       <option value="3">item C</option>
-    </scale-input>
+    </scale-dropdown>
     <h3>Select disabled</h3>
-    <scale-input
-      variant="animated"
+    <scale-dropdown
       label="basic select with animated label"
-      type="select"
       input-id="select box"
       disabled="true"
     >
@@ -148,197 +142,168 @@
       <option value="1">item 1</option>
       <option value="2">item 2</option>
       <option value="3">item 3</option>
-    </scale-input>
+    </scale-dropdown>
     <h3>Textarea default</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="4"
       cols="50"
       resize="vertical"
       label="text area default"
-      variant="static"
-    ></scale-input>
+    ></scale-textarea>
     <h3>Textarea with animated label and no resize</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="6"
       cols="50"
       label="textarea label"
-      variant="animated"
       resize="none"
-    ></scale-input>
+    ></scale-textarea>
     <h3>textarea with helper info text</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="4"
       cols="40"
       label="textarea with helper info text"
-      variant="animated"
       resize="horizontal"
       status="info"
       helper-text="this is an info message"
-    ></scale-input>
+    ></scale-textarea>
     <h3>textarea with error</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="4"
       cols="40"
       label="textarea with helper info text"
-      variant="animated"
       status="error"
       helper-text="error occurs"
-    ></scale-input>
+    ></scale-textarea>
     <h3>textarea with max length</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="4"
       cols="40"
       label="textarea with helper info text"
-      variant="animated"
       counter="true"
       max-length="512"
       transparent="true"
-    ></scale-input>
+    ></scale-textarea>
     <h3>disabled textarea</h3>
-    <scale-input
-      type="textarea"
+    <scale-textarea
       rows="4"
       cols="40"
-      variant="animated"
       label="disabled textarea"
       disabled="true"
-    ></scale-input>
+    ></scale-textarea>
     <h3>Checkbox</h3>
-    <scale-input
+    <scale-checkbox
       input-id="checkbox1"
-      type="checkbox"
       value="1"
       label="checkbox"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
-    ></scale-input>
-    <scale-input
+    ></scale-checkbox>
+    <scale-checkbox
       input-id="checkbox2"
-      type="checkbox"
       value="2"
       transparent="true"
       label="another checkbox"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
-    ></scale-input>
-    <scale-input
+    ></scale-checkbox>
+    <scale-checkbox
       input-id="checkbox3"
-      type="checkbox"
       value="3"
       disabled="true"
       label="disabled checkbox"
       name="nameOfCheckbox"
-    ></scale-input>
-    <scale-input
+    ></scale-checkbox>
+    <scale-checkbox
       input-id="checkbox4"
-      type="checkbox"
       value="4"
       status="error"
       label="checkbox with error"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
-    ></scale-input>
-    <scale-input
+    ></scale-checkbox>
+    <scale-checkbox
       input-id="checkbox5"
-      type="checkbox"
       value="5"
       label="disabled checked checkbox"
       pre-checked="true"
       disabled="true"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
-    ></scale-input>
+    ></scale-checkbox>
     <h3>Radio input</h3>
-    <scale-input
-      type="radio"
+    <scale-radio-button
       value="1"
       label="One"
       name="radioSelect"
       transparent="true"
       input-id="choiceOne"
-    ></scale-input>
-    <scale-input
-      type="radio"
+    ></scale-radio-button>
+    <scale-radio-button
       value="2"
       label="Two"
       name="radioSelect"
       input-id="choiceTwo"
-    ></scale-input>
-    <scale-input
-      type="radio"
+    ></scale-radio-button>
+    <scale-radio-button
       value="3"
       label="Three"
       name="radioSelect"
       input-id="choiceThree"
-    ></scale-input>
-    <scale-input
-      type="radio"
+    ></scale-radio-button>
+    <scale-radio-button
       value="3"
       label="disabled radio"
       name="radioSelect"
       input-id="choiceFour"
       disabled="true"
-    ></scale-input>
-    <scale-input
-      type="radio"
+    ></scale-radio-button>
+    <scale-radio-button
       value="4"
       label="radio with error"
       name="radioSelect"
       input-id="choiceFive"
       status="error"
-    ></scale-input>
-    <scale-input
-      type="radio"
+    ></scale-radio-button>
+    <scale-radio-button
       value="5"
       label="disabled checked radio"
       name="radioSelect"
       disabled="true"
       pre-checked="true"
       input-id="choiceSix"
-    ></scale-input>
+    ></scale-radio-button>
 
     <h3>Input with change handler</h3>
-    <scale-input></scale-input>
+    <scale-text-field></scale-text-field>
 
     <script>
       document
-        .querySelector('scale-input')
+        .querySelector('scale-text-field')
         .addEventListener('scaleChange', console.log);
     </script>
 
     <h3>Static input with label</h3>
-    <scale-input variant="static" label="Text"></scale-input>
+    <scale-text-field label="Text"></scale-text-field>
 
     <h3>Animated input</h3>
-    <scale-input
-      label="First Name"
-      placeholder="Hello"
-      variant="animated"
-    ></scale-input>
+    <scale-text-field label="First Name" placeholder="Hello"></scale-text-field>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input
+    <scale-text-field
       label="Last Name"
       max-length="24"
       counter
       transparent="true"
-      variant="animated"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       id="input-error"
       label="address"
       required="true"
       max-length="24"
-      variant="animated"
       counter
-    ></scale-input>
+    ></scale-text-field>
     <button id="show-error">Toggle error</button>
     <script>
       document.getElementById('show-error').addEventListener('click', () => {
@@ -351,47 +316,47 @@
       });
     </script>
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       label="address"
-      variant="animated"
       required="true"
       status="error"
       max-length="24"
       counter
-    ></scale-input>
+    ></scale-text-field>
     <h3>Input Text - helper text</h3>
-    <scale-input
+    <scale-text-field
       label="address"
       required="true"
-      variant="animated"
       status="error"
       helper-text="please fill out this field"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - place holder text</h3>
-    <scale-input
+    <scale-text-field
       type="string"
-      variant="inline"
-      variant="static"
       label="input text with placeholder"
       placeholder="placeholder"
-    ></scale-input>
+    ></scale-text-field>
 
     <h3>Input Text - disabled</h3>
-    <scale-input
+    <scale-text-field
       type="string"
       disabled="true"
       label="input text disabled"
-    ></scale-input>
+    ></scale-text-field>
 
-    <scale-input type="email" label="email"></scale-input>
-    <scale-input type="number" label="number"></scale-input>
-    <scale-input type="password" label="password"></scale-input>
-    <scale-input type="tel" label="telephone"></scale-input>
-    <scale-input type="url" label="url"></scale-input>
-    <scale-input type="hidden"></scale-input>
-    <scale-input size="small" label="small input"></scale-input>
-    <scale-input label="Name" size="small" variant="animated"></scale-input>
+    <scale-text-field type="email" label="email"></scale-text-field>
+    <scale-text-field type="number" label="number"></scale-text-field>
+    <scale-text-field type="password" label="password"></scale-text-field>
+    <scale-text-field
+      type="tel"
+      value="555"
+      label="telephone"
+    ></scale-text-field>
+    <scale-text-field type="text" label="url"></scale-text-field>
+    <scale-text-field type="hidden"></scale-text-field>
+    <scale-text-field size="small" label="small input"></scale-text-field>
+    <scale-text-field label="Name" size="small"></scale-text-field>
 
     <h3>Tag</h3>
     <scale-tag>default</scale-tag>
@@ -819,10 +784,18 @@
     </script>
 
     <h3>Switch</h3>
-    <scale-switch></scale-switch>
+    <scale-switch label="Switch label"></scale-switch>
     <h3>Switch disabled</h3>
-    <scale-switch checked="true" disabled="true"></scale-switch>
-    <scale-switch checked="false" disabled="true"></scale-switch>
+    <scale-switch
+      checked="true"
+      disabled="true"
+      label="Switch - checked + disabled"
+    ></scale-switch>
+    <scale-switch
+      checked="false"
+      disabled="true"
+      label="Switch - not checked + disabled"
+    ></scale-switch>
 
     <h3>Slider</h3>
     <scale-slider
@@ -936,13 +909,13 @@ no switching has been done:*/
           switching = false;
           rows = table.rows;
           /*Loop through all table rows (except the
-first, which contains table headers):*/
+  first, which contains table headers):*/
           for (i = 1; i < rows.length - 1; i++) {
             //start by saying there should be no switching:
             shouldSwitch = false;
 
             /*Get the two elements you want to compare,
-one from current row and one from the next:*/
+    one from current row and one from the next:*/
             x = rows[i].getElementsByTagName('TD')[columnIndex];
             y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
 
@@ -966,7 +939,7 @@ one from current row and one from the next:*/
           }
           if (shouldSwitch) {
             /*If a switch has been marked, make the switch
-and mark that a switch has been done:*/
+    and mark that a switch has been done:*/
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
           }
