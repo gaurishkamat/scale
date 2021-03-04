@@ -12,9 +12,11 @@
 | `activeRouteId`    | `active-route-id`   |                                | `string` | `''`        |
 | `activeSectorId`   | `active-sector-id`  |                                | `string` | `''`        |
 | `addonNavigation`  | `addon-navigation`  |                                | `any`    | `[]`        |
-| `brandTitle`       | `brand-title`       |                                | `string` | `''`        |
 | `claimLang`        | `claim-lang`        |                                | `string` | `'de'`      |
 | `iconNavigation`   | `icon-navigation`   |                                | `any`    | `[]`        |
+| `logoClick`        | `logo-click`        |                                | `any`    | `undefined` |
+| `logoHref`         | `logo-href`         |                                | `string` | `undefined` |
+| `logoTitle`        | `logo-title`        |                                | `string` | `undefined` |
 | `mainNavigation`   | `main-navigation`   |                                | `any`    | `[]`        |
 | `portalName`       | `portal-name`       |                                | `string` | `''`        |
 | `sectorNavigation` | `sector-navigation` |                                | `any`    | `[]`        |
@@ -31,11 +33,14 @@
 ```mermaid
 graph TD;
   scale-app-shell --> scale-app-header
+  scale-app-header --> scale-nav-main
   scale-app-header --> app-mega-menu
-  scale-app-header --> scale-icon
+  scale-app-header --> scale-nav-icon
+  scale-app-header --> scale-nav-segment
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
+  scale-nav-icon --> scale-icon
   app-navigation-main-mobile --> scale-icon
   style scale-app-shell fill:#f9f,stroke:#333,stroke-width:4px
 ```

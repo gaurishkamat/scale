@@ -8,13 +8,13 @@ import { Components } from '@scaleds/components-telekom';
 
 export declare interface AppLogo extends Components.AppLogo {}
 @ProxyCmp({
-  inputs: ['claim', 'claimLang', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href', 'logoTitle']
 })
 @Component({
   selector: 'app-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claim', 'claimLang', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href', 'logoTitle']
 })
 export class AppLogo {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppFooter {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'isMegaMenuVisible', 'isMobileMenuVisible', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'isMegaMenuVisible', 'isMobileMenuVisible', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -165,13 +165,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;
@@ -3968,6 +3968,63 @@ export class ScaleModal {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['scaleOpen', 'scaleClose']);
+  }
+}
+
+
+export declare interface ScaleNavIcon extends Components.ScaleNavIcon {}
+@ProxyCmp({
+  inputs: ['clickLink', 'href', 'icon', 'isActive', 'isMobileMenuOpen', 'refMobileMenuToggle']
+})
+@Component({
+  selector: 'scale-nav-icon',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['clickLink', 'href', 'icon', 'isActive', 'isMobileMenuOpen', 'refMobileMenuToggle']
+})
+export class ScaleNavIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleNavMain extends Components.ScaleNavMain {}
+@ProxyCmp({
+  inputs: ['clickLink', 'href', 'isActive', 'isMegaMenuVisible', 'name']
+})
+@Component({
+  selector: 'scale-nav-main',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['clickLink', 'href', 'isActive', 'isMegaMenuVisible', 'name']
+})
+export class ScaleNavMain {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleNavSegment extends Components.ScaleNavSegment {}
+@ProxyCmp({
+  inputs: ['href', 'isActive']
+})
+@Component({
+  selector: 'scale-nav-segment',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['href', 'isActive']
+})
+export class ScaleNavSegment {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 

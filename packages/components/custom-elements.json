@@ -23,6 +23,10 @@
         {
           "name": "href",
           "description": ""
+        },
+        {
+          "name": "logo-title",
+          "description": ""
         }
       ]
     },
@@ -180,6 +184,26 @@
           "description": ""
         },
         {
+          "name": "is-mega-menu-visible",
+          "description": ""
+        },
+        {
+          "name": "is-mobile-menu-visible",
+          "description": ""
+        },
+        {
+          "name": "logo-click",
+          "description": ""
+        },
+        {
+          "name": "logo-href",
+          "description": ""
+        },
+        {
+          "name": "logo-title",
+          "description": ""
+        },
+        {
           "name": "main-navigation",
           "description": ""
         },
@@ -213,15 +237,23 @@
           "description": ""
         },
         {
-          "name": "brand-title",
-          "description": ""
-        },
-        {
           "name": "claim-lang",
           "description": ""
         },
         {
           "name": "icon-navigation",
+          "description": ""
+        },
+        {
+          "name": "logo-click",
+          "description": ""
+        },
+        {
+          "name": "logo-href",
+          "description": ""
+        },
+        {
+          "name": "logo-title",
           "description": ""
         },
         {
@@ -6233,6 +6265,85 @@
         {
           "name": "variant",
           "description": "(optional) Modal variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-icon",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "click-link",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
+        },
+        {
+          "name": "is-mobile-menu-open",
+          "description": ""
+        },
+        {
+          "name": "ref-mobile-menu-toggle",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-main",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "click-link",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
+        },
+        {
+          "name": "is-mega-menu-visible",
+          "description": "(optional) if this mega-menu is visible"
+        },
+        {
+          "name": "name",
+          "description": "(optional) name value"
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-segment",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
         }
       ]
     },

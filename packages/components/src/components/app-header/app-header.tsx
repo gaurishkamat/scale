@@ -10,7 +10,6 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
-import { renderIcon } from '../../utils/render-icon';
 import { findRootNode } from '../../utils/menu-utils';
 
 const maybeJSONParse = data => {
@@ -32,6 +31,9 @@ const maybeJSONParse = data => {
 export class Header {
   @Element() hostElement: HTMLStencilElement;
   mobileMenuToggle?: HTMLAnchorElement;
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoClick?: any;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any = [];
@@ -40,6 +42,8 @@ export class Header {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
+  @Prop() isMegaMenuVisible?: boolean = false;
+  @Prop() isMobileMenuVisible?: boolean = false;
   @State() activeSegment: any =
     maybeJSONParse(this.sectorNavigation).find(
       ({ id }) => id === this.activeSectorId
@@ -47,11 +51,19 @@ export class Header {
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
   @State() scrolled: boolean = false;
+
   data: Record<string, any[]>;
   hasSlotMenuMain: boolean;
   hasSlotMenuIcon: boolean;
   hasSlotMenuSector: boolean;
   hasSlotMenuAddon: boolean;
+  hasSlotMenuMobile: boolean;
+  hasSlotLogo: boolean;
+
+  @Watch('isMegaMenuVisible')
+  megaMenuVisibleChange(isVisible) {
+    this.visibleMegaMenu = isVisible;
+  }
 
   @Listen('scroll', { target: 'window' })
   onScroll() {
@@ -60,6 +72,9 @@ export class Header {
 
   @Listen('closeMenu')
   handleCloseMenu() {
+    if (this.mobileMenu) {
+      this.mobileMenuToggle.focus();
+    }
     this.mobileMenu = false;
   }
 
@@ -96,48 +111,27 @@ export class Header {
           <slot name="menu-main"></slot>
         ) : (
           this.data.mainNavigation.map(item => (
-            <li
-              class={classNames(
-                'main-navigation__item',
-                this.visibleMegaMenu === item.id && 'mega-menu--visible',
-                isActive(item) && 'selected'
-              )}
+            <scale-nav-main
+              isActive={isActive(item)}
+              isMegaMenuVisible={this.visibleMegaMenu === item.id}
               onMouseEnter={() => {
                 this.visibleMegaMenu = item.children ? item.id : null;
               }}
               onMouseLeave={() => {
                 this.visibleMegaMenu = '';
               }}
-            >
-              <a
-                class="main-navigation__item-link"
-                href={item.href || 'javascript:void(0);'}
-                aria-current={isActive(item) ? 'true' : 'false'}
-                aria-haspopup={item.children ? 'true' : 'false'}
-                onClick={event => {
-                  if (item.href) {
-                    this.visibleMegaMenu = '';
-                  }
+              clickLink={event => {
+                if (item.href) {
+                  this.visibleMegaMenu = '';
+                }
 
-                  if (typeof item.onClick === 'function') {
-                    item.onClick(event);
-                  }
-                  this.visibleMegaMenu = item.children ? item.name : null;
-                }}
-                onKeyDown={event => {
-                  if (['Enter', ' '].includes(event.key)) {
-                    event.preventDefault();
-                    this.visibleMegaMenu = item.children ? item.name : null;
-                  }
-                  if (['Escape', 'Esc'].includes(event.key)) {
-                    this.visibleMegaMenu = null;
-                  }
-                }}
-                tabIndex={0}
-              >
-                <span class="main-navigation__item-link-text">{item.name}</span>
-                {isActive(item) && <span class="sr-only">active</span>}
-              </a>
+                if (typeof item.onClick === 'function') {
+                  item.onClick(event);
+                }
+                this.visibleMegaMenu = item.children ? item.name : null;
+              }}
+              name={item.name}
+            >
               {item.children && item.children.length > 0 && (
                 <app-mega-menu
                   navigation={item.children}
@@ -148,7 +142,7 @@ export class Header {
                   isActive={this.visibleMegaMenu === item.id}
                 ></app-mega-menu>
               )}
-            </li>
+            </scale-nav-main>
           ))
         )}
       </ul>
@@ -167,44 +161,28 @@ export class Header {
           this.data.iconNavigation
             .filter(({ id }) => id !== 'menu')
             .map(item => (
-              <li class="meta-navigation__item">
-                <a
-                  class="meta-navigation__item-link"
-                  href={item.href || 'javascript:void(0);'}
-                >
-                  {renderIcon(item.icon, 'meta-navigation__item-link')}
-                  <span class="meta-navigation__item-label">{item.name}</span>
-                </a>
-              </li>
+              <scale-nav-icon
+                icon={item.icon}
+                href={item.href}
+                clickLink={event => {
+                  if (typeof item.onClick === 'function') {
+                    item.onClick(event);
+                  }
+                }}
+              >
+                {item.name}
+              </scale-nav-icon>
             ))
         )}
-        {!this.hasSlotMenuMain && (
-          <li
-            class={classNames(
-              'meta-navigation__item mobile-menu',
-              this.mobileMenu && 'open'
-            )}
+        {(!this.hasSlotMenuMain || this.hasSlotMenuMobile) && (
+          <scale-nav-icon
+            isMobileMenuOpen={this.mobileMenu}
+            icon={this.mobileMenu ? 'action-circle-close' : 'action-menu'}
+            clickLink={event => this.handleMobileMenu(event)}
+            refMobileMenuToggle={el => (this.mobileMenuToggle = el)}
           >
-            <a
-              ref={el => (this.mobileMenuToggle = el)}
-              class="meta-navigation__item-link"
-              onClick={event => this.handleMobileMenu(event)}
-              tabIndex={0}
-              onKeyDown={event => {
-                if (['Enter', ' ', 'Escape', 'Esc'].includes(event.key)) {
-                  event.preventDefault();
-                  this.handleMobileMenu(event);
-                }
-              }}
-            >
-              <scale-icon
-                name={this.mobileMenu ? 'menu-close' : 'menu'}
-              ></scale-icon>
-              <span class="meta-navigation__item-label">
-                {this.mobileMenu ? openedName : defaultName}
-              </span>
-            </a>
-          </li>
+            {this.mobileMenu ? openedName : defaultName}
+          </scale-nav-icon>
         )}
       </ul>
     );
@@ -212,34 +190,23 @@ export class Header {
 
   menuSector() {
     return (
-      <ul class="segment-navigation">
+      <ul class="sector-navigation">
         {this.hasSlotMenuSector ? (
           <slot name="menu-sector"></slot>
         ) : this.portalName ? (
-          <li class="segment-navigation__portal-name">{this.portalName}</li>
+          <li class="sector-navigation__portal-name">{this.portalName}</li>
         ) : (
           this.data.sectorNavigation.map(item => (
-            <li class="segment-navigation__item">
-              <a
-                onClick={event => this.handleSelectedSegment(event, item)}
-                class={classNames(
-                  'segment-navigation__item-link',
-                  this.activeSegment.id === item.id && 'active'
-                )}
-                href={item.href || 'javascript:void(0);'}
-                onFocus={() => {
-                  window.scrollTo({ top: 0 });
-                }}
-                aria-current={
-                  this.activeSegment.id === item.id ? 'true' : 'false'
-                }
-              >
-                {item.name}
-                {this.activeSegment.id === item.id && (
-                  <span class="sr-only">active</span>
-                )}
-              </a>
-            </li>
+            <scale-nav-segment
+              isActive={this.activeSegment.id === item.id}
+              href={item.href}
+              onClick={event => this.handleSelectedSegment(event, item)}
+              onFocus={() => {
+                window.scrollTo({ top: 0 });
+              }}
+            >
+              {item.name}
+            </scale-nav-segment>
           ))
         )}
       </ul>
@@ -253,22 +220,19 @@ export class Header {
           <slot name="menu-addon"></slot>
         ) : (
           this.data.addonNavigation.map(item => (
-            <li class="addon-navigation__item">
-              <a
-                class="addon-navigation__item-link"
-                href={item.href || 'javascript:void(0);'}
-                onClick={event => {
-                  if (typeof item.onClick === 'function') {
-                    item.onClick(event);
-                  }
-                }}
-                onFocus={() => {
-                  window.scrollTo({ top: 0 });
-                }}
-              >
-                {item.name}
-              </a>
-            </li>
+            <scale-nav-segment
+              href={item.href}
+              onClick={event => {
+                if (typeof item.onClick === 'function') {
+                  item.onClick(event);
+                }
+              }}
+              onFocus={() => {
+                window.scrollTo({ top: 0 });
+              }}
+            >
+              {item.name}
+            </scale-nav-segment>
           ))
         )}
       </ul>
@@ -351,6 +315,10 @@ export class Header {
     this.hasSlotMenuAddon = !!this.hostElement.querySelector(
       '[slot="menu-addon"]'
     );
+    this.hasSlotMenuMobile = !!this.hostElement.querySelector(
+      '[slot="menu-mobile"]'
+    );
+    this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
   }
 
   render() {
@@ -363,7 +331,17 @@ export class Header {
             <span class="header__brand-after"></span>
             <div class="header__brand-content">
               <div class="header__brand-branding">
-                <app-logo claim claimLang={this.claimLang}></app-logo>
+                {this.hasSlotLogo ? (
+                  <slot name="logo"></slot>
+                ) : (
+                  <app-logo
+                    claim
+                    claimLang={this.claimLang}
+                    href={this.logoHref}
+                    logoTitle={this.logoTitle}
+                    onClick={this.logoClick}
+                  ></app-logo>
+                )}
               </div>
               <div class="header__brand-sector">{this.menuSector()}</div>
               <div class="header__brand-meta">{this.menuAddon()}</div>
@@ -388,22 +366,28 @@ export class Header {
             }`}
             aria-label="main"
           >
-            <app-navigation-sector-mobile
-              navigation={this.data.sectorNavigation}
-              activeSectorId={this.activeSectorId}
-              hide={() => {
-                this.handleMobileMenu();
-                this.mobileMenuToggle.focus();
-              }}
-            ></app-navigation-sector-mobile>
-            <app-navigation-main-mobile
-              navigation={this.data.mainNavigation}
-              activeRouteId={this.activeRouteId}
-              hide={() => {
-                this.handleMobileMenu();
-                this.mobileMenuToggle.focus();
-              }}
-            ></app-navigation-main-mobile>
+            {this.hasSlotMenuMobile ? (
+              <slot name="menu-mobile"></slot>
+            ) : (
+              <div>
+                <app-navigation-sector-mobile
+                  navigation={this.data.sectorNavigation}
+                  activeSectorId={this.activeSectorId}
+                  hide={() => {
+                    this.handleMobileMenu();
+                    this.mobileMenuToggle.focus();
+                  }}
+                ></app-navigation-sector-mobile>
+                <app-navigation-main-mobile
+                  navigation={this.data.mainNavigation}
+                  activeRouteId={this.activeRouteId}
+                  hide={() => {
+                    this.handleMobileMenu();
+                    this.mobileMenuToggle.focus();
+                  }}
+                ></app-navigation-main-mobile>
+              </div>
+            )}
           </nav>
         </header>
       </Host>

@@ -5,7 +5,8 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'app-logo.css',
 })
 export class Logo {
-  @Prop() href: string = '';
+  @Prop() href?: string = 'javascript:void(0);';
+  @Prop() logoTitle?: string = 'Telekom Logo';
   @Prop() color: string = '#fff';
   @Prop() claim: boolean = false;
   @Prop() claimLang: string;
@@ -28,7 +29,14 @@ export class Logo {
       );
     }
     return (
-      <a class="logo" href={this.href} title="Telekom Logo">
+      <a
+        class="logo"
+        href={this.href}
+        title={this.logoTitle}
+        onFocus={() => {
+          window.scrollTo({ top: 0 });
+        }}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 36">
           <g fill={this.color} fill-rule="nonzero">
             {this.claimLang === 'de' ? (

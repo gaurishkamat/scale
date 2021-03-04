@@ -1,0 +1,25 @@
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  overflow: hidden;
+}
+
+.segment-navigation__item {
+  list-style: none;
+}
+
+.segment-navigation__item-link {
+  color: #fff;
+  padding: 4px 0;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  font-weight: 800;
+  line-height: 1.143;
+  text-decoration: none;
+}
+
+.segment-navigation__item-link:hover,
+.segment-navigation__item-link.active {
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid #fff;
+}
