@@ -1,4 +1,5 @@
 import postcss from 'postcss';
+import map from 'lodash/map.js';
 import kebabCase from 'lodash/kebabCase.js';
 import {
   NAMESPACE_PREFIX,
@@ -16,21 +17,45 @@ const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
 const px = (x) => `${x}px`;
 const ms = (x) => `${x}ms`;
 
-const root = postcss.root();
-const selector = postcss.rule({ selector: ':root' });
+const fontKeyPropMap = {
+  family: 'font-family',
+  size: 'font-size',
+  weight: 'font-weight',
+  lineHeight: 'line-height',
+  letterSpacing: 'letter-spacing',
+};
+
+const rootSelector = postcss.rule({ selector: ':root' });
+const variantComment = postcss.comment({ text: 'FONT VARIANT CLASSES' });
+const variantSelectors = [];
 
 export const outputCSS = {
   onCategory: ({ categoryName }) => {
-    selector.append(postcss.comment({ text: categoryName.toUpperCase() }));
+    rootSelector.append(postcss.comment({ text: categoryName.toUpperCase() }));
   },
-  onSection: () => {},
+  onSection: ({ categoryName, sectionName, tokens }) => {
+    // Create classes for type variants
+    if (categoryName === TYPE_VARIANT) {
+      const path = [categoryName, sectionName];
+      const values = tokens[categoryName][sectionName];
+      const selector = postcss.rule({
+        selector: `.scl-font-variant-${kebabCase(sectionName)}`,
+      });
+      const declarations = getFontVariantDeclarations(path, values);
+      selector.append(declarations);
+      variantSelectors.push(selector);
+    }
+  },
   onValue: ({ categoryName, sectionName, key, value }) => {
     const path = [categoryName, sectionName];
     const declaration = getDeclaration(path, key, value);
-    selector.append(postcss.decl(declaration));
+    rootSelector.append(declaration);
   },
   onComplete: () => {
-    outputCSS.content = root.append([selector]).toString();
+    outputCSS.content = postcss
+      .root()
+      .append([rootSelector, variantComment, ...variantSelectors])
+      .toString();
   },
   ext: '.css',
   suffix: '',
@@ -55,10 +80,25 @@ function getDeclaration(path, key, val) {
     .map(kebabCase)
     .join('-');
 
-  return {
+  return postcss.decl({
     prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
     value: processValue(path, key, val),
-  };
+  });
+}
+
+/**
+ * @param {array} path
+ * @param {Object} values
+ * @returns {Declaration[]}
+ */
+function getFontVariantDeclarations(path, values) {
+  return map(values, (value, key) => {
+    const { prop: variableName, value: actualValue } = getDeclaration(path, key, value);
+    return postcss.decl({
+      prop: fontKeyPropMap[key],
+      value: `var(${variableName}, ${actualValue})`,
+    });
+  });
 }
 
 /**

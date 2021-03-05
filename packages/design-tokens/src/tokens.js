@@ -94,25 +94,20 @@ tokens[TYPE_VARIANT] = {
     size: size['20'],
     lineHeight: lineHeight['160'],
   },
+  smaller: {
+    ...defaultVariant,
+    size: size['12'],
+    lineHeight: lineHeight['125'],
+  },
   label: {
     ...defaultVariant,
     size: size['12'],
-    lineHeight: lineHeight['120'],
-  },
-  label_smaller: {
-    ...defaultVariant,
-    size: size['10'],
     lineHeight: lineHeight['120'],
   },
   caption: {
     ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['133'],
-  },
-  smaller: {
-    ...defaultVariant,
-    size: size['12'],
-    lineHeight: lineHeight['125'],
   },
   heading_6: {
     ...defaultVariant,
