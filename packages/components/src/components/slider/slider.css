@@ -11,7 +11,7 @@
 
 .slider .slider__track {
   width: 303px;
-  border: 1px solid #6c6c6c;
+  border: 1px solid var(--scl-color-grey-60);
   height: 6px;
   margin: 16px 0;
   display: flex;
@@ -26,7 +26,7 @@
   z-index: -1;
   position: absolute;
   border-radius: 100px;
-  background-color: var(--color-primary, #e20074);
+  background-color: var(--scl-color-primary);
 }
 
 .slider .slider__thumb-wrapper {
@@ -48,33 +48,29 @@
   height: 16px;
   outline: none;
   box-sizing: border-box;
-  border-color: #6c6c6c;
+  border-color: var(--scl-color-grey-60);
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: var(
-    --shadow-ground,
-    0 2px 8px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.1)
-  );
+  box-shadow: var(--scl-shadow-level-0);
 }
 
 .slider .slider__display-value {
-  color: #6c6c6c;
+  color: var(--scl-color-grey-60);
   margin-left: 24px;
-  font-weight: var(--type-weight-bold, 700);
-  font-size: var(--font-size-2, 0.75rem);
+  font-weight: var(--scl-font-weight-bold);
+  font-size: var(--scl-font-size-12);
 }
 
 .slider .slider__thumb:hover {
-  border-color: var(--color-primary-hover, #f90984);
+  border-color: var(--scl-color-primary-hover);
 }
 
 .slider .slider__thumb:active {
-  border-color: var(--color-primary-active, #cb0068);
+  border-color: var(--scl-color-primary-active);
 }
 
 .slider .slider__thumb:focus {
-  box-shadow: 0 0 0 2px var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .slider .slider__thumb-wrapper:hover {
@@ -89,7 +85,7 @@
   border: none;
   height: 1px;
   border-top: 1px solid transparent;
-  background-color: var(--color-disabled, #7c7c7c);
+  background-color: var(--scl-color-grey-50);
 }
 
 .slider--track-small .slider__bar {
@@ -109,7 +105,7 @@
 }
 
 .slider--disabled .slider__bar {
-  background-color: var(--color-disabled, #7c7c7c);
+  background-color: var(--scl-color-grey-50);
 }
 
 .slider--disabled .slider__thumb {
@@ -117,7 +113,7 @@
 }
 
 .slider--disabled .slider__label {
-  color: var(--color-disabled, #7c7c7c);
+  color: var(--scl-color-grey-50);
 }
 
 .slider--disabled .slider__thumb-wrapper:hover {

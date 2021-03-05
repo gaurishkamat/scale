@@ -1,9 +1,9 @@
 .table {
   display: block;
   overflow: auto;
-  border-radius: 4px 4px 0 0;
-  background: var(--color-grey-100, #f5f5f5);
-  color: var(--color-text, #262626);
+  border-radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
+  background: var(--scl-color-background-light);
+  color: var(--scl-color-text-default);
 }
 .table table {
   width: 100%;
@@ -15,8 +15,8 @@
   padding: 0 8px;
   text-align: left;
   line-height: 32px; /*  TODO: revise, this is weird */
-  color: var(--color-text, #262626);
-  font-size: var(--type-size-2, 0.75rem);
+  color: var(--scl-color-text-default);
+  font-size: var(--scl-font-size-12);
 }
 .table td {
   padding: 0 8px;
@@ -25,18 +25,17 @@
   padding: 8px;
 }
 .table tbody td {
-  border-bottom: 1px solid var(--color-divider, #d0d0d0);
+  border-bottom: 1px solid var(--scl-color-grey-20);
 }
-.table tbody tr {
-}
+
 .table tfoot,
 .table tbody {
-  background: #ffffff;
+  background: var(--scl-color-background-default);
 }
 .table tfoot tr td {
   padding: 8px;
   font-weight: 600;
-  border-bottom: 1px solid var(--color-text, #262626);
+  border-bottom: 1px solid var(--scl-color-text-default);
 }
 .table .scale-sort-indicator svg {
   display: none;
@@ -57,7 +56,7 @@
 .table--sortable th {
   cursor: pointer;
   padding: 0 8px 0 0;
-  border-radius: 4px 4px 0 0;
+  border-radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
 }
 .table--sortable th:hover {
   padding: 0 8px 0 0;
@@ -67,7 +66,7 @@
   background: #dcdcdc;
 }
 .table--sortable th:focus {
-  box-shadow: 0 0 0 var(--border-focus, 2px) var(--color-focus, #009de0) inset;
+  box-shadow: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .table--sortable th .scale-sort-indicator svg {
   display: block;
@@ -86,22 +85,22 @@
   th[aria-sort='ascending']
   .scale-sort-indicator
   polygon:first-of-type {
-  fill: var(--color-text, #262626);
+  fill: var(--scl-color-text-default);
 }
 .table--sortable th:hover .scale-sort-indicator polygon:first-of-type {
-  fill: var(--color-primary-hover, #f90984);
+  fill: var(--scl-color-primary-hover);
 }
 .table--sortable
   th:hover[aria-sort='ascending']
   .scale-sort-indicator
   polygon:first-of-type {
-  fill: var(--color-primary-hover, #f90984);
+  fill: var(--scl-color-primary-hover);
 }
 .table--sortable
   th:active[aria-sort='ascending']
   .scale-sort-indicator
   polygon:first-of-type {
-  fill: var(--color-primary-active, #cb0068);
+  fill: var(--scl-color-primary-active);
 }
 .table--sortable th[aria-sort='ascending'] .scale-sort-indicator polygon {
   fill: transparent;
@@ -134,19 +133,19 @@
   fill: transparent;
 }
 .table--sortable th[aria-sort='descending'] .scale-sort-indicator polygon {
-  fill: var(--color-text, #262626);
+  fill: var(--scl-color-text-default);
 }
 .table--sortable
   th:hover[aria-sort='descending']
   .scale-sort-indicator
   polygon {
-  fill: var(--color-primary-hover, #f90984);
+  fill: var(--scl-color-primary-hover);
 }
 .table--sortable
   th:active[aria-sort='descending']
   .scale-sort-indicator
   polygon {
-  fill: var(--color-primary-active, #cb0068);
+  fill: var(--scl-color-primary-active);
 }
 .table--sortable th .scale-sort-indicator {
   width: 16px;

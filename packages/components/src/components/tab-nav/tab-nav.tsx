@@ -20,6 +20,7 @@ const END = 'End';
 
 @Component({
   tag: 'scale-tab-nav',
+  styleUrl: './tab-nav.css',
   shadow: true,
 })
 export class TabNav {
