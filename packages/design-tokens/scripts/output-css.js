@@ -1,5 +1,5 @@
 import postcss from 'postcss';
-import each from 'lodash/each.js';
+import map from 'lodash/map.js';
 import kebabCase from 'lodash/kebabCase.js';
 import {
   NAMESPACE_PREFIX,
@@ -17,35 +17,50 @@ const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
 const px = (x) => `${x}px`;
 const ms = (x) => `${x}ms`;
 
-export function generateCSS(tokens) {
-  const root = postcss.root();
-  const selector = postcss.rule({ selector: ':root' });
+const fontKeyPropMap = {
+  family: 'font-family',
+  size: 'font-size',
+  weight: 'font-weight',
+  lineHeight: 'line-height',
+  letterSpacing: 'letter-spacing',
+};
 
-  // Loop thru categories (first level)
-  each(tokens, (section, categoryName) => {
-    // Append a CSS comment
-    selector.append(postcss.comment({ text: categoryName.toUpperCase() }));
+const rootSelector = postcss.rule({ selector: ':root' });
+const variantComment = postcss.comment({ text: 'FONT VARIANT CLASSES' });
+const variantSelectors = [];
 
-    // Loop thru sections (second level)
-    each(section, (values, sectionName) => {
-      if (values == null) {
-        return;
-      }
+export const outputCSS = {
+  onCategory: ({ categoryName }) => {
+    rootSelector.append(postcss.comment({ text: categoryName.toUpperCase() }));
+  },
+  onSection: ({ categoryName, sectionName, tokens }) => {
+    // Create classes for type variants
+    if (categoryName === TYPE_VARIANT) {
       const path = [categoryName, sectionName];
-
-      // Handle and set the actual values
-      getDeclarationsArrayForPath(path, values).forEach((declaration) => {
-        selector.append(postcss.decl(declaration));
+      const values = tokens[categoryName][sectionName];
+      const selector = postcss.rule({
+        selector: `.scl-font-variant-${kebabCase(sectionName)}`,
       });
-    });
-  });
-
-  return {
-    ext: 'css',
-    suffix: '',
-    content: root.append([selector]).toString(),
-  };
-}
+      const declarations = getFontVariantDeclarations(path, values);
+      selector.append(declarations);
+      variantSelectors.push(selector);
+    }
+  },
+  onValue: ({ categoryName, sectionName, key, value }) => {
+    const path = [categoryName, sectionName];
+    const declaration = getDeclaration(path, key, value);
+    rootSelector.append(declaration);
+  },
+  onComplete: () => {
+    outputCSS.content = postcss
+      .root()
+      .append([rootSelector, variantComment, ...variantSelectors])
+      .toString();
+  },
+  ext: '.css',
+  suffix: '',
+  content: null,
+};
 
 /**
  * @typedef {Object} Declaration - A CSS declaration for postcss
@@ -55,24 +70,39 @@ export function generateCSS(tokens) {
 
 /**
  * @param {array} path
- * @param {Object<string.any>} values
- * @returns {Declaration[]}
+ * @param {string} key
+ * @param {any} val
+ * @returns {Declaration}
  */
-function getDeclarationsArrayForPath(path, values) {
-  const declarations = [];
+function getDeclaration(path, key, val) {
   const pathString = path
     .filter((x) => x !== 'DEFAULT')
     .map(kebabCase)
     .join('-');
 
-  each(values, (val, key) => {
-    declarations.push({
-      prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
-      value: processValue(path, key, val),
+  return postcss.decl({
+    prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
+    value: processValue(path, key, val),
+  });
+}
+
+/**
+ * @param {array} path
+ * @param {Object} values
+ * @returns {Declaration[]}
+ */
+function getFontVariantDeclarations(path, values) {
+  return map(values, (value, key) => {
+    const { prop: variableName, value: actualValue } = getDeclaration(
+      path,
+      key,
+      value
+    );
+    return postcss.decl({
+      prop: fontKeyPropMap[key],
+      value: `var(${variableName}, ${actualValue})`,
     });
   });
-
-  return declarations;
 }
 
 /**
@@ -106,7 +136,7 @@ function processValue(path, key, val) {
   }
 
   if (categoryName === COLOR) {
-    return val;
+    return val.hsl();
   }
 
   if (categoryName === SHADOW) {
