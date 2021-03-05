@@ -48,21 +48,19 @@ async function main() {
     outputs.forEach(({ onComplete }) => onComplete());
 
     // Write a file for each output
-    await Promise.all(
-      outputs.map(
-        async ({
-          filename = DEFAULT_FILENAME,
-          ext = '',
-          suffix = '',
-          content,
-        }) => {
-          await fs.writeFile(
-            join(OUTPUT_PATH, `${filename}${suffix}${ext}`),
-            content
-          );
-        }
-      )
-    );
+    await Promise.all(outputs.map(write));
+
+    async function write({
+      filename = DEFAULT_FILENAME,
+      ext = '',
+      suffix = '',
+      content,
+    }) {
+      await fs.writeFile(
+        join(OUTPUT_PATH, `${filename}${suffix}${ext}`),
+        content
+      );
+    }
   } catch (err) {
     console.log(err);
     process.exit(1);
