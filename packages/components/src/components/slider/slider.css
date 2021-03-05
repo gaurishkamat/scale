@@ -70,7 +70,7 @@
 }
 
 .slider .slider__thumb:focus {
-  box-shadow: var(--scl-shadow-focus-default);
+  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .slider .slider__thumb-wrapper:hover {
@@ -85,7 +85,7 @@
   border: none;
   height: 1px;
   border-top: 1px solid transparent;
-  background-color: var(--scl-color-restricted);
+  background-color: var(--scl-color-grey-50);
 }
 
 .slider--track-small .slider__bar {
@@ -105,7 +105,7 @@
 }
 
 .slider--disabled .slider__bar {
-  background-color: var(--scl-color-restricted);
+  background-color: var(--scl-color-grey-50);
 }
 
 .slider--disabled .slider__thumb {
@@ -113,7 +113,7 @@
 }
 
 .slider--disabled .slider__label {
-  color: var(--scl-color-restricted);
+  color: var(--scl-color-grey-50);
 }
 
 .slider--disabled .slider__thumb-wrapper:hover {

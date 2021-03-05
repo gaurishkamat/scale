@@ -21,12 +21,12 @@
 }
 
 .progress-bar--disabled .progress-bar__label {
-  color: var(--scl-color-restricted);
+  color: var(--scl-color-grey-50);
 }
 
 .progress-bar__label {
   display: block;
-  padding: 0.5rem 0;
+  padding: var(--scl-spacing-8) 0;
 }
 
 .progress-bar-wrapper {
@@ -38,13 +38,13 @@
 
 .progress-bar__outer {
   width: 100%;
-  height: 0.5rem;
-  margin: 0.5rem;
+  height: var(--scl-spacing-8);
+  margin: var(--scl-spacing-8);
   margin-left: 0;
   overflow: hidden;
   position: relative;
   border-radius: 100px;
-  border: 1px solid var(--scl-color-grey);
+  border: 1px solid var(--scl-color-grey-60);
 }
 
 .progress-bar__inner {
@@ -73,7 +73,7 @@
 }
 
 .progress-bar__status-description {
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   font-size: var(--scl-font-size-12);
   font-weight: var(--scl-font-weight-bold);
 }
