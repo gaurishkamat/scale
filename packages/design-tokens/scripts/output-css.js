@@ -132,7 +132,7 @@ function processValue(path, key, val) {
   }
 
   if (categoryName === COLOR) {
-    return val;
+    return val.hsl();
   }
 
   if (categoryName === SHADOW) {
