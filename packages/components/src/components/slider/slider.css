@@ -70,7 +70,7 @@
 }
 
 .slider .slider__thumb:focus {
-  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .slider .slider__thumb-wrapper:hover {

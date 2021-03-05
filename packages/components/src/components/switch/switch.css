@@ -98,11 +98,11 @@
 }
 
 .switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
-  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
-  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .switch input:checked ~ .switch__wrapper {

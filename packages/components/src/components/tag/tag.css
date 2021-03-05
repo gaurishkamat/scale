@@ -52,7 +52,7 @@
 .tag--dismissable button:focus {
   border: 1px solid var(--scl-color-background);
   background: var(--scl-color-black);
-  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .tag--dismissable button:hover {
   background: var(--scl-color-black);
@@ -81,7 +81,7 @@
 }
 .tag--link:focus {
   border: 1px solid white;
-  box-shadow:  0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 .tag--link.tag--variant-secondary {
   background: var(--tag-color);
