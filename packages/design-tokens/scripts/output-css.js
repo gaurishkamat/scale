@@ -1,5 +1,4 @@
 import postcss from 'postcss';
-import each from 'lodash/each.js';
 import kebabCase from 'lodash/kebabCase.js';
 import {
   NAMESPACE_PREFIX,
@@ -17,35 +16,26 @@ const pctToUnitless = (x) => `${parseFloat(x, 10) / 100}`;
 const px = (x) => `${x}px`;
 const ms = (x) => `${x}ms`;
 
-export function generateCSS(tokens) {
-  const root = postcss.root();
-  const selector = postcss.rule({ selector: ':root' });
+const root = postcss.root();
+const selector = postcss.rule({ selector: ':root' });
 
-  // Loop thru categories (first level)
-  each(tokens, (section, categoryName) => {
-    // Append a CSS comment
+export const outputCSS = {
+  onCategory: ({ categoryName }) => {
     selector.append(postcss.comment({ text: categoryName.toUpperCase() }));
-
-    // Loop thru sections (second level)
-    each(section, (values, sectionName) => {
-      if (values == null) {
-        return;
-      }
-      const path = [categoryName, sectionName];
-
-      // Handle and set the actual values
-      getDeclarationsArrayForPath(path, values).forEach((declaration) => {
-        selector.append(postcss.decl(declaration));
-      });
-    });
-  });
-
-  return {
-    ext: 'css',
-    suffix: '',
-    content: root.append([selector]).toString(),
-  };
-}
+  },
+  onSection: () => {},
+  onValue: ({ categoryName, sectionName, key, value }) => {
+    const path = [categoryName, sectionName];
+    const declaration = getDeclaration(path, key, value);
+    selector.append(postcss.decl(declaration));
+  },
+  onComplete: () => {
+    outputCSS.content = root.append([selector]).toString();
+  },
+  ext: 'css',
+  suffix: '',
+  content: null,
+};
 
 /**
  * @typedef {Object} Declaration - A CSS declaration for postcss
@@ -55,24 +45,20 @@ export function generateCSS(tokens) {
 
 /**
  * @param {array} path
- * @param {Object<string.any>} values
- * @returns {Declaration[]}
+ * @param {string} key
+ * @param {any} val
+ * @returns {Declaration}
  */
-function getDeclarationsArrayForPath(path, values) {
-  const declarations = [];
+function getDeclaration(path, key, val) {
   const pathString = path
     .filter((x) => x !== 'DEFAULT')
     .map(kebabCase)
     .join('-');
 
-  each(values, (val, key) => {
-    declarations.push({
-      prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
-      value: processValue(path, key, val),
-    });
-  });
-
-  return declarations;
+  return {
+    prop: `--${NAMESPACE_PREFIX}-${pathString}-${kebabCase(key)}`,
+    value: processValue(path, key, val),
+  };
 }
 
 /**

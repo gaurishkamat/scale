@@ -2,9 +2,10 @@
 
 import { join } from 'path';
 import fs from 'fs-extra';
+import each from 'lodash/each.js';
 import flatten from 'lodash/flatten.js';
 import getTokens from '../src/tokens.js';
-import { generateCSS } from './output-css.js';
+import { outputCSS } from './output-css.js';
 
 const FILENAME = 'design-tokens-telekom';
 const OUTPUT_PATH = './dist';
@@ -15,17 +16,40 @@ async function main() {
   await fs.emptyDir(OUTPUT_PATH);
   await fs.mkdirp(OUTPUT_PATH);
 
-  const outputs = [generateCSS];
+  const outputs = [outputCSS];
+  const tokens = getTokens();
 
   try {
-    const data = outputs.map((fn) => {
-      const tokens = getTokens(); // fresh tokens for each iteration
-      return fn(tokens);
+    // Loop through categories (level 1)
+    each(tokens, (section, categoryName) => {
+      outputs.forEach(({ onCategory }) => {
+        onCategory({ categoryName, tokens });
+      });
+
+      // Loop through sections (level 2)
+      each(section, (values, sectionName) => {
+        if (values == null) {
+          return;
+        }
+
+        outputs.forEach(({ onSection }) => {
+          onSection({ categoryName, sectionName, tokens });
+        });
+
+        // Loop through values (level 3)
+        each(values, (value, key) => {
+          outputs.forEach(({ onValue }) => {
+            onValue({ categoryName, sectionName, key, value, tokens });
+          });
+        });
+      });
     });
+
+    outputs.forEach(({ onComplete }) => onComplete());
 
     // Write a file for each output
     await Promise.all(
-      flatten(data).map(async ({ ext, suffix = '', content }) => {
+      flatten(outputs).map(async ({ ext, suffix = '', content }) => {
         await fs.writeFile(
           join(OUTPUT_PATH, `${FILENAME}${suffix}.${ext}`),
           content
