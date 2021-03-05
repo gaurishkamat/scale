@@ -286,16 +286,14 @@ const palette = {
 
 tokens[COLOR] = {
   DEFAULT: {
+    ...palette,
     primary: palette.magenta,
     primaryHover: Color('#F90984'),
     primaryActive: Color('#CB0068'),
     focus: palette.blue50,
-    ...palette,
   },
   text: {
     default: palette.grey90,
-    offset: palette.white,
-    muted: palette.grey60,
     link: palette.blue70,
     linkHover: palette.blue80,
     linkActive: palette.blue60,
@@ -308,8 +306,6 @@ tokens[COLOR] = {
     darker: palette.grey20,
     disabled: palette.grey20,
     error: palette.red60,
-    success: palette.green60,
-    pending: palette.orange60,
   },
 };
 
