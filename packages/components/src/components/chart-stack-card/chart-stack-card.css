@@ -1,9 +1,9 @@
 :host {
-  --scl-chart-stack-card-color: var(--scl-color-blue);
+  --scl-chart-stack-card-color: var(--scl-color-blue-60);
 }
 .chart-stack-card {
   color: var(--color-text);
-  --scl-chart-stack-card-color: var(--scl-color-blue);
+  --scl-chart-stack-card-color: var(--scl-color-blue-60);
 }
 .chart-stack-card .header {
   height: var(--scl-spacing-24);

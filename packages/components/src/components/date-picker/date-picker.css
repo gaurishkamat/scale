@@ -8,7 +8,7 @@ duet-date-picker {
   --duet-color-placeholder: var(--scl-color-grey, #666666);
   --duet-radius: var(--scl-radius-4);
 
-  --duet-color-text-active: var(--scl-color-text-offset, #ffffff);
+  --duet-color-text-active: var(--scl-color-white, #ffffff);
   --duet-color-button: var(--scl-color-background-default, #ffffff);
   --duet-color-surface: var(--scl-color-background-default, #ffffff);
   --duet-z-index: 600;
@@ -68,7 +68,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 .scale-date-picker .date-picker__label {
   top: 0;
   left: 0;
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -91,7 +91,7 @@ duet-date-picker .duet-date__input::placeholder {
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
 .scale-date-picker.animated .date-picker__label {
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-default);
@@ -101,7 +101,7 @@ duet-date-picker .duet-date__input::placeholder {
 
 .scale-date-picker.animated .duet-date__input::placeholder,
 duet-date-picker .duet-date__input:focus::placeholder {
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-default);
 }
@@ -135,7 +135,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker--size-small .date-picker__label {
   top: 0;
   left: 0;
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -151,7 +151,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 .scale-date-picker--size-small.scale-date-picker--focus .date-picker__label,
 .scale-date-picker--size-small.animated .date-picker__label {
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-default);
@@ -197,12 +197,12 @@ duet-date-picker .duet-date__select select:focus + .duet-date__select-label {
 
 duet-date-picker .duet-date__select select:hover + .duet-date__select-label {
   background: var(--scl-color-primary-hover);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 duet-date-picker .duet-date__select select:active + .duet-date__select-label {
   box-shadow: none;
   background: var(--scl-color-primary-active);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 
 duet-date-picker .duet-date__prev,
@@ -212,12 +212,12 @@ duet-date-picker .duet-date__next {
 duet-date-picker .duet-date__prev:hover,
 duet-date-picker .duet-date__next:hover {
   background: var(--scl-color-primary-hover);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 duet-date-picker .duet-date__prev:active,
 duet-date-picker .duet-date__next:active {
   background: var(--scl-color-primary-active);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 duet-date-picker .duet-date__prev:focus,
 duet-date-picker .duet-date__next:focus {
@@ -277,18 +277,18 @@ duet-date-picker .duet-date__day:focus {
 
 duet-date-picker .duet-date__day:hover {
   background: var(--scl-color-primary-hover);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 
 duet-date-picker .duet-date__day:active {
   box-shadow: none;
   background: var(--scl-color-primary-active);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 
 duet-date-picker .duet-date__day:hover::before {
   border-radius: var(--scl-radius-4);
   opacity: 1;
   background: transparent;
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }

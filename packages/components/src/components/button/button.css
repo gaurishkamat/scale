@@ -69,7 +69,7 @@
   text-align: center;
   border-radius: var(--scl-radius-8);
   background: var(--scl-color-primary);
-  color: var(--scl-color-text-offset, #ffffff);
+  color: var(--scl-color-white, #ffffff);
 }
 .button--variant-primary:not(.button--disabled):hover {
   background: var(--scl-color-primary-hover, #f90984);

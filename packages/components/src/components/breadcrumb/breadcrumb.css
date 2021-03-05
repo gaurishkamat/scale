@@ -18,7 +18,7 @@ li {
 
 .separator {
   display: flex;
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
 }
 
 .item,
@@ -28,7 +28,7 @@ li {
 
 .link {
   text-decoration: none;
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   border-radius: var(--scl-radius-8);
 }
 

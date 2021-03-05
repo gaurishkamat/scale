@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background: var(--scl-color-black);
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
   padding: var(--scl-spacing-32) var(--scl-spacing-24) var(--scl-spacing-24)
     var(--scl-spacing-24);
   position: relative;
@@ -11,7 +11,7 @@
 
 .footer--variant-minimal .footer {
   border-top: var(--scl-spacing-1) solid var(--scl-color-grey-20);
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
   background: var(--scl-color-background-default);
   padding: var(--scl-spacing-24);
 }
@@ -35,23 +35,23 @@
 }
 
 .footer-copyright {
-  font-size: var(--scl-font-size-14, 0.875rem);
+  font-size: var(--scl-font-size-14);
 }
 
 .footer-navigation a {
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
   text-decoration: none;
 }
 
 .footer--variant-minimal .footer-navigation a {
-  color: var(--scl-color-grey);
+  color: var(--scl-color-grey-60);
 }
 
 .footer-navigation ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: var(--scl-font-size-14, 0.875rem);
+  font-size: var(--scl-font-size-14);
   font-family: var(--scl-font-family-sans);
   font-weight: var(--scl-font-weight-extrabold);
 }
@@ -70,7 +70,7 @@
 }
 
 .footer-navigation li a:hover {
-  color: var(--scl-color-text-offset);
+  color: var(--scl-color-white);
 }
 .footer--variant-minimal .footer-navigation li a:hover {
   color: var(--scl-color-primary-hover);
