@@ -298,6 +298,8 @@ tokens[COLOR] = {
     linkHover: palette.blue80,
     linkActive: palette.blue60,
     linkVisited: palette.blue70,
+    info: palette.blue70,
+    disabled: palette.grey50,
     error: palette.red70,
   },
   background: {
