@@ -93,7 +93,11 @@ function getDeclaration(path, key, val) {
  */
 function getFontVariantDeclarations(path, values) {
   return map(values, (value, key) => {
-    const { prop: variableName, value: actualValue } = getDeclaration(path, key, value);
+    const { prop: variableName, value: actualValue } = getDeclaration(
+      path,
+      key,
+      value
+    );
     return postcss.decl({
       prop: fontKeyPropMap[key],
       value: `var(${variableName}, ${actualValue})`,

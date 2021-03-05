@@ -6,7 +6,7 @@ import color from 'color';
  * @returns {Object} "{ model: string, color: number[], valpha: number }"
  */
 export function Color(specifier) {
-  // No checks needd, already throws if `specifier` is invalid
+  // No checks needed, already throws if `specifier` is invalid
   return color(specifier);
 }
 
@@ -24,16 +24,4 @@ export function Shadow(value) {
     color: Color('rgba(0, 0, 0, 0.1)'),
     ...value,
   };
-}
-
-/**
- * Helper function to convert an alpha percentage of black (80) into a HEX value (#333333)
- * @param {number} percentage - 0-100
- * @returns {string}
- */
-export function alphaToHex(percentage) {
-  const p = 100 - Math.max(0, Math.min(100, percentage));
-  const intValue = Math.round((p / 100) * 255);
-  const hexValue = intValue.toString(16).padStart(2, '0').toUpperCase();
-  return `#${hexValue}${hexValue}${hexValue}`;
 }

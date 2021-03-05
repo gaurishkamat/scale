@@ -1,4 +1,4 @@
-import { Color, Shadow, alphaToHex } from './factories.js';
+import { Color, Shadow } from './factories.js';
 
 export const NAMESPACE_PREFIX = 'scl';
 export const SPACING = 'spacing';
@@ -148,19 +148,20 @@ tokens[TYPE_VARIANT] = {
 /* COLOR */
 
 const palette = {
-  magenta: Color('#e20074'),
-  black: Color(alphaToHex(90)),
-  white: Color('#ffffff'),
-  grey0: Color(alphaToHex(5)),
-  grey10: Color(alphaToHex(10)),
-  grey20: Color(alphaToHex(20)),
-  grey30: Color(alphaToHex(30)),
-  grey40: Color(alphaToHex(40)),
-  grey50: Color(alphaToHex(50)),
-  grey60: Color(alphaToHex(60)),
-  grey70: Color(alphaToHex(70)),
-  grey80: Color(alphaToHex(80)),
-  grey90: Color(alphaToHex(90)),
+  magenta: Color('#E20074'),
+  black: Color('#000000'),
+  white: Color('#FFFFFF'),
+  grey0: Color('#F2F2F2'),
+  grey10: Color('#E5E5E5'),
+  grey20: Color('#CCCCCC'),
+  grey30: Color('#B2B2B2'),
+  grey40: Color('#999999'),
+  grey50: Color('#7F7F7F'),
+  grey60: Color('#666666'),
+  grey70: Color('#4C4C4C'),
+  grey80: Color('#333333'),
+  grey90: Color('#191919'),
+  grey100: Color('#000000'),
   orange0: Color('#FFFCDF'),
   orange10: Color('#FFF4C6'),
   orange20: Color('#FFE9AE'),
