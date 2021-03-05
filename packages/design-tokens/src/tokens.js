@@ -300,7 +300,7 @@ tokens[COLOR] = {
     linkHover: palette.blue80,
     linkActive: palette.blue60,
     linkVisited: palette.blue70,
-    error: palette.red80,
+    error: palette.red70,
   },
   background: {
     default: palette.white,
