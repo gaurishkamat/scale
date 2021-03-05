@@ -147,7 +147,7 @@
   cursor: not-allowed;
   border-color: var(--scl-color-background-disabled);
   color: var(--scl-color-background-disabled);
-  background: var(--scl-color-text-offset);
+  background: var(--scl-color-white);
 }
 .input--disabled.animated label.input__label {
   color: var(--scl-color-background-disabled);
