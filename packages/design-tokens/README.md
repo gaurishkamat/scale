@@ -76,7 +76,7 @@ Yields the following CSS:
 
 ### Creating an output target
 
-An output target is a plain object with 4 methods and 3 props. The handlers will be fired as the tokens tree is being traversed, so you can build the contents of the file. It has the following signature:
+An output target is a plain object with 4 methods and 4 props. The callbacks will fire as the tokens tree is being traversed, so you can build the contents of the output file accordingly. It has the following signature:
 
 ```js
 export const target = {
