@@ -1,3 +1,10 @@
+/*
+  tokens "missing"
+  ------------------------
+  --scl-spacing-56
+  --scl-color-background-overlay
+*/
+
 .modal {
   top: 0;
   left: 0;
@@ -6,12 +13,12 @@
   display: none;
   z-index: 100;
   position: fixed;
-  background: rgba(108, 108, 108, 0.7);
+  background: var(--scl-color-background-overlay, rgba(108, 108, 108, 0.7));
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  padding-left: var(--spacing-4, 1rem);
-  padding-right: var(--spacing-4, 1rem);
+  padding-left: var(--scl-spacing-16);
+  padding-right: var(--scl-spacing-16);
 }
 
 .modal.modal--is-open {
@@ -36,13 +43,9 @@
   overflow-y: auto;
   flex-direction: column;
   background-color: white;
-  max-height: calc(100vh - (2 * var(--spacing-9, 5rem)));
-  border-radius: var(--radius-modal, 0.5rem);
-  box-shadow: var(
-    --shadow-modal,
-    0 20px 80px 0 rgba(0, 0, 0, 0.1),
-    0 10px 20px 0 rgba(0, 0, 0, 0.1)
-  );
+  max-height: calc(100vh - (2 * var(--scl-spacing-80)));
+  border-radius: var(--scl-radius-8);
+  box-shadow: var(--scl-shadow-level-5);
 }
 
 .modal__window .modal__body-wrapper {
@@ -50,30 +53,37 @@
   flex-shrink: 1;
 }
 
+/*
+  we're rudimentarily creating a grid here
+  in the following modal--size-*,
+  with 6, 8 and 12 columns
+*/
+
 .modal--size-small .modal__window {
   max-width: calc(
-    (6 * var(--column-width, 56px)) + (5 * var(--spacing-gutter, 2rem))
+    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
   );
 }
 
 .modal--size-default .modal__window {
   max-width: calc(
-    (8 * var(--column-width, 56px)) + (7 * var(--spacing-gutter, 2rem))
+    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
   );
 }
 
 .modal--size-large .modal__window {
   max-width: calc(
-    (12 * var(--column-width, 56px)) + (11 * var(--spacing-gutter, 2rem))
+    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
   );
 }
 
 @media (max-height: 30em) {
   .modal__window {
-    max-height: calc(100vh - (2 * var(--spacing-4, 1rem)));
+    max-height: calc(100vh - var(--scl-spacing-24));
   }
 }
 
+/* a11y: transparent border for Windows HCM */
 .modal__window:after {
   top: 0;
   left: 0;
@@ -85,7 +95,7 @@
   position: absolute;
   box-sizing: border-box;
   pointer-events: none;
-  border-radius: var(--radius-modal, 0.5rem);
+  border-radius: var(--scl-radius-8);
 }
 
 .modal__header {
@@ -93,79 +103,77 @@
   align-items: flex-start;
   flex-shrink: 0;
   justify-content: space-between;
-  margin-left: var(--spacing-5, 1.5rem);
-  margin-right: var(--spacing-5, 1.5rem);
-  padding-top: var(--spacing-5, 1.5rem);
-  padding-bottom: var(--spacing-5, 1.5rem);
+  margin-left: var(--scl-spacing-24);
+  margin-right: var(--scl-spacing-24);
+  padding-top: var(--scl-spacing-24);
+  padding-bottom: var(--scl-spacing-24);
 }
 
 .modal--has-scroll .modal__header {
-  border-bottom: var(--divider-size, 1px) solid var(--color-divider, #d0d0d0);
+  border-bottom: var(--scl-spacing-1) solid var(--scl-color-grey-20);
 }
 
 .modal__heading {
   margin: 0;
-  font-family: var(--type-family, TeleNeoWeb);
-  font-size: var(--type-size, 1.25rem);
-  font-weight: var(--type-weight-extra-bold, 800);
+  font-family: var(--scl-font-family-sans);
+  font-size: var(--scl-font-size-20);
+  font-weight: var(--scl-font-weight-extrabold);
 }
 
 .modal__close-button {
-  border: 0;
-  cursor: pointer;
+  box-sizing: border-box;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--scl-spacing-8);
+  margin-bottom: calc(-2 * var(--scl-spacing-8));
+  border: 0;
+  border-radius: var(--scl-radius-8);
   outline: none;
   background: transparent;
-  box-sizing: border-box;
-  align-items: center;
-  -moz-appearance: none;
-  justify-content: center;
-  -moz-user-select: none;
-  border-radius: var(--radius-modal, 0.5rem);
-  transition: var(--transition-generic, all 0.2s ease-in-out);
-  padding: var(--spacing-2, 0.5rem);
-  margin-bottom: calc(-2 * var(--spacing-2, 0.5rem));
-  transform: translate(
-    var(--spacing-2, 0.5rem),
-    calc(-1 * var(--spacing-2, 0.5rem))
-  );
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-default);
+  transform: translate(var(--scl-spacing-8), calc(-1 * var(--scl-spacing-8)));
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .modal__close-button:focus {
-  box-shadow: 0 0 0 var(--size-border-focus, 2px) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .modal__close-button:hover {
-  color: var(--color-primary-hover, #f90984);
+  color: var(--scl-color-primary-hover, #f90984);
 }
 
 .modal__close-button:active {
-  color: var(--color-primary-active, #cb0068);
+  color: var(--scl-color-primary-active, #cb0068);
 }
 
 .modal__body-wrapper {
-  padding-left: var(--spacing-5, 1.5rem);
-  padding-right: var(--spacing-5, 1.5rem);
+  padding-left: var(--scl-spacing-24);
+  padding-right: var(--scl-spacing-24);
 }
 
 .modal--has-body .modal__body-wrapper {
-  min-height: 3rem;
+  min-height: var(--scl-spacing-48);
 }
 
 .modal--has-body .modal__body {
-  margin-top: var(--spacing-5, 1.5rem);
-  margin-bottom: var(--spacing-5, 1.5rem);
+  margin-top: var(--scl-spacing-24);
+  margin-bottom: var(--scl-spacing-24);
 }
 
 .modal__actions {
   display: none;
   flex-shrink: 0;
   justify-content: flex-end;
-  padding: var(--spacing-5, 1.5rem);
+  padding: var(--scl-spacing-24);
 }
 
 .modal__actions ::slotted(*) {
-  margin-left: var(--spacing-2, 0.5rem);
+  margin-left: var(--scl-spacing-8);
 }
 
 .modal--has-actions .modal__actions {
@@ -177,5 +185,5 @@
 }
 
 .modal--has-scroll .modal__actions {
-  background-color: var(--background-light, #f4f4f4);
+  background-color: var(--scl-color-background-light);
 }

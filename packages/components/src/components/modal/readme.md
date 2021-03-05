@@ -28,6 +28,19 @@
 | `scaleOpen`  |             | `CustomEvent<any>` |
 
 
+## Dependencies
+
+### Depends on
+
+- [scale-icon-action-circle-close](../icons/action-circle-close)
+
+### Graph
+```mermaid
+graph TD;
+  scale-modal --> scale-icon-action-circle-close
+  style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

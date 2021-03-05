@@ -53,7 +53,7 @@ export class Breadcrumb {
                 ) : (
                   <span class="separator">
                     {this.separator || (
-                      <scale-icon-navigation-right size={12} color="#6B6B6B" />
+                      <scale-icon-navigation-right size={12} />
                     )}
                   </span>
                 );
