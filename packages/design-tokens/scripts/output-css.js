@@ -140,9 +140,6 @@ function processValue(path, key, val) {
   }
 
   if (categoryName === SHADOW) {
-
-    if (typeof val === 'string') return val
-
     return Array.from(val)
       .map(({ x, y, blur, spread, color }) => {
         return `${px(x)} ${px(y)} ${px(blur)} ${px(spread)} ${color}`;
