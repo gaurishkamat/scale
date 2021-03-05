@@ -306,6 +306,7 @@ tokens[COLOR] = {
     default: palette.white,
     light: palette.grey0,
     darker: palette.grey20,
+    overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
     error: palette.red60,
   },
