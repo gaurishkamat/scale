@@ -3,11 +3,11 @@
 import { join } from 'path';
 import fs from 'fs-extra';
 import each from 'lodash/each.js';
-import flatten from 'lodash/flatten.js';
+
 import getTokens from '../src/tokens.js';
 import { outputCSS } from './output-css.js';
 
-const FILENAME = 'design-tokens-telekom';
+const DEFAULT_FILENAME = 'design-tokens-telekom';
 const OUTPUT_PATH = './dist';
 
 main();
@@ -49,12 +49,19 @@ async function main() {
 
     // Write a file for each output
     await Promise.all(
-      flatten(outputs).map(async ({ ext, suffix = '', content }) => {
-        await fs.writeFile(
-          join(OUTPUT_PATH, `${FILENAME}${suffix}.${ext}`),
-          content
-        );
-      })
+      outputs.map(
+        async ({
+          filename = DEFAULT_FILENAME,
+          ext = '',
+          suffix = '',
+          content,
+        }) => {
+          await fs.writeFile(
+            join(OUTPUT_PATH, `${filename}${suffix}${ext}`),
+            content
+          );
+        }
+      )
     );
   } catch (err) {
     console.log(err);

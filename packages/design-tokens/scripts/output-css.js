@@ -32,7 +32,7 @@ export const outputCSS = {
   onComplete: () => {
     outputCSS.content = root.append([selector]).toString();
   },
-  ext: 'css',
+  ext: '.css',
   suffix: '',
   content: null,
 };

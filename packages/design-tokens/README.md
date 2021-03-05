@@ -58,7 +58,7 @@ tokens.color = {
   },
   text: {
     default: palette.grey90,
-    offset: palette.white,
+    error: palette.red80,
   }
 };
 ```
@@ -70,7 +70,7 @@ Yields the following CSS:
     /* COLOR */
     --scl-color-magenta: rgb(226, 0, 116);
     --scl-color-text-default: rgb(26, 26, 26);
-    --scl-color-text-offset: rgb(255, 255, 255);
+    --scl-color-text-error: rgb(195, 28, 59);
 }
 ```
 
@@ -84,13 +84,15 @@ export const target = {
   onSection: ({ categoryName, sectionName, tokens }) => {},
   onValue: ({ categoryName, sectionName, key, value, tokens }) => {},
   onComplete: () => {},
+  filename: 'design-tokens-telekom',
   ext: '',
   suffix: '',
   content: null,
 };
 ```
 
-- `ext` (string) is the extension of the output file, eg. `css`
+- `filename` (string) the name of the generated file
+- `ext` (string) is the extension of the output file, eg. `.css`
 - `suffix` (string) *optional* if present, will be appended to the filename
 - `content` (string) the actual content of the file
 
