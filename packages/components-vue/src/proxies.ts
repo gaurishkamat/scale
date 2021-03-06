@@ -433,6 +433,7 @@ export const ScaleCard = /*@__PURE__*/ Vue.extend({
     target: {} as PropOptions<Components.ScaleCard['target']>,
     rel: {} as PropOptions<Components.ScaleCard['rel']>,
     styles: {} as PropOptions<Components.ScaleCard['styles']>,
+    clickCard: {} as PropOptions<Components.ScaleCard['clickCard']>,
   },
 
 

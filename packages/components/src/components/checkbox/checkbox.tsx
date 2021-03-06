@@ -80,7 +80,9 @@ export class Checkbox {
                 <scale-icon path={this.icon} size={12}></scale-icon>
               )}
             </div>
-            <span class="input__checkbox-label">{this.label}</span>
+            <span class="input__checkbox-label">
+              {this.label ? this.label : <slot></slot>}
+            </span>
             {!!this.helperText && (
               <div
                 class="input__meta"

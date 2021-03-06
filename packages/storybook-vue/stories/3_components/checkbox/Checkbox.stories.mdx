@@ -56,7 +56,7 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" icon="SVG-PATH" />
+<ArgsTable story="Standard" />
 
 
 ## Standard Disabled
@@ -75,7 +75,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-checkbox icon="SVG-PATH" disabled @scaleChange="handleChange"></scale-checkbox>
+<scale-checkbox disabled @scaleChange="handleChange" label="Standard Disabled"></scale-checkbox>
 ```
 
 ## Selected
@@ -94,7 +94,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-checkbox icon="SVG-PATH" checked @scaleChange="handleChange"></scale-checkbox>
+<scale-checkbox checked @scaleChange="handleChange" label="Selected"></scale-checkbox>
 ```
 
 ## Selected Disabled
@@ -114,7 +114,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-checkbox icon="SVG-PATH" checked disabled @scaleChange="handleChange"></scale-checkbox>
+<scale-checkbox checked disabled @scaleChange="handleChange" label="Selected Disabled"></scale-checkbox>
 ```
 
 
@@ -135,5 +135,28 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-checkbox icon="SVG-PATH" status="error" @scaleChange="handleChange"></scale-checkbox>
+<scale-checkbox status="error" @scaleChange="handleChange" label="Standard with error"></scale-checkbox>
+```
+
+
+## Custom Label Slot
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Label Slot"
+    args={{}}
+  >
+    {() => ({
+        components: { ScaleCheckbox },
+        props: {
+            label: String,
+            ...ScaleCheckbox.props
+        },
+        template: `<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>`,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>
 ```

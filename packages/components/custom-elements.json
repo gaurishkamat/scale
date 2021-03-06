@@ -375,6 +375,10 @@
       },
       "attributes": [
         {
+          "name": "click-card",
+          "description": ""
+        },
+        {
           "name": "label",
           "description": "(optional) Label of the card"
         },

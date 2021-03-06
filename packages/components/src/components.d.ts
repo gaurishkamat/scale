@@ -174,6 +174,7 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleCard {
+        "clickCard"?: any;
         /**
           * (optional) Label of the card
          */
@@ -7179,6 +7180,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleCard {
+        "clickCard"?: any;
         /**
           * (optional) Label of the card
          */
