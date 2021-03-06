@@ -24,7 +24,7 @@ import AppFooter from './AppFooter.vue';
       },
     },
     variant: {
-      control: { type: 'select', options: ['standard', 'minimal'] }
+      control: { type: 'select', options: ['angular', 'standard', 'minimal'] }
     },
   }}
 />
@@ -76,6 +76,33 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 
+## Angular
+
+<Canvas withSource="none">
+  <Story
+    name='Angular'
+    inline={false}
+    height={500}
+    args={{
+      claimLang: 'en',
+      footerNavigation: JSON.stringify(footerNavigation),
+      variant: 'angular'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+```html
+<scale-app-footer
+  claim-lang="en"
+  :footer-navigation="footerNavigation"
+  variant="angular"
+>
+</scale-app-footer>
+```
+
 ## Minimal
 
 <Canvas withSource="none">
@@ -93,7 +120,6 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story='Minimal' />
 
 ```html
 <scale-app-footer
