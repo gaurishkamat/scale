@@ -26,6 +26,7 @@ const customElementTags: string[] = [
  'scale-chart-stack-card',
  'scale-checkbox',
  'scale-collapsible',
+ 'scale-data-grid',
  'scale-date-picker',
  'scale-divider',
  'scale-dropdown',
@@ -215,10 +216,15 @@ const customElementTags: string[] = [
  'scale-link',
  'scale-list',
  'scale-list-item',
+ 'scale-menu',
+ 'scale-menu-divider',
+ 'scale-menu-item',
+ 'scale-menu-list',
  'scale-modal',
  'scale-nav-icon',
  'scale-nav-main',
  'scale-nav-segment',
+ 'scale-pagination',
  'scale-progress-bar',
  'scale-radio-button',
  'scale-sidebar-nav',
@@ -487,6 +493,32 @@ export const ScaleCollapsible = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-collapsible', ['scaleExpand']),
+});
+
+
+export const ScaleDataGrid = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    fields: {} as PropOptions<Components.ScaleDataGrid['fields']>,
+    freezeHeader: {} as PropOptions<Components.ScaleDataGrid['freezeHeader']>,
+    heading: {} as PropOptions<Components.ScaleDataGrid['heading']>,
+    height: {} as PropOptions<Components.ScaleDataGrid['height']>,
+    hideBorder: {} as PropOptions<Components.ScaleDataGrid['hideBorder']>,
+    hideHeader: {} as PropOptions<Components.ScaleDataGrid['hideHeader']>,
+    hideInfo: {} as PropOptions<Components.ScaleDataGrid['hideInfo']>,
+    hideMenu: {} as PropOptions<Components.ScaleDataGrid['hideMenu']>,
+    numbered: {} as PropOptions<Components.ScaleDataGrid['numbered']>,
+    pageSize: {} as PropOptions<Components.ScaleDataGrid['pageSize']>,
+    rows: {} as PropOptions<Components.ScaleDataGrid['rows']>,
+    selectable: {} as PropOptions<Components.ScaleDataGrid['selectable']>,
+    selection: {} as PropOptions<Components.ScaleDataGrid['selection']>,
+    shadeAlternate: {} as PropOptions<Components.ScaleDataGrid['shadeAlternate']>,
+    styles: {} as PropOptions<Components.ScaleDataGrid['styles']>,
+    visible: {} as PropOptions<Components.ScaleDataGrid['visible']>,
+  },
+
+
+  render: createCommonRender('scale-data-grid', ['scaleEdit', 'scaleSort']),
 });
 
 
@@ -3377,6 +3409,65 @@ export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 });
 
 
+export const ScaleMenu = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    closeOnSelect: {} as PropOptions<Components.ScaleMenu['closeOnSelect']>,
+    direction: {} as PropOptions<Components.ScaleMenu['direction']>,
+    open: {} as PropOptions<Components.ScaleMenu['open']>,
+    styles: {} as PropOptions<Components.ScaleMenu['styles']>,
+  },
+
+
+  render: createCommonRender('scale-menu', ['scaleOpen', 'scaleClose', 'scaleSelect']),
+});
+
+
+export const ScaleMenuDivider = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleMenuDivider['styles']>,
+  },
+
+
+  render: createCommonRender('scale-menu-divider', []),
+});
+
+
+export const ScaleMenuItem = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    active: {} as PropOptions<Components.ScaleMenuItem['active']>,
+    cascade: {} as PropOptions<Components.ScaleMenuItem['cascade']>,
+    checked: {} as PropOptions<Components.ScaleMenuItem['checked']>,
+    disabled: {} as PropOptions<Components.ScaleMenuItem['disabled']>,
+    styles: {} as PropOptions<Components.ScaleMenuItem['styles']>,
+    value: {} as PropOptions<Components.ScaleMenuItem['value']>,
+  },
+
+
+  methods: {
+    setFocus: createCommonMethod('setFocus') as Components.ScaleMenuItem['setFocus'],
+    removeFocus: createCommonMethod('removeFocus') as Components.ScaleMenuItem['removeFocus'],
+  },
+  render: createCommonRender('scale-menu-item', []),
+});
+
+
+export const ScaleMenuList = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    styles: {} as PropOptions<Components.ScaleMenuList['styles']>,
+  },
+
+
+  methods: {
+    opened: createCommonMethod('opened') as Components.ScaleMenuList['opened'],
+  },
+  render: createCommonRender('scale-menu-list', ['scaleSelect']),
+});
+
+
 export const ScaleModal = /*@__PURE__*/ Vue.extend({
 
   props: {
@@ -3436,6 +3527,21 @@ export const ScaleNavSegment = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-nav-segment', []),
+});
+
+
+export const ScalePagination = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    hideBorders: {} as PropOptions<Components.ScalePagination['hideBorders']>,
+    pageSize: {} as PropOptions<Components.ScalePagination['pageSize']>,
+    startElement: {} as PropOptions<Components.ScalePagination['startElement']>,
+    totalElements: {} as PropOptions<Components.ScalePagination['totalElements']>,
+    styles: {} as PropOptions<Components.ScalePagination['styles']>,
+  },
+
+
+  render: createCommonRender('scale-pagination', ['scalePagination']),
 });
 
 

@@ -40,6 +40,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
 ### Depends on
 
 - [scale-icon](../icon)
@@ -48,6 +52,7 @@
 ```mermaid
 graph TD;
   scale-dropdown --> scale-icon
+  scale-data-grid --> scale-dropdown
   style scale-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

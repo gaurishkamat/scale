@@ -34,6 +34,7 @@ export class Modal {
   modalWindow: HTMLElement;
   modalBody: HTMLElement;
   focusableElements: HTMLElement[] = [];
+  // @ts-ignore
   resizeObserver: ResizeObserver;
 
   @Element() hostElement: HTMLElement;
@@ -110,6 +111,7 @@ export class Modal {
     );
     // Set `hasScroll` state dynamically on resize.
     if (supportsResizeObserver) {
+      // @ts-ignore
       this.resizeObserver = new ResizeObserver(() => {
         this.setHasScroll();
       });

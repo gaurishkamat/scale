@@ -26,6 +26,7 @@
  - [app-navigation-main-mobile](../app-navigation-main-mobile)
  - [scale-app-footer](../app-footer)
  - [scale-checkbox](../checkbox)
+ - [scale-data-grid](../data-grid)
  - [scale-dropdown](../dropdown)
  - [scale-input](../input)
  - [scale-link](../link)
@@ -39,6 +40,7 @@ graph TD;
   app-navigation-main-mobile --> scale-icon
   scale-app-footer --> scale-icon
   scale-checkbox --> scale-icon
+  scale-data-grid --> scale-icon
   scale-dropdown --> scale-icon
   scale-input --> scale-icon
   scale-link --> scale-icon

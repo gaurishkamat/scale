@@ -70,6 +70,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
 ### Depends on
 
 - [scale-icon](../icon)
@@ -78,6 +82,7 @@
 ```mermaid
 graph TD;
   scale-link --> scale-icon
+  scale-data-grid --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
