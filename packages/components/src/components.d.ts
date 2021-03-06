@@ -15,13 +15,14 @@ export namespace Components {
         "claim": boolean;
         "claimLang": string;
         "color": string;
-        "href": string;
+        "href"?: string;
+        "logoTitle"?: string;
     }
     interface AppMegaMenu {
         "activeRouteId": string;
         "hide": () => void;
         "isActive": boolean;
-        "navigation": MenuItem[];
+        "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {
         "activeRouteId": string;
@@ -96,6 +97,11 @@ export namespace Components {
         "addonNavigation"?: any;
         "claimLang": string;
         "iconNavigation"?: any;
+        "isMegaMenuVisible"?: boolean;
+        "isMobileMenuVisible"?: boolean;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -104,9 +110,11 @@ export namespace Components {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
-        "brandTitle"?: string;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -4648,6 +4656,49 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleNavIcon {
+        "clickLink": any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        "icon": string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        "isMobileMenuOpen"?: boolean;
+        "refMobileMenuToggle"?: any;
+    }
+    interface ScaleNavMain {
+        "clickLink": any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        /**
+          * (optional) if this mega-menu is visible
+         */
+        "isMegaMenuVisible"?: boolean;
+        /**
+          * (optional) name value
+         */
+        "name": string;
+    }
+    interface ScaleNavSegment {
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+    }
     interface ScaleProgressBar {
         /**
           * (optional) Progress bar busy switch
@@ -6415,6 +6466,24 @@ declare global {
         prototype: HTMLScaleModalElement;
         new (): HTMLScaleModalElement;
     };
+    interface HTMLScaleNavIconElement extends Components.ScaleNavIcon, HTMLStencilElement {
+    }
+    var HTMLScaleNavIconElement: {
+        prototype: HTMLScaleNavIconElement;
+        new (): HTMLScaleNavIconElement;
+    };
+    interface HTMLScaleNavMainElement extends Components.ScaleNavMain, HTMLStencilElement {
+    }
+    var HTMLScaleNavMainElement: {
+        prototype: HTMLScaleNavMainElement;
+        new (): HTMLScaleNavMainElement;
+    };
+    interface HTMLScaleNavSegmentElement extends Components.ScaleNavSegment, HTMLStencilElement {
+    }
+    var HTMLScaleNavSegmentElement: {
+        prototype: HTMLScaleNavSegmentElement;
+        new (): HTMLScaleNavSegmentElement;
+    };
     interface HTMLScaleProgressBarElement extends Components.ScaleProgressBar, HTMLStencilElement {
     }
     var HTMLScaleProgressBarElement: {
@@ -6724,6 +6793,9 @@ declare global {
         "scale-list": HTMLScaleListElement;
         "scale-list-item": HTMLScaleListItemElement;
         "scale-modal": HTMLScaleModalElement;
+        "scale-nav-icon": HTMLScaleNavIconElement;
+        "scale-nav-main": HTMLScaleNavMainElement;
+        "scale-nav-segment": HTMLScaleNavSegmentElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-radio-button": HTMLScaleRadioButtonElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
@@ -6749,6 +6821,7 @@ declare namespace LocalJSX {
         "claimLang"?: string;
         "color"?: string;
         "href"?: string;
+        "logoTitle"?: string;
     }
     interface AppMegaMenu {
         "activeRouteId"?: string;
@@ -6826,6 +6899,11 @@ declare namespace LocalJSX {
         "addonNavigation"?: any;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "isMegaMenuVisible"?: boolean;
+        "isMobileMenuVisible"?: boolean;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -6834,9 +6912,11 @@ declare namespace LocalJSX {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
-        "brandTitle"?: string;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -11428,6 +11508,49 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface ScaleNavIcon {
+        "clickLink"?: any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        "icon"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        "isMobileMenuOpen"?: boolean;
+        "refMobileMenuToggle"?: any;
+    }
+    interface ScaleNavMain {
+        "clickLink"?: any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        /**
+          * (optional) if this mega-menu is visible
+         */
+        "isMegaMenuVisible"?: boolean;
+        /**
+          * (optional) name value
+         */
+        "name"?: string;
+    }
+    interface ScaleNavSegment {
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+    }
     interface ScaleProgressBar {
         /**
           * (optional) Progress bar busy switch
@@ -12213,6 +12336,9 @@ declare namespace LocalJSX {
         "scale-list": ScaleList;
         "scale-list-item": ScaleListItem;
         "scale-modal": ScaleModal;
+        "scale-nav-icon": ScaleNavIcon;
+        "scale-nav-main": ScaleNavMain;
+        "scale-nav-segment": ScaleNavSegment;
         "scale-progress-bar": ScaleProgressBar;
         "scale-radio-button": ScaleRadioButton;
         "scale-sidebar-nav": ScaleSidebarNav;
@@ -12442,6 +12568,9 @@ declare module "@stencil/core" {
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
+            "scale-nav-icon": LocalJSX.ScaleNavIcon & JSXBase.HTMLAttributes<HTMLScaleNavIconElement>;
+            "scale-nav-main": LocalJSX.ScaleNavMain & JSXBase.HTMLAttributes<HTMLScaleNavMainElement>;
+            "scale-nav-segment": LocalJSX.ScaleNavSegment & JSXBase.HTMLAttributes<HTMLScaleNavSegmentElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;

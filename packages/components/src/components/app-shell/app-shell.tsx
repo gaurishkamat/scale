@@ -17,10 +17,11 @@ import classNames from 'classnames';
 })
 export class Shell {
   @Element() hostElement: HTMLStencilElement;
-  // DEPRECATED - portalName should replace brandTitle
-  @Prop() brandTitle?: string = '';
   @Prop() portalName?: string = '';
   @Prop() claimLang?: string = 'de';
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoClick?: any;
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
@@ -53,7 +54,10 @@ export class Shell {
             <slot name="header"></slot>
           ) : (
             <scale-app-header
-              portalName={this.portalName || this.brandTitle}
+              logoClick={this.logoClick}
+              logoHref={this.logoHref}
+              logoTitle={this.logoTitle}
+              portalName={this.portalName}
               mainNavigation={this.mainNavigation}
               iconNavigation={this.iconNavigation}
               sectorNavigation={this.sectorNavigation}

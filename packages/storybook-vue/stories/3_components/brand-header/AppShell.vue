@@ -1,5 +1,8 @@
 <template>
   <scale-app-shell
+    :logo-click="logoClick"
+    :logo-title="logoTitle"
+    :logo-href="logoHref"
     :portal-name="portalName"
     :claim-lang="claimLang"
     :main-navigation="mainNavigation"
@@ -17,6 +20,9 @@
 <script>
 export default {
   props: {
+    logoTitle: String,
+    logoHref: String,
+    logoClick: Function,
     portalName: String,
     claimLang: String,
     mainNavigation: String,

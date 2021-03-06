@@ -216,6 +216,9 @@ const customElementTags: string[] = [
  'scale-list',
  'scale-list-item',
  'scale-modal',
+ 'scale-nav-icon',
+ 'scale-nav-main',
+ 'scale-nav-segment',
  'scale-progress-bar',
  'scale-radio-button',
  'scale-sidebar-nav',
@@ -241,6 +244,7 @@ export const AppLogo = /*@__PURE__*/ Vue.extend({
 
   props: {
     href: {} as PropOptions<Components.AppLogo['href']>,
+    logoTitle: {} as PropOptions<Components.AppLogo['logoTitle']>,
     color: {} as PropOptions<Components.AppLogo['color']>,
     claim: {} as PropOptions<Components.AppLogo['claim']>,
     claimLang: {} as PropOptions<Components.AppLogo['claimLang']>,
@@ -341,6 +345,9 @@ export const ScaleAppFooter = /*@__PURE__*/ Vue.extend({
 export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 
   props: {
+    logoHref: {} as PropOptions<Components.ScaleAppHeader['logoHref']>,
+    logoTitle: {} as PropOptions<Components.ScaleAppHeader['logoTitle']>,
+    logoClick: {} as PropOptions<Components.ScaleAppHeader['logoClick']>,
     claimLang: {} as PropOptions<Components.ScaleAppHeader['claimLang']>,
     portalName: {} as PropOptions<Components.ScaleAppHeader['portalName']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppHeader['mainNavigation']>,
@@ -349,6 +356,8 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
     addonNavigation: {} as PropOptions<Components.ScaleAppHeader['addonNavigation']>,
     activeRouteId: {} as PropOptions<Components.ScaleAppHeader['activeRouteId']>,
     activeSectorId: {} as PropOptions<Components.ScaleAppHeader['activeSectorId']>,
+    isMegaMenuVisible: {} as PropOptions<Components.ScaleAppHeader['isMegaMenuVisible']>,
+    isMobileMenuVisible: {} as PropOptions<Components.ScaleAppHeader['isMobileMenuVisible']>,
   },
 
 
@@ -359,9 +368,11 @@ export const ScaleAppHeader = /*@__PURE__*/ Vue.extend({
 export const ScaleAppShell = /*@__PURE__*/ Vue.extend({
 
   props: {
-    brandTitle: {} as PropOptions<Components.ScaleAppShell['brandTitle']>,
     portalName: {} as PropOptions<Components.ScaleAppShell['portalName']>,
     claimLang: {} as PropOptions<Components.ScaleAppShell['claimLang']>,
+    logoHref: {} as PropOptions<Components.ScaleAppShell['logoHref']>,
+    logoTitle: {} as PropOptions<Components.ScaleAppShell['logoTitle']>,
+    logoClick: {} as PropOptions<Components.ScaleAppShell['logoClick']>,
     mainNavigation: {} as PropOptions<Components.ScaleAppShell['mainNavigation']>,
     iconNavigation: {} as PropOptions<Components.ScaleAppShell['iconNavigation']>,
     sectorNavigation: {} as PropOptions<Components.ScaleAppShell['sectorNavigation']>,
@@ -3382,6 +3393,49 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-modal', ['scaleOpen', 'scaleClose']),
+});
+
+
+export const ScaleNavIcon = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    isActive: {} as PropOptions<Components.ScaleNavIcon['isActive']>,
+    href: {} as PropOptions<Components.ScaleNavIcon['href']>,
+    clickLink: {} as PropOptions<Components.ScaleNavIcon['clickLink']>,
+    icon: {} as PropOptions<Components.ScaleNavIcon['icon']>,
+    isMobileMenuOpen: {} as PropOptions<Components.ScaleNavIcon['isMobileMenuOpen']>,
+    refMobileMenuToggle: {} as PropOptions<Components.ScaleNavIcon['refMobileMenuToggle']>,
+  },
+
+
+  render: createCommonRender('scale-nav-icon', []),
+});
+
+
+export const ScaleNavMain = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    isActive: {} as PropOptions<Components.ScaleNavMain['isActive']>,
+    isMegaMenuVisible: {} as PropOptions<Components.ScaleNavMain['isMegaMenuVisible']>,
+    href: {} as PropOptions<Components.ScaleNavMain['href']>,
+    name: {} as PropOptions<Components.ScaleNavMain['name']>,
+    clickLink: {} as PropOptions<Components.ScaleNavMain['clickLink']>,
+  },
+
+
+  render: createCommonRender('scale-nav-main', []),
+});
+
+
+export const ScaleNavSegment = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    isActive: {} as PropOptions<Components.ScaleNavSegment['isActive']>,
+    href: {} as PropOptions<Components.ScaleNavSegment['href']>,
+  },
+
+
+  render: createCommonRender('scale-nav-segment', []),
 });
 
 

@@ -17,6 +17,32 @@ import AppShell from './AppShell.vue';
   title='Components/Brand Header & Navigation'
   component={AppShell}
   argTypes={{
+    activeRouteId: {
+      control: {
+        type: 'text',
+      },
+    },
+    activeSectorId: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoTitle: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoHref: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoClick: {
+      control: {
+        type: 'disabled',
+      },
+      description: 'logo click event handler custom function'
+    },
     mainNavigation: {
       control: {
         type: 'text',
@@ -77,14 +103,19 @@ import AppShell from './AppShell.vue';
       sectorNavigation: JSON.stringify(sectorNavigation),
       activeRouteId: 'Third Level 24',
       activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
     }}
   >
     {() => ({
         components: { AppShell },
         props: AppShell.props,
         template: `
-        <div style="margin: 0 -1rem;">
+        <div class="brand-header-spacing">
           <scale-app-shell
+            :logo-title="logoTitle"
+            :logo-href="logoHref"
+            :logo-click="logoClick"
             :portal-name="portalName"
             :claim-lang="claimLang"
             :main-navigation="mainNavigation"
@@ -109,6 +140,9 @@ import AppShell from './AppShell.vue';
 ```html
 <scale-app-shell
   claim-lang="en"
+  :logo-title="logoTitle"
+  :logo-href="logoHref"
+  :logo-click="onLogoClick"
   :portal-name="portalName"
   :main-navigation="mainNavigation"
   :icon-navigation="iconNavigation"
@@ -144,10 +178,21 @@ import AppShell from './AppShell.vue';
     {() => ({
         components: { AppShell },
         props: AppShell.props,
+        methods: {
+            handleMouseEnter: function() {
+                this.$refs.header.isMegaMenuVisible=true;
+                this.$refs.navMainWithMegaMenu.isMegaMenuVisible=true;
+            },
+            handleMouseLeave: function() {
+                this.$refs.header.isMegaMenuVisible=false;
+                this.$refs.navMainWithMegaMenu.isMegaMenuVisible=false;
+            },
+        },
         template: `
-        <div style="margin: 0 -1rem;">
+        <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
+                ref="header"
                 slot="header"
                 id="header"
                 :main-navigation="mainNavigation"
@@ -157,7 +202,15 @@ import AppShell from './AppShell.vue';
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
-                <div slot="menu-main"><h1>main nav slot</h1></div>
+                <div slot="menu-main">
+                  <scale-nav-main name="Custom Item #1"></scale-nav-main>
+                  <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu" ref="navMainWithMegaMenu" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+                    <app-mega-menu>
+                      <div slot="custom-body"><pre>custom-body</pre></div>
+                    </app-mega-menu></scale-nav-main>
+                  <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+                  <scale-nav-main name="Custom Item #4"></scale-nav-main>
+                </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
             <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -169,6 +222,7 @@ import AppShell from './AppShell.vue';
 </Canvas>
 
 ```html
+<body>
   <scale-app-shell>
     <scale-app-header
         slot="header"
@@ -180,11 +234,35 @@ import AppShell from './AppShell.vue';
         :active-route-id="activeRouteId"
         :active-sector-id="activeSectorId"
     >
-        <div slot="menu-main"><h1>main nav slot</h1></div>
+        <div slot="menu-main">
+          <scale-nav-main name="Custom Item #1"></scale-nav-main>
+          <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu">
+            <app-mega-menu>
+              <div slot="custom-body"><pre>custom-body</pre></div>
+            </app-mega-menu>
+          </scale-nav-main>
+          <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+          <scale-nav-main name="Custom Item #4"></scale-nav-main>
+        </div>
     </scale-app-header>
     <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
     <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
   </scale-app-shell>
+  <script>
+      const header = document.getElementById('header');
+      const navMainWithMegaMenu = document.getElementById(
+        'nav-main-with-mega-menu'
+      );
+      navMainWithMegaMenu.addEventListener('mouseenter', function() {
+        navMainWithMegaMenu.isMegaMenuVisible = true;
+        header.isMegaMenuVisible = true;
+      });
+      navMainWithMegaMenu.addEventListener('mouseleave', function() {
+        navMainWithMegaMenu.isMegaMenuVisible = false;
+        header.isMegaMenuVisible = false;
+      });
+  </script>
+</body>
 ```
 
 
@@ -210,7 +288,7 @@ import AppShell from './AppShell.vue';
         components: { AppShell },
         props: AppShell.props,
         template: `
-        <div style="margin: 0 -1rem;">
+        <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
                 slot="header"
@@ -222,15 +300,30 @@ import AppShell from './AppShell.vue';
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
-                <div slot="menu-icon"><h1>icon nav slot</h1></div>
+                <div slot="menu-icon">
+                  <scale-nav-icon icon="action-mute">
+                    Mute
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-play">
+                    Play
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-pause">
+                    Pause
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-fast-forward">
+                    Forward
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-favorite">
+                    Favorite
+                  </scale-nav-icon>
+                </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
             <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
           </scale-app-shell>
         </div>
       `
-    })
-    }
+    })}
   </Story>
 </Canvas>
 
@@ -246,7 +339,23 @@ import AppShell from './AppShell.vue';
         :active-route-id="activeRouteId"
         :active-sector-id="activeSectorId"
     >
-        <div slot="menu-icon"><h1>icon nav slot</h1></div>
+        <div slot="menu-icon">
+            <scale-nav-icon icon="action-mute">
+                Mute
+            </scale-nav-icon>
+            <scale-nav-icon icon="action-play">
+                Play
+            </scale-nav-icon>
+            <scale-nav-icon icon="action-pause">
+                Pause
+            </scale-nav-icon>
+            <scale-nav-icon icon="action-fast-forward">
+                Forward
+            </scale-nav-icon>
+            <scale-nav-icon icon="action-favorite">
+                Favorite
+            </scale-nav-icon>
+        </div>
     </scale-app-header>
     <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
     <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -276,7 +385,7 @@ import AppShell from './AppShell.vue';
         components: { AppShell },
         props: AppShell.props,
         template: `
-        <div style="margin: 0 -1rem;">
+        <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
                 slot="header"
@@ -287,7 +396,14 @@ import AppShell from './AppShell.vue';
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
-                <div slot="menu-sector"><h1>sector nav slot</h1></div>
+                <div slot="menu-sector">
+                  <scale-nav-segment is-active="true" href="#custom-sector-1">
+                    Custom Sector #1
+                  </scale-nav-segment>
+                  <scale-nav-segment href="#custom-sector-2">
+                    Custom Sector #2
+                  </scale-nav-segment>
+                </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
             <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -310,7 +426,14 @@ import AppShell from './AppShell.vue';
         :active-route-id="activeRouteId"
         :active-sector-id="activeSectorId"
     >
-        <div slot="menu-sector"><h1>sector nav slot</h1></div>
+        <div slot="menu-sector">
+          <scale-nav-segment is-active="true" href="#custom-sector-1" @click="handleClick">
+            Custom Sector #1
+          </scale-nav-segment>
+          <scale-nav-segment href="#custom-sector-2" @click="handleClick">
+            Custom Sector #2
+          </scale-nav-segment>
+        </div>
     </scale-app-header>
     <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
     <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -340,7 +463,7 @@ import AppShell from './AppShell.vue';
         components: { AppShell },
         props: AppShell.props,
         template: `
-        <div style="margin: 0 -1rem;">
+        <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
                 slot="header"
@@ -351,7 +474,14 @@ import AppShell from './AppShell.vue';
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
             >
-                <div slot="menu-addon"><h1>addon nav slot</h1></div>
+                <div slot="menu-addon">
+                  <scale-nav-segment is-active="true" href="#custom-addon-1">
+                    Custom Addon #1
+                  </scale-nav-segment>
+                  <scale-nav-segment href="#custom-addon-2">
+                    Custom Addon #2
+                  </scale-nav-segment>
+                </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
             <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
@@ -374,9 +504,177 @@ import AppShell from './AppShell.vue';
         :active-route-id="activeRouteId"
         :active-sector-id="activeSectorId"
     >
-        <div slot="menu-addon"><h1>addon nav slot</h1></div>
+        <div slot="menu-addon">
+          <scale-nav-segment is-active="true" href="#custom-addon-1" @click="handleClick">
+            Custom Addon #1
+          </scale-nav-segment>
+          <scale-nav-segment href="#custom-addon-2" @click="handleClick">
+            Custom Addon #2
+          </scale-nav-segment>
+        </div>
     </scale-app-header>
     <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
     <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
   </scale-app-shell>
+```
+
+
+## Custom Logo
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Logo'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="logo">
+                  <app-logo
+                    claim
+                    href="#custom"
+                    logo-title="Custom"
+                  ></app-logo>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `
+    })}
+  </Story>
+</Canvas>
+
+```html
+  <scale-app-shell>
+    <scale-app-header
+        slot="header"
+        id="header"
+        :main-navigation="mainNavigation"
+        :icon-navigation="iconNavigation"
+        :sector-navigation="sectorNavigation"
+        :custom-class="customClass"
+        :active-route-id="activeRouteId"
+        :active-sector-id="activeSectorId"
+    >
+        <div slot="logo">
+          <app-logo
+            claim
+            href="#custom"
+            logo-title="Custom"
+            @click="handleClick"
+          ></app-logo>
+        </div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+    <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+  </scale-app-shell>
+```
+
+
+## Custom Mobile Menu
+
+<Canvas withSource="none">
+  <Story
+    name='Custom Mobile Menu'
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => ({
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                ref="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+              <div slot="menu-mobile"><pre>menu-mobile</pre></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      mounted () {
+          document.body.addEventListener('keydown', (event) => {
+              if (['Escape', 'Esc'].includes(event.key)) {
+                  event.preventDefault();
+                  this.$refs.header && this.$refs.header.dispatchEvent(new Event('closeMenu'));
+              }
+          });
+      }
+    })}
+  </Story>
+</Canvas>
+
+```html
+<body>
+    <scale-app-shell>
+        <scale-app-header
+            slot="header"
+            id="header"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :custom-class="customClass"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+        >
+            <div slot="menu-mobile"><pre>menu-mobile</pre></div>
+        </scale-app-header>
+        <div style="height: 800px; padding: 48px 24px;">Scroll to test header behavior</div>
+        <div style="height: 800px; padding: 48px 24px;">Scroll more to test header behavior</div>
+    </scale-app-shell>
+    <script>
+        const header = document.getElementById('header');
+        document.body.addEventListener('keydown', function(event) {
+            if (['Escape', 'Esc'].includes(event.key)) {
+                event.preventDefault();
+                header.dispatchEvent(new Event('closeMenu'));
+            }
+        });
+    </script>
+</body>
 ```
