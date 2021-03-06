@@ -287,3 +287,11 @@
     margin-right: 1rem;
   }
 }
+
+@media (min-width: 1552px) {
+  .header .header__nav-content,
+  .header .header__brand-content {
+    margin: 0 auto;
+    max-width: var(--header-max-width);
+  }
+}

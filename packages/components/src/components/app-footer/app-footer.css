@@ -1,4 +1,6 @@
 .footer {
+  --footer-max-width: inherit;
+
   width: 100%;
   background: var(--scl-color-black);
   color: var(--scl-color-white);
@@ -198,5 +200,12 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: 'branding copyright navigation';
+  }
+}
+
+@media (min-width: 1552px) {
+  .footer-content {
+    margin: 0 auto;
+    max-width: var(--footer-max-width);
   }
 }

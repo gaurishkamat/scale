@@ -5,7 +5,9 @@
 }
 
 .content {
-  background: #fff;
+  background: var(--header-content-background, #fff);
+  padding-left: var(--header-content-side-padding, 24px);
+  padding-right: var(--header-content-side-padding, 24px);
 }
 
 .shell {
@@ -14,6 +16,7 @@
   --header-border-radius: 8px;
   --header-transition-speed: 0.3s;
   --header-brand-collapsed-height: 4px;
+  --header-max-width: inherit;
 }
 @media (max-width: 1023px) {
   .shell .content {
@@ -31,5 +34,11 @@
   .content {
     transition: padding-top var(--header-transition-speed) ease-in-out;
     padding-top: calc(var(--header-brand-height) + var(--header-nav-height));
+  }
+}
+@media (min-width: 1552px) {
+  .shell .content {
+    margin: 0 auto;
+    max-width: var(--header-max-width);
   }
 }
