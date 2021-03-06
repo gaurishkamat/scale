@@ -38,6 +38,19 @@
 | `scaleKeyDown` | Emitted on keydown.                     | `CustomEvent<KeyboardEvent>`          |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
+### Graph
+```mermaid
+graph TD;
+  scale-data-grid --> scale-text-field
+  style scale-text-field fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

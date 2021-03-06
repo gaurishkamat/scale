@@ -502,6 +502,75 @@
       ]
     },
     {
+      "name": "scale-data-grid",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "fields",
+          "description": "Input fields config array"
+        },
+        {
+          "name": "freeze-header",
+          "description": "(optional) Freeze header row from scrolling"
+        },
+        {
+          "name": "heading",
+          "description": "(optional) Heading string"
+        },
+        {
+          "name": "height",
+          "description": "(optional) Set static table height, by default will auto-resize"
+        },
+        {
+          "name": "hide-border",
+          "description": "(optional) Set to true to remove border"
+        },
+        {
+          "name": "hide-header",
+          "description": "(optional) Set to true to hide header row"
+        },
+        {
+          "name": "hide-info",
+          "description": "(optional) Set to true to remove info footer block including pagination and selection status"
+        },
+        {
+          "name": "hide-menu",
+          "description": "(optional) Set to true to hide settings menu"
+        },
+        {
+          "name": "numbered",
+          "description": "(optional) Set to true to add numbers column"
+        },
+        {
+          "name": "page-size",
+          "description": "(optional) Set number of rows to display per pagination page"
+        },
+        {
+          "name": "rows",
+          "description": "Input data array"
+        },
+        {
+          "name": "selectable",
+          "description": "(optional) Set to true to add selection column"
+        },
+        {
+          "name": "shade-alternate",
+          "description": "(optional) Shade every second row darker"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected css styles"
+        },
+        {
+          "name": "visible",
+          "description": "(optional) Set to falseto hide table, used for nested tables to re-render upon toggle"
+        }
+      ]
+    },
+    {
       "name": "scale-date-picker",
       "description": {
         "kind": "markdown",
@@ -6216,6 +6285,110 @@
       ]
     },
     {
+      "name": "scale-menu",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "close-on-select",
+          "description": "(optional) Determines whether the dropdown should close when a menu item is selected"
+        },
+        {
+          "name": "direction",
+          "description": "(optional) Set preference for where the menu appears, space permitting",
+          "values": [
+            {
+              "name": "bottom-left"
+            },
+            {
+              "name": "bottom-right"
+            },
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            },
+            {
+              "name": "top-left"
+            },
+            {
+              "name": "top-right"
+            }
+          ]
+        },
+        {
+          "name": "open",
+          "description": "(optional) Tracks the menu list open state"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-divider",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "(optional) Used by cascading menus to set when open"
+        },
+        {
+          "name": "cascade",
+          "description": "(optional) Set to true to display arrow icon suffix"
+        },
+        {
+          "name": "checked",
+          "description": "(optional) Set to true to display check prefix, false to display empty prefix"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Disabled"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) value"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-list",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
       "name": "scale-modal",
       "description": {
         "kind": "markdown",
@@ -6344,6 +6517,35 @@
         {
           "name": "is-active",
           "description": "(optional) if this item is active"
+        }
+      ]
+    },
+    {
+      "name": "scale-pagination",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "hide-borders",
+          "description": "(optional) Set to true to hide top and bottom borders"
+        },
+        {
+          "name": "page-size",
+          "description": "(optional) Set number of rows/elements to show per page"
+        },
+        {
+          "name": "start-element",
+          "description": "(optional) Index of first element to display"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        },
+        {
+          "name": "total-elements",
+          "description": "(optional) Total number of rows/elements used to calculate page displays"
         }
       ]
     },

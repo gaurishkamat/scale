@@ -30,6 +30,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
 ### Depends on
 
 - [scale-icon](../icon)
@@ -38,6 +42,7 @@
 ```mermaid
 graph TD;
   scale-checkbox --> scale-icon
+  scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

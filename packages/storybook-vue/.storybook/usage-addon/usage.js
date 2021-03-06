@@ -14,6 +14,8 @@ import card_en from "raw-loader!../../stories/3_components/card/card.md";
 import card_de from "raw-loader!../../stories/3_components/card/card_de.md";
 import checkbox_en from "raw-loader!../../stories/3_components/checkbox/checkbox.md";
 import checkbox_de from "raw-loader!../../stories/3_components/checkbox/checkbox_de.md";
+import datagrid_en from "raw-loader!../../stories/3_components/data-grid/data-grid.md";
+import datagrid_de from "raw-loader!../../stories/3_components/data-grid/data-grid_de.md";
 import date_picker_en from "raw-loader!../../stories/3_components/date-picker/date-picker.md";
 import date_picker_de from "raw-loader!../../stories/3_components/date-picker/date-picker_de.md";
 import divider_en from "raw-loader!../../stories/3_components/divider/divider.md";
@@ -24,8 +26,12 @@ import linkMarkdown_en from "raw-loader!../../stories/3_components/link/link.md"
 import linkMarkdown_de from "raw-loader!../../stories/3_components/link/link_de.md";
 import list_en from "raw-loader!../../stories/3_components/list/list.md";
 import list_de from "raw-loader!../../stories/3_components/list/list_de.md";
+import menu_en from "raw-loader!../../stories/3_components/menu/menu.md";
+import menu_de from "raw-loader!../../stories/3_components/menu/menu_de.md";
 import modal_en from "raw-loader!../../stories/3_components/modal/modal.md";
 import modal_de from "raw-loader!../../stories/3_components/modal/modal_de.md";
+import pagination_en from "raw-loader!../../stories/3_components/pagination/pagination.md";
+import pagination_de from "raw-loader!../../stories/3_components/pagination/pagination_de.md";
 import progressBar_en from "raw-loader!../../stories/3_components/progress-bar/progress-bar.md";
 import progressBar_de from "raw-loader!../../stories/3_components/progress-bar/progress-bar_de.md";
 import radioButton_en from "raw-loader!../../stories/3_components/radio-button/radio-button.md";
@@ -86,8 +92,10 @@ const Usage = props => {
     checkbox_de,
     divider_en,
     divider_de,
-    "datepicker_en": date_picker_en,
-    "datepicker_de": date_picker_de,
+    datagrid_en,
+    datagrid_de,
+    datepicker_en: date_picker_en,
+    datepicker_de: date_picker_de,
     "icon-library_en": icon_en,
     "icon-library_de": icon_de,
     icon_en,
@@ -96,8 +104,12 @@ const Usage = props => {
     link_de: linkMarkdown_de,
     list_en,
     list_de,
+    menu_en,
+    menu_de,
     modal_en,
     modal_de,
+    pagination_en,
+    pagination_de,
     "progress-bar_en": progressBar_en,
     "progress-bar_de": progressBar_de,
     radiobutton_en: radioButton_en,

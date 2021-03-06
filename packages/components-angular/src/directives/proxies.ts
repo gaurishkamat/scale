@@ -322,6 +322,31 @@ export class ScaleCollapsible {
   }
 }
 
+import { DataGrid as IDataGrid } from '@scaleds/components-telekom/dist/types/components/data-grid/data-grid';
+export declare interface ScaleDataGrid extends Components.ScaleDataGrid {}
+@ProxyCmp({
+  inputs: ['fields', 'freezeHeader', 'heading', 'height', 'hideBorder', 'hideHeader', 'hideInfo', 'hideMenu', 'numbered', 'pageSize', 'rows', 'selectable', 'selection', 'shadeAlternate', 'styles', 'visible']
+})
+@Component({
+  selector: 'scale-data-grid',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['fields', 'freezeHeader', 'heading', 'height', 'hideBorder', 'hideHeader', 'hideInfo', 'hideMenu', 'numbered', 'pageSize', 'rows', 'selectable', 'selection', 'shadeAlternate', 'styles', 'visible'],
+  outputs: ['scaleEdit', 'scaleSort']
+})
+export class ScaleDataGrid {
+  /** Event triggered every time the editable cells are changed, updating the original rows data */
+  scaleEdit!: IDataGrid['scaleEdit'];
+  /** Event triggered every time the data is sorted, changing original rows data */
+  scaleSort!: IDataGrid['scaleSort'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleEdit', 'scaleSort']);
+  }
+}
+
 import { DatePicker as IDatePicker } from '@scaleds/components-telekom/dist/types/components/date-picker/date-picker';
 export declare interface ScaleDatePicker extends Components.ScaleDatePicker {}
 @ProxyCmp({
@@ -3946,6 +3971,96 @@ export class ScaleListItem {
   }
 }
 
+import { Menu as IMenu } from '@scaleds/components-telekom/dist/types/components/menu/menu';
+export declare interface ScaleMenu extends Components.ScaleMenu {}
+@ProxyCmp({
+  inputs: ['closeOnSelect', 'direction', 'open', 'styles']
+})
+@Component({
+  selector: 'scale-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['closeOnSelect', 'direction', 'open', 'styles'],
+  outputs: ['scaleOpen', 'scaleClose', 'scaleSelect']
+})
+export class ScaleMenu {
+  /** Event triggered when menu list opened */
+  scaleOpen!: IMenu['scaleOpen'];
+  /** Event triggered when menu list closed */
+  scaleClose!: IMenu['scaleClose'];
+  /** Event triggered when nested menu item selected */
+  scaleSelect!: IMenu['scaleSelect'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleOpen', 'scaleClose', 'scaleSelect']);
+  }
+}
+
+
+export declare interface ScaleMenuDivider extends Components.ScaleMenuDivider {}
+@ProxyCmp({
+  inputs: ['styles']
+})
+@Component({
+  selector: 'scale-menu-divider',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['styles']
+})
+export class ScaleMenuDivider {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleMenuItem extends Components.ScaleMenuItem {}
+@ProxyCmp({
+  inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value'],
+  methods: ['setFocus', 'removeFocus']
+})
+@Component({
+  selector: 'scale-menu-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value']
+})
+export class ScaleMenuItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+import { MenuList as IMenuList } from '@scaleds/components-telekom/dist/types/components/menu-list/menu-list';
+export declare interface ScaleMenuList extends Components.ScaleMenuList {}
+@ProxyCmp({
+  inputs: ['styles'],
+  methods: ['opened']
+})
+@Component({
+  selector: 'scale-menu-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['styles'],
+  outputs: ['scaleSelect']
+})
+export class ScaleMenuList {
+  /** Event triggered every time the data is edited, changing original rows data */
+  scaleSelect!: IMenuList['scaleSelect'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleSelect']);
+  }
+}
+
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
@@ -4025,6 +4140,29 @@ export class ScaleNavSegment {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+import { Pagination as IPagination } from '@scaleds/components-telekom/dist/types/components/pagination/pagination';
+export declare interface ScalePagination extends Components.ScalePagination {}
+@ProxyCmp({
+  inputs: ['hideBorders', 'pageSize', 'startElement', 'styles', 'totalElements']
+})
+@Component({
+  selector: 'scale-pagination',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['hideBorders', 'pageSize', 'startElement', 'styles', 'totalElements'],
+  outputs: ['scalePagination']
+})
+export class ScalePagination {
+  /** Event triggered every time the data is edited, changing original rows data */
+  scalePagination!: IPagination['scalePagination'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scalePagination']);
   }
 }
 

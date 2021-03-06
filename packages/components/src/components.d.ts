@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
+import { DataGridEditEventDetail, DataGridSortedEventDetail } from "./components/data-grid/data-grid";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
@@ -265,6 +266,72 @@ export namespace Components {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleDataGrid {
+        /**
+          * Input fields config array
+         */
+        "fields": any;
+        /**
+          * (optional) Freeze header row from scrolling
+         */
+        "freezeHeader"?: boolean;
+        /**
+          * (optional) Heading string
+         */
+        "heading"?: string;
+        /**
+          * (optional) Set static table height, by default will auto-resize
+         */
+        "height"?: string;
+        /**
+          * (optional) Set to true to remove border
+         */
+        "hideBorder"?: boolean;
+        /**
+          * (optional) Set to true to hide header row
+         */
+        "hideHeader"?: boolean;
+        /**
+          * (optional) Set to true to remove info footer block including pagination and selection status
+         */
+        "hideInfo"?: boolean;
+        /**
+          * (optional) Set to true to hide settings menu
+         */
+        "hideMenu"?: boolean;
+        /**
+          * (optional) Set to true to add numbers column
+         */
+        "numbered"?: boolean;
+        /**
+          * (optional) Set number of rows to display per pagination page
+         */
+        "pageSize"?: number;
+        /**
+          * Input data array
+         */
+        "rows": any;
+        /**
+          * (optional) Set to true to add selection column
+         */
+        "selectable"?: boolean;
+        /**
+          * Read-only selection array - populated with raw data from selected rows
+         */
+        "selection": string[];
+        /**
+          * (optional) Shade every second row darker
+         */
+        "shadeAlternate"?: boolean;
+        /**
+          * (optional) Injected css styles
+         */
+        "styles": any;
+        /**
+          * (optional) Set to falseto hide table, used for nested tables to re-render upon toggle
+         */
+        "visible"?: boolean;
     }
     interface ScaleDatePicker {
         /**
@@ -4618,6 +4685,79 @@ export namespace Components {
          */
         "styles"?: string;
     }
+    interface ScaleMenu {
+        /**
+          * (optional) Determines whether the dropdown should close when a menu item is selected
+         */
+        "closeOnSelect": boolean;
+        /**
+          * (optional) Set preference for where the menu appears, space permitting
+         */
+        "direction": | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'right'
+    | 'left';
+        /**
+          * (optional) Tracks the menu list open state
+         */
+        "open": boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuDivider {
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuItem {
+        /**
+          * (optional) Used by cascading menus to set when open
+         */
+        "active"?: boolean;
+        /**
+          * (optional) Set to true to display arrow icon suffix
+         */
+        "cascade"?: boolean;
+        /**
+          * (optional) Set to true to display check prefix, false to display empty prefix
+         */
+        "checked"?: any;
+        /**
+          * (optional) Disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Removes the focus from the item
+         */
+        "removeFocus": () => Promise<void>;
+        /**
+          * Sets the focus on the item
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) value
+         */
+        "value"?: string;
+    }
+    interface ScaleMenuList {
+        /**
+          * Menu calls this once opened and rendered
+         */
+        "opened": () => Promise<void>;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Alignment of action buttons
@@ -4698,6 +4838,28 @@ export namespace Components {
           * (optional) if this item is active
          */
         "isActive"?: boolean;
+    }
+    interface ScalePagination {
+        /**
+          * (optional) Set to true to hide top and bottom borders
+         */
+        "hideBorders"?: boolean;
+        /**
+          * (optional) Set number of rows/elements to show per page
+         */
+        "pageSize"?: number;
+        /**
+          * (optional) Index of first element to display
+         */
+        "startElement"?: number;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Total number of rows/elements used to calculate page displays
+         */
+        "totalElements"?: number;
     }
     interface ScaleProgressBar {
         /**
@@ -5325,6 +5487,12 @@ declare global {
     var HTMLScaleCollapsibleElement: {
         prototype: HTMLScaleCollapsibleElement;
         new (): HTMLScaleCollapsibleElement;
+    };
+    interface HTMLScaleDataGridElement extends Components.ScaleDataGrid, HTMLStencilElement {
+    }
+    var HTMLScaleDataGridElement: {
+        prototype: HTMLScaleDataGridElement;
+        new (): HTMLScaleDataGridElement;
     };
     interface HTMLScaleDatePickerElement extends Components.ScaleDatePicker, HTMLStencilElement {
     }
@@ -6460,6 +6628,30 @@ declare global {
         prototype: HTMLScaleListItemElement;
         new (): HTMLScaleListItemElement;
     };
+    interface HTMLScaleMenuElement extends Components.ScaleMenu, HTMLStencilElement {
+    }
+    var HTMLScaleMenuElement: {
+        prototype: HTMLScaleMenuElement;
+        new (): HTMLScaleMenuElement;
+    };
+    interface HTMLScaleMenuDividerElement extends Components.ScaleMenuDivider, HTMLStencilElement {
+    }
+    var HTMLScaleMenuDividerElement: {
+        prototype: HTMLScaleMenuDividerElement;
+        new (): HTMLScaleMenuDividerElement;
+    };
+    interface HTMLScaleMenuItemElement extends Components.ScaleMenuItem, HTMLStencilElement {
+    }
+    var HTMLScaleMenuItemElement: {
+        prototype: HTMLScaleMenuItemElement;
+        new (): HTMLScaleMenuItemElement;
+    };
+    interface HTMLScaleMenuListElement extends Components.ScaleMenuList, HTMLStencilElement {
+    }
+    var HTMLScaleMenuListElement: {
+        prototype: HTMLScaleMenuListElement;
+        new (): HTMLScaleMenuListElement;
+    };
     interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {
     }
     var HTMLScaleModalElement: {
@@ -6483,6 +6675,12 @@ declare global {
     var HTMLScaleNavSegmentElement: {
         prototype: HTMLScaleNavSegmentElement;
         new (): HTMLScaleNavSegmentElement;
+    };
+    interface HTMLScalePaginationElement extends Components.ScalePagination, HTMLStencilElement {
+    }
+    var HTMLScalePaginationElement: {
+        prototype: HTMLScalePaginationElement;
+        new (): HTMLScalePaginationElement;
     };
     interface HTMLScaleProgressBarElement extends Components.ScaleProgressBar, HTMLStencilElement {
     }
@@ -6603,6 +6801,7 @@ declare global {
         "scale-chart-stack-card": HTMLScaleChartStackCardElement;
         "scale-checkbox": HTMLScaleCheckboxElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
+        "scale-data-grid": HTMLScaleDataGridElement;
         "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-dropdown": HTMLScaleDropdownElement;
@@ -6792,10 +6991,15 @@ declare global {
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
         "scale-list-item": HTMLScaleListItemElement;
+        "scale-menu": HTMLScaleMenuElement;
+        "scale-menu-divider": HTMLScaleMenuDividerElement;
+        "scale-menu-item": HTMLScaleMenuItemElement;
+        "scale-menu-list": HTMLScaleMenuListElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-nav-icon": HTMLScaleNavIconElement;
         "scale-nav-main": HTMLScaleNavMainElement;
         "scale-nav-segment": HTMLScaleNavSegmentElement;
+        "scale-pagination": HTMLScalePaginationElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-radio-button": HTMLScaleRadioButtonElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
@@ -7075,6 +7279,80 @@ declare namespace LocalJSX {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleDataGrid {
+        /**
+          * Input fields config array
+         */
+        "fields"?: any;
+        /**
+          * (optional) Freeze header row from scrolling
+         */
+        "freezeHeader"?: boolean;
+        /**
+          * (optional) Heading string
+         */
+        "heading"?: string;
+        /**
+          * (optional) Set static table height, by default will auto-resize
+         */
+        "height"?: string;
+        /**
+          * (optional) Set to true to remove border
+         */
+        "hideBorder"?: boolean;
+        /**
+          * (optional) Set to true to hide header row
+         */
+        "hideHeader"?: boolean;
+        /**
+          * (optional) Set to true to remove info footer block including pagination and selection status
+         */
+        "hideInfo"?: boolean;
+        /**
+          * (optional) Set to true to hide settings menu
+         */
+        "hideMenu"?: boolean;
+        /**
+          * (optional) Set to true to add numbers column
+         */
+        "numbered"?: boolean;
+        /**
+          * Event triggered every time the editable cells are changed, updating the original rows data
+         */
+        "onScaleEdit"?: (event: CustomEvent<DataGridEditEventDetail>) => void;
+        /**
+          * Event triggered every time the data is sorted, changing original rows data
+         */
+        "onScaleSort"?: (event: CustomEvent<DataGridSortedEventDetail>) => void;
+        /**
+          * (optional) Set number of rows to display per pagination page
+         */
+        "pageSize"?: number;
+        /**
+          * Input data array
+         */
+        "rows"?: any;
+        /**
+          * (optional) Set to true to add selection column
+         */
+        "selectable"?: boolean;
+        /**
+          * Read-only selection array - populated with raw data from selected rows
+         */
+        "selection"?: string[];
+        /**
+          * (optional) Shade every second row darker
+         */
+        "shadeAlternate"?: boolean;
+        /**
+          * (optional) Injected css styles
+         */
+        "styles"?: any;
+        /**
+          * (optional) Set to falseto hide table, used for nested tables to re-render upon toggle
+         */
+        "visible"?: boolean;
     }
     interface ScaleDatePicker {
         /**
@@ -11468,6 +11746,93 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
     }
+    interface ScaleMenu {
+        /**
+          * (optional) Determines whether the dropdown should close when a menu item is selected
+         */
+        "closeOnSelect"?: boolean;
+        /**
+          * (optional) Set preference for where the menu appears, space permitting
+         */
+        "direction"?: | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'right'
+    | 'left';
+        /**
+          * Event triggered when menu list closed
+         */
+        "onScaleClose"?: (event: CustomEvent<{
+    id: number;
+    cascadeLevel: number;
+  }>) => void;
+        /**
+          * Event triggered when menu list opened
+         */
+        "onScaleOpen"?: (event: CustomEvent<{
+    id: number;
+    cascadeLevel: number;
+  }>) => void;
+        /**
+          * Event triggered when nested menu item selected
+         */
+        "onScaleSelect"?: (event: CustomEvent<{
+    item: HTMLElement;
+  }>) => void;
+        /**
+          * (optional) Tracks the menu list open state
+         */
+        "open"?: boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuDivider {
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuItem {
+        /**
+          * (optional) Used by cascading menus to set when open
+         */
+        "active"?: boolean;
+        /**
+          * (optional) Set to true to display arrow icon suffix
+         */
+        "cascade"?: boolean;
+        /**
+          * (optional) Set to true to display check prefix, false to display empty prefix
+         */
+        "checked"?: any;
+        /**
+          * (optional) Disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) value
+         */
+        "value"?: string;
+    }
+    interface ScaleMenuList {
+        /**
+          * Event triggered every time the data is edited, changing original rows data
+         */
+        "onScaleSelect"?: (event: CustomEvent<{
+    item: HTMLElement;
+  }>) => void;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Alignment of action buttons
@@ -11550,6 +11915,35 @@ declare namespace LocalJSX {
           * (optional) if this item is active
          */
         "isActive"?: boolean;
+    }
+    interface ScalePagination {
+        /**
+          * (optional) Set to true to hide top and bottom borders
+         */
+        "hideBorders"?: boolean;
+        /**
+          * Event triggered every time the data is edited, changing original rows data
+         */
+        "onScalePagination"?: (event: CustomEvent<{
+    startElement?: number;
+    currentPage?: number;
+  }>) => void;
+        /**
+          * (optional) Set number of rows/elements to show per page
+         */
+        "pageSize"?: number;
+        /**
+          * (optional) Index of first element to display
+         */
+        "startElement"?: number;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Total number of rows/elements used to calculate page displays
+         */
+        "totalElements"?: number;
     }
     interface ScaleProgressBar {
         /**
@@ -12146,6 +12540,7 @@ declare namespace LocalJSX {
         "scale-chart-stack-card": ScaleChartStackCard;
         "scale-checkbox": ScaleCheckbox;
         "scale-collapsible": ScaleCollapsible;
+        "scale-data-grid": ScaleDataGrid;
         "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
         "scale-dropdown": ScaleDropdown;
@@ -12335,10 +12730,15 @@ declare namespace LocalJSX {
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
         "scale-list-item": ScaleListItem;
+        "scale-menu": ScaleMenu;
+        "scale-menu-divider": ScaleMenuDivider;
+        "scale-menu-item": ScaleMenuItem;
+        "scale-menu-list": ScaleMenuList;
         "scale-modal": ScaleModal;
         "scale-nav-icon": ScaleNavIcon;
         "scale-nav-main": ScaleNavMain;
         "scale-nav-segment": ScaleNavSegment;
+        "scale-pagination": ScalePagination;
         "scale-progress-bar": ScaleProgressBar;
         "scale-radio-button": ScaleRadioButton;
         "scale-sidebar-nav": ScaleSidebarNav;
@@ -12378,6 +12778,7 @@ declare module "@stencil/core" {
             "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
             "scale-checkbox": LocalJSX.ScaleCheckbox & JSXBase.HTMLAttributes<HTMLScaleCheckboxElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
+            "scale-data-grid": LocalJSX.ScaleDataGrid & JSXBase.HTMLAttributes<HTMLScaleDataGridElement>;
             "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-dropdown": LocalJSX.ScaleDropdown & JSXBase.HTMLAttributes<HTMLScaleDropdownElement>;
@@ -12567,10 +12968,15 @@ declare module "@stencil/core" {
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
+            "scale-menu": LocalJSX.ScaleMenu & JSXBase.HTMLAttributes<HTMLScaleMenuElement>;
+            "scale-menu-divider": LocalJSX.ScaleMenuDivider & JSXBase.HTMLAttributes<HTMLScaleMenuDividerElement>;
+            "scale-menu-item": LocalJSX.ScaleMenuItem & JSXBase.HTMLAttributes<HTMLScaleMenuItemElement>;
+            "scale-menu-list": LocalJSX.ScaleMenuList & JSXBase.HTMLAttributes<HTMLScaleMenuListElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-nav-icon": LocalJSX.ScaleNavIcon & JSXBase.HTMLAttributes<HTMLScaleNavIconElement>;
             "scale-nav-main": LocalJSX.ScaleNavMain & JSXBase.HTMLAttributes<HTMLScaleNavMainElement>;
             "scale-nav-segment": LocalJSX.ScaleNavSegment & JSXBase.HTMLAttributes<HTMLScaleNavSegmentElement>;
+            "scale-pagination": LocalJSX.ScalePagination & JSXBase.HTMLAttributes<HTMLScalePaginationElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
