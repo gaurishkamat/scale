@@ -145,6 +145,7 @@
   height: var(--scl-spacing-24);
   background-color: var(--scl-color-background-default, #ffffff);
 }
+.input--transparent .input__textarea-label-safety-background,
 .input--disabled .input__textarea-label-safety-background {
   background-color: transparent;
 }
