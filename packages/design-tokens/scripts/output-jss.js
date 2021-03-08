@@ -1,34 +1,19 @@
-import getTokens from '../src/tokens.js';
 import camelCase from 'lodash/camelCase.js';
 import kebabCase from 'lodash/kebabCase.js';
+import prettier from 'prettier';
 
-const tokens = getTokens();
-// const fontVariants = tokens['font-variant'];
-// const prefix = '--scl-font-variant';
-
-// function generateFontVariants(fontVariants) {
-//   const variants = {};
-
-//   for (const [name, props] of Object.entries(fontVariants)) {
-//     const variant = {};
-//     const variantKey = camelCase(name);
-//     const variantName = kebabCase(name);
-
-//     for (const [prop, value] of Object.entries(props)) {
-//       variant[camelCase(prop)] = `var(${prefix}-${variantName}, ${value})`;
-//     }
-
-//     variants[variantKey] = variant;
-//   }
-
-//   return variants;
-// }
-
+const baseFontSize = 16;
 const JSS = {};
 
-const prepareExports = (bigObject) => {
+function rem(number) {
+  if (number === 0) return 0;
+
+  return number / baseFontSize + 'rem';
+}
+
+const prepareExports = (object) => {
   let exportCollection = '';
-  for (const [name, props] of Object.entries(bigObject)) {
+  for (const [name, props] of Object.entries(object)) {
     exportCollection = exportCollection.concat(
       `export const ${name} = ${JSON.stringify(props)}; `
     );
@@ -38,30 +23,19 @@ const prepareExports = (bigObject) => {
 };
 
 const evalValue = (categoryName, sectionName, key, value) => {
-  let temp = value;
-
   if (typeof value === 'number' && key !== 'weight') {
-    temp = temp / 16 + 'rem';
+    return value / baseFontSize + 'rem';
   }
 
   if (categoryName === 'shadow') {
-    function px(number) {
-      if (number === 0) return 0;
-
-      return number / 16 + 'rem';
-    }
-    temp = Array.from(value)
+    return Array.from(value)
       .map(({ x, y, blur, spread, color }) => {
-        return `${px(x)} ${px(y)} ${px(blur)} ${px(spread)} ${color}`;
+        return `${rem(x)} ${rem(y)} ${rem(blur)} ${rem(spread)} ${color}`;
       })
       .join(', ');
   }
 
-  // if (typeof value === 'object') {
-  //   temp = JSON.stringify(value);
-  // }
-
-  return temp;
+  return value;
 };
 
 export const outputJSS = {
@@ -79,7 +53,10 @@ export const outputJSS = {
     )}-${kebabCase(key)}, ${evalValue(categoryName, sectionName, key, value)})`;
   },
   onComplete: () => {
-    outputJSS.content = prepareExports(JSS);
+    outputJSS.content = prettier.format(prepareExports(JSS), {
+      semi: false,
+      parser: 'babel',
+    });
   },
   filename: 'design-tokens-telekom',
   ext: '.js',

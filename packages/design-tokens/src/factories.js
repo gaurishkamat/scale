@@ -7,7 +7,7 @@ import color from 'color';
  */
 export function Color(specifier) {
   // No checks needed, already throws if `specifier` is invalid
-  return color(specifier);
+  return color(specifier).hsl();
 }
 
 /**
