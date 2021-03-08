@@ -1,62 +1,71 @@
 import camelCase from 'lodash/camelCase.js';
-import kebabCase from 'lodash/kebabCase.js';
 import prettier from 'prettier';
+import { COLOR, SHADOW, TYPE_VARIANT } from '../src/tokens.js';
+import { processValue } from './output-css.js';
 
-const baseFontSize = 16;
+const prettierOptions = {
+  singleQuote: true,
+  trailingComma: 'es5',
+  parser: 'babel',
+};
+const fontKeyPropMap = {
+  family: 'fontFamily',
+  size: 'fontSize',
+  weight: 'fontWeight',
+  lineHeight: 'lineHeight',
+  letterSpacing: 'letterSpacing',
+};
+
 const JSS = {};
-
-function rem(number) {
-  if (number === 0) return 0;
-
-  return number / baseFontSize + 'rem';
-}
-
-const prepareExports = (object) => {
-  let exportCollection = '';
-  for (const [name, props] of Object.entries(object)) {
-    exportCollection = exportCollection.concat(
-      `export const ${name} = ${JSON.stringify(props)}; `
-    );
-  }
-
-  return exportCollection;
-};
-
-const evalValue = (categoryName, sectionName, key, value) => {
-  if (typeof value === 'number' && key !== 'weight') {
-    return value / baseFontSize + 'rem';
-  }
-
-  if (categoryName === 'shadow') {
-    return Array.from(value)
-      .map(({ x, y, blur, spread, color }) => {
-        return `${rem(x)} ${rem(y)} ${rem(blur)} ${rem(spread)} ${color}`;
-      })
-      .join(', ');
-  }
-
-  return value;
-};
 
 export const outputJSS = {
   onCategory: ({ categoryName }) => {
     JSS[camelCase(categoryName)] = {};
   },
-  onSection: ({ categoryName, sectionName, tokens }) => {
-    JSS[camelCase(categoryName)][camelCase(sectionName)] = {};
+  onSection: ({ categoryName, sectionName }) => {
+    if (sectionName !== 'DEFAULT') {
+      JSS[camelCase(categoryName)][camelCase(sectionName)] = {};
+    }
   },
   onValue: ({ categoryName, sectionName, key, value }) => {
-    JSS[camelCase(categoryName)][camelCase(sectionName)][
-      camelCase(key)
-    ] = `var(--scl-${kebabCase(categoryName)}-${kebabCase(
-      sectionName
-    )}-${kebabCase(key)}, ${evalValue(categoryName, sectionName, key, value)})`;
+    const camelCasedKey = camelCase(key);
+    const val = processValue([categoryName, sectionName], key, value);
+    const section =
+      sectionName === 'DEFAULT'
+        ? JSS[camelCase(categoryName)]
+        : JSS[camelCase(categoryName)][camelCase(sectionName)];
+
+    if (categoryName === COLOR) {
+      section[camelCasedKey] = val.hsl().toString();
+      return;
+    }
+    if (categoryName === TYPE_VARIANT) {
+      section[fontKeyPropMap[key]] = val;
+      return;
+    }
+    // Special shape for shadows
+    if (categoryName === SHADOW) {
+      if (key.length === 1) {
+        section[camelCasedKey] = section[camelCasedKey] || {};
+        section[camelCasedKey].standard = val;
+      } else {
+        const intKey = camelCasedKey.charAt(0);
+        const state = camelCasedKey.slice(1).toLowerCase();
+        section[intKey] = section[intKey] || {};
+        section[intKey][state] = val;
+      }
+      return;
+    }
+    section[camelCasedKey] = val;
   },
   onComplete: () => {
-    outputJSS.content = prettier.format(prepareExports(JSS), {
-      semi: false,
-      parser: 'babel',
-    });
+    let output = '';
+    for (const [name, props] of Object.entries(JSS)) {
+      output = output.concat(
+        `\n\nexport const ${name} = ${JSON.stringify(props)};`
+      );
+    }
+    outputJSS.content = prettier.format(output, prettierOptions);
   },
   filename: 'design-tokens-telekom',
   ext: '.js',
