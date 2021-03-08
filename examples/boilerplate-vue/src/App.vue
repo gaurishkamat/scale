@@ -7,7 +7,7 @@
   </ScaleAppShell>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import { ScaleAppShell } from "@scaleds/components-vue-telekom";
 // @ts-ignore
@@ -21,7 +21,7 @@ export default Vue.extend({
           name: "Mobilfunk Menu",
           id: "Mobilfunk Menu",
           href: "/",
-          onClick: (event: MouseEvent) => {
+          onClick: event => {
             event.preventDefault();
             this.$router.push("/");
           },
@@ -30,7 +30,7 @@ export default Vue.extend({
               name: "Tarife & Optionen",
               id: "Tarife & Optionen",
               href: "/tarife-optionen",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/tarife-optionen");
               },
@@ -39,7 +39,7 @@ export default Vue.extend({
                   name: "Smartphone-Tarife",
                   id: "Smartphone-Tarife",
                   href: "/smartphone-tarife",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/smartphone-tarife");
                   }
@@ -48,7 +48,7 @@ export default Vue.extend({
                   name: "Prepaid-Tarife",
                   id: "Prepaid-Tarife",
                   href: "/prepaid-tarife",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/prepaid-tarife");
                   }
@@ -57,7 +57,7 @@ export default Vue.extend({
                   name: "Young-Tarife",
                   id: "Young-Tarife",
                   href: "/young-tarife",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/young-tarife");
                   }
@@ -66,7 +66,7 @@ export default Vue.extend({
                   name: "Daten-Tarife",
                   id: "Daten-Tarife",
                   href: "/daten-tarife",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/daten-tarife");
                   }
@@ -75,7 +75,7 @@ export default Vue.extend({
                   name: "Zweitkarten",
                   id: "Zweitkarten",
                   href: "/zweitkarten",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/zweitkarten");
                   }
@@ -84,7 +84,7 @@ export default Vue.extend({
                   name: "Vertrag verlängern",
                   id: "Vertrag verlängern",
                   href: "/vertrag-verlaengern",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/vertrag-verlaengern");
                   }
@@ -93,7 +93,7 @@ export default Vue.extend({
                   name: "Zubuchoptionen",
                   id: "Zubuchoptionen",
                   href: "/zubuchoptionen",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/zubuchoptionen");
                   }
@@ -104,7 +104,7 @@ export default Vue.extend({
               name: "Geräte",
               id: "Geräte",
               href: "/geraete",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/geraete");
               },
@@ -113,7 +113,7 @@ export default Vue.extend({
                   name: "Smartphones",
                   id: "Smartphones",
                   href: "/smartphones",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/smartphones");
                   }
@@ -122,7 +122,7 @@ export default Vue.extend({
                   name: "Tablets",
                   id: "Tablets",
                   href: "/tablets",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/tablets");
                   }
@@ -131,7 +131,7 @@ export default Vue.extend({
                   name: "Smartwatches",
                   id: "Smartwatches",
                   href: "/smartwatches",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/smartwatches");
                   }
@@ -140,7 +140,7 @@ export default Vue.extend({
                   name: "Handys ohne Vertrag",
                   id: "Handys ohne Vertrag",
                   href: "/handys-ohne-vertrag",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/handys-ohne-vertrag");
                   }
@@ -149,7 +149,7 @@ export default Vue.extend({
                   name: "Surfsticks & Router",
                   id: "Surfsticks & Router",
                   href: "/surfsticks-router",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/surfsticks-router");
                   }
@@ -158,7 +158,7 @@ export default Vue.extend({
                   name: "Smart Connect",
                   id: "Smart Connect",
                   href: "/smart-connect",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/smart-connect");
                   }
@@ -167,7 +167,7 @@ export default Vue.extend({
                   name: "Alle Geräte",
                   id: "Alle Geräte",
                   href: "/alle-geraete",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/alle-geraete");
                   }
@@ -178,7 +178,7 @@ export default Vue.extend({
               name: "Zubehör",
               id: "Zubehör",
               href: "/zubehoer",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/zubehoer");
               },
@@ -187,7 +187,7 @@ export default Vue.extend({
                   name: "Taschen & Hüllen",
                   id: "Taschen & Hüllen",
                   href: "/taschen-huellen",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/taschen-huellen");
                   }
@@ -196,7 +196,7 @@ export default Vue.extend({
                   name: "Kopfhörer",
                   id: "Kopfhörer",
                   href: "/kopfhoerer",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/kopfhoerer");
                   }
@@ -205,7 +205,7 @@ export default Vue.extend({
                   name: "Autozubehör",
                   id: "Autozubehör",
                   href: "/autozubehoer",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/autozubehoer");
                   }
@@ -214,7 +214,7 @@ export default Vue.extend({
                   name: "Virtual Reality",
                   id: "Virtual Reality",
                   href: "/virtual-reality",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/virtual-reality");
                   }
@@ -223,7 +223,7 @@ export default Vue.extend({
                   name: "Lautsprecher",
                   id: "Lautsprecher",
                   href: "/lautsprecher",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/lautsprecher");
                   }
@@ -232,7 +232,7 @@ export default Vue.extend({
                   name: "Lader, Kabel, Adapter",
                   id: "Lader, Kabel, Adapter",
                   href: "/lader-kabel-adapter",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/lader-kabel-adapter");
                   }
@@ -241,7 +241,7 @@ export default Vue.extend({
                   name: "Alle Zubehörartikel",
                   id: "Alle Zubehörartikel",
                   href: "/alle-zubehoerartikel",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/alle-zubehoerartikel");
                   }
@@ -252,7 +252,7 @@ export default Vue.extend({
               name: "Apps & Dienste",
               id: "Apps & Dienste",
               href: "/apps-dienste",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/apps-dienste");
               },
@@ -261,7 +261,7 @@ export default Vue.extend({
                   name: "MeinMagenta App",
                   id: "MeinMagenta App",
                   href: "/meinmagenta-app",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/meinmagenta-app");
                   }
@@ -270,7 +270,7 @@ export default Vue.extend({
                   name: "Sicherheit & Cloud",
                   id: "Sicherheit & Cloud",
                   href: "/sicherheit-cloud",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/sicherheit-cloud");
                   }
@@ -279,7 +279,7 @@ export default Vue.extend({
                   name: "Kommunikation",
                   id: "Kommunikation",
                   href: "/kommunikation",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/kommunikation");
                   }
@@ -288,7 +288,7 @@ export default Vue.extend({
                   name: "Konnektivität",
                   id: "Konnektivität",
                   href: "/konnektivitaet",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/konnektivitaet");
                   }
@@ -297,7 +297,7 @@ export default Vue.extend({
                   name: "Musik & Videos",
                   id: "Musik & Videos",
                   href: "/musik-videos",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/musik-videos");
                   }
@@ -306,7 +306,7 @@ export default Vue.extend({
                   name: "StreamOn",
                   id: "StreamOn",
                   href: "/stream-on",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/stream-on");
                   }
@@ -317,7 +317,7 @@ export default Vue.extend({
               name: "Was ist 5G",
               id: "Was ist 5G",
               href: "/was-ist-5g",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/was-ist-5g");
               },
@@ -326,7 +326,7 @@ export default Vue.extend({
                   name: "5G Mobilfunk",
                   id: "5G Mobilfunk",
                   href: "/5g-mobilfunk",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/5g-mobilfunk");
                   }
@@ -335,7 +335,7 @@ export default Vue.extend({
                   name: "5G-fähige Mobilfunktarife",
                   id: "5G-fähige Mobilfunktarife",
                   href: "/5g-faehige-mobilfunktarife",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/5g-faehige-mobilfunktarife");
                   }
@@ -344,7 +344,7 @@ export default Vue.extend({
                   name: "5G Cloud Gaming",
                   id: "5G Cloud Gaming",
                   href: "/5g-cloud-gaming",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/5g-cloud-gaming");
                   }
@@ -353,7 +353,7 @@ export default Vue.extend({
                   name: "5G Augmented & Virtual Reality",
                   id: "5G Augmented & Virtual Reality",
                   href: "/5g-augmented-virtual-reality",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/5g-augmented-virtual-reality");
                   }
@@ -362,7 +362,7 @@ export default Vue.extend({
                   name: "5G Smart City",
                   id: "5G Smart City",
                   href: "/5g-smart-city",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/5g-smart-city");
                   }
@@ -375,7 +375,7 @@ export default Vue.extend({
           name: "Festnetz & Internet",
           id: "Festnetz & Internet",
           href: "/festnetz-internet",
-          onClick: (event: MouseEvent) => {
+          onClick: event => {
             event.preventDefault();
             this.$router.push("/festnetz-internet");
           },
@@ -384,7 +384,7 @@ export default Vue.extend({
               name: "First",
               id: "First",
               href: "/first",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/first");
               },
@@ -393,7 +393,7 @@ export default Vue.extend({
                   name: "One",
                   id: "FirstOne",
                   href: "/first-one",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/first-one");
                   }
@@ -402,7 +402,7 @@ export default Vue.extend({
                   name: "One",
                   id: "One",
                   href: "/one",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/one");
                   }
@@ -413,7 +413,7 @@ export default Vue.extend({
               name: "Second",
               id: "Second",
               href: "/second",
-              onClick: (event: MouseEvent) => {
+              onClick: event => {
                 event.preventDefault();
                 this.$router.push("/second");
               },
@@ -422,7 +422,7 @@ export default Vue.extend({
                   name: "One",
                   id: "SecondOne",
                   href: "/second-one",
-                  onClick: (event: MouseEvent) => {
+                  onClick: event => {
                     event.preventDefault();
                     this.$router.push("/second-one");
                   }
@@ -435,7 +435,7 @@ export default Vue.extend({
           name: "TV",
           id: "TV",
           href: "/tv",
-          onClick: (event: MouseEvent) => {
+          onClick: event => {
             event.preventDefault();
             this.$router.push("/tv");
           }
@@ -444,7 +444,7 @@ export default Vue.extend({
           name: "MagentaEINS",
           id: "MagentaEINS",
           href: "/magentaeins",
-          onClick: (event: MouseEvent) => {
+          onClick: event => {
             event.preventDefault();
             this.$router.push("/magentaeins");
           }
@@ -453,7 +453,7 @@ export default Vue.extend({
           name: "Service",
           id: "Service",
           href: "/service",
-          onClick: (event: MouseEvent) => {
+          onClick: event => {
             event.preventDefault();
             this.$router.push("/service");
           }

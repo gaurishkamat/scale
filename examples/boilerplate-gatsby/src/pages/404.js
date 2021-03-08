@@ -10,9 +10,6 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <Link to="/404">404</Link>
-      <Link to="/">Home</Link>
-      <Link to="/modal">Modal</Link>
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
 

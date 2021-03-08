@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { defineCustomElements } from '@scaleds/components-telekom/loader';
+import '@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css';
+import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css"
 import App from './App';
 import './index.css';
 

@@ -320,23 +320,37 @@
   resolved "https://registry.yarnpkg.com/@proyecto26/animatable-component/-/animatable-component-1.1.8.tgz#8fb365c0ff95e4fd5b859407a4165f09724f470c"
   integrity sha512-JvnRXBKUvtADqligiNIHr8NG5zI4Y4MbBdrwlFxzXBzgHqRbyQiGIDBReDcO1XNgQFKRxyceJP3NGqrlz/DSuA==
 
-"@scaleds/components-angular-telekom@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@scaleds/components-angular-telekom/-/components-angular-telekom-1.5.1.tgz#6c74a731da3a0ecca5673e8cecbc3f5a4e6403cd"
-  integrity sha512-3cnKIP6Xrgnloje6NfQBLNeYp6ywPmVIYiyLcvl0an/xVbR3Qr3hK5iiYhyCWe1Iuu26771zSzPxscs+HJqXUg==
+"@scaleds/components-angular-telekom@^1.0.0":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@scaleds/components-angular-telekom/-/components-angular-telekom-1.15.2.tgz#e71fa223af9246b711aa459b112b231c9bce573e"
+  integrity sha512-u5UgimV/ZwYcoehZYZEVr5+CJfG1PKXcK9T1gHlaTv7+654uHkxSrdrS7iuf7OKw2z2tg7bZ30SGO7LiLHTNxQ==
   dependencies:
     "@ionic/angular" "^5.3.1"
-    "@scaleds/components-telekom" "^1.5.1"
+    "@scaleds/components-telekom" "^1.15.2"
     tslib "^1.9.3"
 
-"@scaleds/components-telekom@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@scaleds/components-telekom/-/components-telekom-1.5.1.tgz#0ab7880ed3d4403e97a4a4ef76694c6f702d7059"
-  integrity sha512-Ksz34VNDPdLxDFkNHo93japPUC9WJulogICmz3WNNeYE/ttvMOEfmnPpg3bZ0tiYjPWiruow17y7yGJDfX0vkA==
+"@scaleds/components-telekom@^1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@scaleds/components-telekom/-/components-telekom-1.15.2.tgz#fba709c76c5efb9770e90c7d2c1fffb7f33ad46d"
+  integrity sha512-a7W0Q403iznPzz+zs/X8xXImE5igHsiiJhyt96bjpARQ6IbAoBGMGTMfCSoDeF9o2eSyOJqo+MeUwOtjcOUnBw==
   dependencies:
     "@proyecto26/animatable-component" "^1.1.8"
+    "@scaleds/icons-telekom" "^1.15.2"
     classnames "^2.2.6"
     web-animations-js "^2.3.2"
+
+"@scaleds/design-tokens-telekom@^1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@scaleds/design-tokens-telekom/-/design-tokens-telekom-1.15.2.tgz#1669cf23bb5355222c1226bfd6bfc3655f934f23"
+  integrity sha512-/NXcFlnbgxWjHPP9AK5vOQi7c0U0mTFTilccyLbJzd02kJ81Lt54FtbKKVqYcE56Mg9ZuXcQoz3ack3q82S9uA==
+  dependencies:
+    color "^3.1.3"
+    prettier "^2.2.1"
+
+"@scaleds/icons-telekom@^1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@scaleds/icons-telekom/-/icons-telekom-1.15.2.tgz#4d32b6cbc457fccb8bcfac8699580baebba6407a"
+  integrity sha512-EQ+sp4jiapHiO6Khcqch4rDlPUXMbKXwr6N2uahs3pOzhDFY6hryWuutkUMyUF1Cmg3gDKbq8ylyh3SkEXCbuA==
 
 "@schematics/angular@7.3.10":
   version "7.3.10"
@@ -1643,7 +1657,7 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-color-convert@^1.9.0:
+color-convert@^1.9.0, color-convert@^1.9.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
   integrity sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
@@ -1654,6 +1668,27 @@ color-name@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
   integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
+
+color-name@^1.0.0:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
+  integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+color-string@^1.5.4:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.5.5.tgz#65474a8f0e7439625f3d27a6a19d89fc45223014"
+  integrity sha512-jgIoum0OfQfq9Whcfc2z/VhCNcmQjWbey6qBX0vqt7YICflUmBCh9E9CiQD5GSJ+Uehixm3NUwHVhqUAWRivZg==
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
+color@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/color/-/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
+  integrity sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ==
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.4"
 
 colors@1.1.2:
   version "1.1.2"
@@ -3531,6 +3566,11 @@ is-arrayish@^0.2.1:
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
   integrity sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
 
+is-arrayish@^0.3.1:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
+  integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
+
 is-binary-path@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
@@ -5320,6 +5360,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.13:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+prettier@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -6070,6 +6115,13 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
+
+simple-swizzle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
+  integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
+  dependencies:
+    is-arrayish "^0.3.1"
 
 slash@^1.0.0:
   version "1.0.0"
