@@ -50,7 +50,7 @@ const size = {
   56: 56,
 };
 const weight = {
-  thin: 100,
+  thin: 200,
   regular: 400,
   medium: 500,
   bold: 700,
