@@ -19,7 +19,7 @@
   font-size: var(--scl-font-size-16);
   min-height: var(--scl-spacing-40);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 
 .button:not(.button--disabled):focus {
@@ -87,7 +87,7 @@
   text-align: center;
   border-radius: var(--scl-radius-8);
   border: var(--scl-spacing-1) solid currentColor;
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
 }
 .button--variant-secondary:not(.button--disabled):hover {
   border-color: var(--scl-color-primary-hover, #f90984);
@@ -107,7 +107,7 @@
   text-align: center;
   border-radius: var(--scl-radius-8);
   border: var(--scl-spacing-1) solid transparent;
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   padding-left: var(--scl-spacing-8);
   padding-right: var(--scl-spacing-8);
 }

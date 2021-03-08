@@ -4,7 +4,7 @@
   opacity: 0;
   z-index: 1;
   position: fixed;
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
   box-shadow: var(--scl-shadow-level-0);
   box-sizing: border-box;
   border-radius: var(--scl-radius-4);

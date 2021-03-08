@@ -50,7 +50,7 @@ const size = {
   56: 56,
 };
 const weight = {
-  thin: 100,
+  thin: 200,
   regular: 400,
   medium: 500,
   bold: 700,
@@ -294,21 +294,24 @@ tokens[COLOR] = {
     focus: palette.blue50,
   },
   text: {
-    default: palette.grey90,
+    standard: palette.grey90,
+    additional: palette.grey60,
     link: palette.blue70,
     linkHover: palette.blue80,
     linkActive: palette.blue60,
     linkVisited: palette.blue70,
     info: palette.blue70,
     disabled: palette.grey50,
+    success: palette.green100,
     error: palette.red70,
   },
   background: {
-    default: palette.white,
+    standard: palette.white,
     light: palette.grey0,
     darker: palette.grey20,
     overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
+    success: palette.green100,
     error: palette.red60,
   },
 };
@@ -373,7 +376,7 @@ tokens[MOTION] = {
     deliberate: 800,
   },
   easing: {
-    default: 'cubic-bezier(0.42, 0, 0.58, 1)',
+    standard: 'cubic-bezier(0.42, 0, 0.58, 1)',
     enter: 'cubic-bezier(0.390, 0.575, 0.565, 1)',
   },
 };

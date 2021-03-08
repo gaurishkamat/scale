@@ -1,5 +1,5 @@
 .tag {
-  --tag-color: var(--scl-color-text-default);
+  --tag-color: var(--scl-color-text-standard);
   --tag-text-color: var(--scl-color-white);
   --icon-color: var(--tag-text-color);
 

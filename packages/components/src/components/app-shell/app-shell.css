@@ -5,7 +5,7 @@
 }
 
 .content {
-  background: var(--scl-color-background-default, #fff);
+  background: var(--scl-color-background-standard, #fff);
   padding-left: var(--header-content-side-padding, 24px);
   padding-right: var(--header-content-side-padding, 24px);
 }

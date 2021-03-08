@@ -6,9 +6,9 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   border-radius: var(--scl-radius-8);
   box-shadow: var(--scl-shadow-level-1);
 }

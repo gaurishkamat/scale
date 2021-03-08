@@ -7,7 +7,7 @@
 
 .input .input__helper-text {
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   padding-left: var(--scl-spacing-12);
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
@@ -35,20 +35,20 @@
   padding-left: var(--scl-spacing-24);
 }
 .input--type-radio label {
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-radio input {
   width: var(--scl-spacing-16);
   height: var(--scl-spacing-16);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: #fff;
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   margin: 0 var(--scl-spacing-8) 0 0;
 }
 .input--type-radio input:focus {

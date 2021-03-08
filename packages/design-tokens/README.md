@@ -69,7 +69,7 @@ Yields the following CSS:
 :root {
     /* COLOR */
     --scl-color-magenta: rgb(226, 0, 116);
-    --scl-color-text-default: rgb(26, 26, 26);
+    --scl-color-text-standard: rgb(26, 26, 26);
     --scl-color-text-error: rgb(195, 28, 59);
 }
 ```

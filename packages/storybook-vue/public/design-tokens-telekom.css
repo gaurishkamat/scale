@@ -251,7 +251,7 @@
     --scl-color-olive-80: rgb(89, 121, 73);
     --scl-color-olive-90: rgb(66, 91, 51);
     --scl-color-olive-100: rgb(49, 71, 36);
-    --scl-color-text-default: rgb(26, 26, 26);
+    --scl-color-text-standard: rgb(26, 26, 26);
     --scl-color-text-offset: rgb(255, 255, 255);
     --scl-color-text-muted: rgb(102, 102, 102);
     --scl-color-text-link: rgb(13, 57, 223);
@@ -259,7 +259,7 @@
     --scl-color-text-link-active: rgb(33, 107, 255);
     --scl-color-text-link-visited: rgb(33, 107, 255);
     --scl-color-text-error: rgb(195, 28, 59);
-    --scl-color-background-default: rgb(255, 255, 255);
+    --scl-color-background-standard: rgb(255, 255, 255);
     --scl-color-background-light: rgb(242, 242, 242);
     --scl-color-background-darker: rgb(204, 204, 204);
     --scl-color-background-disabled: rgb(204, 204, 204);
@@ -295,7 +295,7 @@
     --scl-motion-duration-fast: 200ms;
     --scl-motion-duration-slower: 600ms;
     --scl-motion-duration-deliberate: 800ms;
-    --scl-motion-easing-default: cubic-bezier(0.42, 0, 0.58, 1);
+    --scl-motion-easing-standard: cubic-bezier(0.42, 0, 0.58, 1);
     --scl-motion-easing-enter: cubic-bezier(0.390, 0.575, 0.565, 1);
     /* Z-INDEX */
     --scl-z-index-10: 10;

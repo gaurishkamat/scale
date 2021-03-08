@@ -12,13 +12,13 @@
 }
 
 .footer-container {
-  background: var(--scl-color-background-default, #fff);
+  background: var(--scl-color-background-standard, #fff);
 }
 
 .footer--variant-minimal .footer {
   border-top: var(--scl-spacing-1) solid var(--scl-color-grey-20);
   color: var(--scl-color-grey-60);
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
   padding: var(--scl-spacing-24);
 }
 
@@ -26,7 +26,7 @@
   height: var(--scl-spacing-8);
   position: relative;
   top: var(--scl-spacing-8);
-  background: var(--scl-color-background-default, #fff);
+  background: var(--scl-color-background-standard, #fff);
   z-index: 1;
   border-radius: 0 0 var(--scl-spacing-8) var(--scl-spacing-8);
 }

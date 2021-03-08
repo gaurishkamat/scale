@@ -14,7 +14,7 @@
 
 .input .input__helper-text {
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   padding-left: var(--scl-spacing-12);
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
@@ -54,7 +54,7 @@
   padding-left: var(--scl-spacing-32);
 }
 .input--type-checkbox .input__checkbox-label {
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
@@ -197,11 +197,11 @@
   margin: var(--scl-spacing-2);
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   margin-left: var(--scl-spacing-4);
   border-radius: var(--scl-radius-4);
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
-  background: var(--scl-color-background-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  background: var(--scl-color-background-standard);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
   top: calc(0.5 * var(--scl-spacing-12));
@@ -211,11 +211,11 @@
   position: absolute;
   user-select: none;
   /* TODO this could removed once scale-icon is removed */
-  --icon-color: var(--scl-color-background-default);
+  --icon-color: var(--scl-color-background-standard);
 }
 .input--type-checkbox .input__checkbox-container ~ .input__checkbox-label {
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
