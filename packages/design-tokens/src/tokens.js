@@ -295,12 +295,14 @@ tokens[COLOR] = {
   },
   text: {
     default: palette.grey90,
+    additional: palette.grey60,
     link: palette.blue70,
     linkHover: palette.blue80,
     linkActive: palette.blue60,
     linkVisited: palette.blue70,
     info: palette.blue70,
     disabled: palette.grey50,
+    success: palette.green100,
     error: palette.red70,
   },
   background: {
@@ -309,6 +311,7 @@ tokens[COLOR] = {
     darker: palette.grey20,
     overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
+    success: palette.green100,
     error: palette.red60,
   },
 };
