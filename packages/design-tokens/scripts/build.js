@@ -6,7 +6,7 @@ import each from 'lodash/each.js';
 
 import getTokens from '../src/tokens.js';
 import { outputCSS } from './output-css.js';
-import { outputJSSFontVariants } from './output-jss.js';
+import { outputJSS } from './output-jss.js';
 
 const DEFAULT_FILENAME = 'design-tokens-telekom';
 const OUTPUT_PATH = './dist';
@@ -17,7 +17,7 @@ async function main() {
   await fs.emptyDir(OUTPUT_PATH);
   await fs.mkdirp(OUTPUT_PATH);
 
-  const outputs = [outputCSS, outputJSSFontVariants];
+  const outputs = [outputCSS, outputJSS];
   const tokens = getTokens();
 
   try {
