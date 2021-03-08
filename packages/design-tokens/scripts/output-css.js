@@ -113,7 +113,7 @@ function getFontVariantDeclarations(path, values) {
  * @param {any} val
  * @returns {string|number}
  */
-function processValue(path, key, val) {
+export function processValue(path, key, val) {
   if (val == null) {
     return '';
   }
