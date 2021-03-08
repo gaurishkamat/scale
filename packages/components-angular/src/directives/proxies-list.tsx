@@ -230,7 +230,6 @@ d.AppLogo,
   d.ScaleTabPanel,
   d.ScaleTable,
   d.ScaleTag,
-  d.ScaleText,
   d.ScaleTextField,
   d.ScaleTextarea,
   d.ScaleToast

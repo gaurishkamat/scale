@@ -238,7 +238,6 @@ const customElementTags: string[] = [
  'scale-tab-panel',
  'scale-table',
  'scale-tag',
- 'scale-text',
  'scale-text-field',
  'scale-textarea',
  'scale-toast',
@@ -3750,19 +3749,6 @@ export const ScaleTag = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-tag', ['scaleClose']),
-});
-
-
-export const ScaleText = /*@__PURE__*/ Vue.extend({
-
-  props: {
-    variant: {} as PropOptions<Components.ScaleText['variant']>,
-    tag: {} as PropOptions<Components.ScaleText['tag']>,
-    styles: {} as PropOptions<Components.ScaleText['styles']>,
-  },
-
-
-  render: createCommonRender('scale-text', []),
 });
 
 

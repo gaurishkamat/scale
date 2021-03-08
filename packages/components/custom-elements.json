@@ -6970,27 +6970,6 @@
       ]
     },
     {
-      "name": "scale-text",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [
-        {
-          "name": "styles",
-          "description": "(optional) Injected CSS styles"
-        },
-        {
-          "name": "tag",
-          "description": "(optional) Text tag"
-        },
-        {
-          "name": "variant",
-          "description": "(optional) Text variant"
-        }
-      ]
-    },
-    {
       "name": "scale-text-field",
       "description": {
         "kind": "markdown",

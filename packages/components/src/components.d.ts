@@ -5185,20 +5185,6 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleText {
-        /**
-          * (optional) Injected CSS styles
-         */
-        "styles"?: string;
-        /**
-          * (optional) Text tag
-         */
-        "tag"?: string;
-        /**
-          * (optional) Text variant
-         */
-        "variant"?: string;
-    }
     interface ScaleTextField {
         /**
           * (optional) Input counter
@@ -6761,12 +6747,6 @@ declare global {
         prototype: HTMLScaleTagElement;
         new (): HTMLScaleTagElement;
     };
-    interface HTMLScaleTextElement extends Components.ScaleText, HTMLStencilElement {
-    }
-    var HTMLScaleTextElement: {
-        prototype: HTMLScaleTextElement;
-        new (): HTMLScaleTextElement;
-    };
     interface HTMLScaleTextFieldElement extends Components.ScaleTextField, HTMLStencilElement {
     }
     var HTMLScaleTextFieldElement: {
@@ -7014,7 +6994,6 @@ declare global {
         "scale-tab-panel": HTMLScaleTabPanelElement;
         "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
-        "scale-text": HTMLScaleTextElement;
         "scale-text-field": HTMLScaleTextFieldElement;
         "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
@@ -12283,20 +12262,6 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
-    interface ScaleText {
-        /**
-          * (optional) Injected CSS styles
-         */
-        "styles"?: string;
-        /**
-          * (optional) Text tag
-         */
-        "tag"?: string;
-        /**
-          * (optional) Text variant
-         */
-        "variant"?: string;
-    }
     interface ScaleTextField {
         /**
           * (optional) Input counter
@@ -12754,7 +12719,6 @@ declare namespace LocalJSX {
         "scale-tab-panel": ScaleTabPanel;
         "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
-        "scale-text": ScaleText;
         "scale-text-field": ScaleTextField;
         "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
@@ -12992,7 +12956,6 @@ declare module "@stencil/core" {
             "scale-tab-panel": LocalJSX.ScaleTabPanel & JSXBase.HTMLAttributes<HTMLScaleTabPanelElement>;
             "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
-            "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
             "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
             "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;

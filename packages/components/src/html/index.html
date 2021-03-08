@@ -8,11 +8,10 @@
     />
     <title>Stencil Component Starter</title>
 
-    <script src="/build/theme/theme.iife.js"></script>
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
-    <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
     <link rel="stylesheet" href="/build/design-tokens-telekom.css" />
+    <link rel="stylesheet" href="/build/scale-components.css" />
     <style type="text/css" media="screen, print">
       html {
         margin: 0;
@@ -29,33 +28,6 @@
         margin: 3rem 0;
       }
     </style>
-    <script>
-      console.log(scale);
-      const variants = {
-        custom: {
-          background: 'pink',
-          borderColor: 'pink',
-        },
-      };
-      scale.useTheme({
-        typography: {
-          variants: {
-            custom: {
-              fontSize: 32,
-              color: 'green',
-            },
-          },
-        },
-        components: {
-          Button: {
-            'button--variant-custom': variants.custom,
-          },
-          Tag: {
-            'tag--variant-custom': variants.custom,
-          },
-        },
-      });
-    </script>
   </head>
 
   <body>
