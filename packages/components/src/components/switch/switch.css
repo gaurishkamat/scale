@@ -7,7 +7,7 @@
   --switch-color-hover: var(--scl-color-primary-hover);
   --switch-color-disabled: var(--scl-color-background-disabled);
   --switch-color-state: var(--switch-color-off);
-  --switch-color-state-contrast: var(--scl-color-background-default);
+  --switch-color-state-contrast: var(--scl-color-background-standard);
   --switch-color-background: var(--switch-color-state-contrast);
   --switch-color-toggle: var(--switch-color-state);
   --switch-color-text: var(--switch-color-state);
@@ -38,7 +38,7 @@
   background: var(--switch-color-background);
   transition-property: background;
   transition-duration: var(--scl-motion-duration-fast);
-  transition-timing-function: var(--scl-motion-easing-default);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch .switch__text {
@@ -50,7 +50,7 @@
   line-height: calc(var(--switch-size) - var(--switch-offset));
   transition-property: color;
   transition-duration: var(--scl-motion-duration-fast);
-  transition-timing-function: var(--scl-motion-easing-default);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch .switch__text:before {
@@ -73,7 +73,7 @@
   top: 50%;
   transition-property: transform, background;
   transition-duration: var(--scl-motion-duration-fast);
-  transition-timing-function: var(--scl-motion-easing-default);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch input:checked:disabled + .switch__wrapper .switch__toggle,
@@ -94,7 +94,7 @@
   margin-left: 1rem;
   transition-property: color;
   transition-duration: var(--scl-motion-duration-fast);
-  transition-timing-function: var(--scl-motion-easing-default);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch--focus-visible-not-supported input:focus ~ .switch__wrapper {

@@ -3,7 +3,7 @@
   overflow: auto;
   border-radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
   background: var(--scl-color-background-light);
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
 }
 .table table {
   width: 100%;
@@ -15,7 +15,7 @@
   padding: 0 8px;
   text-align: left;
   line-height: 32px; /*  TODO: revise, this is weird */
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   font-size: var(--scl-font-size-12);
 }
 .table td {
@@ -30,12 +30,12 @@
 
 .table tfoot,
 .table tbody {
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
 }
 .table tfoot tr td {
   padding: 8px;
   font-weight: 600;
-  border-bottom: 1px solid var(--scl-color-text-default);
+  border-bottom: 1px solid var(--scl-color-text-standard);
 }
 .table .scale-sort-indicator svg {
   display: none;
@@ -85,7 +85,7 @@
   th[aria-sort='ascending']
   .scale-sort-indicator
   polygon:first-of-type {
-  fill: var(--scl-color-text-default);
+  fill: var(--scl-color-text-standard);
 }
 .table--sortable th:hover .scale-sort-indicator polygon:first-of-type {
   fill: var(--scl-color-primary-hover);
@@ -133,7 +133,7 @@
   fill: transparent;
 }
 .table--sortable th[aria-sort='descending'] .scale-sort-indicator polygon {
-  fill: var(--scl-color-text-default);
+  fill: var(--scl-color-text-standard);
 }
 .table--sortable
   th:hover[aria-sort='descending']

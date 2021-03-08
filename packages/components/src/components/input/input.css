@@ -16,7 +16,7 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
   border-radius: var(--scl-radius-4);
@@ -32,11 +32,11 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
   border-radius: var(--scl-radius-4);
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
 }
 .input .input__select {
   appearance: none;
@@ -48,17 +48,17 @@
 .input .input__counter {
   display: flex;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   margin-left: auto;
   padding-right: var(--scl-spacing-12);
   justify-content: flex-end;
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
 }
 .input .input__helper-text {
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   padding-left: var(--scl-spacing-12);
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
@@ -93,7 +93,7 @@
 .input:not(.input--disabled) .input__textarea:focus::placeholder {
   color: var(--scl-color-grey-60);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
@@ -108,7 +108,7 @@
 .input ::placeholder {
   color: transparent;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 .input--variant-static .input__label {
   color: var(--scl-color-grey-60);
@@ -131,7 +131,7 @@
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   pointer-events: none;
   font-size: var(--scl-font-size-16);
   /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
@@ -146,7 +146,7 @@
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-bold);
 }
@@ -175,7 +175,7 @@
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   pointer-events: none;
   font-size: var(--scl-font-size-16);
   /* previously: transform: translate(
@@ -193,7 +193,7 @@
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-medium);
 }
@@ -221,7 +221,7 @@
   padding-left: var(--scl-spacing-32);
 }
 .input--type-checkbox label {
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
@@ -364,11 +364,11 @@
   margin: var(--scl-spacing-2);
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   margin-left: var(--scl-spacing-4);
   border-radius: var(--scl-radius-4);
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
-  background: var(--scl-color-background-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  background: var(--scl-color-background-standard);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
   top: calc(0.5 * var(--scl-spacing-12));
@@ -378,11 +378,11 @@
   position: absolute;
   user-select: none;
   /* TODO this could removed once scale-icon is removed */
-  --icon-color: var(--scl-color-background-default);
+  --icon-color: var(--scl-color-background-standard);
 }
 .input--type-checkbox .input__checkbox-container ~ label {
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
@@ -402,20 +402,20 @@
   padding-left: var(--scl-spacing-24);
 }
 .input--type-radio label {
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-radio input {
   width: var(--scl-spacing-16);
   height: var(--scl-spacing-16);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: #fff;
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   margin: 0 var(--scl-spacing-8) 0 0;
 }
 .input--type-radio input:focus {
@@ -467,7 +467,7 @@
   pointer-events: none;
   border-radius: var(--scl-radius-4);
   height: var(--scl-spacing-24);
-  background-color: var(--scl-color-background-default, #ffffff);
+  background-color: var(--scl-color-background-standard, #ffffff);
 }
 .input--disabled .input__textarea-label-safety-background {
   background-color: transparent;

@@ -132,7 +132,7 @@
   outline: none;
   background: transparent;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   transform: translate(var(--scl-spacing-8), calc(-1 * var(--scl-spacing-8)));
   appearance: none;
   cursor: pointer;

@@ -61,7 +61,7 @@
 }
 
 .progress-bar__inner-status {
-  color: var(--scl-color-background-default);
+  color: var(--scl-color-background-standard);
   padding: 0 12px;
   font-size: var(--scl-font-size-12);
 }

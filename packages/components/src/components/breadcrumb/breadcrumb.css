@@ -46,5 +46,5 @@ li {
 }
 
 .current {
-  color: var(--scl-color-text-default);
+  color: var(--scl-color-text-standard);
 }

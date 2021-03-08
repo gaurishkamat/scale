@@ -1,7 +1,7 @@
 duet-date-picker {
   --duet-color-primary: var(--scl-color-primary, #e20074);
-  --duet-color-text: var(--scl-color-text-default, #1a1a1a);
-  --duet-color-overlay: var(--scl-color-background-default, #ffffff);
+  --duet-color-text: var(--scl-color-text-standard, #1a1a1a);
+  --duet-color-overlay: var(--scl-color-background-standard, #ffffff);
   --duet-font: var(--scl-font-family-sans);
   --duet-font-normal: var(--scl-font-weight-regular);
   --duet-font-bold: var(--scl-font-weight-medium);
@@ -9,13 +9,13 @@ duet-date-picker {
   --duet-radius: var(--scl-radius-4);
 
   --duet-color-text-active: var(--scl-color-white, #ffffff);
-  --duet-color-button: var(--scl-color-background-default, #ffffff);
-  --duet-color-surface: var(--scl-color-background-default, #ffffff);
+  --duet-color-button: var(--scl-color-background-standard, #ffffff);
+  --duet-color-surface: var(--scl-color-background-standard, #ffffff);
   --duet-z-index: 600;
 }
 
 duet-date-picker .duet-date__input {
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   padding: var(--scl-spacing-12) var(--scl-spacing-12) 0 var(--scl-spacing-12);
   height: var(--scl-spacing-48);
 }
@@ -26,7 +26,7 @@ duet-date-picker .duet-date__input:hover {
 
 duet-date-picker .duet-date__input:focus {
   box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  border: var(--scl-spacing-1) solid var(--scl-color-text-default);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
 }
 
 duet-date-picker .duet-date__toggle {
@@ -52,7 +52,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 .scale-date-picker .date-picker__helper-text {
   font-weight: var(--scl-font-weight-bold);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   padding-left: var(--scl-spacing-12);
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
@@ -73,7 +73,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   z-index: 10;
   position: absolute;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   pointer-events: none;
   font-size: var(--scl-spacing-16);
   transform: translate(
@@ -86,7 +86,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 duet-date-picker .duet-date__input::placeholder {
   color: transparent;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
@@ -94,7 +94,7 @@ duet-date-picker .duet-date__input::placeholder {
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-bold);
 }
@@ -103,7 +103,7 @@ duet-date-picker .duet-date__input::placeholder {
 duet-date-picker .duet-date__input:focus::placeholder {
   color: var(--scl-color-grey-60);
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
 }
 
 /* Error state */
@@ -140,7 +140,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
   z-index: 10;
   position: absolute;
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   pointer-events: none;
   font-size: var(--scl-font-size-16);
   transform: translate(
@@ -154,7 +154,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
   color: var(--scl-color-grey-60);
   transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
   transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-default);
+    var(--scl-motion-easing-standard);
   font-size: var(--scl-font-size-10);
   font-weight: var(--scl-font-weight-medium);
 }
@@ -173,7 +173,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
   cursor: not-allowed;
   border-color: var(--scl-color-grey-20);
   color: var(--scl-color-grey-20);
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
 }
 
 .scale-date-picker.scale-date-picker--disabled .date-picker__label {
@@ -262,7 +262,7 @@ duet-date-picker .duet-date__day.is-today::before {
 
 duet-date-picker [aria-selected='true'] .duet-date__day.is-today::before,
 duet-date-picker .duet-date__day.is-today:hover::before {
-  background-color: var(--scl-color-background-default);
+  background-color: var(--scl-color-background-standard);
 }
 
 duet-date-picker .duet-date__day.is-today.is-disabled::before {
@@ -271,7 +271,7 @@ duet-date-picker .duet-date__day.is-today.is-disabled::before {
 
 duet-date-picker .duet-date__day:focus {
   box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  background: var(--scl-color-background-default);
+  background: var(--scl-color-background-standard);
   color: var(--scl-color-primary);
 }
 
