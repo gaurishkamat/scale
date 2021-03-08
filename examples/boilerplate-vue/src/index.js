@@ -7,8 +7,13 @@ import {
   applyPolyfills
 } from "@scaleds/components-telekom/loader";
 import VueRouter from "vue-router";
-
 Vue.use(VueRouter);
+import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css";
+import "@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css";
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
 
 const router = new VueRouter({
   mode: "history",
@@ -97,10 +102,6 @@ const router = new VueRouter({
 
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = [/scale-\w*/];
-
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
 
 new Vue({
   router,

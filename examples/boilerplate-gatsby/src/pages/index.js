@@ -4,8 +4,9 @@ import {
   ScaleCard,
   ScaleLink,
   ScaleTag,
-  ScaleInput,
-  ScaleDatePicker
+  ScaleTextField,
+  ScaleDatePicker,
+  ScaleTextarea
 } from "@scaleds/components-react-telekom"
 import { Link } from "gatsby"
 
@@ -17,35 +18,42 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Link to="/404">404</Link>
-      <Link to="/">Home</Link>
-      <Link to="/modal">Modal</Link>
-      <h3>Alert</h3>
+
+      <h2>Link</h2>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
       </ScaleLink>
+      <h2>Date Picker</h2>
       <ScaleDatePicker
         ref={dateRef}
         onScaleChange={console.log}
         onScaleFocus={console.log}
         onScaleBlur={console.log}
         value="2021-03-24"
+        label="pick a date"
       />
-      <h3>Button</h3>
+      <h2>Button</h2>
       <ScaleButton variant="primary" onClick={() => dateRef.current.show()}>
         Show date picker
       </ScaleButton>
-      <h3>Card</h3>
+      <h2>Card</h2>
       <ScaleCard>A title</ScaleCard>
-      <h3>Tag</h3>
+      <h2>Tag</h2>
       <ScaleTag dismissable size="small" onClose={event => console.log(event)}>
         A title
       </ScaleTag>
-      <h3>Input</h3>
-      <ScaleInput
-        styles={JSON.stringify({ input: { "& input": { color: "blue" } } })}
+      <h2>Text Field</h2>
+      <ScaleTextField
         value="initial value"
         onScaleChange={console.log}
+        label="Text Field"
+      />
+      <h2>Text Area</h2>
+      <ScaleTextarea
+        value="initial value"
+        onScaleChange={console.log}
+        label="Text Area"
+        rows={10}
       />
     </Layout>
   )

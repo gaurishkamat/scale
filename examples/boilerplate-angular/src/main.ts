@@ -6,14 +6,6 @@ import { environment } from './environments/environment';
 
 import { defineCustomElements } from '@scaleds/components-telekom/loader';
 
-// import { useTheme } from '@scaleds/components-telekom/dist/theme';
-
-// useTheme({
-//   shape: {
-//     borderRadius: 24
-//   }
-// })
-
 if (environment.production) {
   enableProdMode();
 }

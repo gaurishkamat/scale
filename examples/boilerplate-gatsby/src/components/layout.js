@@ -7,6 +7,8 @@ import {
 
 import "./layout.css"
 import "@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css"
+import "@scaleds/components-telekom/dist/fonts/scale-fonts-telekom.css"
+import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css"
 import {
   addonNavigation,
   footerNavigation,
