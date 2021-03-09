@@ -16,7 +16,6 @@ This repository uses `lerna` and `typescript`
 |components         |Stencil components|
 |components-react   |Component binding for React (auto-generated)|
 |config             |Shared configuration across packages|
-|gatsby-plugin      |Plugin to enable SSR for Gatsby apps|
 |nuxt-module        |Plugin to enable SSR for Nuxt apps|
 
 ### Running locally

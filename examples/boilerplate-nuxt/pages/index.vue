@@ -43,7 +43,6 @@ export default Vue.extend({
 </script>
 
 <style>
-@import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css";
 @import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
 .container {
   margin: 0 auto;

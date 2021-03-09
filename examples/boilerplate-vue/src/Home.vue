@@ -11,10 +11,11 @@
     <span>The message is:</span>
     <p>{{ message }}</p>
     <br />
-    <scale-input
+    <scale-text-field
       @scaleChange="handleChange"
       placeholder="add multiple lines"
-    ></scale-input>
+      label="text field"
+    ></scale-text-field>
     <scale-link underline="false">Textttt</scale-link>
   </div>
 </template>

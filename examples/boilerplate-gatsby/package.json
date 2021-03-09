@@ -5,10 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@scaleds/components-react-telekom": "^1.15.0",
-    "@scaleds/components-telekom": "^1.15.0",
-    "@scaleds/design-tokens-telekom": "^1.15.2",
-    "@scaleds/gatsby-plugin": "^1.15.0",
+    "@scaleds/components-react-telekom": "2.0.0-beta.0",
+    "@scaleds/components-telekom": "2.0.0-beta.0",
     "gatsby": "^2.20.36",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-manifest": "^2.3.7",
