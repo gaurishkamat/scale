@@ -1,4 +1,4 @@
-describe('Pagination', () => {
+describe.skip('Pagination', () => {
   test.each([
     ['standard'],
     ['auto-sizing-label'],

@@ -1,4 +1,4 @@
-describe('DataGrid', () => {
+describe.skip('DataGrid', () => {
   test.each([
     ['standard'],
     ['checkbox-cell'],

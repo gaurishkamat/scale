@@ -1,4 +1,4 @@
-describe('Menu', () => {
+describe.skip('Menu', () => {
   test.each([
     ['menu-item-options'],
   ])('%p', async variant => {

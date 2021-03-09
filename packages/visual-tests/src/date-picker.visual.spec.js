@@ -1,4 +1,4 @@
-describe('DatePicker', () => {
+describe.skip('DatePicker', () => {
   test.each([['standard']])(
     '%p',
     async variant => {
