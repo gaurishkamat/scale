@@ -272,6 +272,24 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 <scale-button size="small" variant="secondary">Label</scale-button>
 ```
 
+## Small Disabled
+
+<Canvas withSource="none">
+    <Story
+        name='Small Disabled'
+        args={{
+            size: 'small',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button size="small" disabled>Label</scale-button>
+```
+
 ## Small Secondary Disabled
 
 <Canvas withSource="none">
@@ -289,24 +307,6 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 
 ```html
 <scale-button size="small" variant="secondary" disabled>Label</scale-button>
-```
-
-## Small Disabled
-
-<Canvas withSource="none">
-    <Story
-        name='Small Disabled'
-        args={{
-            size: 'small',
-            disabled: true
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-```html
-<scale-button size="small" disabled>Label</scale-button>
 ```
 
 ## Small With Icon Before
