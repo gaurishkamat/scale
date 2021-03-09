@@ -288,6 +288,13 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@duetds/date-picker@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@duetds/date-picker/-/date-picker-1.2.0.tgz#811c669a09ad93f5916386c57de61db259b59087"
+  integrity sha512-8uIbQLYrUHgUtJdF9Q6GANGFZw/R6luATyLZYMb0211Nv/nK+o5tWdCbJPcvszV7Ggi3y+8vb41OKgfP8KIWnQ==
+  dependencies:
+    "@stencil/core" "^2.3.0"
+
 "@ionic/angular@^5.3.1":
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/@ionic/angular/-/angular-5.3.2.tgz#71d80bd75ca41834a1dbad84e4c32a6cc24b5568"
@@ -320,37 +327,33 @@
   resolved "https://registry.yarnpkg.com/@proyecto26/animatable-component/-/animatable-component-1.1.8.tgz#8fb365c0ff95e4fd5b859407a4165f09724f470c"
   integrity sha512-JvnRXBKUvtADqligiNIHr8NG5zI4Y4MbBdrwlFxzXBzgHqRbyQiGIDBReDcO1XNgQFKRxyceJP3NGqrlz/DSuA==
 
-"@scaleds/components-angular-telekom@^1.0.0":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@scaleds/components-angular-telekom/-/components-angular-telekom-1.15.2.tgz#e71fa223af9246b711aa459b112b231c9bce573e"
-  integrity sha512-u5UgimV/ZwYcoehZYZEVr5+CJfG1PKXcK9T1gHlaTv7+654uHkxSrdrS7iuf7OKw2z2tg7bZ30SGO7LiLHTNxQ==
+"@scaleds/components-angular-telekom@^2.0.0-beta.0":
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@scaleds/components-angular-telekom/-/components-angular-telekom-2.0.0-beta.0.tgz#c0678fe1689bd4483858ea16ec2420192916eb3b"
+  integrity sha512-XO6hkV3SoWcilYN0uBYk2ufiXuPLYIsP8Yp8h79ann26QaLHvQEbelvRr6sDr8NG2pYP+VMg0oyqgoj7CqYGDQ==
   dependencies:
     "@ionic/angular" "^5.3.1"
-    "@scaleds/components-telekom" "^1.15.2"
+    "@scaleds/components-telekom" "^2.0.0-beta.0"
     tslib "^1.9.3"
 
-"@scaleds/components-telekom@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@scaleds/components-telekom/-/components-telekom-1.15.2.tgz#fba709c76c5efb9770e90c7d2c1fffb7f33ad46d"
-  integrity sha512-a7W0Q403iznPzz+zs/X8xXImE5igHsiiJhyt96bjpARQ6IbAoBGMGTMfCSoDeF9o2eSyOJqo+MeUwOtjcOUnBw==
+"@scaleds/components-telekom@2.0.0-beta.0", "@scaleds/components-telekom@^2.0.0-beta.0":
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@scaleds/components-telekom/-/components-telekom-2.0.0-beta.0.tgz#14c62c82c10078d2938e3dc39bde39a012c39161"
+  integrity sha512-6O5v48rfaJCFuaGar+uQyy4MGVzyejdDrL9yvTEsmZGDNWjwYZv1yGJ0MQ3UEdXvDIq7XvX9V+LXUBe7L7hW7w==
   dependencies:
+    "@duetds/date-picker" "1.2.0"
     "@proyecto26/animatable-component" "^1.1.8"
-    "@scaleds/icons-telekom" "^1.15.2"
+    "@scaleds/design-tokens-telekom" "^2.0.0-beta.0"
     classnames "^2.2.6"
     web-animations-js "^2.3.2"
 
-"@scaleds/design-tokens-telekom@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@scaleds/design-tokens-telekom/-/design-tokens-telekom-1.15.2.tgz#1669cf23bb5355222c1226bfd6bfc3655f934f23"
-  integrity sha512-/NXcFlnbgxWjHPP9AK5vOQi7c0U0mTFTilccyLbJzd02kJ81Lt54FtbKKVqYcE56Mg9ZuXcQoz3ack3q82S9uA==
+"@scaleds/design-tokens-telekom@^2.0.0-beta.0":
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@scaleds/design-tokens-telekom/-/design-tokens-telekom-2.0.0-beta.0.tgz#70e5e4da72463c2f0326f1ccddfd2259af275107"
+  integrity sha512-TDWUNKrb9yettlt967PkxJJjDk3C11F1BilLpBYic5h7R0BPsSJEt0NxG4Bm0DY2UU7TCDLba2GVEBh5jISFeg==
   dependencies:
     color "^3.1.3"
     prettier "^2.2.1"
-
-"@scaleds/icons-telekom@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@scaleds/icons-telekom/-/icons-telekom-1.15.2.tgz#4d32b6cbc457fccb8bcfac8699580baebba6407a"
-  integrity sha512-EQ+sp4jiapHiO6Khcqch4rDlPUXMbKXwr6N2uahs3pOzhDFY6hryWuutkUMyUF1Cmg3gDKbq8ylyh3SkEXCbuA==
 
 "@schematics/angular@7.3.10":
   version "7.3.10"
@@ -374,6 +377,11 @@
     rxjs "6.3.3"
     semver "5.6.0"
     semver-intersect "1.4.0"
+
+"@stencil/core@^2.3.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.4.0.tgz#17b45629c8986e35dcbce3f7dab7d64beede83f2"
+  integrity sha512-gU6+Yyd6O0KrCSS/O6j8KKqmRo+/Dcs2fI0+APCpbAWK+nqhwDISpdnSEfGDCLMoAC08XOZCycBRk2K1VGnEcg==
 
 "@types/jasmine@*":
   version "3.5.13"
