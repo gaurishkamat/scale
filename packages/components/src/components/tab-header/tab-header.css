@@ -12,7 +12,7 @@
   padding-left: 0;
   height: var(--tab-height);
   margin-right: var(--tab-spacing);
-  padding-right: var(---tab-spacing);
+  padding-right: var(--tab-spacing);
   font-family: var(--type-family, TeleNeoWeb);
   font-size: calc(var(--tab-height) / 2);
   font-weight: var(--scl-font-weight-bold);
