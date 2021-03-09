@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.0) (2021-03-09)
+
+
+### Bug Fixes
+
+* spec errors ([517d932](https://gitlab.com/scale-ds/scale-telekom/commit/517d9324b364d137ba6f4076332b3b7f25682cce))
+* switch styles ([218c56e](https://gitlab.com/scale-ds/scale-telekom/commit/218c56ed8183783f88930f6d1643c219ff2fa17e))
+* switch styles ([2285a44](https://gitlab.com/scale-ds/scale-telekom/commit/2285a4464ebef7beefd56b6c4d74ca7e56185906))
+
+
+### Features
+
+* card link click handler and custom checkbox slot ([28d11b3](https://gitlab.com/scale-ds/scale-telekom/commit/28d11b34eceec8e1944b5ba471390ba1f3b89c71))
+* **footer:** add angular variant and background token ([ef6717c](https://gitlab.com/scale-ds/scale-telekom/commit/ef6717c5220c72d839852c7f238cf492e715673b))
+* custom header ([f08a510](https://gitlab.com/scale-ds/scale-telekom/commit/f08a510a873325367ddd7c8c986516037d4686fa))
+* new brand-header visual tests ([0f66336](https://gitlab.com/scale-ds/scale-telekom/commit/0f6633634754796e4eed8f594fd6fbd4e0814ca0))
+* **date-picker:** more configuration options ([b51d943](https://gitlab.com/scale-ds/scale-telekom/commit/b51d943573f70eee100070786c9fa4ebe85af4f3))
+* update visual tests ([f4ccb52](https://gitlab.com/scale-ds/scale-telekom/commit/f4ccb5277afe52c504d7438da314f15c89b2a8d9))
+
+
+
+
+
 # [1.15.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.14.0...v1.15.0) (2020-12-18)
 
 **Note:** Version bump only for package @scaleds/visual-test
