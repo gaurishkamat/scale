@@ -26,7 +26,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         { src: 'fonts/TeleNeoWeb', warn: true },
-        { src: 'components/icons/scale-icons.json', warn: true }
+        { src: 'components/icons/scale-icons.json', warn: true },
       ],
     },
     {
