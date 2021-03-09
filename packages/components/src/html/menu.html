@@ -8,10 +8,9 @@
     />
     <title>Menu Component Examples</title>
 
-    <script src="/build/theme/theme.iife.js"></script>
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
-    <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
+    <link rel="stylesheet" href="/build/design-tokens-telekom.css" />
     <link rel="stylesheet" href="/build/scale-components.css" />
     <style>
       html {
@@ -115,8 +114,10 @@
         <span slot="suffix">⌘Space</span>
       </scale-menu-item>
       <scale-menu-item
-        ><scale-icon-action-logout slot="prefix"></scale-icon-action-logout>Prefix And Suffix
+        ><scale-icon-action-logout slot="prefix"></scale-icon-action-logout
+        >Prefix And Suffix
         <span slot="suffix">⌘F</span>
+      </scale-menu-item>
     </scale-menu-list>
 
     <p>Direction</p>
@@ -261,9 +262,7 @@
         ><scale-icon-service-settings></scale-icon-service-settings
       ></scale-button>
       <scale-menu-list>
-        <scale-menu-item
-          >Item 1
-        </scale-menu-item>
+        <scale-menu-item>Item 1 </scale-menu-item>
         <scale-menu>
           <scale-menu-item slot="trigger" cascade>More Options</scale-menu-item>
           <scale-menu-list>
@@ -271,7 +270,9 @@
             <scale-menu-item>Option 2</scale-menu-item>
             <scale-menu-item>Option 3</scale-menu-item>
             <scale-menu>
-              <scale-menu-item slot="trigger" cascade>Even More</scale-menu-item>
+              <scale-menu-item slot="trigger" cascade
+                >Even More</scale-menu-item
+              >
               <scale-menu-list>
                 <scale-menu-item>Option 1</scale-menu-item>
                 <scale-menu>
@@ -289,9 +290,7 @@
             </scale-menu>
           </scale-menu-list>
         </scale-menu>
-        <scale-menu
-          close-on-select="false"
-        >
+        <scale-menu close-on-select="false">
           <scale-menu-item slot="trigger" cascade
             >Toggle Visibility</scale-menu-item
           >
@@ -309,7 +308,6 @@
         </scale-menu-item>
       </scale-menu-list>
     </scale-menu>
-
 
     <p>Select Event</p>
     <scale-menu id="select-example-menu">
@@ -331,61 +329,68 @@
       }
     </script>
 
-  <p>Open Close Events</p>
-  <scale-menu id="open-close-example-menu">
-    <scale-button slot="trigger" variant="secondary"
-      >Open<scale-icon-navigation-collapse-down
-        size="16"
-      ></scale-icon-navigation-collapse-down
-    ></scale-button>
-    <scale-menu-list>
-      <scale-menu-item>Item 1</scale-menu-item>
-      <scale-menu-item>Item 2</scale-menu-item>
-      <scale-menu-item>Item 3</scale-menu-item>
-    </scale-menu-list>
-  </scale-menu>
-  <script>
-    {
-      const el = document.querySelector('#open-close-example-menu');
-      el.addEventListener('scaleOpen', () => alert('open'));
-      el.addEventListener('scaleClose', () => alert('close'));
-    }
-  </script>
+    <p>Open Close Events</p>
+    <scale-menu id="open-close-example-menu">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-list>
+        <scale-menu-item>Item 1</scale-menu-item>
+        <scale-menu-item>Item 2</scale-menu-item>
+        <scale-menu-item>Item 3</scale-menu-item>
+      </scale-menu-list>
+    </scale-menu>
+    <script>
+      {
+        const el = document.querySelector('#open-close-example-menu');
+        el.addEventListener('scaleOpen', () => alert('open'));
+        el.addEventListener('scaleClose', () => alert('close'));
+      }
+    </script>
 
-  <p>Checked Toggle</p>
-  <scale-menu close-on-select="false" id="checked-toggle-example-menu">
-    <scale-button slot="trigger" variant="secondary"
-      >Open<scale-icon-navigation-collapse-down
-        size="16"
-      ></scale-icon-navigation-collapse-down
-    ></scale-button>
-    <scale-menu-list>
-      <scale-menu-item checked="true">Toggle 1</scale-menu-item>
-      <scale-menu-item checked="true">Toggle 2</scale-menu-item>
-      <scale-menu-item checked="true">Toggle 3</scale-menu-item>
-    </scale-menu-list>
-  </scale-menu>
-  <script>
-    {
-      const el = document.querySelector('#checked-toggle-example-menu');
-      el.addEventListener('scaleSelect', ({detail}) => detail.item.checked = !detail.item.checked);
-    }
-  </script>
+    <p>Checked Toggle</p>
+    <scale-menu close-on-select="false" id="checked-toggle-example-menu">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-list>
+        <scale-menu-item checked="true">Toggle 1</scale-menu-item>
+        <scale-menu-item checked="true">Toggle 2</scale-menu-item>
+        <scale-menu-item checked="true">Toggle 3</scale-menu-item>
+      </scale-menu-list>
+    </scale-menu>
+    <script>
+      {
+        const el = document.querySelector('#checked-toggle-example-menu');
+        el.addEventListener(
+          'scaleSelect',
+          ({ detail }) => (detail.item.checked = !detail.item.checked)
+        );
+      }
+    </script>
 
-
-  <p>Individual Item Select Events</p>
-  <scale-menu>
-    <scale-button slot="trigger" variant="secondary"
-      >Open<scale-icon-navigation-collapse-down
-        size="16"
-      ></scale-icon-navigation-collapse-down
-    ></scale-button>
-    <scale-menu-list>
-      <scale-menu-item onclick="alert('Item 1 selected');">Item 1</scale-menu-item>
-      <scale-menu-item onclick="alert('Item 2 selected');">Item 2</scale-menu-item>
-      <scale-menu-item onclick="alert('Item 3 selected');">Item 3</scale-menu-item>
-    </scale-menu-list>
-  </scale-menu>
-
+    <p>Individual Item Select Events</p>
+    <scale-menu>
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-list>
+        <scale-menu-item onclick="alert('Item 1 selected');"
+          >Item 1</scale-menu-item
+        >
+        <scale-menu-item onclick="alert('Item 2 selected');"
+          >Item 2</scale-menu-item
+        >
+        <scale-menu-item onclick="alert('Item 3 selected');"
+          >Item 3</scale-menu-item
+        >
+      </scale-menu-list>
+    </scale-menu>
   </body>
 </html>

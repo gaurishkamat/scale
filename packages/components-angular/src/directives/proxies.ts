@@ -4426,25 +4426,6 @@ export class ScaleTag {
   }
 }
 
-
-export declare interface ScaleText extends Components.ScaleText {}
-@ProxyCmp({
-  inputs: ['styles', 'tag', 'variant']
-})
-@Component({
-  selector: 'scale-text',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['styles', 'tag', 'variant']
-})
-export class ScaleText {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
 import { TextField as ITextField } from '@scaleds/components-telekom/dist/types/components/text-field/text-field';
 export declare interface ScaleTextField extends Components.ScaleTextField {}
 @ProxyCmp({

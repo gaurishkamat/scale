@@ -1,5 +1,4 @@
 import { Component, h, Prop, Host, Watch, Element } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
 const SR_ACTIVE_TEXT = ' Zurzeit aktiv';
@@ -110,7 +109,7 @@ export class SidebarNavItem {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'sidebar-nav-item',
       this.bold && 'sidebar-nav-item--bold',

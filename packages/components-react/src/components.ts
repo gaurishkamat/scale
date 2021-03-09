@@ -235,7 +235,6 @@ export const ScaleTabNav = /*@__PURE__*/createReactComponent<JSX.ScaleTabNav, HT
 export const ScaleTabPanel = /*@__PURE__*/createReactComponent<JSX.ScaleTabPanel, HTMLScaleTabPanelElement>('scale-tab-panel');
 export const ScaleTable = /*@__PURE__*/createReactComponent<JSX.ScaleTable, HTMLScaleTableElement>('scale-table');
 export const ScaleTag = /*@__PURE__*/createReactComponent<JSX.ScaleTag, HTMLScaleTagElement>('scale-tag');
-export const ScaleText = /*@__PURE__*/createReactComponent<JSX.ScaleText, HTMLScaleTextElement>('scale-text');
 export const ScaleTextField = /*@__PURE__*/createReactComponent<JSX.ScaleTextField, HTMLScaleTextFieldElement>('scale-text-field');
 export const ScaleTextarea = /*@__PURE__*/createReactComponent<JSX.ScaleTextarea, HTMLScaleTextareaElement>('scale-textarea');
 export const ScaleToast = /*@__PURE__*/createReactComponent<JSX.ScaleToast, HTMLScaleToastElement>('scale-toast');

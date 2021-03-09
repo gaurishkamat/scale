@@ -39,7 +39,6 @@ import {
   ScaleTabPanel,
   ScaleTable,
   ScaleTag,
-  ScaleText,
   ScaleToast
 } from './directives/proxies';
 import { TextValueAccessor } from './directives/text-value-accessor';
@@ -81,7 +80,6 @@ const DECLARATIONS = [
   ScaleTabPanel,
   ScaleTable,
   ScaleTag,
-  ScaleText,
   ScaleToast,
 
   // Value Accessors
