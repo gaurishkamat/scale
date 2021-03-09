@@ -80,6 +80,11 @@
     "de": "Barrierefreiheit"
   },
   {
+    "elementSelector": "#scale-for-developers-design-tokens--page",
+    "en": "Design Token",
+    "de": "Design Token"
+  },
+  {
     "elementSelector": "#scale-for-developers-browser-support--page",
     "en": "Browser Support",
     "de": "Unterstützte Internet-Browser"
