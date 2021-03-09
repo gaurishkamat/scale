@@ -8,7 +8,6 @@ import {
 } from "@scaleds/components-telekom/loader";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
-import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css";
 import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
 
 applyPolyfills().then(() => {

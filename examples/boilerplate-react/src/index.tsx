@@ -4,7 +4,6 @@ import * as serviceWorker from './serviceWorker';
 import { defineCustomElements } from '@scaleds/components-telekom/loader';
 import App from './App';
 import '@scaleds/components-telekom/dist/scale-components/scale-components.css';
-import "@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css"
 import './index.css';
 
 defineCustomElements(window)
