@@ -5251,6 +5251,7 @@ export namespace Components {
     | 'password'
     | 'tel'
     | 'text'
+    | 'date'
     | 'url';
         /**
           * (optional) Input value
@@ -12348,6 +12349,7 @@ declare namespace LocalJSX {
     | 'password'
     | 'tel'
     | 'text'
+    | 'date'
     | 'url';
         /**
           * (optional) Input value

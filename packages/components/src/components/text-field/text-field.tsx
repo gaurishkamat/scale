@@ -29,6 +29,7 @@ export class TextField {
     | 'password'
     | 'tel'
     | 'text'
+    | 'date'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
@@ -181,6 +182,9 @@ export class TextField {
   }
 
   getCssClassMap() {
+    // input[type="date"] will print a placeholder in some browsers
+    const animated = (this.value != null && this.value !== '') || this.type === 'date'
+
     return classNames(
       'input',
       this.type && `input--type-${this.type}`,
@@ -189,7 +193,7 @@ export class TextField {
       this.transparent && 'input--transparent',
       this.status && `input--status-${this.status}`,
       this.size && `input--size-${this.size}`,
-      this.value != null && this.value !== '' && 'animated'
+      animated && 'animated'
     );
   }
 }

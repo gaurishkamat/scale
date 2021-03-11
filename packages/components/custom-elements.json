@@ -7037,6 +7037,9 @@
           "description": "(optional) Input type",
           "values": [
             {
+              "name": "date"
+            },
+            {
               "name": "email"
             },
             {
