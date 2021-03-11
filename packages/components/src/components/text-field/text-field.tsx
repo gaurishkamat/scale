@@ -183,7 +183,8 @@ export class TextField {
 
   getCssClassMap() {
     // input[type="date"] will print a placeholder in some browsers
-    const animated = (this.value != null && this.value !== '') || this.type === 'date'
+    const animated =
+      (this.value != null && this.value !== '') || this.type === 'date';
 
     return classNames(
       'input',
