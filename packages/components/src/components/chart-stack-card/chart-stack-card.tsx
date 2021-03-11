@@ -1,5 +1,6 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
+import statusWarn from '../../utils/status-warn';
 @Component({
   tag: 'scale-chart-stack-card',
   styleUrl: 'chart-stack-card.css',
@@ -37,6 +38,10 @@ export class ChartStackCard {
         padding-bottom: 0 !important;
       }
   `;
+  }
+
+  connectedCallback() {
+    statusWarn({ source: '<scale-chart-stack-card>' });
   }
 
   render() {

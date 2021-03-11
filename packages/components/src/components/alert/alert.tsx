@@ -1,6 +1,7 @@
 import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
+import statusWarn from '../../utils/status-warn';
 @Component({
   tag: 'scale-alert',
   styleUrl: './alert.css',
@@ -28,6 +29,10 @@ export class Alert {
 
   componentWillLoad() {
     this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
+  }
+
+  connectedCallback() {
+    statusWarn({ source: `<scale-alert>` });
   }
 
   close = () => {
