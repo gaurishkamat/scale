@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component snapshots rating 0 (initial) should match snapshot 1`] = `
+<scale-rating-stars>
+  <mock:shadow-root>
+    <div class="rating" id="rating" tabindex="0">
+      <span class="rating__symbols">
+        <span class="rating__symbol" id="star-1" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-2" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-3" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-4" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-5" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+      </span>
+      <span class="rating__symbols rating__symbols--indicator">
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 100% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 200% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 300% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 400% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 500% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+      </span>
+    </div>
+  </mock:shadow-root>
+</scale-rating-stars>
+`;
+
+exports[`component snapshots rating 3 should match snapshot 1`] = `
+<scale-rating-stars rating="3">
+  <mock:shadow-root>
+    <div class="rating" id="rating" tabindex="0">
+      <span class="rating__symbols">
+        <span class="rating__symbol" id="star-1" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-2" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-3" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-4" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+        <span class="rating__symbol" id="star-5" style="width: 24px;">
+          <star-icon></star-icon>
+        </span>
+      </span>
+      <span class="rating__symbols rating__symbols--indicator">
+        <span class="rating__symbol" style="width: 24px;">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px;">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 0% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 100% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+        <span class="rating__symbol" style="width: 24px; clip-path: inset(0 200% 0 0);">
+          <star-icon colored=""></star-icon>
+        </span>
+      </span>
+    </div>
+  </mock:shadow-root>
+</scale-rating-stars>
+`;

@@ -4954,6 +4954,19 @@ export namespace Components {
          */
         "value"?: string | number | null;
     }
+    interface ScaleRatingStars {
+        "ariaLabel": string;
+        "disabled": boolean;
+        "getSymbolBlank": () => string;
+        "getSymbolFilled": () => string;
+        "hoverValue": number;
+        "interactive": boolean;
+        "isHovering": boolean;
+        "numOfStars": number;
+        "precision": number;
+        "rating": number;
+        "small": boolean;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -5377,6 +5390,9 @@ export namespace Components {
           * (optional) Toast variant
          */
         "variant"?: string;
+    }
+    interface StarIcon {
+        "colored": boolean;
     }
 }
 declare global {
@@ -6682,6 +6698,12 @@ declare global {
         prototype: HTMLScaleRadioButtonElement;
         new (): HTMLScaleRadioButtonElement;
     };
+    interface HTMLScaleRatingStarsElement extends Components.ScaleRatingStars, HTMLStencilElement {
+    }
+    var HTMLScaleRatingStarsElement: {
+        prototype: HTMLScaleRatingStarsElement;
+        new (): HTMLScaleRatingStarsElement;
+    };
     interface HTMLScaleSidebarNavElement extends Components.ScaleSidebarNav, HTMLStencilElement {
     }
     var HTMLScaleSidebarNavElement: {
@@ -6765,6 +6787,12 @@ declare global {
     var HTMLScaleToastElement: {
         prototype: HTMLScaleToastElement;
         new (): HTMLScaleToastElement;
+    };
+    interface HTMLStarIconElement extends Components.StarIcon, HTMLStencilElement {
+    }
+    var HTMLStarIconElement: {
+        prototype: HTMLStarIconElement;
+        new (): HTMLStarIconElement;
     };
     interface HTMLElementTagNameMap {
         "app-logo": HTMLAppLogoElement;
@@ -6984,6 +7012,7 @@ declare global {
         "scale-pagination": HTMLScalePaginationElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-radio-button": HTMLScaleRadioButtonElement;
+        "scale-rating-stars": HTMLScaleRatingStarsElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
         "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
@@ -6998,6 +7027,7 @@ declare global {
         "scale-text-field": HTMLScaleTextFieldElement;
         "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
+        "star-icon": HTMLStarIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -12023,6 +12053,19 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface ScaleRatingStars {
+        "ariaLabel"?: string;
+        "disabled"?: boolean;
+        "getSymbolBlank"?: () => string;
+        "getSymbolFilled"?: () => string;
+        "hoverValue"?: number;
+        "interactive"?: boolean;
+        "isHovering"?: boolean;
+        "numOfStars"?: number;
+        "precision"?: number;
+        "rating"?: number;
+        "small"?: boolean;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -12492,6 +12535,9 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface StarIcon {
+        "colored"?: boolean;
+    }
     interface IntrinsicElements {
         "app-logo": AppLogo;
         "app-mega-menu": AppMegaMenu;
@@ -12710,6 +12756,7 @@ declare namespace LocalJSX {
         "scale-pagination": ScalePagination;
         "scale-progress-bar": ScaleProgressBar;
         "scale-radio-button": ScaleRadioButton;
+        "scale-rating-stars": ScaleRatingStars;
         "scale-sidebar-nav": ScaleSidebarNav;
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
         "scale-sidebar-nav-item": ScaleSidebarNavItem;
@@ -12724,6 +12771,7 @@ declare namespace LocalJSX {
         "scale-text-field": ScaleTextField;
         "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
+        "star-icon": StarIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -12947,6 +12995,7 @@ declare module "@stencil/core" {
             "scale-pagination": LocalJSX.ScalePagination & JSXBase.HTMLAttributes<HTMLScalePaginationElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
+            "scale-rating-stars": LocalJSX.ScaleRatingStars & JSXBase.HTMLAttributes<HTMLScaleRatingStarsElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
             "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;
@@ -12961,6 +13010,7 @@ declare module "@stencil/core" {
             "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
             "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
+            "star-icon": LocalJSX.StarIcon & JSXBase.HTMLAttributes<HTMLStarIconElement>;
         }
     }
 }
