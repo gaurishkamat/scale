@@ -17,6 +17,7 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
+import statusWarn from '../../utils/status-warn';
 
 let i = 0;
 
@@ -191,6 +192,10 @@ export class DatePicker {
     if (input) {
       input.addEventListener('keyup', this.handleKeyPress);
     }
+  }
+
+  connectedCallback() {
+    statusWarn({ source: `<scale-date-picker>` });
   }
 
   disconnectedCallback() {
