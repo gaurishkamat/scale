@@ -49,7 +49,7 @@ export class Toast {
   timerId = null;
 
   connectedCallback() {
-    statusWarn({ source: '<scale-toast>' });
+    statusWarn({ source: this.element });
   }
 
   disconnectedCallback() {

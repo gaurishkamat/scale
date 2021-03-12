@@ -126,13 +126,13 @@ export class Input {
     // tslint:disable-next-line:no-console
     statusWarn({
       tag: 'deprecated',
-      source: '<scale-input>',
-      extraMessage: `Please use "${{
+      source: this.el,
+      extraMessage: `Please use <${{
         select: 'scale-dropdown',
         checkbox: 'scale-checkbox',
         radio: 'scale-radio-button',
         textarea: 'scale-textarea',
-      }[this.type] || 'scale-text-field'} instead.`,
+      }[this.type] || 'scale-text-field'}> instead.`,
     });
     // Keep this.value up-to-date for type="select".
     // This is important also for React, where `value` is used to control the element state.

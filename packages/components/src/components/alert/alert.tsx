@@ -32,7 +32,7 @@ export class Alert {
   }
 
   connectedCallback() {
-    statusWarn({ source: `<scale-alert>` });
+    statusWarn({ source: this.hostElement });
   }
 
   close = () => {

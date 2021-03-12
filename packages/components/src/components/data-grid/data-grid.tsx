@@ -152,7 +152,7 @@ export class DataGrid {
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
   connectedCallback() {
-    statusWarn({ source: `<scale-data-grid>` });
+    statusWarn({ source: this.hostElement });
   }
   componentWillLoad() {
     this.fieldsHandler();

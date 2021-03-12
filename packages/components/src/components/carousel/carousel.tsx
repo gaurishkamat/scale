@@ -18,7 +18,7 @@ export class Carousel {
   @State() value = 0;
 
   connectedCallback() {
-    statusWarn({ source: '<scale-carousel>' });
+    statusWarn({ source: this.hostElement });
   }
 
   componentWillLoad() {
