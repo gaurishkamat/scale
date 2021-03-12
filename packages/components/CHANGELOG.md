@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* **components:** avoid label overlaps with input[type=date] in text-field ([39f9af1](https://gitlab.com/scale-ds/scale-telekom/commit/39f9af17aedecd549cf5e3cc31ad35871d9561ad))
+* **components:** typo in tab-header.css, wrong padding ([7888803](https://gitlab.com/scale-ds/scale-telekom/commit/78888031bdab73735397213a84b849e15b9cadfa))
+
+
+
+
+
 # [2.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.0) (2021-03-09)
 
 

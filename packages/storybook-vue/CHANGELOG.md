@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* faq page typo ([b7dc5ba](https://gitlab.com/scale-ds/scale-telekom/commit/b7dc5badb426fe16ed492eada8f6392854ae3130))
+* typo in title translation ([abaf5ab](https://gitlab.com/scale-ds/scale-telekom/commit/abaf5ab89c5cbeada3557ecf44e008ef889719b6))
+* **storybook-vue:** fix and improve button stories ([73543ec](https://gitlab.com/scale-ds/scale-telekom/commit/73543ec11641b4b350d6a507a15b7448f81d0819))
+* **storybook-vue:** improve order of button stories ([bc5dec9](https://gitlab.com/scale-ds/scale-telekom/commit/bc5dec9f3509c425c9066dec3022d9fa0c636e09))
+
+
+
+
+
 # [2.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.0) (2021-03-09)
 
 
