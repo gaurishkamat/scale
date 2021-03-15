@@ -39,8 +39,8 @@
   transform: scale(1.2);
 }
 
-.rating__symbol--hover .star-filled {
-  fill: var(--scl-color-primary-hover, #e20074);
+.rating__symbol--hover path {
+  fill: var(--scl-color-primary-hover, #f80983);
 }
 
 .rating--interactive .rating__symbols,

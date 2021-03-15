@@ -4954,28 +4954,6 @@ export namespace Components {
          */
         "value"?: string | number | null;
     }
-    interface ScaleRatingStarFilled {
-        /**
-          * (optional) When using the icon standalone, make it meaningful for accessibility
-         */
-        "accessibilityTitle"?: string;
-        /**
-          * (optional) Sets the icon color via the `fill` attribute
-         */
-        "color"?: string;
-        /**
-          * (optional) If `true` the SVG element will get `aria-hidden="true"`
-         */
-        "decorative"?: boolean;
-        /**
-          * (optional) If `true`, the icon changes visually
-         */
-        "selected"?: boolean;
-        /**
-          * (optional) The width and height in pixels
-         */
-        "size"?: number;
-    }
     interface ScaleRatingStars {
         "ariaLabel": string;
         "disabled": boolean;
@@ -6720,12 +6698,6 @@ declare global {
         prototype: HTMLScaleRadioButtonElement;
         new (): HTMLScaleRadioButtonElement;
     };
-    interface HTMLScaleRatingStarFilledElement extends Components.ScaleRatingStarFilled, HTMLStencilElement {
-    }
-    var HTMLScaleRatingStarFilledElement: {
-        prototype: HTMLScaleRatingStarFilledElement;
-        new (): HTMLScaleRatingStarFilledElement;
-    };
     interface HTMLScaleRatingStarsElement extends Components.ScaleRatingStars, HTMLStencilElement {
     }
     var HTMLScaleRatingStarsElement: {
@@ -7040,7 +7012,6 @@ declare global {
         "scale-pagination": HTMLScalePaginationElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-radio-button": HTMLScaleRadioButtonElement;
-        "scale-rating-star-filled": HTMLScaleRatingStarFilledElement;
         "scale-rating-stars": HTMLScaleRatingStarsElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
@@ -12082,28 +12053,6 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
-    interface ScaleRatingStarFilled {
-        /**
-          * (optional) When using the icon standalone, make it meaningful for accessibility
-         */
-        "accessibilityTitle"?: string;
-        /**
-          * (optional) Sets the icon color via the `fill` attribute
-         */
-        "color"?: string;
-        /**
-          * (optional) If `true` the SVG element will get `aria-hidden="true"`
-         */
-        "decorative"?: boolean;
-        /**
-          * (optional) If `true`, the icon changes visually
-         */
-        "selected"?: boolean;
-        /**
-          * (optional) The width and height in pixels
-         */
-        "size"?: number;
-    }
     interface ScaleRatingStars {
         "ariaLabel"?: string;
         "disabled"?: boolean;
@@ -12807,7 +12756,6 @@ declare namespace LocalJSX {
         "scale-pagination": ScalePagination;
         "scale-progress-bar": ScaleProgressBar;
         "scale-radio-button": ScaleRadioButton;
-        "scale-rating-star-filled": ScaleRatingStarFilled;
         "scale-rating-stars": ScaleRatingStars;
         "scale-sidebar-nav": ScaleSidebarNav;
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
@@ -13047,7 +12995,6 @@ declare module "@stencil/core" {
             "scale-pagination": LocalJSX.ScalePagination & JSXBase.HTMLAttributes<HTMLScalePaginationElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
-            "scale-rating-star-filled": LocalJSX.ScaleRatingStarFilled & JSXBase.HTMLAttributes<HTMLScaleRatingStarFilledElement>;
             "scale-rating-stars": LocalJSX.ScaleRatingStars & JSXBase.HTMLAttributes<HTMLScaleRatingStarsElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
