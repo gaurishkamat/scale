@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Theming Examples</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      html, body { margin: 0; }
+      body { padding: 4rem; }
+
+      zzz-divider {
+        display: block;
+        width: 100%;
+        height: 2rem;
+        background: transparent;
+      }
+
+      /* Overriding token within "component variant" */
+      
+      scale-button[variant="sea"] {
+        --scl-color-focus: var(--scl-color-orange-60);
+      }
+
+      /* Variant + parts example */
+
+      scale-button[variant="sea"]::part(base) {
+        background: var(--scl-color-green-80);
+        color: white;
+        border-radius: var(--scl-radius-4);
+      }
+
+      scale-button[variant="sea"]::part(base):hover {
+        background: var(--scl-color-green-70);
+      }
+      scale-button[variant="sea"]::part(base):active {
+        background: var(--scl-color-green-90);
+      }
+
+      /* Theme class example */
+
+      .theme-wood {
+        --scl-color-focus: gold;
+      }
+
+        /* Just variables, no parts */
+
+      .theme-wood scale-button {
+        --scl-button-spacing-x: var(--scl-spacing-32);
+        --scl-button-radius: 2em;
+        --scl-button-background-primary: var(--scl-color-rose-90);
+        --scl-button-background-primary-hover: var(--scl-color-rose-80);
+        --scl-button-background-primary-active: var(--scl-color-rose-100);
+      }
+
+        /* Part, any CSS goes in */
+
+      .theme-wood scale-button::part(base) {
+        padding-top: var(--scl-spacing-16);
+        padding-bottom: var(--scl-spacing-16);
+        min-height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-button>Click here</scale-button>
+
+    <zzz-divider></zzz-divider>
+
+    <scale-button style="--scl-button-spacing-x: 1em">Click here</scale-button>
+
+    <zzz-divider></zzz-divider>
+
+    <scale-button variant="sea">Click there</scale-button>
+
+    <zzz-divider></zzz-divider>
+
+    <div class="theme-wood">
+      <scale-button>Click below</scale-button>
+    </div>
+  </body>
+</html>

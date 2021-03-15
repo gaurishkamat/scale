@@ -1,3 +1,36 @@
+:host {
+  --scl-button-spacing-x: var(--scl-spacing-24);
+  --scl-button-spacing-x-icon-only: var(--scl-spacing-8);
+  --scl-button-min-height: var(--scl-spacing-40);
+  --scl-button-radius: var(--scl-radius-8);
+  --scl-button-transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
+  --scl-button-box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --scl-button-font-weight: var(--scl-font-weight-bold);
+  --scl-button-font-size: var(--scl-font-size-16);
+  --scl-button-line-height: var(--scl-font-line-height-150);
+  --scl-button-spacing-icon-x: var(--scl-spacing-8);
+
+  /* size: small */
+  --scl-button-font-size-small: var(--scl-font-size-12);
+  --scl-button-line-height-small: var(--scl-font-line-height-133);
+  --scl-button-min-height-small: var(--scl-spacing-32);
+
+  /* variant: primary */
+  --scl-button-radius-primary: var(--scl-button-radius);
+  --scl-button-background-primary: var(--scl-color-primary);
+  --scl-button-background-primary-hover: var(--scl-color-primary-hover);
+  --scl-button-background-primary-active: var(--scl-color-primary-active);
+  --scl-button-background-primary-disabled: ;
+  --scl-button-color-primary: var(--scl-color-white);
+  --scl-button-color-primary-hover: ;
+  --scl-button-color-primary-active: ;
+  --scl-button-color-primary-disabled: ;
+
+  --scl-button-background-secondary: ;
+  --scl-button-color-secondary: ;
+  --scl-button-radius-secondary: ;
+}
+
 .button {
   box-sizing: border-box;
   display: inline-flex;
@@ -12,26 +45,25 @@
   letter-spacing: inherit;
   justify-content: center;
   text-decoration: none;
-  line-height: var(--scl-font-line-height-150);
-  padding-left: var(--scl-spacing-24);
-  padding-right: var(--scl-spacing-24);
-  font-weight: var(--scl-font-weight-bold);
-  font-size: var(--scl-font-size-16);
-  min-height: var(--scl-spacing-40);
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  font-weight: var(--scl-button-font-weight);
+  font-size: var(--scl-button-font-size);
+  line-height: var(--scl-button-line-height);
+  min-height: var(--scl-button-min-height);
+  padding-left: var(--scl-button-spacing-x);
+  padding-right: var(--scl-button-spacing-x);
+  transition: var(--scl-button-transition);
 }
 
 .button:not(.button--disabled):focus {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: var(--scl-button-box-shadow-focus);
 }
 
 .button.button--icon-before ::slotted(*) {
-  margin-right: var(--scl-spacing-8);
+  margin-right: var(--scl-button-spacing-icon-x);
 }
 
 .button.button--icon-after ::slotted(*) {
-  margin-left: var(--scl-spacing-8);
+  margin-left: var(--scl-button-spacing-icon-x);
 }
 
 .button:after {
@@ -45,18 +77,18 @@
   position: absolute;
   box-sizing: border-box;
   pointer-events: none;
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--scl-button-radius);
 }
 
 .button--size-small {
-  font-size: var(--scl-font-size-12);
-  line-height: var(--scl-font-line-height-133);
-  min-height: var(--scl-spacing-32);
+  font-size: var(--scl-button-font-size-small);
+  line-height: var(--scl-button-line-height-small);
+  min-height: var(--scl-button-min-height-small);
 }
 
 .button--icon-only {
-  padding-left: var(--scl-spacing-8);
-  padding-right: var(--scl-spacing-8);
+  padding-left: var(--scl-button-spacing-x-icon-only);
+  padding-right: var(--scl-button-spacing-x-icon-only);
 }
 
 .button--disabled {
@@ -67,16 +99,19 @@
 
 .button--variant-primary {
   text-align: center;
-  border-radius: var(--scl-radius-8);
-  background: var(--scl-color-primary);
-  color: var(--scl-color-white, #ffffff);
+  border-radius: var(--scl-button-radius-primary);
+  background: var(--scl-button-background-primary);
+  color: var(--scl-button-color-primary);
 }
 .button--variant-primary:not(.button--disabled):hover {
-  background: var(--scl-color-primary-hover, #f90984);
+  background: var(--scl-button-background-primary-hover);
 }
 .button--variant-primary:not(.button--disabled):active {
-  background: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-button-background-primary-active);
 }
+
+/* 🤜🤜🤜🤜 LEFT OFF HERE 🤛🤛🤛🤛 */
+
 .button--disabled.button--variant-primary {
   background: var(--scl-color-background-disabled);
   color: var(--scl-color-grey-40);

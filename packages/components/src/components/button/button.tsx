@@ -1,10 +1,6 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
-/*
-  TODO
-  - [ ] update storybook (remove link disabled?)
-*/
 
 @Component({
   tag: 'scale-button',
@@ -88,6 +84,7 @@ export class Button {
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}
+            part="base"
           >
             <slot />
           </a>
@@ -98,6 +95,7 @@ export class Button {
             disabled={this.disabled}
             type={this.type}
             aria-label={this.ariaLabel}
+            part="base"
           >
             <slot />
           </button>
