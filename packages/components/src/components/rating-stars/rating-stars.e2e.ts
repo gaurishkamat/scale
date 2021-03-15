@@ -6,7 +6,9 @@ describe('rating-stars', () => {
 
   beforeEach(async () => {
     page = await newE2EPage();
-    await page.setContent(`<scale-rating-stars precision="1"></scale-rating-stars>`);
+    await page.setContent(
+      `<scale-rating-stars precision="1"></scale-rating-stars>`
+    );
     component = await page.find('scale-rating-stars');
   });
 
@@ -28,7 +30,9 @@ describe('rating-stars', () => {
 
   test('click star 3 will return a rating of 2.5 (precision="0.5")', async () => {
     page = await newE2EPage();
-    await page.setContent(`<scale-rating-stars precision="0.5"></scale-rating-stars>`);
+    await page.setContent(
+      `<scale-rating-stars precision="0.5"></scale-rating-stars>`
+    );
     component = await page.find('scale-rating-stars');
 
     const star = await page.find('scale-rating-stars >>> #star-3');
@@ -69,7 +73,9 @@ describe('rating-stars', () => {
 
   test('gets rating of 2 when navigating two to the right with ArrowRight (precision="0.5")', async () => {
     page = await newE2EPage();
-    await page.setContent(`<scale-rating-stars precision="0.5"></scale-rating-stars>`);
+    await page.setContent(
+      `<scale-rating-stars precision="0.5"></scale-rating-stars>`
+    );
     component = await page.find('scale-rating-stars');
     const container = await page.find('scale-rating-stars >>> .rating');
     await container.press('Tab');

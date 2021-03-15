@@ -7,7 +7,7 @@ import { logoFilled, logoBlank } from '../stars';
   /* shadow: true, */
 })
 export class SlIcon {
-  @Prop({mutable: true, reflect: true }) colored: boolean;
+  @Prop({ mutable: true, reflect: true }) colored: boolean;
 
   render() {
     return this.colored ? logoFilled() : logoBlank();

@@ -4,7 +4,7 @@ import { RatingStars } from './rating-stars';
 async function simulateMouseEvent(
   page: SpecPage,
   strEvent: string,
-  elementId: string,
+  elementId: string
 ) {
   const event = new MouseEvent(strEvent, {
     view: window,
@@ -12,7 +12,14 @@ async function simulateMouseEvent(
     cancelable: true,
   });
   const element = page.root.shadowRoot.getElementById(elementId);
-  !element.dispatchEvent(event);
+  const cancelled = !element.dispatchEvent(event);
+
+  let value = 0;
+  if (cancelled) {
+    value = value + 1;
+  } else {
+    value = value + 2;
+  }
 }
 
 async function simulateKeyboardEvent(
@@ -25,10 +32,17 @@ async function simulateKeyboardEvent(
     view: window,
     bubbles: true,
     cancelable: true,
-    key: key,
+    key,
   });
   const element = page.root.shadowRoot.getElementById(elementId);
-  !element.dispatchEvent(event);
+  const cancelled = !element.dispatchEvent(event);
+
+  let value = 0;
+  if (cancelled) {
+    value = value + 1;
+  } else {
+    value = value + 2;
+  }
 }
 
 describe('component', () => {
@@ -120,4 +134,3 @@ describe('component', () => {
     });
   });
 });
-

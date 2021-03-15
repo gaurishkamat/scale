@@ -7,6 +7,7 @@ import { clamp, handleListeners } from './utils/utils';
   shadow: true,
 })
 export class RatingStars {
+  element: HTMLElement;
   @Prop({ mutable: true }) hoverValue = 0;
   @Prop({ mutable: true }) isHovering = false;
   @Prop({ mutable: true }) numOfStars = 5;
@@ -18,7 +19,6 @@ export class RatingStars {
   @Prop() precision = 0.5;
   @Prop() getSymbolBlank = () => '<star-icon></star-icon>';
   @Prop() getSymbolFilled = () => `<star-icon colored></star-icon>`;
-  element: HTMLElement;
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -105,10 +105,10 @@ export class RatingStars {
     const star = clamp(
       this.roundToPrecision(
         positionOfMousePointer * this.precision,
-        this.precision,
+        this.precision
       ),
       0,
-      this.numOfStars,
+      this.numOfStars
     );
     return star;
   }
@@ -129,7 +129,7 @@ export class RatingStars {
     return (
       <div
         class={{
-          'rating': true,
+          rating: true,
           'rating--interactive': !this.interactive,
           'rating--disabled': this.disabled,
         }}
@@ -150,7 +150,7 @@ export class RatingStars {
                 width: this.small ? '16px' : '24px',
               }}
               class={{
-                'rating__symbol': true,
+                rating__symbol: true,
                 'rating__symbol--hover':
                   this.isHovering && Math.ceil(displayValue) === index + 1,
               }}
@@ -170,7 +170,7 @@ export class RatingStars {
                     : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
               }}
               class={{
-                'rating__symbol': true,
+                rating__symbol: true,
                 'rating__symbol--hover':
                   this.isHovering && Math.ceil(displayValue) === index + 1,
               }}
