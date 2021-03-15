@@ -16,7 +16,7 @@ export class RatingStars {
   @Prop({ mutable: true }) interactive = true;
   @Prop({ mutable: true }) disabled = false;
   @Prop() ariaLabel: string;
-  @Prop() precision = 0.5;
+  @Prop() precision = 1;
   @Prop() getSymbolBlank = () => '<star-icon></star-icon>';
   @Prop() getSymbolFilled = () => `<star-icon colored></star-icon>`;
 
