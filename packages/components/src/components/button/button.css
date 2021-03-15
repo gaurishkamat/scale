@@ -3,8 +3,10 @@
   --scl-button-spacing-x-icon-only: var(--scl-spacing-8);
   --scl-button-min-height: var(--scl-spacing-40);
   --scl-button-radius: var(--scl-radius-8);
-  --scl-button-transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
-  --scl-button-box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --scl-button-transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --scl-button-box-shadow-focus: 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
   --scl-button-font-weight: var(--scl-font-weight-bold);
   --scl-button-font-size: var(--scl-font-size-16);
   --scl-button-line-height: var(--scl-font-line-height-150);

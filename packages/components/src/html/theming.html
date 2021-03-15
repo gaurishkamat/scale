@@ -11,8 +11,13 @@
     <script type="module" src="/build/scale-components.esm.js"></script>
     <link rel="stylesheet" href="/build/scale-components.css" />
     <style>
-      html, body { margin: 0; }
-      body { padding: 4rem; }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        padding: 4rem;
+      }
 
       zzz-divider {
         display: block;
@@ -22,23 +27,23 @@
       }
 
       /* Overriding token within "component variant" */
-      
-      scale-button[variant="sea"] {
+
+      scale-button[variant='sea'] {
         --scl-color-focus: var(--scl-color-orange-60);
       }
 
       /* Variant + parts example */
 
-      scale-button[variant="sea"]::part(base) {
+      scale-button[variant='sea']::part(base) {
         background: var(--scl-color-green-80);
         color: white;
         border-radius: var(--scl-radius-4);
       }
 
-      scale-button[variant="sea"]::part(base):hover {
+      scale-button[variant='sea']::part(base):hover {
         background: var(--scl-color-green-70);
       }
-      scale-button[variant="sea"]::part(base):active {
+      scale-button[variant='sea']::part(base):active {
         background: var(--scl-color-green-90);
       }
 
@@ -48,7 +53,7 @@
         --scl-color-focus: gold;
       }
 
-        /* Just variables, no parts */
+      /* Just variables, no parts */
 
       .theme-wood scale-button {
         --scl-button-spacing-x: var(--scl-spacing-32);
@@ -58,7 +63,7 @@
         --scl-button-background-primary-active: var(--scl-color-rose-100);
       }
 
-        /* Part, any CSS goes in */
+      /* Part, any CSS goes in */
 
       .theme-wood scale-button::part(base) {
         padding-top: var(--scl-spacing-16);
