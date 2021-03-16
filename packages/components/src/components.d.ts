@@ -5391,9 +5391,6 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface StarIcon {
-        "colored": boolean;
-    }
 }
 declare global {
     interface HTMLAppLogoElement extends Components.AppLogo, HTMLStencilElement {
@@ -6788,12 +6785,6 @@ declare global {
         prototype: HTMLScaleToastElement;
         new (): HTMLScaleToastElement;
     };
-    interface HTMLStarIconElement extends Components.StarIcon, HTMLStencilElement {
-    }
-    var HTMLStarIconElement: {
-        prototype: HTMLStarIconElement;
-        new (): HTMLStarIconElement;
-    };
     interface HTMLElementTagNameMap {
         "app-logo": HTMLAppLogoElement;
         "app-mega-menu": HTMLAppMegaMenuElement;
@@ -7027,7 +7018,6 @@ declare global {
         "scale-text-field": HTMLScaleTextFieldElement;
         "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
-        "star-icon": HTMLStarIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -12535,9 +12525,6 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
-    interface StarIcon {
-        "colored"?: boolean;
-    }
     interface IntrinsicElements {
         "app-logo": AppLogo;
         "app-mega-menu": AppMegaMenu;
@@ -12771,7 +12758,6 @@ declare namespace LocalJSX {
         "scale-text-field": ScaleTextField;
         "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
-        "star-icon": StarIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -13010,7 +12996,6 @@ declare module "@stencil/core" {
             "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
             "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
-            "star-icon": LocalJSX.StarIcon & JSXBase.HTMLAttributes<HTMLStarIconElement>;
         }
     }
 }

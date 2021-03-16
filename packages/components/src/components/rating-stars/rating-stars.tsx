@@ -17,8 +17,10 @@ export class RatingStars {
   @Prop({ mutable: true }) disabled = false;
   @Prop() ariaLabel: string;
   @Prop() precision = 1;
-  @Prop() getSymbolBlank = () => '<star-icon></star-icon>';
-  @Prop() getSymbolFilled = () => `<star-icon colored></star-icon>`;
+  @Prop() getSymbolBlank = () =>
+    `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" accessibility-title="favorite" />`;
+  @Prop() getSymbolFilled = () =>
+    `<scale-icon-action-favorite color="var(--scl-color-primary, #e20074)" selected accessibility-title="favorite">`;
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
