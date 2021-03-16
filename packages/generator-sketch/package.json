@@ -10,6 +10,7 @@
     "sketch.json": "node ./src/index.js",
     "sketch-dev": "yarn build && yarn sketch",
     "sketch": "node ./src/sketch-cmd.js",
+    "diff": "node ./src/diff-builds.js",
     "build-scale": "node ./src/build-scale.js"
   },
   "license": "MIT",

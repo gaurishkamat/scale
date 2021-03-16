@@ -144,6 +144,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       }
     } else if (childNode.tagName === 'SLOT') {
       // Push slotted text nodes directly into the slot
+      materializeStyle(childNode);
       const childNodes = Array.from((childNode as HTMLSlotElement).assignedNodes())
         .filter(n => {
           if (n instanceof HTMLElement) {
@@ -233,8 +234,24 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   if (options && options.getGroupName) {
     group.setName(options.getGroupName(node));
   }
+
+  // Rotate the group by the element's CSS transform.
+  // Doing a full rotate-scale-rotate SVD would require some more work (create a couple extra levels of pivot layers).
+  // If there's a way to directly apply the transform matrix, that'd be great.
+  if (styles.transform !== 'none') {
+    const m = new WebKitCSSMatrix(styles.transform);
+    m.e = 0;
+    m.f = 0;
+    const p = new DOMPoint(1, 0);
+    const v = p.matrixTransform(m);
+    const rotation = Math.atan2(-v.y, v.x);
+    if (rotation**2 > 0.0001) {
+      group._rotation = rotation * (180.0 / Math.PI);
+    }
+  }
+  
   // set group name from data-sketch-symbol if exists
-  else if (node.getAttribute("data-sketch-symbol") && node.getAttribute("data-sketch-symbol") !== '') {
+  if (node.getAttribute("data-sketch-symbol") && node.getAttribute("data-sketch-symbol") !== '') {
     group.setIsSymbol(true);
     const variant = node.getAttribute('data-sketch-variant');
     if (variant !== null && variant !== '') {

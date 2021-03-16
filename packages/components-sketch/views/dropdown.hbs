@@ -1255,8 +1255,9 @@
                 order(1, getSizeName(btn))
             } / ${
                 order(2, btn.hasAttribute('helper-text') ? 'Info On' : 'Info Off')
-            } / ${
-                order(3, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
+            }${ btn.hasAttribute('helper-text') 
+                ? ' / ' + order(3, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
+                : ''
             } / ${
                 order(4, btn.value ? 'Has Selection' : 'Has No Selection')
             } / ${

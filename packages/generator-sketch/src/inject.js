@@ -85,7 +85,6 @@ puppeteer
           path: "./dist/build/page2layers.bundle.js",
         });
 
-
         const cdp = await page.target().createCDPSession();
 
         await cdp.send("DOM.enable");
@@ -133,12 +132,11 @@ puppeteer
         }
         await delay(3000); // Wait a bit for relayout and transitions
 
-
         const asketchPage = await page.evaluate("page2layers.run()");
 
         fs.writeFileSync(
           path.resolve(__dirname, outputFile),
-          JSON.stringify(asketchPage)
+          JSON.stringify(asketchPage, null, 2)
         );
       } catch (e) {
         console.log(e);

@@ -1,4 +1,5 @@
 const cp = require("child_process");
+const fs = require("fs");
 const { SIGKILL } = require("constants");
 
 // Starts the components-sketch server
@@ -13,5 +14,7 @@ setTimeout(() => {
     console.log("Got URLs", urls);
     console.log("Generating Sketch document");
     cp.execFileSync("yarn", ["sketch", "scale-components-telekom", ...process.argv.slice(2), ...urls], {stdio: [0, 1, 2]});
+    const latestDiff = cp.execFileSync("yarn", ["diff", "scale-components-telekom"]);
+    fs.appendFileSync("ChangeLog", '\n'+latestDiff.toString());
     server.kill(SIGKILL);
 }, 1000);

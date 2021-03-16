@@ -2,7 +2,7 @@ function getCategoryName(btn) {
     while (btn && (!btn.dataset || !btn.dataset.category)) {
         btn = btn.parentNode;
     }
-    return (btn && btn.dataset && btn.dataset.category) || "Default";
+    return (btn && btn.dataset && btn.dataset.category) || "Standard";
 }
 
 function capitalize(s) {
@@ -22,7 +22,7 @@ function getStateName(btn) {
     } else if (btn.dataset.sketchState) {
         return capitalize(btn.dataset.sketchState);
     } else {
-        return "Available";
+        return "Standard";
     }
 }
 

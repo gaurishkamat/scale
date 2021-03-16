@@ -77,8 +77,9 @@
     Array.from(document.querySelectorAll("scale-input")).forEach(btn => {
         btn.dataset.sketchSymbol = `Radio Button / ${
                 order(1, btn.hasAttribute('checked') ? 'Selected' : 'Standard')
-            } / ${
-                order(2, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
+            }${ btn.hasAttribute('checked')
+                ? ''
+                : ' / ' + order(2, btn.getAttribute('status') === 'error' ? 'Error On' : 'Error Off')
             } / ${
                 order(4, getStateName(btn))
             }`;

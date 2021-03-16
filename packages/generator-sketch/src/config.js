@@ -1,10 +1,10 @@
 const { findLayer, findLayers } = require('./utils');
 
 module.exports = {
-  libraryServerPath: "https://office.heichen.hk/shared/Public/telekom/",
+  libraryServerPath: "http://localhost:5000/",
 
-  libraryTitle: "Scale Telekom Components",
-  libraryDescription: "Scale Telekom Components design library",
+  libraryTitle: "Telekom Scale Components",
+  libraryDescription: "Telekom Scale Components design library",
 
   fontReplacer: function(jsonValue) {
     if (jsonValue === "system-ui") {
@@ -41,11 +41,14 @@ module.exports = {
 
     try {
       if (/^Accordion/.test(symbol.name)) {
+        if (symbol.layers[0].name === 'div.collapsible') {
+          symbol.layers[0] = symbol.layers[0].layers[1];
+        }
         symbol.layers[0].resizingConstraint = 10;
-        var icon = findLayer(symbol, s => s.name === "Icon");
+        var icon = findLayer(symbol, s => s.name === "Icon" || s.name === "group");
         if (icon) icon.resizingConstraint = 9;
         var label = findLayer(symbol, s => s.name === "Accordion Label");
-        if (label) label.resizingConstraint = 9;
+        if (label) label.resizingConstraint = 10;
         var bg = findLayer(symbol, s => s.name === "Background");
         if (bg) bg.resizingConstraint = 10;
       }
@@ -70,9 +73,26 @@ module.exports = {
       if (/^Breadcrumb/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 9;
-        findLayers(symbol.layers[0], l => (l.resizingConstraint = 9));
+        findLayers(symbol.layers[0], l => { l.resizingConstraint = 9; });
       }
       if (/^(Card)/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
+        const label = findLayer(symbol, 'Card Label');
+        if (label) {
+          label.resizingConstraint = 18;
+          label.textBehaviour = 2;
+        }
+        findLayer(symbol, 'slot', slot => {
+          slot.resizingConstraint = 18;
+          slot.layers.forEach(l => l.frame.x += slot.frame.x);
+          slot.frame.x = 0;
+          slot.frame.width = 256;
+          findLayer(slot, 'img', l => {
+            findLayer(l, l => {l.resizingConstraint = 18});
+            label.resizingConstraint = 34;
+            label.frame.width = 208;
+          });
+        });
       }
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
@@ -86,7 +106,7 @@ module.exports = {
       if (/^(Dropdown)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 11;
-        var icon = findLayer(symbol, s => s.name === "Icon");
+        var icon = findLayer(symbol, s => s.name === "Icon" || s.name === "svg.icon");
         icon.resizingConstraint = 44;
         var label = findLayer(symbol, s => s.name === "Dropdown Label");
         if (label) {
@@ -95,19 +115,19 @@ module.exports = {
           label.glyphBounds = "{{0, 3}, {136, 12}}";
           label.textBehaviour = 2;
         }
-        var label = findLayer(symbol, s => s.name === "Dropdown Value");
-        if (label) {
-          label.resizingConstraint = 10;
-          label.frame.width = 144;
-          label.glyphBounds = "{{0, 3}, {136, 12}}";
-          label.textBehaviour = 2;
+        var value = findLayer(symbol, s => s.name === "Dropdown Value");
+        if (value) {
+          value.resizingConstraint = 10;
+          value.frame.width = 144;
+          value.glyphBounds = "{{0, 3}, {136, 12}}";
+          value.textBehaviour = 2;
         }
-        var label = findLayer(symbol, s => s.name === "Information Label");
-        if (label) {
-          label.resizingConstraint = 10;
-          label.frame.width = 186;
-          label.glyphBounds = "{{0, 3}, {186, 12}}";
-          label.textBehaviour = 2;
+        var info = findLayer(symbol, s => s.name && s.name.startsWith("Information"));
+        if (info) {
+          info.resizingConstraint = 10;
+          info.frame.width = 186;
+          info.glyphBounds = "{{0, 3}, {186, 12}}";
+          info.textBehaviour = 2;
         }
       }
       if (/^Link/.test(symbol.name)) {
@@ -120,21 +140,43 @@ module.exports = {
         //fitSymbolToContent(symbol);
       }
       if (/^Progress Bar/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 9;
+
+        findLayer(symbol, /^\d+\%/, progressText => {
+          progressText.name = "Percentage";
+          progressText.textBehaviour = 2;
+          progressText.resizingConstraint = 12;
+        });
+
         var desc = findLayer(symbol, s => s.name === 'Description');
         if (desc) desc.resizingConstraint = 9;
-        var desc = findLayer(symbol, s => s.name === 'Progress Bar Label');
-        if (desc) desc.resizingConstraint = 9;
-        var desc = findLayer(symbol, s => s.name === 'div.progress-bar');
-        if (desc) desc.resizingConstraint = 9;
-        var desc = findLayer(symbol, s => s.name === 'div.progress-bar-wrapper');
-        if (desc) desc.resizingConstraint = 9;
+        var label = findLayer(symbol, s => s.name === 'Progress Bar Label');
+        if (label) label.resizingConstraint = 9;
+        var progressBar = findLayer(symbol, s => s.name === 'div.progress-bar');
+        if (progressBar) progressBar.resizingConstraint = 10;
+        var wrapper = findLayer(symbol, s => s.name === 'div.progress-bar-wrapper');
+        if (wrapper) {
+          wrapper.resizingConstraint = 10;
+          var bar = findLayer(wrapper, s => s.name.startsWith( 'div#progress-bar-'));
+          if (bar) {
+            bar.resizingConstraint = 10;
+            findLayer(bar, s => { s.resizingConstraint = 10; return false; });
+            findLayer(bar, 'div.progress-bar__inner', l => l.resizingConstraint = 11);
+          }
+          var icon = findLayer(wrapper, s => s.name === 'Icon');
+          if (icon) icon.resizingConstraint = 12;
+        }
+      }
+      if (/^Sidebar Nav/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
+        symbol.layers[0].resizingConstraint = 9;
       }
       if (/^Slider/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 10;
 
-        var track = findLayer(symbol, s => s.name === "div.slider--track");
-        var bar = findLayer(symbol, s => s.name === "div.slider--bar");
+        var track = findLayer(symbol, s => s.name === "div.slider__track");
+        var bar = findLayer(symbol, s => s.name === "div.slider__bar");
         var count = findLayer(symbol, s => /^\d+/.test(s.name));
         var label = findLayer(symbol, s => s.name === "Slider Label");
 
@@ -159,16 +201,37 @@ module.exports = {
         symbol.layers.forEach(l => l.resizingConstraint = 9);
       }
       if (/^(Tab Nav)/.test(symbol.name)) {
-        symbol.groupLayout = undefined;
-        symbol.layers[0].resizingConstraint = 9;
-        var label = findLayer(symbol, s => s.name === "Header Label");
-        if (label) {
-          label.resizingConstraint = 10;
-          label.frame.width = 120;
-          label.glyphBounds = "{{0, 3}, {120, 24}}";
-          label.textBehaviour = 2;
+        var tabHead = findLayer(symbol, s => s.name === "span.tab-header");
+        if (tabHead) tabHead.resizingConstraint = 10;
+        if (!/Example/.test(symbol.name)) {
+          var spans = findLayers(tabHead, 'span', span => findLayers(span, l => l.resizingConstraint = 10));
+          var bar = spans.shift();
+          spans.forEach(span => tabHead.layers.splice(tabHead.layers.indexOf(span), 1));
+          if (bar) {
+            bar.layers[0].resizingConstraint = 10;
+            tabHead.layers.unshift(bar.layers[0]);
+            bar.layers[0].frame.y += bar.frame.y;
+            bar.layers[0].frame.x += bar.frame.x;
+            tabHead.layers.splice(tabHead.layers.indexOf(bar), 1);
+          }
+          findLayer(tabHead, 'slot', s => {
+            tabHead.layers.splice(tabHead.layers.indexOf(s), 1);
+            s.layers.forEach(l => { l.frame.x += s.frame.x; l.frame.y += s.frame.y; });
+            tabHead.layers.push(...s.layers);
+          });
+        } else {
+          symbol.groupLayout = undefined;
         }
-
+        findLayers(symbol, 
+          s => s.name === "Icon",
+          icon => icon.resizingConstraint = 9
+        );
+        findLayers(symbol, 
+          s => s.name.includes("Header"), 
+          label => {
+            label.resizingConstraint = 10;
+          }
+        );
       }
       if (/^Tag/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
@@ -180,12 +243,22 @@ module.exports = {
         symbol.groupLayout = undefined;
         var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
         if (count) {
-          count.resizingConstraint = 36;
+          count.resizingConstraint = 14;
           count.name = "Counter";
+          count.textBehaviour = 2;
         }
         var info = findLayer(symbol, s => /^Information/.test(s.name));
         if (info) {
-          info.resizingConstraint = 35;
+          if (info.name === 'Information') {
+            info.resizingConstraint = 34;
+            info.frame.width = 162;
+            info.glyphBounds = "{{0, 3}, {162, 12}}";
+          } else {
+            info.resizingConstraint = 11;
+            info.frame.width = 108;
+            info.glyphBounds = "{{0, 3}, {108, 12}}";
+          }
+          info.textBehaviour = 2;
         }
         var helperMessage = findLayer(symbol, s => /^div#helper-message/.test(s.name));
         if (helperMessage) helperMessage.resizingConstraint = 34;
@@ -211,22 +284,10 @@ module.exports = {
         }
         var label = findLayer(symbol, s => s.name === "Input Value");
         if (label) {
-          label.resizingConstraint = 10;
+          label.resizingConstraint = 18;
           label.frame.width = 148;
-          label.glyphBounds = "{{0, 3}, {148, 12}}";
-          label.textBehaviour = 2;
-        }
-        var label = findLayer(symbol, s => s.name.startsWith("Information"));
-        if (label) {
-          if (label.name === 'Information') {
-            label.resizingConstraint = 34;
-            label.frame.width = 162;
-            label.glyphBounds = "{{0, 3}, {162, 12}}";
-          } else {
-            label.resizingConstraint = 10;
-            label.frame.width = 108;
-            label.glyphBounds = "{{0, 3}, {108, 12}}";
-          }
+          label.frame.height = 69;
+          label.glyphBounds = "{{0, 3}, {148, 69}}";
           label.textBehaviour = 2;
         }
 
@@ -236,12 +297,21 @@ module.exports = {
         symbol.groupLayout = undefined;
         var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
         if (count) {
-          count.resizingConstraint = 12;
+          count.resizingConstraint = 14;
           count.name = "Counter";
+          count.textBehaviour = 2;
         }
         var info = findLayer(symbol, s => /^Information/.test(s.name));
         if (info) {
           info.resizingConstraint = 11;
+          if (count) {
+            info.frame.width = 108;
+            info.glyphBounds = "{{0, 3}, {108, 12}}";
+          } else {
+            info.frame.width = 162;
+            info.glyphBounds = "{{0, 3}, {162, 12}}";
+          }
+          info.textBehaviour = 2;
         }
         var helperMessage = findLayer(symbol, s => /^div#helper-message/.test(s.name));
         if (helperMessage) helperMessage.resizingConstraint = 10;
@@ -262,19 +332,20 @@ module.exports = {
           label.glyphBounds = "{{0, 3}, {148, 12}}";
           label.textBehaviour = 2;
         }
-        var label = findLayer(symbol, s => s.name === "Input Value");
-        if (label) {
-          label.resizingConstraint = 10;
-          label.frame.width = 148;
-          label.glyphBounds = "{{0, 3}, {148, 12}}";
-          label.textBehaviour = 2;
-        }
-        var label = findLayer(symbol, s => s.name === "Information");
-        if (label) {
-          label.resizingConstraint = 10;
-          label.frame.width = 108;
-          label.glyphBounds = "{{0, 3}, {108, 12}}";
-          label.textBehaviour = 2;
+        var value = findLayer(symbol, s => s.name === "Input Value");
+        if (value) {
+          value.resizingConstraint = 10;
+          value.frame.width = 148;
+          value.glyphBounds = "{{0, 3}, {148, 12}}";
+          value.textBehaviour = 2;
+          if (label) {
+            if (symbol.name.match(/Large/)) {
+              value.frame.y += 5;
+            } else {
+              value.frame.x -= 2;
+              value.frame.y -= 1;
+            }
+          }
         }
 
       }

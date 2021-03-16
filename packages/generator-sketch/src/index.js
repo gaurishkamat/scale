@@ -452,6 +452,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance = master.createInstance({name: enhanced.name});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
+        instance.rotation = enhanced.rotation;
         try {
           isSymbolInstanceOf(instance, master, enhanced, '', master.name);
           fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
@@ -483,6 +484,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
+        instance.rotation = enhanced.rotation;
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
         if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
           instance.name = 'Icon';
@@ -512,7 +514,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           if (l.frame.y + l.frame.height > maxY) maxY = l.frame.y + l.frame.height;
         }
       });
-      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol && (!(node.layers[0] && node.layers[0].name === 'Background'))) {
+      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol && (!(node.layers[0] && node.layers[0].name === 'Background')) && node.rotation === 0) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
@@ -603,6 +605,23 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     });
   }
 
+  var includes = fs.readdirSync(`./includes`).filter(fn => fn.startsWith(documentName+'.'));
+  for (const include of includes) {
+    var doc = await Sketch.fromFile(`./includes/${include}`);
+    doc.pages.forEach(page => {
+      if (page.name === 'Symbols') {
+        for (const symbol of page.layers) {
+          symbol.frame.x = 0;
+          symbol.frame.y = y;
+          y += gutter + symbol.frame.height;
+          symbolsPage.addLayer(symbol);
+        }
+      } else {
+        sketch.addPage(page);
+      }
+    });
+  }
+
   const queries = [];
   for (const symbolName in symbolNameToIdMap) {
     const s = symbolNameToIdMap[symbolName];
@@ -636,12 +655,15 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     Sketch.addPreview(`./${documentName}.png`);
   }
 
+  const symbolJSON = JSON.stringify(symbolsPage, null, 2);
+  fs.writeFileSync(`./sketch/${documentName}.${version}.symbols.json`, symbolJSON);
+
   sketch.build(`./sketch/${documentName}.sketch`, 9).then(() => {
     console.log(`Built ./sketch/${documentName}.sketch`);
   });
 
   rssBuilder.build(`./sketch/${documentName}.xml`, {
-    title: config.libraryTitle,
+    title: config.libraryTitle + " build " + version,
     description: config.libraryDescription,
     url: `${serverPath}${documentName}.sketch`,
     version: version

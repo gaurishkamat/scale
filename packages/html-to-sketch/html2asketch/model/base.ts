@@ -16,6 +16,7 @@ class Base {
   _points: any;
   _isClosed?: boolean;
   _isVisible: boolean = true;
+  _rotation: number = 0;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -107,7 +108,7 @@ class Base {
       nameIsFixed: false,
       resizingConstraint: this._resizingConstraint,
       resizingType: 0,
-      rotation: 0,
+      rotation: this._rotation,
       shouldBreakMaskChain: false,
       layers: this._layers.map((layer: any) => layer.toJSON()),
       clippingMaskMode: 0,
