@@ -5,7 +5,7 @@
 Some ideas:
 
 - platform-agnostic
-- strict naming convention
+- strict naming convention (if no meaning is required, we can call it what it is)
 - keep differentiation between *choices* (raw values) and *decisions* (assignments with meaning) in mind ([ref](https://lukasoppermann.medium.com/design-tokens-what-are-they-how-will-they-help-you-b73f80f602ab))
 - promote consciousness about the friction between _flexibility_ and _consistency_ within the system
 
@@ -15,7 +15,7 @@ Install with npm (or yarn): `npm install @scaleds/design-tokens-telekom`
 
 ## Usage
 
-Currently the tokens are available as CSS variables only. Other "targets" are possible.
+Currently the tokens are available as CSS variables only. Other output targets are possible.
 
 ### CSS
 
@@ -58,7 +58,7 @@ tokens.color = {
   },
   text: {
     default: palette.grey90,
-    offset: palette.white,
+    error: palette.red80,
   }
 };
 ```
@@ -69,10 +69,32 @@ Yields the following CSS:
 :root {
     /* COLOR */
     --scl-color-magenta: rgb(226, 0, 116);
-    --scl-color-text-default: rgb(26, 26, 26);
-    --scl-color-text-offset: rgb(255, 255, 255);
+    --scl-color-text-standard: rgb(26, 26, 26);
+    --scl-color-text-error: rgb(195, 28, 59);
 }
 ```
+
+### Creating an output target
+
+An output target is a plain object with 4 methods and 4 props. The callbacks will fire as the tokens tree is being traversed, so you can build the contents of the output file accordingly. It has the following signature:
+
+```js
+export const target = {
+  onCategory: ({ categoryName, tokens }) => {},
+  onSection: ({ categoryName, sectionName, tokens }) => {},
+  onValue: ({ categoryName, sectionName, key, value, tokens }) => {},
+  onComplete: () => {},
+  filename: 'design-tokens-telekom',
+  ext: '',
+  suffix: '',
+  content: null,
+};
+```
+
+- `filename` (string) the name of the generated file
+- `ext` (string) is the extension of the output file, eg. `.css`
+- `suffix` (string) *optional* if present, will be appended to the filename
+- `content` (string) the actual content of the file
 
 ## TODO
 

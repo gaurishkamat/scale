@@ -1,8 +1,7 @@
 <template>
-  <scale-input
+  <scale-radio-button
     :name="name"
     :status="status"
-    :type="type"
     :label="label"
     :helper-text="helperText"
     :disabled="disabled"
@@ -12,7 +11,7 @@
     @scaleChange="scaleChange"
   >
     <slot></slot>
-  </scale-input>
+  </scale-radio-button>
 </template>
 
 <script>
@@ -22,7 +21,6 @@ export default {
   props: {
     status: { type: String },
     name: { type: String },
-    type: { type: String },
     label: { type: String },
     helperText: { type: String },
     disabled: { type: Boolean },

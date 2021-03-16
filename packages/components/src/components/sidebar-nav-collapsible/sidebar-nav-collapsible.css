@@ -4,7 +4,7 @@
 
 .sidebar-nav-collapsible {
   margin: 0;
-  border-bottom-color: #e6e6e6;
+  border-bottom-color: var(--scl-color-grey-10);
   border-bottom-style: solid;
   border-bottom-width: 0;
 }
@@ -14,7 +14,7 @@
 }
 
 .sidebar-nav-collapsible__wrapper {
-  border-bottom-color: #e6e6e6;
+  border-bottom-color: var(--scl-color-grey-10);
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
@@ -41,21 +41,21 @@
 }
 
 .sidebar-nav-collapsible__button:hover {
-  color: #e20074;
+  color: var(--scl-color-primary); /* TODO: shouldn't this be hover color? */
 }
 
 .sidebar-nav-collapsible__button:active {
-  color: #cb0068;
+  color: var(--scl-color-primary-active);
 }
 
 .sidebar-nav-collapsible__button:focus {
   outline: none;
-  box-shadow: inset 0 0 0 2px #009de0;
+  box-shadow: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .sidebar-nav-collapsible--active .sidebar-nav-collapsible__button {
   position: relative;
-  color: #e20074;
+  color: var(--scl-color-primary);
 }
 
 .sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::before {
@@ -66,14 +66,14 @@
   left: var(--left-current-border, 0);
   width: 0; /* The transparent border makes the 2px */
   height: 100%;
-  background-color: #e20074;
+  background-color: var(--scl-color-primary);
   /* Accessibility: extra transparent line for Windows HCM */
   border-left: 2px solid transparent;
 }
 
 :host([nesting-level='1']) .sidebar-nav-collapsible__button,
 .sidebar-nav-collapsible--bold .sidebar-nav-collapsible__button {
-  font-weight: var(--scale-type-weight-bold, 700);
+  font-weight: var(--scl-font-weight-bold);
 }
 
 :host([nesting-level='2']) .sidebar-nav-collapsible__button {
@@ -85,7 +85,7 @@
 }
 
 [aria-expanded='true'] .sidebar-nav-collapsible__icon {
-  transform: rotate(180deg);
+  transform: rotate(0.5turn);
 }
 
 @media (hover: hover) {
@@ -114,7 +114,7 @@
   margin-top: 1em;
   margin-left: var(--spacing-indent);
   margin-bottom: 2em;
-  border-left-color: #4b4b4b;
+  border-left-color: var(--scl-color-grey-70);
   border-left-style: solid;
   border-left-width: 0.0625rem;
 }

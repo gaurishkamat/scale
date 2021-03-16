@@ -21,6 +21,19 @@
 | `variant`      | `variant`       | (optional) Button variant                                      | `string`                          | `'primary'` |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-data-grid](../data-grid)
+
+### Graph
+```mermaid
+graph TD;
+  scale-data-grid --> scale-button
+  style scale-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

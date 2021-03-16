@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2021-03-12)
+
+**Note:** Version bump only for package @scaleds/components-react-telekom
+
+
+
+
+
+# [2.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.0) (2021-03-09)
+
+
+### Bug Fixes
+
+* **components:** remove icon package import and dep ([aa2fd02](https://gitlab.com/scale-ds/scale-telekom/commit/aa2fd025b01348b60f82d4649781d2d8a941ceca))
+
+
+### Features
+
+* custom header ([f08a510](https://gitlab.com/scale-ds/scale-telekom/commit/f08a510a873325367ddd7c8c986516037d4686fa))
+
+
+
+
+
 # [1.15.0](https://gitlab.com/scale-ds/scale-telekom/compare/v1.14.0...v1.15.0) (2020-12-18)
 
 **Note:** Version bump only for package @scaleds/components-react-telekom

@@ -5,14 +5,10 @@ app-navigation-main-mobile {
 
 .main-navigation-mobile {
   width: 100%;
-  /* height: var(--main-navigation-mobile-height); */
-  /* overflow: hidden; */
-  /* overflow-y: scroll; */
   position: relative;
 }
 
 .main-navigation-mobile__main-menu {
-  background: #fff;
   width: 100%;
   list-style: none;
   padding: 0;

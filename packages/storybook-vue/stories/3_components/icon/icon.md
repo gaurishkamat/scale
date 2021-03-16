@@ -21,7 +21,7 @@ Don't use icons for solely aesthetic reasons. Users must immediately recognize t
 
 ## Icon variants
 
-By default, we use outline icons for our user interfaces. They are optimized for light and dark backgrounds. Solid icons emphasize an active status.
+By default, we use outline icons for our user interfaces. They are optimized for light and dark backgrounds. Solid icons emphasize an selected status.
 
 ![Image Name](assets/3_components/icon/icons_variants.png)
 
@@ -52,9 +52,12 @@ Interactive icon
 
 ## Accessibility
 
-Interactive icons without a text label must always have an alt-text which screen readers can recognize (e.g., arrows in a pagination).
+### Special feature in the code
+As soon as single icons convey relevant information in interfaces, create a corresponding alternative text with the code property "accessibilityTitle". This way, the information is also accessible to blind users with screen readers.
 
-![Image Name](assets/3_components/icon/icon_accessibility.png)
+You need to include an alternative text if the icon has no visible label (see Close Icon) or contains additional information (e.g., if it’s an external link).
+
+If the icon has a clearly understandable text label (see Download, Edit, Delete in the example above), do not use an alternative text. In this case, the icon only serves as visual support.
 
 ## Icon construction
 

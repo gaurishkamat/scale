@@ -11,7 +11,7 @@
   box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 }
 .mega-menu__wrapper {
-  padding: 34px 1rem;
+  padding: 34px 1rem 34px 1.5rem;
   background: #fff;
   pointer-events: none;
   border-bottom-left-radius: var(--header-border-radius);
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: 2.5rem;
+  padding-left: 2rem;
 }
 
 .mega-menu__row-title {

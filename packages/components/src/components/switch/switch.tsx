@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
-import { CssClassMap, isPseudoClassSupported } from '../../utils/utils';
+import { isPseudoClassSupported } from '../../utils/utils';
 import classNames from 'classnames';
 
 let i = 0;
@@ -60,7 +60,7 @@ export class Switch {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'switch',
       this.disabled && 'switch--disabled',

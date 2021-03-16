@@ -1,4 +1,4 @@
-import { Color, Shadow, alphaToHex } from './factories.js';
+import { Color, Shadow } from './factories.js';
 
 export const NAMESPACE_PREFIX = 'scl';
 export const SPACING = 'spacing';
@@ -41,6 +41,7 @@ const family = {
 const size = {
   10: 10,
   12: 12,
+  14: 14,
   16: 16,
   20: 20,
   24: 24,
@@ -49,7 +50,7 @@ const size = {
   56: 56,
 };
 const weight = {
-  thin: 100,
+  thin: 200,
   regular: 400,
   medium: 500,
   bold: 700,
@@ -94,25 +95,20 @@ tokens[TYPE_VARIANT] = {
     size: size['20'],
     lineHeight: lineHeight['160'],
   },
+  smaller: {
+    ...defaultVariant,
+    size: size['12'],
+    lineHeight: lineHeight['125'],
+  },
   label: {
     ...defaultVariant,
     size: size['12'],
-    lineHeight: lineHeight['120'],
-  },
-  label_smaller: {
-    ...defaultVariant,
-    size: size['10'],
     lineHeight: lineHeight['120'],
   },
   caption: {
     ...defaultVariant,
     size: size['12'],
     lineHeight: lineHeight['133'],
-  },
-  smaller: {
-    ...defaultVariant,
-    size: size['12'],
-    lineHeight: lineHeight['125'],
   },
   heading_6: {
     ...defaultVariant,
@@ -152,21 +148,20 @@ tokens[TYPE_VARIANT] = {
 /* COLOR */
 
 const palette = {
-  magenta: Color('#e20074'),
-  black: Color(alphaToHex(90)),
-  white: Color('#ffffff'),
-  grey: Color(alphaToHex(60)),
-  grey0: Color(alphaToHex(5)),
-  grey10: Color(alphaToHex(10)),
-  grey20: Color(alphaToHex(20)),
-  grey30: Color(alphaToHex(30)),
-  grey40: Color(alphaToHex(40)),
-  grey50: Color(alphaToHex(50)),
-  grey60: Color(alphaToHex(60)),
-  grey70: Color(alphaToHex(70)),
-  grey80: Color(alphaToHex(80)),
-  grey90: Color(alphaToHex(90)),
-  orange: Color('#FC9A55'),
+  magenta: Color('#E20074'),
+  black: Color('#000000'),
+  white: Color('#FFFFFF'),
+  grey0: Color('#F2F2F2'),
+  grey10: Color('#E5E5E5'),
+  grey20: Color('#CCCCCC'),
+  grey30: Color('#B2B2B2'),
+  grey40: Color('#999999'),
+  grey50: Color('#7F7F7F'),
+  grey60: Color('#666666'),
+  grey70: Color('#4C4C4C'),
+  grey80: Color('#333333'),
+  grey90: Color('#191919'),
+  grey100: Color('#000000'),
   orange0: Color('#FFFCDF'),
   orange10: Color('#FFF4C6'),
   orange20: Color('#FFE9AE'),
@@ -178,7 +173,6 @@ const palette = {
   orange80: Color('#AE461C'),
   orange90: Color('#973209'),
   orange100: Color('#7D1F09'),
-  red: Color('#D82A48'),
   red0: Color('#FFC5CB'),
   red10: Color('#FFAAB6'),
   red20: Color('#FE94A5'),
@@ -190,7 +184,6 @@ const palette = {
   red80: Color('#C31C3B'),
   red90: Color('#AD0F31'),
   red100: Color('#990024'),
-  blue: Color('#216BFF'),
   blue0: Color('#D6F8FF'),
   blue10: Color('#B5EBFF'),
   blue20: Color('#95DAFF'),
@@ -202,7 +195,6 @@ const palette = {
   blue80: Color('#000BBF'),
   blue90: Color('#03009F'),
   blue100: Color('#140080'),
-  teal: Color('#22ADB9'),
   teal0: Color('#D7F6F4'),
   teal10: Color('#B7EDEC'),
   teal20: Color('#98E4E4'),
@@ -214,7 +206,6 @@ const palette = {
   teal80: Color('#068788'),
   teal90: Color('#006967'),
   teal100: Color('#005651'),
-  green: Color('#187431'),
   green0: Color('#F0F7E0'),
   green10: Color('#E0EFC7'),
   green20: Color('#CFE8AF'),
@@ -226,7 +217,6 @@ const palette = {
   green80: Color('#32A032'),
   green90: Color('#248B31'),
   green100: Color('#187431'),
-  clay: Color('#D2A483'),
   clay0: Color('#F2E4DF'),
   clay10: Color('#EDD8CE'),
   clay20: Color('#E9CDBE'),
@@ -238,7 +228,6 @@ const palette = {
   clay80: Color('#A3765D'),
   clay90: Color('#87604E'),
   clay100: Color('#6A4D40'),
-  rose: Color('#C16F81'),
   rose0: Color('#F6E5EB'),
   rose10: Color('#EED1DA'),
   rose20: Color('#E6BCC9'),
@@ -250,7 +239,6 @@ const palette = {
   rose80: Color('#864054'),
   rose90: Color('#652B3E'),
   rose100: Color('#511F31'),
-  lilac: Color('#B682BD'),
   lilac0: Color('#F7EFF6'),
   lilac10: Color('#EFE3ED'),
   lilac20: Color('#EAD9E7'),
@@ -262,7 +250,6 @@ const palette = {
   lilac80: Color('#84558A'),
   lilac90: Color('#6A3E71'),
   lilac100: Color('#502857'),
-  pigeon: Color('#828AC4'),
   pigeon0: Color('#E9ECF6'),
   pigeon10: Color('#D7DCEF'),
   pigeon20: Color('#C5CCE7'),
@@ -274,7 +261,6 @@ const palette = {
   pigeon80: Color('#5F5A9B'),
   pigeon90: Color('#534785'),
   pigeon100: Color('#46366D'),
-  neptune: Color('#77B6BB'),
   neptune0: Color('#DEEDEC'),
   neptune10: Color('#CDE5E5'),
   neptune20: Color('#BBDEDD'),
@@ -286,7 +272,6 @@ const palette = {
   neptune80: Color('#579292'),
   neptune90: Color('#4A7B7A'),
   neptune100: Color('#3F6160'),
-  olive: Color('#88B179'),
   olive0: Color('#ECF3E7'),
   olive10: Color('#DCE8D4'),
   olive20: Color('#CCDEC2'),
@@ -302,30 +287,32 @@ const palette = {
 
 tokens[COLOR] = {
   DEFAULT: {
-    primary: palette.magenta,
-    primaryHover: Color('#F90984'), // TODO remove? MAGENTA_HOVER
-    primaryActive: Color('#CB0068'), // TODO remove? MAGENTA_ACTIVE
-    focus: palette.blue50,
     ...palette,
+    primary: palette.magenta,
+    primaryHover: Color('#F90984'),
+    primaryActive: Color('#CB0068'),
+    focus: palette.blue50,
   },
   text: {
-    default: palette.grey90,
-    offset: palette.white,
-    muted: palette.grey,
+    standard: palette.grey90,
+    additional: palette.grey60,
     link: palette.blue70,
     linkHover: palette.blue80,
-    linkActive: palette.blue,
-    linkVisited: palette.blue,
-    error: palette.red80,
+    linkActive: palette.blue60,
+    linkVisited: palette.blue70,
+    info: palette.blue70,
+    disabled: palette.grey50,
+    success: palette.green100,
+    error: palette.red70,
   },
   background: {
-    default: palette.white,
+    standard: palette.white,
     light: palette.grey0,
     darker: palette.grey20,
+    overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
-    error: palette.red,
-    success: palette.green,
-    pending: palette.orange,
+    success: palette.green100,
+    error: palette.red60,
   },
 };
 
@@ -389,7 +376,7 @@ tokens[MOTION] = {
     deliberate: 800,
   },
   easing: {
-    default: 'cubic-bezier(0.42, 0, 0.58, 1)',
+    standard: 'cubic-bezier(0.42, 0, 0.58, 1)',
     enter: 'cubic-bezier(0.390, 0.575, 0.565, 1)',
   },
 };

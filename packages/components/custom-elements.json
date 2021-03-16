@@ -23,6 +23,10 @@
         {
           "name": "href",
           "description": ""
+        },
+        {
+          "name": "logo-title",
+          "description": ""
         }
       ]
     },
@@ -180,6 +184,26 @@
           "description": ""
         },
         {
+          "name": "is-mega-menu-visible",
+          "description": ""
+        },
+        {
+          "name": "is-mobile-menu-visible",
+          "description": ""
+        },
+        {
+          "name": "logo-click",
+          "description": ""
+        },
+        {
+          "name": "logo-href",
+          "description": ""
+        },
+        {
+          "name": "logo-title",
+          "description": ""
+        },
+        {
           "name": "main-navigation",
           "description": ""
         },
@@ -213,15 +237,23 @@
           "description": ""
         },
         {
-          "name": "brand-title",
-          "description": ""
-        },
-        {
           "name": "claim-lang",
           "description": ""
         },
         {
           "name": "icon-navigation",
+          "description": ""
+        },
+        {
+          "name": "logo-click",
+          "description": ""
+        },
+        {
+          "name": "logo-href",
+          "description": ""
+        },
+        {
+          "name": "logo-title",
           "description": ""
         },
         {
@@ -343,6 +375,10 @@
       },
       "attributes": [
         {
+          "name": "click-card",
+          "description": ""
+        },
+        {
           "name": "label",
           "description": "(optional) Label of the card"
         },
@@ -404,6 +440,55 @@
       ]
     },
     {
+      "name": "scale-checkbox",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "(optional) Active switch"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Input checkbox checked icon"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        }
+      ]
+    },
+    {
       "name": "scale-collapsible",
       "description": {
         "kind": "markdown",
@@ -417,6 +502,75 @@
         {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-data-grid",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "fields",
+          "description": "Input fields config array"
+        },
+        {
+          "name": "freeze-header",
+          "description": "(optional) Freeze header row from scrolling"
+        },
+        {
+          "name": "heading",
+          "description": "(optional) Heading string"
+        },
+        {
+          "name": "height",
+          "description": "(optional) Set static table height, by default will auto-resize"
+        },
+        {
+          "name": "hide-border",
+          "description": "(optional) Set to true to remove border"
+        },
+        {
+          "name": "hide-header",
+          "description": "(optional) Set to true to hide header row"
+        },
+        {
+          "name": "hide-info",
+          "description": "(optional) Set to true to remove info footer block including pagination and selection status"
+        },
+        {
+          "name": "hide-menu",
+          "description": "(optional) Set to true to hide settings menu"
+        },
+        {
+          "name": "numbered",
+          "description": "(optional) Set to true to add numbers column"
+        },
+        {
+          "name": "page-size",
+          "description": "(optional) Set number of rows to display per pagination page"
+        },
+        {
+          "name": "rows",
+          "description": "Input data array"
+        },
+        {
+          "name": "selectable",
+          "description": "(optional) Set to true to add selection column"
+        },
+        {
+          "name": "shade-alternate",
+          "description": "(optional) Shade every second row darker"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected css styles"
+        },
+        {
+          "name": "visible",
+          "description": "(optional) Set to falseto hide table, used for nested tables to re-render upon toggle"
         }
       ]
     },
@@ -515,6 +669,79 @@
         {
           "name": "vertical",
           "description": "(optional) Divider vertical"
+        }
+      ]
+    },
+    {
+      "name": "scale-dropdown",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "controlled",
+          "description": "(optional) Makes type `select` behave as a controlled component in React"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "icon",
+          "description": "(optional) Input checkbox checked icon"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "multiple",
+          "description": "(optional) select multiple options"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) input background transparent"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        },
+        {
+          "name": "visible-size",
+          "description": "(optional) the number of visible options in a select drop-down list"
         }
       ]
     },
@@ -6062,6 +6289,110 @@
       ]
     },
     {
+      "name": "scale-menu",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "close-on-select",
+          "description": "(optional) Determines whether the dropdown should close when a menu item is selected"
+        },
+        {
+          "name": "direction",
+          "description": "(optional) Set preference for where the menu appears, space permitting",
+          "values": [
+            {
+              "name": "bottom-left"
+            },
+            {
+              "name": "bottom-right"
+            },
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            },
+            {
+              "name": "top-left"
+            },
+            {
+              "name": "top-right"
+            }
+          ]
+        },
+        {
+          "name": "open",
+          "description": "(optional) Tracks the menu list open state"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-divider",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "(optional) Used by cascading menus to set when open"
+        },
+        {
+          "name": "cascade",
+          "description": "(optional) Set to true to display arrow icon suffix"
+        },
+        {
+          "name": "checked",
+          "description": "(optional) Set to true to display check prefix, false to display empty prefix"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Disabled"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) value"
+        }
+      ]
+    },
+    {
+      "name": "scale-menu-list",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        }
+      ]
+    },
+    {
       "name": "scale-modal",
       "description": {
         "kind": "markdown",
@@ -6111,6 +6442,114 @@
         {
           "name": "variant",
           "description": "(optional) Modal variant"
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-icon",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "click-link",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
+        },
+        {
+          "name": "is-mobile-menu-open",
+          "description": ""
+        },
+        {
+          "name": "ref-mobile-menu-toggle",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-main",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "click-link",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
+        },
+        {
+          "name": "is-mega-menu-visible",
+          "description": "(optional) if this mega-menu is visible"
+        },
+        {
+          "name": "name",
+          "description": "(optional) name value"
+        }
+      ]
+    },
+    {
+      "name": "scale-nav-segment",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "href",
+          "description": "(optional) href value"
+        },
+        {
+          "name": "is-active",
+          "description": "(optional) if this item is active"
+        }
+      ]
+    },
+    {
+      "name": "scale-pagination",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "hide-borders",
+          "description": "(optional) Set to true to hide top and bottom borders"
+        },
+        {
+          "name": "page-size",
+          "description": "(optional) Set number of rows/elements to show per page"
+        },
+        {
+          "name": "start-element",
+          "description": "(optional) Index of first element to display"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected styles"
+        },
+        {
+          "name": "total-elements",
+          "description": "(optional) Total number of rows/elements used to calculate page displays"
         }
       ]
     },
@@ -6172,6 +6611,51 @@
         {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
+        }
+      ]
+    },
+    {
+      "name": "scale-radio-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "checked",
+          "description": "(optional) Active switch"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
         }
       ]
     },
@@ -6486,23 +6970,196 @@
       ]
     },
     {
-      "name": "scale-text",
+      "name": "scale-text-field",
       "description": {
         "kind": "markdown",
         "value": ""
       },
       "attributes": [
         {
+          "name": "counter",
+          "description": "(optional) Input counter"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "max-length",
+          "description": "(optional) Input max length"
+        },
+        {
+          "name": "min-length",
+          "description": "(optional) Input min length"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
         },
         {
-          "name": "tag",
-          "description": "(optional) Text tag"
+          "name": "transparent",
+          "description": "(optional) input background transparent"
         },
         {
-          "name": "variant",
-          "description": "(optional) Text variant"
+          "name": "type",
+          "description": "(optional) Input type",
+          "values": [
+            {
+              "name": "date"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "hidden"
+            },
+            {
+              "name": "number"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "text"
+            },
+            {
+              "name": "url"
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
+        }
+      ]
+    },
+    {
+      "name": "scale-textarea",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "cols",
+          "description": "(optional) textarea column"
+        },
+        {
+          "name": "counter",
+          "description": "(optional) Input counter"
+        },
+        {
+          "name": "disabled",
+          "description": "(optional) Input disabled"
+        },
+        {
+          "name": "helper-text",
+          "description": "(optional) Input helper text"
+        },
+        {
+          "name": "input-id",
+          "description": "(optional) Input checkbox id"
+        },
+        {
+          "name": "label",
+          "description": "(optional) Input label"
+        },
+        {
+          "name": "max-length",
+          "description": "(optional) Input max length"
+        },
+        {
+          "name": "min-length",
+          "description": "(optional) Input min length"
+        },
+        {
+          "name": "name",
+          "description": "(optional) Input name"
+        },
+        {
+          "name": "placeholder",
+          "description": "(optional) Input placeHolder"
+        },
+        {
+          "name": "required",
+          "description": "(optional) Input required"
+        },
+        {
+          "name": "resize",
+          "description": "(optional) textarea resize",
+          "values": [
+            {
+              "name": "horizontal"
+            },
+            {
+              "name": "none"
+            },
+            {
+              "name": "unset"
+            },
+            {
+              "name": "vertical"
+            }
+          ]
+        },
+        {
+          "name": "rows",
+          "description": "(optional) textarea row"
+        },
+        {
+          "name": "size",
+          "description": "(optional) Input size"
+        },
+        {
+          "name": "status",
+          "description": "(optional) Input status"
+        },
+        {
+          "name": "styles",
+          "description": "(optional) Injected CSS styles"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) input background transparent"
+        },
+        {
+          "name": "value",
+          "description": "(optional) Input value"
         }
       ]
     },

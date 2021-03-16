@@ -7,9 +7,11 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
+
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
-    <link rel="stylesheet" href="/build/theme/fonts/scale-fonts-telekom.css" />
+    <link rel="stylesheet" href="/build/design-tokens-telekom.css" />
+    <link rel="stylesheet" href="/build/scale-components.css" />
     <style>
       *,
       *:before,
@@ -38,7 +40,7 @@ width: 100%; */
       </div>
       <div class="block">Two</div>
     </scale-app-shell>
-    <scale-app-footer id="footer"></scale-app-footer>
+    <scale-app-footer id="footer" variant="angular"></scale-app-footer>
 
     <script>
       const changeButton = document.getElementById('change-button');
@@ -53,6 +55,12 @@ width: 100%; */
       app.claimLang = 'de';
       app.activeRouteId = 'Smartphone-Tarife';
       app.activeSectorId = 'Privatkunden';
+      app.logoHref = '/hello';
+      app.logoTitle = 'Logo';
+      app.logoClick = e => {
+        e.preventDefault();
+        console.log('hello');
+      };
       app.mainNavigation = [
         {
           name: 'Mobilfunk Menu',
@@ -380,7 +388,7 @@ width: 100%; */
           onClick: () => {
             app.activeRouteId = 'Suche';
           },
-          icon: 'search',
+          icon: 'action-search',
         },
         {
           name: 'Warenkorb',
@@ -389,7 +397,7 @@ width: 100%; */
           onClick: () => {
             app.activeRouteId = 'Warenkorb';
           },
-          icon: 'shopping-bag',
+          icon: 'action-shopping-cart',
         },
         {
           name: 'Login',
@@ -398,7 +406,7 @@ width: 100%; */
           onClick: () => {
             app.activeRouteId = 'Login';
           },
-          icon: 'profile',
+          icon: 'user_file-user',
         },
         {
           id: 'menu',

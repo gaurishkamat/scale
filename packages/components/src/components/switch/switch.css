@@ -2,12 +2,12 @@
   --switch-size: 20px;
   --switch-offset: 2px;
   --switch-color-off: #262626;
-  --switch-color-on: #e20074;
-  --switch-color-active: #cb0068;
-  --switch-color-hover: #f90984;
-  --switch-color-disabled: #d0d0d0;
+  --switch-color-on: var(--scl-color-primary);
+  --switch-color-active: var(--scl-color-primary-active);
+  --switch-color-hover: var(--scl-color-primary-hover);
+  --switch-color-disabled: var(--scl-color-background-disabled);
   --switch-color-state: var(--switch-color-off);
-  --switch-color-state-contrast: white;
+  --switch-color-state-contrast: var(--scl-color-background-standard);
   --switch-color-background: var(--switch-color-state-contrast);
   --switch-color-toggle: var(--switch-color-state);
   --switch-color-text: var(--switch-color-state);
@@ -36,7 +36,9 @@
   display: inline-flex;
   justify-content: space-between;
   background: var(--switch-color-background);
-  transition: var(--transition-generic, all 0.2s ease-in-out);
+  transition-property: background;
+  transition-duration: var(--scl-motion-duration-fast);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch .switch__text {
@@ -44,9 +46,11 @@
   width: 100%;
   color: var(--switch-color-text);
   justify-content: space-evenly;
-  font-size: var(--type-size-2, 0.75rem);
+  font-size: var(--scl-font-size-12);
   line-height: calc(var(--switch-size) - var(--switch-offset));
-  transition: var(--transition-generic, all 0.2s ease-in-out);
+  transition-property: color;
+  transition-duration: var(--scl-motion-duration-fast);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch .switch__text:before {
@@ -67,7 +71,9 @@
   background: var(--switch-color-toggle);
   left: calc(0.5 * var(--switch-size) - 0.5 * var(--switch-offset));
   top: 50%;
-  transition: var(--transition-generic, all 0.2s ease-in-out);
+  transition-property: transform, background;
+  transition-duration: var(--scl-motion-duration-fast);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch input:checked:disabled + .switch__wrapper .switch__toggle,
@@ -86,15 +92,17 @@
   cursor: inherit;
   color: var(--switch-color-text);
   margin-left: 1rem;
-  transition: var(--transition-generic, all 0.2s ease-in-out);
+  transition-property: color;
+  transition-duration: var(--scl-motion-duration-fast);
+  transition-timing-function: var(--scl-motion-easing-standard);
 }
 
 .switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
-  box-shadow: 0 0 0 var(--focus-size, 2px) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
-  box-shadow: 0 0 0 var(--focus-size, 2px) var(--color-focus, #009de0);
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .switch input:checked ~ .switch__wrapper {

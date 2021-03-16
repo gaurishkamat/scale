@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="fonts/scale-fonts-telekom.css" />
 <link rel="stylesheet" href="fonts/scale-fonts-storybook.css" />
+<link rel="stylesheet" href="design-tokens-telekom.css" />
 <style>
   .sbdocs.sbdocs-content {
     max-width: 1066px !important;
@@ -8,5 +9,20 @@
     position: absolute;
     left: -10000px;
     overflow: hidden;
+  }
+  .brand-header-spacing {
+    margin: -1rem;
+  }
+  @media (min-width: 1024px) {
+    .brand-header-spacing {
+      margin: 0 -1rem;
+    }
+  }
+
+  scale-sb-spacing {
+    display: block;
+    width: var(--size, 1px);
+    height: 1em;
+    background-color: var(--scl-color-teal-60);
   }
 </style>

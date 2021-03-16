@@ -10,15 +10,10 @@ import { action } from "@storybook/addon-actions";
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleDropDown },
-  props: {
-    label: String,
-    ...ScaleDropDown.props
-  },
+  props: ScaleDropDown.props,
   template: `
-    <scale-input
+    <scale-dropdown
       :name="name"
-      :variant="variant"
-      :type="type"
       :label="label"
       :helper-text="helperText"
       :status="status"
@@ -43,7 +38,7 @@ export const Template = (args, { argTypes }) => ({
       <optgroup label="Category Group 2">
         <option value="3">Category 3</option>
       </optgroup>
-    </scale-input>
+    </scale-dropdown>
   `,
   methods: {
     scaleChange: action('scaleChange'),
@@ -53,7 +48,10 @@ export const Template = (args, { argTypes }) => ({
   }
 })
 
-# Dropdown
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Dropdown</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 ## Standard
 
@@ -62,8 +60,6 @@ export const Template = (args, { argTypes }) => ({
     name='Standard'
     args={{
       label: 'Select',
-      type: 'select',
-      variant: 'animated',
     }}
   >
     {Template.bind({})}
@@ -73,11 +69,11 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story='Standard' />
 
 ```html
-<scale-input icon="SVG-PATH" type="select" label="select">
+<scale-dropdown icon="SVG-PATH" label="select">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-</scale-input>
+</scale-dropdown>
 ```
 
 
@@ -88,9 +84,7 @@ export const Template = (args, { argTypes }) => ({
     name='Small'
     args={{
       label: 'Small',
-      type: 'select',
       size: 'small',
-      variant: 'animated',
     }}
   >
     {Template.bind({})}
@@ -99,11 +93,11 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-input icon="SVG-PATH" type="select" label="Small" size="small" variant="animated" placeholder="Small">
+<scale-dropdown icon="SVG-PATH" label="Small" size="small" placeholder="Small">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-</scale-input>
+</scale-dropdown>
 ```
 
 
@@ -117,8 +111,6 @@ The display error is on the browser side.
     name='Disabled'
     args={{
       label: 'Disabled',
-      type: 'select',
-      variant: 'animated',
       disabled: true,
     }}
   >
@@ -128,11 +120,11 @@ The display error is on the browser side.
 
 
 ```html
-<scale-input icon="SVG-PATH" type="select" label="Disabled" disabled>
+<scale-dropdown icon="SVG-PATH" label="Disabled" disabled>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-</scale-input>
+</scale-dropdown>
 ```
 
 
@@ -143,8 +135,6 @@ The display error is on the browser side.
     name='Error'
     args={{
       label: 'Error',
-      type: 'select',
-      variant: 'animated',
       status: 'error',
       helperText: 'Something went wrong...',
     }}
@@ -155,9 +145,9 @@ The display error is on the browser side.
 
 
 ```html
-<scale-input icon="SVG-PATH" type="select" label="Error" status="error" helper-text="Something went wrong...">
+<scale-dropdown icon="SVG-PATH" label="Error" status="error" helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-</scale-input>
+</scale-dropdown>
 ```

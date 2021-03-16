@@ -1,7 +1,6 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import ScaleTextArea from "./ScaleTextArea.vue";
 import { action } from "@storybook/addon-actions";
-export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
   title="Components/Text Area"
@@ -13,41 +12,15 @@ export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
         options: ["unset", "none", "vertical", "horizontal"]
       }
     },
-    type: {
-      control: {
-        type: "select",
-        options: [
-          "email",
-          "hidden",
-          "number",
-          "password",
-          "tel",
-          "text",
-          "checkbox",
-          "radio",
-          "select",
-          "textarea",
-          "url"
-        ]
-      }
-    },
-    variant: {
-      control: { type: "select", options: ["animated", "static"] }
-    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleTextArea },
-  props: {
-    label: String,
-    ...ScaleTextArea.props
-  },
+  props: ScaleTextArea.props,
   template: `
-    <scale-input
+    <scale-textarea
       :name="name"
-      :variant="variant"
-      :type="type"
       :label="label"
       :size="size"
       :rows="rows"
@@ -68,7 +41,7 @@ export const Template = (args, { argTypes }) => ({
       @scaleFocus="scaleFocus"
       @scaleBlur="scaleBlur"
       @scaleKeyDown="scaleKeyDown"
-    ></scale-input>
+    ></scale-textarea>
   `,
   methods: {
     scaleChange: action("scaleChange"),
@@ -90,10 +63,8 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Textarea",
-      type: "textarea",
       rows: 3,
-      resize: "vertical",
-      variant: 'animated'
+      resize: "vertical"
     }}
   >
     {Template.bind({})}
@@ -103,7 +74,7 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-input variant="animated" label="Textarea" type="textarea" rows="3" resize="vertical"></scale-input>
+<scale-textarea label="Textarea" rows="3" resize="vertical"></scale-textarea>
 ```
 
 
@@ -114,10 +85,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Placeholder"
     args={{
-      type: "textarea",
       label: "Placeholder",
-      placeholder: "this is the placeholder",
-      variant: 'animated'
+      placeholder: "this is the placeholder"
     }}
   >
     {Template.bind({})}
@@ -125,7 +94,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" label="Placeholder" type="textarea" :placeholder="this is the placeholder"></scale-input>
+<scale-textarea label="Placeholder" placeholder="this is the placeholder"></scale-textarea>
 ```
 
 
@@ -135,10 +104,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Helper Text"
     args={{
-      type: "textarea",
       helperText: "Make sure to fill this",
-      label: "Helper Text",
-      variant: 'animated'
+      label: "Helper Text"
     }}
   >
     {Template.bind({})}
@@ -146,7 +113,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="textarea" label="Helper Text" helperText="Make sure to fill this"></scale-input>
+<scale-textarea label="Helper Text" helperText="Make sure to fill this"></scale-textarea>
 ```
 
 ## With Error
@@ -155,11 +122,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="With Error"
     args={{
-      type: "textarea",
       label: "With Error",
       status: "error",
-      helperText: "something is wrong",
-      variant: 'animated'
+      helperText: "something is wrong"
     }}
   >
     {Template.bind({})}
@@ -167,7 +132,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="textarea" label="With Error" helper-text="something is wrong" status="error"></scale-input>
+<scale-textarea label="With Error" helper-text="something is wrong" status="error"></scale-textarea>
 ```
 
 
@@ -177,10 +142,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-      type: "textarea",
       label: "Disabled",
-      disabled: true,
-      variant: 'animated'
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -188,7 +151,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="textarea" label="Disabled" disabled></scale-input>
+<scale-textarea label="Disabled" disabled></scale-textarea>
 ```
 
 
@@ -200,9 +163,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Max Length With Counter",
       maxLength: 10,
-      counter: true,
-      type: "textarea",
-      variant: 'animated'
+      counter: true
     }}
   >
     {Template.bind({})}
@@ -210,7 +171,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="textarea" label="Max Length With Counter" max-length="10" counter></scale-input>
+<scale-textarea label="Max Length With Counter" max-length="10" counter></scale-textarea>
 ```
 
 
@@ -221,9 +182,7 @@ export const Template = (args, { argTypes }) => ({
     name="More rows"
     args={{
       label: "More rows",
-      type: "textarea",
-      rows: 10,
-      variant: 'animated'
+      rows: 10
     }}
   >
     {Template.bind({})}
@@ -231,5 +190,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-input variant="animated" type="textarea" label="More rows" rows="10"></scale-input>
+<scale-textarea label="More rows" rows="10"></scale-textarea>
 ```

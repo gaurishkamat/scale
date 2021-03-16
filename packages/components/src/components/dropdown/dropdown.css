@@ -1,0 +1,175 @@
+.input {
+  position: relative;
+}
+.input .input__helper-text,
+.input .input__counter {
+  font-weight: var(--scl-font-weight-bold);
+}
+.input .input__select {
+  width: 100%;
+  height: var(--scl-spacing-48);
+  margin: 0;
+  display: flex;
+  outline: none;
+  padding: var(--scl-spacing-12) var(--scl-spacing-40) 0
+    calc(var(--scl-spacing-12) - 1px);
+  z-index: 1;
+  box-sizing: border-box;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-family: inherit;
+  font-size: var(--scl-font-size-16);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-black);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.input .input__select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+.input .input__select-wrapper {
+  position: relative;
+}
+.input .input__helper-text {
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  padding-left: var(--scl-spacing-12);
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-blue-70);
+}
+.input .input__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--scl-spacing-4);
+}
+.input:not(.input--disabled):hover .input__select-wrapper {
+  --icon-color: var(--scl-color-primary-hover, #f90984);
+}
+.input:not(.input--disabled):active .input__select-wrapper {
+  --icon-color: var(--scl-color-primary-active, #cb0068);
+}
+.input:not(.input--disabled) .input__select:hover,
+.input:not(.input--disabled) .input__select:focus {
+  border-color: var(--scl-color-primary-hover, #f90984);
+}
+.input:not(.input--disabled) .input__select:focus {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.input:not(.input--disabled) .input__select:focus::placeholder {
+  color: var(--scl-color-grey-60);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+.input .input__select-wrapper scale-icon {
+  top: 50%;
+  right: var(--scl-spacing-12);
+  position: absolute;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.input .input__select::placeholder,
+.input ::placeholder {
+  color: transparent;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+
+.input__label {
+  top: 0;
+  left: 0;
+  color: var(--scl-color-grey-60);
+  display: flex;
+  z-index: var(--scl-z-index-10);
+  position: absolute;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  pointer-events: none;
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2)
+  );
+  font-weight: var(--scl-font-weight-medium);
+}
+
+.animated .input__label {
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-bold);
+}
+.input--status-error .input__input,
+.input--status-error .input__textarea,
+.input--status-error .input__select {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+.input--status-error .input__helper-text {
+  color: var(--scl-color-text-error);
+}
+.input--status-error .input__counter {
+  color: var(--scl-color-text-error);
+}
+.input--size-small .input__input {
+  height: var(--scl-spacing-40);
+}
+.input--size-small .input__select {
+  height: var(--scl-spacing-40);
+}
+.input--size-small .input__label {
+  top: 0;
+  left: 0;
+  color: var(--scl-color-grey-60);
+  display: flex;
+  z-index: var(--scl-z-index-10);
+  position: absolute;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  pointer-events: none;
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(
+    13px,
+    calc((var(--input-small-height, 40px) - 1rem) / 2)
+  ); */
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-40) - var(--scl-font-size-16)) / 2)
+  );
+  font-weight: var(--scl-font-weight-medium);
+}
+
+.input--size-small.animated .input__label {
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--transparent .input__input,
+.input--transparent .input__textarea,
+.input--transparent.input--type-radio .input__radio,
+.input--transparent .input__select {
+  background-color: transparent;
+}
+.input--disabled label,
+.input--disabled .input__label,
+.input--disabled input,
+.input--disabled .input__select,
+.input--disabled .input__helper-text {
+  cursor: not-allowed;
+  border-color: var(--scl-color-background-disabled);
+  color: var(--scl-color-background-disabled);
+  background: var(--scl-color-white);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--disabled .input__select-wrapper {
+  --icon-color: var(--scl-color-background-disabled);
+}
+.input--disabled.animated label.input__label {
+  color: var(--scl-color-background-disabled);
+}

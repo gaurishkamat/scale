@@ -1,4 +1,7 @@
-# Dropdown
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Dropdown</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
 
 Mit einem Dropdown wählen Nutzer*innen eine Option aus einer Liste aus.
 
@@ -78,7 +81,7 @@ Wenn nur wenig Platz zur Verfügung steht, setze das kleine Dropdown ein.
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
 ## Bekannte Einschränkungen
-Das Dropdown im ist fertig zum Gebrauch. Die Komponente im disabled State wird im Firefox 85.0.2 (64-Bit) im HCM (Hochkontrastmodus) fehlerhaft mit weißem Hintergrund dargestellt.
+Das Dropdown ist fertig zum Gebrauch. Die Komponente im disabled State wird im Firefox 85.0.2 (64-Bit) im HCM (Hochkontrastmodus) fehlerhaft mit weißem Hintergrund dargestellt.
 Der Darstellungsfehler liegt auf Seiten des Browsers.
 
 ## Verwandte Komponenten

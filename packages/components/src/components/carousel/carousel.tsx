@@ -1,5 +1,6 @@
 import { Component, Prop, h, State, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
+import statusWarn from '../../utils/status-warn';
 @Component({
   tag: 'scale-carousel',
   styleUrl: './carousel.css',
@@ -15,6 +16,10 @@ export class Carousel {
 
   @State() slidesArray = [];
   @State() value = 0;
+
+  connectedCallback() {
+    statusWarn({ source: this.hostElement });
+  }
 
   componentWillLoad() {
     if (this.slidesArray.length === 0) {

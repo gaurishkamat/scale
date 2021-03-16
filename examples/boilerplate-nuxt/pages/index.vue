@@ -11,21 +11,12 @@
       <h2 class="subtitle">
         My legendary Nuxt.js project
       </h2>
-      <div class="links">
-        <scale-button href="https://nuxtjs.org/" target="_blank">
-          Documentation
-        </scale-button>
-        <scale-button href="https://github.com/nuxt/nuxt.js" target="_blank">
-          GitHub
-        </scale-button>
-      </div>
 
-      <scale-input
+      <scale-text-field
+        label="text field"
         @scaleChange="handleChange"
         placeholder="add message"
-        :styles="JSON.stringify(styles)"
-        :styles.prop="styles"
-      ></scale-input>
+      ></scale-text-field>
       <span>The message is:</span>
       <p>{{ message }}</p>
     </div>
@@ -42,7 +33,6 @@ export default Vue.extend({
   },
   data: () => ({
     message: '',
-    styles: { input: { '& input': { background: 'green' } } }
   }),
   methods: {
     handleChange: function(event: any) {
@@ -53,6 +43,7 @@ export default Vue.extend({
 </script>
 
 <style>
+@import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -80,7 +71,4 @@ export default Vue.extend({
   padding-bottom: 15px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

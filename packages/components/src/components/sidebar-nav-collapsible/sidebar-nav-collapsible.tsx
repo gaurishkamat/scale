@@ -1,5 +1,4 @@
 import { Component, h, Prop, Host, Element, Watch } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
 @Component({
@@ -94,7 +93,7 @@ export class SidebarNavCollapsible {
     );
   }
 
-  getCssClassMap(): CssClassMap {
+  getCssClassMap() {
     return classNames(
       'sidebar-nav-collapsible',
       this.condensed && 'sidebar-nav-collapsible--condensed',

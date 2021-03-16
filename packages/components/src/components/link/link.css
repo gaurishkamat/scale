@@ -2,33 +2,33 @@
   cursor: pointer;
   outline: none;
   text-decoration: none;
-  font-weight: var(--type-weight-medium, 500);
-  color: var(--color-link, #007db3);
-  border-bottom: 1px solid currentColor;
+  font-weight: var(--scl-font-weight-medium);
+  color: var(--scl-color-text-link);
+  border-bottom: var(--scl-spacing-1) solid currentColor;
 }
 .link:hover.link:not(.link--disabled) {
-  color: var(--color-link-hover, #007db3);
+  color: var(--scl-color-text-link-hover);
 }
 .link:focus:not(.link--disabled) {
-  border-bottom: var(--size-border-focus, 2px) solid currentColor;
+  border-bottom: var(--scl-spacing-2) solid currentColor;
 }
 .link:active.link:not(.link--disabled) {
-  color: var(--color-link-active, #0070a0);
+  color: var(--scl-color-text-link-active);
 }
 .link:visited.link:not(.link--disabled) {
-  color: var(--color-link-visited, #0070a0);
+  color: var(--scl-color-text-link-visited);
 }
 .link__wrapper {
   display: inline-flex;
   align-items: center;
 }
 .link__wrapper > *:not(:first-child) {
-  margin-inline-start: var(--spacing-char, 0.25rem);
+  margin-inline-start: var(--scl-spacing-4);
 }
 .link--block {
   display: block;
 }
 .link--disabled {
   cursor: not-allowed;
-  color: var(--color-disabled, #7c7c7c);
+  color: var(--scl-color-grey-50);
 }

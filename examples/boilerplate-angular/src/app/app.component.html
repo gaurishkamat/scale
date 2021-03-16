@@ -7,7 +7,7 @@
     <h3>Card</h3>
     <scale-card>A title</scale-card>
     <scale-slider [(ngModel)]="testValue"></scale-slider>
-    <scale-input [(ngModel)]="testText" label="Text"></scale-input>
+    <scale-text-field name="test" ngDefaultControl [(ngModel)]="testText" label="Text"></scale-text-field>
     <p>Message: {{testText}}</p>
     <p>Value: {{testValue}}</p>
 </div>

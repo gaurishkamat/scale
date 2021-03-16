@@ -1,0 +1,8 @@
+:host {
+  --tab-height: var(--scl-spacing-40);
+  --tab-spacing: var(--scl-spacing-24);
+  --tab-radius: var(--scl-radius-4);
+  --tab-border-size: var(--scl-spacing-2);
+  --tab-border-size-selected: var(--scl-spacing-4);
+  --tab-border-color: var(--scl-color-grey-20);
+}

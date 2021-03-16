@@ -75,6 +75,26 @@
     "de": "Scale und React"
   },
   {
+    "elementSelector": "#scale-for-developers-accessibility--page",
+    "en": "Accessibility",
+    "de": "Barrierefreiheit"
+  },
+  {
+    "elementSelector": "#scale-for-developers-design-tokens--page",
+    "en": "Design Token",
+    "de": "Design Token"
+  },
+  {
+    "elementSelector": "#scale-for-developers-browser-support--page",
+    "en": "Browser Support",
+    "de": "Unterstützte Internet-Browser"
+  },
+  {
+    "elementSelector": "#scale-for-developers-migration-guide-to-v2--page",
+    "en": "Migration Guide v2",
+    "de": "Migration Guide v2"
+  },
+  {
     "elementSelector": "#components",
     "en": "Components",
     "de": "Komponenten"
@@ -82,7 +102,7 @@
   {
     "elementSelector": "#community",
     "en": "Community",
-    "de": "Community2"
+    "de": "Community"
   },
   {
     "elementSelector": "#community-contributing-to-scale--page",

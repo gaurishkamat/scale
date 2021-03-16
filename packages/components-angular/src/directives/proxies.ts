@@ -8,13 +8,13 @@ import { Components } from '@scaleds/components-telekom';
 
 export declare interface AppLogo extends Components.AppLogo {}
 @ProxyCmp({
-  inputs: ['claim', 'claimLang', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href', 'logoTitle']
 })
 @Component({
   selector: 'app-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['claim', 'claimLang', 'color', 'href']
+  inputs: ['claim', 'claimLang', 'color', 'href', 'logoTitle']
 })
 export class AppLogo {
   protected el: HTMLElement;
@@ -146,13 +146,13 @@ export class ScaleAppFooter {
 
 export declare interface ScaleAppHeader extends Components.ScaleAppHeader {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'isMegaMenuVisible', 'isMobileMenuVisible', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 @Component({
   selector: 'scale-app-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'isMegaMenuVisible', 'isMobileMenuVisible', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation']
 })
 export class ScaleAppHeader {
   protected el: HTMLElement;
@@ -165,13 +165,13 @@ export class ScaleAppHeader {
 
 export declare interface ScaleAppShell extends Components.ScaleAppShell {}
 @ProxyCmp({
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 @Component({
   selector: 'scale-app-shell',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'brandTitle', 'claimLang', 'iconNavigation', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
+  inputs: ['activeRouteId', 'activeSectorId', 'addonNavigation', 'claimLang', 'iconNavigation', 'logoClick', 'logoHref', 'logoTitle', 'mainNavigation', 'portalName', 'sectorNavigation', 'styles']
 })
 export class ScaleAppShell {
   protected el: HTMLElement;
@@ -222,13 +222,13 @@ export class ScaleButton {
 
 export declare interface ScaleCard extends Components.ScaleCard {}
 @ProxyCmp({
-  inputs: ['label', 'rel', 'styles', 'target', 'to']
+  inputs: ['clickCard', 'label', 'rel', 'styles', 'target', 'to']
 })
 @Component({
   selector: 'scale-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['label', 'rel', 'styles', 'target', 'to']
+  inputs: ['clickCard', 'label', 'rel', 'styles', 'target', 'to']
 })
 export class ScaleCard {
   protected el: HTMLElement;
@@ -276,6 +276,29 @@ export class ScaleChartStackCard {
   }
 }
 
+import { Checkbox as ICheckbox } from '@scaleds/components-telekom/dist/types/components/checkbox/checkbox';
+export declare interface ScaleCheckbox extends Components.ScaleCheckbox {}
+@ProxyCmp({
+  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleCheckbox {
+  /** Emitted when the value has changed. */
+  scaleChange!: ICheckbox['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
+  }
+}
+
 import { Collapsible as ICollapsible } from '@scaleds/components-telekom/dist/types/components/collapsible/collapsible';
 export declare interface ScaleCollapsible extends Components.ScaleCollapsible {}
 @ProxyCmp({
@@ -296,6 +319,31 @@ export class ScaleCollapsible {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['scaleExpand']);
+  }
+}
+
+import { DataGrid as IDataGrid } from '@scaleds/components-telekom/dist/types/components/data-grid/data-grid';
+export declare interface ScaleDataGrid extends Components.ScaleDataGrid {}
+@ProxyCmp({
+  inputs: ['fields', 'freezeHeader', 'heading', 'height', 'hideBorder', 'hideHeader', 'hideInfo', 'hideMenu', 'numbered', 'pageSize', 'rows', 'selectable', 'selection', 'shadeAlternate', 'styles', 'visible']
+})
+@Component({
+  selector: 'scale-data-grid',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['fields', 'freezeHeader', 'heading', 'height', 'hideBorder', 'hideHeader', 'hideInfo', 'hideMenu', 'numbered', 'pageSize', 'rows', 'selectable', 'selection', 'shadeAlternate', 'styles', 'visible'],
+  outputs: ['scaleEdit', 'scaleSort']
+})
+export class ScaleDataGrid {
+  /** Event triggered every time the editable cells are changed, updating the original rows data */
+  scaleEdit!: IDataGrid['scaleEdit'];
+  /** Event triggered every time the data is sorted, changing original rows data */
+  scaleSort!: IDataGrid['scaleSort'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleEdit', 'scaleSort']);
   }
 }
 
@@ -343,6 +391,37 @@ export class ScaleDivider {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
+export declare interface ScaleDropdown extends Components.ScaleDropdown {}
+@ProxyCmp({
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+})
+@Component({
+  selector: 'scale-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleDropdown {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: IDropdown['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: IDropdown['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: IDropdown['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: IDropdown['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: IDropdown['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
   }
 }
 
@@ -3892,6 +3971,96 @@ export class ScaleListItem {
   }
 }
 
+import { Menu as IMenu } from '@scaleds/components-telekom/dist/types/components/menu/menu';
+export declare interface ScaleMenu extends Components.ScaleMenu {}
+@ProxyCmp({
+  inputs: ['closeOnSelect', 'direction', 'open', 'styles']
+})
+@Component({
+  selector: 'scale-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['closeOnSelect', 'direction', 'open', 'styles'],
+  outputs: ['scaleOpen', 'scaleClose', 'scaleSelect']
+})
+export class ScaleMenu {
+  /** Event triggered when menu list opened */
+  scaleOpen!: IMenu['scaleOpen'];
+  /** Event triggered when menu list closed */
+  scaleClose!: IMenu['scaleClose'];
+  /** Event triggered when nested menu item selected */
+  scaleSelect!: IMenu['scaleSelect'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleOpen', 'scaleClose', 'scaleSelect']);
+  }
+}
+
+
+export declare interface ScaleMenuDivider extends Components.ScaleMenuDivider {}
+@ProxyCmp({
+  inputs: ['styles']
+})
+@Component({
+  selector: 'scale-menu-divider',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['styles']
+})
+export class ScaleMenuDivider {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleMenuItem extends Components.ScaleMenuItem {}
+@ProxyCmp({
+  inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value'],
+  methods: ['setFocus', 'removeFocus']
+})
+@Component({
+  selector: 'scale-menu-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value']
+})
+export class ScaleMenuItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+import { MenuList as IMenuList } from '@scaleds/components-telekom/dist/types/components/menu-list/menu-list';
+export declare interface ScaleMenuList extends Components.ScaleMenuList {}
+@ProxyCmp({
+  inputs: ['styles'],
+  methods: ['opened']
+})
+@Component({
+  selector: 'scale-menu-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['styles'],
+  outputs: ['scaleSelect']
+})
+export class ScaleMenuList {
+  /** Event triggered every time the data is edited, changing original rows data */
+  scaleSelect!: IMenuList['scaleSelect'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleSelect']);
+  }
+}
+
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
@@ -3918,6 +4087,86 @@ export class ScaleModal {
 }
 
 
+export declare interface ScaleNavIcon extends Components.ScaleNavIcon {}
+@ProxyCmp({
+  inputs: ['clickLink', 'href', 'icon', 'isActive', 'isMobileMenuOpen', 'refMobileMenuToggle']
+})
+@Component({
+  selector: 'scale-nav-icon',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['clickLink', 'href', 'icon', 'isActive', 'isMobileMenuOpen', 'refMobileMenuToggle']
+})
+export class ScaleNavIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleNavMain extends Components.ScaleNavMain {}
+@ProxyCmp({
+  inputs: ['clickLink', 'href', 'isActive', 'isMegaMenuVisible', 'name']
+})
+@Component({
+  selector: 'scale-nav-main',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['clickLink', 'href', 'isActive', 'isMegaMenuVisible', 'name']
+})
+export class ScaleNavMain {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleNavSegment extends Components.ScaleNavSegment {}
+@ProxyCmp({
+  inputs: ['href', 'isActive']
+})
+@Component({
+  selector: 'scale-nav-segment',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['href', 'isActive']
+})
+export class ScaleNavSegment {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+import { Pagination as IPagination } from '@scaleds/components-telekom/dist/types/components/pagination/pagination';
+export declare interface ScalePagination extends Components.ScalePagination {}
+@ProxyCmp({
+  inputs: ['hideBorders', 'pageSize', 'startElement', 'styles', 'totalElements']
+})
+@Component({
+  selector: 'scale-pagination',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['hideBorders', 'pageSize', 'startElement', 'styles', 'totalElements'],
+  outputs: ['scalePagination']
+})
+export class ScalePagination {
+  /** Event triggered every time the data is edited, changing original rows data */
+  scalePagination!: IPagination['scalePagination'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scalePagination']);
+  }
+}
+
+
 export declare interface ScaleProgressBar extends Components.ScaleProgressBar {}
 @ProxyCmp({
   inputs: ['busy', 'customColor', 'disabled', 'hasError', 'icon', 'label', 'percentage', 'progressBarId', 'showStatus', 'statusDescription', 'statusInside', 'strokeWidth', 'styles']
@@ -3933,6 +4182,29 @@ export class ScaleProgressBar {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+import { RadioButton as IRadioButton } from '@scaleds/components-telekom/dist/types/components/radio-button/radio-button';
+export declare interface ScaleRadioButton extends Components.ScaleRadioButton {}
+@ProxyCmp({
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+})
+@Component({
+  selector: 'scale-radio-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  outputs: ['scaleChange']
+})
+export class ScaleRadioButton {
+  /** Emitted when the value has changed. */
+  scaleChange!: IRadioButton['scaleChange'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleChange']);
   }
 }
 
@@ -4154,22 +4426,65 @@ export class ScaleTag {
   }
 }
 
-
-export declare interface ScaleText extends Components.ScaleText {}
+import { TextField as ITextField } from '@scaleds/components-telekom/dist/types/components/text-field/text-field';
+export declare interface ScaleTextField extends Components.ScaleTextField {}
 @ProxyCmp({
-  inputs: ['styles', 'tag', 'variant']
+  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value']
 })
 @Component({
-  selector: 'scale-text',
+  selector: 'scale-text-field',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['styles', 'tag', 'variant']
+  inputs: ['counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'type', 'value'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
-export class ScaleText {
+export class ScaleTextField {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: ITextField['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: ITextField['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: ITextField['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: ITextField['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: ITextField['scaleKeyDown'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
+  }
+}
+
+import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
+export declare interface ScaleTextarea extends Components.ScaleTextarea {}
+@ProxyCmp({
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
+})
+@Component({
+  selector: 'scale-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
+  outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
+})
+export class ScaleTextarea {
+  /** Emitted when a keyboard input occurred. */
+  scaleInput!: ITextarea['scaleInput'];
+  /** Emitted when the value has changed. */
+  scaleChange!: ITextarea['scaleChange'];
+  /** Emitted when the input has focus. */
+  scaleFocus!: ITextarea['scaleFocus'];
+  /** Emitted when the input loses focus. */
+  scaleBlur!: ITextarea['scaleBlur'];
+  /** Emitted on keydown. */
+  scaleKeyDown!: ITextarea['scaleKeyDown'];
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']);
   }
 }
 

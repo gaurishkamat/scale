@@ -1,0 +1,234 @@
+.input {
+  position: relative;
+}
+
+.input__checkbox-label-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.input .input__helper-text {
+  font-weight: var(--scl-font-weight-bold);
+}
+
+.input .input__helper-text {
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  padding-left: var(--scl-spacing-12);
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-blue-70);
+}
+.input .input__meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input--status-error .input__input,
+.input--status-error .input__textarea,
+.input--status-error .input__select {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+.input--status-error .input__helper-text {
+  color: var(--scl-color-text-error);
+}
+.input--status-error .input__counter {
+  color: var(--scl-color-text-error);
+}
+.input--type-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.input--type-checkbox input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+.input--type-checkbox .input__meta {
+  width: 100%;
+}
+.input--type-checkbox .input__helper-text {
+  padding-left: var(--scl-spacing-32);
+}
+.input--type-checkbox .input__checkbox-label {
+  color: var(--scl-color-text-standard);
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--type-checkbox .input__checkbox-container {
+  width: var(--scl-spacing-24);
+  height: var(--scl-spacing-24);
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: var(--scl-spacing-8);
+}
+.input--type-checkbox input:disabled ~ .input__checkbox-label {
+  /* FIXME make sure color is right */
+  color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox input:checked:disabled ~ .input__checkbox-label {
+  color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox
+  input:checked:disabled
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  background: var(--scl-color-background-disabled);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:checked:disabled
+  ~ .input__checkbox-container
+  scale-icon {
+  --icon-color: var(--scl-color-grey-30);
+}
+.input--type-checkbox
+  input:checked:not([disabled]):hover
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:hover
+  .input__checkbox-placeholder {
+  box-shadow: none;
+  border-color: var(--scl-color-primary-hover, #f90984);
+  background: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:checked:not([disabled]):active
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:active
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:checked:not([disabled]):active
+  ~ .input__checkbox-container
+  scale-icon,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:active
+  scale-icon {
+  --icon-color: var(--scl-color-white);
+}
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  border: var(--scl-spacing-1) solid var(--scl-color-primary, #e20074);
+  background: var(--scl-color-primary, #e20074);
+}
+.input--type-checkbox
+  input:disabled
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox
+  input:focus
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.input--type-checkbox
+  input:not([disabled]):hover
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:hover
+  .input__checkbox-placeholder {
+  box-shadow: none;
+  border-color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:not([disabled]):hover
+  ~ .input__checkbox-container
+  ~ .input__checkbox-label,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:hover
+  ~ .input__checkbox-label {
+  color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  scale-icon,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  scale-icon {
+  --icon-color: var(--scl-color-primary-active, #cb0068);
+}
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  ~ .input__checkbox-label,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  ~ .input__checkbox-label {
+  color: var(--scl-color-primary-active, #cb0068);
+}
+.input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  margin: var(--scl-spacing-2);
+  box-sizing: border-box;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  margin-left: var(--scl-spacing-4);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  background: var(--scl-color-background-standard);
+}
+.input--type-checkbox .input__checkbox-container scale-icon {
+  top: calc(0.5 * var(--scl-spacing-12));
+  left: calc(0.5 * var(--scl-spacing-12));
+  width: var(--scl-spacing-12);
+  height: var(--scl-spacing-12);
+  position: absolute;
+  user-select: none;
+  /* TODO this could removed once scale-icon is removed */
+  --icon-color: var(--scl-color-background-standard);
+}
+.input--type-checkbox .input__checkbox-container ~ .input__checkbox-label {
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+.input--type-checkbox.input--status-error
+  .input__checkbox-container
+  .input__checkbox-placeholder {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+
+.input--disabled .input__checkbox-label,
+.input--disabled input,
+.input--disabled .input__checkbox-container,
+.input--disabled .input__helper-text {
+  cursor: not-allowed;
+  border-color: var(--scl-color-background-disabled);
+  color: var(--scl-color-background-disabled);
+  background: var(--scl-color-white);
+}

@@ -16,6 +16,19 @@
 | `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`             |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-data-grid](../../data-grid)
+
+### Graph
+```mermaid
+graph TD;
+  scale-data-grid --> scale-icon-service-settings
+  style scale-icon-service-settings fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

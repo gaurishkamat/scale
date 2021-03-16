@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
+import { DataGridEditEventDetail, DataGridSortedEventDetail } from "./components/data-grid/data-grid";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";
 import { DuetLocalizedText } from "@duetds/date-picker/dist/types/components/duet-date-picker/date-localization";
 import { InputChangeEventDetail } from "./components/input/input";
@@ -15,13 +16,14 @@ export namespace Components {
         "claim": boolean;
         "claimLang": string;
         "color": string;
-        "href": string;
+        "href"?: string;
+        "logoTitle"?: string;
     }
     interface AppMegaMenu {
         "activeRouteId": string;
         "hide": () => void;
         "isActive": boolean;
-        "navigation": MenuItem[];
+        "navigation"?: MenuItem[];
     }
     interface AppNavigationMainMobile {
         "activeRouteId": string;
@@ -96,6 +98,11 @@ export namespace Components {
         "addonNavigation"?: any;
         "claimLang": string;
         "iconNavigation"?: any;
+        "isMegaMenuVisible"?: boolean;
+        "isMobileMenuVisible"?: boolean;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -104,9 +111,11 @@ export namespace Components {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
-        "brandTitle"?: string;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -165,6 +174,7 @@ export namespace Components {
         "variant"?: string;
     }
     interface ScaleCard {
+        "clickCard"?: any;
         /**
           * (optional) Label of the card
          */
@@ -206,6 +216,48 @@ export namespace Components {
          */
         "heading": string;
     }
+    interface ScaleCheckbox {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleCollapsible {
         /**
           * Set to `true` to expand
@@ -215,6 +267,72 @@ export namespace Components {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleDataGrid {
+        /**
+          * Input fields config array
+         */
+        "fields": any;
+        /**
+          * (optional) Freeze header row from scrolling
+         */
+        "freezeHeader"?: boolean;
+        /**
+          * (optional) Heading string
+         */
+        "heading"?: string;
+        /**
+          * (optional) Set static table height, by default will auto-resize
+         */
+        "height"?: string;
+        /**
+          * (optional) Set to true to remove border
+         */
+        "hideBorder"?: boolean;
+        /**
+          * (optional) Set to true to hide header row
+         */
+        "hideHeader"?: boolean;
+        /**
+          * (optional) Set to true to remove info footer block including pagination and selection status
+         */
+        "hideInfo"?: boolean;
+        /**
+          * (optional) Set to true to hide settings menu
+         */
+        "hideMenu"?: boolean;
+        /**
+          * (optional) Set to true to add numbers column
+         */
+        "numbered"?: boolean;
+        /**
+          * (optional) Set number of rows to display per pagination page
+         */
+        "pageSize"?: number;
+        /**
+          * Input data array
+         */
+        "rows": any;
+        /**
+          * (optional) Set to true to add selection column
+         */
+        "selectable"?: boolean;
+        /**
+          * Read-only selection array - populated with raw data from selected rows
+         */
+        "selection": string[];
+        /**
+          * (optional) Shade every second row darker
+         */
+        "shadeAlternate"?: boolean;
+        /**
+          * (optional) Injected css styles
+         */
+        "styles": any;
+        /**
+          * (optional) Set to falseto hide table, used for nested tables to re-render upon toggle
+         */
+        "visible"?: boolean;
     }
     interface ScaleDatePicker {
         /**
@@ -307,6 +425,72 @@ export namespace Components {
           * (optional) Divider vertical
          */
         "vertical"?: boolean;
+    }
+    interface ScaleDropdown {
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleIcon {
         /**
@@ -4502,6 +4686,79 @@ export namespace Components {
          */
         "styles"?: string;
     }
+    interface ScaleMenu {
+        /**
+          * (optional) Determines whether the dropdown should close when a menu item is selected
+         */
+        "closeOnSelect": boolean;
+        /**
+          * (optional) Set preference for where the menu appears, space permitting
+         */
+        "direction": | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'right'
+    | 'left';
+        /**
+          * (optional) Tracks the menu list open state
+         */
+        "open": boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuDivider {
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuItem {
+        /**
+          * (optional) Used by cascading menus to set when open
+         */
+        "active"?: boolean;
+        /**
+          * (optional) Set to true to display arrow icon suffix
+         */
+        "cascade"?: boolean;
+        /**
+          * (optional) Set to true to display check prefix, false to display empty prefix
+         */
+        "checked"?: any;
+        /**
+          * (optional) Disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Removes the focus from the item
+         */
+        "removeFocus": () => Promise<void>;
+        /**
+          * Sets the focus on the item
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) value
+         */
+        "value"?: string;
+    }
+    interface ScaleMenuList {
+        /**
+          * Menu calls this once opened and rendered
+         */
+        "opened": () => Promise<void>;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Alignment of action buttons
@@ -4539,6 +4796,71 @@ export namespace Components {
           * (optional) Modal variant
          */
         "variant"?: string;
+    }
+    interface ScaleNavIcon {
+        "clickLink": any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        "icon": string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        "isMobileMenuOpen"?: boolean;
+        "refMobileMenuToggle"?: any;
+    }
+    interface ScaleNavMain {
+        "clickLink": any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        /**
+          * (optional) if this mega-menu is visible
+         */
+        "isMegaMenuVisible"?: boolean;
+        /**
+          * (optional) name value
+         */
+        "name": string;
+    }
+    interface ScaleNavSegment {
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+    }
+    interface ScalePagination {
+        /**
+          * (optional) Set to true to hide top and bottom borders
+         */
+        "hideBorders"?: boolean;
+        /**
+          * (optional) Set number of rows/elements to show per page
+         */
+        "pageSize"?: number;
+        /**
+          * (optional) Index of first element to display
+         */
+        "startElement"?: number;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Total number of rows/elements used to calculate page displays
+         */
+        "totalElements"?: number;
     }
     interface ScaleProgressBar {
         /**
@@ -4593,6 +4915,44 @@ export namespace Components {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleRadioButton {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
     }
     interface ScaleSidebarNav {
         /**
@@ -4825,19 +5185,152 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleText {
+    interface ScaleTextField {
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
         /**
           * (optional) Injected CSS styles
          */
         "styles"?: string;
         /**
-          * (optional) Text tag
+          * (optional) input background transparent
          */
-        "tag"?: string;
+        "transparent"?: boolean;
         /**
-          * (optional) Text variant
+          * (optional) Input type
          */
-        "variant"?: string;
+        "type"?: | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'date'
+    | 'url';
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label": string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
     }
     interface ScaleToast {
         /**
@@ -4971,11 +5464,23 @@ declare global {
         prototype: HTMLScaleChartStackCardElement;
         new (): HTMLScaleChartStackCardElement;
     };
+    interface HTMLScaleCheckboxElement extends Components.ScaleCheckbox, HTMLStencilElement {
+    }
+    var HTMLScaleCheckboxElement: {
+        prototype: HTMLScaleCheckboxElement;
+        new (): HTMLScaleCheckboxElement;
+    };
     interface HTMLScaleCollapsibleElement extends Components.ScaleCollapsible, HTMLStencilElement {
     }
     var HTMLScaleCollapsibleElement: {
         prototype: HTMLScaleCollapsibleElement;
         new (): HTMLScaleCollapsibleElement;
+    };
+    interface HTMLScaleDataGridElement extends Components.ScaleDataGrid, HTMLStencilElement {
+    }
+    var HTMLScaleDataGridElement: {
+        prototype: HTMLScaleDataGridElement;
+        new (): HTMLScaleDataGridElement;
     };
     interface HTMLScaleDatePickerElement extends Components.ScaleDatePicker, HTMLStencilElement {
     }
@@ -4988,6 +5493,12 @@ declare global {
     var HTMLScaleDividerElement: {
         prototype: HTMLScaleDividerElement;
         new (): HTMLScaleDividerElement;
+    };
+    interface HTMLScaleDropdownElement extends Components.ScaleDropdown, HTMLStencilElement {
+    }
+    var HTMLScaleDropdownElement: {
+        prototype: HTMLScaleDropdownElement;
+        new (): HTMLScaleDropdownElement;
     };
     interface HTMLScaleIconElement extends Components.ScaleIcon, HTMLStencilElement {
     }
@@ -6105,17 +6616,71 @@ declare global {
         prototype: HTMLScaleListItemElement;
         new (): HTMLScaleListItemElement;
     };
+    interface HTMLScaleMenuElement extends Components.ScaleMenu, HTMLStencilElement {
+    }
+    var HTMLScaleMenuElement: {
+        prototype: HTMLScaleMenuElement;
+        new (): HTMLScaleMenuElement;
+    };
+    interface HTMLScaleMenuDividerElement extends Components.ScaleMenuDivider, HTMLStencilElement {
+    }
+    var HTMLScaleMenuDividerElement: {
+        prototype: HTMLScaleMenuDividerElement;
+        new (): HTMLScaleMenuDividerElement;
+    };
+    interface HTMLScaleMenuItemElement extends Components.ScaleMenuItem, HTMLStencilElement {
+    }
+    var HTMLScaleMenuItemElement: {
+        prototype: HTMLScaleMenuItemElement;
+        new (): HTMLScaleMenuItemElement;
+    };
+    interface HTMLScaleMenuListElement extends Components.ScaleMenuList, HTMLStencilElement {
+    }
+    var HTMLScaleMenuListElement: {
+        prototype: HTMLScaleMenuListElement;
+        new (): HTMLScaleMenuListElement;
+    };
     interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {
     }
     var HTMLScaleModalElement: {
         prototype: HTMLScaleModalElement;
         new (): HTMLScaleModalElement;
     };
+    interface HTMLScaleNavIconElement extends Components.ScaleNavIcon, HTMLStencilElement {
+    }
+    var HTMLScaleNavIconElement: {
+        prototype: HTMLScaleNavIconElement;
+        new (): HTMLScaleNavIconElement;
+    };
+    interface HTMLScaleNavMainElement extends Components.ScaleNavMain, HTMLStencilElement {
+    }
+    var HTMLScaleNavMainElement: {
+        prototype: HTMLScaleNavMainElement;
+        new (): HTMLScaleNavMainElement;
+    };
+    interface HTMLScaleNavSegmentElement extends Components.ScaleNavSegment, HTMLStencilElement {
+    }
+    var HTMLScaleNavSegmentElement: {
+        prototype: HTMLScaleNavSegmentElement;
+        new (): HTMLScaleNavSegmentElement;
+    };
+    interface HTMLScalePaginationElement extends Components.ScalePagination, HTMLStencilElement {
+    }
+    var HTMLScalePaginationElement: {
+        prototype: HTMLScalePaginationElement;
+        new (): HTMLScalePaginationElement;
+    };
     interface HTMLScaleProgressBarElement extends Components.ScaleProgressBar, HTMLStencilElement {
     }
     var HTMLScaleProgressBarElement: {
         prototype: HTMLScaleProgressBarElement;
         new (): HTMLScaleProgressBarElement;
+    };
+    interface HTMLScaleRadioButtonElement extends Components.ScaleRadioButton, HTMLStencilElement {
+    }
+    var HTMLScaleRadioButtonElement: {
+        prototype: HTMLScaleRadioButtonElement;
+        new (): HTMLScaleRadioButtonElement;
     };
     interface HTMLScaleSidebarNavElement extends Components.ScaleSidebarNav, HTMLStencilElement {
     }
@@ -6183,11 +6748,17 @@ declare global {
         prototype: HTMLScaleTagElement;
         new (): HTMLScaleTagElement;
     };
-    interface HTMLScaleTextElement extends Components.ScaleText, HTMLStencilElement {
+    interface HTMLScaleTextFieldElement extends Components.ScaleTextField, HTMLStencilElement {
     }
-    var HTMLScaleTextElement: {
-        prototype: HTMLScaleTextElement;
-        new (): HTMLScaleTextElement;
+    var HTMLScaleTextFieldElement: {
+        prototype: HTMLScaleTextFieldElement;
+        new (): HTMLScaleTextFieldElement;
+    };
+    interface HTMLScaleTextareaElement extends Components.ScaleTextarea, HTMLStencilElement {
+    }
+    var HTMLScaleTextareaElement: {
+        prototype: HTMLScaleTextareaElement;
+        new (): HTMLScaleTextareaElement;
     };
     interface HTMLScaleToastElement extends Components.ScaleToast, HTMLStencilElement {
     }
@@ -6210,9 +6781,12 @@ declare global {
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
         "scale-chart-stack-card": HTMLScaleChartStackCardElement;
+        "scale-checkbox": HTMLScaleCheckboxElement;
         "scale-collapsible": HTMLScaleCollapsibleElement;
+        "scale-data-grid": HTMLScaleDataGridElement;
         "scale-date-picker": HTMLScaleDatePickerElement;
         "scale-divider": HTMLScaleDividerElement;
+        "scale-dropdown": HTMLScaleDropdownElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-icon-action-add": HTMLScaleIconActionAddElement;
         "scale-icon-action-add-card": HTMLScaleIconActionAddCardElement;
@@ -6399,8 +6973,17 @@ declare global {
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
         "scale-list-item": HTMLScaleListItemElement;
+        "scale-menu": HTMLScaleMenuElement;
+        "scale-menu-divider": HTMLScaleMenuDividerElement;
+        "scale-menu-item": HTMLScaleMenuItemElement;
+        "scale-menu-list": HTMLScaleMenuListElement;
         "scale-modal": HTMLScaleModalElement;
+        "scale-nav-icon": HTMLScaleNavIconElement;
+        "scale-nav-main": HTMLScaleNavMainElement;
+        "scale-nav-segment": HTMLScaleNavSegmentElement;
+        "scale-pagination": HTMLScalePaginationElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
+        "scale-radio-button": HTMLScaleRadioButtonElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
         "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
@@ -6412,7 +6995,8 @@ declare global {
         "scale-tab-panel": HTMLScaleTabPanelElement;
         "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
-        "scale-text": HTMLScaleTextElement;
+        "scale-text-field": HTMLScaleTextFieldElement;
+        "scale-textarea": HTMLScaleTextareaElement;
         "scale-toast": HTMLScaleToastElement;
     }
 }
@@ -6422,6 +7006,7 @@ declare namespace LocalJSX {
         "claimLang"?: string;
         "color"?: string;
         "href"?: string;
+        "logoTitle"?: string;
     }
     interface AppMegaMenu {
         "activeRouteId"?: string;
@@ -6499,6 +7084,11 @@ declare namespace LocalJSX {
         "addonNavigation"?: any;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "isMegaMenuVisible"?: boolean;
+        "isMobileMenuVisible"?: boolean;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -6507,9 +7097,11 @@ declare namespace LocalJSX {
         "activeRouteId"?: string;
         "activeSectorId"?: string;
         "addonNavigation"?: any;
-        "brandTitle"?: string;
         "claimLang"?: string;
         "iconNavigation"?: any;
+        "logoClick"?: any;
+        "logoHref"?: string;
+        "logoTitle"?: string;
         "mainNavigation"?: any;
         "portalName"?: string;
         "sectorNavigation"?: any;
@@ -6568,6 +7160,7 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface ScaleCard {
+        "clickCard"?: any;
         /**
           * (optional) Label of the card
          */
@@ -6609,6 +7202,52 @@ declare namespace LocalJSX {
          */
         "heading"?: string;
     }
+    interface ScaleCheckbox {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
     interface ScaleCollapsible {
         /**
           * Set to `true` to expand
@@ -6622,6 +7261,80 @@ declare namespace LocalJSX {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleDataGrid {
+        /**
+          * Input fields config array
+         */
+        "fields"?: any;
+        /**
+          * (optional) Freeze header row from scrolling
+         */
+        "freezeHeader"?: boolean;
+        /**
+          * (optional) Heading string
+         */
+        "heading"?: string;
+        /**
+          * (optional) Set static table height, by default will auto-resize
+         */
+        "height"?: string;
+        /**
+          * (optional) Set to true to remove border
+         */
+        "hideBorder"?: boolean;
+        /**
+          * (optional) Set to true to hide header row
+         */
+        "hideHeader"?: boolean;
+        /**
+          * (optional) Set to true to remove info footer block including pagination and selection status
+         */
+        "hideInfo"?: boolean;
+        /**
+          * (optional) Set to true to hide settings menu
+         */
+        "hideMenu"?: boolean;
+        /**
+          * (optional) Set to true to add numbers column
+         */
+        "numbered"?: boolean;
+        /**
+          * Event triggered every time the editable cells are changed, updating the original rows data
+         */
+        "onScaleEdit"?: (event: CustomEvent<DataGridEditEventDetail>) => void;
+        /**
+          * Event triggered every time the data is sorted, changing original rows data
+         */
+        "onScaleSort"?: (event: CustomEvent<DataGridSortedEventDetail>) => void;
+        /**
+          * (optional) Set number of rows to display per pagination page
+         */
+        "pageSize"?: number;
+        /**
+          * Input data array
+         */
+        "rows"?: any;
+        /**
+          * (optional) Set to true to add selection column
+         */
+        "selectable"?: boolean;
+        /**
+          * Read-only selection array - populated with raw data from selected rows
+         */
+        "selection"?: string[];
+        /**
+          * (optional) Shade every second row darker
+         */
+        "shadeAlternate"?: boolean;
+        /**
+          * (optional) Injected css styles
+         */
+        "styles"?: any;
+        /**
+          * (optional) Set to falseto hide table, used for nested tables to re-render upon toggle
+         */
+        "visible"?: boolean;
     }
     interface ScaleDatePicker {
         /**
@@ -6714,6 +7427,92 @@ declare namespace LocalJSX {
           * (optional) Divider vertical
          */
         "vertical"?: boolean;
+    }
+    interface ScaleDropdown {
+        /**
+          * (optional) Makes type `select` behave as a controlled component in React
+         */
+        "controlled"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleIcon {
         /**
@@ -10929,6 +11728,93 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
     }
+    interface ScaleMenu {
+        /**
+          * (optional) Determines whether the dropdown should close when a menu item is selected
+         */
+        "closeOnSelect"?: boolean;
+        /**
+          * (optional) Set preference for where the menu appears, space permitting
+         */
+        "direction"?: | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'right'
+    | 'left';
+        /**
+          * Event triggered when menu list closed
+         */
+        "onScaleClose"?: (event: CustomEvent<{
+    id: number;
+    cascadeLevel: number;
+  }>) => void;
+        /**
+          * Event triggered when menu list opened
+         */
+        "onScaleOpen"?: (event: CustomEvent<{
+    id: number;
+    cascadeLevel: number;
+  }>) => void;
+        /**
+          * Event triggered when nested menu item selected
+         */
+        "onScaleSelect"?: (event: CustomEvent<{
+    item: HTMLElement;
+  }>) => void;
+        /**
+          * (optional) Tracks the menu list open state
+         */
+        "open"?: boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuDivider {
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
+    interface ScaleMenuItem {
+        /**
+          * (optional) Used by cascading menus to set when open
+         */
+        "active"?: boolean;
+        /**
+          * (optional) Set to true to display arrow icon suffix
+         */
+        "cascade"?: boolean;
+        /**
+          * (optional) Set to true to display check prefix, false to display empty prefix
+         */
+        "checked"?: any;
+        /**
+          * (optional) Disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) value
+         */
+        "value"?: string;
+    }
+    interface ScaleMenuList {
+        /**
+          * Event triggered every time the data is edited, changing original rows data
+         */
+        "onScaleSelect"?: (event: CustomEvent<{
+    item: HTMLElement;
+  }>) => void;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Alignment of action buttons
@@ -10968,6 +11854,78 @@ declare namespace LocalJSX {
           * (optional) Modal variant
          */
         "variant"?: string;
+    }
+    interface ScaleNavIcon {
+        "clickLink"?: any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        "icon"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        "isMobileMenuOpen"?: boolean;
+        "refMobileMenuToggle"?: any;
+    }
+    interface ScaleNavMain {
+        "clickLink"?: any;
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+        /**
+          * (optional) if this mega-menu is visible
+         */
+        "isMegaMenuVisible"?: boolean;
+        /**
+          * (optional) name value
+         */
+        "name"?: string;
+    }
+    interface ScaleNavSegment {
+        /**
+          * (optional) href value
+         */
+        "href"?: string;
+        /**
+          * (optional) if this item is active
+         */
+        "isActive"?: boolean;
+    }
+    interface ScalePagination {
+        /**
+          * (optional) Set to true to hide top and bottom borders
+         */
+        "hideBorders"?: boolean;
+        /**
+          * Event triggered every time the data is edited, changing original rows data
+         */
+        "onScalePagination"?: (event: CustomEvent<{
+    startElement?: number;
+    currentPage?: number;
+  }>) => void;
+        /**
+          * (optional) Set number of rows/elements to show per page
+         */
+        "pageSize"?: number;
+        /**
+          * (optional) Index of first element to display
+         */
+        "startElement"?: number;
+        /**
+          * (optional) Injected styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Total number of rows/elements used to calculate page displays
+         */
+        "totalElements"?: number;
     }
     interface ScaleProgressBar {
         /**
@@ -11022,6 +11980,48 @@ declare namespace LocalJSX {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
+    }
+    interface ScaleRadioButton {
+        /**
+          * (optional) Active switch
+         */
+        "checked"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
     }
     interface ScaleSidebarNav {
         /**
@@ -11263,19 +12263,192 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
-    interface ScaleText {
+    interface ScaleTextField {
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
         /**
           * (optional) Injected CSS styles
          */
         "styles"?: string;
         /**
-          * (optional) Text tag
+          * (optional) input background transparent
          */
-        "tag"?: string;
+        "transparent"?: boolean;
         /**
-          * (optional) Text variant
+          * (optional) Input type
          */
-        "variant"?: string;
+        "type"?: | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'date'
+    | 'url';
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
+    }
+    interface ScaleTextarea {
+        /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
+          * (optional) Input disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
+        /**
+          * (optional) Input name
+         */
+        "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onScaleBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onScaleChange"?: (event: CustomEvent<InputChangeEventDetail>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onScaleFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onScaleInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted on keydown.
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: 'unset' | 'none' | 'vertical' | 'horizontal';
+        /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
+          * (optional) Injected CSS styles
+         */
+        "styles"?: string;
+        /**
+          * (optional) input background transparent
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Input value
+         */
+        "value"?: string | number | null;
     }
     interface ScaleToast {
         /**
@@ -11334,9 +12507,12 @@ declare namespace LocalJSX {
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
         "scale-chart-stack-card": ScaleChartStackCard;
+        "scale-checkbox": ScaleCheckbox;
         "scale-collapsible": ScaleCollapsible;
+        "scale-data-grid": ScaleDataGrid;
         "scale-date-picker": ScaleDatePicker;
         "scale-divider": ScaleDivider;
+        "scale-dropdown": ScaleDropdown;
         "scale-icon": ScaleIcon;
         "scale-icon-action-add": ScaleIconActionAdd;
         "scale-icon-action-add-card": ScaleIconActionAddCard;
@@ -11523,8 +12699,17 @@ declare namespace LocalJSX {
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
         "scale-list-item": ScaleListItem;
+        "scale-menu": ScaleMenu;
+        "scale-menu-divider": ScaleMenuDivider;
+        "scale-menu-item": ScaleMenuItem;
+        "scale-menu-list": ScaleMenuList;
         "scale-modal": ScaleModal;
+        "scale-nav-icon": ScaleNavIcon;
+        "scale-nav-main": ScaleNavMain;
+        "scale-nav-segment": ScaleNavSegment;
+        "scale-pagination": ScalePagination;
         "scale-progress-bar": ScaleProgressBar;
+        "scale-radio-button": ScaleRadioButton;
         "scale-sidebar-nav": ScaleSidebarNav;
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
         "scale-sidebar-nav-item": ScaleSidebarNavItem;
@@ -11536,7 +12721,8 @@ declare namespace LocalJSX {
         "scale-tab-panel": ScaleTabPanel;
         "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
-        "scale-text": ScaleText;
+        "scale-text-field": ScaleTextField;
+        "scale-textarea": ScaleTextarea;
         "scale-toast": ScaleToast;
     }
 }
@@ -11558,9 +12744,12 @@ declare module "@stencil/core" {
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
             "scale-chart-stack-card": LocalJSX.ScaleChartStackCard & JSXBase.HTMLAttributes<HTMLScaleChartStackCardElement>;
+            "scale-checkbox": LocalJSX.ScaleCheckbox & JSXBase.HTMLAttributes<HTMLScaleCheckboxElement>;
             "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
+            "scale-data-grid": LocalJSX.ScaleDataGrid & JSXBase.HTMLAttributes<HTMLScaleDataGridElement>;
             "scale-date-picker": LocalJSX.ScaleDatePicker & JSXBase.HTMLAttributes<HTMLScaleDatePickerElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
+            "scale-dropdown": LocalJSX.ScaleDropdown & JSXBase.HTMLAttributes<HTMLScaleDropdownElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-icon-action-add": LocalJSX.ScaleIconActionAdd & JSXBase.HTMLAttributes<HTMLScaleIconActionAddElement>;
             "scale-icon-action-add-card": LocalJSX.ScaleIconActionAddCard & JSXBase.HTMLAttributes<HTMLScaleIconActionAddCardElement>;
@@ -11747,8 +12936,17 @@ declare module "@stencil/core" {
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
+            "scale-menu": LocalJSX.ScaleMenu & JSXBase.HTMLAttributes<HTMLScaleMenuElement>;
+            "scale-menu-divider": LocalJSX.ScaleMenuDivider & JSXBase.HTMLAttributes<HTMLScaleMenuDividerElement>;
+            "scale-menu-item": LocalJSX.ScaleMenuItem & JSXBase.HTMLAttributes<HTMLScaleMenuItemElement>;
+            "scale-menu-list": LocalJSX.ScaleMenuList & JSXBase.HTMLAttributes<HTMLScaleMenuListElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
+            "scale-nav-icon": LocalJSX.ScaleNavIcon & JSXBase.HTMLAttributes<HTMLScaleNavIconElement>;
+            "scale-nav-main": LocalJSX.ScaleNavMain & JSXBase.HTMLAttributes<HTMLScaleNavMainElement>;
+            "scale-nav-segment": LocalJSX.ScaleNavSegment & JSXBase.HTMLAttributes<HTMLScaleNavSegmentElement>;
+            "scale-pagination": LocalJSX.ScalePagination & JSXBase.HTMLAttributes<HTMLScalePaginationElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
+            "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
             "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;
@@ -11760,7 +12958,8 @@ declare module "@stencil/core" {
             "scale-tab-panel": LocalJSX.ScaleTabPanel & JSXBase.HTMLAttributes<HTMLScaleTabPanelElement>;
             "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
-            "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
+            "scale-text-field": LocalJSX.ScaleTextField & JSXBase.HTMLAttributes<HTMLScaleTextFieldElement>;
+            "scale-textarea": LocalJSX.ScaleTextarea & JSXBase.HTMLAttributes<HTMLScaleTextareaElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
         }
     }

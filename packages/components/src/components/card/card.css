@@ -6,18 +6,15 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background: var(--color-text-contrast, #ffffff);
-  transition: var(--transition-generic, all 0.2s ease-in-out);
-  border-radius: var(--radius-card, 0.5rem);
-  box-shadow: var(
-    --shadow-card,
-    0 4px 16px 0 rgba(0, 0, 0, 0.1),
-    0 2px 4px 0 rgba(0, 0, 0, 0.1)
-  );
+  background: var(--scl-color-background-standard);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  border-radius: var(--scl-radius-8);
+  box-shadow: var(--scl-shadow-level-1);
 }
 
 .card__body {
-  padding: var(--spacing-box, 1.5rem);
+  padding: var(--scl-spacing-24);
 }
 
 .card__body ::slotted(*) {
@@ -33,29 +30,17 @@
 }
 
 .card--interactive:hover {
-  box-shadow: var(
-    --shadow-card-hover,
-    0 6px 24px 0 rgba(0, 0, 0, 0.1),
-    0 3px 6px 0 rgba(0, 0, 0, 0.1)
-  );
+  box-shadow: var(--scl-shadow-level-1-hover);
 }
 
 .card--interactive:focus {
-  box-shadow: var(
-    --shadow-card-focus,
-    0 6px 24px 0 rgba(0, 0, 0, 0.1),
-    0 3px 6px 0 rgba(0, 0, 0, 0.1),
-    0 0 0 2px #009de0
-  );
+  box-shadow: var(--scl-shadow-level-1-hover),
+    0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
 }
 
 .card--interactive:active {
   border: none;
-  box-shadow: var(
-    --shadow-card-active,
-    0 2px 8px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.1)
-  );
+  box-shadow: var(--scl-shadow-level-1-active);
 }
 
 .card--interactive .card__body ::slotted(*) {
