@@ -171,6 +171,24 @@ module.exports = {
       if (/^Sidebar Nav/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 9;
+        if (!/Example/.test(symbol.name)) {
+          findLayer(symbol, "Label", s => {
+            s.resizingConstraint = 10;
+            s.frame.width = 142;
+            s.textBehaviour = 2;
+          });
+          findLayer(symbol, "Icon", s => s.resizingConstraint = 12);
+          findLayers(symbol, /sidebar-nav-collapsible/, s => s.resizingConstraint = 10);
+          findLayers(symbol, "Background", s => s.resizingConstraint = 10);
+          findLayer(symbol, "border-bottom", s => s.resizingConstraint = 34)
+
+          // Third level
+          findLayer(symbol, /^(li\.sidebar-nav-item|a)$/, s => s.resizingConstraint = 10);
+          findLayer(symbol, "span", s => s.resizingConstraint = 9);
+          if (/Second Level .* Expanded/.test(symbol.name)) {
+            findLayer(symbol, "li.sidebar-nav-collapsible", s => s.resizingConstraint = 0);
+          }
+        }
       }
       if (/^Slider/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 10;
