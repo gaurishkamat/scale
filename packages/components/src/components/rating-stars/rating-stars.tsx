@@ -145,13 +145,14 @@ export class RatingStars {
         tabIndex={this.disabled ? -1 : 0}
         aria-label={this.ariaLabel}
       >
-        <span class="rating__symbols" onMouseEnter={this.handleMouseEnter}>
+        <span class="rating__symbols">
           {counter.map(index => (
             <span
+              role="presentation"
               style={{
                 width: this.small ? '16px' : '24px',
                 clipPath:
-                Math.ceil(displayValue) >= index + 1
+                  Math.ceil(displayValue) >= index + 1
                     ? `inset(0 ${(Math.ceil(displayValue) - index) * 100}% 0 0)`
                     : null,
               }}
@@ -160,6 +161,7 @@ export class RatingStars {
                 'rating__symbol--hover':
                   this.isHovering && Math.ceil(displayValue) === index + 1,
               }}
+              onMouseEnter={this.handleMouseEnter}
               innerHTML={this.getSymbolBlank()}
               id={`star-${index + 1}`}
             />
