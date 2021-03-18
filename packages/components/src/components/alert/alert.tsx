@@ -1,7 +1,7 @@
 import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
-import statusWarn from '../../utils/status-warn';
+import statusNote from '../../utils/status-note';
 @Component({
   tag: 'scale-alert',
   styleUrl: './alert.css',
@@ -32,7 +32,7 @@ export class Alert {
   }
 
   connectedCallback() {
-    statusWarn({ source: this.hostElement });
+    statusNote({ source: this.hostElement, type: 'warn' });
   }
 
   close = () => {

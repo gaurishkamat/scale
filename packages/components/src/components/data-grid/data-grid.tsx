@@ -15,7 +15,7 @@ import {
   CELL_DEFAULTS,
 } from './data-grid-cells';
 import classNames from 'classnames';
-import statusWarn from '../../utils/status-warn';
+import statusNote from '../../utils/status-note';
 
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
@@ -152,7 +152,7 @@ export class DataGrid {
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
   connectedCallback() {
-    statusWarn({ source: this.hostElement });
+    statusNote({ source: this.hostElement });
   }
   componentWillLoad() {
     this.fieldsHandler();
