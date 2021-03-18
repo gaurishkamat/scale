@@ -495,3 +495,96 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
 </scale-menu-flyout>`}
     </Story>
 </Canvas>
+
+## Brand Header Cascading Menu
+
+<Canvas withSource="close">
+    <Story
+        name="Brand Header Cascading Menu"
+        inline={false}
+        height={500}
+    >
+        {() => ({
+            data() {
+                return {
+                    iconNavigation: JSON.stringify(iconNavigation),
+                    sectorNavigation: JSON.stringify(sectorNavigation),
+                    addonNavigation: JSON.stringify(addonNavigation),
+                }
+            },
+            methods: {
+                handleMouseEnter: function() {
+                    this.$refs.header.isMegaMenuVisible=true;
+                    this.$refs.navMainWithMegaMenu.isMegaMenuVisible=true;
+                },
+                handleMouseLeave: function() {
+                    this.$refs.header.isMegaMenuVisible=false;
+                    this.$refs.navMainWithMegaMenu.isMegaMenuVisible=false;
+                },
+            },
+            template: `
+            <div class="brand-header-spacing">
+              <scale-app-shell>
+                <scale-app-header
+                    ref="header"
+                    slot="header"
+                    id="header"
+                    :icon-navigation="iconNavigation"
+                    :sector-navigation="sectorNavigation"
+                    :addon-navigation="addonNavigation"
+                >
+                    <div slot="menu-main">
+                        <scale-menu-flyout @scaleClose="$refs.first.isActive=false">
+                            <div slot="trigger" style="height: 56px;">
+                                  <scale-nav-main ref="first" @click="$refs.first.isActive=true" name="Cascading Menu Item"></scale-nav-main>
+                            </div>
+                            <scale-menu-flyout-list>
+                                <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+                                <scale-menu-flyout>
+                                    <scale-menu-flyout-item slot="trigger" cascade>More Options</scale-menu-flyout-item>
+                                    <scale-menu-flyout-list>
+                                        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                                        <scale-menu-flyout>
+                                            <scale-menu-flyout-item slot="trigger" cascade>Even More</scale-menu-flyout-item>
+                                            <scale-menu-flyout-list>
+                                            <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                                            <scale-menu-flyout>
+                                                <scale-menu-flyout-item slot="trigger" cascade>Very Specific Options</scale-menu-flyout-item>
+                                                <scale-menu-flyout-list>
+                                                    <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                                                    <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                                                    <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                                                </scale-menu-flyout-list>
+                                            </scale-menu-flyout>
+                                            <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                                            </scale-menu-flyout-list>
+                                        </scale-menu-flyout>
+                                    </scale-menu-flyout-list>
+                                </scale-menu-flyout>
+                                <scale-menu-flyout close-on-select="false">
+                                    <scale-menu-flyout-item slot="trigger" cascade>Toggle Visibility</scale-menu-flyout-item>
+                                    <scale-menu-flyout-list>
+                                        <scale-menu-flyout-item checked="true">Column 1</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item checked="true">Column 2</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item checked="true">Column 3</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item checked="true">Column 4</scale-menu-flyout-item>
+                                        <scale-menu-flyout-item checked="true">Column 5</scale-menu-flyout-item>
+                                    </scale-menu-flyout-list>
+                                </scale-menu-flyout>
+                                <scale-menu-flyout-item disabled>Item 5<span slot="suffix">⌘Space</span></scale-menu-flyout-item>
+                            </scale-menu-flyout-list>
+                        </scale-menu-flyout>
+                      <scale-nav-main name="Custom Item #1"></scale-nav-main>
+                      <scale-nav-main name="Custom Item #2"></scale-nav-main>
+                    </div>
+                </scale-app-header>
+                <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+                <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+              </scale-app-shell>
+            </div>
+          `
+        })}
+    </Story>
+</Canvas>
