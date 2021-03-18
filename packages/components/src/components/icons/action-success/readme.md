@@ -20,12 +20,12 @@
 
 ### Used by
 
- - [scale-menu-item](../../menu-item)
+ - [scale-menu-flyout-item](../../menu-flyout-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-menu-item --> scale-icon-action-success
+  scale-menu-flyout-item --> scale-icon-action-success
   style scale-icon-action-success fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

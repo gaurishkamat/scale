@@ -3971,25 +3971,25 @@ export class ScaleListItem {
   }
 }
 
-import { Menu as IMenu } from '@scaleds/components-telekom/dist/types/components/menu/menu';
-export declare interface ScaleMenu extends Components.ScaleMenu {}
+import { MenuFlyout as IMenuFlyout } from '@scaleds/components-telekom/dist/types/components/menu-flyout/menu-flyout';
+export declare interface ScaleMenuFlyout extends Components.ScaleMenuFlyout {}
 @ProxyCmp({
   inputs: ['closeOnSelect', 'direction', 'open', 'styles']
 })
 @Component({
-  selector: 'scale-menu',
+  selector: 'scale-menu-flyout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['closeOnSelect', 'direction', 'open', 'styles'],
   outputs: ['scaleOpen', 'scaleClose', 'scaleSelect']
 })
-export class ScaleMenu {
+export class ScaleMenuFlyout {
   /** Event triggered when menu list opened */
-  scaleOpen!: IMenu['scaleOpen'];
+  scaleOpen!: IMenuFlyout['scaleOpen'];
   /** Event triggered when menu list closed */
-  scaleClose!: IMenu['scaleClose'];
+  scaleClose!: IMenuFlyout['scaleClose'];
   /** Event triggered when nested menu item selected */
-  scaleSelect!: IMenu['scaleSelect'];
+  scaleSelect!: IMenuFlyout['scaleSelect'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3999,17 +3999,17 @@ export class ScaleMenu {
 }
 
 
-export declare interface ScaleMenuDivider extends Components.ScaleMenuDivider {}
+export declare interface ScaleMenuFlyoutDivider extends Components.ScaleMenuFlyoutDivider {}
 @ProxyCmp({
   inputs: ['styles']
 })
 @Component({
-  selector: 'scale-menu-divider',
+  selector: 'scale-menu-flyout-divider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['styles']
 })
-export class ScaleMenuDivider {
+export class ScaleMenuFlyoutDivider {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -4018,18 +4018,18 @@ export class ScaleMenuDivider {
 }
 
 
-export declare interface ScaleMenuItem extends Components.ScaleMenuItem {}
+export declare interface ScaleMenuFlyoutItem extends Components.ScaleMenuFlyoutItem {}
 @ProxyCmp({
   inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value'],
   methods: ['setFocus', 'removeFocus']
 })
 @Component({
-  selector: 'scale-menu-item',
+  selector: 'scale-menu-flyout-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['active', 'cascade', 'checked', 'disabled', 'styles', 'value']
 })
-export class ScaleMenuItem {
+export class ScaleMenuFlyoutItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -4037,22 +4037,22 @@ export class ScaleMenuItem {
   }
 }
 
-import { MenuList as IMenuList } from '@scaleds/components-telekom/dist/types/components/menu-list/menu-list';
-export declare interface ScaleMenuList extends Components.ScaleMenuList {}
+import { MenuFlyoutList as IMenuFlyoutList } from '@scaleds/components-telekom/dist/types/components/menu-flyout-list/menu-flyout-list';
+export declare interface ScaleMenuFlyoutList extends Components.ScaleMenuFlyoutList {}
 @ProxyCmp({
   inputs: ['styles'],
   methods: ['opened']
 })
 @Component({
-  selector: 'scale-menu-list',
+  selector: 'scale-menu-flyout-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['styles'],
   outputs: ['scaleSelect']
 })
-export class ScaleMenuList {
+export class ScaleMenuFlyoutList {
   /** Event triggered every time the data is edited, changing original rows data */
-  scaleSelect!: IMenuList['scaleSelect'];
+  scaleSelect!: IMenuFlyoutList['scaleSelect'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

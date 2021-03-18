@@ -40,6 +40,11 @@
     "de": "Typografie"
   },
   {
+    "elementSelector": "#scale-for-designers-colors--page",
+    "en": "Colors",
+    "de": "Farben"
+  },
+  {
     "elementSelector": "#scale-for-developers",
     "en": "Scale for Developers",
     "de": "Entwicklung mit Scale"
@@ -98,6 +103,11 @@
     "elementSelector": "#components",
     "en": "Components",
     "de": "Komponenten"
+  },
+  {
+    "elementSelector": "#beta-components",
+    "en": "Beta Components",
+    "de": "Beta Komponenten"
   },
   {
     "elementSelector": "#community",

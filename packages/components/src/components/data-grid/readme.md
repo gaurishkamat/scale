@@ -39,11 +39,11 @@
 
 ### Depends on
 
-- [scale-menu](../menu)
+- [scale-menu-flyout](../menu-flyout)
 - [scale-button](../button)
 - [scale-icon-service-settings](../icons/service-settings)
-- [scale-menu-list](../menu-list)
-- [scale-menu-item](../menu-item)
+- [scale-menu-flyout-list](../menu-flyout-list)
+- [scale-menu-flyout-item](../menu-flyout-item)
 - [scale-icon-action-sort](../icons/action-sort)
 - [scale-icon-navigation-collapse-up](../icons/navigation-collapse-up)
 - [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
@@ -61,11 +61,11 @@
 ### Graph
 ```mermaid
 graph TD;
-  scale-data-grid --> scale-menu
+  scale-data-grid --> scale-menu-flyout
   scale-data-grid --> scale-button
   scale-data-grid --> scale-icon-service-settings
-  scale-data-grid --> scale-menu-list
-  scale-data-grid --> scale-menu-item
+  scale-data-grid --> scale-menu-flyout-list
+  scale-data-grid --> scale-menu-flyout-item
   scale-data-grid --> scale-icon-action-sort
   scale-data-grid --> scale-icon-navigation-collapse-up
   scale-data-grid --> scale-icon-navigation-collapse-down
@@ -79,8 +79,8 @@ graph TD;
   scale-data-grid --> scale-text-field
   scale-data-grid --> scale-dropdown
   scale-data-grid --> scale-tag
-  scale-menu-item --> scale-icon-action-success
-  scale-menu-item --> scale-icon-navigation-right
+  scale-menu-flyout-item --> scale-icon-action-success
+  scale-menu-flyout-item --> scale-icon-navigation-right
   scale-checkbox --> scale-icon
   scale-progress-bar --> scale-icon
   scale-link --> scale-icon

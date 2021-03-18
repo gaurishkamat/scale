@@ -216,10 +216,10 @@ const customElementTags: string[] = [
  'scale-link',
  'scale-list',
  'scale-list-item',
- 'scale-menu',
- 'scale-menu-divider',
- 'scale-menu-item',
- 'scale-menu-list',
+ 'scale-menu-flyout',
+ 'scale-menu-flyout-divider',
+ 'scale-menu-flyout-item',
+ 'scale-menu-flyout-list',
  'scale-modal',
  'scale-nav-icon',
  'scale-nav-main',
@@ -3409,62 +3409,62 @@ export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 });
 
 
-export const ScaleMenu = /*@__PURE__*/ Vue.extend({
+export const ScaleMenuFlyout = /*@__PURE__*/ Vue.extend({
 
   props: {
-    closeOnSelect: {} as PropOptions<Components.ScaleMenu['closeOnSelect']>,
-    direction: {} as PropOptions<Components.ScaleMenu['direction']>,
-    open: {} as PropOptions<Components.ScaleMenu['open']>,
-    styles: {} as PropOptions<Components.ScaleMenu['styles']>,
+    closeOnSelect: {} as PropOptions<Components.ScaleMenuFlyout['closeOnSelect']>,
+    direction: {} as PropOptions<Components.ScaleMenuFlyout['direction']>,
+    open: {} as PropOptions<Components.ScaleMenuFlyout['open']>,
+    styles: {} as PropOptions<Components.ScaleMenuFlyout['styles']>,
   },
 
 
-  render: createCommonRender('scale-menu', ['scaleOpen', 'scaleClose', 'scaleSelect']),
+  render: createCommonRender('scale-menu-flyout', ['scaleOpen', 'scaleClose', 'scaleSelect']),
 });
 
 
-export const ScaleMenuDivider = /*@__PURE__*/ Vue.extend({
+export const ScaleMenuFlyoutDivider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleMenuDivider['styles']>,
+    styles: {} as PropOptions<Components.ScaleMenuFlyoutDivider['styles']>,
   },
 
 
-  render: createCommonRender('scale-menu-divider', []),
+  render: createCommonRender('scale-menu-flyout-divider', []),
 });
 
 
-export const ScaleMenuItem = /*@__PURE__*/ Vue.extend({
+export const ScaleMenuFlyoutItem = /*@__PURE__*/ Vue.extend({
 
   props: {
-    active: {} as PropOptions<Components.ScaleMenuItem['active']>,
-    cascade: {} as PropOptions<Components.ScaleMenuItem['cascade']>,
-    checked: {} as PropOptions<Components.ScaleMenuItem['checked']>,
-    disabled: {} as PropOptions<Components.ScaleMenuItem['disabled']>,
-    styles: {} as PropOptions<Components.ScaleMenuItem['styles']>,
-    value: {} as PropOptions<Components.ScaleMenuItem['value']>,
+    active: {} as PropOptions<Components.ScaleMenuFlyoutItem['active']>,
+    cascade: {} as PropOptions<Components.ScaleMenuFlyoutItem['cascade']>,
+    checked: {} as PropOptions<Components.ScaleMenuFlyoutItem['checked']>,
+    disabled: {} as PropOptions<Components.ScaleMenuFlyoutItem['disabled']>,
+    styles: {} as PropOptions<Components.ScaleMenuFlyoutItem['styles']>,
+    value: {} as PropOptions<Components.ScaleMenuFlyoutItem['value']>,
   },
 
 
   methods: {
-    setFocus: createCommonMethod('setFocus') as Components.ScaleMenuItem['setFocus'],
-    removeFocus: createCommonMethod('removeFocus') as Components.ScaleMenuItem['removeFocus'],
+    setFocus: createCommonMethod('setFocus') as Components.ScaleMenuFlyoutItem['setFocus'],
+    removeFocus: createCommonMethod('removeFocus') as Components.ScaleMenuFlyoutItem['removeFocus'],
   },
-  render: createCommonRender('scale-menu-item', []),
+  render: createCommonRender('scale-menu-flyout-item', []),
 });
 
 
-export const ScaleMenuList = /*@__PURE__*/ Vue.extend({
+export const ScaleMenuFlyoutList = /*@__PURE__*/ Vue.extend({
 
   props: {
-    styles: {} as PropOptions<Components.ScaleMenuList['styles']>,
+    styles: {} as PropOptions<Components.ScaleMenuFlyoutList['styles']>,
   },
 
 
   methods: {
-    opened: createCommonMethod('opened') as Components.ScaleMenuList['opened'],
+    opened: createCommonMethod('opened') as Components.ScaleMenuFlyoutList['opened'],
   },
-  render: createCommonRender('scale-menu-list', ['scaleSelect']),
+  render: createCommonRender('scale-menu-flyout-list', ['scaleSelect']),
 });
 
 

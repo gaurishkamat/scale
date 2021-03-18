@@ -26,8 +26,8 @@ import linkMarkdown_en from "raw-loader!../../stories/3_components/link/link.md"
 import linkMarkdown_de from "raw-loader!../../stories/3_components/link/link_de.md";
 import list_en from "raw-loader!../../stories/3_components/list/list.md";
 import list_de from "raw-loader!../../stories/3_components/list/list_de.md";
-import menu_en from "raw-loader!../../stories/3_components/menu/menu.md";
-import menu_de from "raw-loader!../../stories/3_components/menu/menu_de.md";
+import menuFlyout_en from "raw-loader!../../stories/3_components/menu-flyout/menu-flyout.md";
+import menuFlyout_de from "raw-loader!../../stories/3_components/menu-flyout/menu-flyout_de.md";
 import modal_en from "raw-loader!../../stories/3_components/modal/modal.md";
 import modal_de from "raw-loader!../../stories/3_components/modal/modal_de.md";
 import pagination_en from "raw-loader!../../stories/3_components/pagination/pagination.md";
@@ -68,7 +68,7 @@ const Usage = props => {
   const [{ locale }] = useGlobals();
 
   // Check if this is a component's story and grab it's name when available.
-  const componentName = storyId.startsWith("components-")
+  const componentName = storyId.includes("components-")
     ? storyId.split("components-")[1].split("--")[0]
     : null;
 
@@ -92,10 +92,10 @@ const Usage = props => {
     checkbox_de,
     divider_en,
     divider_de,
-    datagrid_en,
-    datagrid_de,
-    datepicker_en: date_picker_en,
-    datepicker_de: date_picker_de,
+    "data-grid_en": datagrid_en,
+    "data-grid_de": datagrid_de,
+    "date-picker_en": date_picker_en,
+    "date-picker_de": date_picker_de,
     "icon-library_en": icon_en,
     "icon-library_de": icon_de,
     icon_en,
@@ -104,16 +104,16 @@ const Usage = props => {
     link_de: linkMarkdown_de,
     list_en,
     list_de,
-    menu_en,
-    menu_de,
+    'flyout-menu_en': menuFlyout_en,
+    'flyout-menu_de': menuFlyout_de,
     modal_en,
     modal_de,
     pagination_en,
     pagination_de,
     "progress-bar_en": progressBar_en,
     "progress-bar_de": progressBar_de,
-    radiobutton_en: radioButton_en,
-    radiobutton_de: radioButton_de,
+    "radio-button_en": radioButton_en,
+    "radio-button_de": radioButton_de,
     dropdown_en,
     dropdown_de,
     "sidebar-navigation_en": sidebarNav_en,
@@ -149,7 +149,7 @@ const Usage = props => {
           className="sbdocs sbdocs-wrapper addon-usage"
           style={{ minHeight: "100%" }}
         >
-          <DocsContent className="sbdocs sbdocs-content">
+          <DocsContent className="sbdocs sbdocs-content" style={{maxWidth: "1066px"}}>
             <Description markdown={markdown} />
           </DocsContent>
         </DocsWrapper>
