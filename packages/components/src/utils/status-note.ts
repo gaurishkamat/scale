@@ -1,7 +1,7 @@
 const tagTypes = {
   beta: 'β',
   WIP: '🛠 WIP',
-  deprecated: '⚰️ Deprecation notice',
+  deprecated: '😵 Deprecation notice',
 };
 
 const defaultMessages = {
@@ -16,16 +16,19 @@ interface StatusInterface {
   extraMessage?: string;
   message?: string;
   source?: object | string;
+  type?: 'warn' | 'error' | 'info';
 }
 
-export default function statusWarn({
+export default function statusNote({
   tag = 'WIP',
   extraMessage = null,
   message = null,
   source = null,
+  type = 'info',
 }: StatusInterface) {
   // tslint:disable-next-line
-  console.warn(
+  const dipatchMessage = console[type];
+  dipatchMessage(
     `%c scale – ${tagTypes[tag]} `,
     'background: #E20074; color: #FFF; border-radius: 4px',
     `\n\n${message ? message : defaultMessages[tag]} ${

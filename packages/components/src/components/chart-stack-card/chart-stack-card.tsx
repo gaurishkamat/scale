@@ -1,6 +1,6 @@
 import { Component, Element, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import statusWarn from '../../utils/status-warn';
+import statusNote from '../../utils/status-note';
 @Component({
   tag: 'scale-chart-stack-card',
   styleUrl: 'chart-stack-card.css',
@@ -42,7 +42,7 @@ export class ChartStackCard {
   }
 
   connectedCallback() {
-    statusWarn({ source: this.hostElement });
+    statusNote({ source: this.hostElement, type: 'warn' });
   }
 
   render() {
