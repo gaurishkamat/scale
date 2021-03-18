@@ -9,8 +9,9 @@ import {
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
-/* 
+/*
   TODO
   ====
   [ ] Support pages text as well as elements eg `page 1 / 5` vs `1 - 12 / 100`
@@ -59,7 +60,9 @@ export class Pagination {
 
   /* 6. Lifecycle Events (call order) */
   constructor() {}
-  connectedCallback() {}
+  connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+  }
   componentWillLoad() {
     this.calculateWidth();
   }

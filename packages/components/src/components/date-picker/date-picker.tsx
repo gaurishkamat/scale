@@ -3,6 +3,7 @@ import {
   h,
   Prop,
   Method,
+  Element,
   Event,
   EventEmitter,
   State,
@@ -36,6 +37,8 @@ if (
 })
 export class DatePicker {
   duetInput: DuetDatePicker;
+
+  @Element() hostElement: HTMLElement;
   /**
    * Name of the date picker input.
    */
@@ -195,7 +198,7 @@ export class DatePicker {
   }
 
   connectedCallback() {
-    statusNote({ source: `<scale-date-picker>`, type: 'warn' });
+    statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
   disconnectedCallback() {
