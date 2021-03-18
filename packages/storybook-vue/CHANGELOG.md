@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.2](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-03-18)
+
+
+### Bug Fixes
+
+* image urls ([f7774e4](https://gitlab.com/scale-ds/scale-telekom/commit/f7774e45f3f1b3e72ff679d08e580bd8205dcc88))
+
+
+### Features
+
+* beta components ([cb71930](https://gitlab.com/scale-ds/scale-telekom/commit/cb71930b026b80d222a23d5929e0f30976e2f2d6))
+* copy design tokens on start ([bc41452](https://gitlab.com/scale-ds/scale-telekom/commit/bc41452f82e6c1a86abcabdf7034943787afd4c1))
+
+
+
+
+
 # [2.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2021-03-12)
 
 
