@@ -10,11 +10,11 @@ addons.register("@scaleds/usage-addon", () => {
       const hideUsageButtonStyles = document.getElementById(
         "hide-usage-button"
       );
-      if (path.includes("/components-") && hideUsageButtonStyles) {
+      if (path.includes("components-") && hideUsageButtonStyles) {
         hideUsageButtonStyles.remove();
       }
 
-      if (!path.includes("/components-") && !hideUsageButtonStyles) {
+      if (!path.includes("components-") && !hideUsageButtonStyles) {
         const style = document.createElement("link");
         style.id = "hide-usage-button";
         style.rel = "stylesheet";

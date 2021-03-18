@@ -6289,7 +6289,7 @@
       ]
     },
     {
-      "name": "scale-menu",
+      "name": "scale-menu-flyout",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -6334,7 +6334,7 @@
       ]
     },
     {
-      "name": "scale-menu-divider",
+      "name": "scale-menu-flyout-divider",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -6347,7 +6347,7 @@
       ]
     },
     {
-      "name": "scale-menu-item",
+      "name": "scale-menu-flyout-item",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -6380,7 +6380,7 @@
       ]
     },
     {
-      "name": "scale-menu-list",
+      "name": "scale-menu-flyout-list",
       "description": {
         "kind": "markdown",
         "value": ""

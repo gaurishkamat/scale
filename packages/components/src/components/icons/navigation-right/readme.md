@@ -21,13 +21,13 @@
 ### Used by
 
  - [scale-breadcrumb](../../breadcrumb)
- - [scale-menu-item](../../menu-item)
+ - [scale-menu-flyout-item](../../menu-flyout-item)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-breadcrumb --> scale-icon-navigation-right
-  scale-menu-item --> scale-icon-navigation-right
+  scale-menu-flyout-item --> scale-icon-navigation-right
   style scale-icon-navigation-right fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

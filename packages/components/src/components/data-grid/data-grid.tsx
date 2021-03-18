@@ -708,18 +708,18 @@ export class DataGrid {
 
   renderSettingsMenu() {
     return (
-      <scale-menu class={`${name}__settings-menu`}>
+      <scale-menu-flyout class={`${name}__settings-menu`}>
         <scale-button slot="trigger" variant="secondary" icon-only>
           <scale-icon-service-settings></scale-icon-service-settings>
         </scale-button>
-        <scale-menu-list>
+        <scale-menu-flyout-list>
           {this.isSortable && (
-            <scale-menu>
-              <scale-menu-item slot="trigger" cascade>
+            <scale-menu-flyout>
+              <scale-menu-flyout-item slot="trigger" cascade>
                 <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
                 Sort By
-              </scale-menu-item>
-              <scale-menu-list>
+              </scale-menu-flyout-item>
+              <scale-menu-flyout-list>
                 {this.fields.map(
                   (
                     { label, type, sortable, sortDirection = 'none' },
@@ -729,7 +729,7 @@ export class DataGrid {
                       return '';
                     }
                     return (
-                      <scale-menu-item
+                      <scale-menu-flyout-item
                         onClick={() =>
                           this.toggleTableSorting(
                             sortDirection,
@@ -758,19 +758,19 @@ export class DataGrid {
                           ></scale-icon-navigation-collapse-up>
                         )}
                         {label || type}
-                      </scale-menu-item>
+                      </scale-menu-flyout-item>
                     );
                   }
                 )}
-              </scale-menu-list>
-            </scale-menu>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout>
           )}
-          <scale-menu close-on-select="false">
-            <scale-menu-item slot="trigger" cascade>
+          <scale-menu-flyout close-on-select="false">
+            <scale-menu-flyout-item slot="trigger" cascade>
               <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
               Toggle Visibility
-            </scale-menu-item>
-            <scale-menu-list>
+            </scale-menu-flyout-item>
+            <scale-menu-flyout-list>
               {this.fields.map(
                 (
                   {
@@ -783,21 +783,21 @@ export class DataGrid {
                   columnIndex
                 ) => {
                   return (
-                    <scale-menu-item
+                    <scale-menu-flyout-item
                       checked={!!visible}
                       onClick={() =>
                         this.toggleColumnVisibility(!visible, columnIndex)
                       }
                     >
                       {label || type}
-                    </scale-menu-item>
+                    </scale-menu-flyout-item>
                   );
                 }
               )}
-            </scale-menu-list>
-          </scale-menu>
+            </scale-menu-flyout-list>
+          </scale-menu-flyout>
           {this.selectable && (
-            <scale-menu-item
+            <scale-menu-flyout-item
               onClick={() => {
                 this.elToggleSelectAll.checked = !this.elToggleSelectAll
                   .checked;
@@ -809,11 +809,11 @@ export class DataGrid {
                 path="M20.9328 10.6668C20.5132 10.6668 20.1731 11.0069 20.1731 11.4265V20.3269H1.5194V1.67309H16.5049C16.9245 1.67309 17.2646 1.33292 17.2646 0.913386C17.2646 0.49385 16.9245 0.153687 16.5049 0.153687H0.759699C0.340163 0.153687 0 0.49385 0 0.913386V21.0866C0 21.5062 0.340163 21.8463 0.759699 21.8463H20.9328C21.3523 21.8463 21.6925 21.5062 21.6925 21.0866V11.4265C21.6925 11.0069 21.3524 10.6668 20.9328 10.6668ZM23.7774 0.653387C23.4807 0.356739 22.9997 0.356739 22.703 0.653387L10.3293 13.0272L7.25501 9.9529C6.9583 9.65625 6.47732 9.65625 6.18061 9.9529C5.88396 10.2496 5.88396 10.7306 6.18061 11.0273L9.7921 14.6388C9.94045 14.7871 10.1349 14.8613 10.3293 14.8613C10.5237 14.8613 10.7181 14.7871 10.8665 14.6388L23.7774 1.72778C24.0741 1.43108 24.0741 0.950095 23.7774 0.653387Z"
               ></scale-icon>
               Select / Deselect All
-            </scale-menu-item>
+            </scale-menu-flyout-item>
           )}
           <slot name="menu"></slot>
-        </scale-menu-list>
-      </scale-menu>
+        </scale-menu-flyout-list>
+      </scale-menu-flyout>
     );
   }
 
