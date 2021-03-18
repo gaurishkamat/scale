@@ -4956,6 +4956,7 @@ export namespace Components {
     }
     interface ScaleRatingStars {
         "ariaLabel": string;
+        "colorFill": string;
         "disabled": boolean;
         "getSymbolBlank": () => string;
         "getSymbolFilled": () => string;
@@ -12045,6 +12046,7 @@ declare namespace LocalJSX {
     }
     interface ScaleRatingStars {
         "ariaLabel"?: string;
+        "colorFill"?: string;
         "disabled"?: boolean;
         "getSymbolBlank"?: () => string;
         "getSymbolFilled"?: () => string;

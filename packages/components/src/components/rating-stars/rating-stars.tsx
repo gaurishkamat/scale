@@ -15,12 +15,13 @@ export class RatingStars {
   @Prop({ mutable: true }) small = false;
   @Prop({ mutable: true }) interactive = true;
   @Prop({ mutable: true }) disabled = false;
+  @Prop({ mutable: true }) colorFill = `var(--scl-color-primary)`;
   @Prop() ariaLabel: string;
   @Prop() precision = 1;
   @Prop() getSymbolBlank = () =>
     `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" accessibility-title="favorite" />`;
   @Prop() getSymbolFilled = () =>
-    `<scale-icon-action-favorite color="var(--scl-color-primary, #e20074)" selected accessibility-title="favorite">`;
+    `<scale-icon-action-favorite color=${this.colorFill} selected accessibility-title="favorite">`;
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -134,6 +135,7 @@ export class RatingStars {
           rating: true,
           'rating--interactive': !this.interactive,
           'rating--disabled': this.disabled,
+          'rating--hover': this.isHovering,
         }}
         id="rating"
         ref={el => (this.element = el)}
@@ -148,7 +150,8 @@ export class RatingStars {
         <span class="rating__symbols">
           {counter.map(index => (
             <span
-                onMouseEnter={this.handleMouseEnter}
+              class="rating__symbol__wrapper"
+              onMouseEnter={this.handleMouseEnter}
             >
               <span
                 role="presentation"
@@ -156,7 +159,8 @@ export class RatingStars {
                   width: this.small ? '16px' : '24px',
                   clipPath:
                     Math.ceil(displayValue) >= index + 1
-                      ? `inset(0 ${(Math.ceil(displayValue) - index) * 100}% 0 0)`
+                      ? `inset(0 ${(Math.ceil(displayValue) - index) *
+                          100}% 0 0)`
                       : null,
                 }}
                 class={{
@@ -169,7 +173,6 @@ export class RatingStars {
                 id={`star-${index + 1}`}
               />
             </span>
-            
           ))}
         </span>
         <span class="rating__symbols rating__symbols--indicator">
