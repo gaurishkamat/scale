@@ -152,7 +152,7 @@ export class DataGrid {
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
   }
   connectedCallback() {
-    statusNote({ source: this.hostElement });
+    statusNote({ source: this.hostElement, tag: 'beta' });
   }
   componentWillLoad() {
     this.fieldsHandler();
