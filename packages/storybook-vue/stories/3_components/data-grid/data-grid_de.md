@@ -3,18 +3,18 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Datentabellen helfen Nutzer*innen, komplexe Daten zu erfassen und zu verwalten.
+Data Grids helfen Nutzer*innen, komplexe Daten zu erfassen und zu verwalten.
 
 ## Allgemein
 
-Datentabellen sind ein erweiterter Tabellentyp. Zusätzlich zu den Standardfunktionen Filtern und Sortieren kann eine Datentabelle viele weitere Funktionen enthalten, wie bspw. Sortieren, alles Aus- oder Abwählen, Ein- und Ausblenden sowie Exportieren.
+Data Grids sind ein erweiterter Tabellentyp. Zusätzlich zu den Standardfunktionen Filtern und Sortieren kann ein Data Grid viele weitere Funktionen enthalten, wie bspw. Sortieren, alles Aus- oder Abwählen, Ein- und Ausblenden sowie Exportieren.
 
-### Verwende eine Datentabelle, um: 
+### Verwende ein Data Grid, um: 
 
 * Daten so zu organisieren, dass Nutzer*innen sie leicht verstehen, analysieren und vergleichen können und
 * zusätzliche Funktionen bereitzustellen, mit denen Nutzer*innen mit den Daten interagieren können. 
 
-### Verwende eine Datentabelle besser nicht, wenn 
+### Verwende ein Data Grid besser nicht, wenn 
 
 * die Komplexität der einzelnen Daten und Funktionen mit einer Tabelle nicht abbildbar ist oder
 * du die zusätzlichen Funktionen nicht benötigst.
@@ -27,7 +27,7 @@ Um die Lesbarkeit der Inhalte zu erhöhen, kannst du alternierende Hintergründe
 
 ## Elemente
 
-Innerhalb des Datentabellen-Frameworks kannst du eine Auswahl bestehender Komponenten frei kombinieren, um eine eine breite Palette von Anwendungsfällen zu berücksichtigen. 
+Innerhalb des Data Grid Frameworks kannst du eine Auswahl bestehender Komponenten frei kombinieren, um eine eine breite Palette von Anwendungsfällen zu berücksichtigen. 
 
 ![Image Name](assets/3_components/data-grid/elements.png)
 
@@ -62,13 +62,13 @@ Für eine bessere Lesbarkeit kannst du die Zeilen bei Mouseover hervorheben.
 
 Füllst dz den HTML-Slot in einer Tabellenzeile aus, wird am Ende der Zeile ein Expand-Icon hinzugefügt. Klicken/tippen Nutzer*innen auf das Expand-Icon, blendet sich der HTML-Inhalt dieses Slots ein.
 
-#### Paginierung (8)
+#### Pagination (8)
 
-Mit Hilfe der Paginierung bewegen sich Nutzer*innen gezielt durch den gesamten Datensatz. 
+Mit Hilfe der Pagination bewegen sich Nutzer*innen gezielt durch den gesamten Datensatz. 
 
 ## Datenkomponenten
 
-Folgende Inhaltskomponenten kannst du in der Datentabelle einsetzen: 
+Folgende Inhaltskomponenten kannst du in Data Grids einsetzen: 
 
 ![Image Name](assets/3_components/data-grid/Data_components_en.png)
 
