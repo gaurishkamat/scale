@@ -829,7 +829,7 @@
 <script src="/symbol_names.js"></script>
 <script>
     Array.from(document.querySelectorAll("scale-input")).forEach((btn,i) => {
-        btn.dataset.sketchSymbol = `Text area / ${
+        btn.dataset.sketchSymbol = `Text Area / ${
                 order(1, getCategoryName(btn))
             } / ${
                 order(2, btn.hasAttribute('helper-text') ? 'Info On' : 'Info Off')
@@ -839,7 +839,7 @@
             } / ${
                 order(4, btn.getAttribute('counter') === 'true' ? 'Character Count On' : 'Character Count Off')
             } / ${
-                order(5, btn.hasAttribute('value') ? 'Has Input Value' : 'Has No Input Value')
+                order(5, btn.hasAttribute('value') ? 'Has Input Value' : 'Standard')
             } / ${
                 order(6, getStateName(btn))
             }`;

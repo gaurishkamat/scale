@@ -613,6 +613,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
 
+  let hidePseudo = false;
   PSEUDO_ELEMENTS.forEach(pseudo => {
     const pseudoStyle = getComputedStyle(node, pseudo);
     if (pseudoStyle.content !== "normal" && pseudoStyle.content !== "none") {
@@ -631,10 +632,13 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       } else if (pseudo === ":after") {
         node.appendChild(element);
       }
-      // Hide pseudo elements after recreating them.
-      node.classList.add("hide-pseudo");
+      hidePseudo = true;
     }
   });
+  if (hidePseudo) {
+    // Hide pseudo elements after recreating them.
+    node.classList.add("hide-pseudo");
+  }
 
   if (node instanceof HTMLSelectElement) {
     const selectedOption = Array.from(node.getElementsByTagName("option")).find(o => o.selected);

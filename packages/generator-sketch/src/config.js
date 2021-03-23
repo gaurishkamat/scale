@@ -106,29 +106,22 @@ module.exports = {
       if (/^(Dropdown)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 11;
-        var icon = findLayer(symbol, s => s.name === "Icon" || s.name === "svg.icon");
-        icon.resizingConstraint = 44;
-        var label = findLayer(symbol, s => s.name === "Dropdown Label");
-        if (label) {
+        findLayer(symbol, "Icon", icon => icon.resizingConstraint = 44);
+        findLayer(symbol, "Dropdown Label", label => {
           label.resizingConstraint = 10;
-          label.frame.width = 144;
-          label.glyphBounds = "{{0, 3}, {136, 12}}";
+          label.frame.width = symbol.frame.width - 46;
           label.textBehaviour = 2;
-        }
-        var value = findLayer(symbol, s => s.name === "Dropdown Value");
-        if (value) {
+        });
+        findLayer(symbol, "Dropdown Value", value => {
           value.resizingConstraint = 10;
-          value.frame.width = 144;
-          value.glyphBounds = "{{0, 3}, {136, 12}}";
+          value.frame.width = symbol.frame.width - 46;
           value.textBehaviour = 2;
-        }
-        var info = findLayer(symbol, s => s.name && s.name.startsWith("Information"));
-        if (info) {
+        });
+        findLayer(symbol, /^Information/, info => {
           info.resizingConstraint = 10;
-          info.frame.width = 186;
-          info.glyphBounds = "{{0, 3}, {186, 12}}";
+          info.frame.width = symbol.frame.width - 24;
           info.textBehaviour = 2;
-        }
+        });
       }
       if (/^Link/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
@@ -257,7 +250,7 @@ module.exports = {
                    findLayer(symbol, s => s.name === "Icon");
         if (icon) icon.resizingConstraint = 44;
       }
-      if (/^(Text area)/.test(symbol.name)) {
+      if (/^(Text Area)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
         if (count) {
@@ -282,8 +275,7 @@ module.exports = {
         if (helperMessage) helperMessage.resizingConstraint = 34;
         var inputValue = findLayer(symbol, s => /^Input Value/.test(s.name));
         if (inputValue) inputValue.resizingConstraint = 9;
-        var label = findLayer(symbol, s => /^Label/.test(s.name));
-        if (label) label.resizingConstraint = 9;
+        findLayers(symbol, /label/i, label => label.resizingConstraint = 10);
         var textarea = findLayer(symbol, s => /^textarea/.test(s.name));
         if (textarea) {
           textarea.resizingConstraint = 18;
@@ -335,8 +327,7 @@ module.exports = {
         if (helperMessage) helperMessage.resizingConstraint = 10;
         var inputValue = findLayer(symbol, s => /^Input Value/.test(s.name));
         if (inputValue) inputValue.resizingConstraint = 9;
-        var label = findLayer(symbol, s => /^Label/.test(s.name));
-        if (label) label.resizingConstraint = 9;
+        findLayers(symbol, /label/i, label => label.resizingConstraint = 10);
         var input = findLayer(symbol, s => /^input#input/.test(s.name));
         if (input) {
           input.resizingConstraint = 10;

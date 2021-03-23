@@ -96,7 +96,7 @@
     Array.from(document.querySelectorAll("scale-list")).forEach(btn => {
         if (btn.dataset.sketchKey) {
             i++;
-            btn.dataset.sketchSymbol = `Text List / ${
+            btn.dataset.sketchSymbol = `List / ${
                 order(0, btn.hasAttribute('ordered') ? 'Ordered' : (i === 3 ? 'Custom Icon' : 'Unordered'))
             }`;
         }

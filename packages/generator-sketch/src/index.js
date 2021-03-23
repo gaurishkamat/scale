@@ -20,6 +20,7 @@ const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
 const rssBuilder = require('./rss-builder');
 const config = require('./config');
+const colorConvert = require('color');
 
 const documentName = process.argv[2] || "default";
 
@@ -28,7 +29,54 @@ const serverPath = config.libraryServerPath;
 const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
 
+
 (async function() {
+
+  function parseCSSColorToRGBA01(cssColorString) {
+    const {r,g,b,alpha} = new colorConvert(cssColorString).unitObject();
+    return {
+      _class: "color",
+      alpha: alpha === undefined ? 1 : alpha,
+      blue: b,
+      green: g,
+      red: r
+    };
+  }
+
+  function makeSketchColorSwatch(name, color) {
+    name = name.replace(/([a-z]+)(\d+)$/i, '$1 / $2'); // Turn "grey90" into "grey / 90"
+    name = name.replace(/\/[^/]*$/, '/ ' + name.replace(/ \/ /g, ' ')); // Turn "background / foo" into "background / background foo"
+    name = name.replace(/\b./g, (s => s.toLocaleUpperCase())); // Turn "link / link active / link active 90" into "Link / Link Active / Link Active 90"
+    const swatch = {
+      _class: "swatch",
+      do_objectID: uuid(),
+      name: name,
+      value: color
+    };
+    const stableSymbolName = `/// Colors: ${name}`;
+    if (symbolNameToIdMap[stableSymbolName]) {
+      swatch.do_objectID = symbolNameToIdMap[stableSymbolName].symbolID;
+    }
+    symbolNameToIdMap[stableSymbolName] = {symbolID: swatch.do_objectID, changeIdentifier: 0};
+    return swatch;
+  }
+
+  function parseCSSColorToSketch(sketchColors, path, cssColorString) {
+    const colorValue = parseCSSColorToRGBA01(cssColorString);
+    const sketchColor = makeSketchColorSwatch(path.join(" / "), colorValue);
+    sketchColors.push(sketchColor);
+  }
+
+  function parseColors(sketchColors, path, colors) {
+    for (const colorName in colors) {
+      const colorValue = colors[colorName]; 
+      if (typeof colorValue === 'string') {
+        parseCSSColorToSketch(sketchColors, path.concat([colorName]), colorValue);
+      } else {
+        parseColors(sketchColors, path.concat([colorName]), colorValue)
+      }
+    }
+  }
 
   const documentDB = await sqlite.open({
     filename: dbFilename,
@@ -166,8 +214,11 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           }
           if (differs) {
             // console.log('style override', JSON.stringify(override, null, 4));
-            if (!symbol.sharedStyleID) {
+            if (!symbol.sharedStyleID && symbol.name !== 'Background') {
               var styleKey = JSON.stringify(override);
+              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
+                symbol.name = 'Icon Color';
+              }
               if (styleMap.has(styleKey)) {
                 symbol.sharedStyleID = styleMap.get(styleKey);
               } else {
@@ -195,19 +246,20 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
             }
           }
           if (textDiffers) {
+            // Uncomment below to enable text style overrides
             // console.log('textStyle override', JSON.stringify(textOverride, null, 4));
-            if (!symbol.sharedStyleID) {
-              // Make a shared style for the SymbolMaster
-              const sharedStyle = new SharedStyle(null, {
-                name: symbolVariantName,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: symbolValue
-              });
-              sketch.addTextStyle(sharedStyle);
-              symbol.sharedStyleID = sharedStyle.do_objectID;
-              // console.log(symbolVariantName, variantName);
-            }
+            // if (!symbol.sharedStyleID) {
+            //   // Make a shared style for the SymbolMaster
+            //   const sharedStyle = new SharedStyle(null, {
+            //     name: symbolVariantName,
+            //     do_objectID: uuid(),
+            //     _class: 'sharedStyle',
+            //     value: symbolValue
+            //   });
+            //   sketch.addTextStyle(sharedStyle);
+            //   symbol.sharedStyleID = sharedStyle.do_objectID;
+            //   // console.log(symbolVariantName, variantName);
+            // }
           }
         }
         createSymbolOverrides(symbolValue, symbolVariantName);
@@ -605,23 +657,72 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     });
   }
 
+  const sketchColors = [];
+
   var includes = fs.readdirSync(`./includes`).filter(fn => fn.startsWith(documentName+'.'));
-  for (const include of includes) {
-    var doc = await Sketch.fromFile(`./includes/${include}`);
-    doc.pages.forEach(page => {
-      if (page.name === 'Symbols') {
-        for (const symbol of page.layers) {
-          symbol.frame.x = 0;
-          symbol.frame.y = y;
-          y += gutter + symbol.frame.height;
-          symbolsPage.addLayer(symbol);
+  for (const includeFile of includes) {
+    if (/\.sketch$/i.test(includeFile)) {
+      var doc = await Sketch.fromFile(`./includes/${includeFile}`);
+      // Copy foreign references over
+      sketch.document.foreignLayerStyles = sketch.document.foreignLayerStyles.concat(doc.document.foreignLayerStyles);
+      sketch.document.foreignSwatches = (sketch.document.foreignSwatches||[]).concat(doc.document.foreignSwatches);
+      sketch.document.foreignSymbols = (sketch.document.foreignSymbols||[]).concat(doc.document.foreignSymbols);
+      sketch.document.foreignTextStyles = (sketch.document.foreignTextStyles||[]).concat(doc.document.foreignTextStyles);
+      sketch.document.layerStyles.objects = sketch.document.layerStyles.objects.concat(doc.document.layerStyles.objects);
+      sketch.document.layerTextStyles.objects = sketch.document.layerTextStyles.objects.concat(doc.document.layerTextStyles.objects);
+      // Copy pages over
+      doc.pages.forEach(page => {
+        if (page.name === 'Symbols') {
+          for (const symbol of page.layers) {
+            symbol.frame.x = 0;
+            symbol.frame.y = y;
+            y += gutter + symbol.frame.height;
+            symbolsPage.addLayer(symbol);
+          }
+        } else {
+          sketch.addPage(page);
         }
-      } else {
-        sketch.addPage(page);
-      }
-    });
+      });
+    }
   }
 
+  const designTokens = await import('@scaleds/design-tokens-telekom/dist/design-tokens-telekom.js');
+  parseColors(sketchColors, [], designTokens.color);
+
+  // Add color swatches
+  sketch.document.sharedSwatches = {
+    _class: "swatchContainer",
+    do_objectID: "C33E0022-6453-41F9-B5AF-F0B0F144B939",
+    objects: sketchColors
+  };
+  sketch.document.documentState = { "_class": "documentState" }
+  sketch.document.layerSymbols.do_objectID = uuid();
+
+  // Sort pages by name, Symbols on top.
+  const sortedPages = Object.entries(sketch.meta.pagesAndArtboards).sort((a,b) => {
+    if (a[1].name === 'Symbols') return -1;
+    if (b[1].name === 'Symbols') return 1;
+    return a[1].name.localeCompare(b[1].name);
+  });
+  sketch.meta.pagesAndArtboards = Object.fromEntries(sortedPages);
+  sketch.document.pages = sortedPages.map(([oid, _]) => ({
+    "_class": "MSJSONFileReference",
+    "_ref_class": "MSImmutablePage",
+    "_ref": `pages/${oid}`
+  }));
+
+  // Upgrade document version to allow color swatches.
+  sketch.meta.commit = "238f363ed3de77eb1d86e03176f8a10f7928ed51";
+  sketch.meta.version = 134;
+  sketch.meta.compatibilityVersion = 99;
+  sketch.meta.appVersion = "69";
+
+  sketch.meta.created.commit = "238f363ed3de77eb1d86e03176f8a10f7928ed51";
+  sketch.meta.created.version = 134;
+  sketch.meta.created.compatibilityVersion = 99;
+  sketch.meta.created.appVersion = "69";
+
+  // Update Symbol IDs
   const queries = [];
   for (const symbolName in symbolNameToIdMap) {
     const s = symbolNameToIdMap[symbolName];

@@ -13,21 +13,15 @@
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <scale-card data-sketch-state="hover" data-sketch-key="card-2">
-                <div>Card Label</div>
-            </scale-card>
+            &mdash;
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <scale-card data-sketch-state="focus" data-sketch-key="card-3">
-                <div>Card Label</div>
-            </scale-card>
+            &mdash;
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:active/:selected</p>
-            <scale-card data-sketch-state="active" data-sketch-key="card-4">
-                <div>Card Label</div>
-            </scale-card>
+            &mdash;
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
@@ -125,10 +119,17 @@
 <script src="/symbol_names.js"></script>
 <script>
     Array.from(document.querySelectorAll("scale-card")).forEach(btn => {
-        btn.dataset.sketchSymbol = `Card / ${
+        const category = getCategoryName(btn);
+        if (category === 'Standard') {
+            btn.dataset.sketchSymbol = `Card / ${
+                order(2, getCategoryName(btn))
+            }`;
+        } else {
+            btn.dataset.sketchSymbol = `Card / ${
                 order(2, getCategoryName(btn))
             } / ${
                 order(4, getStateName(btn))
             }`;
+        }
     });
 </script>
