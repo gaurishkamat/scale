@@ -31,7 +31,7 @@
   justify-content: flex-end;
   font-size: var(--scl-font-size-12);
   line-height: var(--scl-font-line-height-133);
-  color: var(--scl-color-text-standard);
+  color: inherit;
 }
 .input .input__helper-text {
   transition: all var(--scl-motion-duration-fast)
@@ -143,6 +143,7 @@
 .input--disabled .input__label,
 .input--disabled input,
 .input--disabled .input__input,
+.input--disabled .input__meta,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
   border-color: var(--scl-color-background-disabled);
