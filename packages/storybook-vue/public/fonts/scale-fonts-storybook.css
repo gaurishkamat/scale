@@ -88,6 +88,7 @@ h5,
 h6,
 li {
   font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  color: var(--scl-color-text-standard) !important;
 }
 
 .sbdocs-h1,
@@ -127,8 +128,7 @@ li {
 
 .sbdocs-a {
   font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  /* #00a6f0 fails :) https://colorable.jxnblk.com/00a6f0/ffffff  */
-  color: #007DB3 !important;
+  color: var(--scl-color-text-link) !important;
 }
 
 .sbdocs-p, .sbdocs-ul, .sbdocs-li {
