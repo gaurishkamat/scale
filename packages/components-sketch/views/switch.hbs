@@ -5,23 +5,23 @@
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
-            <div class="switch-wrapper">Lights <scale-switch text-on="I" text-off="0" active data-sketch-key="switch-1"></scale-switch></div>
+            <scale-switch label="Switch Label" checked data-sketch-key="switch-1"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" active data-sketch-state="hover" data-sketch-key="switch-2"></scale-switch></div>
+            <scale-switch label="Switch Label" checked data-sketch-state="hover" data-sketch-key="switch-2"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" active data-sketch-state="focus" data-sketch-key="switch-3"></scale-switch></div>
+            <scale-switch label="Switch Label" checked data-sketch-state="focus" data-sketch-key="switch-3"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:pressed</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" active data-sketch-state="active" data-sketch-key="switch-4"></scale-switch></div>
+            <scale-switch label="Switch Label" checked data-sketch-state="active" data-sketch-key="switch-4"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" active disabled data-sketch-key="switch-5"></scale-switch></div>
+            <scale-switch label="Switch Label" checked disabled data-sketch-key="switch-5"></scale-switch>
         </div>
     </div>
 
@@ -29,23 +29,23 @@
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
-            <div class="switch-wrapper">Lights <scale-switch data-sketch-key="switch-10"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-key="switch-10"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" data-sketch-state="hover" data-sketch-key="switch-6"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="hover" data-sketch-key="switch-6"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" data-sketch-state="focus" data-sketch-key="switch-7"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="focus" data-sketch-key="switch-7"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:pressed</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" data-sketch-state="active" data-sketch-key="switch-8"></scale-switch></div>
+            <scale-switch label="Switch Label" data-sketch-state="active" data-sketch-key="switch-8"></scale-switch>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <div class="switch-wrapper">Lights<scale-switch text-on="I" text-off="0" disabled data-sketch-key="switch-9"></scale-switch></div>
+            <scale-switch label="Switch Label" disabled data-sketch-key="switch-9"></scale-switch>
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@
 <script>
     Array.from(document.querySelectorAll("scale-switch")).forEach(btn => {
         btn.dataset.sketchSymbol = `Switch / ${
-                order(1, btn.hasAttribute('active') ? 'Selected On' : 'Selected Off')
+                order(1, btn.hasAttribute('checked') ? 'Selected On' : 'Selected Off')
             } / ${
                 order(4, getStateName(btn))
             }`;

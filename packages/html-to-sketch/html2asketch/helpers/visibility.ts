@@ -28,6 +28,9 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
       node.tagName.toLowerCase() !== 'slot') {
     return false;
   }
+  if (node.tagName.toLowerCase() === 'option' || node.tagName.toLowerCase() === 'optgroup') {
+    return false;
+  }
 
   if ((width === 0 || height === 0) && overflowX === 'hidden' && overflowY === 'hidden') {
     return false;

@@ -356,7 +356,11 @@ const ALIGNMENTS = {
   left: 0,
   right: 1,
   center: 2,
-  justify: 3
+  justify: 3,
+  "flex-start": 0,
+  "flex-end": 1,
+  start: 0,
+  end: 1
 };
 
 function hasOnlyDefaultStyles(styles: object) {
@@ -596,6 +600,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   if (CSSRules === undefined) {
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
   }
+
   const layers: any[] = [];
   let bcr = node.getBoundingClientRect();
   if (bcr.width === 0 && bcr.height === 0) {
@@ -608,6 +613,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
 
+  let hidePseudo = false;
   PSEUDO_ELEMENTS.forEach(pseudo => {
     const pseudoStyle = getComputedStyle(node, pseudo);
     if (pseudoStyle.content !== "normal" && pseudoStyle.content !== "none") {
@@ -623,19 +629,65 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       }
       if (pseudo === ":before") {
         node.insertBefore(element, node.firstChild);
-        // The fake pseudo element messes with the node's layout
-        if (
-          element.style.position !== "absolute" &&
-          element.style.position !== "fixed"
-        ) {
-          element.style.left = -element.getBoundingClientRect().width + "px";
-          element.style.position = "relative";
-        }
       } else if (pseudo === ":after") {
         node.appendChild(element);
       }
+      hidePseudo = true;
     }
   });
+  if (hidePseudo) {
+    // Hide pseudo elements after recreating them.
+    node.classList.add("hide-pseudo");
+  }
+
+  if (node instanceof HTMLSelectElement) {
+    const selectedOption = Array.from(node.getElementsByTagName("option")).find(o => o.selected);
+    const textValue = selectedOption?.textContent;
+    if (textValue) {
+      const element = document.createElement('div');
+      element.appendChild(document.createTextNode("Dropdown Value"));
+      applyStyle(element, getComputedStyle(node));
+      element.style.background = 'none';
+      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
+      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.border = '0px';
+      element.style.outline = '0px';
+      element.style.textShadow = 'none';
+      element.style.boxShadow = 'none';
+      element.style.webkitBoxShadow = 'none';
+      element.style.position = 'absolute';
+      element.style.display = 'block';
+      if (node.style.position === 'static') {
+        node.style.position = 'relative';
+        node.style.left = node.style.top = '0px';
+      }
+      node.parentElement?.appendChild(element);
+    }
+  }
+
+  if (node instanceof HTMLInputElement || node instanceof HTMLTextAreaElement) {
+    const textValue = node.value;
+    if (textValue) {
+      const element = document.createElement('div');
+      element.appendChild(document.createTextNode("Input Value"));
+      applyStyle(element, getComputedStyle(node));
+      element.style.background = 'none';
+      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
+      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.border = '0px';
+      element.style.outline = '0px';
+      element.style.textShadow = 'none';
+      element.style.boxShadow = 'none';
+      element.style.webkitBoxShadow = 'none';
+      element.style.position = 'absolute';
+      element.style.display = 'block';
+      if (node.style.position === 'static') {
+        node.style.position = 'relative';
+        node.style.left = node.style.top = '0px';
+      }
+      node.parentElement?.appendChild(element);
+    }
+  }
 
   let haveTrack = false;
   const sliderTrackCSSRules = findSliderTrackCSSRules(node);
@@ -727,6 +779,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     borderBottomLeftRadius,
     borderBottomRightRadius,
     textAlign,
+    justifyContent,
     fontFamily,
     fontSize,
     lineHeight,
@@ -970,11 +1023,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     const style = new Style();
 
     if (backgroundColor) {
-			if ((node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') && node.getAttribute("disabled") !== null) {
-				style.addColorFill('rgba(239, 239, 239, 0.3)');
-			} else {
-	      style.addColorFill(backgroundColor);
-			}
+      style.addColorFill(backgroundColor);
     }
 
     if (isImage) {
@@ -1102,12 +1151,44 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     };
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
+    const borderAddWidth = Math.max(parseFloat(borderLeftWidth), parseFloat(borderRightWidth), parseFloat(borderTopWidth), parseFloat(borderBottomWidth));
     rectangle.setStyle(style);
+    rectangle.setName("Background");
 
-    shapeGroup.setName('background');
+    const overflowHidden = styles.overflow === 'hidden' || node.tagName == 'IFRAME';
+
+    if (overflowHidden && borderAddWidth > 0) {
+      const borderRect = new Rectangle({ 
+        width: rectangle._width,
+        height: rectangle._height,
+        x: rectangle._x,
+        y: rectangle._y,
+        cornerRadius
+      });
+      const borderStyle = new Style();
+      borderStyle._borders = style._borders;
+      borderStyle._shadows = style._shadows;
+      borderStyle._innerShadows = style._innerShadows;
+      borderStyle._borderOptions = style._borderOptions;
+      borderStyle._opacity = style._opacity;
+      borderRect.setStyle(borderStyle);
+      style._borders = [];
+      const sg2 = new ShapeGroup({});
+      for (var i in shapeGroup) {
+        sg2[i] = shapeGroup[i];
+      }
+      sg2._layers = [];
+      sg2.setStyle(borderStyle);
+      layers.push(sg2);
+      (sg2 as any)._onTop = true;
+      borderRect.setName("Border");
+      sg2.addLayer(borderRect);
+    }
+
+    shapeGroup.setName('Background');
     shapeGroup.addLayer(rectangle);
 
-		if (styles.overflow === 'hidden' || node.tagName == 'IFRAME') {
+		if (overflowHidden) {
 			shapeGroup.setHasClippingMask(true);
 		}
 
@@ -1215,16 +1296,19 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     fontSize: parseInt(fontSize, 10),
     textTransform: styles.textTransform,
     fontWeight: styles.fontWeight,
+    fontStyle: styles.fontStyle,
     color,
     skipSystemFonts: options && options.skipSystemFonts
   });
 
-  const alignment = ALIGNMENTS[textAlign] || 0;
+  const fullFontFamily = textStyle.getFontFamily();
+
+  const alignment = ALIGNMENTS[justifyContent] || ALIGNMENTS[textAlign] || 0;
 
   const textAttributedString = (text: string) =>
     new TextAttributedString({
       text,
-      fontFamily,
+      fontFamily: fullFontFamily,
       fontSize: parseInt(fontSize, 10),
       textTransform: styles.textTransform,
       skipSystemFonts: options && options.skipSystemFonts,
@@ -1234,19 +1318,20 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
   const rangeHelper = document.createRange();
 
-	// if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
-	// 	const inputEl = node as HTMLInputElement;
-	// 	const div = document.createElement('div');
-	// 	if (inputEl.value === '' && inputEl.placeholder !== '') {
-	// 		div.textContent = inputEl.placeholder;
-	// 		div.setAttribute('pseudo', "-webkit-input-placeholder");
-	// 		div.id = "placeholder";
-	// 		div.style.display = "block !important";
-	// 	} else {
-	// 		div.textContent = inputEl.value;
-	// 	}
-	// 	node.appendChild(div);
-	// }
+	if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
+		const inputEl = node as HTMLInputElement;
+		// const div = document.createElement('div');
+		if (inputEl.value === '' && inputEl.placeholder !== '') {
+      inputEl.value = inputEl.placeholder;
+		// 	div.textContent = inputEl.placeholder;
+		// 	div.setAttribute('pseudo', "-webkit-input-placeholder");
+		// 	div.id = "placeholder";
+		// 	div.style.display = "block !important";
+		// } else {
+		// 	div.textContent = inputEl.value;
+		}
+		// node.appendChild(div);
+	}
 
   // Text
   Array.from(node.childNodes)
@@ -1276,8 +1361,8 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const text = new Text({
         x: textBCR.left,
         y: textBCR.top + fixY,
-        width: Math.ceil(textBCR.right - textBCR.left + 2),
-        height: textBCRHeight + 2,
+        width: Math.ceil(textBCR.right - textBCR.left) + 3,
+        height: textBCRHeight,
         text: textValue,
         style: textStyle,
         attributedString: textAttributedString(textValue),

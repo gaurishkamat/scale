@@ -7,7 +7,9 @@ Generator-sketch and html-to-sketch convert HTML pages to Sketch documents.
 ```bash
 yarn          # install deps
 yarn build    # build the library
+yarn build-scale # build the scale-components-telekom.sketch file
 
+# Custom build
 yarn sketch my-document-name [URLs to HTML documents to use as pages]
 # ... lots of output ...
 
@@ -47,6 +49,49 @@ If this html is in the file ```http://localhost:5005/index.html``` and you do ``
     </body>
 </html>
 ```
+
+## Development workflow
+
+The `generator-sketch` program is composed of two passes. The first one (inject pass) is in `src/inject.js` and uses Puppeteer to run `../html-to-sketch` on a web page, applying pseudo-class states, and generating Sketch-structured JSON files in `./sketch-json/`. The second pass (compilation pass) is in `src/index.js` and converts the JSON into a Sketch file.
+
+The inject script tags components as Sketch symbols and auto-generates names for the layers. The compilation script takes the JSON and generates the required symbols and shared styles, keeping track of the symbols and assigning them unique persistent ids (these are stored in the `scale-components-sketch.sqlite` database).
+
+### Create / edit generated components in scale-components-telekom.sketch
+
+The `scale-components-telekom` Sketch document is generated from the `../components-sketch` template. Links in `components-sketch/views/index.hbs` are turned into pages in the Sketch document. To add a new component, create a new file in `components-sketch/views`, then link to it from the `index.hbs` file. See the existing component `hbs` templates for guidance on how to write your file.
+
+To generate unique keys for the components in your file use the `generate_sketch_keys.rb` command in the `components-sketch` directory. For example, if you have the file `foo.hbs` with `&lt;scale-foo>` components inside it, you'd run `ruby generate_sketch_keys.rb views/foo.hbs scale-foo`.
+
+### Debug HTML parsing
+
+Run the inject script with the `--debug` flag. Note that the HTML parsing is mostly in `html-to-sketch`, so you want to rebuild that first. 
+E.g. if you have issues with the Accordion, you would run
+
+```sh
+(cd ../html-to-sketch && yarn build) && yarn build  && node src/inject.js --debug http://localhost:5005/accordion
+```
+
+You can inspect the generated JSON in `sketch-json/`.
+
+### Debug Sketch compilation
+
+Edit src/index.js and run
+```
+node src/index.js document-name
+```
+
+Then open `sketch/document-name.sketch`.
+
+### Debug end-to-end HTML -> .sketch compilation
+
+```sh
+(cd ../html-to-sketch && yarn build) && 
+yarn build  && 
+node src/inject.js --debug http://localhost:5005/accordion && 
+node src/index.js accordion && 
+open sketch/accordion.sketch
+```
+
 
 ## Design decisions
 
