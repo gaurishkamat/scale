@@ -10,7 +10,7 @@ import {
   Element,
 } from '@stencil/core';
 import classNames from 'classnames';
-import statusWarn from '../../utils/status-warn';
+import statusNote from '../../utils/status-note';
 
 export interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -124,9 +124,10 @@ export class Input {
 
   componentDidLoad() {
     // tslint:disable-next-line:no-console
-    statusWarn({
+    statusNote({
       tag: 'deprecated',
       source: this.el,
+      type: 'warn',
       extraMessage: `Please use <${{
         select: 'scale-dropdown',
         checkbox: 'scale-checkbox',

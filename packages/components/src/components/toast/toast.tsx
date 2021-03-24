@@ -9,7 +9,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { formatDistance, subSeconds } from 'date-fns';
-import statusWarn from '../../utils/status-warn';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-toast',
@@ -49,7 +49,7 @@ export class Toast {
   timerId = null;
 
   connectedCallback() {
-    statusWarn({ source: this.element });
+    statusNote({ source: this.element, type: 'warn' });
   }
 
   disconnectedCallback() {

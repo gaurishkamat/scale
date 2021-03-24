@@ -10,13 +10,11 @@ import text_de from "./1.Index_de.md";
               const locale = context && context.globals && context.globals.locale
               const alt = locale === 'en' ? 'Welcome to Scale Design System' : 'Wilkommen beim Scale Design System';
               return (
-                  <>
+                  <DocsContainer context={context}>
                       <img src="assets/welcome.png" alt={alt} style={{width: '100%'}}/>
-                      <DocsContainer context={context}>
-                          {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
-                      </DocsContainer>
-                  </>
-          )
+                      {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
+                  </DocsContainer>
+              )
           }
       },
   }}
