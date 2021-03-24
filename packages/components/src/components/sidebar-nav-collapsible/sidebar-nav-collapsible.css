@@ -114,7 +114,4 @@
   margin-top: 1em;
   margin-left: var(--spacing-indent);
   margin-bottom: 2em;
-  border-left-color: var(--scl-color-grey-70);
-  border-left-style: solid;
-  border-left-width: 0.0625rem;
 }
