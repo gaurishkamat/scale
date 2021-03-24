@@ -48,7 +48,7 @@ app-navigation-main-mobile {
   border-right: 2px solid #e20074;
 }
 
-.main-navigation-mobile__item-link--selected scale-icon {
+.main-navigation-mobile__item-link--selected svg {
   margin-right: -2px;
 }
 
@@ -65,7 +65,7 @@ app-navigation-main-mobile {
   line-height: 3.333;
 }
 
-.main-navigation-mobile__child-menu-current-item scale-icon {
+.main-navigation-mobile__child-menu-current-item svg {
   margin-right: 6px;
   margin-top: -4px;
 }
@@ -117,7 +117,7 @@ svg path {
   border-right: 2px solid #e20074;
 }
 
-.main-navigation-mobile__child-menu-item-link.selected scale-icon {
+.main-navigation-mobile__child-menu-item-link.selected svg {
   margin-right: 38px;
 }
 
@@ -137,6 +137,6 @@ svg path {
   box-sizing: border-box;
 }
 
-.main-navigation-mobile__child-menu-item-wrapper scale-icon {
+.main-navigation-mobile__child-menu-item-wrapper svg {
   margin-right: 40px;
 }

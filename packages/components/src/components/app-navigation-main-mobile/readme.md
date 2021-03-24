@@ -29,12 +29,14 @@
 
 ### Depends on
 
-- [scale-icon](../icon)
+- [scale-icon-navigation-left](../icons/navigation-left)
+- [scale-icon-navigation-right](../icons/navigation-right)
 
 ### Graph
 ```mermaid
 graph TD;
-  app-navigation-main-mobile --> scale-icon
+  app-navigation-main-mobile --> scale-icon-navigation-left
+  app-navigation-main-mobile --> scale-icon-navigation-right
   scale-app-header --> app-navigation-main-mobile
   style app-navigation-main-mobile fill:#f9f,stroke:#333,stroke-width:4px
 ```
