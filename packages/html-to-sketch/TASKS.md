@@ -1,3 +1,119 @@
+# Release push checklist
+Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
+    - ( ) Ping new Sketch file & feedback to Anna every afternoon
+
+    - [x] Naming "Default" -> "Standard"
+    - [x] Breadcrumb
+        - [x] "02 breadcrumb label" should be named "02 Page Links"
+        - [x] Example is missing, please add as "00 Example" inside the symbols
+        - [x] icon size should be 12px instead of 16px
+    - [z] Button
+        - [ ] Naming sketch files + storybook need to be aligned
+        - [x] Icon only buttons need fixed spacing
+            - Storybook component doesn't have scaling whatsoever (but you can hack the CSS and it'll behave like the Sketch symbol).
+            - Should the button not be resizable? Or only expandable?
+        - [x] Small button icon size
+        - [x] Secondary large button is 42x40, should be 40x40
+            - Broken in component style (border 1, padding 8, width 24 => 1+1 + 8+8 + 24 = 42)
+            - Workaround: make icon size 22
+            - Ditto for secondary small button 34x32
+    - [z] Checkbox
+        - [x] error state need error message
+        - [ ] disable states should have the same font color (#D0D0D0)
+    - [x] Icons
+    - [x] Radio
+        - [x] default error needs error message below the label
+    - [x] Divider
+        - [x] Naming
+    - [x] Slider
+        - [x] Large thumb variant missing
+        - [x] Large thumb variant for small track
+        - [x] label on and label off without counter can be removed
+        - [x] label off can be removed
+        - [x] Bar is 1px to the right
+            - Broken in the Storybook component
+    - [x] Link
+        - [x] font weight should be medium
+    - [x] Card
+        - [x] Use new component
+    - [x] Select Box renamed to Dropdown
+    - [x] progress bar filling needs corner roundings
+    - [x] progress bar needs counter with percentage 
+    - [z] label inside switch should change color as well in hover/active  states
+    - [x] switch artboards too large
+    - [x] tag disabled states can be removed
+    - [x] Rename "Input field" to "Text field"
+    - [x] textarea scroll is three times in there
+    - [x] textarea resizable and expand missing
+    - [x] Switch symbol names fixed
+    - [x] Progress bar symbol names fixed
+    - [x] Switch
+        - [x] should have fixed height/width and spacing
+    - [x] Tag
+        - [x] tag with overwrites the alignment/Spacing is off
+    - [x] progress bar should have fixed height/width and spacing
+    - [x] dropdown should have fixed height/width and spacing
+    - [x] dropdown icon pinned to right side
+    - [x] Text lists
+        - [x] should have fixed height/width and spacing
+    - [x] Textarea
+        - [x] should have fixed height/width and spacing
+            - [x] find layer names that are broken
+            - [x] change layer resizing to existing examples of similar type
+    - [x] Text field
+        - [x] should have fixed height/width and spacing
+            - [x] find layer names that are broken
+            - [x] change layer resizing to existing examples of similar type
+    - [x] Progress bar
+        - [x] Fill is 1px off
+            - Issue is that the component is using a 1px transparent border to expand the background fill area and html-to-sketch does borders outside the fill area
+            - [x] Find where the border is set
+            - [x] Expand the background fill by the border width
+            - [x] Create a border element
+            - [x] Add the border element above content
+    - [x] Make a spacing test doc for the lib
+        - Dropdown
+        - progress bar
+        - switch
+        - tag
+        - textarea
+        - text field
+        - text lists
+    - [x] Tag fix button background positioning
+    - [x] Textarea fix groupLayout weirdo bug
+    - [x] Fix progress bar description layout
+    - [x] Fix dropdown override resizing
+    - [z] Dropdown
+        - [z] pressed states should have an open dropdown, solid icon and (except the error state) a magenta pressed outline (#CB0068)
+    - [x] Breadcrumb fix positioning of "Current Page"
+        - [x] 8px too far left
+        - [-] Driven by weird things in Sketch's autolayout system -_-
+    - [x] Text field disabled bg should be white
+    - [x] Textarea disabled bg should be white
+    - [x] Border sizing issue
+    - [x] Remove unwanted symbols
+    - [x] Table v1
+    - [x] Build version number as symbol
+        - [x] Generate symbol in index.js
+        - [x] Set symbol name and text content to doc name, build version and date. 
+    - [x] Horizontal slider
+    - [x] Fix naming for card
+    - [x] Add components to testdoc
+    - [x] Resizing
+        - Progress bar, slider, text field, textarea, link, 
+        - [x] Accordion
+        - [x] Tab Navigation
+        - [x] Button
+            - [x] Text only
+            - [x] Icon only
+            - [x] Text & Icon 
+    - [x] Office server latest build
+        - [x] Change config to point to the office server URL
+        - [x] scp built file and RSS to office server at end of build
+    - [x] Table disable resize
+
+    - [ ] Disappears because: inlining style into slotted element doesn't include the :after pseudo-element, because of course it doesn't. Try materializing the pseudo-element as a real element (use pseudo-element detection & style extraction code from nodeToSketchLayers)
+
 # Style overrides
     - [x] Color styles to change icon colors
         const sharedStyles = [
@@ -309,9 +425,4 @@
 - [ ] Button symbols have 1px outline, messing up the size
 - [ ] Icons not linked (still two groups of icons)
 - [ ] Icons don't take color of buttons if I switch them
-
-Commitments
-===
-- End of this week, we'd have all the easy-to-make-work stuff working
-- There's ~4 components that are broken, fix each in a day and test the rest for issues
 

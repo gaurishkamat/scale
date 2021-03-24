@@ -4,6 +4,7 @@ const {
   Rect,
   Style,
   Artboard,
+  Text,
   Bitmap,
   SharedStyle,
   SymbolMaster,
@@ -17,13 +18,65 @@ const uuid = require("uuid").v4;
 const crypto = require('crypto');
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
+const rssBuilder = require('./rss-builder');
 const config = require('./config');
+const colorConvert = require('color');
 
 const documentName = process.argv[2] || "default";
 
+const serverPath = config.libraryServerPath;
+
 const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
+
+
 (async function() {
+
+  function parseCSSColorToRGBA01(cssColorString) {
+    const {r,g,b,alpha} = new colorConvert(cssColorString).unitObject();
+    return {
+      _class: "color",
+      alpha: alpha === undefined ? 1 : alpha,
+      blue: b,
+      green: g,
+      red: r
+    };
+  }
+
+  function makeSketchColorSwatch(name, color) {
+    name = name.replace(/([a-z]+)(\d+)$/i, '$1 / $2'); // Turn "grey90" into "grey / 90"
+    name = name.replace(/\/[^/]*$/, '/ ' + name.replace(/ \/ /g, ' ')); // Turn "background / foo" into "background / background foo"
+    name = name.replace(/\b./g, (s => s.toLocaleUpperCase())); // Turn "link / link active / link active 90" into "Link / Link Active / Link Active 90"
+    const swatch = {
+      _class: "swatch",
+      do_objectID: uuid(),
+      name: name,
+      value: color
+    };
+    const stableSymbolName = `/// Colors: ${name}`;
+    if (symbolNameToIdMap[stableSymbolName]) {
+      swatch.do_objectID = symbolNameToIdMap[stableSymbolName].symbolID;
+    }
+    symbolNameToIdMap[stableSymbolName] = {symbolID: swatch.do_objectID, changeIdentifier: 0};
+    return swatch;
+  }
+
+  function parseCSSColorToSketch(sketchColors, path, cssColorString) {
+    const colorValue = parseCSSColorToRGBA01(cssColorString);
+    const sketchColor = makeSketchColorSwatch(path.join(" / "), colorValue);
+    sketchColors.push(sketchColor);
+  }
+
+  function parseColors(sketchColors, path, colors) {
+    for (const colorName in colors) {
+      const colorValue = colors[colorName]; 
+      if (typeof colorValue === 'string') {
+        parseCSSColorToSketch(sketchColors, path.concat([colorName]), colorValue);
+      } else {
+        parseColors(sketchColors, path.concat([colorName]), colorValue)
+      }
+    }
+  }
 
   const documentDB = await sqlite.open({
     filename: dbFilename,
@@ -31,7 +84,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   });
   await documentDB.exec(`CREATE TABLE IF NOT EXISTS document (
     document_id TEXT NOT NULL,
-    document_name TEXT PRIMARY KEY
+    document_name TEXT PRIMARY KEY,
+    document_version INTEGER NOT NULL DEFAULT 0
   )`);
   await documentDB.exec(`CREATE TABLE IF NOT EXISTS symbol (
     document_id TEXT NOT NULL,
@@ -44,11 +98,15 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         ON DELETE CASCADE
         ON UPDATE NO ACTION
   )`);
+  const rows = await documentDB.all('PRAGMA table_info(document)');
+  if (!rows.find(r => r.name === "document_version")) {
+    await documentDB.exec('ALTER TABLE document ADD COLUMN document_version INTEGER NOT NULL DEFAULT 0');
+  }
   const documentIDRow = await documentDB.get("SELECT document_id FROM document WHERE document_name = ?", [documentName]);
   const documentID = documentIDRow && documentIDRow.document_id;
   sketch.document.do_objectID = documentID || sketch.document.do_objectID;
   if (!documentID) {
-    await documentDB.run("REPLACE INTO document(document_name, document_id) VALUES (?, ?)", [documentName, sketch.document.do_objectID]);
+    await documentDB.run("REPLACE INTO document(document_name, document_id, document_version) VALUES (?, ?, ?)", [documentName, sketch.document.do_objectID, 0]);
   }
   const symbolIDs = await documentDB.all("SELECT symbol_name, symbol_id, symbol_change_id FROM symbol WHERE document_id = ?", [sketch.document.do_objectID]);
   const symbolNameToIdMap = {};
@@ -89,20 +147,125 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       },
       ...args
     });
-    if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
-      symbol.groupLayout = {
-        "_class": "MSImmutableInferredGroupLayout",
-        "axis": 0,
-        "layoutAnchor": 0,
-        "maxSize": 0,
-        "minSize": 0
-      };
-    }
-    if (symbol.groupLayout && symbol.layers && symbol.layers[0]) {
-      symbol.layers[0].groupLayout = {...symbol.groupLayout};
-    }
+    config.setSymbolResizing(symbol);
+
     return symbol;
   };
+
+  function positionString(position) {
+    if (position === 0) {
+      return 'inside';
+    } else if (position === 1) {
+      return 'center';
+    } else if (position === 2) {
+      return 'outside';
+    } else {
+      return '';
+    }
+  }
+
+  function colorString(fillOrBorder) {
+    if (!fillOrBorder.color) {
+      if (fillOrBorder.image) return 'image';
+      return 'default';
+    }
+    const {red,green,blue,alpha} = fillOrBorder.color;
+    return `rgba(${Math.floor(red*255.999)}, ${Math.floor(green*255.999)}, ${Math.floor(blue*255.999)}, ${Math.floor(alpha*1000)/1000})`;
+  }
+
+  const styleMap = new Map();
+  function createSymbolOverrides(symbol, symbolVariantName) {
+    const keys = Object.keys(symbol);
+    for (let i = 0 ; i < keys.length; i++) {
+      const key = keys[i];
+      const symbolValue = symbol[key];
+      if (key === 'do_objectID') {
+        objectID = symbolValue;
+      }
+      if (Array.isArray(symbolValue)) {
+        symbolValue.forEach((nestedJson, i) => createSymbolOverrides(nestedJson, symbolVariantName));
+      } else if (!excludeKeys.has(key) && typeof symbolValue === 'string') {
+        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
+        // const overrideValue = {
+        //   "_class": "overrideValue",
+        //   "overrideName": `${objectID}_${key}Value`,
+        //   "value": jsonValue
+        // };
+        // instance.overrideValues.push(overrideValue);
+      } else if (typeof symbolValue === 'object') {
+        // If we're in style, do fill, borders and textStyle comparisons
+        // If they differ, create a new SharedStyle and assign it to the symbol instance.
+        if (key === 'style') {
+          let differs = false;
+          let textDiffers = false;
+          const override = {};
+          const textOverride = {};
+          if (symbolValue.borders && symbolValue.borders.length > 0) {
+            differs = true;
+            override.borders = symbolValue.borders;
+          }
+          if (symbolValue.fills && symbolValue.fills.length > 0) {
+            differs = true;
+            override.fills = symbolValue.fills;
+          }
+          if (symbolValue.textStyle) {
+            textDiffers = true;
+            textOverride.textStyle = symbolValue.textStyle;
+          }
+          if (differs) {
+            // console.log('style override', JSON.stringify(override, null, 4));
+            if (!symbol.sharedStyleID && symbol.name !== 'Background') {
+              var styleKey = JSON.stringify(override);
+              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
+                symbol.name = 'Icon Color';
+              }
+              if (styleMap.has(styleKey)) {
+                symbol.sharedStyleID = styleMap.get(styleKey);
+              } else {
+                var styleName = "";
+                if (override.fills) {
+                  styleName += "Fill " + override.fills.map(b => `${colorString(b)}` ).join(", ");
+                }
+                if (override.borders) {
+                  if (override.fills) styleName += ' / ';
+                  styleName += "02 Border " + override.borders.map(b => `${Math.floor(100*b.thickness)/100}px ${positionString(b.position)} ${colorString(b)}` ).join(", ");
+                } else if (override.fills) {
+                  styleName += ' / 01 No Border';
+                }
+                // Make a shared style for the SymbolMaster
+                const sharedStyle = new SharedStyle(null, {
+                  name: styleName,
+                  do_objectID: uuid(),
+                  _class: 'sharedStyle',
+                  value: symbolValue
+                });
+                sketch.addLayerStyle(sharedStyle);
+                symbol.sharedStyleID = sharedStyle.do_objectID;
+                styleMap.set(styleKey, symbol.sharedStyleID);
+              }
+            }
+          }
+          if (textDiffers) {
+            // Uncomment below to enable text style overrides
+            // console.log('textStyle override', JSON.stringify(textOverride, null, 4));
+            // if (!symbol.sharedStyleID) {
+            //   // Make a shared style for the SymbolMaster
+            //   const sharedStyle = new SharedStyle(null, {
+            //     name: symbolVariantName,
+            //     do_objectID: uuid(),
+            //     _class: 'sharedStyle',
+            //     value: symbolValue
+            //   });
+            //   sketch.addTextStyle(sharedStyle);
+            //   symbol.sharedStyleID = sharedStyle.do_objectID;
+            //   // console.log(symbolVariantName, variantName);
+            // }
+          }
+        }
+        createSymbolOverrides(symbolValue, symbolVariantName);
+      }
+    }
+  }
 
   function isSymbolInstanceOf(instance, symbol, json, objectID = '', symbolName, parentFrames) {
     if (!symbol || !json) {
@@ -323,6 +486,9 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     /*
       Handle symbol creation and instancing
     */
+    if (enhanced.name && enhanced.name.startsWith('Text Lists / list')) {
+      enhanced.isSymbol = false;
+    }
     if (enhanced['_class'] === 'group' && enhanced.isSymbol === true) {
       // Find all symbols with the same name.
       let symbolArray = symbols.get(enhanced.name);
@@ -338,6 +504,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance = master.createInstance({name: enhanced.name});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
+        instance.rotation = enhanced.rotation;
         try {
           isSymbolInstanceOf(instance, master, enhanced, '', master.name);
           fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
@@ -346,6 +513,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           return false;
         }
       });
+      
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
         symbol = symbolMaster({...enhanced, name: getSymbolName(enhanced.name)});
@@ -353,30 +521,26 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
         if (symbolNameToIdMap[symbol.stableSymbolName]) {
-          console.log("Reusing symbol ID:", symbol.stableSymbolName, '-', symbol.name, "-", symbolNameToIdMap[symbol.stableSymbolName].symbolID, "-", symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier);
+          // console.log("Reusing symbol ID:", symbol.stableSymbolName, '-', symbol.name, "-", symbolNameToIdMap[symbol.stableSymbolName].symbolID, "-", symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier);
           symbol.symbolID = symbolNameToIdMap[symbol.stableSymbolName].symbolID;
           symbol.changeIdentifier = (symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier || 0) + 1;
         } else {
-          console.log("Creating symbol ID:", symbol.stableSymbolName, symbol.changeIdentifier || 0);
+          // console.log("Creating symbol ID:", symbol.stableSymbolName, symbol.changeIdentifier || 0);
         }
         symbolNameToIdMap[symbol.stableSymbolName] = {symbolID: symbol.symbolID, changeIdentifier: symbol.changeIdentifier || 0};
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        if (!/^Icon|(Unnamed Components \/ icon\-\d+)/.test(symbol.name)) {
-          symbol.groupLayout = {
-            "_class": "MSImmutableInferredGroupLayout",
-            "axis": 0,
-            "layoutAnchor": 0,
-            "maxSize": 0,
-            "minSize": 0
-          };
-        }
+        createSymbolOverrides(symbol, symbol.name);
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
+        instance.rotation = enhanced.rotation;
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
+        if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
+          instance.name = 'Icon';
+        }
       }
       return instance;
     }
@@ -384,17 +548,63 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   }
 
   function simplifyTree(node, parent) {
-    if (node.layers && !node.isSymbol) {
-      node.layers.forEach(l => simplifyTree(l, node));
-      if ((node.name == 'div' || node.layers.length == 1) && parent) {
+    if (node.layers) {
+      var minX, minY, maxX, maxY;
+      minX = minY = Infinity;
+      maxX = maxY = -Infinity;
+      if (node.frame.width === 0 || node.frame.height === 0) {
+        node.frame.x = node.frame.y = node.frame.width = node.frame.height = 0;
+      }
+      var hadALayer = false;
+      node.layers.forEach(l => {
+        simplifyTree(l, node);
+        if (l.frame) {
+          hadALayer = true;
+          if (l.frame.x < minX) minX = l.frame.x;
+          if (l.frame.x + l.frame.width > maxX) maxX = l.frame.x + l.frame.width;
+          if (l.frame.y < minY) minY = l.frame.y;
+          if (l.frame.y + l.frame.height > maxY) maxY = l.frame.y + l.frame.height;
+        }
+      });
+      if ((node.name === 'div' || node.layers.length === 1) && parent && !node.isSymbol && (!(node.layers[0] && node.layers[0].name === 'Background')) && node.rotation === 0) {
         const idx = parent.layers.indexOf(node);
         parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
         node.layers.forEach(l => {
-          l.frame.x += node.frame.x;
-          l.frame.y += node.frame.y;
+          if (l.frame) {
+            l.frame.x += node.frame.x;
+            l.frame.y += node.frame.y;
+          }
         });
+      } else {
+        if (hadALayer && (minX !== 0 || minY !== 0)) {
+          node.frame.x += minX;
+          node.frame.y += minY;
+          node.frame.width = maxX - minX;
+          node.frame.height = maxY - minY;
+          node.layers.forEach(l => {
+            if (l.frame) {
+              l.frame.x -= minX;
+              l.frame.y -= minY;
+            }
+          });
+        }
       }
+
     }
+    // if (node.frame) {
+    //   if (node.frame.x < 0 || node.frame.y < 0)  {
+    //     parent.frame.x += node.frame.x;
+    //     parent.frame.y += node.frame.y;
+    //     parent.layers.forEach(l => {
+    //       if (l !== node && l.frame) {
+    //         l.frame.x -= node.frame.x;
+    //         l.frame.y -= node.frame.y;
+    //       }
+    //     });
+    //     node.frame.x = 0;
+    //     node.frame.y = 0;
+    //   }
+    // }
   }
 
   const symbolsPage = new Page({
@@ -404,6 +614,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   sketch.addPage(symbolsPage);
 
   const jsons = fs.readdirSync(path.resolve(__dirname, "../sketch-json")).filter(fn => fn.endsWith('.json'));
+  jsons.sort();
   jsons.forEach(jsonFn => {
     const json = require(`../sketch-json/${jsonFn}`);
 
@@ -446,6 +657,72 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     });
   }
 
+  const sketchColors = [];
+
+  var includes = fs.readdirSync(`./includes`).filter(fn => fn.startsWith(documentName+'.'));
+  for (const includeFile of includes) {
+    if (/\.sketch$/i.test(includeFile)) {
+      var doc = await Sketch.fromFile(`./includes/${includeFile}`);
+      // Copy foreign references over
+      sketch.document.foreignLayerStyles = sketch.document.foreignLayerStyles.concat(doc.document.foreignLayerStyles);
+      sketch.document.foreignSwatches = (sketch.document.foreignSwatches||[]).concat(doc.document.foreignSwatches);
+      sketch.document.foreignSymbols = (sketch.document.foreignSymbols||[]).concat(doc.document.foreignSymbols);
+      sketch.document.foreignTextStyles = (sketch.document.foreignTextStyles||[]).concat(doc.document.foreignTextStyles);
+      sketch.document.layerStyles.objects = sketch.document.layerStyles.objects.concat(doc.document.layerStyles.objects);
+      sketch.document.layerTextStyles.objects = sketch.document.layerTextStyles.objects.concat(doc.document.layerTextStyles.objects);
+      // Copy pages over
+      doc.pages.forEach(page => {
+        if (page.name === 'Symbols') {
+          for (const symbol of page.layers) {
+            symbol.frame.x = 0;
+            symbol.frame.y = y;
+            y += gutter + symbol.frame.height;
+            symbolsPage.addLayer(symbol);
+          }
+        } else {
+          sketch.addPage(page);
+        }
+      });
+    }
+  }
+
+  const designTokens = await import('@scaleds/design-tokens-telekom/dist/design-tokens-telekom.js');
+  parseColors(sketchColors, [], designTokens.color);
+
+  // Add color swatches
+  sketch.document.sharedSwatches = {
+    _class: "swatchContainer",
+    do_objectID: "C33E0022-6453-41F9-B5AF-F0B0F144B939",
+    objects: sketchColors
+  };
+  sketch.document.documentState = { "_class": "documentState" }
+  sketch.document.layerSymbols.do_objectID = uuid();
+
+  // Sort pages by name, Symbols on top.
+  const sortedPages = Object.entries(sketch.meta.pagesAndArtboards).sort((a,b) => {
+    if (a[1].name === 'Symbols') return -1;
+    if (b[1].name === 'Symbols') return 1;
+    return a[1].name.localeCompare(b[1].name);
+  });
+  sketch.meta.pagesAndArtboards = Object.fromEntries(sortedPages);
+  sketch.document.pages = sortedPages.map(([oid, _]) => ({
+    "_class": "MSJSONFileReference",
+    "_ref_class": "MSImmutablePage",
+    "_ref": `pages/${oid}`
+  }));
+
+  // Upgrade document version to allow color swatches.
+  sketch.meta.commit = "238f363ed3de77eb1d86e03176f8a10f7928ed51";
+  sketch.meta.version = 134;
+  sketch.meta.compatibilityVersion = 99;
+  sketch.meta.appVersion = "69";
+
+  sketch.meta.created.commit = "238f363ed3de77eb1d86e03176f8a10f7928ed51";
+  sketch.meta.created.version = 134;
+  sketch.meta.created.compatibilityVersion = 99;
+  sketch.meta.created.appVersion = "69";
+
+  // Update Symbol IDs
   const queries = [];
   for (const symbolName in symbolNameToIdMap) {
     const s = symbolNameToIdMap[symbolName];
@@ -454,9 +731,44 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     );
   }
   await Promise.all(queries);
+  let version = (await documentDB.get("SELECT document_version FROM document WHERE document_id = ?", [sketch.document.do_objectID])).document_version;
+  console.log(`Old document version`, version);
+  version++;
+  console.log(`New document version`, version);
+  await documentDB.run("UPDATE document SET document_version = ? WHERE document_id = ?", [version, sketch.document.do_objectID]);
 
-  sketch.build(`./sketch/${documentName}.sketch`).then(() => {
+  var versionSymbol = new SymbolMaster({
+    id: `${documentName}-version-master`,
+    symbolID: `${documentName}-version`,
+    name: 'Z Build Version'
+  });
+  versionSymbol.frame.x = 0;
+  versionSymbol.frame.y = y;
+  versionSymbol.addLayer(new Text({
+    string: `${documentName} - version ${version}, built on ${new Date().toLocaleString()}`,
+    name: "Version",
+    fontSize: 24,
+    color: "#404040"
+  }));
+  symbolsPage.addLayer(versionSymbol);
+
+  if (fs.existsSync(`./${documentName}.png`)) {
+    Sketch.addPreview(`./${documentName}.png`);
+  }
+
+  const symbolJSON = JSON.stringify(symbolsPage, null, 2);
+  fs.writeFileSync(`./sketch/${documentName}.${version}.symbols.json`, symbolJSON);
+
+  sketch.build(`./sketch/${documentName}.sketch`, 9).then(() => {
     console.log(`Built ./sketch/${documentName}.sketch`);
   });
+
+  rssBuilder.build(`./sketch/${documentName}.xml`, {
+    title: config.libraryTitle + " build " + version,
+    description: config.libraryDescription,
+    url: `${serverPath}${documentName}.sketch`,
+    version: version
+  });
+  console.log(`Built ./sketch/${documentName}.xml`);
 
 })();

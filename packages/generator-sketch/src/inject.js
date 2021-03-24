@@ -4,10 +4,14 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 const URL = require("url").URL;
-const DEBUG = false;
 const crypto = require("crypto");
 
 let server;
+
+const DEBUG = process.argv.includes("--debug");
+if (DEBUG) {
+  process.argv.splice(process.argv.indexOf("--debug"), 1);
+}
 
 if (process.argv.length > 2 && /^https?:/i.test(process.argv[2])) {
   server = {
@@ -81,7 +85,6 @@ puppeteer
           path: "./dist/build/page2layers.bundle.js",
         });
 
-
         const cdp = await page.target().createCDPSession();
 
         await cdp.send("DOM.enable");
@@ -90,17 +93,17 @@ puppeteer
         const domNodes = {};
         const nodesByParent = {};
 
-        async function recursivelyForcePseudoState(node, state) {
+        async function recursivelyForcePseudoState(node, state, depth=0) {
           await cdp.send("CSS.forcePseudoState", {
             nodeId: node.nodeId,
             forcedPseudoClasses: [state],
           });
-          if (state !== 'focus' && state !== 'focus-within') {
+          //if ((state !== 'focus' && state !== 'focus-within')) {
             if (node.shadowRoots && node.shadowRoots[0]) {
-              await Promise.all((nodesByParent[node.shadowRoots[0].nodeId] || []).map(n => recursivelyForcePseudoState(n, state).catch(e => {})));
+              await Promise.all((nodesByParent[node.shadowRoots[0].nodeId] || []).map(n => recursivelyForcePseudoState(n, state, depth+1).catch(e => {})));
             }
-            await Promise.all((nodesByParent[node.nodeId] || []).map(n => recursivelyForcePseudoState(n, state).catch(e => {})));
-          }
+            await Promise.all((nodesByParent[node.nodeId] || []).map(n => recursivelyForcePseudoState(n, state, depth+1).catch(e => {})));
+          //}
         }
 
         const nodes = (await cdp.send("DOM.getFlattenedDocument", {depth: -1, pierce: true})).nodes;
@@ -129,12 +132,11 @@ puppeteer
         }
         await delay(3000); // Wait a bit for relayout and transitions
 
-
         const asketchPage = await page.evaluate("page2layers.run()");
 
         fs.writeFileSync(
           path.resolve(__dirname, outputFile),
-          JSON.stringify(asketchPage)
+          JSON.stringify(asketchPage, null, 2)
         );
       } catch (e) {
         console.log(e);

@@ -1,7 +1,7 @@
 <div data-sketch-artboard="Divider" class="artboard">
     <h1 class="title--artboard">Divider</h1>
 
-    <h2 class="title--artboard-section">Horizontal</h2>
+    <h2 class="title--artboard-section">Standard</h2>
     <div class="agent-states--fullwidth">
       <scale-divider data-sketch-key="divider-horizontal"></scale-divider>
     </div>
@@ -16,7 +16,7 @@
 <script>
     Array.from(document.querySelectorAll("scale-divider")).forEach(btn => {
         btn.dataset.sketchSymbol = `Divider / ${
-                order(2, (btn.getAttribute('vertical') === null ? 'Horizontal' : 'Vertical'))
+                order(2, (btn.getAttribute('vertical') === null ? 'Standard' : 'Vertical'))
             }`;
     });
 </script>

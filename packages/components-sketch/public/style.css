@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+scale-switch * {
+    box-sizing: content-box;
+}
+
+:focus,
+:focus-within {
+    outline: 0;
+}
+
+
 html,
 body {
     padding: 0;
@@ -99,9 +109,15 @@ scale-input[type="select"] {
   width: 198px;
   display: block;
 }
+.input__select {
+  background: white;
+}
 
-.switch-wrapper {
-  display: flex;
-  min-width: 96px;
-  justify-content: space-between;
+.hide-pseudo:before,
+.hide-pseudo:after {
+    content: none !important;
+}
+
+a[href="https://foo/"] {
+    display: none;
 }
