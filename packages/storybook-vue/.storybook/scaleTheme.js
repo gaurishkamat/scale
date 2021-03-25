@@ -1,10 +1,10 @@
 import { create } from "@storybook/theming/create";
+import { color } from "../public/design-tokens-telekom";
 
-const PRIMARY = "#e20074";
-const SECONDARY = "#007db3";
-const WHITE = "#ffffff";
-const TEXT = "#262626";
-const GREY = "#F4F4F4";
+const PRIMARY = color.magenta;
+const WHITE = color.white;
+const TEXT = color.text.standard;
+const GREY = color.grey0;
 
 export default create({
   base: "light",
@@ -41,5 +41,5 @@ export default create({
   brandTitle: "Telekom Scale Design System",
   // TODO add URL
   // brandUrl: 'https://example.com',
-  brandImage: "assets/Telekom-Logo-Magenta-350x150.svg",
+  brandImage: "assets/Telekom-Logo-Magenta-350x150.svg"
 });

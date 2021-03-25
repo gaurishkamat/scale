@@ -81,10 +81,10 @@
   .header {
     height: var(--header-nav-height);
   }
-  .header.sticky .header__nav-before {
-    top: 51px;
-  }
-  .header.sticky .header__nav-after {
+  .header.menu--open .header__nav-before,
+  .header.sticky .header__nav-before,
+  .header.sticky .header__nav-after,
+  .header.menu--open .header__nav-after {
     top: 51px;
   }
 

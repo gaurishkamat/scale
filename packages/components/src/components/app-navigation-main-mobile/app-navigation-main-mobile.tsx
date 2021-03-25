@@ -112,7 +112,7 @@ export class MainNavigationMobile {
         >
           <div class="main-navigation-mobile__child-menu-current-item">
             <div class="main-navigation-mobile__child-menu-current-wrapper">
-              <scale-icon name="back"></scale-icon>
+              <scale-icon-navigation-left></scale-icon-navigation-left>
               <div>{section.name}</div>
             </div>
           </div>
@@ -157,7 +157,9 @@ export class MainNavigationMobile {
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
                   {isActive(child) && <span class="sr-only">active</span>}
-                  {child.children && <scale-icon name="ahead"></scale-icon>}
+                  {child.children && (
+                    <scale-icon-navigation-right></scale-icon-navigation-right>
+                  )}
                 </div>
               </li>
             </a>
@@ -217,7 +219,9 @@ export class MainNavigationMobile {
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
                   {isActive(item.id) && <span class="sr-only">active</span>}
-                  {item.children && <scale-icon name="ahead"></scale-icon>}
+                  {item.children && (
+                    <scale-icon-navigation-right></scale-icon-navigation-right>
+                  )}
                 </div>
               </li>
             </a>

@@ -16,6 +16,19 @@
 | `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`             |
 
 
+## Dependencies
+
+### Used by
+
+ - [app-navigation-main-mobile](../../app-navigation-main-mobile)
+
+### Graph
+```mermaid
+graph TD;
+  app-navigation-main-mobile --> scale-icon-navigation-left
+  style scale-icon-navigation-left fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

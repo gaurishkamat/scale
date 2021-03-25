@@ -23,7 +23,6 @@
 
 ### Used by
 
- - [app-navigation-main-mobile](../app-navigation-main-mobile)
  - [scale-app-footer](../app-footer)
  - [scale-checkbox](../checkbox)
  - [scale-data-grid](../data-grid)
@@ -37,7 +36,6 @@
 ### Graph
 ```mermaid
 graph TD;
-  app-navigation-main-mobile --> scale-icon
   scale-app-footer --> scale-icon
   scale-checkbox --> scale-icon
   scale-data-grid --> scale-icon

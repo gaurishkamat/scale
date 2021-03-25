@@ -41,7 +41,8 @@ graph TD;
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
   scale-nav-icon --> scale-icon
-  app-navigation-main-mobile --> scale-icon
+  app-navigation-main-mobile --> scale-icon-navigation-left
+  app-navigation-main-mobile --> scale-icon-navigation-right
   style scale-app-shell fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

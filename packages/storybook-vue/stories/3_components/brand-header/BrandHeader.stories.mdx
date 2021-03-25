@@ -179,11 +179,11 @@ import AppShell from './AppShell.vue';
         components: { AppShell },
         props: AppShell.props,
         methods: {
-            handleMouseEnter: function() {
+            handleOpen: function() {
                 this.$refs.header.isMegaMenuVisible=true;
                 this.$refs.navMainWithMegaMenu.isMegaMenuVisible=true;
             },
-            handleMouseLeave: function() {
+            handleClose: function() {
                 this.$refs.header.isMegaMenuVisible=false;
                 this.$refs.navMainWithMegaMenu.isMegaMenuVisible=false;
             },
@@ -201,10 +201,11 @@ import AppShell from './AppShell.vue';
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                @keydown="$event.key === 'Escape' && handleClose()"
             >
                 <div slot="menu-main">
                   <scale-nav-main name="Custom Item #1"></scale-nav-main>
-                  <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu" ref="navMainWithMegaMenu" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+                  <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu" ref="navMainWithMegaMenu" @mouseenter="handleOpen" @mouseleave="handleClose" @keydown="$event.key === 'Enter' && handleOpen()">
                     <app-mega-menu>
                       <div slot="custom-body"><pre>custom-body</pre></div>
                     </app-mega-menu></scale-nav-main>
@@ -253,6 +254,12 @@ import AppShell from './AppShell.vue';
       const navMainWithMegaMenu = document.getElementById(
         'nav-main-with-mega-menu'
       );
+      header.addEventListener('keydown', function(event) {
+          if(event.key === 'Escape') {
+              navMainWithMegaMenu.isMegaMenuVisible = false
+              header.isMegaMenuVisible = false
+          }
+      });
       navMainWithMegaMenu.addEventListener('mouseenter', function() {
         navMainWithMegaMenu.isMegaMenuVisible = true;
         header.isMegaMenuVisible = true;
@@ -260,6 +267,12 @@ import AppShell from './AppShell.vue';
       navMainWithMegaMenu.addEventListener('mouseleave', function() {
         navMainWithMegaMenu.isMegaMenuVisible = false;
         header.isMegaMenuVisible = false;
+      });
+      navMainWithMegaMenu.addEventListener('keydown', function(event) {
+        if(event.key === 'Enter') {
+            navMainWithMegaMenu.isMegaMenuVisible = true;
+            header.isMegaMenuVisible = true;
+        }
       });
   </script>
 </body>

@@ -88,6 +88,17 @@ export class Header {
     if (event) {
       event.preventDefault();
     }
+    if (event && 'key' in event) {
+      if (!['Escape', 'Enter'].includes(event.key)) {
+        return;
+      }
+      if (event.key === 'Escape' && !this.mobileMenu) {
+        return;
+      }
+      if (event.key === 'Enter' && this.mobileMenu) {
+        return;
+      }
+    }
     this.mobileMenu = !this.mobileMenu;
   }
 
@@ -106,7 +117,14 @@ export class Header {
       !this.visibleMegaMenu &&
       this.visibleMegaMenu !== null;
     return (
-      <ul class="main-navigation">
+      <ul
+        class="main-navigation"
+        onKeyDown={e => {
+          if (e.key === 'Escape') {
+            this.visibleMegaMenu = '';
+          }
+        }}
+      >
         {this.hasSlotMenuMain ? (
           <slot name="menu-main"></slot>
         ) : (
@@ -174,7 +192,8 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {(!this.hasSlotMenuMain || this.hasSlotMenuMobile) && (
+        {((!this.hasSlotMenuMain && this.data.mainNavigation.length > 0) ||
+          this.hasSlotMenuMobile) && (
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
             icon={this.mobileMenu ? 'action-circle-close' : 'action-menu'}
