@@ -30,6 +30,12 @@
   font-weight: var(--scl-font-weight-bold);
 }
 
+:host([nesting-level='3']) .sidebar-nav-item {
+  border-left-color: var(--scl-color-grey-70);
+  border-left-style: solid;
+  border-left-width: 0.0625rem;
+}
+
 ::slotted(a) {
   color: currentColor;
   display: block;
