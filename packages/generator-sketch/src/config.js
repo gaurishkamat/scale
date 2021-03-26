@@ -27,9 +27,9 @@ module.exports = {
       };
     } else {
       var icon = findLayer(symbol, s => s.name === "svg.icon");
-      if (icon) icon.resizingConstraint = 45;
+      if (icon) icon.resizingConstraint = 18;
       if (symbol.layers && symbol.layers[0]) {
-        symbol.layers[0].resizingConstraint = 45;
+        symbol.layers[0].resizingConstraint = 18;
       }
     }
 
