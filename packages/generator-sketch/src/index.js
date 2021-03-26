@@ -173,6 +173,22 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     return `rgba(${Math.floor(red*255.999)}, ${Math.floor(green*255.999)}, ${Math.floor(blue*255.999)}, ${Math.floor(alpha*1000)/1000})`;
   }
 
+  const svgMap = new Map();
+  function collapseIcons(symbol) {
+    return symbol;
+    const svg = symbol.layers[0].find(l => l._class === 'svg');
+    if (svg) {
+      if (svgMap.has(svg.rawSVGString)) {
+        console.log("Found SVG!");
+      } else {
+        console.log("New SVG, adding");
+        svgMap.set(svg.rawSVGString, symbol);
+      }
+    } else {
+      console.log("No SVG in Icon");
+    }
+  }
+
   const styleMap = new Map();
   function createSymbolOverrides(symbol, symbolVariantName) {
     const keys = Object.keys(symbol);
@@ -214,7 +230,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           }
           if (differs) {
             // console.log('style override', JSON.stringify(override, null, 4));
-            if (!symbol.sharedStyleID && symbol.name !== 'Background') {
+            if (!symbol.sharedStyleID && symbol.name !== 'Background' && !/^border/.test(symbol.name)) {
               var styleKey = JSON.stringify(override);
               if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
                 symbol.name = 'Icon Color';
@@ -415,7 +431,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
               });
               sketch.addTextStyle(sharedStyle);
               symbol.sharedStyleID = sharedStyle.do_objectID;
-              console.log(symbolVariantName, variantName);
+              console.log('symbol.sharedStyleID', symbolVariantName, variantName);
             }
             let sharedStyle = sketch.getTextStyles().find(s => s.name === variantName);
             if (!sharedStyle) {
@@ -435,7 +451,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
             instance.overrideValues.push(overrideValue);
           }
           if (differs || textDiffers) {
-            console.log(symbolVariantName, variantName);
+            // console.log('symbol uses diff style', symbolVariantName, variantName);
             continue;
           }
         }
@@ -486,9 +502,6 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     /*
       Handle symbol creation and instancing
     */
-    if (enhanced.name && enhanced.name.startsWith('Text Lists / list')) {
-      enhanced.isSymbol = false;
-    }
     if (enhanced['_class'] === 'group' && enhanced.isSymbol === true) {
       // Find all symbols with the same name.
       let symbolArray = symbols.get(enhanced.name);
@@ -499,7 +512,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       // Try to create a symbol instance.
       // If the symbol is too different, we create a master symbol instead below.
       let instance;
-      let symbol = false && symbolArray.find(master => {
+      const isIcon = false && enhanced.name.startsWith('Unnamed Components / icon');
+      let symbol = isIcon && symbolArray.find(master => {
         if (master.variant !== enhanced.variant) return false;
         instance = master.createInstance({name: enhanced.name});
         instance.frame = new Rect(enhanced.frame);
@@ -513,6 +527,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           return false;
         }
       });
+      if (isIcon) symbol = collapseIcons(symbol);
       
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
@@ -532,6 +547,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
         createSymbolOverrides(symbol, symbol.name);
+        const symbolShouldHaveOverrides = !/(Sidebar.*Example)/.test(symbol.name);
+        symbol.allowsOverrides = symbolShouldHaveOverrides;
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
