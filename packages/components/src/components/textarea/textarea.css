@@ -16,6 +16,7 @@ scale-textarea {
   --font-size-meta: var(--scl-font-size-12);
   --line-height-meta: var(--scl-font-line-height-133);
   --spacing-y-meta: var(--scl-spacing-4);
+  --color-meta: var(--scl-color-text-standard);
   --color-meta-error: var(--scl-color-text-error);
 
   /*input*/
@@ -97,6 +98,7 @@ scale-textarea {
   display: flex;
   justify-content: space-between;
   margin-top: var(--spacing-y-meta);
+  color: var(--color-meta);
 }
 
 .textarea:not(.textarea--disabled) .input__textarea:hover {

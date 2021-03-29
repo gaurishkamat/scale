@@ -29,6 +29,7 @@ scale-dropdown {
 
   /*meta*/
   --spacing-y-meta: var(--scl-spacing-4);
+  --color-meta: var(--scl-color-text-standard);
 
   /*icon*/
   --icon-color-hover: var(--scl-color-primary-hover, #f90984);
@@ -85,6 +86,7 @@ scale-dropdown {
   display: flex;
   justify-content: space-between;
   margin-top: var(--spacing-y-meta);
+  color: var(--color-meta);
 }
 .dropdown:not(.dropdown--disabled):hover .input__dropdown-wrapper {
   --icon-color: var(--icon-color-hover);
