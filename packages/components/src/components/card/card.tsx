@@ -25,9 +25,10 @@ export class Card {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class="card-border">
+        <div class="card-border" part="border">
           <Tag
             class={this.getCssClassMap()}
+            part={classNames('base', !!this.to && 'interactive')}
             onClick={this.clickCard}
             {...(!this.to ? { role: 'group' } : {})}
             {...(!!this.to ? { href: this.to } : {})}
@@ -35,7 +36,7 @@ export class Card {
             {...(!!this.rel ? { rel: this.rel } : {})}
             {...(!!this.label ? { ['aria-label']: this.label } : {})}
           >
-            <div class="card__body">
+            <div class="card__body" part="body">
               <slot />
             </div>
           </Tag>

@@ -1,3 +1,19 @@
+:host {
+  --background: var(--scl-color-background-standard);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --radius: var(--scl-radius-8);
+  --box-shadow: var(--scl-shadow-level-1);
+  --box-shadow-hover: var(--scl-shadow-level-1-hover);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --box-shadow-active: var(--scl-shadow-level-1-active);
+
+  --spacing-body: var(--scl-spacing-24);
+
+  --spacing-body-slotted: 0;
+  --spacing-body-slotted-interactive: 0;
+}
+
 .card-border {
   /* a11y: add border for high contrast mode */
   border: 1px solid transparent;
@@ -6,19 +22,18 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background: var(--scl-color-background-standard);
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  border-radius: var(--scl-radius-8);
-  box-shadow: var(--scl-shadow-level-1);
+  background: var(--background);
+  transition: var(--transition);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
 }
 
 .card__body {
-  padding: var(--scl-spacing-24);
+  padding: var(--spacing-body);
 }
 
 .card__body ::slotted(*) {
-  margin: 0;
+  margin: var(--spacing-body-slotted);
 }
 
 .card--interactive {
@@ -30,19 +45,18 @@
 }
 
 .card--interactive:hover {
-  box-shadow: var(--scl-shadow-level-1-hover);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .card--interactive:focus {
-  box-shadow: var(--scl-shadow-level-1-hover),
-    0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: var(--scl-shadow-level-1-hover), var(--box-shadow-focus);
 }
 
 .card--interactive:active {
   border: none;
-  box-shadow: var(--scl-shadow-level-1-active);
+  box-shadow: var(--box-shadow-active);
 }
 
 .card--interactive .card__body ::slotted(*) {
-  margin: 0;
+  margin: var(--spacing-body-slotted-interactive);
 }

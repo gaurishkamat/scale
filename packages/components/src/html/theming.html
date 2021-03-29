@@ -26,6 +26,10 @@
         background: transparent;
       }
 
+      a-divider[small] {
+        height: var(--scl-spacing-16);
+      }
+
       a-heading {
         display: block;
         margin-bottom: var(--scl-spacing-16);
@@ -196,5 +200,26 @@
       <a href="#b">B link</a>
       <a href="#c">C link</a>
     </scale-breadcrumb>
+
+    <a-divider></a-divider>
+
+    <a-heading>Card</a-heading>
+
+    <style>
+      /* scale-card */
+      scale-card::part(interactive) {
+        border: 1px solid gold;
+      }
+    </style>
+
+    <scale-card style="--spacing-body: 1rem; --background: lime">
+      OK, what's up?
+    </scale-card>
+
+    <a-divider small></a-divider>
+
+    <scale-card to="https://example.com" style="">
+      Linking to that example page.
+    </scale-card>
   </body>
 </html>
