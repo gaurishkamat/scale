@@ -25,8 +25,6 @@ export class Textarea {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input size */
-  @Prop() size?: string = '';
   /** (optional) textarea row */
   @Prop() rows?: number;
   /** (optional) textarea column */

@@ -4460,13 +4460,13 @@ export class ScaleTextField {
 import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
 export declare interface ScaleTextarea extends Components.ScaleTextarea {}
 @ProxyCmp({
-  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'status', 'styles', 'transparent', 'value']
 })
 @Component({
   selector: 'scale-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'status', 'styles', 'transparent', 'value'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleTextarea {

@@ -3783,7 +3783,6 @@ export const ScaleTextarea = /*@__PURE__*/ Vue.extend({
   props: {
     name: {} as PropOptions<Components.ScaleTextarea['name']>,
     label: {} as PropOptions<Components.ScaleTextarea['label']>,
-    size: {} as PropOptions<Components.ScaleTextarea['size']>,
     rows: {} as PropOptions<Components.ScaleTextarea['rows']>,
     cols: {} as PropOptions<Components.ScaleTextarea['cols']>,
     helperText: {} as PropOptions<Components.ScaleTextarea['helperText']>,

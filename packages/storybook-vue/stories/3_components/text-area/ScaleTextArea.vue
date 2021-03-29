@@ -2,7 +2,6 @@
   <scale-input
     :name="name"
     :label="label"
-    :size="size"
     :rows="rows"
     :cols="cols"
     :helper-text="helperText"
@@ -33,7 +32,6 @@ export default {
   props: {
     name: { type: String },
     label: { type: String },
-    size: { type: String },
     rows: { type: Number },
     cols: { type: Number },
     helperText: { type: String },

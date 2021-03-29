@@ -5312,10 +5312,6 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * (optional) Input size
-         */
-        "size"?: string;
-        /**
           * (optional) Input status
          */
         "status"?: string;
@@ -12429,10 +12425,6 @@ declare namespace LocalJSX {
           * (optional) textarea row
          */
         "rows"?: number;
-        /**
-          * (optional) Input size
-         */
-        "size"?: string;
         /**
           * (optional) Input status
          */

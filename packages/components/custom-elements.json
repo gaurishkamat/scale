@@ -7142,10 +7142,6 @@
           "description": "(optional) textarea row"
         },
         {
-          "name": "size",
-          "description": "(optional) Input size"
-        },
-        {
           "name": "status",
           "description": "(optional) Input status"
         },
