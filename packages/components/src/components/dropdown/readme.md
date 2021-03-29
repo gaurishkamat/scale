@@ -17,7 +17,6 @@
 | `label`       | `label`        | (optional) Input label                                                   | `string`           | `''`          |
 | `multiple`    | `multiple`     | (optional) select multiple options                                       | `boolean`          | `undefined`   |
 | `name`        | `name`         | (optional) Input name                                                    | `string`           | `''`          |
-| `placeholder` | `placeholder`  | (optional) Input placeHolder                                             | `string`           | `''`          |
 | `required`    | `required`     | (optional) Input required                                                | `boolean`          | `undefined`   |
 | `size`        | `size`         | (optional) Input size                                                    | `string`           | `''`          |
 | `status`      | `status`       | (optional) Input status                                                  | `string`           | `''`          |

@@ -712,10 +712,6 @@
           "description": "(optional) Input name"
         },
         {
-          "name": "placeholder",
-          "description": "(optional) Input placeHolder"
-        },
-        {
           "name": "required",
           "description": "(optional) Input required"
         },

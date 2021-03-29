@@ -574,7 +574,6 @@ export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
     size: {} as PropOptions<Components.ScaleDropdown['size']>,
     helperText: {} as PropOptions<Components.ScaleDropdown['helperText']>,
     status: {} as PropOptions<Components.ScaleDropdown['status']>,
-    placeholder: {} as PropOptions<Components.ScaleDropdown['placeholder']>,
     disabled: {} as PropOptions<Components.ScaleDropdown['disabled']>,
     required: {} as PropOptions<Components.ScaleDropdown['required']>,
     value: {} as PropOptions<Components.ScaleDropdown['value']>,

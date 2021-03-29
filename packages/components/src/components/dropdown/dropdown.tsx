@@ -39,8 +39,6 @@ export class Dropdown {
   @Prop() helperText?: string = '';
   /** (optional) Input status */
   @Prop() status?: string = '';
-  /** (optional) Input placeHolder */
-  @Prop() placeholder?: string = '';
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input required */
@@ -200,10 +198,10 @@ export class Dropdown {
           <label class="input__label" htmlFor={this.inputId}>
             {this.label}
           </label>
-          <div class="input__select-wrapper">
+          <div class="input__dropdown-wrapper">
             <select
               ref={el => (this.selectElement = el)}
-              class={classNames('input__select')}
+              class="input__dropdown"
               // @ts-ignore
               value={this.value}
               onChange={this.handleSelectChange}
@@ -243,11 +241,11 @@ export class Dropdown {
 
   getCssClassMap() {
     return classNames(
-      'input',
-      this.disabled && `input--disabled`,
-      this.transparent && 'input--transparent',
-      this.status && `input--status-${this.status}`,
-      this.size && `input--size-${this.size}`,
+      'dropdown',
+      this.disabled && `dropdown--disabled`,
+      this.transparent && 'dropdown--transparent',
+      this.status && `dropdown--status-${this.status}`,
+      this.size && `dropdown--size-${this.size}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

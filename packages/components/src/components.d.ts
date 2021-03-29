@@ -460,10 +460,6 @@ export namespace Components {
          */
         "name"?: string;
         /**
-          * (optional) Input placeHolder
-         */
-        "placeholder"?: string;
-        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -7477,10 +7473,6 @@ declare namespace LocalJSX {
           * Emitted on keydown.
          */
         "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
-        /**
-          * (optional) Input placeHolder
-         */
-        "placeholder"?: string;
         /**
           * (optional) Input required
          */
