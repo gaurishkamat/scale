@@ -1,158 +1,190 @@
-.input {
+scale-text-field {
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --radius: var(--scl-radius-4);
+  --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
+  --border-color-hover: var(--scl-color-primary-hover, #f90984);
+  --border-color-focus: var(--scl-color-primary-hover, #f90984);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --height: var(--scl-spacing-48);
+  --height-small: var(--scl-spacing-40);
+  --spacing-x: var(--scl-spacing-12);
+  --color-disabled: var(--scl-color-background-disabled);
+  --background-disabled: var(--scl-color-white);
+
+  /*meta*/
+  --font-weight-meta: var(--scl-font-weight-bold);
+  --font-size-meta: var(--scl-font-size-12);
+  --line-height-meta: var(--scl-font-line-height-133);
+  --spacing-y-meta: var(--scl-spacing-4);
+  --color-meta-error: var(--scl-color-text-error);
+
+  /*input*/
+  --spacing-input: var(--scl-spacing-12) var(--spacing-x) 0
+    calc(var(--spacing-x) - 1px);
+  --transition-input: var(--transition);
+  --font-size-input: var(--scl-font-size-16);
+
+  /*counter*/
+  --transition-counter: var(--transition);
+  --font-size-counter: var(--font-size-meta);
+  --line-height-counter: var(--line-height-meta);
+  --color-counter-error: var(--color-meta-error);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--font-size-meta);
+  --line-height-helper-text: var(--line-height-meta);
+  --color-helper-text: var(--scl-color-blue-70);
+  --color-helper-text-error: var(--color-meta-error);
+
+  /*placeholder*/
+  --transition-placeholder: var(--transition);
+  --color-placeholder: var(--scl-color-grey-60);
+
+  /*label*/
+  --color-label: var(--scl-color-grey-60);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--scl-font-size-16);
+  --font-weight-label: var(--scl-font-weight-medium);
+  --font-size-label-small: var(--scl-font-size-16);
+  --font-weight-label-small: var(--scl-font-weight-medium);
+  --font-size-label-small-focus: var(--scl-font-size-10);
+  --font-size-label-focus: var(--scl-font-size-10);
+  --font-weight-label-focus: var(--scl-font-weight-bold);
+}
+
+.text-field {
   position: relative;
 }
-.input .input__helper-text,
-.input .input__counter {
-  font-weight: var(--scl-font-weight-bold);
+.text-field .input__helper-text,
+.text-field .input__counter {
+  font-weight: var(--font-weight-meta);
 }
-.input .input__input {
+.text-field .input__input {
   width: 100%;
-  height: var(--scl-spacing-48);
+  height: var(--height);
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--scl-spacing-12) var(--scl-spacing-12) 0
-    calc(var(--scl-spacing-12) - 1px);
+  padding: var(--spacing-input);
   z-index: 1;
   box-sizing: border-box;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  transition: var(--transition-input);
   font-family: inherit;
-  font-size: var(--scl-font-size-16);
-  border-radius: var(--scl-radius-4);
-  border: var(--scl-spacing-1) solid var(--scl-color-black);
+  font-size: var(--font-size-input);
+  border-radius: var(--radius);
+  border: var(--border);
 }
-.input .input__counter {
+.text-field .input__counter {
   display: flex;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--scl-spacing-12);
+  padding-right: var(--spacing-x);
   justify-content: flex-end;
-  font-size: var(--scl-font-size-12);
-  line-height: var(--scl-font-line-height-133);
+  font-size: var(--font-size-counter);
+  line-height: var(--line-height-counter);
   color: inherit;
 }
-.input .input__helper-text {
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  padding-left: var(--scl-spacing-12);
-  font-size: var(--scl-font-size-12);
-  line-height: var(--scl-font-line-height-133);
-  color: var(--scl-color-blue-70);
+.text-field .input__helper-text {
+  transition: var(--transition-helper-text);
+  padding-left: var(--spacing-x);
+  font-size: var(--font-size-helper-text);
+  line-height: var(--line-height-helper-text);
+  color: var(--color-helper-text);
 }
-.input .input__meta {
+.text-field .input__meta {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--scl-spacing-4);
+  margin-top: var(--spacing-y-meta);
 }
 
-.input:not(.input--disabled) .input__input:hover,
-.input:not(.input--disabled) .input__input:focus {
-  border-color: var(--scl-color-primary-hover, #f90984);
+.text-field:not(.text-field--disabled) .input__input:hover {
+  border-color: var(--border-color-hover);
 }
-.input:not(.input--disabled) .input__input:focus {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
+.text-field:not(.text-field--disabled) .input__input:focus {
+  border-color: var(--border-color-focus);
+  box-shadow: var(--box-shadow-focus);
 }
-.input:not(.input--disabled) .input__input:focus::placeholder {
-  color: var(--scl-color-grey-60);
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+
+.text-field:not(.text-field--disabled) .input__input:focus::placeholder {
+  color: var(--color-placeholder);
 }
-.input .input__input::placeholder,
-.input ::placeholder {
+
+.text-field .input__input::placeholder,
+.text-field ::placeholder {
   color: transparent;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  transition: var(--transition-placeholder);
 }
 
 .input__label {
   top: 0;
   left: 0;
-  color: var(--scl-color-grey-60);
+  color: var(--color-label);
   display: flex;
-  z-index: var(--scl-z-index-10);
+  z-index: var(--z-index-label);
   position: absolute;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  transition: var(--transition-label);
   pointer-events: none;
-  font-size: var(--scl-font-size-16);
-  /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
+  font-size: var(--font-size-label);
   transform: translate(
-    var(--scl-spacing-12),
-    calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2)
+    var(--spacing-x),
+    calc((var(--height) - var(--font-size-label)) / 2)
   );
-  font-weight: var(--scl-font-weight-medium);
+  font-weight: var(--font-weight-label);
 }
-.input--has-focus .input__label,
+.text-field--has-focus .input__label,
 .animated .input__label {
-  color: var(--scl-color-grey-60);
-  transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  font-size: var(--scl-font-size-10);
-  font-weight: var(--scl-font-weight-bold);
+  transform: translate(var(--spacing-x), var(--scl-spacing-8));
+  font-size: var(--font-size-label-focus);
+  font-weight: var(--font-weight-label-focus);
 }
-.input--status-error .input__input {
-  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+.text-field--status-error .input__input {
+  border: var(--border-error);
 }
-.input--status-error .input__helper-text {
-  color: var(--scl-color-text-error);
+.text-field--status-error .input__helper-text {
+  color: var(--color-helper-text-error);
 }
-.input--status-error .input__counter {
-  color: var(--scl-color-text-error);
+.text-field--status-error .input__counter {
+  color: var(--color-counter-error);
 }
-.input--size-small .input__input {
-  height: var(--scl-spacing-40);
+.text-field--size-small .input__input {
+  height: var(--height-small);
 }
-.input--size-small .input__label {
-  top: 0;
-  left: 0;
-  color: var(--scl-color-grey-60);
-  display: flex;
-  z-index: var(--scl-z-index-10);
-  position: absolute;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  pointer-events: none;
-  font-size: var(--scl-font-size-16);
-  /* previously: transform: translate(
-    13px,
-    calc((var(--input-small-height, 40px) - 1rem) / 2)
-  ); */
+.text-field--size-small .input__label {
+  font-size: var(--font-size-label-small);
   transform: translate(
-    var(--scl-spacing-12),
-    calc((var(--scl-spacing-40) - var(--scl-font-size-16)) / 2)
+    var(--spacing-x),
+    calc((var(--height-small) - var(--font-size-label-small)) / 2)
   );
-  font-weight: var(--scl-font-weight-medium);
+  font-weight: var(--font-weight-label-small);
 }
-.input--size-small.input--has-focus .input__label,
-.input--size-small.animated .input__label {
-  color: var(--scl-color-grey-60);
-  transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  font-size: var(--scl-font-size-10);
-  font-weight: var(--scl-font-weight-medium);
+.text-field--size-small.text-field--has-focus .input__label,
+.text-field--size-small.animated .input__label {
+  transform: translate(var(--spacing-x), var(--scl-spacing-4));
+  font-size: var(--font-size-label-small-focus);
 }
-.input--transparent .input__input {
+.text-field--transparent .input__input {
   background-color: transparent;
 }
 
-.input--disabled label,
-.input--disabled .input__label,
-.input--disabled input,
-.input--disabled .input__input,
-.input--disabled .input__meta,
-.input.input--disabled .input__counter,
-.input--disabled .input__helper-text {
+.text-field--disabled label,
+.text-field--disabled .input__label,
+.text-field--disabled input,
+.text-field--disabled .input__input,
+.text-field--disabled .input__meta,
+.input.text-field--disabled .input__counter,
+.text-field--disabled .input__helper-text {
   cursor: not-allowed;
-  border-color: var(--scl-color-background-disabled);
-  color: var(--scl-color-background-disabled);
+  border-color: var(--color-disabled);
+  color: var(--color-disabled);
   background: var(--scl-color-white);
 }
-.input--disabled.animated label.input__label {
-  color: var(--scl-color-background-disabled);
+.text-field--disabled.animated label.input__label {
+  color: var(--color-disabled);
 }
 
 /*Hide Arrows From Input Number*/

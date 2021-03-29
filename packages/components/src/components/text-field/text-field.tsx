@@ -187,13 +187,13 @@ export class TextField {
       (this.value != null && this.value !== '') || this.type === 'date';
 
     return classNames(
-      'input',
-      this.type && `input--type-${this.type}`,
-      this.hasFocus && 'input--has-focus',
-      this.disabled && `input--disabled`,
-      this.transparent && 'input--transparent',
-      this.status && `input--status-${this.status}`,
-      this.size && `input--size-${this.size}`,
+      'text-field',
+      this.type && `text-field--type-${this.type}`,
+      this.hasFocus && 'text-field--has-focus',
+      this.disabled && `text-field--disabled`,
+      this.transparent && 'text-field--transparent',
+      this.status && `text-field--status-${this.status}`,
+      this.size && `text-field--size-${this.size}`,
       animated && 'animated'
     );
   }
