@@ -16,6 +16,7 @@ scale-dropdown {
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
 
+  /*input*/
   --transition-input: var(--transition);
   --font-size-input: var(--scl-font-size-16);
 
