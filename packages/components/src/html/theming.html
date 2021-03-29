@@ -19,11 +19,21 @@
         padding: 4rem;
       }
 
-      zzz-divider {
+      a-divider {
         display: block;
         width: 100%;
-        height: 2rem;
+        height: var(--scl-spacing-48);
         background: transparent;
+      }
+
+      a-heading {
+        display: block;
+        margin-bottom: var(--scl-spacing-16);
+        font-family: 'Input Mono Condensed', monospace;
+      }
+      a-heading > code {
+        font: inherit;
+        color: var(--scl-color-grey-60);
       }
 
       /* Overriding token within "component variant" */
@@ -45,7 +55,7 @@
       scale-button[jeez='sea']::part(base):hover {
         background: var(--scl-color-green-70);
       }
-      scale-button[jeez='sea']::part(base):active {
+      scale-button[jeez='sea']::part(base, has-scroll):active {
         background: var(--scl-color-green-90);
       }
 
@@ -63,6 +73,10 @@
         --background-primary: var(--scl-color-rose-90);
         --background-primary-hover: var(--scl-color-rose-80);
         --background-primary-active: var(--scl-color-rose-100);
+
+        --color-secondary-hover: var(--scl-color-rose-80);
+        --color-secondary-active: var(--scl-color-rose-100);
+        --color-secondary-disabled: var(--scl-color-background-disabled);
       }
 
       /* Part, any CSS goes in */
@@ -72,40 +86,50 @@
         padding-bottom: var(--scl-spacing-16);
         min-height: auto;
       }
+
+      .theme-wood scale-button::part(variant-secondary) {
+        color: var(--scl-color-rose-90);
+      }
+
+      .theme-fat scale-button {
+        --font-size: 200%;
+        --font-weight: var(--scl-font-weight-extrabold);
+      }
     </style>
   </head>
 
   <body>
+    <!--
+      - dev docs https://gitlab.com/scale-ds/scale-telekom/-/merge_requests/389
+      - `button` variables  
+      - this page
+      - `modal` part naming exercise
+    -->
+
+    <a-heading>plain</a-heading>
     <scale-button>Click here</scale-button>
 
-    <zzz-divider></zzz-divider>
+    <a-divider></a-divider>
 
+    <a-heading
+      >variable inline -> <code>style="--spacing-x: 4rem"</code></a-heading
+    >
     <scale-button style="--spacing-x: 4rem">Click here</scale-button>
 
-    <zzz-divider></zzz-divider>
+    <a-divider></a-divider>
 
+    <a-heading>variables + parts -> <code>jeez="sea"</code></a-heading>
     <scale-button jeez="sea">Click there, once</scale-button>
 
-    <zzz-divider></zzz-divider>
+    <a-divider></a-divider>
 
+    <a-heading
+      >theme class (variables + parts) ->
+      <code>class="theme-wood"</code></a-heading
+    >
     <div class="theme-wood">
-      <scale-button>Click below</scale-button>
+      <scale-button>Click below</scale-button>&emsp;
+      <scale-button variant="secondary"><scale-icon-action-remove></scale-icon-action-remove> Remove</scale-button>
     </div>
-
-    <zzz-divider></zzz-divider>
-
-    <scale-button variant="secondary">Click now</scale-button>
-
-    <zzz-divider></zzz-divider>
-
-    <scale-button variant="secondary" disabled>Click there</scale-button>
-
-    <zzz-divider></zzz-divider>
-
-    <scale-button variant="ghost">Click above</scale-button>
-
-    <zzz-divider></zzz-divider>
-
-    <scale-button variant="ghost" disabled>Click above</scale-button>
   </body>
 </html>
