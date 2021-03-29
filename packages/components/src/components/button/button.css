@@ -10,6 +10,7 @@
   --font-size: var(--scl-font-size-16);
   --line-height: var(--scl-font-line-height-150);
   --spacing-icon-x: var(--scl-spacing-8);
+  --vertical-align: middle;
 
   /* size: small */
   --font-size-small: var(--scl-font-size-12);
@@ -64,6 +65,7 @@
   min-height: var(--min-height);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
+  vertical-align: var(--vertical-align);
   transition: var(--transition);
 }
 
