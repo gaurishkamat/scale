@@ -1,8 +1,27 @@
-.breadcrumb {
-  margin-left: calc(-1 * var(--scl-spacing-8));
+:host {
+  --spacing-left: calc(-1 * var(--scl-spacing-8));
+
+  --font-size-list-item: var(--scl-font-size-14);
+
+  --color-separator: var(--scl-color-grey-60);
+
+  --spacing-y-item: var(--scl-spacing-4);
+  --spacing-x-item: var(--scl-spacing-8);
+
+  --color-link: var(--scl-color-grey-60);
+  --radius-link: var(--scl-radius-8);
+  --color-link-hover: var(--scl-color-primary-hover);
+  --color-link-active: var(--scl-color-primary-active);
+  --box-shadow-link-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
+  --color-current: var(--scl-color-text-standard);
 }
 
-ol {
+.breadcrumb {
+  margin-left: var(--spacing-left);
+}
+
+.breadcrumb__list {
   display: flex;
   list-style: none;
   margin-top: 0;
@@ -10,41 +29,41 @@ ol {
   margin-bottom: 0;
 }
 
-li {
+.breadcrumb__list-item {
   display: inline-flex;
-  font-size: var(--scl-spacing-14, 0.875rem);
+  font-size: var(--font-size-list-item);
   align-items: center;
 }
 
-.separator {
+.breadcrumb__separator {
   display: flex;
-  color: var(--scl-color-grey-60);
+  color: var(--color-separator);
 }
 
-.item,
-.link {
-  padding: var(--scl-spacing-4) var(--scl-spacing-8);
+.breadcrumb__item,
+.breadcrumb__link {
+  padding: var(--spacing-y-item) var(--spacing-x-item);
 }
 
-.link {
+.breadcrumb__link {
   text-decoration: none;
-  color: var(--scl-color-grey-60);
-  border-radius: var(--scl-radius-8);
+  color: var(--color-link);
+  border-radius: var(--radius-link);
 }
 
-.link:hover {
-  color: var(--scl-color-primary-hover, #f90984);
+.breadcrumb__link:hover {
+  color: var(--color-link-hover);
 }
 
-.link:active {
-  color: var(--scl-color-primary-active, #cb0068);
+.breadcrumb__link:active {
+  color: var(--color-link-active);
 }
 
-.link:focus {
+.breadcrumb__link:focus {
   outline: none;
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: var(--box-shadow-link-focus);
 }
 
-.current {
-  color: var(--scl-color-text-standard);
+.breadcrumb__current {
+  color: var(--color-current);
 }

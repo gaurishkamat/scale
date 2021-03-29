@@ -10,6 +10,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Breadcrumb {
+  mo: MutationObserver;
+
   @Element() hostElement: HTMLElement;
   @Prop() separator?: string;
   /** (optional) Injected CSS styles */
@@ -23,6 +25,24 @@ export class Breadcrumb {
       this.setLinksArray();
     }
     this.separatorSlot = this.hostElement.querySelector('[slot="separator"]');
+  }
+
+  componentDidLoad() {
+    const observer = new MutationObserver(() => {
+      this.setLinksArray();
+    });
+    observer.observe(this.hostElement, {
+      attributes: false,
+      childList: true,
+      subtree: true,
+    });
+    this.mo = observer;
+  }
+
+  disconnectedCallback() {
+    if (this.mo) {
+      this.mo.disconnect();
+    }
   }
 
   setLinksArray() {
@@ -41,35 +61,44 @@ export class Breadcrumb {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <nav aria-label="Breadcrumb" class={this.getCssClassMap()}>
-          <ol>
+        <nav aria-label="Breadcrumb" class={this.getCssClassMap()} part="base">
+          <ol class="breadcrumb__list" part="list">
             {this.linksArray.map((element, index) => {
               const separator =
                 this.separatorSlot != null ? (
                   <span
-                    class="separator"
+                    class="breadcrumb__separator"
+                    part="separator"
                     innerHTML={this.separatorSlot.innerHTML}
                   />
                 ) : (
-                  <span class="separator">
+                  <span class="breadcrumb__separator" part="separator">
                     {this.separator || (
                       <scale-icon-navigation-right size={12} />
                     )}
                   </span>
                 );
               return (
-                <li>
+                <li class="breadcrumb__list-item" part="list-item">
                   {element.href ? (
                     <a
                       href={element.href}
-                      class={classNames(isLast(index) && 'current', 'link')}
+                      class={classNames(
+                        isLast(index) && 'breadcrumb__current',
+                        'breadcrumb__link'
+                      )}
+                      part={classNames(isLast(index) && 'current', 'link')}
                       {...getCurrentAttr(index)}
                     >
                       {element.textContent}
                     </a>
                   ) : (
                     <span
-                      class={classNames(isLast(index) && 'current', 'item')}
+                      class={classNames(
+                        isLast(index) && 'breadcrumb__current',
+                        'breadcrumb__item'
+                      )}
+                      part={classNames(isLast(index) && 'current', 'item')}
                     >
                       {element.textContent}
                     </span>
