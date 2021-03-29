@@ -51,7 +51,6 @@ scale-text-field {
   --font-weight-label: var(--scl-font-weight-medium);
   --font-size-label-small: var(--scl-font-size-16);
   --font-weight-label-small: var(--scl-font-weight-medium);
-  --font-size-label-small-focus: var(--scl-font-size-10);
   --font-size-label-focus: var(--scl-font-size-10);
   --font-weight-label-focus: var(--scl-font-weight-bold);
 }
@@ -165,7 +164,7 @@ scale-text-field {
 .text-field--size-small.text-field--has-focus .input__label,
 .text-field--size-small.animated .input__label {
   transform: translate(var(--spacing-x), var(--scl-spacing-4));
-  font-size: var(--font-size-label-small-focus);
+  font-size: var(--font-size-label-focus);
 }
 .text-field--transparent .input__input {
   background-color: transparent;
