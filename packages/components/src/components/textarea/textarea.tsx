@@ -184,13 +184,12 @@ export class Textarea {
 
   getCssClassMap() {
     return classNames(
-      'input',
-      this.hasFocus && 'input--has-focus',
-      this.resize && `input--resize-${this.resize}`,
-      this.disabled && `input--disabled`,
-      this.transparent && 'input--transparent',
-      this.status && `input--status-${this.status}`,
-      this.size && `input--size-${this.size}`,
+      'textarea',
+      this.hasFocus && 'textarea--has-focus',
+      this.resize && `textarea--resize-${this.resize}`,
+      this.disabled && `textarea--disabled`,
+      this.transparent && 'textarea--transparent',
+      this.status && `textarea--status-${this.status}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }
