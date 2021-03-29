@@ -184,20 +184,18 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     return `rgba(${Math.floor(red*255.999)}, ${Math.floor(green*255.999)}, ${Math.floor(blue*255.999)}, ${Math.floor(alpha*1000)/1000})`;
   }
 
-  const svgMap = new Map();
-  function collapseIcons(symbol) {
-    return symbol;
-    const svg = symbol.layers[0].find(l => l._class === 'svg');
-    if (svg) {
-      if (svgMap.has(svg.rawSVGString)) {
-        console.log("Found SVG!");
-      } else {
-        console.log("New SVG, adding");
-        svgMap.set(svg.rawSVGString, symbol);
-      }
-    } else {
-      console.log("No SVG in Icon");
+  function makeStyleName(override) {
+    var styleName = "";
+    if (override.fills && override.fills.length > 0) {
+      styleName += "Fill " + override.fills.map(b => `${colorString(b)}` ).join(", ");
     }
+    if (override.borders && override.borders.length > 0) {
+      if (override.fills) styleName += ' / ';
+      styleName += "02 Border " + override.borders.map(b => `${Math.floor(100*b.thickness)/100}px ${positionString(b.position)} ${colorString(b)}` ).join(", ");
+    } else if (override.fills && override.fills.length > 0) {
+      styleName += ' / 01 No Border';
+    }
+    return styleName || ('Empty style '+uuid());
   }
 
   const styleMap = new Map();
@@ -249,19 +247,10 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
               if (styleMap.has(styleKey)) {
                 symbol.sharedStyleID = styleMap.get(styleKey);
               } else {
-                var styleName = "";
-                if (override.fills) {
-                  styleName += "Fill " + override.fills.map(b => `${colorString(b)}` ).join(", ");
-                }
-                if (override.borders) {
-                  if (override.fills) styleName += ' / ';
-                  styleName += "02 Border " + override.borders.map(b => `${Math.floor(100*b.thickness)/100}px ${positionString(b.position)} ${colorString(b)}` ).join(", ");
-                } else if (override.fills) {
-                  styleName += ' / 01 No Border';
-                }
+                
                 // Make a shared style for the SymbolMaster
                 const sharedStyle = new SharedStyle(null, {
-                  name: styleName,
+                  name: makeStyleName(override),
                   do_objectID: uuid(),
                   _class: 'sharedStyle',
                   value: symbolValue
@@ -403,20 +392,29 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           if (differs) {
             // console.log('style override', JSON.stringify(override, null, 4));
             if (!symbol.sharedStyleID) {
-              // Make a shared style for the SymbolMaster
-              const sharedStyle = new SharedStyle(null, {
-                name: symbolVariantName,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: symbolValue
-              });
-              sketch.addLayerStyle(sharedStyle);
-              symbol.sharedStyleID = sharedStyle.do_objectID;
+              var styleKey = JSON.stringify(override);
+              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
+                symbol.name = 'Icon Color';
+              }
+              if (styleMap.has(styleKey)) {
+                symbol.sharedStyleID = styleMap.get(styleKey);
+              } else {
+                // Make a shared style for the SymbolMaster
+                const sharedStyle = new SharedStyle(null, {
+                  name: makeStyleName(symbolValue),
+                  do_objectID: uuid(),
+                  _class: 'sharedStyle',
+                  value: symbolValue
+                });
+                sketch.addLayerStyle(sharedStyle);
+                symbol.sharedStyleID = sharedStyle.do_objectID;
+              }
             }
-            let sharedStyle = sketch.getLayerStyles().find(s => s.name === variantName);
+            var styleName = makeStyleName(jsonValue);
+            let sharedStyle = sketch.getLayerStyles().find(s => s.name === styleName);
             if (!sharedStyle) {
               sharedStyle = new SharedStyle(null, {
-                name: `${variantName}`,
+                name: styleName,
                 do_objectID: uuid(),
                 _class: 'sharedStyle',
                 value: jsonValue
@@ -489,6 +487,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   }
 
   const symbols = new Map();
+  const iconMap = new Map();
 
   function enhanceJson(json) {
     let enhanced = {};
@@ -523,26 +522,42 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       // Try to create a symbol instance.
       // If the symbol is too different, we create a master symbol instead below.
       let instance;
-      const isIcon = false && enhanced.name.startsWith('Unnamed Components / icon');
-      let symbol = isIcon && symbolArray.find(master => {
-        if (master.variant !== enhanced.variant) return false;
-        instance = master.createInstance({name: enhanced.name});
+      const isIcon = enhanced.name.startsWith('Unnamed Components / icon-');
+      let iconName = enhanced.name;
+      if (isIcon) {
+        // Turn 'Unnamed Components / icon-navigation-collapse-down' into 'Icon / Navigation / Collapse Down / 01 Standard'
+        iconName = enhanced.name.replace(/^Unnamed Components \/ icon-([^-]+)-(([^-]+-?)+)$/, 
+          (_, category, name) => 
+          `Icon / ${
+            category
+            .replace(/-|_/g, ' ')
+            .replace(/\b./g, m => m.toLocaleUpperCase())
+          } / ${
+            name
+            .replace(/-/g, ' ')
+            .replace(/\b./g, m => m.toLocaleUpperCase())
+          } / ${
+            /\/ selected:(true| \/|$)/.test(enhanced.variant) ? '02 Selected' : '01 Standard'
+          }`
+        );
+      }
+      let symbol = false;
+      if (isIcon && iconMap.has(iconName)) {
+        symbol = true;
+        const master = iconMap.get(iconName);
+        console.log('instance match');
+        instance = master.createInstance({name: "Icon"});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
-        try {
-          isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-          fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
-          return true;
-        } catch (err) {
-          return false;
-        }
-      });
-      if (isIcon) symbol = collapseIcons(symbol);
-      
+        //isSymbolInstanceOf(instance, master, enhanced, '', master.name);
+        fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
+      }
+
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
         symbol = symbolMaster({...enhanced, name: getSymbolName(enhanced.name)});
+        if (enhanced.name.startsWith("Icon /")) iconMap.set(symbol.name, symbol);
         symbol.stableSymbolName = enhanced.stableSymbolName || symbol.name;
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
@@ -566,9 +581,9 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
         fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
-        if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
-          instance.name = 'Icon';
-        }
+      }
+      if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
+        instance.name = 'Icon';
       }
       return instance;
     }
@@ -642,10 +657,13 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   sketch.addPage(symbolsPage);
 
   const jsons = fs.readdirSync(path.resolve(__dirname, "../sketch-json")).filter(fn => fn.endsWith('.json'));
-  jsons.sort();
-  jsons.forEach(jsonFn => {
-    const json = require(`../sketch-json/${jsonFn}`);
-
+  const pageObjs = jsons.map(jsonFn => require(`../sketch-json/${jsonFn}`));
+  pageObjs.sort((a, b) => {
+    if (a.name === 'Icons') return -1;
+    if (b.name === 'Icons') return 1;
+    return a.name.localeCompare(b.name);
+  });
+  pageObjs.forEach(json => {
     const componentsPage = new Page({
       name: json.name
     });
