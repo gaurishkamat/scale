@@ -95,7 +95,13 @@ export class Button {
             disabled={this.disabled}
             type={this.type}
             aria-label={this.ariaLabel}
-            part="base"
+            part={classNames(
+              'base',
+              this.variant && `variant-${this.variant}`,
+              this.iconOnly && 'icon-only',
+              !this.iconOnly && this.iconPosition,
+              this.disabled && 'disabled'
+            )}
           >
             <slot />
           </button>
