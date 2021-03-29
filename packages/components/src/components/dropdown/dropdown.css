@@ -10,8 +10,8 @@ scale-dropdown {
   --radius: var(--scl-radius-4);
   --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
-  --border-color-hover:var(--scl-color-primary-hover, #f90984);
-  --border-color-focus:var(--scl-color-primary-hover, #f90984);
+  --border-color-hover: var(--scl-color-primary-hover, #f90984);
+  --border-color-focus: var(--scl-color-primary-hover, #f90984);
   --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
@@ -121,8 +121,8 @@ scale-dropdown {
   pointer-events: none;
   font-size: var(--font-size-label);
   transform: translate(
-      var(--spacing-x),
-      calc((var(--scl-spacing-48) - var(--font-size-label)) / 2)
+    var(--spacing-x),
+    calc((var(--scl-spacing-48) - var(--font-size-label)) / 2)
   );
   font-weight: var(--font-weight-label);
 }
@@ -145,8 +145,8 @@ scale-dropdown {
 .dropdown--size-small .input__label {
   font-size: var(--font-size-label-small);
   transform: translate(
-      var(--spacing-x),
-      calc((var(--height-small) - var(--font-size-label-small)) / 2)
+    var(--spacing-x),
+    calc((var(--height-small) - var(--font-size-label-small)) / 2)
   );
   font-weight: var(--font-weight-label-small);
 }
