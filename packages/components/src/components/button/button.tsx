@@ -73,6 +73,14 @@ export class Button {
   }
 
   render() {
+    const basePart = classNames(
+      'base',
+      this.variant && `variant-${this.variant}`,
+      this.iconOnly && 'icon-only',
+      !this.iconOnly && this.iconPosition,
+      this.disabled && 'disabled'
+    );
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -84,7 +92,7 @@ export class Button {
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}
-            part="base"
+            part={basePart}
           >
             <slot />
           </a>
@@ -95,13 +103,7 @@ export class Button {
             disabled={this.disabled}
             type={this.type}
             aria-label={this.ariaLabel}
-            part={classNames(
-              'base',
-              this.variant && `variant-${this.variant}`,
-              this.iconOnly && 'icon-only',
-              !this.iconOnly && this.iconPosition,
-              this.disabled && 'disabled'
-            )}
+            part={basePart}
           >
             <slot />
           </button>
