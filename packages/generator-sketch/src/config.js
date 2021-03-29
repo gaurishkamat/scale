@@ -107,6 +107,7 @@ module.exports = {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 11;
         findLayer(symbol, "Icon", icon => icon.resizingConstraint = 44);
+        findLayer(symbol, "label.input__label", label => label.resizingConstraint = 9);
         findLayer(symbol, "Dropdown Label", label => {
           label.resizingConstraint = 10;
           label.frame.width = symbol.frame.width - 46;
@@ -252,6 +253,8 @@ module.exports = {
       }
       if (/^(Text Area)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
+        // Check if disabled field small label resizes correctly
+        findLayer(symbol, "label.input__label", label => label.resizingConstraint = 9);
         var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
         if (count) {
           count.resizingConstraint = 14;
@@ -273,6 +276,8 @@ module.exports = {
         }
         var helperMessage = findLayer(symbol, s => /^div#helper-message/.test(s.name));
         if (helperMessage) helperMessage.resizingConstraint = 34;
+        if (!helperMessage && info) info.resizingConstraint = 34;
+        if (!helperMessage && count) count.resizingConstraint = 34;
         var inputValue = findLayer(symbol, s => /^Input Value/.test(s.name));
         if (inputValue) inputValue.resizingConstraint = 9;
         findLayers(symbol, /label/i, label => label.resizingConstraint = 10);
@@ -305,6 +310,8 @@ module.exports = {
 
       if (/^(Text Field)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
+        // Check if disabled field small label resizes correctly
+        findLayer(symbol, "label.input__label", label => label.resizingConstraint = 9);
         var count = findLayer(symbol, s => /^\d+\s*\/\s*\d+$/.test(s.name));
         if (count) {
           count.resizingConstraint = 14;
@@ -359,7 +366,7 @@ module.exports = {
 
       }
 
-      if (/^(Text List)/.test(symbol.name)) {
+      if (/^(List)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = 9;
       }
     } catch (err) {
