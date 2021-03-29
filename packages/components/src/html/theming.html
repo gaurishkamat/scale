@@ -129,7 +129,43 @@
     >
     <div class="theme-wood">
       <scale-button>Click below</scale-button>&emsp;
-      <scale-button variant="secondary"><scale-icon-action-remove></scale-icon-action-remove> Remove</scale-button>
+      <scale-button variant="secondary"
+        ><scale-icon-action-remove></scale-icon-action-remove>
+        Remove</scale-button
+      >
     </div>
+
+    <a-divider></a-divider>
+
+    <h2 class="scl-font-variant-heading-2">More testing…</h2>
+
+    <a-heading>Accordion/collapsible</a-heading>
+
+    <style>
+      /* accordion/collapsible */
+      scale-collapsible::part(base) {
+        border: 2px dotted var(--scl-color-orange-60);
+      }
+      scale-collapsible::part(base expanded) {
+        border: 2px dotted var(--scl-color-orange-80);
+      }
+      scale-collapsible::part(icon expanded) {
+        transform: rotate(0.25turn);
+      }
+      scale-collapsible::part(button-text) {
+        font-family: 'Comic Sans', serif;
+      }
+    </style>
+
+    <scale-accordion>
+      <scale-collapsible>
+        <h2>Heading 1</h2>
+        <p>OK</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <h2>Heading 2</h2>
+        <p>OK, 2</p>
+      </scale-collapsible>
+    </scale-accordion>
   </body>
 </html>

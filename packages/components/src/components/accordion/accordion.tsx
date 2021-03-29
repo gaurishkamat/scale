@@ -49,7 +49,7 @@ export class Accordion {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} part="base">
           <slot />
         </div>
       </Host>
