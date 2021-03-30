@@ -414,10 +414,6 @@ export namespace Components {
     }
     interface ScaleDivider {
         /**
-          * (optional) Divider size
-         */
-        "size"?: string;
-        /**
           * (optional) Injected CSS styles
          */
         "styles"?: string;
@@ -7415,10 +7411,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface ScaleDivider {
-        /**
-          * (optional) Divider size
-         */
-        "size"?: string;
         /**
           * (optional) Injected CSS styles
          */

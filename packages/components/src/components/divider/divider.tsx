@@ -6,8 +6,6 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Divider {
-  /** (optional) Divider size */
-  @Prop() size?: string = '';
   /** (optional) Divider vertical */
   @Prop() vertical?: boolean = false;
   /** (optional) Injected CSS styles */
@@ -18,18 +16,22 @@ export class Divider {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()} aria-hidden>
-          {!this.vertical ? <hr /> : <span class="divider__vertical" />}
+        <div
+          class={this.getCssClassMap()}
+          aria-hidden
+          part={classNames('base', this.vertical && 'vertical')}
+        >
+          {!this.vertical ? (
+            <hr class="divider__horizontal" part="rule-horizontal" />
+          ) : (
+            <span class="divider__vertical" part="rule-vertical" />
+          )}
         </div>
       </Host>
     );
   }
 
   getCssClassMap() {
-    return classNames(
-      'divider',
-      this.size && `divider--size-${this.size}`,
-      this.vertical && `divider--vertical`
-    );
+    return classNames('divider', this.vertical && `divider--vertical`);
   }
 }
