@@ -60,4 +60,4 @@ This component is still in the beta phase. When testing it, keep in mind that it
 ## Related components 
 
 <a href="?path=/usage/components-table--standard">Table, </a>
-<a href="?path=/usage/beta-components-datagrid--standard">Data Grid</a>
+<a href="?path=/usage/beta-components-data-grid--standard">Data Grid</a>

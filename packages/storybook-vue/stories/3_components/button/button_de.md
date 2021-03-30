@@ -34,7 +34,7 @@ Der Primär-Button ist ein zentrales Markenelement und dient der Wiedererkennung
 
 ### Sekundär-Button
 
-Der Sekundär-Button ist weniger auffälig. Nutze ihn für alle weiteren Aktionen auf einer Seite. Durch die Gestaltung mit Outline und transparenter Grundfläche eignet er sich auch gut für die Verwendung auf farbigem Hintergrund.
+Der Sekundär-Button ist weniger auffällig. Nutze ihn für alle weiteren Aktionen auf einer Seite. Durch die Gestaltung mit Outline und transparenter Grundfläche eignet er sich auch gut für die Verwendung auf farbigem Hintergrund.
 
 ![Image Name](assets/3_components/button/Button_Secondary.png)
 

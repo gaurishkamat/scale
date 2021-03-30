@@ -92,4 +92,4 @@ The display error is on the browser side.
 
 <a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
 <a href="?path=/usage/components-switch--standard">Switch, </a>
-<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-radio-button--standard">Radio Button</a>

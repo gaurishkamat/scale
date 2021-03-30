@@ -58,4 +58,4 @@ Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenk
 ## Verwandte Komponenten
 
 <a href="?path=/usage/components-table--standard">Tabelle, </a>
-<a href="?path=/usage/beta-components-datagrid--standard">Data Grid</a>
+<a href="?path=/usage/beta-components-data-grid--standard">Data Grid</a>
