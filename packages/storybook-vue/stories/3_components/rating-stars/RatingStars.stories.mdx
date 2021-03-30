@@ -1,0 +1,113 @@
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import ScaleRatingStars from "./ScaleRatingStars.vue";
+
+<Meta
+  title="Components/RatingStars"
+  component={ScaleRatingStars}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleRatingStars },
+  props: {
+    label: String,
+    ...ScaleRatingStars.props,
+  },
+  template: `
+  <scale-rating-stars
+    :num-of-stars="numOfStars"
+    :rating="rating"
+    :small="small"
+    :interactive="interactive"
+    :disabled="disabled"
+    :color-fill="colorFill"
+    :aria-lang="ariaLang"
+  >
+  </scale-rating-stars>
+    `,
+});
+
+<div
+  style={{
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  }}
+>
+  <h1>Rating Stars</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      rating: 3,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-rating-stars rating="3"></scale-rating-stars>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      rating: 2
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="3" disabled ></scale-rating-stars>
+```
+
+## Small
+
+<Canvas withSource="none">
+  <Story
+    name="With Icon"
+    args={{
+      rating: 4,
+      small: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="4" small></scale-rating-stars>
+```
+
+## Number of Stars
+
+<Canvas withSource="none">
+  <Story
+    name="With Icon"
+    args={{
+      rating: 6,
+      numOfStars: 10
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="6" num-of-stars="10"></scale-rating-stars>
+```
