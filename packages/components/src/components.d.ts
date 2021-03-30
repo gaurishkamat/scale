@@ -4686,35 +4686,6 @@ export namespace Components {
          */
         "styles"?: string;
     }
-    interface ScaleMenu {
-        /**
-          * (optional) Determines whether the dropdown should close when a menu item is selected
-         */
-        "closeOnSelect": boolean;
-        /**
-          * (optional) Set preference for where the menu appears, space permitting
-         */
-        "direction": | 'bottom-right'
-    | 'bottom-left'
-    | 'top-right'
-    | 'top-left'
-    | 'right'
-    | 'left';
-        /**
-          * (optional) Tracks the menu list open state
-         */
-        "open": boolean;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
-    interface ScaleMenuDivider {
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
     interface ScaleMenuFlyout {
         /**
           * (optional) Determines whether the dropdown should close when a menu item is selected
@@ -4779,50 +4750,6 @@ export namespace Components {
         "value"?: string;
     }
     interface ScaleMenuFlyoutList {
-        /**
-          * Menu calls this once opened and rendered
-         */
-        "opened": () => Promise<void>;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
-    interface ScaleMenuItem {
-        /**
-          * (optional) Used by cascading menus to set when open
-         */
-        "active"?: boolean;
-        /**
-          * (optional) Set to true to display arrow icon suffix
-         */
-        "cascade"?: boolean;
-        /**
-          * (optional) Set to true to display check prefix, false to display empty prefix
-         */
-        "checked"?: any;
-        /**
-          * (optional) Disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * Removes the focus from the item
-         */
-        "removeFocus": () => Promise<void>;
-        /**
-          * Sets the focus on the item
-         */
-        "setFocus": () => Promise<void>;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-        /**
-          * (optional) value
-         */
-        "value"?: string;
-    }
-    interface ScaleMenuList {
         /**
           * Menu calls this once opened and rendered
          */
@@ -5338,6 +5265,7 @@ export namespace Components {
     | 'password'
     | 'tel'
     | 'text'
+    | 'date'
     | 'url';
         /**
           * (optional) Input value
@@ -6702,18 +6630,6 @@ declare global {
         prototype: HTMLScaleListItemElement;
         new (): HTMLScaleListItemElement;
     };
-    interface HTMLScaleMenuElement extends Components.ScaleMenu, HTMLStencilElement {
-    }
-    var HTMLScaleMenuElement: {
-        prototype: HTMLScaleMenuElement;
-        new (): HTMLScaleMenuElement;
-    };
-    interface HTMLScaleMenuDividerElement extends Components.ScaleMenuDivider, HTMLStencilElement {
-    }
-    var HTMLScaleMenuDividerElement: {
-        prototype: HTMLScaleMenuDividerElement;
-        new (): HTMLScaleMenuDividerElement;
-    };
     interface HTMLScaleMenuFlyoutElement extends Components.ScaleMenuFlyout, HTMLStencilElement {
     }
     var HTMLScaleMenuFlyoutElement: {
@@ -6737,18 +6653,6 @@ declare global {
     var HTMLScaleMenuFlyoutListElement: {
         prototype: HTMLScaleMenuFlyoutListElement;
         new (): HTMLScaleMenuFlyoutListElement;
-    };
-    interface HTMLScaleMenuItemElement extends Components.ScaleMenuItem, HTMLStencilElement {
-    }
-    var HTMLScaleMenuItemElement: {
-        prototype: HTMLScaleMenuItemElement;
-        new (): HTMLScaleMenuItemElement;
-    };
-    interface HTMLScaleMenuListElement extends Components.ScaleMenuList, HTMLStencilElement {
-    }
-    var HTMLScaleMenuListElement: {
-        prototype: HTMLScaleMenuListElement;
-        new (): HTMLScaleMenuListElement;
     };
     interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {
     }
@@ -7089,14 +6993,10 @@ declare global {
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
         "scale-list-item": HTMLScaleListItemElement;
-        "scale-menu": HTMLScaleMenuElement;
-        "scale-menu-divider": HTMLScaleMenuDividerElement;
         "scale-menu-flyout": HTMLScaleMenuFlyoutElement;
         "scale-menu-flyout-divider": HTMLScaleMenuFlyoutDividerElement;
         "scale-menu-flyout-item": HTMLScaleMenuFlyoutItemElement;
         "scale-menu-flyout-list": HTMLScaleMenuFlyoutListElement;
-        "scale-menu-item": HTMLScaleMenuItemElement;
-        "scale-menu-list": HTMLScaleMenuListElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-nav-icon": HTMLScaleNavIconElement;
         "scale-nav-main": HTMLScaleNavMainElement;
@@ -11849,55 +11749,6 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
     }
-    interface ScaleMenu {
-        /**
-          * (optional) Determines whether the dropdown should close when a menu item is selected
-         */
-        "closeOnSelect"?: boolean;
-        /**
-          * (optional) Set preference for where the menu appears, space permitting
-         */
-        "direction"?: | 'bottom-right'
-    | 'bottom-left'
-    | 'top-right'
-    | 'top-left'
-    | 'right'
-    | 'left';
-        /**
-          * Event triggered when menu list closed
-         */
-        "onScaleClose"?: (event: CustomEvent<{
-    id: number;
-    cascadeLevel: number;
-  }>) => void;
-        /**
-          * Event triggered when menu list opened
-         */
-        "onScaleOpen"?: (event: CustomEvent<{
-    id: number;
-    cascadeLevel: number;
-  }>) => void;
-        /**
-          * Event triggered when nested menu item selected
-         */
-        "onScaleSelect"?: (event: CustomEvent<{
-    item: HTMLElement;
-  }>) => void;
-        /**
-          * (optional) Tracks the menu list open state
-         */
-        "open"?: boolean;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
-    interface ScaleMenuDivider {
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
     interface ScaleMenuFlyout {
         /**
           * (optional) Determines whether the dropdown should close when a menu item is selected
@@ -11974,44 +11825,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface ScaleMenuFlyoutList {
-        /**
-          * Event triggered every time the data is edited, changing original rows data
-         */
-        "onScaleSelect"?: (event: CustomEvent<{
-    item: HTMLElement;
-  }>) => void;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-    }
-    interface ScaleMenuItem {
-        /**
-          * (optional) Used by cascading menus to set when open
-         */
-        "active"?: boolean;
-        /**
-          * (optional) Set to true to display arrow icon suffix
-         */
-        "cascade"?: boolean;
-        /**
-          * (optional) Set to true to display check prefix, false to display empty prefix
-         */
-        "checked"?: any;
-        /**
-          * (optional) Disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * (optional) Injected styles
-         */
-        "styles"?: string;
-        /**
-          * (optional) value
-         */
-        "value"?: string;
-    }
-    interface ScaleMenuList {
         /**
           * Event triggered every time the data is edited, changing original rows data
          */
@@ -12571,6 +12384,7 @@ declare namespace LocalJSX {
     | 'password'
     | 'tel'
     | 'text'
+    | 'date'
     | 'url';
         /**
           * (optional) Input value
@@ -12920,14 +12734,10 @@ declare namespace LocalJSX {
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
         "scale-list-item": ScaleListItem;
-        "scale-menu": ScaleMenu;
-        "scale-menu-divider": ScaleMenuDivider;
         "scale-menu-flyout": ScaleMenuFlyout;
         "scale-menu-flyout-divider": ScaleMenuFlyoutDivider;
         "scale-menu-flyout-item": ScaleMenuFlyoutItem;
         "scale-menu-flyout-list": ScaleMenuFlyoutList;
-        "scale-menu-item": ScaleMenuItem;
-        "scale-menu-list": ScaleMenuList;
         "scale-modal": ScaleModal;
         "scale-nav-icon": ScaleNavIcon;
         "scale-nav-main": ScaleNavMain;
@@ -13162,14 +12972,10 @@ declare module "@stencil/core" {
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
-            "scale-menu": LocalJSX.ScaleMenu & JSXBase.HTMLAttributes<HTMLScaleMenuElement>;
-            "scale-menu-divider": LocalJSX.ScaleMenuDivider & JSXBase.HTMLAttributes<HTMLScaleMenuDividerElement>;
             "scale-menu-flyout": LocalJSX.ScaleMenuFlyout & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutElement>;
             "scale-menu-flyout-divider": LocalJSX.ScaleMenuFlyoutDivider & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutDividerElement>;
             "scale-menu-flyout-item": LocalJSX.ScaleMenuFlyoutItem & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutItemElement>;
             "scale-menu-flyout-list": LocalJSX.ScaleMenuFlyoutList & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutListElement>;
-            "scale-menu-item": LocalJSX.ScaleMenuItem & JSXBase.HTMLAttributes<HTMLScaleMenuItemElement>;
-            "scale-menu-list": LocalJSX.ScaleMenuList & JSXBase.HTMLAttributes<HTMLScaleMenuListElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-nav-icon": LocalJSX.ScaleNavIcon & JSXBase.HTMLAttributes<HTMLScaleNavIconElement>;
             "scale-nav-main": LocalJSX.ScaleNavMain & JSXBase.HTMLAttributes<HTMLScaleNavMainElement>;

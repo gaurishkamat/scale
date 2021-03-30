@@ -224,6 +224,7 @@ export const ScaleNavSegment = /*@__PURE__*/createReactComponent<JSX.ScaleNavSeg
 export const ScalePagination = /*@__PURE__*/createReactComponent<JSX.ScalePagination, HTMLScalePaginationElement>('scale-pagination');
 export const ScaleProgressBar = /*@__PURE__*/createReactComponent<JSX.ScaleProgressBar, HTMLScaleProgressBarElement>('scale-progress-bar');
 export const ScaleRadioButton = /*@__PURE__*/createReactComponent<JSX.ScaleRadioButton, HTMLScaleRadioButtonElement>('scale-radio-button');
+export const ScaleRatingStars = /*@__PURE__*/createReactComponent<JSX.ScaleRatingStars, HTMLScaleRatingStarsElement>('scale-rating-stars');
 export const ScaleSidebarNav = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNav, HTMLScaleSidebarNavElement>('scale-sidebar-nav');
 export const ScaleSidebarNavCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavCollapsible, HTMLScaleSidebarNavCollapsibleElement>('scale-sidebar-nav-collapsible');
 export const ScaleSidebarNavItem = /*@__PURE__*/createReactComponent<JSX.ScaleSidebarNavItem, HTMLScaleSidebarNavItemElement>('scale-sidebar-nav-item');

@@ -6660,6 +6660,55 @@
       ]
     },
     {
+      "name": "scale-rating-stars",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "aria-lang",
+          "description": ""
+        },
+        {
+          "name": "color-fill",
+          "description": ""
+        },
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "hover-value",
+          "description": ""
+        },
+        {
+          "name": "interactive",
+          "description": ""
+        },
+        {
+          "name": "is-hovering",
+          "description": ""
+        },
+        {
+          "name": "num-of-stars",
+          "description": ""
+        },
+        {
+          "name": "precision",
+          "description": ""
+        },
+        {
+          "name": "rating",
+          "description": ""
+        },
+        {
+          "name": "small",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "scale-sidebar-nav",
       "description": {
         "kind": "markdown",

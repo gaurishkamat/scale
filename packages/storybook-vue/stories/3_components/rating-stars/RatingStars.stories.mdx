@@ -2,7 +2,7 @@ import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import ScaleRatingStars from "./ScaleRatingStars.vue";
 
 <Meta
-  title="Components/RatingStars"
+  title="Beta Components/Rating Stars"
   component={ScaleRatingStars}
   argTypes={{}}
 />
@@ -27,17 +27,7 @@ export const Template = (args, { argTypes }) => ({
     `,
 });
 
-<div
-  style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-  }}
->
-  <h1>Rating Stars</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
-</div>
+# Rating Stars
 
 ## Standard
 
@@ -73,14 +63,14 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars rating="3" disabled ></scale-rating-stars>
+<scale-rating-stars rating="3" disabled></scale-rating-stars>
 ```
 
 ## Small
 
 <Canvas withSource="none">
   <Story
-    name="With Icon"
+    name="Small"
     args={{
       rating: 4,
       small: true
@@ -98,7 +88,7 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="With Icon"
+    name="Number of Stars"
     args={{
       rating: 6,
       numOfStars: 10

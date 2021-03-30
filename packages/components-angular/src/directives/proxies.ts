@@ -4209,6 +4209,25 @@ export class ScaleRadioButton {
 }
 
 
+export declare interface ScaleRatingStars extends Components.ScaleRatingStars {}
+@ProxyCmp({
+  inputs: ['ariaLang', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small']
+})
+@Component({
+  selector: 'scale-rating-stars',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['ariaLang', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small']
+})
+export class ScaleRatingStars {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface ScaleSidebarNav extends Components.ScaleSidebarNav {}
 @ProxyCmp({
   inputs: ['ariaLabel', 'collapsible', 'collapsibleLabel', 'collapsibleMediaQuery', 'styles']
