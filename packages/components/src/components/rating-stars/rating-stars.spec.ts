@@ -72,7 +72,7 @@ describe('component', () => {
       expect(page.rootInstance.rating).toBe(3);
       expect(page.rootInstance.interactive).toBe(true);
       expect(page.rootInstance.small).toBe(true);
-      expect(page.rootInstance.ariaLabel).toBe('rating-stars');
+      expect(page.rootInstance.ariaLang).toBe('3 out of 7 stars');
       expect(page.rootInstance.precision).toBe(1);
       expect(page.rootInstance.hoverValue).toBe(0);
     });
