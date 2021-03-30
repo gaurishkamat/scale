@@ -13,6 +13,16 @@
 | `styles`    | `styles`    | (optional) Injected CSS styles | `string` | `undefined` |
 
 
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"base"`      |             |
+| `"list"`      |             |
+| `"list-item"` |             |
+| `"separator"` |             |
+
+
 ## Dependencies
 
 ### Depends on

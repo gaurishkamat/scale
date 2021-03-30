@@ -19,7 +19,7 @@ export class ActionSort {
     const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {};
 
     return (
-      <Host style={{ display: 'inline-flex' }}>
+      <Host class="scl-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={this.size}

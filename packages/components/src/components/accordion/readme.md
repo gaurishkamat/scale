@@ -14,6 +14,13 @@
 | `styles`    | `styles`    | (optional) Injected CSS styles                                                                          | `string`  | `undefined` |
 
 
+## Shadow Parts
+
+| Part     | Description |
+| -------- | ----------- |
+| `"base"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

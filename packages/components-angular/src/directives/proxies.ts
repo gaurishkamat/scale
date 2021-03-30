@@ -378,13 +378,13 @@ export class ScaleDatePicker {
 
 export declare interface ScaleDivider extends Components.ScaleDivider {}
 @ProxyCmp({
-  inputs: ['size', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 @Component({
   selector: 'scale-divider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['size', 'styles', 'vertical']
+  inputs: ['styles', 'vertical']
 })
 export class ScaleDivider {
   protected el: HTMLElement;

@@ -1,4 +1,11 @@
-.icon path {
-  transition: all var(--scl-motion-duration-fast)
+scale-icon {
+  --display: inline-flex;
+  --transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
+
+  display: var(--display);
+}
+
+scale-icon path {
+  transition: var(--transition);
 }

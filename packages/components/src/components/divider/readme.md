@@ -9,9 +9,16 @@
 
 | Property   | Attribute  | Description                    | Type      | Default     |
 | ---------- | ---------- | ------------------------------ | --------- | ----------- |
-| `size`     | `size`     | (optional) Divider size        | `string`  | `''`        |
 | `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 | `vertical` | `vertical` | (optional) Divider vertical    | `boolean` | `false`     |
+
+
+## Shadow Parts
+
+| Part                | Description |
+| ------------------- | ----------- |
+| `"rule-horizontal"` |             |
+| `"rule-vertical"`   |             |
 
 
 ----------------------------------------------

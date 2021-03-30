@@ -556,7 +556,6 @@ export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
 export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleDivider['size']>,
     vertical: {} as PropOptions<Components.ScaleDivider['vertical']>,
     styles: {} as PropOptions<Components.ScaleDivider['styles']>,
   },

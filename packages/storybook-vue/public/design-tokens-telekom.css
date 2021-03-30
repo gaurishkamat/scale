@@ -378,3 +378,13 @@
     line-height: var(--scl-font-variant-heading-1-line-height, 120%);
     letter-spacing: var(--scl-font-variant-heading-1-letter-spacing, normal)
 }
+
+/**
+ * Shared class for the generated icon library,
+ * to avoid hard-coding/inlining this display setting
+ * which is then impossible to overwrite.
+ */
+ .scl-icon {
+    display: inline-flex;
+}
+  

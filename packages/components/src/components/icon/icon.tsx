@@ -43,11 +43,12 @@ export class Icon {
     const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {};
 
     return (
-      <Host style={{ display: 'inline-flex' }}>
+      <Host>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           {...(this.focusable ? { tabindex: 0 } : {})}
           class={this.getCssClassMap()}
+          part="base"
           width={this.size}
           height={this.size}
           viewBox="0 0 24 24"
@@ -56,7 +57,7 @@ export class Icon {
         >
           {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
           {this.path ? (
-            <path d={this.path} {...pathAttributes} />
+            <path d={this.path} {...pathAttributes} part="path" />
           ) : (
             <use xlinkHref={`#icon-${this.name}`} {...pathAttributes} />
           )}

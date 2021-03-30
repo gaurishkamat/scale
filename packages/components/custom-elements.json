@@ -659,10 +659,6 @@
       },
       "attributes": [
         {
-          "name": "size",
-          "description": "(optional) Divider size"
-        },
-        {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
         },
