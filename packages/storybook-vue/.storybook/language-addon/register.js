@@ -4,6 +4,9 @@ import { useGlobals } from "@storybook/api/dist";
 import useLocalStorage from "../use-localstorage";
 import translationMap from "../../translations.json";
 
+const activeBtnClassName = "css-mszgbt";
+const inactiveBtnClassName = "css-1keicsy";
+
 // utility to create new links
 const createLink = label => {
   const link = document.createElement("a");
@@ -12,7 +15,7 @@ const createLink = label => {
   link.setAttribute("class", "css-1xonygc");
 
   const button = document.createElement("button");
-  button.setAttribute("class", "css-12xwigy");
+  button.setAttribute("class", activeBtnClassName);
   button.innerHTML = label;
   link.appendChild(button);
 
@@ -72,24 +75,24 @@ addons.register("@scaleds/language-addon", () => {
           .querySelector("button")
           .setAttribute(
             "class",
-            locale === "en" ? "css-uj88eo" : "css-12xwigy"
+            locale === "en" ? activeBtnClassName : inactiveBtnClassName
           );
         germanLink
           .querySelector("button")
           .setAttribute(
             "class",
-            locale === "de" ? "css-uj88eo" : "css-12xwigy"
+            locale === "de" ? activeBtnClassName : inactiveBtnClassName
           );
       }, [locale]);
 
       // Wait for the DOM to settle, then append the languageToolbar if it's not there yet
       setTimeout(() => {
         const rightSection = document.querySelector(
-          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.css-1ncp457.os-host-transition > div.os-padding > div > div > div > div.css-pvky73"
+          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div > div.css-pvky73"
         );
 
         const toolbar = document.querySelector(
-          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.css-1ncp457.os-host-transition > div.os-padding > div > div > div"
+          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div"
         );
 
         if (rightSection) {
