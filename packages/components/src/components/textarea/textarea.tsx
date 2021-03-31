@@ -153,10 +153,7 @@ export class Textarea {
           />
 
           {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
-          <span
-            class="textarea__label-safety-background"
-            aria-hidden="true"
-          />
+          <span class="textarea__label-safety-background" aria-hidden="true" />
           {(!!this.helperText || !!this.counter) && (
             <div
               class="textarea__meta"

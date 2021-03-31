@@ -40,8 +40,7 @@ scale-radio-button {
   --background-control-checked-disabled: var(--scl-color-grey-30);
   --border-control-active: var(--scl-spacing-8) solid
     var(--color-primary-active);
-  --border-control-disabled: var(--scl-spacing-1) solid
-    var(--color-disabled);
+  --border-control-disabled: var(--scl-spacing-1) solid var(--color-disabled);
   --border-control-error: var(--scl-spacing-2) solid
     var(--scl-color-background-error);
   --box-shadow-control-focus: 0 0 0 var(--scl-spacing-2) var(--color-focus);

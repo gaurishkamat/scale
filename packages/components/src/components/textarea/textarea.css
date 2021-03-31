@@ -19,11 +19,11 @@ scale-textarea {
   --color-meta: var(--scl-color-text-standard);
   --color-meta-error: var(--scl-color-text-error);
 
-  /*input*/
-  --spacing-input: var(--scl-spacing-24) var(--spacing-x) var(--scl-spacing-12)
-    calc(var(--spacing-x) - 1px);
-  --transition-input: var(--transition);
-  --font-size-input: var(--scl-font-size-16);
+  /*control*/
+  --spacing-control: var(--scl-spacing-24) var(--spacing-x)
+    var(--scl-spacing-12) calc(var(--spacing-x) - 1px);
+  --transition-control: var(--transition);
+  --font-size-control: var(--scl-font-size-16);
 
   /*counter*/
   --transition-counter: var(--transition);
@@ -62,12 +62,12 @@ scale-textarea {
   resize: vertical;
   display: flex;
   outline: none;
-  padding: var(--spacing-input);
+  padding: var(--spacing-control);
   z-index: 1;
   box-sizing: border-box;
-  transition: var(--transition-input);
+  transition: var(--transition-control);
   font-family: inherit;
-  font-size: var(--font-size-input);
+  font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
 }
