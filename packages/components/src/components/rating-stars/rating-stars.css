@@ -26,7 +26,6 @@
 }
 
 .rating__symbol {
-  padding: var(--scl-spacing-2, 2px);
   display: flex;
 }
 
