@@ -127,11 +127,11 @@ export class Textarea {
       <Host>
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          <label class="input__label" htmlFor={this.inputId}>
+          <label class="textarea__label" htmlFor={this.inputId}>
             {this.label}
           </label>
           <textarea
-            class="input__textarea"
+            class="textarea__control"
             style={!!this.resize && { resize: this.resize }}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
@@ -154,21 +154,21 @@ export class Textarea {
 
           {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
           <span
-            class="input__textarea-label-safety-background"
+            class="textarea__label-safety-background"
             aria-hidden="true"
           />
           {(!!this.helperText || !!this.counter) && (
             <div
-              class="input__meta"
+              class="textarea__meta"
               id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
               {!!this.helperText && (
-                <div class="input__helper-text">{this.helperText}</div>
+                <div class="textarea__helper-text">{this.helperText}</div>
               )}
               {this.counter && (
-                <div class="input__counter">
+                <div class="textarea__counter">
                   {!!this.value ? String(this.value).length : 0} /{' '}
                   {this.maxLength}
                 </div>

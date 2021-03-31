@@ -135,12 +135,12 @@ export class TextField {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
-          <label class="input__label" htmlFor={this.inputId}>
+          <label class="text-field__label" htmlFor={this.inputId}>
             {this.label}
           </label>
           <input
             type={this.type}
-            class="input__input"
+            class="text-field__control"
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
             required={this.required}
@@ -160,16 +160,16 @@ export class TextField {
 
           {(!!this.helperText || !!this.counter) && (
             <div
-              class="input__meta"
+              class="text-field__meta"
               id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
               {!!this.helperText && (
-                <div class="input__helper-text">{this.helperText}</div>
+                <div class="text-field__helper-text">{this.helperText}</div>
               )}
               {this.counter && (
-                <div class="input__counter">
+                <div class="text-field__counter">
                   {!!this.value ? String(this.value).length : 0} /{' '}
                   {this.maxLength}
                 </div>

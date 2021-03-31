@@ -21,11 +21,11 @@ scale-text-field {
   --color-meta: var(--scl-color-text-standard);
   --color-meta-error: var(--scl-color-text-error);
 
-  /*input*/
-  --spacing-input: var(--scl-spacing-12) var(--spacing-x) 0
+  /*control*/
+  --spacing-control: var(--scl-spacing-12) var(--spacing-x) 0
     calc(var(--spacing-x) - 1px);
-  --transition-input: var(--transition);
-  --font-size-input: var(--scl-font-size-16);
+  --transition-control: var(--transition);
+  --font-size-control: var(--scl-font-size-16);
 
   /*counter*/
   --transition-counter: var(--transition);
@@ -59,26 +59,26 @@ scale-text-field {
 .text-field {
   position: relative;
 }
-.text-field .input__helper-text,
-.text-field .input__counter {
+.text-field .text-field__helper-text,
+.text-field .text-field__counter {
   font-weight: var(--font-weight-meta);
 }
-.text-field .input__input {
+.text-field .text-field__control {
   width: 100%;
   height: var(--height);
   margin: 0;
   display: flex;
   outline: none;
-  padding: var(--spacing-input);
+  padding: var(--spacing-control);
   z-index: 1;
   box-sizing: border-box;
-  transition: var(--transition-input);
+  transition: var(--transition-control);
   font-family: inherit;
-  font-size: var(--font-size-input);
+  font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
 }
-.text-field .input__counter {
+.text-field .text-field__counter {
   display: flex;
   transition: var(--transition-counter);
   margin-left: auto;
@@ -88,40 +88,40 @@ scale-text-field {
   line-height: var(--line-height-counter);
   color: inherit;
 }
-.text-field .input__helper-text {
+.text-field .text-field__helper-text {
   transition: var(--transition-helper-text);
   padding-left: var(--spacing-x);
   font-size: var(--font-size-helper-text);
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
 }
-.text-field .input__meta {
+.text-field .text-field__meta {
   display: flex;
   justify-content: space-between;
   margin-top: var(--spacing-y-meta);
   color: var(--color-meta);
 }
 
-.text-field:not(.text-field--disabled) .input__input:hover {
+.text-field:not(.text-field--disabled) .text-field__control:hover {
   border-color: var(--border-color-hover);
 }
 
-.text-field:not(.text-field--disabled) .input__input:focus {
+.text-field:not(.text-field--disabled) .text-field__control:focus {
   border-color: var(--border-color-focus);
   box-shadow: var(--box-shadow-focus);
 }
 
-.text-field:not(.text-field--disabled) .input__input:focus::placeholder {
+.text-field:not(.text-field--disabled) .text-field__control:focus::placeholder {
   color: var(--color-placeholder);
 }
 
-.text-field .input__input::placeholder,
+.text-field .text-field__control::placeholder,
 .text-field ::placeholder {
   color: transparent;
   transition: var(--transition-placeholder);
 }
 
-.input__label {
+.text-field__label {
   top: 0;
   left: 0;
   color: var(--color-label);
@@ -137,25 +137,25 @@ scale-text-field {
   );
   font-weight: var(--font-weight-label);
 }
-.text-field--has-focus .input__label,
-.animated .input__label {
+.text-field--has-focus .text-field__label,
+.animated .text-field__label {
   transform: translate(var(--spacing-x), var(--scl-spacing-8));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
 }
-.text-field--status-error .input__input {
+.text-field--status-error .text-field__control {
   border: var(--border-error);
 }
-.text-field--status-error .input__helper-text {
+.text-field--status-error .text-field__helper-text {
   color: var(--color-helper-text-error);
 }
-.text-field--status-error .input__counter {
+.text-field--status-error .text-field__counter {
   color: var(--color-counter-error);
 }
-.text-field--size-small .input__input {
+.text-field--size-small .text-field__control {
   height: var(--height-small);
 }
-.text-field--size-small .input__label {
+.text-field--size-small .text-field__label {
   font-size: var(--font-size-label-small);
   transform: translate(
     var(--spacing-x),
@@ -163,28 +163,28 @@ scale-text-field {
   );
   font-weight: var(--font-weight-label-small);
 }
-.text-field--size-small.text-field--has-focus .input__label,
-.text-field--size-small.animated .input__label {
+.text-field--size-small.text-field--has-focus .text-field__label,
+.text-field--size-small.animated .text-field__label {
   transform: translate(var(--spacing-x), var(--scl-spacing-4));
   font-size: var(--font-size-label-focus);
 }
-.text-field--transparent .input__input {
+.text-field--transparent .text-field__control {
   background-color: transparent;
 }
 
 .text-field--disabled label,
-.text-field--disabled .input__label,
+.text-field--disabled .text-field__label,
 .text-field--disabled input,
-.text-field--disabled .input__input,
-.text-field--disabled .input__meta,
-.input.text-field--disabled .input__counter,
-.text-field--disabled .input__helper-text {
+.text-field--disabled .text-field__control,
+.text-field--disabled .text-field__meta,
+.text-field--disabled .text-field__counter,
+.text-field--disabled .text-field__helper-text {
   cursor: not-allowed;
   border-color: var(--color-disabled);
   color: var(--color-disabled);
   background: var(--scl-color-white);
 }
-.text-field--disabled.animated label.input__label {
+.text-field--disabled.animated label.text-field__label {
   color: var(--color-disabled);
 }
 
