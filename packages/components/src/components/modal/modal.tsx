@@ -45,8 +45,6 @@ export class Modal {
   @Prop() heading: string;
   /** (optional) Modal size */
   @Prop() size?: string = 'default';
-  /** (optional) Modal variant */
-  @Prop() variant?: string;
   /** (optional) If `true`, the Modal is open. */
   @Prop({ reflect: true }) opened?: boolean = false;
   /** (optional) Transition duration */
@@ -200,9 +198,11 @@ export class Modal {
         <div
           ref={el => (this.modalContainer = el)}
           class={this.getCssClassMap()}
+          part={classNames('base', this.isOpen && 'open')}
         >
           <div
             class="modal__backdrop"
+            part="backdrop"
             onClick={() => (this.opened = false)}
           ></div>
           <div
@@ -212,15 +212,22 @@ export class Modal {
           ></div>
           <div
             class="modal__window"
+            part={classNames('window', this.size && `size-${this.size}`)}
             ref={el => (this.modalWindow = el)}
             role="dialog"
             aria-modal="true"
           >
-            <div class="modal__header">
-              <h2 class="modal__heading">{this.heading}</h2>
+            <div
+              class="modal__header"
+              part={classNames('header', this.hasScroll && 'has-scroll')}
+            >
+              <h2 class="modal__heading" part="heading">
+                {this.heading}
+              </h2>
               <button
                 ref={el => (this.closeButton = el)}
                 class="modal__close-button"
+                part="close-button"
                 onClick={() => (this.opened = false)}
                 aria-label={this.closeButtonLabel}
               >
@@ -229,12 +236,27 @@ export class Modal {
                 </slot>
               </button>
             </div>
-            <div ref={el => (this.modalBody = el)} class="modal__body-wrapper">
-              <div class="modal__body">
+            <div
+              ref={el => (this.modalBody = el)}
+              class="modal__body-wrapper"
+              part={classNames('body-wrapper', this.hasBody && 'has-body')}
+            >
+              <div
+                class="modal__body"
+                part={classNames('body', this.hasBody && 'has-body')}
+              >
                 <slot></slot>
               </div>
             </div>
-            <div class="modal__actions">
+            <div
+              class="modal__actions"
+              part={classNames(
+                'actions',
+                `align-${this.alignActions}`,
+                this.hasActionsSlot && 'has-actions',
+                this.hasScroll && 'has-scroll'
+              )}
+            >
               <slot name="action"></slot>
             </div>
           </div>
@@ -256,8 +278,7 @@ export class Modal {
       `modal--align-actions-${this.alignActions}`,
       this.hasScroll && 'modal--has-scroll',
       this.hasBody && 'modal--has-body',
-      this.size && `modal--size-${this.size}`,
-      this.variant && `modal--variant-${this.variant}`
+      this.size && `modal--size-${this.size}`
     );
   }
 }

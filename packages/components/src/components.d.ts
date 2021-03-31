@@ -4788,10 +4788,6 @@ export namespace Components {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
-        /**
-          * (optional) Modal variant
-         */
-        "variant"?: string;
     }
     interface ScaleNavIcon {
         "clickLink": any;
@@ -11842,10 +11838,6 @@ declare namespace LocalJSX {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
-        /**
-          * (optional) Modal variant
-         */
-        "variant"?: string;
     }
     interface ScaleNavIcon {
         "clickLink"?: any;
