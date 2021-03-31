@@ -7,6 +7,7 @@
     :disabled="disabled"
     :color-fill="colorFill"
     :aria-lang="ariaLang"
+    :spacing="spacing"
   >
   </scale-rating-stars>
 </template>
@@ -21,6 +22,7 @@ export default {
     disabled: { type: Boolean, default: false },
     colorFill: { type: String },
     ariaLang: { type: String },
+    spacing: { type: Number, default: 4 },
   },
 };
 </script>

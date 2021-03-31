@@ -186,7 +186,9 @@ export class RatingStars {
               onMouseEnter={this.handleMouseEnter}
               style={{
                 paddingLeft: `${index > 0 ? this.spacing / 2 : 0}px`,
-                paddingRight: `${index === this.numOfStars - 1 ? 0 : this.spacing / 2}px`,
+                paddingRight: `${
+                  index === this.numOfStars - 1 ? 0 : this.spacing / 2
+                }px`,
               }}
             >
               <span
@@ -213,28 +215,30 @@ export class RatingStars {
         <span class="rating__symbols rating__symbols--indicator">
           {counter.map(index => (
             <span
-            class="rating__symbol__wrapper"
-            onMouseEnter={this.handleMouseEnter}
-            style={{
-              paddingLeft: `${index > 0 ? this.spacing / 2 : 0}px`,
-              paddingRight: `${index === this.numOfStars - 1 ? 0 : this.spacing / 2}px`,
-            }}
-          >
-            <span
+              class="rating__symbol__wrapper"
+              onMouseEnter={this.handleMouseEnter}
               style={{
-                width: this.small ? '16px' : '24px',
-                clipPath:
-                  displayValue > index + 1
-                    ? null
-                    : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
+                paddingLeft: `${index > 0 ? this.spacing / 2 : 0}px`,
+                paddingRight: `${
+                  index === this.numOfStars - 1 ? 0 : this.spacing / 2
+                }px`,
               }}
-              class={{
-                rating__symbol: true,
-                'rating__symbol--hover':
-                  this.isHovering && Math.ceil(displayValue) === index + 1,
-              }}
-              innerHTML={this.getSymbolFilled()}
-            />
+            >
+              <span
+                style={{
+                  width: this.small ? '16px' : '24px',
+                  clipPath:
+                    displayValue > index + 1
+                      ? null
+                      : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
+                }}
+                class={{
+                  rating__symbol: true,
+                  'rating__symbol--hover':
+                    this.isHovering && Math.ceil(displayValue) === index + 1,
+                }}
+                innerHTML={this.getSymbolFilled()}
+              />
             </span>
           ))}
         </span>

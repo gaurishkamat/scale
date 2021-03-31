@@ -67,6 +67,7 @@ describe('component', () => {
       page.root.color = '#00ff00';
       page.root.ariaLabel = '';
       page.root.precision = 1;
+      page.root.spacing = 4;
       await page.waitForChanges();
       expect(page.rootInstance.numOfStars).toBe(7);
       expect(page.rootInstance.rating).toBe(3);
@@ -74,7 +75,7 @@ describe('component', () => {
       expect(page.rootInstance.small).toBe(true);
       expect(page.rootInstance.ariaLang).toBe('3 out of 7 stars');
       expect(page.rootInstance.precision).toBe(1);
-      expect(page.rootInstance.hoverValue).toBe(0);
+      expect(page.rootInstance.spacing).toBe(4);
     });
 
     it('isHovering is set to false on Mouseleave', async () => {
@@ -145,6 +146,14 @@ describe('component', () => {
       page = await newSpecPage({
         components: [RatingStars],
         html: `<scale-rating-stars rating="4" small></scale-rating-stars>`,
+      });
+      expect(page.root).toMatchSnapshot();
+    });
+
+    it('rating 1 and spacing 10 should match snapshot', async () => {
+      page = await newSpecPage({
+        components: [RatingStars],
+        html: `<scale-rating-stars rating="1" spacing="10"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
