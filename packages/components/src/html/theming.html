@@ -255,5 +255,40 @@
         >Somewhere else</scale-link
       >
     </p>
+
+    <a-divider></a-divider>
+
+    <a-heading>List</a-heading>
+
+    <style>
+      scale-list::part(nested) {
+        border-left: 1px solid cyan;
+      }
+      scale-list-item::part(base unordered)::before {
+        color: red;
+      }
+    </style>
+
+    <scale-list
+      ><scale-list-item role="listitem">Lorem ipsum dolor</scale-list-item>
+      <scale-list-item role="listitem"
+        >Sit amet
+        <scale-list
+          ><scale-list-item role="listitem">Elementum nibh</scale-list-item>
+          <scale-list-item role="listitem"
+            >Penatibus et magnis
+            <scale-list
+              ><scale-list-item role="listitem">Nulla facilisi</scale-list-item>
+              <scale-list-item role="listitem"
+                >Aliquam etiam</scale-list-item
+              ></scale-list
+            ></scale-list-item
+          ></scale-list
+        ></scale-list-item
+      >
+      <scale-list-item role="listitem"
+        >Consetetur sadipscing</scale-list-item
+      ></scale-list
+    >
   </body>
 </html>
