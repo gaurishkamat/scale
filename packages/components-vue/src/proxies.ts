@@ -3473,7 +3473,6 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
     customClass: {} as PropOptions<Components.ScaleModal['customClass']>,
     heading: {} as PropOptions<Components.ScaleModal['heading']>,
     size: {} as PropOptions<Components.ScaleModal['size']>,
-    variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
     duration: {} as PropOptions<Components.ScaleModal['duration']>,
     closeButtonLabel: {} as PropOptions<Components.ScaleModal['closeButtonLabel']>,

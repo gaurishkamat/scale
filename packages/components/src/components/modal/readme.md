@@ -17,7 +17,6 @@
 | `opened`           | `opened`             | (optional) If `true`, the Modal is open. | `boolean`           | `false`          |
 | `size`             | `size`               | (optional) Modal size                    | `string`            | `'default'`      |
 | `styles`           | `styles`             | (optional) Injected CSS styles           | `string`            | `undefined`      |
-| `variant`          | `variant`            | (optional) Modal variant                 | `string`            | `undefined`      |
 
 
 ## Events
@@ -26,6 +25,15 @@
 | ------------ | ----------- | ------------------ |
 | `scaleClose` |             | `CustomEvent<any>` |
 | `scaleOpen`  |             | `CustomEvent<any>` |
+
+
+## Shadow Parts
+
+| Part             | Description |
+| ---------------- | ----------- |
+| `"backdrop"`     |             |
+| `"close-button"` |             |
+| `"heading"`      |             |
 
 
 ## Dependencies

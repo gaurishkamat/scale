@@ -6434,10 +6434,6 @@
         {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
-        },
-        {
-          "name": "variant",
-          "description": "(optional) Modal variant"
         }
       ]
     },

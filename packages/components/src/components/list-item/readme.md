@@ -15,6 +15,13 @@
 | `styles`  | `styles`  | (optional) Injected CSS styles                                                         | `string`  | `undefined` |
 
 
+## Shadow Parts
+
+| Part            | Description |
+| --------------- | ----------- |
+| `"nested-list"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

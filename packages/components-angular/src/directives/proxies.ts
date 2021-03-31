@@ -4064,13 +4064,13 @@ export class ScaleMenuFlyoutList {
 import { Modal as IModal } from '@scaleds/components-telekom/dist/types/components/modal/modal';
 export declare interface ScaleModal extends Components.ScaleModal {}
 @ProxyCmp({
-  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant']
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles']
 })
 @Component({
   selector: 'scale-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles', 'variant'],
+  inputs: ['alignActions', 'closeButtonLabel', 'customClass', 'duration', 'heading', 'opened', 'size', 'styles'],
   outputs: ['scaleOpen', 'scaleClose']
 })
 export class ScaleModal {
