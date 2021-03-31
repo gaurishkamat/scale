@@ -1,6 +1,9 @@
 :host {
   --spacing-x: var(--scl-spacing-16);
-  --background-overlay: var(--scl-color-background-overlay, rgba(108, 108, 108, 0.7));
+  --background-overlay: var(
+    --scl-color-background-overlay,
+    rgba(108, 108, 108, 0.7)
+  );
 
   --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
   --radius-window: var(--scl-radius-8);
