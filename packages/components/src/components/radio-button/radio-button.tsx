@@ -92,12 +92,12 @@ export class RadioButton {
           <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (
             <div
-              class="input__meta"
+              class="radio-button__meta"
               id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
-              <div class="input__helper-text">{this.helperText}</div>
+              <div class="radio-button__helper-text">{this.helperText}</div>
             </div>
           )}
         </div>
@@ -107,11 +107,10 @@ export class RadioButton {
 
   getCssClassMap() {
     return classNames(
-      'input',
-      'input--type-radio',
-      this.checked && `input--checked`,
-      this.disabled && `input--disabled`,
-      this.status && `input--status-${this.status}`
+      'radio-button',
+      this.checked && `radio-button--checked`,
+      this.disabled && `radio-button--disabled`,
+      this.status && `radio-button--status-${this.status}`
     );
   }
 }
