@@ -1,234 +1,254 @@
-.input {
-  position: relative;
+scale-checkbox {
+  --spacing-x: var(--scl-spacing-8);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --color-text: var(--scl-color-text-standard);
+  --color-text-error: var(--scl-color-text-error);
+  --color-background-disabled: var(--scl-color-background-disabled);
+  --color-background-standard: var(--scl-color-background-standard);
+  --color-primary: var(--scl-color-primary, #e20074);
+  --color-focus: var(--scl-color-focus);
+  --color-primary-hover: var(--scl-color-primary-hover, #f90984);
+  --color-primary-active: var(--scl-color-primary-active, #cb0068);
+
+  /*control*/
+  --width-control: var(--scl-spacing-16);
+  --height-control: var(--scl-spacing-16);
+  --width-control-wrapper: calc(
+    var(--width-control) + var(--spacing-left-control) + var(--spacing-control) +
+      calc(var(--border-width-control) * 2)
+  );
+  --height-control-wrapper: calc(
+    var(--height-control) + var(--spacing-left-control) + var(--spacing-control) +
+      calc(var(--border-width-control) * 2)
+  );
+  --transition-control: var(--transition);
+  --spacing-control: var(--scl-spacing-2);
+  --spacing-left-control: var(--scl-spacing-4);
+  --radius-control: var(--scl-radius-4);
+  --border-width-control: var(--scl-spacing-1);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --spacing-left-helper-text: calc(var(--width-control-wrapper) + var(--spacing-x));
+  --font-size-helper-text: var(--scl-font-size-12);
+  --font-weight-helper-text: var(--scl-font-weight-bold);
+  --line-height-helper-text: var(--scl-font-line-height-133);
+  --color-helper-text: var(--scl-color-blue-70);
+
+  /*label*/
+  --font-weight-label: var(--scl-font-weight-medium);
+  --transition-label: var(--transition);
+
+  /*icon*/
+  --color-icon-checked: var(--scl-color-grey-30);
+  --color-icon-checked-active: var(--scl-color-white);
+  --width-icon: var(--scl-spacing-12);
+  --height-icon: var(--scl-spacing-12);
+  --left-icon: calc(0.5 * var(--scl-spacing-12));
+  --top-icon: calc(0.5 * var(--scl-spacing-12));
 }
 
-.input__checkbox-label-wrapper {
+.checkbox {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.input .input__helper-text {
-  font-weight: var(--scl-font-weight-bold);
+.checkbox .checkbox__control-wrapper {
+  width: var(--width-control-wrapper);
+  height: var(--height-control-wrapper);
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: var(--spacing-x);
 }
 
-.input .input__helper-text {
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  padding-left: var(--scl-spacing-12);
-  font-size: var(--scl-font-size-12);
-  line-height: var(--scl-font-line-height-133);
-  color: var(--scl-color-blue-70);
+.checkbox__label-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
-.input .input__meta {
+
+.checkbox .checkbox__label {
+  color: var(--color-text);
+  font-weight: var(--font-weight-label);
+  transition: var(--transition-label);
+}
+
+.checkbox .checkbox__meta {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.input--status-error .input__input,
-.input--status-error .input__textarea,
-.input--status-error .input__select {
-  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+.checkbox .checkbox__helper-text {
+  transition: var(--transition-helper-text);
+  padding-left: var(--spacing-left-helper-text);
+  font-size: var(--font-size-helper-text);
+  font-weight: var(--font-weight-helper-text);
+  line-height: var(--line-height-helper-text);
+  color: var(--color-helper-text);
 }
-.input--status-error .input__helper-text {
-  color: var(--scl-color-text-error);
+
+.checkbox--status-error .checkbox__helper-text {
+  color: var(--color-text-error);
 }
-.input--status-error .input__counter {
-  color: var(--scl-color-text-error);
-}
-.input--type-checkbox {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.input--type-checkbox input {
+
+.checkbox input {
   width: 0;
   height: 0;
   opacity: 0;
   position: absolute;
 }
-.input--type-checkbox .input__meta {
-  width: 100%;
+
+.checkbox input:disabled ~ .checkbox__label {
+  color: var(--color-background-disabled);
 }
-.input--type-checkbox .input__helper-text {
-  padding-left: var(--scl-spacing-32);
+.checkbox input:checked:disabled ~ .checkbox__label {
+  color: var(--color-background-disabled);
 }
-.input--type-checkbox .input__checkbox-label {
-  color: var(--scl-color-text-standard);
-  font-weight: var(--scl-font-weight-medium);
-}
-.input--type-checkbox .input__checkbox-container {
-  width: var(--scl-spacing-24);
-  height: var(--scl-spacing-24);
-  display: flex;
-  position: relative;
-  align-items: center;
-  margin-right: var(--scl-spacing-8);
-}
-.input--type-checkbox input:disabled ~ .input__checkbox-label {
-  /* FIXME make sure color is right */
-  color: var(--scl-color-background-disabled);
-}
-.input--type-checkbox input:checked:disabled ~ .input__checkbox-label {
-  color: var(--scl-color-background-disabled);
-}
-.input--type-checkbox
+.checkbox
   input:checked:disabled
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder {
+  ~ .checkbox__control-wrapper
+  .checkbox__control {
   background: var(--scl-color-background-disabled);
 }
 /* TODO this could removed once scale-icon is removed */
-.input--type-checkbox
-  input:checked:disabled
-  ~ .input__checkbox-container
-  scale-icon {
-  --icon-color: var(--scl-color-grey-30);
+.checkbox input:checked:disabled ~ .checkbox__control-wrapper scale-icon {
+  --icon-color: var(--color-icon-checked);
 }
-.input--type-checkbox
+.checkbox
   input:checked:not([disabled]):hover
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  .checkbox__control,
+.checkbox
   input:checked:not([disabled])
-  ~ .input__checkbox-container:hover
-  .input__checkbox-placeholder {
+  ~ .checkbox__control-wrapper:hover
+  .checkbox__control {
   box-shadow: none;
-  border-color: var(--scl-color-primary-hover, #f90984);
-  background: var(--scl-color-primary-hover, #f90984);
+  border-color: var(--color-primary-hover);
+  background: var(--color-primary-hover);
 }
-.input--type-checkbox
+.checkbox
   input:checked:not([disabled]):active
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  .checkbox__control,
+.checkbox
   input:checked:not([disabled])
-  ~ .input__checkbox-container:active
-  .input__checkbox-placeholder {
-  border-color: var(--scl-color-primary-active, #cb0068);
-  background: var(--scl-color-primary-active, #cb0068);
+  ~ .checkbox__control-wrapper:active
+  .checkbox__control {
+  border-color: var(--color-primary-active);
+  background: var(--color-primary-active);
 }
 /* TODO this could removed once scale-icon is removed */
-.input--type-checkbox
+.checkbox
   input:checked:not([disabled]):active
-  ~ .input__checkbox-container
+  ~ .checkbox__control-wrapper
   scale-icon,
-.input--type-checkbox
+.checkbox
   input:checked:not([disabled])
-  ~ .input__checkbox-container:active
+  ~ .checkbox__control-wrapper:active
   scale-icon {
-  --icon-color: var(--scl-color-white);
+  --icon-color: var(--color-icon-checked-active);
 }
-.input--type-checkbox
+.checkbox
   input:checked:not([disabled])
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder {
-  border: var(--scl-spacing-1) solid var(--scl-color-primary, #e20074);
-  background: var(--scl-color-primary, #e20074);
+  ~ .checkbox__control-wrapper
+  .checkbox__control {
+  border: var(--scl-spacing-1) solid var(--color-primary);
+  background: var(--color-primary);
 }
-.input--type-checkbox
-  input:disabled
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder {
-  border-color: var(--scl-color-background-disabled);
+.checkbox input:disabled ~ .checkbox__control-wrapper .checkbox__control {
+  border-color: var(--color-background-disabled);
 }
-.input--type-checkbox
-  input:focus
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+.checkbox input:focus ~ .checkbox__control-wrapper .checkbox__control {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--color-focus);
 }
-.input--type-checkbox
+.checkbox
   input:not([disabled]):hover
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  .checkbox__control,
+.checkbox
   input:not([disabled])
-  ~ .input__checkbox-container:hover
-  .input__checkbox-placeholder {
+  ~ .checkbox__control-wrapper:hover
+  .checkbox__control {
   box-shadow: none;
-  border-color: var(--scl-color-primary-hover, #f90984);
+  border-color: var(--color-primary-hover);
 }
-.input--type-checkbox
+.checkbox
   input:not([disabled]):hover
-  ~ .input__checkbox-container
-  ~ .input__checkbox-label,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  ~ .checkbox__label,
+.checkbox
   input:not([disabled])
-  ~ .input__checkbox-container:hover
-  ~ .input__checkbox-label {
-  color: var(--scl-color-primary-hover, #f90984);
+  ~ .checkbox__control-wrapper:hover
+  ~ .checkbox__label {
+  color: var(--color-primary-hover);
 }
-.input--type-checkbox
+.checkbox
   input:not([disabled]):active
-  ~ .input__checkbox-container
-  .input__checkbox-placeholder,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  .checkbox__control,
+.checkbox
   input:not([disabled])
-  ~ .input__checkbox-container:active
-  .input__checkbox-placeholder {
-  border-color: var(--scl-color-primary-active, #cb0068);
-  background: var(--scl-color-primary-active, #cb0068);
+  ~ .checkbox__control-wrapper:active
+  .checkbox__control {
+  border-color: var(--color-primary-active);
+  background: var(--color-primary-active);
 }
 /* TODO this could removed once scale-icon is removed */
-.input--type-checkbox
-  input:not([disabled]):active
-  ~ .input__checkbox-container
-  scale-icon,
-.input--type-checkbox
-  input:not([disabled])
-  ~ .input__checkbox-container:active
-  scale-icon {
-  --icon-color: var(--scl-color-primary-active, #cb0068);
+.checkbox input:not([disabled]):active ~ .checkbox__control-wrapper scale-icon,
+.checkbox input:not([disabled]) ~ .checkbox__control-wrapper:active scale-icon {
+  --icon-color: var(--color-primary-active);
 }
-.input--type-checkbox
+.checkbox
   input:not([disabled]):active
-  ~ .input__checkbox-container
-  ~ .input__checkbox-label,
-.input--type-checkbox
+  ~ .checkbox__control-wrapper
+  ~ .checkbox__label,
+.checkbox
   input:not([disabled])
-  ~ .input__checkbox-container:active
-  ~ .input__checkbox-label {
-  color: var(--scl-color-primary-active, #cb0068);
+  ~ .checkbox__control-wrapper:active
+  ~ .checkbox__label {
+  color: var(--color-primary-active);
 }
-.input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
-  width: var(--scl-spacing-16);
-  height: var(--scl-spacing-16);
-  margin: var(--scl-spacing-2);
+.checkbox .checkbox__control-wrapper .checkbox__control {
+  width: var(--width-control);
+  height: var(--height-control);
+  margin: var(--spacing-control);
+  margin-left: var(--spacing-left-control);
   box-sizing: border-box;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  margin-left: var(--scl-spacing-4);
-  border-radius: var(--scl-radius-4);
-  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
-  background: var(--scl-color-background-standard);
+  transition: var(--transition-control);
+  border-radius: var(--radius-control);
+  border: var(--border-width-control) solid var(--color-text);
+  background: var(--color-background-standard);
 }
-.input--type-checkbox .input__checkbox-container scale-icon {
-  top: calc(0.5 * var(--scl-spacing-12));
-  left: calc(0.5 * var(--scl-spacing-12));
-  width: var(--scl-spacing-12);
-  height: var(--scl-spacing-12);
+/* TODO this could removed once scale-icon is removed */
+.checkbox .checkbox__control-wrapper scale-icon {
+  top: var(--top-icon);
+  left: var(--left-icon);
+  width: var(--width-icon);
+  height: var(--height-icon);
   position: absolute;
   user-select: none;
-  /* TODO this could removed once scale-icon is removed */
-  --icon-color: var(--scl-color-background-standard);
+  --icon-color: var(--color-background-standard);
 }
-.input--type-checkbox .input__checkbox-container ~ .input__checkbox-label {
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+.checkbox .checkbox__control-wrapper scale-icon svg {
+  width: var(--width-icon);
+  height: var(--height-icon);
 }
-.input--type-checkbox.input--status-error
-  .input__checkbox-container
-  .input__checkbox-placeholder {
+
+.checkbox.checkbox--status-error .checkbox__control-wrapper .checkbox__control {
   border: var(--scl-spacing-2) solid var(--scl-color-background-error);
 }
 
-.input--disabled .input__checkbox-label,
-.input--disabled input,
-.input--disabled .input__checkbox-container,
-.input--disabled .input__helper-text {
+.checkbox--disabled .checkbox__label,
+.checkbox--disabled input,
+.checkbox--disabled .checkbox__control-wrapper,
+.checkbox--disabled .checkbox__helper-text {
   cursor: not-allowed;
-  border-color: var(--scl-color-background-disabled);
-  color: var(--scl-color-background-disabled);
+  border-color: var(--color-background-disabled);
+  color: var(--color-background-disabled);
   background: var(--scl-color-white);
 }
