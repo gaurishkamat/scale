@@ -34,11 +34,12 @@ export class Link {
         {this.styles && <style>{this.styles}</style>}
         <a
           class={this.getCssClassMap()}
+          part={classNames('base', this.disabled && 'disabled')}
           href={this.disabled ? 'javascript:void(0)' : this.href}
           {...(!this.disabled ? { target: this.target } : {})}
           aria-disabled={this.disabled}
         >
-          <span class="link__wrapper">
+          <span class="link__wrapper" part="wrapper">
             <slot />
             {this.icon && this.icon !== '' && (
               <scale-icon
@@ -56,7 +57,6 @@ export class Link {
   getCssClassMap() {
     return classNames(
       'link',
-      this.variant && `$link--variant-${this.variant}`,
       this.disabled && 'link--disabled',
       this.block && 'link--block'
     );

@@ -234,5 +234,26 @@
         style="--spacing: 0; --color: #191919"
       ></scale-divider>
     </div>
+
+    <a-divider></a-divider>
+
+    <a-heading>Link</a-heading>
+
+    <style>
+      scale-link {
+        --color: red;
+        --color-visited: red;
+      }
+      scale-link::part(wrapper) {
+        border: 1px dotted turquoise;
+      }
+    </style>
+
+    <p><scale-link href="/theming.html">Theming page</scale-link></p>
+    <p>
+      <scale-link disabled href="https://example.com"
+        >Somewhere else</scale-link
+      >
+    </p>
   </body>
 </html>
