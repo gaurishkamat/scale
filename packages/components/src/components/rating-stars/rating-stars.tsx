@@ -19,9 +19,13 @@ export class RatingStars {
   @Prop({ mutable: true }) ariaLang: string;
   @Prop() precision = 1;
   @Prop() getSymbolBlank = () =>
-    `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" />`;
+    `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" size=${
+      this.small ? 16 : 24
+    } />`;
   @Prop() getSymbolFilled = () =>
-    `<scale-icon-action-favorite color=${this.colorFill} selected />`;
+    `<scale-icon-action-favorite color=${this.colorFill} selected size=${
+      this.small ? 16 : 24
+    } />`;
 
   @Watch('rating')
   watchHandler(newValue: number, oldValue: number) {
@@ -195,7 +199,6 @@ export class RatingStars {
                   'rating__symbol--hover':
                     this.isHovering && Math.ceil(displayValue) === index + 1,
                 }}
-                onMouseEnter={this.handleMouseEnter}
                 innerHTML={this.getSymbolBlank()}
                 id={`star-${index + 1}`}
               />

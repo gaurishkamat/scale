@@ -65,7 +65,7 @@ describe('component', () => {
       page.root.interactive = true;
       page.root.small = true;
       page.root.color = '#00ff00';
-      page.root.ariaLabel = 'rating-stars';
+      page.root.ariaLabel = '';
       page.root.precision = 1;
       await page.waitForChanges();
       expect(page.rootInstance.numOfStars).toBe(7);
@@ -117,10 +117,10 @@ describe('component', () => {
   });
 
   describe('snapshots', () => {
-    it('rating 0 (initial) should match snapshot', async () => {
+    it('rating 0 should match snapshot', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars></scale-rating-stars>`,
+        html: `<scale-rating-stars rating="0"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
@@ -129,6 +129,22 @@ describe('component', () => {
       page = await newSpecPage({
         components: [RatingStars],
         html: `<scale-rating-stars rating="3"></scale-rating-stars>`,
+      });
+      expect(page.root).toMatchSnapshot();
+    });
+
+    it('rating 2 and disabled should match snapshot', async () => {
+      page = await newSpecPage({
+        components: [RatingStars],
+        html: `<scale-rating-stars rating="2" disabled></scale-rating-stars>`,
+      });
+      expect(page.root).toMatchSnapshot();
+    });
+
+    it('rating 4 and small should match snapshot', async () => {
+      page = await newSpecPage({
+        components: [RatingStars],
+        html: `<scale-rating-stars rating="4" small></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });

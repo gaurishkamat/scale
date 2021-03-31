@@ -38,14 +38,14 @@
   cursor: default;
 }
 
-.rating--disabled [selected] path {
-  fill: var(--scl-color-grey-5000, #7c7c7c);
-}
-
 .rating--hover [selected] path {
   fill: var(--scl-color-primary-hover, #f80983);
 }
 
 .rating:active [selected] path {
   fill: var(--scl-color-primary-active, #f80983);
+}
+
+.rating.rating--disabled [selected] path {
+  fill: var(--scl-color-grey-5000, #7c7c7c);
 }
