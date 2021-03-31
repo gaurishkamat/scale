@@ -95,8 +95,8 @@
     "category": "content",
     "items": [
       "achievement",
-      "applications",
       "biometric",
+      "applications",
       "bookmark",
       "calendar",
       "clipboard",
@@ -120,8 +120,8 @@
       "media-folder",
       "money-at",
       "music",
-      "news",
       "prepaid-activate",
+      "news",
       "price-tag",
       "rss",
       "shop",
@@ -165,7 +165,14 @@
   {
     "label": "Home",
     "category": "home",
-    "items": ["home", "internet-at-home", "iot", "no-wifi", "smarthome", "wifi"]
+    "items": [
+      "home",
+      "internet-at-home",
+      "iot",
+      "no-wifi",
+      "smarthome",
+      "wifi"
+    ]
   },
   {
     "label": "Navigation",
@@ -187,7 +194,10 @@
   {
     "label": "Process",
     "category": "process",
-    "items": ["order-status", "processing"]
+    "items": [
+      "order-status",
+      "processing"
+    ]
   },
   {
     "label": "Service",
