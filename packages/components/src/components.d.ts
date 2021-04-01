@@ -4967,7 +4967,6 @@ export namespace Components {
         "precision": number;
         "rating": number;
         "small": boolean;
-        "spacing": number;
     }
     interface ScaleSidebarNav {
         /**
@@ -12058,7 +12057,6 @@ declare namespace LocalJSX {
         "precision"?: number;
         "rating"?: number;
         "small"?: boolean;
-        "spacing"?: number;
     }
     interface ScaleSidebarNav {
         /**

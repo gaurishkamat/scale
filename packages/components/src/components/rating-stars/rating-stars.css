@@ -1,3 +1,7 @@
+:host {
+  --rating-spacing: 0.125rem;
+}
+
 .rating {
   position: relative;
   display: inline-flex;
@@ -29,10 +33,6 @@
   display: flex;
 }
 
-.rating__symbol__wrapper {
-  display: flex;
-}
-
 .rating--disabled .rating__symbols {
   cursor: default;
 }
@@ -47,4 +47,17 @@
 
 .rating.rating--disabled [selected] path {
   fill: var(--scl-color-grey-5000, #7c7c7c);
+}
+
+.rating__symbol__wrapper {
+  display: flex;
+  padding: 0 var(--rating-spacing, 0.125rem);
+}
+
+.rating__symbol__wrapper:first-of-type {
+  padding-left: 0;
+}
+
+.rating__symbol__wrapper:last-of-type {
+  padding-right: 0;
 }

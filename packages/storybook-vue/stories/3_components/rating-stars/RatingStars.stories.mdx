@@ -22,7 +22,6 @@ export const Template = (args, { argTypes }) => ({
     :disabled="disabled"
     :color-fill="colorFill"
     :aria-lang="ariaLang"
-    :spacing="spacing"
   >
   </scale-rating-stars>
     `,
@@ -109,8 +108,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Spacing"
     args={{
-      rating: 1,
-      spacing: 10
+      rating: 1
     }}
   >
     {Template.bind({})}
@@ -118,5 +116,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars rating="1" spacing="10"></scale-rating-stars>
+<scale-rating-stars class="custom-styles" rating="1"></scale-rating-stars>
 ```

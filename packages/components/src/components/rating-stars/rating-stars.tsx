@@ -1,5 +1,6 @@
 import { Component, h, Prop, Watch } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
+import classNames from 'classnames';
 
 @Component({
   tag: 'scale-rating-stars',
@@ -17,7 +18,6 @@ export class RatingStars {
   @Prop({ mutable: true }) disabled = false;
   @Prop({ mutable: true }) colorFill = `var(--scl-color-primary)`;
   @Prop({ mutable: true }) ariaLang: string;
-  @Prop({ mutable: true }) spacing = 4;
   @Prop() precision = 1;
   @Prop() getSymbolBlank = () =>
     `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" size=${
@@ -61,16 +61,12 @@ export class RatingStars {
   }
 
   handleMouseEnter() {
-    if (this.disabled || !this.interactive) {
-      return;
-    }
     this.isHovering = true;
     return true;
   }
 
   handleMouseMove(event: MouseEvent) {
     this.hoverValue = this.getValueFromMousePosition(event);
-    // console.log(this.hoverValue);
   }
 
   handleMouseClick(event: MouseEvent) {
@@ -162,12 +158,7 @@ export class RatingStars {
     }
     return (
       <div
-        class={{
-          rating: true,
-          'rating--interactive': !this.interactive,
-          'rating--disabled': this.disabled,
-          'rating--hover': this.isHovering,
-        }}
+        class={this.getCssClassMap()}
         id="rating"
         ref={el => (this.element = el)}
         onMouseMove={this.handleMouseMove}
@@ -184,12 +175,6 @@ export class RatingStars {
             <span
               class="rating__symbol__wrapper"
               onMouseEnter={this.handleMouseEnter}
-              style={{
-                paddingLeft: `${index > 0 ? this.spacing / 2 : 0}px`,
-                paddingRight: `${
-                  index === this.numOfStars - 1 ? 0 : this.spacing / 2
-                }px`,
-              }}
             >
               <span
                 role="presentation"
@@ -217,12 +202,6 @@ export class RatingStars {
             <span
               class="rating__symbol__wrapper"
               onMouseEnter={this.handleMouseEnter}
-              style={{
-                paddingLeft: `${index > 0 ? this.spacing / 2 : 0}px`,
-                paddingRight: `${
-                  index === this.numOfStars - 1 ? 0 : this.spacing / 2
-                }px`,
-              }}
             >
               <span
                 style={{
@@ -243,6 +222,15 @@ export class RatingStars {
           ))}
         </span>
       </div>
+    );
+  }
+
+  getCssClassMap() {
+    return classNames(
+      'rating',
+      this.interactive && 'rating--interactive',
+      this.disabled && 'rating--disabled',
+      this.isHovering && 'rating--hover'
     );
   }
 }
