@@ -12,7 +12,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
 import { findRootNode } from '../../utils/menu-utils';
 
-const maybeJSONParse = data => {
+const readData = data => {
   let parsedData;
 
   try {
@@ -45,14 +45,13 @@ export class Header {
   @Prop() isMegaMenuVisible?: boolean = false;
   @Prop() isMobileMenuVisible?: boolean = false;
   @State() activeSegment: any =
-    maybeJSONParse(this.sectorNavigation).find(
+    readData(this.sectorNavigation).find(
       ({ id }) => id === this.activeSectorId
-    ) || maybeJSONParse(this.sectorNavigation)[0];
+    ) || readData(this.sectorNavigation)[0];
   @State() mobileMenu: boolean = false;
   @State() visibleMegaMenu: string = '';
   @State() scrolled: boolean = false;
 
-  data: Record<string, any[]>;
   hasSlotMenuMain: boolean;
   hasSlotMenuIcon: boolean;
   hasSlotMenuSector: boolean;
@@ -81,9 +80,48 @@ export class Header {
   @Watch('activeSectorId')
   handleActiveSegment(newValue) {
     this.activeSegment =
-      this.data.sectorNavigation.find(({ id }) => id === newValue) || {};
+      readData(this.sectorNavigation).find(({ id }) => id === newValue) || {};
   }
 
+  componentWillLoad() {
+    this.hasSlotMenuMain = !!this.hostElement.querySelector(
+      '[slot="menu-main"]'
+    );
+
+    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
+      '[slot="menu-icon"]'
+    );
+    this.hasSlotMenuSector = !!this.hostElement.querySelector(
+      '[slot="menu-sector"]'
+    );
+    this.hasSlotMenuAddon = !!this.hostElement.querySelector(
+      '[slot="menu-addon"]'
+    );
+    this.hasSlotMenuMobile = !!this.hostElement.querySelector(
+      '[slot="menu-mobile"]'
+    );
+    this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+  }
+
+  componentDidUpdate() {
+    this.hasSlotMenuMain = !!this.hostElement.querySelector(
+      '[slot="menu-main"]'
+    );
+
+    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
+      '[slot="menu-icon"]'
+    );
+    this.hasSlotMenuSector = !!this.hostElement.querySelector(
+      '[slot="menu-sector"]'
+    );
+    this.hasSlotMenuAddon = !!this.hostElement.querySelector(
+      '[slot="menu-addon"]'
+    );
+    this.hasSlotMenuMobile = !!this.hostElement.querySelector(
+      '[slot="menu-mobile"]'
+    );
+    this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+  }
   handleMobileMenu(event?: KeyboardEvent | MouseEvent) {
     if (event) {
       event.preventDefault();
@@ -110,7 +148,10 @@ export class Header {
   }
 
   menuMain() {
-    const rootNode = findRootNode(this.data.mainNavigation, this.activeRouteId);
+    const rootNode = findRootNode(
+      readData(this.mainNavigation),
+      this.activeRouteId
+    );
     const isActive = item =>
       rootNode &&
       rootNode.id === item.id &&
@@ -128,7 +169,7 @@ export class Header {
         {this.hasSlotMenuMain ? (
           <slot name="menu-main"></slot>
         ) : (
-          this.data.mainNavigation.map(item => (
+          readData(this.mainNavigation).map(item => (
             <scale-nav-main
               isActive={isActive(item)}
               isMegaMenuVisible={this.visibleMegaMenu === item.id}
@@ -168,7 +209,7 @@ export class Header {
   }
 
   menuIcon() {
-    const { defaultName, openedName } = this.data.iconNavigation.find(
+    const { defaultName, openedName } = readData(this.iconNavigation).find(
       ({ id }) => id === 'menu'
     ) || { defaultName: 'Menu', openedName: 'Close' };
     return (
@@ -176,7 +217,7 @@ export class Header {
         {this.hasSlotMenuIcon ? (
           <slot name="menu-icon"></slot>
         ) : (
-          this.data.iconNavigation
+          readData(this.iconNavigation)
             .filter(({ id }) => id !== 'menu')
             .map(item => (
               <scale-nav-icon
@@ -192,7 +233,7 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {((!this.hasSlotMenuMain && this.data.mainNavigation.length > 0) ||
+        {((!this.hasSlotMenuMain && readData(this.mainNavigation).length > 0) ||
           this.hasSlotMenuMobile) && (
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
@@ -215,7 +256,7 @@ export class Header {
         ) : this.portalName ? (
           <li class="sector-navigation__portal-name">{this.portalName}</li>
         ) : (
-          this.data.sectorNavigation.map(item => (
+          readData(this.sectorNavigation).map(item => (
             <scale-nav-segment
               isActive={this.activeSegment.id === item.id}
               href={item.href}
@@ -238,7 +279,7 @@ export class Header {
         {this.hasSlotMenuAddon ? (
           <slot name="menu-addon"></slot>
         ) : (
-          this.data.addonNavigation.map(item => (
+          readData(this.addonNavigation).map(item => (
             <scale-nav-segment
               href={item.href}
               onClick={event => {
@@ -256,33 +297,6 @@ export class Header {
         )}
       </ul>
     );
-  }
-
-  componentWillLoad() {
-    this.data = {
-      mainNavigation: maybeJSONParse(this.mainNavigation),
-      iconNavigation: maybeJSONParse(this.iconNavigation),
-      sectorNavigation: maybeJSONParse(this.sectorNavigation),
-      addonNavigation: maybeJSONParse(this.addonNavigation),
-    };
-
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
-
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
-    this.hasSlotMenuSector = !!this.hostElement.querySelector(
-      '[slot="menu-sector"]'
-    );
-    this.hasSlotMenuAddon = !!this.hostElement.querySelector(
-      '[slot="menu-addon"]'
-    );
-    this.hasSlotMenuMobile = !!this.hostElement.querySelector(
-      '[slot="menu-mobile"]'
-    );
-    this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
   }
 
   render() {
@@ -334,7 +348,7 @@ export class Header {
             ) : (
               <div>
                 <app-navigation-sector-mobile
-                  navigation={this.data.sectorNavigation}
+                  navigation={readData(this.sectorNavigation)}
                   activeSectorId={this.activeSectorId}
                   hide={() => {
                     this.handleMobileMenu();
@@ -342,7 +356,7 @@ export class Header {
                   }}
                 ></app-navigation-sector-mobile>
                 <app-navigation-main-mobile
-                  navigation={this.data.mainNavigation}
+                  navigation={readData(this.mainNavigation)}
                   activeRouteId={this.activeRouteId}
                   hide={() => {
                     this.handleMobileMenu();
