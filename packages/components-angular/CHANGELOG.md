@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
+
+
+### Bug Fixes
+
+* **components-angular:** update scale-text being removed ([57cc4cc](https://gitlab.com/scale-ds/scale-telekom/commit/57cc4cc252923390ae08846b760006dffe62492c))
+* **link:** a11y ([a498ffd](https://gitlab.com/scale-ds/scale-telekom/commit/a498ffdb74d246504739e575fc73a78b78c97354))
+* add _close-label_ prop in modal ([f66e2d3](https://gitlab.com/scale-ds/scale-telekom/commit/f66e2d3231e9ff323f3b9b0274e2786a95e7458e))
+* add aria-label back, add missing attributes, finally use button element again ([05d9cf7](https://gitlab.com/scale-ds/scale-telekom/commit/05d9cf732d738acd905f2eac52e3bdc59ef5f385))
+* add aria-label prop to scale-icon ([a6033ad](https://gitlab.com/scale-ds/scale-telekom/commit/a6033ad9d5983eb5eb4f55a85e4d3b30d3edb1f9))
+* header z-index and brandTitle rename and font fix ([2de7e77](https://gitlab.com/scale-ds/scale-telekom/commit/2de7e771a46f2bffd93ff4f7fc9e84691a05af6c))
+* remove unneeded _role_ prop from scale-button (a11y) ([d3adb86](https://gitlab.com/scale-ds/scale-telekom/commit/d3adb86319ac33896f3839f71c1d9c7444e7ba6f))
+* **components:** remove icon package import and dep ([aa2fd02](https://gitlab.com/scale-ds/scale-telekom/commit/aa2fd025b01348b60f82d4649781d2d8a941ceca))
+* **components-angular:** add missing ScaleChartStackCard to component-library-module.ts ([ab93f16](https://gitlab.com/scale-ds/scale-telekom/commit/ab93f161732c60219f112b4ce7273554cf3cbab1))
+* removes ngcc prepublish script ([fbdf314](https://gitlab.com/scale-ds/scale-telekom/commit/fbdf3140030b71dfebdb7adabd1c1e0313240c2f))
+
+
+### Features
+
+* beta components ([cb71930](https://gitlab.com/scale-ds/scale-telekom/commit/cb71930b026b80d222a23d5929e0f30976e2f2d6))
+* card link click handler and custom checkbox slot ([28d11b3](https://gitlab.com/scale-ds/scale-telekom/commit/28d11b34eceec8e1944b5ba471390ba1f3b89c71))
+* custom header ([f08a510](https://gitlab.com/scale-ds/scale-telekom/commit/f08a510a873325367ddd7c8c986516037d4686fa))
+* **date-picker:** more configuration options ([b51d943](https://gitlab.com/scale-ds/scale-telekom/commit/b51d943573f70eee100070786c9fa4ebe85af4f3))
+* add _controlled_ attribute and behavior to input select ([8b5ad7e](https://gitlab.com/scale-ds/scale-telekom/commit/8b5ad7eceb00a6c5851122c16e866840293ac843))
+* add simple footer ([017418d](https://gitlab.com/scale-ds/scale-telekom/commit/017418dbef4dd0f3bda941fcc5d4e80ccf16178b))
+* card a11y ([fdbafa3](https://gitlab.com/scale-ds/scale-telekom/commit/fdbafa36242cf69b5ea4497d0ae2b913c450c6b4))
+* date picker ([ac5b950](https://gitlab.com/scale-ds/scale-telekom/commit/ac5b95043352508c3ff9923d7a65cbb690ac206c))
+* make entire sidebar nav collapsible for small screens ([def7963](https://gitlab.com/scale-ds/scale-telekom/commit/def796375c2b8fa1c4e806457dca3d309a787fa8))
+* minimal variant ([1429df1](https://gitlab.com/scale-ds/scale-telekom/commit/1429df1a204cdc2a92ca953c79e85e72a0e365dd))
+* **brand-header:** add brandTitle prop ([e7a9522](https://gitlab.com/scale-ds/scale-telekom/commit/e7a9522cbd29534ff8d2bd6815055c16a32337e6))
+* **brand-header:** add claimLang config property ([fb21d23](https://gitlab.com/scale-ds/scale-telekom/commit/fb21d23ed6da1aa5cd114088ec77a924d1e41fb0))
+* **header:** build ([893ad9e](https://gitlab.com/scale-ds/scale-telekom/commit/893ad9eaba7eaca27b650fda44b4e2b2172c8a1b))
+* **header:** make active sector configurable ([540e77f](https://gitlab.com/scale-ds/scale-telekom/commit/540e77f0a12b9c1b12d5cbc07d3f7517995fa4a3))
+
+
+
+
+
 # [2.0.0-beta.3](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-03-25)
 
 **Note:** Version bump only for package @scaleds/components-angular-telekom

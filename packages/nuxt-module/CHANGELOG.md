@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
+
+
+### Bug Fixes
+
+* use correct package name ([baf8857](https://gitlab.com/scale-ds/scale-telekom/commit/baf8857417200b324e8589c5091a324e8a8f1182))
+
+
+
+
+
 # [2.0.0-beta.3](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-03-25)
 
 **Note:** Version bump only for package @scaleds/nuxt-module
