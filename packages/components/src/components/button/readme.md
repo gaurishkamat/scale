@@ -21,6 +21,13 @@
 | `variant`      | `variant`       | (optional) Button variant                                      | `string`                          | `'primary'` |
 
 
+## Shadow Parts
+
+| Part     | Description |
+| -------- | ----------- |
+| `"base"` |             |
+
+
 ## Dependencies
 
 ### Used by
