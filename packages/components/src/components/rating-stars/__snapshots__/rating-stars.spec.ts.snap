@@ -7,27 +7,27 @@ exports[`component snapshots rating 0 should match snapshot 1`] = `
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-2" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-3" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-4" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-5" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
       </span>
@@ -70,27 +70,27 @@ exports[`component snapshots rating 2 and disabled should match snapshot 1`] = `
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="width: 24px; clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-2" role="presentation" style="width: 24px; clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-3" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-4" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-5" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
       </span>
@@ -133,27 +133,27 @@ exports[`component snapshots rating 3 should match snapshot 1`] = `
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="width: 24px; clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-2" role="presentation" style="width: 24px; clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-3" role="presentation" style="width: 24px; clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-4" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-5" role="presentation" style="width: 24px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="24px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
       </span>
@@ -196,27 +196,27 @@ exports[`component snapshots rating 4 and small should match snapshot 1`] = `
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="width: 16px; clip-path: inset(0 400% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="16px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-2" role="presentation" style="width: 16px; clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="16px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-3" role="presentation" style="width: 16px; clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="16px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-4" role="presentation" style="width: 16px; clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="16px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-5" role="presentation" style="width: 16px;">
-            <scale-icon-action-favorite #7c7c7c)="" color="var(--scl-color-grey-5000," size="16px" undefined=""></scale-icon-action-favorite>
+            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px" undefined=""></scale-icon-action-favorite>
           </span>
         </span>
       </span>

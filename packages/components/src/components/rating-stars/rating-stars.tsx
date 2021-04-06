@@ -20,7 +20,7 @@ export class RatingStars {
   @Prop() precision = 1;
 
   colorFilled = `var(--scl-color-primary)`;
-  colorBlank = `var(--scl-color-grey-5000, #7c7c7c)`;
+  colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
 
   getSymbol = (color: string, size: string, selected?: 'selected') =>
