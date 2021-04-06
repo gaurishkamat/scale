@@ -1,18 +1,36 @@
+app-mega-menu {
+  --box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.1),
+    0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  --spacing: 34px var(--scl-spacing-16) 34px var(--scl-spacing-24);
+  --background: var(--scl-color-white);
+  --color-primary: var(--scl-color-primary);
+
+  --font-size-row-title: var(--scl-font-size-16);
+  --spacing-bottom-row-title: 18px;
+  --font-weight-row-title: var(--scl-font-weight-extrabold);
+  --color-row-title: var(--scl-color-text-standard);
+
+  --font-size-row-item: var(--scl-font-size-16);
+  --line-height-row-item: var(--scl-font-line-height-150);
+  --font-weight-row-item: var(--scl-font-weight-medium);
+  --color-row-item: var(--scl-color-text-standard);
+  --spacing-bottom-row-item: var(--scl-spacing-8);
+}
 .mega-menu {
   width: 100%;
   position: absolute;
   top: calc(var(--header-brand-height) * -1);
   left: 0;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--header-border-radius) var(--header-border-radius);
   padding-top: calc(var(--header-nav-height) + var(--header-brand-height));
   display: none;
   pointer-events: none;
   transition: none;
-  box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 .mega-menu__wrapper {
-  padding: 34px 1rem 34px 1.5rem;
-  background: #fff;
+  padding: 34px var(--scl-spacing-16) 34px var(--scl-spacing-24);
+  background: var(--background);
   pointer-events: none;
   border-bottom-left-radius: var(--header-border-radius);
   border-bottom-right-radius: var(--header-border-radius);
@@ -23,30 +41,31 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: 2rem;
+  padding-left: var(--scl-spacing-32);
 }
 
 .mega-menu__row-title {
   cursor: default;
-  font-size: 1rem;
-  margin-bottom: 18px;
-  font-weight: 800;
+  font-size: var(--font-size-row-title);
+  margin-bottom: var(--spacing-bottom-row-title);
+  font-weight: var(--font-weight-row-title);
+  color: var(--color-row-title);
 }
 
 .mega-menu__row-item {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 500;
-  color: #262626;
+  font-size: var(--font-size-row-item);
+  line-height: var(--line-height-row-item);
+  font-weight: var(--font-weight-row-item);
+  color: var(--color-row-item);
+  margin-bottom: var(--spacing-bottom-row-item);
   text-decoration: none;
   transition: color, border 0.15s ease-in-out;
-  margin-bottom: 8px;
   display: block;
 }
 
 .mega-menu__row-item.active,
 .mega-menu__row-item:hover {
-  color: #e20074;
+  color: var(--color-primary);
   margin-bottom: 7px;
 }
 
@@ -55,7 +74,7 @@
   padding-bottom: 2px;
   margin-bottom: -2px;
   display: inline-block;
-  border-bottom: 1px solid #e20074;
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .mega-menu__row li {

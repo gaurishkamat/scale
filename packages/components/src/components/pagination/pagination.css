@@ -1,15 +1,25 @@
 :host {
+  --color: var(--scl-color-black);
+  --font-size: var(--scl-font-size-16);
+  --border: 1px solid var(--scl-color-grey-10);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-button: var(--scl-color-grey-10);
+  --border-button: var(--border);
+  --box-shadow-focus: 0px 0px 0px 2px var(--scl-color-focus);
+  --radius-first-prompt: 12px 0 0 12px;
+  --radius-last-prompt: 0 12px 12px 0;
+  --stroke-svg: var(--scl-color-black);
 }
 .pagination {
   display: inline-flex;
 }
 .pagination__info {
-  color: var(--scl-color-black);
+  color: var(--color);
   text-align: center;
-  font-size: var(--scl-font-size-16);
+  font-size: var(--font-size);
   line-height: 52px;
   padding: 0 15px;
-  border: 1px solid var(--scl-color-grey-10);
+  border: var(--border);
   flex-shrink: 0;
   border-left: 0;
   border-right: 0;
@@ -26,20 +36,20 @@ button {
   margin: 0;
   height: 54px;
   width: 42px;
-  color: var(--scl-color-grey-10);
+  color: var(--color-button);
   background: none;
-  border: 1px solid var(--scl-color-grey-10);
+  border: var(--border-button);
 }
 button:focus {
   outline: none;
-  box-shadow: 0px 0px 0px 2px var(--scl-color-focus);
+  box-shadow: var(--box-shadow-focus);
 }
 .pagination__first-prompt {
-  border-radius: 12px 0 0 12px;
+  border-radius: var(--radius-first-prompt);
   margin-right: -1px;
 }
 .pagination__last-prompt {
-  border-radius: 0 12px 12px 0;
+  border-radius: var(--radius-last-prompt);
   margin-left: -1px;
 }
 button svg {
@@ -49,14 +59,14 @@ button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
-  stroke: var(--scl-color-black);
+  stroke: var(--stroke-svg);
 }
 button:not(:disabled):hover {
-  border-color: var(--scl-color-primary-hover);
+  border-color: var(--color-hover);
   z-index: 1;
 }
 button:not(:disabled):hover svg {
-  stroke: var(--scl-color-primary-hover);
+  stroke: var(--color-hover);
 }
 
 /* Hide Borders option */
@@ -66,12 +76,12 @@ button:not(:disabled):hover svg {
 
 .pagination--hide-borders button {
   border-radius: 0;
-  border-top-width: 0px;
-  border-bottom-width: 0px;
+  border-top-width: 0;
+  border-bottom-width: 0;
 }
 
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px !important;
-  border-color: var(--scl-color-primary-hover) !important;
+  border-color: var(--color-hover) !important;
 }

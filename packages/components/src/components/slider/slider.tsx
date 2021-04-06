@@ -160,9 +160,10 @@ export class Slider {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {!!this.label && (
             <label
+              part="label"
               class="slider__label"
               id={`${this.sliderId}-label`}
               htmlFor={this.sliderId}
@@ -170,12 +171,14 @@ export class Slider {
               {this.label}
             </label>
           )}
-          <div class="slider__track-wrapper">
+          <div part="track-wrapper" class="slider__track-wrapper">
             <div
+              part="track"
               class="slider__track"
               ref={el => (this.sliderTrack = el as HTMLDivElement)}
             >
               <div
+                part="bar"
                 class="slider__bar"
                 style={{
                   width: `${this.value}%`,
@@ -183,12 +186,14 @@ export class Slider {
                 }}
               ></div>
               <div
+                part="thumb-wrapper"
                 class="slider__thumb-wrapper"
                 style={{ left: `${this.value}%` }}
                 onMouseDown={this.onButtonDown}
                 onTouchStart={this.onButtonDown}
               >
                 <div
+                  part="thumb"
                   class="slider__thumb"
                   tabindex="0"
                   role="slider"
@@ -205,7 +210,9 @@ export class Slider {
               </div>
             </div>
             {this.showValue && (
-              <div class="slider__display-value">{this.value}%</div>
+              <div part="display-value" class="slider__display-value">
+                {this.value}%
+              </div>
             )}
           </div>
         </div>
@@ -213,12 +220,23 @@ export class Slider {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'slider';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
     return classNames(
-      'slider',
-      this.disabled && 'slider--disabled',
-      this.trackSmall && 'slider--track-small',
-      this.thumbLarge && 'slider--thumb-large'
+      component,
+      this.disabled && `${prefix}disabled`,
+      this.trackSmall && `${prefix}track-small`,
+      this.thumbLarge && `${prefix}thumb-large`
     );
   }
 }

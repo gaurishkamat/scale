@@ -1,7 +1,12 @@
+:host {
+  --spacing-top: var(--scl-spacing-24);
+  --spacing-top-small: var(--scl-spacing-16);
+}
+
 .tab-panel {
-  padding-top: var(--scl-spacing-24);
+  padding-top: var(--spacing-top);
 }
 
 .tab-panel--small {
-  padding-top: var(--scl-spacing-16);
+  padding-top: var(--spacing-top-small);
 }

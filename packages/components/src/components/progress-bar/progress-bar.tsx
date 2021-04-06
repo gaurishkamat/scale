@@ -68,14 +68,15 @@ export class ProgressBar {
         {this.styles && <style>{this.styles}</style>}
         <style>{this.transitions(this.percentage)}</style>
 
-        <div class={this.getCssClassMap()}>
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {!!this.label && (
-            <label class="progress-bar__label" htmlFor={this.progressBarId}>
+            <label part="label" class="progress-bar__label" htmlFor={this.progressBarId}>
               {this.label}
             </label>
           )}
-          <div class="progress-bar-wrapper">
+          <div part="wrapper" class="progress-bar-wrapper">
             <div
+              part="outer"
               class="progress-bar__outer"
               style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
@@ -87,9 +88,9 @@ export class ProgressBar {
               aria-label={this.label}
               id={this.progressBarId}
             >
-              <div class="progress-bar__inner" style={this.progressStyle()}>
+              <div part="inner" class="progress-bar__inner" style={this.progressStyle()}>
                 {!!this.statusInside && (
-                  <div class="progress-bar__inner-status" aria-hidden="true">
+                  <div part="inner-status" class="progress-bar__inner-status" aria-hidden="true">
                     {this.percentage}%
                   </div>
                 )}
@@ -97,12 +98,13 @@ export class ProgressBar {
             </div>
 
             {!!this.showStatus && (
-              <div class="progress-bar__status" aria-hidden="true">
+              <div part="status" class="progress-bar__status" aria-hidden="true">
                 {this.percentage}%
               </div>
             )}
             {!!this.icon && (
               <scale-icon
+                part="icon"
                 class="progress-bar__status"
                 aria-hidden="true"
                 path={this.icon}
@@ -112,7 +114,7 @@ export class ProgressBar {
           </div>
         </div>
         {!!this.statusDescription && (
-          <div class="progress-bar__status-description" role="alert">
+          <div part="status-description" class="progress-bar__status-description" role="alert">
             {this.statusDescription}
           </div>
         )}
@@ -127,11 +129,22 @@ export class ProgressBar {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'progress-bar';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
     return classNames(
-      'progress-bar',
-      this.hasError && 'progress-bar--has-error',
-      this.disabled && 'progress-bar--disabled'
+      component,
+      this.hasError && `${prefix}has-error`,
+      this.disabled && `${prefix}disabled`
     );
   }
 }

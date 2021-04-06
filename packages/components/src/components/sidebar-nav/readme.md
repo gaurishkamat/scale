@@ -18,11 +18,11 @@
 
 ## Shadow Parts
 
-| Part       | Description |
-| ---------- | ----------- |
-| `"base"`   |             |
-| `"button"` |             |
-| `"list"`   |             |
+| Part              | Description |
+| ----------------- | ----------- |
+| `"icon"`          |             |
+| `"list"`          |             |
+| `"toggle-button"` |             |
 
 
 ## Dependencies

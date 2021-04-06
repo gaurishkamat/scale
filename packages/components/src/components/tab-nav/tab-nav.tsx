@@ -173,7 +173,7 @@ export class TabNav {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot name="tab" />
           <slot name="panel" />
         </div>
@@ -181,7 +181,18 @@ export class TabNav {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
-    return classNames('tab-nav', this.small && 'tab-nav--small');
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'tab-nav';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
+    return classNames(component, this.small && `${prefix}small`);
   }
 }

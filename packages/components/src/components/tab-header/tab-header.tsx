@@ -62,19 +62,34 @@ export class TabHeader {
       >
         {this.styles && <style>{this.styles}</style>}
 
-        <span ref={el => (this.container = el)} class={this.getCssClassMap()}>
+        <span
+          part={this.getBasePartMap()}
+          ref={el => (this.container = el)}
+          class={this.getCssClassMap()}
+        >
           <slot />
         </span>
       </Host>
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'tab-header';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
     return classNames(
-      'tab-header',
-      this.selected && 'tab-header--selected',
-      this.small && 'tab-header--small',
-      this.hasFocus && 'tab-header--has-focus'
+      component,
+      this.selected && `${prefix}selected`,
+      this.small && `${prefix}small`,
+      this.hasFocus && `${prefix}has-focus`
     );
   }
 }

@@ -104,8 +104,8 @@ export class Toast {
         <style>{this.transitions(this.toastHeightWithOffset)}</style>
         <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
 
-        <div class={this.getCssClassMap()}>
-          <div class="toast__header">
+        <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+          <div part="header" class="toast__header">
             <slot name="header" />
 
             <small>{this.getTime()}</small>
@@ -114,11 +114,15 @@ export class Toast {
             </a>
           </div>
           {this.autoHide && (
-            <div class="toast__progress" style={{ width: `${this.progress}%` }}>
+            <div
+              part="progress"
+              class="toast__progress"
+              style={{ width: `${this.progress}%` }}
+            >
               &nbsp;
             </div>
           )}
-          <div class="toast__body">
+          <div part="body" class="toast__body">
             <slot />
           </div>
         </div>
@@ -184,14 +188,25 @@ export class Toast {
     }
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'toast';
+    const prefix = mode === 'basePart' ? '' : `${component}`;
+
     return classNames(
-      'toast',
-      this.size && `toast--size-${this.size}`,
-      this.variant && `toast--variant-${this.variant}`,
-      !!this.opened && 'toast--opened',
-      !!!this.hideToast && 'toast--show',
-      !!this.hideToast && 'toast--hide'
+      mode === 'basePart' ? 'base' : component,
+      this.size && `${prefix}--size-${this.size}`,
+      this.variant && `${prefix}--variant-${this.variant}`,
+      !!this.opened && `${prefix}--opened`,
+      !!!this.hideToast && `${prefix}--show`,
+      !!this.hideToast && `${prefix}--hide`
     );
   }
 }

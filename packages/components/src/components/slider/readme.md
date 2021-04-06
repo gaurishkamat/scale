@@ -30,6 +30,19 @@
 | `scaleChange` |             | `CustomEvent<number>` |
 
 
+## Shadow Parts
+
+| Part              | Description |
+| ----------------- | ----------- |
+| `"bar"`           |             |
+| `"display-value"` |             |
+| `"label"`         |             |
+| `"thumb"`         |             |
+| `"thumb-wrapper"` |             |
+| `"track"`         |             |
+| `"track-wrapper"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

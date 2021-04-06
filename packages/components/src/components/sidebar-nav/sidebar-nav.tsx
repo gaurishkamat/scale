@@ -94,23 +94,24 @@ export class SidebarNav {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()} part="base">
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {this.collapsible === true && (
             <button
+              part="toggle-button"
               class="sidebar-nav__toggle-button"
               aria-expanded={this.collapsed ? 'false' : 'true'}
               onClick={this.toggle}
-              part="button"
             >
               {this.collapsibleLabel}
               <scale-icon-navigation-collapse-down
+                part="icon"
                 class="sidebar-nav__icon"
                 size={16}
               />
             </button>
           )}
-          <nav {...label} {...hidden} part="nav">
-            <ul class="sidebar-nav__list" role="list" part="list">
+          <nav part="nav" {...label} {...hidden}>
+            <ul part="list" class="sidebar-nav__list" role="list">
               <slot />
             </ul>
           </nav>
@@ -119,10 +120,18 @@ export class SidebarNav {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
-    return classNames(
-      'sidebar-nav',
-      this.collapsible && 'sidebar-nav--collapsible'
-    );
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'sidebar-nav';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
+    return classNames(component, this.collapsible && `${prefix}collapsible`);
   }
 }

@@ -21,14 +21,25 @@ export class TabPanel {
       <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot />
         </div>
       </Host>
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
-    return classNames('tab-panel', this.small && 'tab-panel--small');
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'tab-panel';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
+    return classNames(component, this.small && `${prefix}small`);
   }
 }

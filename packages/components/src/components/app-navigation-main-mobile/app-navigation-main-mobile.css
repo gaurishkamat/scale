@@ -1,6 +1,20 @@
 app-navigation-main-mobile {
-  width: 100%;
+  --min-height: var(--main-navigation-mobile-height);
+  --font-size: var(--scl-font-size-24);
+  --font-weight: var(--scl-font-weight-extrabold);
+  --line-height: 3.333;
+  --border-bottom: 1px solid #efefef;
+  --color: var(--scl-color-text-standard);
+  --color-primary: var(--scl-color-primary);
+
+  --child-font-size: var(--scl-font-size-24);
+  --child-line-height: 2.5;
+  --child-font-weight: var(--scl-font-weight-regular);
+
   --main-navigation-mobile-height: calc(100vh - 56px - 56px);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  width: 100%;
 }
 
 .main-navigation-mobile {
@@ -17,9 +31,9 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__item {
-  font-size: 1.5rem;
-  line-height: 3.333;
-  font-weight: 800;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
 }
 
 .main-navigation-mobile__item-wrapper {
@@ -28,24 +42,24 @@ app-navigation-main-mobile {
   display: flex;
   justify-content: space-between;
   margin-left: 34px;
-  border-bottom: 1px solid #efefef;
+  border-bottom: var(--border-bottom);
   padding-right: 34px;
   align-items: center;
 }
 
 .main-navigation-mobile__item-link {
   text-decoration: none;
-  color: #262626;
-  transition: var(--transition-in);
+  color: var(--color);
+  transition: var(--transition);
 }
 
 .main-navigation-mobile__item-link--selected {
-  color: #e20074;
-  transition: var(--transition-out);
+  color: var(--color-primary);
+  transition: var(--transition);
 }
 
 .main-navigation-mobile__item-link--selected .main-navigation-mobile__item {
-  border-right: 2px solid #e20074;
+  border-right: 2px solid var(--color-primary);
 }
 
 .main-navigation-mobile__item-link--selected svg {
@@ -56,13 +70,13 @@ app-navigation-main-mobile {
   position: absolute;
   top: 0;
   left: 0;
-  background: #fff;
+  background: var(--scl-color-white);
   width: 100%;
   min-height: var(--main-navigation-mobile-height);
 }
 
 .main-navigation-mobile__child-menu-current-item {
-  line-height: 3.333;
+  line-height: var(--line-height);
 }
 
 .main-navigation-mobile__child-menu-current-item svg {
@@ -71,9 +85,9 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #e20074;
+  font-size: var(--scl-font-size-24);
+  font-weight: var(--scl-font-weight-extrabold);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -81,12 +95,12 @@ app-navigation-main-mobile {
   width: calc(100% - 34px);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #efefef;
+  border-bottom: var(--border-bottom);
   margin-left: 34px;
 }
 
 .main-navigation-mobile__child-menu-current app-icon {
-  margin-right: 8px;
+  margin-right: var(--scl-spacing-8);
 }
 
 svg path {
@@ -94,7 +108,7 @@ svg path {
 }
 
 .main-navigation-mobile__child-menu-current .icon-back {
-  fill: #e20074;
+  fill: var(--color-primary);
 }
 
 .main-navigation-mobile__child-menu-items {
@@ -105,16 +119,16 @@ svg path {
 
 .main-navigation-mobile__child-menu-item-link {
   text-decoration: none;
-  color: #262626;
+  color: var(--color);
 }
 
 .main-navigation-mobile__child-menu-item-link.selected {
-  color: #e20074;
+  color: var(--color-primary);
 }
 
 .main-navigation-mobile__child-menu-item-link.selected
   .main-navigation-mobile__child-menu-item-wrapper {
-  border-right: 2px solid #e20074;
+  border-right: 2px solid var(--color-primary);
 }
 
 .main-navigation-mobile__child-menu-item-link.selected svg {
@@ -122,9 +136,9 @@ svg path {
 }
 
 .main-navigation-mobile__child-menu-item {
-  font-size: 1.5rem;
-  line-height: 2.5;
-  font-weight: 400;
+  font-size: var(--child-font-size);
+  line-height: var(--child-line-height);
+  font-weight: var(--child-font-weight);
 }
 
 .main-navigation-mobile__child-menu-item-wrapper {
@@ -132,11 +146,11 @@ svg path {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #efefef;
-  margin-left: 64px;
+  border-bottom: var(--border-bottom);
+  margin-left: var(--scl-spacing-64);
   box-sizing: border-box;
 }
 
 .main-navigation-mobile__child-menu-item-wrapper svg {
-  margin-right: 40px;
+  margin-right: var(--scl-spacing-40);
 }
