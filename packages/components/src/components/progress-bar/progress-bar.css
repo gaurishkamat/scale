@@ -6,6 +6,7 @@
   --font-size-inner-status: var(--scl-font-size-12);
   --font-size-status: var(--scl-font-size-12);
   --font-weight-status: var(--scl-font-weight-extrabold);
+  --color-status: var(--scl-color-grey-60);
   --color-status-description: var(--scl-color-grey-60);
   --font-size-status-description: var(--scl-font-size-12);
   --font-weight-status-description: var(--scl-font-weight-bold);
@@ -85,6 +86,11 @@
   display: inline-block;
   font-size: var(--font-size-status);
   font-weight: var(--font-weight-status);
+  color: var(--color-status);
+}
+
+.progress-bar__icon {
+  height: 16px;
 }
 
 .progress-bar__status-description {

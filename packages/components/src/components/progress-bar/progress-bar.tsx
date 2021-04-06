@@ -121,7 +121,7 @@ export class ProgressBar {
             {!!this.icon && (
               <scale-icon
                 part="icon"
-                class="progress-bar__status"
+                class="progress-bar__icon"
                 aria-hidden="true"
                 path={this.icon}
                 size={16}
