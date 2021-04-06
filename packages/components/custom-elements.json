@@ -6671,19 +6671,11 @@
           "description": ""
         },
         {
-          "name": "color-fill",
-          "description": ""
-        },
-        {
           "name": "disabled",
           "description": ""
         },
         {
           "name": "hover-value",
-          "description": ""
-        },
-        {
-          "name": "interactive",
           "description": ""
         },
         {

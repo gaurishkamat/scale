@@ -4958,7 +4958,6 @@ export namespace Components {
         "ariaTranslation": string;
         "disabled": boolean;
         "hoverValue": number;
-        "interactive": boolean;
         "isHovering": boolean;
         "numOfStars": number;
         "precision": number;
@@ -12045,7 +12044,6 @@ declare namespace LocalJSX {
         "ariaTranslation"?: string;
         "disabled"?: boolean;
         "hoverValue"?: number;
-        "interactive"?: boolean;
         "isHovering"?: boolean;
         "numOfStars"?: number;
         "precision"?: number;

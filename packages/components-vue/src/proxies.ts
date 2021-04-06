@@ -3596,13 +3596,9 @@ export const ScaleRatingStars = /*@__PURE__*/ Vue.extend({
     numOfStars: {} as PropOptions<Components.ScaleRatingStars['numOfStars']>,
     rating: {} as PropOptions<Components.ScaleRatingStars['rating']>,
     small: {} as PropOptions<Components.ScaleRatingStars['small']>,
-    interactive: {} as PropOptions<Components.ScaleRatingStars['interactive']>,
     disabled: {} as PropOptions<Components.ScaleRatingStars['disabled']>,
-    colorFill: {} as PropOptions<Components.ScaleRatingStars['colorFill']>,
     ariaTranslation: {} as PropOptions<Components.ScaleRatingStars['ariaTranslation']>,
     precision: {} as PropOptions<Components.ScaleRatingStars['precision']>,
-    getSymbolBlank: {} as PropOptions<Components.ScaleRatingStars['getSymbolBlank']>,
-    getSymbolFilled: {} as PropOptions<Components.ScaleRatingStars['getSymbolFilled']>,
   },
 
 
