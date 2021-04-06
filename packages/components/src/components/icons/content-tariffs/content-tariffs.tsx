@@ -1,9 +1,11 @@
-import { Component, Prop, Host, h } from '@stencil/core';
+import { Component, Prop, Host, Element, h } from '@stencil/core';
 
 @Component({
   tag: 'scale-icon-content-tariffs',
 })
 export class ContentTariffs {
+  @Element() hostElement: HTMLElement;
+
   /** (optional) The width and height in pixels */
   @Prop() size?: number = 24;
   /** (optional) Sets the icon color via the `fill` attribute */
@@ -15,11 +17,17 @@ export class ContentTariffs {
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
 
+  connectedCallback() {
+    if (!this.hostElement.hasAttribute('styles')) {
+      this.hostElement.style.display = 'inline-flex';
+    }
+  }
+
   render() {
     const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {};
 
     return (
-      <Host style={{ display: 'inline-flex' }}>
+      <Host>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={this.size}

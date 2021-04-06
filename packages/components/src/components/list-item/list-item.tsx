@@ -51,9 +51,22 @@ export class ListItem {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()} data-index={this.index}>
+        <div
+          class={this.getCssClassMap()}
+          data-index={this.index}
+          part={classNames(
+            'base',
+            this.ordered ? 'ordered' : 'unordered',
+            this.isNested && 'nested',
+            !this.marker && 'no-marker'
+          )}
+        >
           <slot />
-          <div class={`list-item__nested-list`} hidden={!this.hasNestedChild}>
+          <div
+            class="list-item__nested-list"
+            part="nested-list"
+            hidden={!this.hasNestedChild}
+          >
             <slot name="nested" onSlotchange={this.handleSlotChange}></slot>
           </div>
         </div>

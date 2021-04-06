@@ -37,6 +37,14 @@
 | `to`        | `to`         | (optional) Link card           | `string` | `''`        |
 
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"body"`   |             |
+| `"border"` |             |
+
+
 ## Dependencies
 
 ### Used by

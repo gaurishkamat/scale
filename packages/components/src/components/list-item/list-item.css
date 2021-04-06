@@ -1,12 +1,27 @@
 :host(scale-list-item) {
-  display: block;
+  --display: block;
+  --font-size: var(--scl-font-size-16);
+  --line-height: var(--scl-font-line-height-150);
+  --spacing-left: calc(0.25ch + var(--scl-spacing-16));
+
+  --font-size-marker-ordered: var(--scl-font-size-16);
+  --font-weight-marker-ordered: var(--scl-font-weight-bold);
+  --font-size-marker-ordered-nested: var(--scl-font-size-12);
+  --line-height-marker-ordered-nested: var(--scl-font-line-height-150);
+  --spacing-top-marker-ordered-nested: calc(
+    var(--scl-spacing-16) - var(--scl-spacing-12)
+  );
+
+  --spacing-right-no-marker: var(--scl-spacing-8);
+
+  display: var(--display);
 }
 
 .list-item {
   position: relative;
-  font-size: var(--scl-font-size-16);
-  line-height: var(--scl-font-line-height-150);
-  padding-left: calc(0.25ch + var(--scl-spacing-16));
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding-left: var(--spacing-left);
 }
 
 .list-item:before {
@@ -35,14 +50,14 @@
 
 .list-item--ordered:before {
   content: attr(data-index) '.';
-  font-size: var(--scl-spacing-16);
-  font-weight: var(--scl-font-weight-bold);
+  font-size: var(--font-size-marker-ordered);
+  font-weight: var(--font-weight-marker-ordered);
 }
 
 .list-item--nested.list-item--ordered:before {
-  font-size: var(--scl-spacing-12);
-  line-height: var(--scl-font-line-height-150);
-  padding-top: calc(var(--scl-spacing-16) - var(--scl-spacing-12));
+  font-size: var(--font-size-marker-ordered-nested);
+  line-height: var(--line-height-marker-ordered-nested);
+  padding-top: var(--spacing-top-marker-ordered-nested);
 }
 
 .list-item--no-marker {
@@ -56,5 +71,5 @@
 }
 
 .list-item--no-marker > ::slotted(*) {
-  margin-right: var(--scl-spacing-8);
+  margin-right: var(--spacing-right-no-marker);
 }

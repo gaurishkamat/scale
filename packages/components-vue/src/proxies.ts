@@ -556,7 +556,6 @@ export const ScaleDatePicker = /*@__PURE__*/ Vue.extend({
 export const ScaleDivider = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleDivider['size']>,
     vertical: {} as PropOptions<Components.ScaleDivider['vertical']>,
     styles: {} as PropOptions<Components.ScaleDivider['styles']>,
   },
@@ -3474,7 +3473,6 @@ export const ScaleModal = /*@__PURE__*/ Vue.extend({
     customClass: {} as PropOptions<Components.ScaleModal['customClass']>,
     heading: {} as PropOptions<Components.ScaleModal['heading']>,
     size: {} as PropOptions<Components.ScaleModal['size']>,
-    variant: {} as PropOptions<Components.ScaleModal['variant']>,
     opened: {} as PropOptions<Components.ScaleModal['opened']>,
     duration: {} as PropOptions<Components.ScaleModal['duration']>,
     closeButtonLabel: {} as PropOptions<Components.ScaleModal['closeButtonLabel']>,

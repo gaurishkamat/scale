@@ -414,10 +414,6 @@ export namespace Components {
     }
     interface ScaleDivider {
         /**
-          * (optional) Divider size
-         */
-        "size"?: string;
-        /**
           * (optional) Injected CSS styles
          */
         "styles"?: string;
@@ -4792,10 +4788,6 @@ export namespace Components {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
-        /**
-          * (optional) Modal variant
-         */
-        "variant"?: string;
     }
     interface ScaleNavIcon {
         "clickLink": any;
@@ -7415,10 +7407,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface ScaleDivider {
-        /**
-          * (optional) Divider size
-         */
-        "size"?: string;
         /**
           * (optional) Injected CSS styles
          */
@@ -11850,10 +11838,6 @@ declare namespace LocalJSX {
           * (optional) Injected CSS styles
          */
         "styles"?: string;
-        /**
-          * (optional) Modal variant
-         */
-        "variant"?: string;
     }
     interface ScaleNavIcon {
         "clickLink"?: any;

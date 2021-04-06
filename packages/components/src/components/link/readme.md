@@ -68,6 +68,13 @@
 | `variant`                | `variant`                  | (optional) Link variant                 | `string`  | `''`        |
 
 
+## Shadow Parts
+
+| Part        | Description |
+| ----------- | ----------- |
+| `"wrapper"` |             |
+
+
 ## Dependencies
 
 ### Used by

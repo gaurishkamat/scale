@@ -1,3 +1,57 @@
+:host {
+  --spacing-x: var(--scl-spacing-16);
+  --background-overlay: var(
+    --scl-color-background-overlay,
+    rgba(108, 108, 108, 0.7)
+  );
+
+  --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
+  --radius-window: var(--scl-radius-8);
+  --box-shadow-window: var(--scl-shadow-level-5);
+
+  /*
+    we're rudimentarily creating a grid here
+    in the following modal--size-*,
+    with 6, 8 and 12 columns
+  */
+  --size-window-small: calc(
+    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
+  );
+  --size-window-default: calc(
+    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
+  );
+  --size-window-large: calc(
+    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
+  );
+
+  --spacing-x-header: var(--scl-spacing-24);
+  --spacing-y-header: var(--scl-spacing-24);
+
+  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
+    var(--scl-color-grey-20);
+
+  --font-family-heading: var(--scl-font-family-sans);
+  --font-size-heading: var(--scl-font-size-20);
+  --font-weight-heading: var(--scl-font-weight-extrabold);
+
+  --spacing-close-button: var(--scl-spacing-8);
+  --radius-close-button: var(--scl-radius-8);
+  --transition-close-button: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
+  --color-close-button-hover: var(--scl-color-primary-hover);
+  --color-close-button-active: var(--scl-color-primary-active);
+
+  --spacing-x-body-wrapper: var(--scl-spacing-24);
+  --spacing-y-body: var(--scl-spacing-24);
+
+  --spacing-actions: var(--scl-spacing-24);
+
+  --spacing-x-actions-slotted: var(--scl-spacing-8);
+  --background-actions-has-scroll: var(--scl-color-background-light);
+}
+
 .modal {
   top: 0;
   left: 0;
@@ -6,12 +60,12 @@
   display: none;
   z-index: 100;
   position: fixed;
-  background: var(--scl-color-background-overlay, rgba(108, 108, 108, 0.7));
+  background: var(--background-overlay);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  padding-left: var(--scl-spacing-16);
-  padding-right: var(--scl-spacing-16);
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
 }
 
 .modal.modal--is-open {
@@ -36,9 +90,9 @@
   overflow-y: auto;
   flex-direction: column;
   background-color: white;
-  max-height: calc(100vh - (2 * var(--scl-spacing-80)));
-  border-radius: var(--scl-radius-8);
-  box-shadow: var(--scl-shadow-level-5);
+  max-height: var(--max-height-window);
+  border-radius: var(--radius-window);
+  box-shadow: var(--box-shadow-window);
 }
 
 .modal__window .modal__body-wrapper {
@@ -46,28 +100,16 @@
   flex-shrink: 1;
 }
 
-/*
-  we're rudimentarily creating a grid here
-  in the following modal--size-*,
-  with 6, 8 and 12 columns
-*/
-
 .modal--size-small .modal__window {
-  max-width: calc(
-    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
-  );
+  max-width: var(--size-window-small);
 }
 
 .modal--size-default .modal__window {
-  max-width: calc(
-    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
-  );
+  max-width: var(--size-window-default);
 }
 
 .modal--size-large .modal__window {
-  max-width: calc(
-    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
-  );
+  max-width: var(--size-window-large);
 }
 
 @media (max-height: 30em) {
@@ -88,7 +130,7 @@
   position: absolute;
   box-sizing: border-box;
   pointer-events: none;
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--radius-window);
 }
 
 .modal__header {
@@ -96,21 +138,21 @@
   align-items: flex-start;
   flex-shrink: 0;
   justify-content: space-between;
-  margin-left: var(--scl-spacing-24);
-  margin-right: var(--scl-spacing-24);
-  padding-top: var(--scl-spacing-24);
-  padding-bottom: var(--scl-spacing-24);
+  margin-left: var(--spacing-x-header);
+  margin-right: var(--spacing-x-header);
+  padding-top: var(--spacing-y-header);
+  padding-bottom: var(--spacing-y-header);
 }
 
 .modal--has-scroll .modal__header {
-  border-bottom: var(--scl-spacing-1) solid var(--scl-color-grey-20);
+  border-bottom: var(--border-bottom-header-has-scroll);
 }
 
 .modal__heading {
   margin: 0;
-  font-family: var(--scl-font-family-sans);
-  font-size: var(--scl-font-size-20);
-  font-weight: var(--scl-font-weight-extrabold);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-heading);
 }
 
 .modal__close-button {
@@ -118,35 +160,37 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--scl-spacing-8);
-  margin-bottom: calc(-2 * var(--scl-spacing-8));
+  padding: var(--spacing-close-button);
+  margin-bottom: calc(-2 * var(--spacing-close-button));
   border: 0;
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--radius-close-button);
   outline: none;
   background: transparent;
-  transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  transform: translate(var(--scl-spacing-8), calc(-1 * var(--scl-spacing-8)));
+  transition: var(--transition-close-button);
+  transform: translate(
+    var(--spacing-close-button),
+    calc(-1 * var(--spacing-close-button))
+  );
   appearance: none;
   cursor: pointer;
   user-select: none;
 }
 
 .modal__close-button:focus {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: var(--box-shadow-close-button-focus);
 }
 
 .modal__close-button:hover {
-  color: var(--scl-color-primary-hover, #f90984);
+  color: var(--color-close-button-hover);
 }
 
 .modal__close-button:active {
-  color: var(--scl-color-primary-active, #cb0068);
+  color: var(--color-close-button-active);
 }
 
 .modal__body-wrapper {
-  padding-left: var(--scl-spacing-24);
-  padding-right: var(--scl-spacing-24);
+  padding-left: var(--spacing-x-body-wrapper);
+  padding-right: var(--spacing-x-body-wrapper);
 }
 
 .modal--has-body .modal__body-wrapper {
@@ -154,19 +198,19 @@
 }
 
 .modal--has-body .modal__body {
-  margin-top: var(--scl-spacing-24);
-  margin-bottom: var(--scl-spacing-24);
+  margin-top: var(--spacing-y-body);
+  margin-bottom: var(--spacing-y-body);
 }
 
 .modal__actions {
   display: none;
   flex-shrink: 0;
   justify-content: flex-end;
-  padding: var(--scl-spacing-24);
+  padding: var(--spacing-actions);
 }
 
 .modal__actions ::slotted(*) {
-  margin-left: var(--scl-spacing-8);
+  margin-left: var(--spacing-x-actions-slotted);
 }
 
 .modal--has-actions .modal__actions {
@@ -178,5 +222,5 @@
 }
 
 .modal--has-scroll .modal__actions {
-  background-color: var(--scl-color-background-light);
+  background-color: var(--background-actions-has-scroll);
 }

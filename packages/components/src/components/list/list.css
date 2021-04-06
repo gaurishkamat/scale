@@ -1,9 +1,14 @@
+:host {
+  --spacing-left: 0;
+  --spacing-left-nested: var(--scl-spacing-8);
+}
+
 .list {
-  padding-left: 0;
+  padding-left: var(--spacing-left);
 }
 
 .list--nested {
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: var(--scl-spacing-8);
+  padding-left: var(--spacing-left-nested);
 }

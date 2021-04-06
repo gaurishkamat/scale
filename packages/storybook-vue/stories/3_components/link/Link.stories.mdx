@@ -58,6 +58,25 @@ export const Template = (args, {argTypes}) => ({
 
 <ArgsTable story="Standard"/>
 
+### Scoped CSS variables
+
+```css
+:host {
+  --font-weight: var(--scl-font-weight-medium);
+  --color: var(--scl-color-text-link);
+  --color-visited: var(--scl-color-text-link-visited);
+  --color-hover: var(--scl-color-text-link-hover);
+  --color-active: var(--scl-color-text-link-active);
+  --border: var(--scl-spacing-1) solid currentColor;
+  --border-focus: var(--scl-spacing-2) solid currentColor;
+  --color-disabled: var(--scl-color-grey-50);
+
+  --spacing-x-icon: var(--scl-spacing-4);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Disabled
 
 <Canvas withSource="none">

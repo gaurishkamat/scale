@@ -56,7 +56,14 @@ export class List {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <Tag class={this.getCssClassMap()}>
+        <Tag
+          class={this.getCssClassMap()}
+          part={classNames(
+            'base',
+            this.ordered && 'ordered',
+            this.isNested && 'nested'
+          )}
+        >
           <slot />
         </Tag>
       </Host>

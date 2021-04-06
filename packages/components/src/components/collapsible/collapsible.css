@@ -1,6 +1,32 @@
+:host {
+  --spacing-y: var(--scl-spacing-16);
+
+  /* button */
+  --font-size-button: var(--scl-font-size-20);
+  --font-weight-button: var(--scl-font-weight-extrabold);
+  --line-height-button: var(--scl-font-line-height-125);
+  --border-width-button: var(--scl-spacing-2);
+  --radius-button: var(--scl-radius-4);
+  --spacing-left-button: var(--scl-spacing-4);
+  --spacing-left-button-text: var(--scl-spacing-8);
+  --color-button-hover: var(--scl-color-primary-hover);
+  --color-button-active: var(--scl-color-primary-active);
+  --background-button-hover: var(--scl-color-background-light);
+  --border-color-button-focus: var(--scl-color-focus);
+
+  /* icon */
+  --spacing-top-icon: calc(var(--scl-spacing-4) + 1px);
+
+  /* content */
+  --spacing-right-content: var(--scl-spacing-48);
+  --spacing-left-content: var(--scl-spacing-32);
+  --spacing-top-content: var(--scl-spacing-16);
+  --spacing-bottom-content: var(--scl-spacing-24);
+}
+
 .collapsible {
   position: relative;
-  margin: var(--scl-spacing-16) 0;
+  margin: var(--spacing-y) 0;
 }
 
 .collapsible--expanded:before {
@@ -13,7 +39,7 @@
   display: block;
   position: absolute;
   pointer-events: none;
-  bottom: calc(-1 * var(--scl-spacing-16));
+  bottom: calc(-1 * var(--spacing-y));
 }
 
 .collapsible__heading {
@@ -32,12 +58,12 @@
   padding-right: 0;
   padding-bottom: 0;
   background-color: transparent;
-  font-size: var(--scl-font-size-20);
-  font-weight: var(--scl-font-weight-extrabold);
-  line-height: var(--scl-font-line-height-125);
-  border-width: var(--scl-spacing-2);
-  border-radius: var(--scl-radius-4);
-  padding-left: var(--scl-spacing-4);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
+  border-width: var(--border-width-button);
+  border-radius: var(--radius-button);
+  padding-left: var(--spacing-left-button);
   /* a11y: allows some "external" typographic styles to leak in
    https://www.w3.org/TR/WCAG21/#text-spacing */
   font-family: inherit;
@@ -46,28 +72,28 @@
 }
 
 .collapsible__button > span {
-  margin-left: var(--scl-spacing-8);
+  margin-left: var(--spacing-left-button-text);
 }
 
 .collapsible__button:hover {
   cursor: pointer;
-  color: var(--scl-color-primary);
-  background-color: var(--scl-color-background-light);
+  color: var(--color-button-hover);
+  background-color: var(--background-button-hover);
 }
 
 .collapsible__button:active {
-  color: var(--scl-color-primary-active, #cb0068);
+  color: var(--color-button-active);
 }
 
 .collapsible__button:focus {
   outline: none;
-  border-color: var(--scl-color-focus);
+  border-color: var(--border-color-button-focus);
 }
 
 .collapsible__icon {
   transform: rotate(0.75turn);
   flex-shrink: 0;
-  margin-top: calc(var(--scl-spacing-4) + 1px);
+  margin-top: var(--spacing-top-icon);
 }
 
 .collapsible__button[aria-expanded='true'] .collapsible__icon {
@@ -75,9 +101,9 @@
 }
 
 .collapsible__content {
-  padding-right: var(--scl-spacing-48);
-  padding-left: var(--scl-spacing-32);
+  padding-right: var(--spacing-right-content);
+  padding-left: var(--spacing-left-content);
   /* These should collapse with tags like p, that's what we want */
-  margin-top: var(--scl-spacing-16);
-  margin-bottom: var(--scl-spacing-24);
+  margin-top: var(--spacing-top-content);
+  margin-bottom: var(--spacing-bottom-content);
 }

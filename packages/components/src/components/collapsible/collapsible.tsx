@@ -87,11 +87,19 @@ export class Collapsible {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
-          <h2 aria-level={this.level} class="collapsible__heading">
+        <div
+          class={this.getCssClassMap()}
+          part={classNames('base', this.expanded && 'expanded')}
+        >
+          <h2
+            aria-level={this.level}
+            class="collapsible__heading"
+            part="heading"
+          >
             <button
               id={this.headingId}
               class="collapsible__button"
+              part="button"
               onClick={this.handleClick}
               aria-expanded={this.expanded ? 'true' : 'false'}
               aria-controls={this.panelId}
@@ -100,8 +108,9 @@ export class Collapsible {
                 size={16}
                 decorative
                 class="collapsible__icon"
+                part={classNames('icon', this.expanded && 'expanded')}
               />
-              <span ref={el => (this.headingElement = el)} />
+              <span ref={el => (this.headingElement = el)} part="button-text" />
             </button>
           </h2>
           <div
@@ -110,6 +119,7 @@ export class Collapsible {
             aria-labelledby={this.headingId}
             hidden={!this.expanded}
             class="collapsible__content"
+            part="content"
           >
             <slot />
           </div>

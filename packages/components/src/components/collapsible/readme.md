@@ -20,6 +20,16 @@
 | `scaleExpand` | Emitted so parent <scale-accordion> knows about it | `CustomEvent<CollapsibleEventDetail>` |
 
 
+## Shadow Parts
+
+| Part            | Description |
+| --------------- | ----------- |
+| `"button"`      |             |
+| `"button-text"` |             |
+| `"content"`     |             |
+| `"heading"`     |             |
+
+
 ## Dependencies
 
 ### Depends on
