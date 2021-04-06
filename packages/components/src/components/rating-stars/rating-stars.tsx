@@ -14,20 +14,17 @@ export class RatingStars {
   @Prop({ mutable: true }) numOfStars = 5;
   @Prop({ mutable: true }) rating = 0;
   @Prop({ mutable: true }) small = false;
-  @Prop({ mutable: true }) interactive = true;
   @Prop({ mutable: true }) disabled = false;
-  @Prop({ mutable: true }) colorFill = `var(--scl-color-primary)`;
   @Prop({ mutable: true })
   ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
   @Prop() precision = 1;
-  @Prop() getSymbolBlank = () =>
-    `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" size=${
-      this.small ? 16 : 24
-    } />`;
-  @Prop() getSymbolFilled = () =>
-    `<scale-icon-action-favorite color=${this.colorFill} selected size=${
-      this.small ? 16 : 24
-    } />`;
+
+  colorFilled = `var(--scl-color-primary)`;
+  colorBlank = `var(--scl-color-grey-5000, #7c7c7c)`;
+  size = this.small ? '16px' : '24px';
+
+  getSymbol = (color: string, size: string, selected?: 'selected') =>
+    `<scale-icon-action-favorite color=${color} size=${size} ${selected} />`;
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -60,7 +57,7 @@ export class RatingStars {
   }
 
   handleMouseClick(event: MouseEvent) {
-    if (this.disabled || !this.interactive) {
+    if (this.disabled) {
       return;
     }
 
@@ -72,7 +69,7 @@ export class RatingStars {
   }
 
   handleKeyDown(event: KeyboardEvent) {
-    if (this.disabled || !this.interactive) {
+    if (this.disabled) {
       return;
     }
 
@@ -132,7 +129,7 @@ export class RatingStars {
   render() {
     const counter = Array.from(Array(this.numOfStars).keys());
     let displayValue = 0;
-    if (!this.interactive || this.disabled) {
+    if (this.disabled) {
       displayValue = this.rating;
     } else {
       displayValue = this.isHovering ? this.hoverValue : this.rating;
@@ -160,7 +157,7 @@ export class RatingStars {
               <span
                 role="presentation"
                 style={{
-                  width: this.small ? '16px' : '24px',
+                  width: this.size,
                   clipPath:
                     Math.ceil(displayValue) >= index + 1
                       ? `inset(0 ${(Math.ceil(displayValue) - index) *
@@ -172,7 +169,7 @@ export class RatingStars {
                   'rating__symbol--hover':
                     this.isHovering && Math.ceil(displayValue) === index + 1,
                 }}
-                innerHTML={this.getSymbolBlank()}
+                innerHTML={this.getSymbol(this.colorBlank, this.size)}
                 id={`star-${index + 1}`}
               />
             </span>
@@ -186,7 +183,7 @@ export class RatingStars {
             >
               <span
                 style={{
-                  width: this.small ? '16px' : '24px',
+                  width: this.size,
                   clipPath:
                     displayValue > index + 1
                       ? null
@@ -197,7 +194,11 @@ export class RatingStars {
                   'rating__symbol--hover':
                     this.isHovering && Math.ceil(displayValue) === index + 1,
                 }}
-                innerHTML={this.getSymbolFilled()}
+                innerHTML={this.getSymbol(
+                  this.colorFilled,
+                  this.size,
+                  'selected'
+                )}
               />
             </span>
           ))}
@@ -209,7 +210,6 @@ export class RatingStars {
   getCssClassMap() {
     return classNames(
       'rating',
-      this.interactive && 'rating--interactive',
       this.disabled && 'rating--disabled',
       this.isHovering && 'rating--hover'
     );

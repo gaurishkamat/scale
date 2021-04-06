@@ -62,7 +62,6 @@ describe('component', () => {
     it('has all props', async () => {
       page.root.numOfStars = 7;
       page.root.rating = 3;
-      page.root.interactive = true;
       page.root.small = true;
       page.root.color = '#00ff00';
       page.root.ariaTranslation = '3 out of 7 stars';
@@ -70,7 +69,6 @@ describe('component', () => {
       await page.waitForChanges();
       expect(page.rootInstance.numOfStars).toBe(7);
       expect(page.rootInstance.rating).toBe(3);
-      expect(page.rootInstance.interactive).toBe(true);
       expect(page.rootInstance.small).toBe(true);
       expect(page.rootInstance.ariaTranslation).toBe('3 out of 7 stars');
       expect(page.rootInstance.precision).toBe(1);

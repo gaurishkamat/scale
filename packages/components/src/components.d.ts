@@ -4956,10 +4956,7 @@ export namespace Components {
     }
     interface ScaleRatingStars {
         "ariaTranslation": string;
-        "colorFill": string;
         "disabled": boolean;
-        "getSymbolBlank": () => string;
-        "getSymbolFilled": () => string;
         "hoverValue": number;
         "interactive": boolean;
         "isHovering": boolean;
@@ -12046,10 +12043,7 @@ declare namespace LocalJSX {
     }
     interface ScaleRatingStars {
         "ariaTranslation"?: string;
-        "colorFill"?: string;
         "disabled"?: boolean;
-        "getSymbolBlank"?: () => string;
-        "getSymbolFilled"?: () => string;
         "hoverValue"?: number;
         "interactive"?: boolean;
         "isHovering"?: boolean;
