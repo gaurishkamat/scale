@@ -1,3 +1,5 @@
 storybook-static/
 node_modules/
 yarn-error.log
+design-tokens-telekom.css
+design-tokens-telekom.js
