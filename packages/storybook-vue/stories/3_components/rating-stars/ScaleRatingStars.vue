@@ -6,8 +6,7 @@
     :interactive="interactive"
     :disabled="disabled"
     :color-fill="colorFill"
-    :aria-lang="ariaLang"
-    :spacing="spacing"
+    :aria-translation="ariaTranslation"
   >
   </scale-rating-stars>
 </template>
@@ -21,7 +20,7 @@ export default {
     interactive: { type: Boolean, default: true },
     disabled: { type: Boolean, default: false },
     colorFill: { type: String },
-    ariaLang: { type: String },
+    ariaTranslation: { type: String },
   },
 };
 </script>

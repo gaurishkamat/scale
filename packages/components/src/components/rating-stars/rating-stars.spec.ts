@@ -65,14 +65,14 @@ describe('component', () => {
       page.root.interactive = true;
       page.root.small = true;
       page.root.color = '#00ff00';
-      page.root.ariaLabel = '';
+      page.root.ariaTranslation = '3 out of 7 stars';
       page.root.precision = 1;
       await page.waitForChanges();
       expect(page.rootInstance.numOfStars).toBe(7);
       expect(page.rootInstance.rating).toBe(3);
       expect(page.rootInstance.interactive).toBe(true);
       expect(page.rootInstance.small).toBe(true);
-      expect(page.rootInstance.ariaLang).toBe('3 out of 7 stars');
+      expect(page.rootInstance.ariaTranslation).toBe('3 out of 7 stars');
       expect(page.rootInstance.precision).toBe(1);
     });
 

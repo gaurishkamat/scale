@@ -21,7 +21,7 @@ export const Template = (args, { argTypes }) => ({
     :interactive="interactive"
     :disabled="disabled"
     :color-fill="colorFill"
-    :aria-lang="ariaLang"
+    :aria-translation="ariaTranslation"
   >
   </scale-rating-stars>
     `,
@@ -116,5 +116,23 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars class="custom-styles" rating="1"></scale-rating-stars>
+<scale-rating-stars rating="1" class="custom-styles"></scale-rating-stars>
+```
+
+## Aria Translation
+
+<Canvas withSource="none">
+  <Story
+    name="Aria Translation"
+    args={{
+      rating: 1,
+      ariaTranslation: "${x} out of ${y} stars",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="1" aria-translation="${x} out of ${y} stars"></scale-rating-stars>
 ```

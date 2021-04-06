@@ -6667,7 +6667,7 @@
       },
       "attributes": [
         {
-          "name": "aria-lang",
+          "name": "aria-translation",
           "description": ""
         },
         {
@@ -6704,10 +6704,6 @@
         },
         {
           "name": "small",
-          "description": ""
-        },
-        {
-          "name": "spacing",
           "description": ""
         }
       ]

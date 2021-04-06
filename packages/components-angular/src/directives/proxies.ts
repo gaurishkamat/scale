@@ -4211,13 +4211,13 @@ export class ScaleRadioButton {
 
 export declare interface ScaleRatingStars extends Components.ScaleRatingStars {}
 @ProxyCmp({
-  inputs: ['ariaLang', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small', 'spacing']
+  inputs: ['ariaTranslation', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small']
 })
 @Component({
   selector: 'scale-rating-stars',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['ariaLang', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small', 'spacing']
+  inputs: ['ariaTranslation', 'colorFill', 'disabled', 'getSymbolBlank', 'getSymbolFilled', 'hoverValue', 'interactive', 'isHovering', 'numOfStars', 'precision', 'rating', 'small']
 })
 export class ScaleRatingStars {
   protected el: HTMLElement;

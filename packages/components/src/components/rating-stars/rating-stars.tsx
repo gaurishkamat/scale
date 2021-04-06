@@ -1,4 +1,4 @@
-import { Component, h, Prop, Watch } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
 
@@ -17,7 +17,8 @@ export class RatingStars {
   @Prop({ mutable: true }) interactive = true;
   @Prop({ mutable: true }) disabled = false;
   @Prop({ mutable: true }) colorFill = `var(--scl-color-primary)`;
-  @Prop({ mutable: true }) ariaLang: string;
+  @Prop({ mutable: true })
+  ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
   @Prop() precision = 1;
   @Prop() getSymbolBlank = () =>
     `<scale-icon-action-favorite color="var(--scl-color-grey-5000, #7c7c7c)" size=${
@@ -27,13 +28,6 @@ export class RatingStars {
     `<scale-icon-action-favorite color=${this.colorFill} selected size=${
       this.small ? 16 : 24
     } />`;
-
-  @Watch('rating')
-  watchHandler(newValue: number, oldValue: number) {
-    if (newValue !== oldValue) {
-      this.changeAriaLabel();
-    }
-  }
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -45,10 +39,6 @@ export class RatingStars {
 
   componentDidLoad() {
     handleListeners(this.element, 'addListeners');
-  }
-
-  componentWillLoad() {
-    this.createAriaLabel();
   }
 
   disconnectedCallback() {
@@ -133,19 +123,10 @@ export class RatingStars {
     return Math.ceil(numberToRound * multiplier) / multiplier;
   }
 
-  createAriaLabel() {
-    if (this.ariaLang) {
-      const ariaLabel = this.ariaLang
-        .replace(/\$\{x\}/gi, this.rating.toString())
-        .replace(/\$\{y\}/gi, this.numOfStars.toString());
-      this.ariaLang = ariaLabel;
-    } else {
-      this.ariaLang = `${this.rating} out of ${this.numOfStars} stars`;
-    }
-  }
-
-  changeAriaLabel() {
-    this.ariaLang = `${this.rating} out of ${this.numOfStars} stars`;
+  getAriaLabel() {
+    return this.ariaTranslation
+      .replace(/\$\{x\}/gi, this.rating.toString())
+      .replace(/\$\{y\}/gi, this.numOfStars.toString());
   }
 
   render() {
@@ -168,7 +149,7 @@ export class RatingStars {
         onKeyDown={this.handleKeyDown}
         tabIndex={this.disabled ? -1 : 0}
         role="img"
-        aria-label={this.ariaLang}
+        aria-label={this.getAriaLabel()}
       >
         <span class="rating__symbols">
           {counter.map(index => (
