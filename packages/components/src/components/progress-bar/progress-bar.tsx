@@ -70,7 +70,11 @@ export class ProgressBar {
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {!!this.label && (
-            <label part="label" class="progress-bar__label" htmlFor={this.progressBarId}>
+            <label
+              part="label"
+              class="progress-bar__label"
+              htmlFor={this.progressBarId}
+            >
               {this.label}
             </label>
           )}
@@ -88,9 +92,17 @@ export class ProgressBar {
               aria-label={this.label}
               id={this.progressBarId}
             >
-              <div part="inner" class="progress-bar__inner" style={this.progressStyle()}>
+              <div
+                part="inner"
+                class="progress-bar__inner"
+                style={this.progressStyle()}
+              >
                 {!!this.statusInside && (
-                  <div part="inner-status" class="progress-bar__inner-status" aria-hidden="true">
+                  <div
+                    part="inner-status"
+                    class="progress-bar__inner-status"
+                    aria-hidden="true"
+                  >
                     {this.percentage}%
                   </div>
                 )}
@@ -98,7 +110,11 @@ export class ProgressBar {
             </div>
 
             {!!this.showStatus && (
-              <div part="status" class="progress-bar__status" aria-hidden="true">
+              <div
+                part="status"
+                class="progress-bar__status"
+                aria-hidden="true"
+              >
                 {this.percentage}%
               </div>
             )}
@@ -114,7 +130,11 @@ export class ProgressBar {
           </div>
         </div>
         {!!this.statusDescription && (
-          <div part="status-description" class="progress-bar__status-description" role="alert">
+          <div
+            part="status-description"
+            class="progress-bar__status-description"
+            role="alert"
+          >
             {this.statusDescription}
           </div>
         )}

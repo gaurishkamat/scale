@@ -61,7 +61,11 @@ export class Tag {
           <slot />
 
           {this.dismissable && (
-            <button part="button-dismissable" disabled={this.disabled} aria-label={this.dismissText}>
+            <button
+              part="button-dismissable"
+              disabled={this.disabled}
+              aria-label={this.dismissText}
+            >
               <scale-icon
                 part="icon-dismissable"
                 size={this.size === 'small' ? 20 : 24}
