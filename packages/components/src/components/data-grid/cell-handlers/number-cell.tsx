@@ -45,7 +45,7 @@ export const NumberCell: Cell = {
         type: 'number',
         size: 'small',
         value: content,
-        styles: /* css */ `.input__input {
+        styles: /* css */ `.text-field__control {
           text-align: right !important;
         }`,
       } as any;

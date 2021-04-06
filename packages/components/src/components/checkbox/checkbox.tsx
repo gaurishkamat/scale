@@ -57,7 +57,7 @@ export class Checkbox {
     return (
       <Host checked={this.checked}>
         <div class={this.getCssClassMap()}>
-          <label class="input__checkbox-label-wrapper" htmlFor={this.inputId}>
+          <label class="checkbox__label-wrapper" htmlFor={this.inputId}>
             <input
               type="checkbox"
               name={this.name}
@@ -73,24 +73,24 @@ export class Checkbox {
               {...ariaInvalidAttr}
               {...ariaDescribedByAttr}
             />
-            <div class={classNames('input__checkbox-container')}>
-              <span class={classNames('input__checkbox-placeholder')}></span>
+            <div class="checkbox__control-wrapper">
+              <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
               {!!this.icon && this.checked && (
-                <scale-icon path={this.icon} size={12}></scale-icon>
+                <scale-icon path={this.icon}></scale-icon>
               )}
             </div>
-            <span class="input__checkbox-label">
+            <span class="checkbox__label">
               {this.label ? this.label : <slot></slot>}
             </span>
             {!!this.helperText && (
               <div
-                class="input__meta"
+                class="checkbox__meta"
                 id={helperTextId}
                 aria-live="polite"
                 aria-relevant="additions removals"
               >
-                <div class="input__helper-text">{this.helperText}</div>
+                <div class="checkbox__helper-text">{this.helperText}</div>
               </div>
             )}
           </label>
@@ -101,11 +101,10 @@ export class Checkbox {
 
   getCssClassMap() {
     return classNames(
-      'input',
-      'input--type-checkbox',
-      this.checked && `input--checked`,
-      this.disabled && `input--disabled`,
-      this.status && `input--status-${this.status}`
+      'checkbox',
+      this.checked && `checkbox--checked`,
+      this.disabled && `checkbox--disabled`,
+      this.status && `checkbox--status-${this.status}`
     );
   }
 }

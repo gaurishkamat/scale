@@ -573,7 +573,6 @@ export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
     size: {} as PropOptions<Components.ScaleDropdown['size']>,
     helperText: {} as PropOptions<Components.ScaleDropdown['helperText']>,
     status: {} as PropOptions<Components.ScaleDropdown['status']>,
-    placeholder: {} as PropOptions<Components.ScaleDropdown['placeholder']>,
     disabled: {} as PropOptions<Components.ScaleDropdown['disabled']>,
     required: {} as PropOptions<Components.ScaleDropdown['required']>,
     value: {} as PropOptions<Components.ScaleDropdown['value']>,
@@ -3781,7 +3780,6 @@ export const ScaleTextarea = /*@__PURE__*/ Vue.extend({
   props: {
     name: {} as PropOptions<Components.ScaleTextarea['name']>,
     label: {} as PropOptions<Components.ScaleTextarea['label']>,
-    size: {} as PropOptions<Components.ScaleTextarea['size']>,
     rows: {} as PropOptions<Components.ScaleTextarea['rows']>,
     cols: {} as PropOptions<Components.ScaleTextarea['cols']>,
     helperText: {} as PropOptions<Components.ScaleTextarea['helperText']>,

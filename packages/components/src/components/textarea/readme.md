@@ -22,7 +22,6 @@
 | `required`    | `required`    | (optional) Input required               | `boolean`                                         | `undefined` |
 | `resize`      | `resize`      | (optional) textarea resize              | `"horizontal" \| "none" \| "unset" \| "vertical"` | `undefined` |
 | `rows`        | `rows`        | (optional) textarea row                 | `number`                                          | `undefined` |
-| `size`        | `size`        | (optional) Input size                   | `string`                                          | `''`        |
 | `status`      | `status`      | (optional) Input status                 | `string`                                          | `''`        |
 | `styles`      | `styles`      | (optional) Injected CSS styles          | `string`                                          | `undefined` |
 | `transparent` | `transparent` | (optional) input background transparent | `boolean`                                         | `undefined` |

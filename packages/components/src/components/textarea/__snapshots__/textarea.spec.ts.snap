@@ -2,9 +2,9 @@
 
 exports[`Textarea should match snapshot 1`] = `
 <scale-textarea>
-  <div class="input">
-    <label class="input__label" htmlfor="input-textarea0"></label><textarea aria-describedby="helper-message-1" class="input__textarea" id="input-textarea0" value=""></textarea>
-    <span aria-hidden="true" class="input__textarea-label-safety-background"></span>
+  <div class="textarea">
+    <label class="textarea__label" htmlfor="input-textarea0"></label><textarea aria-describedby="helper-message-1" class="textarea__control" id="input-textarea0" value=""></textarea>
+    <span aria-hidden="true" class="textarea__label-safety-background"></span>
   </div>
 </scale-textarea>
 `;

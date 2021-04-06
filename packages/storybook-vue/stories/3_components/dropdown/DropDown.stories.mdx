@@ -19,7 +19,6 @@ export const Template = (args, { argTypes }) => ({
       :status="status"
       :disabled="disabled"
       :required="required"
-      :placeholder="placeholder"
       :size="size"
       :value="value"
       :icon="icon"
@@ -93,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-dropdown icon="SVG-PATH" label="Small" size="small" placeholder="Small">
+<scale-dropdown icon="SVG-PATH" label="Small" size="small">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>

@@ -456,10 +456,6 @@ export namespace Components {
          */
         "name"?: string;
         /**
-          * (optional) Input placeHolder
-         */
-        "placeholder"?: string;
-        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -5304,10 +5300,6 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * (optional) Input size
-         */
-        "size"?: string;
-        /**
           * (optional) Input status
          */
         "status"?: string;
@@ -7469,10 +7461,6 @@ declare namespace LocalJSX {
           * Emitted on keydown.
          */
         "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
-        /**
-          * (optional) Input placeHolder
-         */
-        "placeholder"?: string;
         /**
           * (optional) Input required
          */
@@ -12413,10 +12401,6 @@ declare namespace LocalJSX {
           * (optional) textarea row
          */
         "rows"?: number;
-        /**
-          * (optional) Input size
-         */
-        "size"?: string;
         /**
           * (optional) Input status
          */

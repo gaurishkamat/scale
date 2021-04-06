@@ -708,10 +708,6 @@
           "description": "(optional) Input name"
         },
         {
-          "name": "placeholder",
-          "description": "(optional) Input placeHolder"
-        },
-        {
           "name": "required",
           "description": "(optional) Input required"
         },
@@ -7132,10 +7128,6 @@
         {
           "name": "rows",
           "description": "(optional) textarea row"
-        },
-        {
-          "name": "size",
-          "description": "(optional) Input size"
         },
         {
           "name": "status",

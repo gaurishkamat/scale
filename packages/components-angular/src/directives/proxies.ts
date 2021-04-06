@@ -397,13 +397,13 @@ export class ScaleDivider {
 import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
 export declare interface ScaleDropdown extends Components.ScaleDropdown {}
 @ProxyCmp({
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
 })
 @Component({
   selector: 'scale-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'placeholder', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleDropdown {
@@ -4460,13 +4460,13 @@ export class ScaleTextField {
 import { Textarea as ITextarea } from '@scaleds/components-telekom/dist/types/components/textarea/textarea';
 export declare interface ScaleTextarea extends Components.ScaleTextarea {}
 @ProxyCmp({
-  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value']
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'status', 'styles', 'transparent', 'value']
 })
 @Component({
   selector: 'scale-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'size', 'status', 'styles', 'transparent', 'value'],
+  inputs: ['cols', 'counter', 'disabled', 'helperText', 'inputId', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'resize', 'rows', 'status', 'styles', 'transparent', 'value'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleTextarea {
