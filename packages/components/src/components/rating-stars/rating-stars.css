@@ -54,6 +54,14 @@
   padding: 0 var(--rating-spacing, 0.125rem);
 }
 
+.rating__symbol__wrapper--small {
+  width: 1rem;
+}
+
+.rating__symbol__wrapper--big {
+  width: 1.5rem;
+}
+
 .rating__symbol__wrapper:first-of-type {
   padding-left: 0;
 }

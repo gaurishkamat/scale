@@ -21,10 +21,9 @@ export class RatingStars {
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
-  size = this.small ? '16px' : '24px';
 
-  getSymbol = (color: string, size: string, selected?: 'selected') =>
-    `<scale-icon-action-favorite color=${color} size=${size} ${selected} />`;
+  getSymbol = (color: string, selected?: 'selected') =>
+    `<scale-icon-action-favorite color=${color} ${selected} />`;
 
   connectedCallback() {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -151,13 +150,16 @@ export class RatingStars {
         <span class="rating__symbols">
           {counter.map(index => (
             <span
-              class="rating__symbol__wrapper"
+              class={{
+                rating__symbol__wrapper: true,
+                'rating__symbol__wrapper--small': this.small,
+                'rating__symbol__wrapper--big': !this.small,
+              }}
               onMouseEnter={this.handleMouseEnter}
             >
               <span
                 role="presentation"
                 style={{
-                  width: this.size,
                   clipPath:
                     Math.ceil(displayValue) >= index + 1
                       ? `inset(0 ${(Math.ceil(displayValue) - index) *
@@ -169,7 +171,7 @@ export class RatingStars {
                   'rating__symbol--hover':
                     this.isHovering && Math.ceil(displayValue) === index + 1,
                 }}
-                innerHTML={this.getSymbol(this.colorBlank, this.size)}
+                innerHTML={this.getSymbol(this.colorBlank)}
                 id={`star-${index + 1}`}
               />
             </span>
@@ -178,12 +180,15 @@ export class RatingStars {
         <span class="rating__symbols rating__symbols--indicator">
           {counter.map(index => (
             <span
-              class="rating__symbol__wrapper"
+              class={{
+                rating__symbol__wrapper: true,
+                'rating__symbol__wrapper--small': this.small,
+                'rating__symbol__wrapper--big': !this.small,
+              }}
               onMouseEnter={this.handleMouseEnter}
             >
               <span
                 style={{
-                  width: this.size,
                   clipPath:
                     displayValue > index + 1
                       ? null
@@ -194,11 +199,7 @@ export class RatingStars {
                   'rating__symbol--hover':
                     this.isHovering && Math.ceil(displayValue) === index + 1,
                 }}
-                innerHTML={this.getSymbol(
-                  this.colorFilled,
-                  this.size,
-                  'selected'
-                )}
+                innerHTML={this.getSymbol(this.colorFilled, 'selected')}
               />
             </span>
           ))}
