@@ -91,7 +91,8 @@
 .switch .switch__label {
   cursor: inherit;
   color: var(--switch-color-text);
-  margin-left: 1rem;
+  margin-left: var(--scl-spacing-8);
+  font-weight: var(--scl-font-weight-medium);
   transition-property: color;
   transition-duration: var(--scl-motion-duration-fast);
   transition-timing-function: var(--scl-motion-easing-standard);
