@@ -32,8 +32,8 @@ describe('Link', () => {
   });
 
   it('should handle css classes', () => {
-    element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('link--variant-primary');
+    element.block = true;
+    expect(element.getCssClassMap()).toContain('link--block');
 
     element.disabled = true;
     expect(element.getCssClassMap()).toContain('link--disabled');

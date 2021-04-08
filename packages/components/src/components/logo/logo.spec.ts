@@ -28,7 +28,6 @@ describe('component prop snapshots', () => {
     | 'laimOff' = 'en';
   const transparent: boolean = false;
   const size: number = 36;
-  const href: string = '';
 
   describe('all props', () => {
     it('are not set', async () => {
@@ -37,7 +36,6 @@ describe('component prop snapshots', () => {
       expect(page.rootInstance.language).toBe(language);
       expect(page.rootInstance.transparent).toBe(transparent);
       expect(page.rootInstance.size).toBe(size);
-      expect(page.rootInstance.href).toBe(href);
 
       expect(page.root).toMatchSnapshot();
     });

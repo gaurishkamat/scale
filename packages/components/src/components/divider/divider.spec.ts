@@ -25,9 +25,6 @@ describe('Divider', () => {
   });
 
   it('should...', async () => {
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('divider--size-small');
-
     element.vertical = true;
     expect(element.getCssClassMap()).toContain('divider--vertical');
   });
