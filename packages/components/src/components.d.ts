@@ -4678,6 +4678,74 @@ export namespace Components {
          */
         "styles"?: string;
     }
+    interface ScaleLogo {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle": string;
+        /**
+          * (optional) Possibility for adding a onClick Event
+         */
+        "clickHandler": any;
+        /**
+          * (optional) Set a link
+         */
+        "href": string;
+        /**
+          * (optional) Language of the logo text/ claimOff showes just the T Logo
+         */
+        "language": | 'de'
+    | 'en'
+    | 'cz'
+    | 'hr'
+    | 'hu'
+    | 'me'
+    | 'mk_lat'
+    | 'mk_kyr'
+    | 'ro'
+    | 'sk'
+    | '';
+        /**
+          * (optional) The height in pixels
+         */
+        "size": number;
+        /**
+          * (optional) Set transparent background
+         */
+        "transparent": boolean;
+        /**
+          * (optional) Variant/color of the logo text and logo
+         */
+        "variant": 'magenta' | 'white';
+    }
+    interface ScaleLogoSvg {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) The languages for the Text behind the Logo
+         */
+        "language": | 'de'
+    | 'en'
+    | 'cz'
+    | 'hr'
+    | 'hu'
+    | 'me'
+    | 'mk_lat'
+    | 'mk_kyr'
+    | 'ro'
+    | 'sk'
+    | '';
+        /**
+          * (optional) The height in pixels
+         */
+        "size"?: number;
+    }
     interface ScaleMenuFlyout {
         /**
           * (optional) Determines whether the dropdown should close when a menu item is selected
@@ -6600,6 +6668,18 @@ declare global {
         prototype: HTMLScaleListItemElement;
         new (): HTMLScaleListItemElement;
     };
+    interface HTMLScaleLogoElement extends Components.ScaleLogo, HTMLStencilElement {
+    }
+    var HTMLScaleLogoElement: {
+        prototype: HTMLScaleLogoElement;
+        new (): HTMLScaleLogoElement;
+    };
+    interface HTMLScaleLogoSvgElement extends Components.ScaleLogoSvg, HTMLStencilElement {
+    }
+    var HTMLScaleLogoSvgElement: {
+        prototype: HTMLScaleLogoSvgElement;
+        new (): HTMLScaleLogoSvgElement;
+    };
     interface HTMLScaleMenuFlyoutElement extends Components.ScaleMenuFlyout, HTMLStencilElement {
     }
     var HTMLScaleMenuFlyoutElement: {
@@ -6957,6 +7037,8 @@ declare global {
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
         "scale-list-item": HTMLScaleListItemElement;
+        "scale-logo": HTMLScaleLogoElement;
+        "scale-logo-svg": HTMLScaleLogoSvgElement;
         "scale-menu-flyout": HTMLScaleMenuFlyoutElement;
         "scale-menu-flyout-divider": HTMLScaleMenuFlyoutDividerElement;
         "scale-menu-flyout-item": HTMLScaleMenuFlyoutItemElement;
@@ -11704,6 +11786,74 @@ declare namespace LocalJSX {
          */
         "styles"?: string;
     }
+    interface ScaleLogo {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Possibility for adding a onClick Event
+         */
+        "clickHandler"?: any;
+        /**
+          * (optional) Set a link
+         */
+        "href"?: string;
+        /**
+          * (optional) Language of the logo text/ claimOff showes just the T Logo
+         */
+        "language"?: | 'de'
+    | 'en'
+    | 'cz'
+    | 'hr'
+    | 'hu'
+    | 'me'
+    | 'mk_lat'
+    | 'mk_kyr'
+    | 'ro'
+    | 'sk'
+    | '';
+        /**
+          * (optional) The height in pixels
+         */
+        "size"?: number;
+        /**
+          * (optional) Set transparent background
+         */
+        "transparent"?: boolean;
+        /**
+          * (optional) Variant/color of the logo text and logo
+         */
+        "variant"?: 'magenta' | 'white';
+    }
+    interface ScaleLogoSvg {
+        /**
+          * (optional) When using the icon standalone, make it meaningful for accessibility
+         */
+        "accessibilityTitle"?: string;
+        /**
+          * (optional) Sets the icon color via the `fill` attribute
+         */
+        "color"?: string;
+        /**
+          * (optional) The languages for the Text behind the Logo
+         */
+        "language"?: | 'de'
+    | 'en'
+    | 'cz'
+    | 'hr'
+    | 'hu'
+    | 'me'
+    | 'mk_lat'
+    | 'mk_kyr'
+    | 'ro'
+    | 'sk'
+    | '';
+        /**
+          * (optional) The height in pixels
+         */
+        "size"?: number;
+    }
     interface ScaleMenuFlyout {
         /**
           * (optional) Determines whether the dropdown should close when a menu item is selected
@@ -12667,6 +12817,8 @@ declare namespace LocalJSX {
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
         "scale-list-item": ScaleListItem;
+        "scale-logo": ScaleLogo;
+        "scale-logo-svg": ScaleLogoSvg;
         "scale-menu-flyout": ScaleMenuFlyout;
         "scale-menu-flyout-divider": ScaleMenuFlyoutDivider;
         "scale-menu-flyout-item": ScaleMenuFlyoutItem;
@@ -12904,6 +13056,8 @@ declare module "@stencil/core" {
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
+            "scale-logo": LocalJSX.ScaleLogo & JSXBase.HTMLAttributes<HTMLScaleLogoElement>;
+            "scale-logo-svg": LocalJSX.ScaleLogoSvg & JSXBase.HTMLAttributes<HTMLScaleLogoSvgElement>;
             "scale-menu-flyout": LocalJSX.ScaleMenuFlyout & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutElement>;
             "scale-menu-flyout-divider": LocalJSX.ScaleMenuFlyoutDivider & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutDividerElement>;
             "scale-menu-flyout-item": LocalJSX.ScaleMenuFlyoutItem & JSXBase.HTMLAttributes<HTMLScaleMenuFlyoutItemElement>;

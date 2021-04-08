@@ -1,0 +1,22 @@
+:host {
+  --logo-size: 36px;
+}
+
+.logo {
+  display: inline-flex;
+  height: var(--logo-size);
+  padding: calc(var(--logo-size) / 3);
+  position: relative;
+}
+
+.logo--variant-magenta {
+  background-color: var(--scl-color-white);
+}
+
+.logo--variant-white {
+  background-color: var(--scl-color-magenta);
+}
+
+.logo--transparent {
+  background-color: transparent;
+}

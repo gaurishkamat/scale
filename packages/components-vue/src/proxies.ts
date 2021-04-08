@@ -216,6 +216,8 @@ const customElementTags: string[] = [
  'scale-link',
  'scale-list',
  'scale-list-item',
+ 'scale-logo',
+ 'scale-logo-svg',
  'scale-menu-flyout',
  'scale-menu-flyout-divider',
  'scale-menu-flyout-item',
@@ -3404,6 +3406,37 @@ export const ScaleListItem = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-list-item', []),
+});
+
+
+export const ScaleLogo = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    variant: {} as PropOptions<Components.ScaleLogo['variant']>,
+    transparent: {} as PropOptions<Components.ScaleLogo['transparent']>,
+    language: {} as PropOptions<Components.ScaleLogo['language']>,
+    size: {} as PropOptions<Components.ScaleLogo['size']>,
+    href: {} as PropOptions<Components.ScaleLogo['href']>,
+    clickHandler: {} as PropOptions<Components.ScaleLogo['clickHandler']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleLogo['accessibilityTitle']>,
+  },
+
+
+  render: createCommonRender('scale-logo', []),
+});
+
+
+export const ScaleLogoSvg = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    language: {} as PropOptions<Components.ScaleLogoSvg['language']>,
+    color: {} as PropOptions<Components.ScaleLogoSvg['color']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleLogoSvg['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleLogoSvg['size']>,
+  },
+
+
+  render: createCommonRender('scale-logo-svg', []),
 });
 
 

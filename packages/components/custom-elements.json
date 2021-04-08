@@ -6281,6 +6281,140 @@
       ]
     },
     {
+      "name": "scale-logo",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "click-handler",
+          "description": "(optional) Possibility for adding a onClick Event"
+        },
+        {
+          "name": "href",
+          "description": "(optional) Set a link"
+        },
+        {
+          "name": "language",
+          "description": "(optional) Language of the logo text/ claimOff showes just the T Logo",
+          "values": [
+            {
+              "name": "cz"
+            },
+            {
+              "name": "de"
+            },
+            {
+              "name": "en"
+            },
+            {
+              "name": "hr"
+            },
+            {
+              "name": "hu"
+            },
+            {
+              "name": "me"
+            },
+            {
+              "name": "mk_kyr"
+            },
+            {
+              "name": "mk_lat"
+            },
+            {
+              "name": "ro"
+            },
+            {
+              "name": "sk"
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "(optional) The height in pixels"
+        },
+        {
+          "name": "transparent",
+          "description": "(optional) Set transparent background"
+        },
+        {
+          "name": "variant",
+          "description": "(optional) Variant/color of the logo text and logo",
+          "values": [
+            {
+              "name": "magenta"
+            },
+            {
+              "name": "white"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale-logo-svg",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "accessibility-title",
+          "description": "(optional) When using the icon standalone, make it meaningful for accessibility"
+        },
+        {
+          "name": "color",
+          "description": "(optional) Sets the icon color via the `fill` attribute"
+        },
+        {
+          "name": "language",
+          "description": "(optional) The languages for the Text behind the Logo",
+          "values": [
+            {
+              "name": "cz"
+            },
+            {
+              "name": "de"
+            },
+            {
+              "name": "en"
+            },
+            {
+              "name": "hr"
+            },
+            {
+              "name": "hu"
+            },
+            {
+              "name": "me"
+            },
+            {
+              "name": "mk_kyr"
+            },
+            {
+              "name": "mk_lat"
+            },
+            {
+              "name": "ro"
+            },
+            {
+              "name": "sk"
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "(optional) The height in pixels"
+        }
+      ]
+    },
+    {
       "name": "scale-menu-flyout",
       "description": {
         "kind": "markdown",
