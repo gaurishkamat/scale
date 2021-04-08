@@ -225,8 +225,8 @@
   font-weight: var(--scl-font-weight-medium);
 }
 .input--type-checkbox .input__checkbox-container {
-  width: var(--scl-spacing-24);
-  height: var(--scl-spacing-24);
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
   display: flex;
   position: relative;
   align-items: center;
@@ -361,11 +361,10 @@
 .input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
   width: var(--scl-spacing-16);
   height: var(--scl-spacing-16);
-  margin: var(--scl-spacing-2);
+  margin: 0;
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
-  margin-left: var(--scl-spacing-4);
   border-radius: var(--scl-radius-4);
   border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   background: var(--scl-color-background-standard);

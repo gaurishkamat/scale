@@ -15,14 +15,6 @@ scale-checkbox {
   /*control*/
   --width-control: var(--scl-spacing-16);
   --height-control: var(--scl-spacing-16);
-  --width-control-wrapper: calc(
-    var(--width-control) + var(--spacing-left-control) + var(--spacing-control) +
-      calc(var(--border-width-control) * 2)
-  );
-  --height-control-wrapper: calc(
-    var(--height-control) + var(--spacing-left-control) + var(--spacing-control) +
-      calc(var(--border-width-control) * 2)
-  );
   --transition-control: var(--transition);
   --spacing-control: var(--scl-spacing-2);
   --spacing-left-control: var(--scl-spacing-4);
@@ -31,9 +23,7 @@ scale-checkbox {
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
-  --spacing-left-helper-text: calc(
-    var(--width-control-wrapper) + var(--spacing-x)
-  );
+  --spacing-left-helper-text: calc(var(--width-control) + var(--spacing-x));
   --font-size-helper-text: var(--scl-font-size-12);
   --font-weight-helper-text: var(--scl-font-weight-bold);
   --line-height-helper-text: var(--scl-font-line-height-133);
@@ -48,8 +38,9 @@ scale-checkbox {
   --color-icon-checked-active: var(--scl-color-white);
   --width-icon: var(--scl-spacing-12);
   --height-icon: var(--scl-spacing-12);
-  --left-icon: calc(0.5 * var(--scl-spacing-12));
-  --top-icon: calc(0.5 * var(--scl-spacing-12));
+  --left-icon: 50%;
+  --top-icon: 50%;
+  --transform-icon: translate(-50%, -50%);
 }
 
 .checkbox {
@@ -60,8 +51,8 @@ scale-checkbox {
 }
 
 .checkbox .checkbox__control-wrapper {
-  width: var(--width-control-wrapper);
-  height: var(--height-control-wrapper);
+  width: var(--width-control);
+  height: var(--height-control);
   display: flex;
   position: relative;
   align-items: center;
@@ -219,8 +210,6 @@ scale-checkbox {
 .checkbox .checkbox__control-wrapper .checkbox__control {
   width: var(--width-control);
   height: var(--height-control);
-  margin: var(--spacing-control);
-  margin-left: var(--spacing-left-control);
   box-sizing: border-box;
   transition: var(--transition-control);
   border-radius: var(--radius-control);
@@ -233,6 +222,7 @@ scale-checkbox {
   left: var(--left-icon);
   width: var(--width-icon);
   height: var(--height-icon);
+  transform: var(--transform-icon);
   position: absolute;
   user-select: none;
   --icon-color: var(--color-standard);
