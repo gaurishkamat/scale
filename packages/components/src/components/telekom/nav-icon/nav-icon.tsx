@@ -1,6 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import classNames from 'classnames';
-import { renderIcon } from '../../utils/render-icon';
+import { renderIcon } from '../../../utils/render-icon';
 
 @Component({
   tag: 'scale-nav-icon',

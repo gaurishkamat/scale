@@ -20,7 +20,7 @@
 
 ### Used by
 
- - [app-navigation-main-mobile](../../app-navigation-main-mobile)
+ - [app-navigation-main-mobile](../../telekom/app-navigation-main-mobile)
  - [scale-breadcrumb](../../breadcrumb)
  - [scale-menu-flyout-item](../../menu-flyout-item)
 

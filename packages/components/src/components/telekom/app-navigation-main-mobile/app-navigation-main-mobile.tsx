@@ -8,7 +8,7 @@ import {
   Watch,
 } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
-import { findSelected, findRootNode } from '../../utils/menu-utils';
+import { findSelected, findRootNode } from '../../../utils/menu-utils';
 
 @Component({
   tag: 'app-navigation-main-mobile',

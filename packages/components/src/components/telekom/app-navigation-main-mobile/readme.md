@@ -29,8 +29,8 @@
 
 ### Depends on
 
-- [scale-icon-navigation-left](../icons/navigation-left)
-- [scale-icon-navigation-right](../icons/navigation-right)
+- [scale-icon-navigation-left](../../icons/navigation-left)
+- [scale-icon-navigation-right](../../icons/navigation-right)
 
 ### Graph
 ```mermaid

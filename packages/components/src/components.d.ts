@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MenuItem } from "./components/app-interfaces";
+import { MenuItem } from "./components/telekom/app-interfaces";
 import { CollapsibleEventDetail } from "./components/collapsible/collapsible";
 import { DataGridEditEventDetail, DataGridSortedEventDetail } from "./components/data-grid/data-grid";
 import { DuetDatePickerChangeEvent, DuetDatePickerDirection, DuetDatePickerFocusEvent } from "@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker";

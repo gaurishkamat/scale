@@ -1,6 +1,6 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import { renderIcon } from '../../utils/render-icon';
+import { renderIcon } from '../../../utils/render-icon';
 
 const readData = data => {
   let parsedData;

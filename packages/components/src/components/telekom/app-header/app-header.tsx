@@ -10,7 +10,7 @@ import {
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
-import { findRootNode } from '../../utils/menu-utils';
+import { findRootNode } from '../../../utils/menu-utils';
 
 const readData = data => {
   let parsedData;
