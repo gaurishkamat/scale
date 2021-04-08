@@ -3,7 +3,7 @@
 exports[`List should match snapshot 1`] = `
 <scale-list>
   <mock:shadow-root>
-    <ul class="list">
+    <ul class="list" part="base">
       <slot></slot>
     </ul>
   </mock:shadow-root>

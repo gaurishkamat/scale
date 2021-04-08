@@ -3,8 +3,8 @@
 exports[`Divider should match snapshot 1`] = `
 <scale-divider>
   <mock:shadow-root>
-    <div aria-hidden="" class="divider">
-      <hr>
+    <div aria-hidden="" class="divider" part="base">
+      <hr class="divider__horizontal" part="rule-horizontal">
     </div>
   </mock:shadow-root>
 </scale-divider>
@@ -13,8 +13,8 @@ exports[`Divider should match snapshot 1`] = `
 exports[`Divider should match snapshot when horizontal false 1`] = `
 <scale-divider vertical="true">
   <mock:shadow-root>
-    <div aria-hidden="" class="divider divider--vertical">
-      <span class="divider__vertical"></span>
+    <div aria-hidden="" class="divider divider--vertical" part="base vertical">
+      <span class="divider__vertical" part="rule-vertical"></span>
     </div>
   </mock:shadow-root>
 </scale-divider>
