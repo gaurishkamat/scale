@@ -1,0 +1,90 @@
+import { Component, h, Prop, Host } from '@stencil/core';
+import classNames from 'classnames';
+
+@Component({
+  tag: 'scale-logo',
+  styleUrl: './logo.css',
+  shadow: true,
+})
+export class Logo {
+  /** (optional) Variant/color of the logo text and logo */
+  @Prop() variant: 'magenta' | 'white' = 'magenta';
+  /** (optional) Set transparent background */
+  @Prop() transparent: boolean = false;
+  /** (optional) Language of the logo text/ claimOff showes just the T Logo */
+  @Prop() language:
+    | 'de'
+    | 'en'
+    | 'cz'
+    | 'hr'
+    | 'hu'
+    | 'me'
+    | 'mk_lat'
+    | 'mk_kyr'
+    | 'ro'
+    | 'sk'
+    | '' = 'en';
+  /** (optional) The height in pixels */
+  @Prop() size: number = 36;
+  /** (optional) Set a link */
+  @Prop() href: string;
+  /** (optional) Possibility for adding a onClick Event */
+  @Prop() clickHandler: any;
+  /** (optional) When using the icon standalone, make it meaningful for accessibility */
+  @Prop() accessibilityTitle: string = 'Telekom Logo';
+
+  styles() {
+    return `:host {
+      --logo-size: ${this.size}px;
+    }`;
+  }
+
+  getLogoSvg() {
+    return (
+      <scale-logo-svg
+        language={this.language}
+        color={this.variant}
+        size={this.size}
+        accessibilityTitle={this.accessibilityTitle}
+      ></scale-logo-svg>
+    );
+  }
+
+  render() {
+    return (
+      <Host>
+        <style>{this.styles()}</style>
+        {this.href === '' ? (
+          <div
+            role="img"
+            aria-label="Telekom Logo"
+            class={this.getCssClassMap()}
+            onClick={this.clickHandler}
+            tabIndex={0}
+          >
+            {this.getLogoSvg()}
+          </div>
+        ) : (
+          <a
+            role="link"
+            aria-label="Telekom Logo"
+            href={this.href}
+            class={this.getCssClassMap()}
+            onClick={this.clickHandler}
+            tabIndex={0}
+          >
+            {this.getLogoSvg()}
+          </a>
+        )}
+      </Host>
+    );
+  }
+
+  getCssClassMap() {
+    return classNames(
+      `logo`,
+      this.variant && `logo--variant-${this.variant}`,
+      this.transparent && `logo--transparent`
+    );
+  }
+}

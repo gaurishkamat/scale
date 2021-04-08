@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component prop snapshots all props are not set 1`] = `
+<scale-logo>
+  <mock:shadow-root>
+    <style>
+      :host {
+      --logo-size: 36px;
+    }
+    </style>
+    <div class="logo">
+      <div class="logo-container logo-container--variant-magenta path svg" tabindex="-1">
+        <scale-logo-svg color="magenta" language="en" size="36"></scale-logo-svg>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-logo>
+`;
+
+exports[`component prop snapshots all props are set 1`] = `
+<scale-logo>
+  <mock:shadow-root>
+    <style>
+      :host {
+      --logo-size: 100px;
+    }
+    </style>
+    <div class="logo">
+      <a class="logo-container logo-container--transparent logo-container--variant-white path svg" href="https://www.telekom.de/start" tabindex="-1">
+        <scale-logo-svg color="white" language="hr" size="100"></scale-logo-svg>
+      </a>
+    </div>
+  </mock:shadow-root>
+</scale-logo>
+`;

@@ -3971,6 +3971,44 @@ export class ScaleListItem {
   }
 }
 
+
+export declare interface ScaleLogo extends Components.ScaleLogo {}
+@ProxyCmp({
+  inputs: ['accessibilityTitle', 'clickHandler', 'href', 'language', 'size', 'transparent', 'variant']
+})
+@Component({
+  selector: 'scale-logo',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['accessibilityTitle', 'clickHandler', 'href', 'language', 'size', 'transparent', 'variant']
+})
+export class ScaleLogo {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface ScaleLogoSvg extends Components.ScaleLogoSvg {}
+@ProxyCmp({
+  inputs: ['accessibilityTitle', 'color', 'language', 'size']
+})
+@Component({
+  selector: 'scale-logo-svg',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['accessibilityTitle', 'color', 'language', 'size']
+})
+export class ScaleLogoSvg {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
 import { MenuFlyout as IMenuFlyout } from '@scaleds/components-telekom/dist/types/components/menu-flyout/menu-flyout';
 export declare interface ScaleMenuFlyout extends Components.ScaleMenuFlyout {}
 @ProxyCmp({

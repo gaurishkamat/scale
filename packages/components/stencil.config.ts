@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
 import { frameworkTargets } from './framework-targets';
+import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
   testing: {
@@ -15,6 +16,7 @@ export const config: Config = {
   globalScript: 'src/global/scale.ts',
   globalStyle: 'src/global/scale.css',
   plugins: [
+    inlineSvg(),
     postcss({
       plugins: [], // TODO
     }),
