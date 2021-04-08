@@ -12,12 +12,13 @@ describe('Breadcrumb', () => {
   }); */
 
   it('should match snapshot', async () => {
+    let component: any;
     const page = await newSpecPage({
       components: [Breadcrumb],
-      html: `
-        <scale-breadcrumb></scale-breadcrumb>
-      `,
+      html: `<div></div>`,
     });
+    component = page.doc.createElement('scale-breadcrumb');
+    page.root.appendChild(component);
     expect(page.root).toMatchSnapshot();
   });
 });
