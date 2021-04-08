@@ -227,6 +227,7 @@ const customElementTags: string[] = [
  'scale-pagination',
  'scale-progress-bar',
  'scale-radio-button',
+ 'scale-rating-stars',
  'scale-sidebar-nav',
  'scale-sidebar-nav-collapsible',
  'scale-sidebar-nav-item',
@@ -3581,6 +3582,24 @@ export const ScaleRadioButton = /*@__PURE__*/ Vue.extend({
 
 
   render: createCommonRender('scale-radio-button', ['scaleChange']),
+});
+
+
+export const ScaleRatingStars = /*@__PURE__*/ Vue.extend({
+
+  props: {
+    hoverValue: {} as PropOptions<Components.ScaleRatingStars['hoverValue']>,
+    isHovering: {} as PropOptions<Components.ScaleRatingStars['isHovering']>,
+    numOfStars: {} as PropOptions<Components.ScaleRatingStars['numOfStars']>,
+    rating: {} as PropOptions<Components.ScaleRatingStars['rating']>,
+    small: {} as PropOptions<Components.ScaleRatingStars['small']>,
+    disabled: {} as PropOptions<Components.ScaleRatingStars['disabled']>,
+    ariaTranslation: {} as PropOptions<Components.ScaleRatingStars['ariaTranslation']>,
+    precision: {} as PropOptions<Components.ScaleRatingStars['precision']>,
+  },
+
+
+  render: createCommonRender('scale-rating-stars', []),
 });
 
 

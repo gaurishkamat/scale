@@ -4942,6 +4942,16 @@ export namespace Components {
          */
         "value"?: string | number | null;
     }
+    interface ScaleRatingStars {
+        "ariaTranslation": string;
+        "disabled": boolean;
+        "hoverValue": number;
+        "isHovering": boolean;
+        "numOfStars": number;
+        "precision": number;
+        "rating": number;
+        "small": boolean;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -6666,6 +6676,12 @@ declare global {
         prototype: HTMLScaleRadioButtonElement;
         new (): HTMLScaleRadioButtonElement;
     };
+    interface HTMLScaleRatingStarsElement extends Components.ScaleRatingStars, HTMLStencilElement {
+    }
+    var HTMLScaleRatingStarsElement: {
+        prototype: HTMLScaleRatingStarsElement;
+        new (): HTMLScaleRatingStarsElement;
+    };
     interface HTMLScaleSidebarNavElement extends Components.ScaleSidebarNav, HTMLStencilElement {
     }
     var HTMLScaleSidebarNavElement: {
@@ -6968,6 +6984,7 @@ declare global {
         "scale-pagination": HTMLScalePaginationElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-radio-button": HTMLScaleRadioButtonElement;
+        "scale-rating-stars": HTMLScaleRatingStarsElement;
         "scale-sidebar-nav": HTMLScaleSidebarNavElement;
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
         "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
@@ -11995,6 +12012,16 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface ScaleRatingStars {
+        "ariaTranslation"?: string;
+        "disabled"?: boolean;
+        "hoverValue"?: number;
+        "isHovering"?: boolean;
+        "numOfStars"?: number;
+        "precision"?: number;
+        "rating"?: number;
+        "small"?: boolean;
+    }
     interface ScaleSidebarNav {
         /**
           * From mdn: A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
@@ -12678,6 +12705,7 @@ declare namespace LocalJSX {
         "scale-pagination": ScalePagination;
         "scale-progress-bar": ScaleProgressBar;
         "scale-radio-button": ScaleRadioButton;
+        "scale-rating-stars": ScaleRatingStars;
         "scale-sidebar-nav": ScaleSidebarNav;
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
         "scale-sidebar-nav-item": ScaleSidebarNavItem;
@@ -12915,6 +12943,7 @@ declare module "@stencil/core" {
             "scale-pagination": LocalJSX.ScalePagination & JSXBase.HTMLAttributes<HTMLScalePaginationElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-radio-button": LocalJSX.ScaleRadioButton & JSXBase.HTMLAttributes<HTMLScaleRadioButtonElement>;
+            "scale-rating-stars": LocalJSX.ScaleRatingStars & JSXBase.HTMLAttributes<HTMLScaleRatingStarsElement>;
             "scale-sidebar-nav": LocalJSX.ScaleSidebarNav & JSXBase.HTMLAttributes<HTMLScaleSidebarNavElement>;
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
             "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;

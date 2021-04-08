@@ -1,0 +1,71 @@
+:host {
+  --rating-spacing: 0.125rem;
+}
+
+.rating {
+  position: relative;
+  display: inline-flex;
+  border-radius: 0.25rem;
+}
+
+.rating:focus {
+  outline: none;
+}
+
+.rating-focus:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.rating__symbols {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.rating__symbols--indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.rating__symbol {
+  display: flex;
+}
+
+.rating--disabled .rating__symbols {
+  cursor: default;
+}
+
+.rating--hover [selected] path {
+  fill: var(--scl-color-primary-hover, #f80983);
+}
+
+.rating:active [selected] path {
+  fill: var(--scl-color-primary-active, #f80983);
+}
+
+.rating.rating--disabled [selected] path {
+  fill: var(--scl-color-grey-50, #7c7c7c);
+}
+
+.rating__symbol__wrapper {
+  display: flex;
+  padding: 0 var(--rating-spacing, 0.125rem);
+}
+
+.rating__symbol__wrapper--small {
+  width: 1rem;
+}
+
+.rating__symbol__wrapper--big {
+  width: 1.5rem;
+}
+
+.rating__symbol__wrapper:first-of-type {
+  padding-left: 0;
+}
+
+.rating__symbol__wrapper:last-of-type {
+  padding-right: 0;
+}
