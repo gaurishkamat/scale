@@ -3,7 +3,7 @@
 exports[`Button should match snapshot 1`] = `
 <scale-button icon-position="before">
   <mock:shadow-root>
-    <button class="button button--icon-before button--size-large button--variant-primary">
+    <button class="button button--icon-before button--size-large button--variant-primary" part="base variant-primary before">
       <slot></slot>
     </button>
   </mock:shadow-root>
