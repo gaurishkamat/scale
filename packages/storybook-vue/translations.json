@@ -90,6 +90,11 @@
     "de": "Design Token"
   },
   {
+    "elementSelector": "#scale-for-developers-customization-and-themes--page",
+    "en": "Customization and Themes",
+    "de": "Anpassungen und Themes"
+  },
+  {
     "elementSelector": "#scale-for-developers-browser-support--page",
     "en": "Browser Support",
     "de": "Unterstützte Internet-Browser"
