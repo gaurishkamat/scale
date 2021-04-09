@@ -5,9 +5,9 @@
   --font-weight: var(--scl-font-weight-bold);
   --height-small: 2rem;
   --color-hover: var(--scl-color-primary-hover);
-  --color-primary: var(--scl-color-primary);
-  --background-after-hover: var(--scl-color-primary-hover);
-  --background-after-active: var(--scl-color-primary-active);
+  --color-selected: var(--scl-color-primary);
+  --background-underline-hover: var(--scl-color-primary-hover);
+  --background-underline-active: var(--scl-color-primary-active);
   --color-active: var(--scl-color-primary-active);
   --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --spacing-right-slotted: var(--scl-spacing-8);
@@ -61,13 +61,13 @@
   color: var(--color-hover);
 }
 .tab-header:hover:after {
-  background-color: var(--background-after-hover);
+  background-color: var(--background-underline-hover);
 }
 .tab-header:active {
   color: var(--color-active);
 }
 .tab-header:active:after {
-  background-color: var(--background-after-active);
+  background-color: var(--background-underline-active);
 }
 .tab-header ::slotted(*) {
   margin-right: var(--spacing-right-slotted);
@@ -76,13 +76,13 @@
   box-shadow: var(--box-shadow-focus);
 }
 .tab-header--selected {
-  color: var(--color-primary);
+  color: var(--color-selected);
 }
 .tab-header--selected:after {
   border-top-left-radius: var(--scl-radius-8);
   border-top-right-radius: var(--scl-radius-8);
   height: var(--tab-border-size-selected);
-  background-color: var(--color-primary);
+  background-color: var(--color-selected);
 }
 .tab-header--selected:before {
   border-top: var(--tab-border-size-selected) solid transparent;

@@ -8,7 +8,7 @@ scale-nav-icon {
   --font-size-desktop: var(--scl-font-size-12);
   --line-height-desktop: var(--scl-font-line-height-133);
 
-  --color-primary: var(--scl-color-primary);
+  --color: var(--scl-color-primary);
   --color-hover: var(--scl-color-primary-hover);
   --color-active: var(--scl-color-primary-active);
 }
@@ -35,7 +35,7 @@ scale-nav-icon {
     .meta-navigation
     .meta-navigation__item.mobile-menu.open
     .meta-navigation__item-label {
-    color: var(--color-primary);
+    color: var(--color);
   }
   .meta-navigation__item-link .meta-navigation__item-link-icon {
     width: 18px;

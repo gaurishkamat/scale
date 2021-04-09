@@ -1,7 +1,7 @@
 scale-nav-segment {
   --transition: all 0.2s ease-in-out;
   --color: var(--scl-color-white);
-  --spacing: var(--scl-spacing-4) 0;
+  --spacing-y: var(--scl-spacing-4);
   --font-size: var(--scl-font-size-14);
   --font-weight: var(--scl-font-weight-extrabold);
   --line-height: var(--scl-font-line-height-114);
@@ -19,7 +19,7 @@ scale-nav-segment {
 
 .segment-navigation__item-link {
   color: var(--color);
-  padding: var(--spacing);
+  padding: var(--spacing-y) 0;
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);

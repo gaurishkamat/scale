@@ -1,9 +1,10 @@
 app-mega-menu {
-  --box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.1),
-    0 8px 16px 0 rgba(0, 0, 0, 0.1);
-  --spacing: 34px var(--scl-spacing-16) 34px var(--scl-spacing-24);
+  --box-shadow: var(--scl-shadow-level-4);
+  --spacing-y: 34px;
+  --spacing-right: var(--scl-spacing-16);
+  --spacing-left: var(--scl-spacing-24);
   --background: var(--scl-color-white);
-  --color-primary: var(--scl-color-primary);
+  --color-active: var(--scl-color-primary);
 
   --font-size-row-title: var(--scl-font-size-16);
   --spacing-bottom-row-title: 18px;
@@ -29,7 +30,8 @@ app-mega-menu {
   box-shadow: var(--box-shadow);
 }
 .mega-menu__wrapper {
-  padding: 34px var(--scl-spacing-16) 34px var(--scl-spacing-24);
+  padding: var(--spacing-y) var(--spacing-right) var(--spacing-y)
+    var(--spacing-left);
   background: var(--background);
   pointer-events: none;
   border-bottom-left-radius: var(--header-border-radius);
@@ -65,7 +67,7 @@ app-mega-menu {
 
 .mega-menu__row-item.active,
 .mega-menu__row-item:hover {
-  color: var(--color-primary);
+  color: var(--color-active);
   margin-bottom: 7px;
 }
 
@@ -74,7 +76,7 @@ app-mega-menu {
   padding-bottom: 2px;
   margin-bottom: -2px;
   display: inline-block;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-active);
 }
 
 .mega-menu__row li {

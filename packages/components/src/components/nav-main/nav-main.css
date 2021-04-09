@@ -4,7 +4,7 @@ scale-nav-main {
   --color: var(--scl-color-text-standard);
   --color-hover: var(--scl-color-primary-hover);
   --color-active: var(--scl-color-primary-hover);
-  --color-primary: var(--scl-color-primary);
+  --color-selected: var(--scl-color-primary);
   --font-size: var(--scl-font-variant-body-large-size);
   --font-weight: var(--scl-font-weight-extrabold);
   --line-height: var(--scl-font-line-height-120);
@@ -60,20 +60,20 @@ scale-nav-main {
   align-items: center;
 }
 .main-navigation__item.selected .main-navigation__item-link {
-  color: var(--color-primary);
+  color: var(--color-selected);
 }
 .main-navigation__item.mega-menu--visible .main-navigation__item-link {
-  color: var(--color-primary);
+  color: var(--color-selected);
 }
 .main-navigation__item.selected .main-navigation__item-link-text {
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-selected);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;
   align-items: center;
 }
 .main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-selected);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;

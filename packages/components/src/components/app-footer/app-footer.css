@@ -1,10 +1,12 @@
 :host {
   --background: var(--scl-color-black);
   --color: var(--scl-color-white);
-  --spacing: var(--scl-spacing-32) var(--scl-spacing-24) var(--scl-spacing-24)
-    var(--scl-spacing-24);
+  --spacing-top: var(--scl-spacing-32);
+  --spacing-bottom: var(--scl-spacing-24);
+  --spacing-x: var(--scl-spacing-24);
   --background-container: var(--scl-color-background-standard, #fff);
   --radius: var(--scl-radius-4);
+  --max-width: inherit;
 
   --border-top-minimal: var(--scl-spacing-1) solid var(--scl-color-grey-20);
   --color-minimal: var(--scl-color-grey-60);
@@ -14,7 +16,7 @@
   --spacing-minimal: var(--scl-spacing-24);
 
   --background-mask: var(--scl-color-background-standard, #fff);
-  --border-radius: 0 0 var(--scl-spacing-8) var(--scl-spacing-8);
+  --radius-mask: 0 0 var(--scl-radius-8) var(--scl-radius-8);
 
   --height-logo: var(--scl-spacing-24);
   --font-size-copyright: var(--scl-font-size-14);
@@ -34,14 +36,13 @@
     var(--scl-color-primary);
 
   --border-color-standard-hover: var(--scl-color-white);
-  --border-color-standard-active: 1px solid var(--scl-color-primary-active);
 }
 .footer {
-  --footer-max-width: inherit;
   width: 100%;
   background: var(--background);
   color: var(--color);
-  padding: var(--spacing);
+  padding: var(--spacing-top) var(--spacing-x) var(--spacing-bottom)
+    var(--spacing-x);
   position: relative;
   bottom: 0;
   box-sizing: border-box;
@@ -68,7 +69,7 @@
   height: var(--scl-spacing-8);
   top: var(--scl-spacing-8);
   background: var(--background-mask);
-  border-radius: var(--border-radius);
+  border-radius: var(--radius-mask);
 }
 
 .footer--variant-angular .footer-mask,
@@ -254,6 +255,6 @@
 @media (min-width: 1552px) {
   .footer-content {
     margin: 0 auto;
-    max-width: var(--footer-max-width);
+    max-width: var(--max-width);
   }
 }

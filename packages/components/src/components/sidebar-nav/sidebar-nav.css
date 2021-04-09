@@ -5,7 +5,7 @@
   --opacity-chevron: 0;
   --left-current-border: 0;
 
-  --color-primary: var(--scl-color-primary);
+  --color: var(--scl-color-primary);
   --color-active: var(--scl-color-primary-active);
   --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --color-toggle-button: var(--scl-color-grey-60);
@@ -56,7 +56,7 @@
 }
 
 .sidebar-nav__toggle-button:hover {
-  color: var(--color-primary); /* TODO: shouldn't this be hover color? */
+  color: var(--color); /* TODO: shouldn't this be hover color? */
 }
 
 .sidebar-nav__toggle-button:active {

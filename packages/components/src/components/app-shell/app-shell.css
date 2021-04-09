@@ -2,6 +2,13 @@
   --background: var(--scl-color-background-standard, #fff);
   --spacing-x: var(--scl-spacing-24);
   --radius: var(--scl-radius-8);
+
+  --header-nav-height: 56px;
+  --header-brand-height: 72px;
+  --header-border-radius: var(--radius);
+  --header-transition-speed: 0.3s;
+  --header-brand-collapsed-height: 4px;
+  --header-max-width: inherit;
 }
 .sr-only {
   position: absolute;
@@ -15,14 +22,6 @@
   padding-right: var(--spacing-x);
 }
 
-.shell {
-  --header-nav-height: 56px;
-  --header-brand-height: 72px;
-  --header-border-radius: var(--radius);
-  --header-transition-speed: 0.3s;
-  --header-brand-collapsed-height: 4px;
-  --header-max-width: inherit;
-}
 @media (max-width: 1023px) {
   .shell .content {
     padding-top: calc(

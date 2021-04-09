@@ -9,7 +9,7 @@
 
   --icon-color: var(--color);
   --icon-color-hover: var(--scl-color-primary-active);
-  --background-secondary: #00739f;
+  --background-secondary: var(--scl-color-teal-80);
 
   --background-disabled: var(--scl-color-background-disabled);
   --color-disabled: var(--scl-color-grey-60);
