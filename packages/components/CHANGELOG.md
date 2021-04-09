@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* lint ([5cd787b](https://gitlab.com/scale-ds/scale-telekom/commit/5cd787bcdb42ff74f6502f162566ac07db2bfbdc))
+* progress bar styles ([77f3aaf](https://gitlab.com/scale-ds/scale-telekom/commit/77f3aaff0a8b62e7d7347057b57e101350393018))
+* **checkbox:** refactor checkmark positioning and spacing ([174970b](https://gitlab.com/scale-ds/scale-telekom/commit/174970b51c24274ec4bb0cf9e23846de85c8adcf))
+* **inputs:** adjust spacing and font weight for inputs ([f498339](https://gitlab.com/scale-ds/scale-telekom/commit/f498339039bf7d2d63ac846d8ce3d09643b9dce0))
+* add base part everywhere needed in button ([4c3707c](https://gitlab.com/scale-ds/scale-telekom/commit/4c3707c2f05a187f30a0b76defb2cdb7f65fac53))
+* input meta color ([142d657](https://gitlab.com/scale-ds/scale-telekom/commit/142d6573061396252f2834191f738109630bba25))
+* kinda typo ([14e0f2c](https://gitlab.com/scale-ds/scale-telekom/commit/14e0f2c45d8a31353d42010dd00fbf6dc6f08fb4))
+* rebase & build & render rating stars story ([35d705a](https://gitlab.com/scale-ds/scale-telekom/commit/35d705a61ddda515c8556149216452dc7e4690d8))
+* refactor icon component template to remove problematic .scl-icon class ([7d0cf85](https://gitlab.com/scale-ds/scale-telekom/commit/7d0cf8567d3dab4df344b204bea81137742f524f))
+* update header when new props arrive ([bc76f8c](https://gitlab.com/scale-ds/scale-telekom/commit/bc76f8c2d808cf456005df0a30e9cc92d28c22ef))
+* use vertical-align in button CSS ([dcf5218](https://gitlab.com/scale-ds/scale-telekom/commit/dcf52180411c206e799ea4da67c9cbf7bc859487))
+
+
+### Features
+
+* add beta warning ([6f18bd5](https://gitlab.com/scale-ds/scale-telekom/commit/6f18bd533c2124e5f95aa68c6ad59d4a49568252))
+* add dynamic parts to button ([2fc286e](https://gitlab.com/scale-ds/scale-telekom/commit/2fc286e55026d6afaac8fe9a40c96d648a56ff2d))
+* add theming (scoped variables, parts) for accordion/collapsible ([8a0f127](https://gitlab.com/scale-ds/scale-telekom/commit/8a0f127561dabe6fc254b8fad6feb3e563baf772))
+* add theming for breadcrumb ([e7942ca](https://gitlab.com/scale-ds/scale-telekom/commit/e7942cacf8585dd521c939be9e1b8ed1720feb71))
+* add theming for card ([925c362](https://gitlab.com/scale-ds/scale-telekom/commit/925c362cfee2642224d374846cb789248aae81b4))
+* add theming for divider (remove unused _size_ attr) ([82b9deb](https://gitlab.com/scale-ds/scale-telekom/commit/82b9debaa2d556c1b92b829634254c9f23585bbf))
+* add theming for icon and icon library ([e45544b](https://gitlab.com/scale-ds/scale-telekom/commit/e45544bc94ab2bcb8df8309e758661ea9a15392d))
+* add theming for list and list-item ([e1a9abe](https://gitlab.com/scale-ds/scale-telekom/commit/e1a9abe1ee8aaafd612ac0fbd9e5e02c219619bb))
+* add theming for modal ([a1d77fd](https://gitlab.com/scale-ds/scale-telekom/commit/a1d77fd77130833d52d581d027cfcc256e3fb1c0))
+* add theming to link ([339908c](https://gitlab.com/scale-ds/scale-telekom/commit/339908cf118b55064855f3ab0c9b1c0b929523fc))
+* checkbox theming ([016ab04](https://gitlab.com/scale-ds/scale-telekom/commit/016ab041bd3b5ae870991e1df176cd2ec3286e2b))
+* dropdown theming ([b8656e2](https://gitlab.com/scale-ds/scale-telekom/commit/b8656e2aad6175b4e5b7d807c09a590ee3f56776))
+* radio-button theming ([f7c2c9c](https://gitlab.com/scale-ds/scale-telekom/commit/f7c2c9ce84c02c7acffdde658899a328d404e439))
+* text-field theming ([1efe879](https://gitlab.com/scale-ds/scale-telekom/commit/1efe879b1cfe237e6cebf7c67103204d5841a279))
+* text-field theming ([ab8d2b4](https://gitlab.com/scale-ds/scale-telekom/commit/ab8d2b4b37cf0c4df98b3d095f676bc4f3c2a7d6))
+* textarea theming ([cc3ead3](https://gitlab.com/scale-ds/scale-telekom/commit/cc3ead33283b40c38855b374a419ae9803686daa))
+* theming tokens ([d68cefc](https://gitlab.com/scale-ds/scale-telekom/commit/d68cefc917853055e1b31cb0b245242feb96ee8e))
+
+
+
+
+
 # [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
 
 

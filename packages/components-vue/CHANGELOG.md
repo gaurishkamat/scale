@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* rebase & build & render rating stars story ([35d705a](https://gitlab.com/scale-ds/scale-telekom/commit/35d705a61ddda515c8556149216452dc7e4690d8))
+
+
+### Features
+
+* add theming for icon and icon library ([e45544b](https://gitlab.com/scale-ds/scale-telekom/commit/e45544bc94ab2bcb8df8309e758661ea9a15392d))
+* dropdown theming ([b8656e2](https://gitlab.com/scale-ds/scale-telekom/commit/b8656e2aad6175b4e5b7d807c09a590ee3f56776))
+
+
+
+
+
 # [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
 
 

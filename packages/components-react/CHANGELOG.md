@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* rebase & build & render rating stars story ([35d705a](https://gitlab.com/scale-ds/scale-telekom/commit/35d705a61ddda515c8556149216452dc7e4690d8))
+
+
+
+
+
 # [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
 
 

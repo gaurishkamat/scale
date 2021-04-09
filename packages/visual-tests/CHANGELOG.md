@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* input meta color ([142d657](https://gitlab.com/scale-ds/scale-telekom/commit/142d6573061396252f2834191f738109630bba25))
+* progress bar styles ([77f3aaf](https://gitlab.com/scale-ds/scale-telekom/commit/77f3aaff0a8b62e7d7347057b57e101350393018))
+
+
+### Features
+
+* dropdown theming ([b8656e2](https://gitlab.com/scale-ds/scale-telekom/commit/b8656e2aad6175b4e5b7d807c09a590ee3f56776))
+* radio-button theming ([f7c2c9c](https://gitlab.com/scale-ds/scale-telekom/commit/f7c2c9ce84c02c7acffdde658899a328d404e439))
+* theming tokens ([d68cefc](https://gitlab.com/scale-ds/scale-telekom/commit/d68cefc917853055e1b31cb0b245242feb96ee8e))
+
+
+
+
+
 # [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
 
 

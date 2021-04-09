@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
+
+
+### Bug Fixes
+
+* logo story clickhandler ([76fa000](https://gitlab.com/scale-ds/scale-telekom/commit/76fa000f4d07d4bede386fc1dbb3385c6657dee4))
+* rebase & build & render rating stars story ([35d705a](https://gitlab.com/scale-ds/scale-telekom/commit/35d705a61ddda515c8556149216452dc7e4690d8))
+* update classnames and selectors for language toolbar ([b3288e5](https://gitlab.com/scale-ds/scale-telekom/commit/b3288e57d97dc9ac42bb5fd94bab65d83faf65b1))
+
+
+### Features
+
+* add theming for icon and icon library ([e45544b](https://gitlab.com/scale-ds/scale-telekom/commit/e45544bc94ab2bcb8df8309e758661ea9a15392d))
+* dropdown theming ([b8656e2](https://gitlab.com/scale-ds/scale-telekom/commit/b8656e2aad6175b4e5b7d807c09a590ee3f56776))
+* new storybook header ([d52da4b](https://gitlab.com/scale-ds/scale-telekom/commit/d52da4bd11349c34708dc8ad67d63b46bc19c748))
+
+
+
+
+
 # [2.0.0-beta.4](https://gitlab.com/scale-ds/scale-telekom/compare/v1.2.0...v2.0.0-beta.4) (2021-04-01)
 
 
