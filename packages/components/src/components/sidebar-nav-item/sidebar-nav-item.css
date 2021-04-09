@@ -1,12 +1,21 @@
+:host {
+  --border-bottom-color: var(--scl-color-grey-10);
+  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  --color-active: var(--scl-color-primary-active);
+  --color-primary: var(--scl-color-primary);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--scl-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
 .sidebar-nav-item {
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: var(--scl-color-grey-10);
+  border-bottom-color: var(--border-bottom-color);
 }
 
 .sidebar-nav-item--active {
   position: relative;
-  color: var(--scl-color-primary); /* TODO: shouldn't this be hover color? */
+  color: var(--color-primary);
 }
 .sidebar-nav-item--active::before {
   content: '';
@@ -16,7 +25,7 @@
   left: var(--left-current-border, 0);
   width: 0; /* The transparent border makes the 2px */
   height: 100%;
-  background-color: var(--scl-color-primary);
+  background-color: var(--background-color-before-active);
   /* Accessibility: extra transparent line for Windows HCM */
   border-left: 2px solid transparent;
 }
@@ -27,11 +36,11 @@
 
 :host([nesting-level='1']) .sidebar-nav-item,
 .sidebar-nav-item--bold {
-  font-weight: var(--scl-font-weight-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 :host([nesting-level='3']) .sidebar-nav-item {
-  border-left-color: var(--scl-color-grey-70);
+  border-left-color: var(--border-left-color-third-nesting);
   border-left-style: solid;
   border-left-width: 0.0625rem;
 }
@@ -53,15 +62,15 @@
 }
 
 ::slotted(a:hover) {
-  color: var(--scl-color-primary);
+  color: var(--color-primary);
 }
 
 ::slotted(a:focus) {
-  box-shadow: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: var(--box-shadow-focus);
 }
 
 ::slotted(a:active) {
-  color: var(--scl-color-primary-active);
+  color: var(--color-active);
 }
 
 .sidebar-nav-item--condensed {

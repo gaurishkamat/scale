@@ -50,6 +50,13 @@
 | `scaleClose` | (optional) Close icon click event | `CustomEvent<MouseEvent>` |
 
 
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
+
+
 ## Dependencies
 
 ### Used by

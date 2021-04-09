@@ -24,6 +24,20 @@
 | `styles`            | `styles`             | (optional) Injected CSS styles                  | `string`  | `undefined` |
 
 
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"icon"`               |             |
+| `"inner"`              |             |
+| `"inner-status"`       |             |
+| `"label"`              |             |
+| `"outer"`              |             |
+| `"status"`             |             |
+| `"status-description"` |             |
+| `"wrapper"`            |             |
+
+
 ## Dependencies
 
 ### Used by

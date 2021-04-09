@@ -1,18 +1,34 @@
+:host {
+  --color-error: var(--scl-color-text-error);
+  --color-disabled: var(--scl-color-grey-50);
+  --background: var(--scl-color-primary);
+  --color-inner-status: var(--scl-color-background-standard);
+  --font-size-inner-status: var(--scl-font-size-12);
+  --font-size-status: var(--scl-font-size-12);
+  --font-weight-status: var(--scl-font-weight-extrabold);
+  --color-status: var(--scl-color-grey-60);
+  --color-status-description: var(--scl-color-grey-60);
+  --font-size-status-description: var(--scl-font-size-12);
+  --font-weight-status-description: var(--scl-font-weight-bold);
+  --spacing-label: var(--scl-spacing-8) 0;
+  --border: 1px solid var(--scl-color-grey-60);
+}
+
 .progress-bar {
   width: 100%;
   max-width: 30rem;
 }
 
 .progress-bar--has-error .progress-bar__outer {
-  border: 1px solid var(--scl-color-text-error);
+  border: 1px solid var(--color-error);
 }
 
 .progress-bar--has-error .progress-bar__status-description {
-  color: var(--scl-color-text-error);
+  color: var(--color-error);
 }
 
 .progress-bar--has-error scale-icon {
-  --icon-color: var(--scl-color-text-error);
+  --icon-color: var(--color-error);
 }
 
 .progress-bar--disabled {
@@ -21,12 +37,12 @@
 }
 
 .progress-bar--disabled .progress-bar__label {
-  color: var(--scl-color-grey-50);
+  color: var(--color-disabled);
 }
 
 .progress-bar__label {
   display: block;
-  padding: var(--scl-spacing-8) 0;
+  padding: var(--spacing-label);
 }
 
 .progress-bar-wrapper {
@@ -44,7 +60,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 100px;
-  border: 1px solid var(--scl-color-grey-60);
+  border: var(--border);
 }
 
 .progress-bar__inner {
@@ -57,25 +73,30 @@
   white-space: nowrap;
   justify-content: flex-end;
   animation-fill-mode: both;
-  background: var(--scl-color-primary);
+  background: var(--background);
 }
 
 .progress-bar__inner-status {
-  color: var(--scl-color-background-standard);
+  color: var(--color-inner-status);
   padding: 0 12px;
-  font-size: var(--scl-font-size-12);
+  font-size: var(--font-size-inner-status);
 }
 
 .progress-bar__status {
   display: inline-block;
-  font-size: var(--scl-font-size-12);
-  font-weight: var(--scl-font-weight-extrabold);
+  font-size: var(--font-size-status);
+  font-weight: var(--font-weight-status);
+  color: var(--color-status);
+}
+
+.progress-bar__icon {
+  height: 16px;
 }
 
 .progress-bar__status-description {
-  color: var(--scl-color-grey-60);
-  font-size: var(--scl-font-size-12);
-  font-weight: var(--scl-font-weight-bold);
+  color: var(--color-status-description);
+  font-size: var(--font-size-status-description);
+  font-weight: var(--font-weight-status-description);
 }
 
 .progress-bar__aria-live {

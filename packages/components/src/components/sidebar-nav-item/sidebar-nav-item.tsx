@@ -102,19 +102,34 @@ export class SidebarNavItem {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <li class={this.getCssClassMap()} role="listitem" part="base">
+        <li
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          role="listitem"
+        >
           <slot />
         </li>
       </Host>
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'sidebar-nav-item';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
     return classNames(
-      'sidebar-nav-item',
-      this.bold && 'sidebar-nav-item--bold',
-      this.condensed && 'sidebar-nav-item--condensed',
-      this.active && 'sidebar-nav-item--active'
+      component,
+      this.bold && `${prefix}bold`,
+      this.condensed && `${prefix}condensed`,
+      this.active && `${prefix}active`
     );
   }
 }

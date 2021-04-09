@@ -49,7 +49,10 @@ export class Shell {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div class={this.getCssClassMap()}>
+        <div
+          part={classNames('base', this.scrolled && 'sticky')}
+          class={this.getCssClassMap()}
+        >
           {this.hasSlotHeader ? (
             <slot name="header"></slot>
           ) : (

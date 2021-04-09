@@ -82,10 +82,6 @@ export class Pagination {
   /* 8. Public Methods */
 
   /* 9. Local Methods */
-  getCssClassMap() {
-    return classNames(name, this.hideBorders && `${name}--hide-borders`);
-  }
-
   goFirstPage() {
     this.startElement = 0;
     this.emitUpdate();
@@ -126,7 +122,7 @@ export class Pagination {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()}>
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <button
             class={`${name}__first-prompt`}
             part="first-prompt"
@@ -167,7 +163,11 @@ export class Pagination {
               />
             </svg>
           </button>
-          <div class={`${name}__info`} style={{ width: `${this.maxWidth}px` }}>
+          <div
+            part="info"
+            class={`${name}__info`}
+            style={{ width: `${this.maxWidth}px` }}
+          >
             <span>
               {start}-{end}
             </span>{' '}
@@ -216,5 +216,19 @@ export class Pagination {
         </div>
       </Host>
     );
+  }
+
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
+  getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const prefix = mode === 'basePart' ? '' : `${name}--`;
+
+    return classNames(name, this.hideBorders && `${prefix}hide-borders`);
   }
 }

@@ -1,26 +1,39 @@
+:host {
+  --width: 400px;
+  --radius: var(--scl-radius-4);
+  --background: var(--scl-color-background-standard);
+  --box-shadow: var(--scl-shadow-level-0);
+  --spacing: var(--scl-spacing-16);
+  /*header*/
+  --border-header: 1px solid var(--scl-color-grey-20);
+  --font-size-header: var(--scl-font-variant-heading-4-size);
+  --font-size-header-small: var(--scl-font-variant-smaller-size);
+  /*progress*/
+  --height-progress: var(--scl-spacing-2);
+}
 .toast {
-  width: 400px;
+  width: var(--width);
   display: flex;
   opacity: 0;
   z-index: 1;
   position: fixed;
-  background: var(--scl-color-background-standard);
-  box-shadow: var(--scl-shadow-level-0);
+  background: var(--background);
+  box-shadow: var(--box-shadow);
   box-sizing: border-box;
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--radius);
   flex-direction: column;
   justify-content: space-between;
 }
 .toast__body {
-  padding: var(--scl-spacing-16);
+  padding: var(--spacing);
 }
 .toast__header {
   margin: 0;
   display: flex;
-  padding: var(--scl-spacing-16);
-  border-bottom: 1px solid var(--scl-color-grey-20);
+  padding: var(--spacing);
+  border-bottom: var(--border-header);
   justify-content: space-between;
-  font-size: var(--scl-font-variant-heading-4-size);
+  font-size: var(--font-size-header);
 }
 .toast__header a {
   cursor: pointer;
@@ -28,12 +41,12 @@
 .toast__header small {
   margin-top: 5px;
   margin-left: 120px;
-  font-size: var(--scl-font-variant-smaller-size);
+  font-size: var(--font-size-header-small);
 }
 .toast__progress {
   left: 0;
   bottom: 0;
-  height: var(--scl-spacing-2);
+  height: var(--height-progress);
   display: block;
   overflow: hidden;
   position: absolute;

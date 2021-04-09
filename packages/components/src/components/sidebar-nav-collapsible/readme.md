@@ -27,7 +27,6 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 
 | Part        | Description |
 | ----------- | ----------- |
-| `"base"`    |             |
 | `"icon"`    |             |
 | `"list"`    |             |
 | `"wrapper"` |             |

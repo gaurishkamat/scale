@@ -28,6 +28,7 @@
 | Part             | Description |
 | ---------------- | ----------- |
 | `"first-prompt"` |             |
+| `"info"`         |             |
 | `"last-prompt"`  |             |
 | `"next-prompt"`  |             |
 | `"prev-prompt"`  |             |

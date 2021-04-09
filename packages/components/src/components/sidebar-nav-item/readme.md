@@ -17,13 +17,6 @@
 | `styles`       | `styles`        | (optional) Extra styles                                                                                                 | `string`  | `undefined` |
 
 
-## Shadow Parts
-
-| Part     | Description |
-| -------- | ----------- |
-| `"base"` |             |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

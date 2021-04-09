@@ -61,7 +61,11 @@ export class SidebarNavCollapsible {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <Tag class={this.getCssClassMap()} role="listitem" part="base">
+        <Tag
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          role="listitem"
+        >
           <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
             <a
               href={this.href}
@@ -93,11 +97,22 @@ export class SidebarNavCollapsible {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const component = 'sidebar-nav-collapsible';
+    const prefix = mode === 'basePart' ? '' : `${component}--`;
+
     return classNames(
-      'sidebar-nav-collapsible',
-      this.condensed && 'sidebar-nav-collapsible--condensed',
-      this.active && 'sidebar-nav-collapsible--active'
+      component,
+      this.condensed && `${prefix}condensed`,
+      this.active && `${prefix}active`
     );
   }
 }
