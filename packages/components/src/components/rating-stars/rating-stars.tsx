@@ -1,6 +1,7 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-rating-stars',
@@ -9,6 +10,7 @@ import classNames from 'classnames';
 })
 export class RatingStars {
   element: HTMLElement;
+  @Element() hostElement: HTMLElement;
   @Prop({ mutable: true }) hoverValue = 0;
   @Prop({ mutable: true }) isHovering = false;
   @Prop({ mutable: true }) numOfStars = 5;
@@ -30,8 +32,8 @@ export class RatingStars {
       return `<scale-icon-action-favorite color=${color} size=${size} />`;
     }
   };
-
   connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
@@ -140,69 +142,71 @@ export class RatingStars {
       displayValue = this.isHovering ? this.hoverValue : this.rating;
     }
     return (
-      <div
-        class={this.getCssClassMap()}
-        id="rating"
-        ref={el => (this.element = el)}
-        onMouseMove={this.handleMouseMove}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        onClick={this.handleMouseClick}
-        onKeyDown={this.handleKeyDown}
-        tabIndex={this.disabled ? -1 : 0}
-        role="img"
-        aria-label={this.getAriaLabel()}
-      >
-        <span class="rating__symbols">
-          {counter.map(index => (
-            <span
-              class="rating__symbol__wrapper"
-              onMouseEnter={this.handleMouseEnter}
-            >
+      <Host>
+        <div
+          class={this.getCssClassMap()}
+          id="rating"
+          ref={el => (this.element = el)}
+          onMouseMove={this.handleMouseMove}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+          onClick={this.handleMouseClick}
+          onKeyDown={this.handleKeyDown}
+          tabIndex={this.disabled ? -1 : 0}
+          role="img"
+          aria-label={this.getAriaLabel()}
+        >
+          <span class="rating__symbols">
+            {counter.map(index => (
               <span
-                role="presentation"
-                style={{
-                  clipPath:
-                    Math.ceil(displayValue) >= index + 1
-                      ? `inset(0 ${(Math.ceil(displayValue) - index) *
-                          100}% 0 0)`
-                      : null,
-                }}
-                class={{
-                  rating__symbol: true,
-                  'rating__symbol--hover':
-                    this.isHovering && Math.ceil(displayValue) === index + 1,
-                }}
-                innerHTML={this.getSymbol(this.colorBlank, this.size)}
-                id={`star-${index + 1}`}
-              />
-            </span>
-          ))}
-        </span>
-        <span class="rating__symbols rating__symbols--indicator">
-          {counter.map(index => (
-            <span
-              class="rating__symbol__wrapper"
-              onMouseEnter={this.handleMouseEnter}
-            >
+                class="rating__symbol__wrapper"
+                onMouseEnter={this.handleMouseEnter}
+              >
+                <span
+                  role="presentation"
+                  style={{
+                    clipPath:
+                      Math.ceil(displayValue) >= index + 1
+                        ? `inset(0 ${(Math.ceil(displayValue) - index) *
+                            100}% 0 0)`
+                        : null,
+                  }}
+                  class={{
+                    rating__symbol: true,
+                    'rating__symbol--hover':
+                      this.isHovering && Math.ceil(displayValue) === index + 1,
+                  }}
+                  innerHTML={this.getSymbol(this.colorBlank, this.size)}
+                  id={`star-${index + 1}`}
+                />
+              </span>
+            ))}
+          </span>
+          <span class="rating__symbols rating__symbols--indicator">
+            {counter.map(index => (
               <span
-                style={{
-                  clipPath:
-                    displayValue > index + 1
-                      ? null
-                      : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
-                }}
-                class={{
-                  rating__symbol: true,
-                  'rating__symbol--hover':
-                    this.isHovering && Math.ceil(displayValue) === index + 1,
-                }}
-                innerHTML={this.getSymbol(this.colorFilled, this.size, true)}
-              />
-            </span>
-          ))}
-        </span>
-      </div>
+                class="rating__symbol__wrapper"
+                onMouseEnter={this.handleMouseEnter}
+              >
+                <span
+                  style={{
+                    clipPath:
+                      displayValue > index + 1
+                        ? null
+                        : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
+                  }}
+                  class={{
+                    rating__symbol: true,
+                    'rating__symbol--hover':
+                      this.isHovering && Math.ceil(displayValue) === index + 1,
+                  }}
+                  innerHTML={this.getSymbol(this.colorFilled, this.size, true)}
+                />
+              </span>
+            ))}
+          </span>
+        </div>
+      </Host>
     );
   }
 

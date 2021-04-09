@@ -1,5 +1,6 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-logo',
@@ -7,6 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Logo {
+  @Element() hostElement: HTMLElement;
   /** (optional) Variant/color of the logo text and logo */
   @Prop() variant: 'magenta' | 'white' = 'magenta';
   /** (optional) Set transparent background */
@@ -32,6 +34,10 @@ export class Logo {
   @Prop() clickHandler: any;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle: string = 'Telekom Logo';
+
+  connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+  }
 
   styles() {
     return `:host {
