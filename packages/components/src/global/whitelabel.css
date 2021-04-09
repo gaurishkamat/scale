@@ -1,4 +1,4 @@
-@import './scale.css';
+@import '~@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css';
 
 :root {
   --scl-color-magenta: magenta;
