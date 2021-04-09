@@ -1,5 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import ScaleLogo from "./ScaleLogo.vue";
+import { action } from "@storybook/addon-actions";
 
 <Meta
   title="Beta Components/Logo"
@@ -38,12 +39,15 @@ export const Template = (args, { argTypes }) => ({
         :transparent="transparent"
         :language="language"
         :size="size"
-        :click-handler="clickHandler"
         :href="href"
         :accessibility-title="accessibilityTitle"
+        @click-handler="clickHandler"
     >
     </scale-logo>
     `,
+    methods: {
+        clickHandler: action("clickHandler")
+    }
 });
 
 # Logo

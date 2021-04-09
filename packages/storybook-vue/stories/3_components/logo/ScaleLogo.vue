@@ -4,14 +4,16 @@
     :transparent="transparent"
     :language="language"
     :size="size"
-    :click-handler="clickHandler"
     :href="href"
     :accessibility-title="accessibilityTitle"
+     @click-handler="clickHandler"
   >
   </scale-logo>
 </template>
 
 <script>
+import { action } from "@storybook/addon-actions";
+
 export default {
   props: {
     variant: { type: "magenta" | "white", default: "magenta" },
@@ -34,6 +36,12 @@ export default {
     size: { type: Number, default: 36 },
     href: { type: String },
     accessibilityTitle: { type: String, default: "Telekom Logo" },
+  },
+  methods: {
+    clickHandler($event) {
+      action("clickHandler");
+      this.$emit("clickHandler", $event);
+    },
   },
 };
 </script>
