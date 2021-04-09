@@ -24,6 +24,8 @@ import icon_en from "raw-loader!../../stories/3_components/icon/icon.md";
 import icon_de from "raw-loader!../../stories/3_components/icon/icon_de.md";
 import linkMarkdown_en from "raw-loader!../../stories/3_components/link/link.md";
 import linkMarkdown_de from "raw-loader!../../stories/3_components/link/link_de.md";
+import logo_en from "raw-loader!../../stories/3_components/logo/logo.md";
+import logo_de from "raw-loader!../../stories/3_components/logo/logo_de.md";
 import list_en from "raw-loader!../../stories/3_components/list/list.md";
 import list_de from "raw-loader!../../stories/3_components/list/list_de.md";
 import menuFlyout_en from "raw-loader!../../stories/3_components/menu-flyout/menu-flyout.md";
@@ -36,6 +38,8 @@ import progressBar_en from "raw-loader!../../stories/3_components/progress-bar/p
 import progressBar_de from "raw-loader!../../stories/3_components/progress-bar/progress-bar_de.md";
 import radioButton_en from "raw-loader!../../stories/3_components/radio-button/radio-button.md";
 import radioButton_de from "raw-loader!../../stories/3_components/radio-button/radio-button_de.md";
+import ratingStars_en from "raw-loader!../../stories/3_components/rating-stars/rating-stars.md";
+import ratingStars_de from "raw-loader!../../stories/3_components/rating-stars/rating-stars_de.md";
 import dropdown_en from "raw-loader!../../stories/3_components/dropdown/dropdown.md";
 import dropdown_de from "raw-loader!../../stories/3_components/dropdown/dropdown_de.md";
 import sidebarNav_en from "raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md";
@@ -102,10 +106,12 @@ const Usage = props => {
     icon_de,
     link_en: linkMarkdown_en,
     link_de: linkMarkdown_de,
+    logo_en,
+    logo_de,
     list_en,
     list_de,
-    'flyout-menu_en': menuFlyout_en,
-    'flyout-menu_de': menuFlyout_de,
+    "flyout-menu_en": menuFlyout_en,
+    "flyout-menu_de": menuFlyout_de,
     modal_en,
     modal_de,
     pagination_en,
@@ -114,6 +120,8 @@ const Usage = props => {
     "progress-bar_de": progressBar_de,
     "radio-button_en": radioButton_en,
     "radio-button_de": radioButton_de,
+    "rating-stars_en": ratingStars_en,
+    "rating-stars_de": ratingStars_de,
     dropdown_en,
     dropdown_de,
     "sidebar-navigation_en": sidebarNav_en,
@@ -144,12 +152,21 @@ const Usage = props => {
 
   return (
     props.active && (
-      <div className="sbdocs-frame">
+      <div
+        className="sbdocs-frame"
+        style={{
+          background: "white",
+          minHeight: "100%",
+        }}
+      >
         <DocsWrapper
           className="sbdocs sbdocs-wrapper addon-usage"
           style={{ minHeight: "100%" }}
         >
-          <DocsContent className="sbdocs sbdocs-content" style={{maxWidth: "1066px"}}>
+          <DocsContent
+            className="sbdocs sbdocs-content"
+            style={{ maxWidth: "1066px" }}
+          >
             <Description markdown={markdown} />
           </DocsContent>
         </DocsWrapper>
