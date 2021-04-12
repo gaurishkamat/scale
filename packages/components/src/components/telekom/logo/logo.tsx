@@ -1,6 +1,6 @@
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from '../../utils/status-note';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-logo',
