@@ -14,7 +14,9 @@ export const config: Config = {
   },
   namespace: 'scale-components',
   globalScript: 'src/global/scale.ts',
-  globalStyle: 'src/global/scale.css',
+  globalStyle: process.env.WHITELABEL
+    ? 'src/global/whitelabel.css'
+    : 'src/global/scale.css',
   plugins: [
     inlineSvg(),
     postcss({
@@ -27,7 +29,7 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: 'fonts/TeleNeoWeb', warn: true },
+        { src: 'telekom/fonts/TeleNeoWeb', warn: true },
         { src: 'components/icons/scale-icons.json', warn: true },
       ],
     },
@@ -35,7 +37,11 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: 'fonts/TeleNeoWeb', dest: 'build/fonts/TeleNeoWeb', warn: true },
+        {
+          src: 'telekom/fonts/TeleNeoWeb',
+          dest: 'build/fonts/TeleNeoWeb',
+          warn: true,
+        },
         { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
       ],

@@ -1,4 +1,4 @@
-import { MenuItem } from '../components/app-interfaces';
+import { MenuItem } from '../components/telekom/app-interfaces';
 
 export const findSelected = (
   structure: MenuItem[] = [],

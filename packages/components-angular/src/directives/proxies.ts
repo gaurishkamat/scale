@@ -43,7 +43,7 @@ export class AppMegaMenu {
   }
 }
 
-import { MainNavigationMobile as IMainNavigationMobile } from '@scaleds/components-telekom/dist/types/components/app-navigation-main-mobile/app-navigation-main-mobile';
+import { MainNavigationMobile as IMainNavigationMobile } from '@scaleds/components-telekom/dist/types/components/telekom/app-navigation-main-mobile/app-navigation-main-mobile';
 export declare interface AppNavigationMainMobile extends Components.AppNavigationMainMobile {}
 @ProxyCmp({
   inputs: ['activeRouteId', 'hide', 'navigation']

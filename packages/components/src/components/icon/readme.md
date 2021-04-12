@@ -23,10 +23,10 @@
 
 ### Used by
 
- - [scale-app-footer](../app-footer)
+ - [scale-app-footer](../telekom/app-footer)
  - [scale-data-grid](../data-grid)
  - [scale-input](../input)
- - [scale-nav-icon](../nav-icon)
+ - [scale-nav-icon](../telekom/nav-icon)
 
 ### Graph
 ```mermaid

@@ -20,7 +20,7 @@
 ### Depends on
 
 - [app-logo](../app-logo)
-- [scale-icon](../icon)
+- [scale-icon](../../icon)
 
 ### Graph
 ```mermaid
