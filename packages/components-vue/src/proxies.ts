@@ -478,7 +478,6 @@ export const ScaleCheckbox = /*@__PURE__*/ Vue.extend({
     checked: {} as PropOptions<Components.ScaleCheckbox['checked']>,
     value: {} as PropOptions<Components.ScaleCheckbox['value']>,
     inputId: {} as PropOptions<Components.ScaleCheckbox['inputId']>,
-    icon: {} as PropOptions<Components.ScaleCheckbox['icon']>,
     styles: {} as PropOptions<Components.ScaleCheckbox['styles']>,
   },
 
@@ -580,7 +579,6 @@ export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
     required: {} as PropOptions<Components.ScaleDropdown['required']>,
     value: {} as PropOptions<Components.ScaleDropdown['value']>,
     inputId: {} as PropOptions<Components.ScaleDropdown['inputId']>,
-    icon: {} as PropOptions<Components.ScaleDropdown['icon']>,
     multiple: {} as PropOptions<Components.ScaleDropdown['multiple']>,
     visibleSize: {} as PropOptions<Components.ScaleDropdown['visibleSize']>,
     transparent: {} as PropOptions<Components.ScaleDropdown['transparent']>,
@@ -3373,9 +3371,6 @@ export const ScaleLink = /*@__PURE__*/ Vue.extend({
     block: {} as PropOptions<Components.ScaleLink['block']>,
     target: {} as PropOptions<Components.ScaleLink['target']>,
     variant: {} as PropOptions<Components.ScaleLink['variant']>,
-    iconSize: {} as PropOptions<Components.ScaleLink['iconSize']>,
-    icon: {} as PropOptions<Components.ScaleLink['icon']>,
-    iconAccessibilityTitle: {} as PropOptions<Components.ScaleLink['iconAccessibilityTitle']>,
     styles: {} as PropOptions<Components.ScaleLink['styles']>,
   },
 

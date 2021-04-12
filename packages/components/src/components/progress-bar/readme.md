@@ -28,7 +28,6 @@
 
 | Part                   | Description |
 | ---------------------- | ----------- |
-| `"icon"`               |             |
 | `"inner"`              |             |
 | `"inner-status"`       |             |
 | `"label"`              |             |
@@ -44,14 +43,9 @@
 
  - [scale-data-grid](../data-grid)
 
-### Depends on
-
-- [scale-icon](../icon)
-
 ### Graph
 ```mermaid
 graph TD;
-  scale-progress-bar --> scale-icon
   scale-data-grid --> scale-progress-bar
   style scale-progress-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -118,15 +118,8 @@ export class ProgressBar {
                 {this.percentage}%
               </div>
             )}
-            {!!this.icon && (
-              <scale-icon
-                part="icon"
-                class="progress-bar__icon"
-                aria-hidden="true"
-                path={this.icon}
-                size={16}
-              ></scale-icon>
-            )}
+
+            <slot name="icon"></slot>
           </div>
         </div>
         {!!this.statusDescription && (

@@ -34,9 +34,6 @@ export class Checkbox {
   @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
-  /** (optional) Input checkbox checked icon */
-  @Prop() icon?: string =
-    'M9 20.215L1.695 12.91a1.25 1.25 0 011.765-1.77L9 16.68l12-12a1.25 1.25 0 011.765 1.765z';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when the value has changed. */
@@ -76,8 +73,10 @@ export class Checkbox {
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {!!this.icon && this.checked && (
-                <scale-icon path={this.icon}></scale-icon>
+              {this.checked && (
+                <scale-icon-action-success
+                  decorative
+                ></scale-icon-action-success>
               )}
             </div>
             <span class="checkbox__label">

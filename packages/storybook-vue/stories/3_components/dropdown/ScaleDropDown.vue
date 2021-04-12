@@ -8,7 +8,6 @@
     :required="required"
     :size="size"
     :value="value"
-    :icon="icon"
     :input-id="inputId"
     :visible-size="visibleSize"
     :controlled="controlled"
@@ -26,7 +25,6 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
-    icon: { type: String },
     name: { type: String },
     label: { type: String },
     helperText: { type: String },

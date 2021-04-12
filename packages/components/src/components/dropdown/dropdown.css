@@ -32,8 +32,11 @@ scale-dropdown {
   --color-meta: var(--scl-color-text-standard);
 
   /*icon*/
-  --icon-color-hover: var(--scl-color-primary-hover, #f90984);
-  --icon-color-active: var(--scl-color-primary-active, #cb0068);
+  --height-icon: var(--scl-spacing-24);
+  --color-icon: var(--scl-color-text-standard);
+  --color-icon-hover: var(--scl-color-primary-hover, #f90984);
+  --color-icon-active: var(--scl-color-primary-active, #cb0068);
+  --transition-icon: var(--transition);
 
   /*label*/
   --color-label: var(--scl-color-grey-60);
@@ -88,11 +91,16 @@ scale-dropdown {
   margin-top: var(--spacing-y-meta);
   color: var(--color-meta);
 }
-.dropdown:not(.dropdown--disabled):hover .input__dropdown-wrapper {
-  --icon-color: var(--icon-color-hover);
+
+.dropdown.dropdown--disabled .input__dropdown-wrapper .input__dropdown-icon {
+  color: var(--color-disabled);
 }
-.dropdown:not(.dropdown--disabled):active .input__dropdown-wrapper {
-  --icon-color: var(--icon-color-active);
+
+.dropdown:not(.dropdown--disabled):hover .input__dropdown-icon {
+  color: var(--color-icon-hover);
+}
+.dropdown:not(.dropdown--disabled):active .input__dropdown-icon {
+  color: var(--color-icon-active);
 }
 .dropdown:not(.dropdown--disabled) .input__dropdown:hover {
   border-color: var(--border-color-hover);
@@ -104,12 +112,15 @@ scale-dropdown {
 .dropdown:not(.dropdown--disabled) .input__dropdown:focus {
   box-shadow: var(--box-shadow-focus);
 }
-.dropdown .input__dropdown-wrapper scale-icon {
+.dropdown .input__dropdown-wrapper .input__dropdown-icon {
   top: 50%;
   right: var(--spacing-x);
   position: absolute;
   transform: translateY(-50%);
   pointer-events: none;
+  height: var(--height-icon);
+  color: var(--color-icon);
+  transition: var(--transition-icon);
 }
 
 .input__label {
@@ -170,8 +181,4 @@ scale-dropdown {
   border-color: var(--color-disabled);
   color: var(--color-disabled);
   background: var(--background-disabled);
-}
-/* TODO this could removed once scale-icon is removed */
-.dropdown--disabled .input__dropdown-wrapper {
-  --icon-color: var(--color-disabled);
 }

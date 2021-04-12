@@ -27,10 +27,6 @@
   color: var(--color-error);
 }
 
-.progress-bar--has-error scale-icon {
-  --icon-color: var(--color-error);
-}
-
 .progress-bar--disabled {
   cursor: not-allowed;
   opacity: 0.5;

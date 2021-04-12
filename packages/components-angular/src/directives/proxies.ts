@@ -279,13 +279,13 @@ export class ScaleChartStackCard {
 import { Checkbox as ICheckbox } from '@scaleds/components-telekom/dist/types/components/checkbox/checkbox';
 export declare interface ScaleCheckbox extends Components.ScaleCheckbox {}
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value']
 })
 @Component({
   selector: 'scale-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
   outputs: ['scaleChange']
 })
 export class ScaleCheckbox {
@@ -397,13 +397,13 @@ export class ScaleDivider {
 import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
 export declare interface ScaleDropdown extends Components.ScaleDropdown {}
 @ProxyCmp({
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+  inputs: ['controlled', 'disabled', 'helperText', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
 })
 @Component({
   selector: 'scale-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  inputs: ['controlled', 'disabled', 'helperText', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleDropdown {
@@ -3917,13 +3917,13 @@ export class ScaleInput {
 
 export declare interface ScaleLink extends Components.ScaleLink {}
 @ProxyCmp({
-  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'styles', 'target', 'variant']
 })
 @Component({
   selector: 'scale-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['block', 'disabled', 'href', 'icon', 'iconAccessibilityTitle', 'iconSize', 'styles', 'target', 'variant']
+  inputs: ['block', 'disabled', 'href', 'styles', 'target', 'variant']
 })
 export class ScaleLink {
   protected el: HTMLElement;

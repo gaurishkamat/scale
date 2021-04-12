@@ -459,10 +459,6 @@
           "description": "(optional) Input helper text"
         },
         {
-          "name": "icon",
-          "description": "(optional) Input checkbox checked icon"
-        },
-        {
           "name": "input-id",
           "description": "(optional) Input checkbox id"
         },
@@ -686,10 +682,6 @@
         {
           "name": "helper-text",
           "description": "(optional) Input helper text"
-        },
-        {
-          "name": "icon",
-          "description": "(optional) Input checkbox checked icon"
         },
         {
           "name": "input-id",
@@ -6211,18 +6203,6 @@
         {
           "name": "href",
           "description": "(optional) Link href"
-        },
-        {
-          "name": "icon",
-          "description": "(optional) Icon only"
-        },
-        {
-          "name": "icon-accessibility-title",
-          "description": "(optional) Icon title for accessibility"
-        },
-        {
-          "name": "icon-size",
-          "description": "(optional) Icon size"
         },
         {
           "name": "styles",

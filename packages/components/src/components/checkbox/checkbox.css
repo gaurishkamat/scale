@@ -109,9 +109,11 @@ scale-checkbox {
   .checkbox__control {
   background: var(--color-disabled);
 }
-/* TODO this could removed once scale-icon is removed */
-.checkbox input:checked:disabled ~ .checkbox__control-wrapper scale-icon {
-  --icon-color: var(--color-icon-checked-disabled);
+.checkbox
+  input:checked:disabled
+  ~ .checkbox__control-wrapper
+  scale-icon-action-success {
+  color: var(--color-icon-checked-disabled);
 }
 .checkbox
   input:checked:not([disabled]):hover
@@ -136,16 +138,15 @@ scale-checkbox {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
-/* TODO this could removed once scale-icon is removed */
 .checkbox
   input:checked:not([disabled]):active
   ~ .checkbox__control-wrapper
-  scale-icon,
+  scale-icon-action-success,
 .checkbox
   input:checked:not([disabled])
   ~ .checkbox__control-wrapper:active
-  scale-icon {
-  --icon-color: var(--color-icon-checked-active);
+  scale-icon-action-success {
+  color: var(--color-icon-checked-active);
 }
 .checkbox
   input:checked:not([disabled])
@@ -192,10 +193,15 @@ scale-checkbox {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
-/* TODO this could removed once scale-icon is removed */
-.checkbox input:not([disabled]):active ~ .checkbox__control-wrapper scale-icon,
-.checkbox input:not([disabled]) ~ .checkbox__control-wrapper:active scale-icon {
-  --icon-color: var(--color-primary-active);
+.checkbox
+  input:not([disabled]):active
+  ~ .checkbox__control-wrapper
+  scale-icon-action-success,
+.checkbox
+  input:not([disabled])
+  ~ .checkbox__control-wrapper:active
+  scale-icon-action-success {
+  color: var(--color-primary-active);
 }
 .checkbox
   input:not([disabled]):active
@@ -216,8 +222,7 @@ scale-checkbox {
   border: var(--border-width-control) solid var(--color-text);
   background: var(--color-standard);
 }
-/* TODO this could removed once scale-icon is removed */
-.checkbox .checkbox__control-wrapper scale-icon {
+.checkbox .checkbox__control-wrapper scale-icon-action-success {
   top: var(--top-icon);
   left: var(--left-icon);
   width: var(--width-icon);
@@ -225,9 +230,9 @@ scale-checkbox {
   transform: var(--transform-icon);
   position: absolute;
   user-select: none;
-  --icon-color: var(--color-standard);
+  color: var(--color-standard);
 }
-.checkbox .checkbox__control-wrapper scale-icon svg {
+.checkbox .checkbox__control-wrapper scale-icon-action-success svg {
   width: var(--width-icon);
   height: var(--height-icon);
 }

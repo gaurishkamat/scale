@@ -19,12 +19,6 @@ export class Link {
   @Prop() target?: string = '_self';
   /** (optional) Link variant */
   @Prop() variant?: string = '';
-  /** (optional) Icon size */
-  @Prop() iconSize?: number = 24;
-  /** (optional) Icon only */
-  @Prop() icon?: string;
-  /** (optional) Icon title for accessibility */
-  @Prop() iconAccessibilityTitle?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -41,13 +35,7 @@ export class Link {
         >
           <span class="link__wrapper" part="wrapper">
             <slot />
-            {this.icon && this.icon !== '' && (
-              <scale-icon
-                accessibilityTitle={this.iconAccessibilityTitle}
-                path={this.icon}
-                size={this.iconSize}
-              />
-            )}
+            <slot name="icon" />
           </span>
         </a>
       </Host>

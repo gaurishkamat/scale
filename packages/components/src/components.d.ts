@@ -230,10 +230,6 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
-        /**
           * (optional) Input checkbox id
          */
         "inputId"?: string;
@@ -435,10 +431,6 @@ export namespace Components {
           * (optional) Input helper text
          */
         "helperText"?: string;
-        /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
         /**
           * (optional) Input checkbox id
          */
@@ -4625,18 +4617,6 @@ export namespace Components {
           * (optional) Link href
          */
         "href": string;
-        /**
-          * (optional) Icon only
-         */
-        "icon"?: string;
-        /**
-          * (optional) Icon title for accessibility
-         */
-        "iconAccessibilityTitle"?: string;
-        /**
-          * (optional) Icon size
-         */
-        "iconSize"?: number;
         /**
           * (optional) Injected CSS styles
          */
@@ -7299,10 +7279,6 @@ declare namespace LocalJSX {
          */
         "helperText"?: string;
         /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
-        /**
           * (optional) Input checkbox id
          */
         "inputId"?: string;
@@ -7520,10 +7496,6 @@ declare namespace LocalJSX {
           * (optional) Input helper text
          */
         "helperText"?: string;
-        /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
         /**
           * (optional) Input checkbox id
          */
@@ -11750,18 +11722,6 @@ declare namespace LocalJSX {
           * (optional) Link href
          */
         "href"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "icon"?: string;
-        /**
-          * (optional) Icon title for accessibility
-         */
-        "iconAccessibilityTitle"?: string;
-        /**
-          * (optional) Icon size
-         */
-        "iconSize"?: number;
         /**
           * (optional) Injected CSS styles
          */

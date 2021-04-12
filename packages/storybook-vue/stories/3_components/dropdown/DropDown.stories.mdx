@@ -21,7 +21,6 @@ export const Template = (args, { argTypes }) => ({
       :required="required"
       :size="size"
       :value="value"
-      :icon="icon"
       :input-id="inputId"
       :visible-size="visibleSize"
       :controlled="controlled"
@@ -37,6 +36,7 @@ export const Template = (args, { argTypes }) => ({
       <optgroup label="Category Group 2">
         <option value="3">Category 3</option>
       </optgroup>
+      <scale-icon-content-calendar v-if="label === 'With Custom Icon'" slot="icon"></scale-icon-content-calendar>
     </scale-dropdown>
   `,
   methods: {
@@ -68,7 +68,7 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story='Standard' />
 
 ```html
-<scale-dropdown icon="SVG-PATH" label="select">
+<scale-dropdown label="select">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -92,7 +92,7 @@ export const Template = (args, { argTypes }) => ({
 
 
 ```html
-<scale-dropdown icon="SVG-PATH" label="Small" size="small">
+<scale-dropdown label="Small" size="small">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -119,7 +119,7 @@ The display error is on the browser side.
 
 
 ```html
-<scale-dropdown icon="SVG-PATH" label="Disabled" disabled>
+<scale-dropdown label="Disabled" disabled>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
@@ -144,9 +144,33 @@ The display error is on the browser side.
 
 
 ```html
-<scale-dropdown icon="SVG-PATH" label="Error" status="error" helper-text="Something went wrong...">
+<scale-dropdown label="Error" status="error" helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+
+## With Custom Icon
+
+<Canvas withSource="none">
+  <Story
+    name='With Custom Icon'
+    args={{
+      label: 'With Custom Icon',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+```html
+<scale-dropdown label="With Custom Icon">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+   <scale-icon-content-calendar slot="icon"></scale-icon-content-calendar>
 </scale-dropdown>
 ```
