@@ -1,7 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
 import ScaleCheckbox from "./ScaleCheckbox.vue";
 import { action } from "@storybook/addon-actions";
-export const ICON = "M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z";
 
 <Meta
   title="Components/Checkbox"
@@ -25,7 +24,6 @@ export const Template = (args, { argTypes }) => ({
       :value="value"
       :status="status"
       :input-id="inputId"
-      :icon="icon"
       @scaleChange="scaleChange"
     ></scale-checkbox>
   `,
@@ -49,7 +47,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Checkbox",
-      icon: ICON
     }}
   >
     {Template.bind({})}
@@ -66,7 +63,6 @@ export const Template = (args, { argTypes }) => ({
     name="Standard Disabled"
     args={{
       label: "Standard Disabled",
-      icon: ICON,
       disabled: true
     }}
   >
@@ -85,7 +81,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected"
     args={{
       label: "Selected",
-      icon: ICON,
       checked: true
     }}
   >
@@ -104,7 +99,6 @@ export const Template = (args, { argTypes }) => ({
     name="Selected Disabled"
     args={{
       label: "Selected Disabled",
-      icon: ICON,
       checked: true,
       disabled: true,
     }}
@@ -125,7 +119,6 @@ export const Template = (args, { argTypes }) => ({
     name="Error"
     args={{
       label: "Standard with error",
-      icon: ICON,
       status: "error",
       helperText: "This is the error message"
     }}
