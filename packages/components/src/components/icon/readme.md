@@ -24,14 +24,9 @@
 ### Used by
 
  - [scale-app-footer](../telekom/app-footer)
- - [scale-checkbox](../checkbox)
  - [scale-data-grid](../data-grid)
- - [scale-dropdown](../dropdown)
  - [scale-input](../input)
- - [scale-link](../link)
  - [scale-nav-icon](../telekom/nav-icon)
- - [scale-progress-bar](../progress-bar)
- - [scale-tag](../tag)
 
 ### Graph
 ```mermaid
