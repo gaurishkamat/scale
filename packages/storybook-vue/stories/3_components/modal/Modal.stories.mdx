@@ -135,6 +135,61 @@ export const Template = (args, context) => ({
 </scale-modal>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --spacing-x: var(--scl-spacing-16);
+  --background-overlay: var(
+    --scl-color-background-overlay,
+    rgba(108, 108, 108, 0.7)
+  );
+
+  --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
+  --radius-window: var(--scl-radius-8);
+  --box-shadow-window: var(--scl-shadow-level-5);
+
+  --size-window-small: calc(
+    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
+  );
+  --size-window-default: calc(
+    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
+  );
+  --size-window-large: calc(
+    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
+  );
+
+  --spacing-x-header: var(--scl-spacing-24);
+  --spacing-y-header: var(--scl-spacing-24);
+
+  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
+    var(--scl-color-grey-20);
+
+  --font-family-heading: var(--scl-font-family-sans);
+  --font-size-heading: var(--scl-font-size-20);
+  --font-weight-heading: var(--scl-font-weight-extrabold);
+
+  --spacing-close-button: var(--scl-spacing-8);
+  --radius-close-button: var(--scl-radius-8);
+  --transition-close-button: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
+  --color-close-button-hover: var(--scl-color-primary-hover);
+  --color-close-button-active: var(--scl-color-primary-active);
+
+  --spacing-x-body-wrapper: var(--scl-spacing-24);
+  --spacing-y-body: var(--scl-spacing-24);
+
+  --spacing-actions: var(--scl-spacing-24);
+
+  --spacing-x-actions-slotted: var(--scl-spacing-8);
+  --background-actions-has-scroll: var(--scl-color-background-light);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Standard Small
 
 <Canvas withSource="none">

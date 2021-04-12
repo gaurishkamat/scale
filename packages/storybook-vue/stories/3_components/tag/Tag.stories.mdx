@@ -100,6 +100,41 @@ export const TemplateInteractive = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+:host {
+  --background: var(--scl-color-text-standard);
+  --color: var(--scl-color-white);
+  --font-size: var(--scl-font-variant-body-size);
+  --line-height: var(--scl-font-variant-body-line-height);
+  --font-weight: var(--scl-font-weight-bold);
+  --radius: var(--scl-radius-4);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
+  --icon-color: var(--color);
+  --icon-color-hover: var(--scl-color-primary-active);
+  --background-secondary: var(--scl-color-teal-80);
+
+  --background-disabled: var(--scl-color-background-disabled);
+  --color-disabled: var(--scl-color-grey-60);
+
+  --spacing-left-dismissable: var(--scl-spacing-2);
+
+  --border-button-dismissable-focus: 1px solid var(--scl-color-background-standard);
+  --background-button-dismissable-focus: var(--scl-color-black);
+  --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
+  --background-button-dismissable-hover: var(--scl-color-black);
+  --height-button-dismissable-small: 20px;
+
+  --spacing-small: 0 var(--scl-spacing-8);
+  --font-size-small: var(--scl-font-size-12);
+  --line-height-small: var(--scl-font-line-height-160);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## A dissmisable tag
 
 <Canvas withSource="none">

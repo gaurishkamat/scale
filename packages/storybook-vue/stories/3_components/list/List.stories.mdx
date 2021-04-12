@@ -93,6 +93,35 @@ export const TemplateCustomIcon = (args) => ({
 </scale-list>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --spacing-left: 0;
+  --spacing-left-nested: var(--scl-spacing-8);
+}
+
+/* scale-list-item */
+:host(scale-list-item) {
+  --display: block;
+  --font-size: var(--scl-font-size-16);
+  --line-height: var(--scl-font-line-height-150);
+  --spacing-left: calc(0.25ch + var(--scl-spacing-16));
+
+  --font-size-marker-ordered: var(--scl-font-size-16);
+  --font-weight-marker-ordered: var(--scl-font-weight-bold);
+  --font-size-marker-ordered-nested: var(--scl-font-size-12);
+  --line-height-marker-ordered-nested: var(--scl-font-line-height-150);
+  --spacing-top-marker-ordered-nested: calc(
+    var(--scl-spacing-16) - var(--scl-spacing-12)
+  );
+
+  --spacing-right-no-marker: var(--scl-spacing-8);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Unordered
 
 <Canvas withSource="none">

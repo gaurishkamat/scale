@@ -69,6 +69,28 @@ export const Template = (args, {argTypes}) => ({
 
 <ArgsTable story='Standard' />
 
+### Scoped CSS variables
+
+```css
+:host {
+  --border: 1px solid var(--scl-color-grey-60);
+  --background-bar: var(--scl-color-primary);
+  --border-color-thumb: var(--scl-color-grey-60);
+  --box-shadow-thumb: var(--scl-shadow-level-0);
+  --border-color-thumb-hover: var(--scl-color-primary-hover);
+  --border-color-thumb-active: var(--scl-color-primary-active);
+  --box-shadow-thumb-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --color-display-value: var(--scl-color-grey-60);
+  --font-weight-display-value: var(--scl-font-weight-bold);
+  --font-size-display-value: var(--scl-font-size-12);
+  --background-track: var(--scl-color-grey-50);
+  --background-bar-disabled: var(--scl-color-grey-50);
+  --color-label-disabled: var(--scl-color-grey-50);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Slider track small
 
 <Canvas withSource="none">
