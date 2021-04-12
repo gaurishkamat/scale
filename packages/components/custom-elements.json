@@ -6209,18 +6209,6 @@
           "description": "(optional) Link href"
         },
         {
-          "name": "icon",
-          "description": "(optional) Icon only"
-        },
-        {
-          "name": "icon-accessibility-title",
-          "description": "(optional) Icon title for accessibility"
-        },
-        {
-          "name": "icon-size",
-          "description": "(optional) Icon size"
-        },
-        {
           "name": "styles",
           "description": "(optional) Injected CSS styles"
         },

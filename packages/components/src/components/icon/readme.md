@@ -27,7 +27,6 @@
  - [scale-checkbox](../checkbox)
  - [scale-data-grid](../data-grid)
  - [scale-input](../input)
- - [scale-link](../link)
  - [scale-nav-icon](../nav-icon)
  - [scale-progress-bar](../progress-bar)
  - [scale-tag](../tag)
@@ -39,7 +38,6 @@ graph TD;
   scale-checkbox --> scale-icon
   scale-data-grid --> scale-icon
   scale-input --> scale-icon
-  scale-link --> scale-icon
   scale-nav-icon --> scale-icon
   scale-progress-bar --> scale-icon
   scale-tag --> scale-icon

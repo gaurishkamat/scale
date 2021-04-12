@@ -4622,18 +4622,6 @@ export namespace Components {
          */
         "href": string;
         /**
-          * (optional) Icon only
-         */
-        "icon"?: string;
-        /**
-          * (optional) Icon title for accessibility
-         */
-        "iconAccessibilityTitle"?: string;
-        /**
-          * (optional) Icon size
-         */
-        "iconSize"?: number;
-        /**
           * (optional) Injected CSS styles
          */
         "styles"?: string;
@@ -11742,18 +11730,6 @@ declare namespace LocalJSX {
           * (optional) Link href
          */
         "href"?: string;
-        /**
-          * (optional) Icon only
-         */
-        "icon"?: string;
-        /**
-          * (optional) Icon title for accessibility
-         */
-        "iconAccessibilityTitle"?: string;
-        /**
-          * (optional) Icon size
-         */
-        "iconSize"?: number;
         /**
           * (optional) Injected CSS styles
          */

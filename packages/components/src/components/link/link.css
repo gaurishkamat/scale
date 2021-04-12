@@ -7,8 +7,6 @@
   --border: var(--scl-spacing-1) solid currentColor;
   --border-focus: var(--scl-spacing-2) solid currentColor;
   --color-disabled: var(--scl-color-grey-50);
-
-  --spacing-x-icon: var(--scl-spacing-4);
 }
 
 .link {
@@ -37,9 +35,6 @@
 .link__wrapper {
   display: inline-flex;
   align-items: center;
-}
-.link__wrapper > *:not(:first-child) {
-  margin-inline-start: var(--spacing-x-icon);
 }
 
 .link--block {

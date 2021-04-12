@@ -3372,9 +3372,6 @@ export const ScaleLink = /*@__PURE__*/ Vue.extend({
     block: {} as PropOptions<Components.ScaleLink['block']>,
     target: {} as PropOptions<Components.ScaleLink['target']>,
     variant: {} as PropOptions<Components.ScaleLink['variant']>,
-    iconSize: {} as PropOptions<Components.ScaleLink['iconSize']>,
-    icon: {} as PropOptions<Components.ScaleLink['icon']>,
-    iconAccessibilityTitle: {} as PropOptions<Components.ScaleLink['iconAccessibilityTitle']>,
     styles: {} as PropOptions<Components.ScaleLink['styles']>,
   },
 
