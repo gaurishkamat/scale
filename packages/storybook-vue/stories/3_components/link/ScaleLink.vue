@@ -8,6 +8,12 @@
     :styles="styles"
   >
     <slot></slot>
+    <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+        v-if="target === '_blank'"
+    ></scale-icon-navigation-external-link>
   </scale-link>
 </template>
 

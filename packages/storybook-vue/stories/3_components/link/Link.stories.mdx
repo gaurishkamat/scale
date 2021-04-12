@@ -31,10 +31,10 @@ export const Template = (args, {argTypes}) => ({
     >
         {{ label }}
         <scale-icon-navigation-external-link
-            v-if="label === 'A link, with an icon'"
+            v-if="target === '_blank'"
             size="16"
             accessibility-title="open link in new tab"
-            style="margin-left: 4px;"
+            slot="icon"
         ></scale-icon-navigation-external-link>
     </scale-link>
     `
@@ -107,18 +107,19 @@ For Shadow Parts, please inspect the element's #shadow.
         args={{
             label: 'A link, with an icon',
             href: '#top',
+            target: '_blank'
         }}>
         {Template.bind({})}
     </Story>
 </Canvas>
 
 ```html
-<scale-link icon="SVG-PATH" href="#top">
+<scale-link target="_blank" href="#top">
     A link, with an icon
     <scale-icon-navigation-external-link
         size="16"
         accessibility-title="open link in new tab"
-        style="margin-left: 4px;"
+        slot="icon"
     ></scale-icon-navigation-external-link>
 </scale-link>
 ```

@@ -1,6 +1,5 @@
-import { Component, h, Prop, Host, Element } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
-import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
   tag: 'scale-link',
@@ -8,7 +7,6 @@ import { HTMLStencilElement } from '@stencil/core/internal';
   shadow: true,
 })
 export class Link {
-  @Element() hostElement: HTMLStencilElement;
   /** (optional) Link href */
   @Prop() href: string;
   /** (optional) Disabled link */
@@ -37,6 +35,7 @@ export class Link {
         >
           <span class="link__wrapper" part="wrapper">
             <slot />
+            <slot name="icon" />
           </span>
         </a>
       </Host>
