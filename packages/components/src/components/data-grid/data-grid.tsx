@@ -1018,13 +1018,6 @@ export class DataGrid {
       <th class={`thead__cell thead__cell--selection`} style={style}>
         <scale-checkbox
           ref={el => (this.elToggleSelectAll = el)}
-          icon={`
-            M 2 11
-            L 22 11
-            L 22 13
-            L 2 13
-            L 2 11
-          `} // indeterminate
           onScaleChange={() => this.toggleSelectAll()}
         ></scale-checkbox>
       </th>

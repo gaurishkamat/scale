@@ -459,10 +459,6 @@
           "description": "(optional) Input helper text"
         },
         {
-          "name": "icon",
-          "description": "(optional) Input checkbox checked icon"
-        },
-        {
           "name": "input-id",
           "description": "(optional) Input checkbox id"
         },

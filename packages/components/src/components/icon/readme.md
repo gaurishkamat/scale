@@ -24,7 +24,6 @@
 ### Used by
 
  - [scale-app-footer](../app-footer)
- - [scale-checkbox](../checkbox)
  - [scale-data-grid](../data-grid)
  - [scale-input](../input)
  - [scale-nav-icon](../nav-icon)
@@ -35,7 +34,6 @@
 ```mermaid
 graph TD;
   scale-app-footer --> scale-icon
-  scale-checkbox --> scale-icon
   scale-data-grid --> scale-icon
   scale-input --> scale-icon
   scale-nav-icon --> scale-icon

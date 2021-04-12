@@ -8,7 +8,6 @@
     :value="value"
     :status="status"
     :input-id="inputId"
-    :icon="icon"
     @scaleChange="scaleChange"
   >
     <slot></slot>
@@ -28,7 +27,6 @@ export default {
     value: { type: String },
     status: { type: String },
     inputId: { type: String },
-    icon: { type: String },
     styles: { type: String }
   },
   methods: {

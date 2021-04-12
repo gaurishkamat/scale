@@ -478,7 +478,6 @@ export const ScaleCheckbox = /*@__PURE__*/ Vue.extend({
     checked: {} as PropOptions<Components.ScaleCheckbox['checked']>,
     value: {} as PropOptions<Components.ScaleCheckbox['value']>,
     inputId: {} as PropOptions<Components.ScaleCheckbox['inputId']>,
-    icon: {} as PropOptions<Components.ScaleCheckbox['icon']>,
     styles: {} as PropOptions<Components.ScaleCheckbox['styles']>,
   },
 

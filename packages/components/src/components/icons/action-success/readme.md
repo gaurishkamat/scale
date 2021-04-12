@@ -20,11 +20,13 @@
 
 ### Used by
 
+ - [scale-checkbox](../../checkbox)
  - [scale-menu-flyout-item](../../menu-flyout-item)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-checkbox --> scale-icon-action-success
   scale-menu-flyout-item --> scale-icon-action-success
   style scale-icon-action-success fill:#f9f,stroke:#333,stroke-width:4px
 ```

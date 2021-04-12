@@ -279,13 +279,13 @@ export class ScaleChartStackCard {
 import { Checkbox as ICheckbox } from '@scaleds/components-telekom/dist/types/components/checkbox/checkbox';
 export declare interface ScaleCheckbox extends Components.ScaleCheckbox {}
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value']
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value']
 })
 @Component({
   selector: 'scale-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
+  inputs: ['checked', 'disabled', 'helperText', 'inputId', 'label', 'name', 'status', 'styles', 'value'],
   outputs: ['scaleChange']
 })
 export class ScaleCheckbox {
