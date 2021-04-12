@@ -22,6 +22,7 @@
 
  - [scale-collapsible](../../collapsible)
  - [scale-data-grid](../../data-grid)
+ - [scale-dropdown](../../dropdown)
  - [scale-sidebar-nav](../../sidebar-nav)
  - [scale-sidebar-nav-collapsible](../../sidebar-nav-collapsible)
 
@@ -30,6 +31,7 @@
 graph TD;
   scale-collapsible --> scale-icon-navigation-collapse-down
   scale-data-grid --> scale-icon-navigation-collapse-down
+  scale-dropdown --> scale-icon-navigation-collapse-down
   scale-sidebar-nav --> scale-icon-navigation-collapse-down
   scale-sidebar-nav-collapsible --> scale-icon-navigation-collapse-down
   style scale-icon-navigation-collapse-down fill:#f9f,stroke:#333,stroke-width:4px

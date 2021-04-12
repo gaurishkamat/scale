@@ -1,5 +1,5 @@
 describe('Dropdown', () => {
-  test.each([['standard'], ['small'], ['disabled'], ['error']])(
+  test.each([['standard'], ['small'], ['disabled'], ['error'], ['with-custom-icon']])(
     '%p',
     async variant => {
       await global.page.goto(

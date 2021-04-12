@@ -436,10 +436,6 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
-        /**
           * (optional) Input checkbox id
          */
         "inputId"?: string;
@@ -7520,10 +7516,6 @@ declare namespace LocalJSX {
           * (optional) Input helper text
          */
         "helperText"?: string;
-        /**
-          * (optional) Input checkbox checked icon
-         */
-        "icon"?: string;
         /**
           * (optional) Input checkbox id
          */

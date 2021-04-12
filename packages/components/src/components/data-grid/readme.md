@@ -84,7 +84,7 @@ graph TD;
   scale-checkbox --> scale-icon
   scale-progress-bar --> scale-icon
   scale-link --> scale-icon
-  scale-dropdown --> scale-icon
+  scale-dropdown --> scale-icon-navigation-collapse-down
   scale-tag --> scale-icon
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```

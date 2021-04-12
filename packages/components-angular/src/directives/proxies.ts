@@ -397,13 +397,13 @@ export class ScaleDivider {
 import { Dropdown as IDropdown } from '@scaleds/components-telekom/dist/types/components/dropdown/dropdown';
 export declare interface ScaleDropdown extends Components.ScaleDropdown {}
 @ProxyCmp({
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
+  inputs: ['controlled', 'disabled', 'helperText', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize']
 })
 @Component({
   selector: 'scale-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['controlled', 'disabled', 'helperText', 'icon', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
+  inputs: ['controlled', 'disabled', 'helperText', 'inputId', 'label', 'multiple', 'name', 'required', 'size', 'status', 'styles', 'transparent', 'value', 'visibleSize'],
   outputs: ['scaleInput', 'scaleChange', 'scaleFocus', 'scaleBlur', 'scaleKeyDown']
 })
 export class ScaleDropdown {

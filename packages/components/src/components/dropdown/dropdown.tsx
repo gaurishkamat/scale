@@ -9,15 +9,13 @@ import {
   Element,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
 }
 
 let i = 0;
-
-const SELECT_ICON =
-  'M20.65 7.4c-.3-.3-.75-.3-1.05 0L12 15 4.4 7.4c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05L12 17.1l8.65-8.65c.3-.25.3-.75 0-1.05z';
 
 @Component({
   tag: 'scale-dropdown',
@@ -28,7 +26,7 @@ export class Dropdown {
   selectElement: HTMLSelectElement;
   mutationObserver: MutationObserver;
 
-  @Element() el: HTMLElement;
+  @Element() hostElement: HTMLStencilElement;
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -47,8 +45,6 @@ export class Dropdown {
   @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
-  /** (optional) Input checkbox checked icon */
-  @Prop() icon?: string = SELECT_ICON;
   /** (optional) select multiple options */
   @Prop() multiple?: boolean;
   /** (optional) the number of visible options in a select drop-down list */
@@ -75,7 +71,11 @@ export class Dropdown {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
+  hasSlotIcon: boolean;
+
   componentWillLoad() {
+    this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
+
     if (this.inputId == null) {
       this.inputId = 'input-dropdown' + i++;
     }
@@ -106,14 +106,16 @@ export class Dropdown {
       this.mutationObserver = new MutationObserver(() => {
         this.forceUpdate = String(Date.now());
       });
-      this.mutationObserver.observe(this.el, {
+      this.mutationObserver.observe(this.hostElement, {
         childList: true,
         subtree: true,
       });
     }
   }
 
-  componentWillUpdate() {}
+  componentDidUpdate() {
+    this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
+  }
   componentDidRender() {
     // When type `select` and `controlled` is true,
     // make sure the <select> is always in sync with the value.
@@ -219,7 +221,13 @@ export class Dropdown {
             >
               <slot />
             </select>
-            <scale-icon path={this.icon}></scale-icon>
+            <div class="input__dropdown-icon">
+              {this.hasSlotIcon ? (
+                <slot name="icon" />
+              ) : (
+                <scale-icon-navigation-collapse-down decorative />
+              )}
+            </div>
           </div>
 
           {!!this.helperText && (

@@ -580,7 +580,6 @@ export const ScaleDropdown = /*@__PURE__*/ Vue.extend({
     required: {} as PropOptions<Components.ScaleDropdown['required']>,
     value: {} as PropOptions<Components.ScaleDropdown['value']>,
     inputId: {} as PropOptions<Components.ScaleDropdown['inputId']>,
-    icon: {} as PropOptions<Components.ScaleDropdown['icon']>,
     multiple: {} as PropOptions<Components.ScaleDropdown['multiple']>,
     visibleSize: {} as PropOptions<Components.ScaleDropdown['visibleSize']>,
     transparent: {} as PropOptions<Components.ScaleDropdown['transparent']>,
