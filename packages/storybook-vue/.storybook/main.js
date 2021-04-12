@@ -6,6 +6,7 @@ module.exports = {
     "@storybook/addon-controls",
     "./usage-addon/register.js",
     "./language-addon/register.js",
+    "./sidebar-links-addon/register.js",
   ],
   stories: ["../stories/**/**/*.stories.mdx"]
 };

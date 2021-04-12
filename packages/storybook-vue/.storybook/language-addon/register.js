@@ -1,11 +1,11 @@
 import React from "react";
 import { addons, types } from "@storybook/addons";
-import { useGlobals } from "@storybook/api/dist";
+import { useGlobals } from "@storybook/api";
 import useLocalStorage from "../use-localstorage";
 import translationMap from "../../translations.json";
 
 const activeBtnClassName = "css-mszgbt";
-const inactiveBtnClassName = "css-1keicsy";
+const inactiveBtnClassName = "css-1nin9qf";
 
 // utility to create new links
 const createLink = label => {
