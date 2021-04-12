@@ -39,7 +39,7 @@
   align-items: center;
 }
 
-.link__wrapper > slot[name="icon"]::slotted(*) {
+.link__wrapper > slot[name='icon']::slotted(*) {
   margin-inline-start: var(--spacing-x-icon);
 }
 

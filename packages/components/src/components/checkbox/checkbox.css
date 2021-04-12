@@ -109,7 +109,10 @@ scale-checkbox {
   .checkbox__control {
   background: var(--color-disabled);
 }
-.checkbox input:checked:disabled ~ .checkbox__control-wrapper scale-icon-action-success {
+.checkbox
+  input:checked:disabled
+  ~ .checkbox__control-wrapper
+  scale-icon-action-success {
   color: var(--color-icon-checked-disabled);
 }
 .checkbox
@@ -190,8 +193,14 @@ scale-checkbox {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
-.checkbox input:not([disabled]):active ~ .checkbox__control-wrapper scale-icon-action-success,
-.checkbox input:not([disabled]) ~ .checkbox__control-wrapper:active scale-icon-action-success {
+.checkbox
+  input:not([disabled]):active
+  ~ .checkbox__control-wrapper
+  scale-icon-action-success,
+.checkbox
+  input:not([disabled])
+  ~ .checkbox__control-wrapper:active
+  scale-icon-action-success {
   color: var(--color-primary-active);
 }
 .checkbox
