@@ -16,6 +16,19 @@
 | `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`             |
 
 
+## Dependencies
+
+### Used by
+
+ - [scale-tag](../../tag)
+
+### Graph
+```mermaid
+graph TD;
+  scale-tag --> scale-icon-action-close
+  style scale-icon-action-close fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -65,12 +65,12 @@
 
 ### Depends on
 
-- [scale-icon](../icon)
+- [scale-icon-action-close](../icons/action-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-tag --> scale-icon
+  scale-tag --> scale-icon-action-close
   scale-data-grid --> scale-tag
   style scale-tag fill:#f9f,stroke:#333,stroke-width:4px
 ```

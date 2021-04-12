@@ -28,7 +28,6 @@
  - [scale-input](../input)
  - [scale-nav-icon](../nav-icon)
  - [scale-progress-bar](../progress-bar)
- - [scale-tag](../tag)
 
 ### Graph
 ```mermaid
@@ -38,7 +37,6 @@ graph TD;
   scale-input --> scale-icon
   scale-nav-icon --> scale-icon
   scale-progress-bar --> scale-icon
-  scale-tag --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

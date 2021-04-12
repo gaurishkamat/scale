@@ -52,8 +52,13 @@
   background: var(--background-secondary);
 }
 
-.tag:not(.tag--disabled) scale-icon:hover {
-  --icon-color: var(--icon-color-hover);
+.tag scale-icon-action-close {
+  color: var(--icon-color);
+  transition: all 0.15s ease-in-out;
+}
+
+.tag:not(.tag--disabled) scale-icon-action-close:hover {
+  color: var(--icon-color-hover);
 }
 .tag--dismissable {
   padding-right: 0;
@@ -70,7 +75,7 @@
   border-radius: var(--radius);
 }
 
-.tag--dismissable scale-icon svg {
+.tag--dismissable scale-icon-action-close svg {
   outline: none;
 }
 .tag--dismissable button:focus {
@@ -81,7 +86,7 @@
 .tag--dismissable button:hover {
   background: var(--background-button-dismissable-hover);
 }
-.tag--dismissable button:focus scale-icon {
+.tag--dismissable button:focus scale-icon-action-close {
   top: -1px;
   position: relative;
 }
@@ -124,7 +129,10 @@
   background: var(--background-disabled);
   color: var(--color-disabled);
   cursor: not-allowed;
-  --icon-color: var(--color-disabled);
+  color: var(--color-disabled);
+}
+.tag--disabled scale-icon-action-close {
+  color: var(--color-disabled);
 }
 .tag--disabled button {
   cursor: not-allowed;
