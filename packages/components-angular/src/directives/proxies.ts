@@ -3428,17 +3428,17 @@ export class ScaleIconServiceSupport {
 }
 
 
-export declare interface ScaleIconT_productMagentaCloud extends Components.ScaleIconT_productMagentaCloud {}
+export declare interface ScaleIconTProductMagentaCloud extends Components.ScaleIconTProductMagentaCloud {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-magenta-cloud',
+  selector: 'scale-icon-t-product-magenta-cloud',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productMagentaCloud {
+export class ScaleIconTProductMagentaCloud {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3447,17 +3447,17 @@ export class ScaleIconT_productMagentaCloud {
 }
 
 
-export declare interface ScaleIconT_productMagentaTv extends Components.ScaleIconT_productMagentaTv {}
+export declare interface ScaleIconTProductMagentaTv extends Components.ScaleIconTProductMagentaTv {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-magenta-tv',
+  selector: 'scale-icon-t-product-magenta-tv',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productMagentaTv {
+export class ScaleIconTProductMagentaTv {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3466,17 +3466,17 @@ export class ScaleIconT_productMagentaTv {
 }
 
 
-export declare interface ScaleIconT_productMagentaone extends Components.ScaleIconT_productMagentaone {}
+export declare interface ScaleIconTProductMagentaone extends Components.ScaleIconTProductMagentaone {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-magentaone',
+  selector: 'scale-icon-t-product-magentaone',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productMagentaone {
+export class ScaleIconTProductMagentaone {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3485,17 +3485,17 @@ export class ScaleIconT_productMagentaone {
 }
 
 
-export declare interface ScaleIconT_productMeasureInternetSpeed extends Components.ScaleIconT_productMeasureInternetSpeed {}
+export declare interface ScaleIconTProductMeasureInternetSpeed extends Components.ScaleIconTProductMeasureInternetSpeed {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-measure-internet-speed',
+  selector: 'scale-icon-t-product-measure-internet-speed',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productMeasureInternetSpeed {
+export class ScaleIconTProductMeasureInternetSpeed {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3504,17 +3504,17 @@ export class ScaleIconT_productMeasureInternetSpeed {
 }
 
 
-export declare interface ScaleIconT_productSeamlessConnectivity extends Components.ScaleIconT_productSeamlessConnectivity {}
+export declare interface ScaleIconTProductSeamlessConnectivity extends Components.ScaleIconTProductSeamlessConnectivity {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-seamless-connectivity',
+  selector: 'scale-icon-t-product-seamless-connectivity',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productSeamlessConnectivity {
+export class ScaleIconTProductSeamlessConnectivity {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3523,17 +3523,17 @@ export class ScaleIconT_productSeamlessConnectivity {
 }
 
 
-export declare interface ScaleIconT_productTelekomShopB extends Components.ScaleIconT_productTelekomShopB {}
+export declare interface ScaleIconTProductTelekomShopB extends Components.ScaleIconTProductTelekomShopB {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-telekom-shop-b',
+  selector: 'scale-icon-t-product-telekom-shop-b',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productTelekomShopB {
+export class ScaleIconTProductTelekomShopB {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3542,17 +3542,17 @@ export class ScaleIconT_productTelekomShopB {
 }
 
 
-export declare interface ScaleIconT_productUsage extends Components.ScaleIconT_productUsage {}
+export declare interface ScaleIconTProductUsage extends Components.ScaleIconTProductUsage {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-t_product-usage',
+  selector: 'scale-icon-t-product-usage',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconT_productUsage {
+export class ScaleIconTProductUsage {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3561,17 +3561,17 @@ export class ScaleIconT_productUsage {
 }
 
 
-export declare interface ScaleIconUser_fileAnalytics extends Components.ScaleIconUser_fileAnalytics {}
+export declare interface ScaleIconUserFileAnalytics extends Components.ScaleIconUserFileAnalytics {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-analytics',
+  selector: 'scale-icon-user-file-analytics',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileAnalytics {
+export class ScaleIconUserFileAnalytics {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3580,17 +3580,17 @@ export class ScaleIconUser_fileAnalytics {
 }
 
 
-export declare interface ScaleIconUser_fileAttachment extends Components.ScaleIconUser_fileAttachment {}
+export declare interface ScaleIconUserFileAttachment extends Components.ScaleIconUserFileAttachment {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-attachment',
+  selector: 'scale-icon-user-file-attachment',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileAttachment {
+export class ScaleIconUserFileAttachment {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3599,17 +3599,17 @@ export class ScaleIconUser_fileAttachment {
 }
 
 
-export declare interface ScaleIconUser_fileAudioFile extends Components.ScaleIconUser_fileAudioFile {}
+export declare interface ScaleIconUserFileAudioFile extends Components.ScaleIconUserFileAudioFile {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-audio-file',
+  selector: 'scale-icon-user-file-audio-file',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileAudioFile {
+export class ScaleIconUserFileAudioFile {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3618,17 +3618,17 @@ export class ScaleIconUser_fileAudioFile {
 }
 
 
-export declare interface ScaleIconUser_fileBilling extends Components.ScaleIconUser_fileBilling {}
+export declare interface ScaleIconUserFileBilling extends Components.ScaleIconUserFileBilling {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-billing',
+  selector: 'scale-icon-user-file-billing',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileBilling {
+export class ScaleIconUserFileBilling {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3637,17 +3637,17 @@ export class ScaleIconUser_fileBilling {
 }
 
 
-export declare interface ScaleIconUser_fileBussinesUsers extends Components.ScaleIconUser_fileBussinesUsers {}
+export declare interface ScaleIconUserFileBussinesUsers extends Components.ScaleIconUserFileBussinesUsers {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-bussines-users',
+  selector: 'scale-icon-user-file-bussines-users',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileBussinesUsers {
+export class ScaleIconUserFileBussinesUsers {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3656,17 +3656,17 @@ export class ScaleIconUser_fileBussinesUsers {
 }
 
 
-export declare interface ScaleIconUser_fileCommunities extends Components.ScaleIconUser_fileCommunities {}
+export declare interface ScaleIconUserFileCommunities extends Components.ScaleIconUserFileCommunities {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-communities',
+  selector: 'scale-icon-user-file-communities',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileCommunities {
+export class ScaleIconUserFileCommunities {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3675,17 +3675,17 @@ export class ScaleIconUser_fileCommunities {
 }
 
 
-export declare interface ScaleIconUser_fileContacts extends Components.ScaleIconUser_fileContacts {}
+export declare interface ScaleIconUserFileContacts extends Components.ScaleIconUserFileContacts {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-contacts',
+  selector: 'scale-icon-user-file-contacts',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileContacts {
+export class ScaleIconUserFileContacts {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3694,17 +3694,17 @@ export class ScaleIconUser_fileContacts {
 }
 
 
-export declare interface ScaleIconUser_fileContracts extends Components.ScaleIconUser_fileContracts {}
+export declare interface ScaleIconUserFileContracts extends Components.ScaleIconUserFileContracts {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-contracts',
+  selector: 'scale-icon-user-file-contracts',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileContracts {
+export class ScaleIconUserFileContracts {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3713,17 +3713,17 @@ export class ScaleIconUser_fileContracts {
 }
 
 
-export declare interface ScaleIconUser_fileFamilies extends Components.ScaleIconUser_fileFamilies {}
+export declare interface ScaleIconUserFileFamilies extends Components.ScaleIconUserFileFamilies {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-families',
+  selector: 'scale-icon-user-file-families',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileFamilies {
+export class ScaleIconUserFileFamilies {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3732,17 +3732,17 @@ export class ScaleIconUser_fileFamilies {
 }
 
 
-export declare interface ScaleIconUser_fileHandshake extends Components.ScaleIconUser_fileHandshake {}
+export declare interface ScaleIconUserFileHandshake extends Components.ScaleIconUserFileHandshake {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-handshake',
+  selector: 'scale-icon-user-file-handshake',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileHandshake {
+export class ScaleIconUserFileHandshake {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3751,17 +3751,17 @@ export class ScaleIconUser_fileHandshake {
 }
 
 
-export declare interface ScaleIconUser_fileIdCard extends Components.ScaleIconUser_fileIdCard {}
+export declare interface ScaleIconUserFileIdCard extends Components.ScaleIconUserFileIdCard {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-id-card',
+  selector: 'scale-icon-user-file-id-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileIdCard {
+export class ScaleIconUserFileIdCard {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3770,17 +3770,17 @@ export class ScaleIconUser_fileIdCard {
 }
 
 
-export declare interface ScaleIconUser_fileImageFile extends Components.ScaleIconUser_fileImageFile {}
+export declare interface ScaleIconUserFileImageFile extends Components.ScaleIconUserFileImageFile {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-image-file',
+  selector: 'scale-icon-user-file-image-file',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileImageFile {
+export class ScaleIconUserFileImageFile {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3789,17 +3789,17 @@ export class ScaleIconUser_fileImageFile {
 }
 
 
-export declare interface ScaleIconUser_fileLogout extends Components.ScaleIconUser_fileLogout {}
+export declare interface ScaleIconUserFileLogout extends Components.ScaleIconUserFileLogout {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-logout',
+  selector: 'scale-icon-user-file-logout',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileLogout {
+export class ScaleIconUserFileLogout {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3808,17 +3808,17 @@ export class ScaleIconUser_fileLogout {
 }
 
 
-export declare interface ScaleIconUser_filePdfFile extends Components.ScaleIconUser_filePdfFile {}
+export declare interface ScaleIconUserFilePdfFile extends Components.ScaleIconUserFilePdfFile {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-pdf-file',
+  selector: 'scale-icon-user-file-pdf-file',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_filePdfFile {
+export class ScaleIconUserFilePdfFile {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3827,17 +3827,17 @@ export class ScaleIconUser_filePdfFile {
 }
 
 
-export declare interface ScaleIconUser_fileSwitchUsers extends Components.ScaleIconUser_fileSwitchUsers {}
+export declare interface ScaleIconUserFileSwitchUsers extends Components.ScaleIconUserFileSwitchUsers {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-switch-users',
+  selector: 'scale-icon-user-file-switch-users',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileSwitchUsers {
+export class ScaleIconUserFileSwitchUsers {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3846,17 +3846,17 @@ export class ScaleIconUser_fileSwitchUsers {
 }
 
 
-export declare interface ScaleIconUser_fileUser extends Components.ScaleIconUser_fileUser {}
+export declare interface ScaleIconUserFileUser extends Components.ScaleIconUserFileUser {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-user',
+  selector: 'scale-icon-user-file-user',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileUser {
+export class ScaleIconUserFileUser {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -3865,17 +3865,17 @@ export class ScaleIconUser_fileUser {
 }
 
 
-export declare interface ScaleIconUser_fileVideos extends Components.ScaleIconUser_fileVideos {}
+export declare interface ScaleIconUserFileVideos extends Components.ScaleIconUserFileVideos {}
 @ProxyCmp({
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
 @Component({
-  selector: 'scale-icon-user_file-videos',
+  selector: 'scale-icon-user-file-videos',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['accessibilityTitle', 'color', 'decorative', 'selected', 'size']
 })
-export class ScaleIconUser_fileVideos {
+export class ScaleIconUserFileVideos {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

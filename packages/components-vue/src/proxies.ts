@@ -188,30 +188,30 @@ const customElementTags: string[] = [
  'scale-icon-service-services',
  'scale-icon-service-settings',
  'scale-icon-service-support',
- 'scale-icon-t_product-magenta-cloud',
- 'scale-icon-t_product-magenta-tv',
- 'scale-icon-t_product-magentaone',
- 'scale-icon-t_product-measure-internet-speed',
- 'scale-icon-t_product-seamless-connectivity',
- 'scale-icon-t_product-telekom-shop-b',
- 'scale-icon-t_product-usage',
- 'scale-icon-user_file-analytics',
- 'scale-icon-user_file-attachment',
- 'scale-icon-user_file-audio-file',
- 'scale-icon-user_file-billing',
- 'scale-icon-user_file-bussines-users',
- 'scale-icon-user_file-communities',
- 'scale-icon-user_file-contacts',
- 'scale-icon-user_file-contracts',
- 'scale-icon-user_file-families',
- 'scale-icon-user_file-handshake',
- 'scale-icon-user_file-id-card',
- 'scale-icon-user_file-image-file',
- 'scale-icon-user_file-logout',
- 'scale-icon-user_file-pdf-file',
- 'scale-icon-user_file-switch-users',
- 'scale-icon-user_file-user',
- 'scale-icon-user_file-videos',
+ 'scale-icon-t-product-magenta-cloud',
+ 'scale-icon-t-product-magenta-tv',
+ 'scale-icon-t-product-magentaone',
+ 'scale-icon-t-product-measure-internet-speed',
+ 'scale-icon-t-product-seamless-connectivity',
+ 'scale-icon-t-product-telekom-shop-b',
+ 'scale-icon-t-product-usage',
+ 'scale-icon-user-file-analytics',
+ 'scale-icon-user-file-attachment',
+ 'scale-icon-user-file-audio-file',
+ 'scale-icon-user-file-billing',
+ 'scale-icon-user-file-bussines-users',
+ 'scale-icon-user-file-communities',
+ 'scale-icon-user-file-contacts',
+ 'scale-icon-user-file-contracts',
+ 'scale-icon-user-file-families',
+ 'scale-icon-user-file-handshake',
+ 'scale-icon-user-file-id-card',
+ 'scale-icon-user-file-image-file',
+ 'scale-icon-user-file-logout',
+ 'scale-icon-user-file-pdf-file',
+ 'scale-icon-user-file-switch-users',
+ 'scale-icon-user-file-user',
+ 'scale-icon-user-file-videos',
  'scale-input',
  'scale-link',
  'scale-list',
@@ -2964,363 +2964,363 @@ export const ScaleIconServiceSupport = /*@__PURE__*/ Vue.extend({
 });
 
 
-export const ScaleIconT_productMagentaCloud = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductMagentaCloud = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productMagentaCloud['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productMagentaCloud['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productMagentaCloud['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productMagentaCloud['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productMagentaCloud['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductMagentaCloud['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductMagentaCloud['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductMagentaCloud['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductMagentaCloud['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductMagentaCloud['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-magenta-cloud', []),
+  render: createCommonRender('scale-icon-t-product-magenta-cloud', []),
 });
 
 
-export const ScaleIconT_productMagentaTv = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductMagentaTv = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productMagentaTv['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productMagentaTv['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productMagentaTv['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productMagentaTv['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productMagentaTv['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductMagentaTv['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductMagentaTv['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductMagentaTv['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductMagentaTv['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductMagentaTv['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-magenta-tv', []),
+  render: createCommonRender('scale-icon-t-product-magenta-tv', []),
 });
 
 
-export const ScaleIconT_productMagentaone = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductMagentaone = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productMagentaone['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productMagentaone['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productMagentaone['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productMagentaone['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productMagentaone['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductMagentaone['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductMagentaone['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductMagentaone['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductMagentaone['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductMagentaone['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-magentaone', []),
+  render: createCommonRender('scale-icon-t-product-magentaone', []),
 });
 
 
-export const ScaleIconT_productMeasureInternetSpeed = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductMeasureInternetSpeed = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productMeasureInternetSpeed['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productMeasureInternetSpeed['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productMeasureInternetSpeed['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productMeasureInternetSpeed['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productMeasureInternetSpeed['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductMeasureInternetSpeed['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductMeasureInternetSpeed['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductMeasureInternetSpeed['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductMeasureInternetSpeed['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductMeasureInternetSpeed['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-measure-internet-speed', []),
+  render: createCommonRender('scale-icon-t-product-measure-internet-speed', []),
 });
 
 
-export const ScaleIconT_productSeamlessConnectivity = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductSeamlessConnectivity = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productSeamlessConnectivity['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productSeamlessConnectivity['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productSeamlessConnectivity['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productSeamlessConnectivity['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productSeamlessConnectivity['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductSeamlessConnectivity['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductSeamlessConnectivity['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductSeamlessConnectivity['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductSeamlessConnectivity['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductSeamlessConnectivity['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-seamless-connectivity', []),
+  render: createCommonRender('scale-icon-t-product-seamless-connectivity', []),
 });
 
 
-export const ScaleIconT_productTelekomShopB = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductTelekomShopB = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productTelekomShopB['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productTelekomShopB['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productTelekomShopB['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productTelekomShopB['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productTelekomShopB['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductTelekomShopB['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductTelekomShopB['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductTelekomShopB['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductTelekomShopB['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductTelekomShopB['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-telekom-shop-b', []),
+  render: createCommonRender('scale-icon-t-product-telekom-shop-b', []),
 });
 
 
-export const ScaleIconT_productUsage = /*@__PURE__*/ Vue.extend({
+export const ScaleIconTProductUsage = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconT_productUsage['size']>,
-    color: {} as PropOptions<Components.ScaleIconT_productUsage['color']>,
-    selected: {} as PropOptions<Components.ScaleIconT_productUsage['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconT_productUsage['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconT_productUsage['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconTProductUsage['size']>,
+    color: {} as PropOptions<Components.ScaleIconTProductUsage['color']>,
+    selected: {} as PropOptions<Components.ScaleIconTProductUsage['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconTProductUsage['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconTProductUsage['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-t_product-usage', []),
+  render: createCommonRender('scale-icon-t-product-usage', []),
 });
 
 
-export const ScaleIconUser_fileAnalytics = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileAnalytics = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileAnalytics['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileAnalytics['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileAnalytics['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileAnalytics['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileAnalytics['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileAnalytics['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileAnalytics['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileAnalytics['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileAnalytics['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileAnalytics['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-analytics', []),
+  render: createCommonRender('scale-icon-user-file-analytics', []),
 });
 
 
-export const ScaleIconUser_fileAttachment = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileAttachment = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileAttachment['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileAttachment['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileAttachment['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileAttachment['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileAttachment['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileAttachment['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileAttachment['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileAttachment['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileAttachment['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileAttachment['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-attachment', []),
+  render: createCommonRender('scale-icon-user-file-attachment', []),
 });
 
 
-export const ScaleIconUser_fileAudioFile = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileAudioFile = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileAudioFile['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileAudioFile['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileAudioFile['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileAudioFile['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileAudioFile['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileAudioFile['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileAudioFile['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileAudioFile['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileAudioFile['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileAudioFile['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-audio-file', []),
+  render: createCommonRender('scale-icon-user-file-audio-file', []),
 });
 
 
-export const ScaleIconUser_fileBilling = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileBilling = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileBilling['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileBilling['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileBilling['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileBilling['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileBilling['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileBilling['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileBilling['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileBilling['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileBilling['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileBilling['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-billing', []),
+  render: createCommonRender('scale-icon-user-file-billing', []),
 });
 
 
-export const ScaleIconUser_fileBussinesUsers = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileBussinesUsers = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileBussinesUsers['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileBussinesUsers['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileBussinesUsers['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileBussinesUsers['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileBussinesUsers['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileBussinesUsers['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileBussinesUsers['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileBussinesUsers['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileBussinesUsers['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileBussinesUsers['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-bussines-users', []),
+  render: createCommonRender('scale-icon-user-file-bussines-users', []),
 });
 
 
-export const ScaleIconUser_fileCommunities = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileCommunities = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileCommunities['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileCommunities['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileCommunities['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileCommunities['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileCommunities['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileCommunities['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileCommunities['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileCommunities['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileCommunities['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileCommunities['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-communities', []),
+  render: createCommonRender('scale-icon-user-file-communities', []),
 });
 
 
-export const ScaleIconUser_fileContacts = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileContacts = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileContacts['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileContacts['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileContacts['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileContacts['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileContacts['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileContacts['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileContacts['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileContacts['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileContacts['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileContacts['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-contacts', []),
+  render: createCommonRender('scale-icon-user-file-contacts', []),
 });
 
 
-export const ScaleIconUser_fileContracts = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileContracts = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileContracts['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileContracts['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileContracts['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileContracts['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileContracts['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileContracts['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileContracts['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileContracts['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileContracts['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileContracts['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-contracts', []),
+  render: createCommonRender('scale-icon-user-file-contracts', []),
 });
 
 
-export const ScaleIconUser_fileFamilies = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileFamilies = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileFamilies['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileFamilies['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileFamilies['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileFamilies['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileFamilies['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileFamilies['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileFamilies['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileFamilies['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileFamilies['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileFamilies['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-families', []),
+  render: createCommonRender('scale-icon-user-file-families', []),
 });
 
 
-export const ScaleIconUser_fileHandshake = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileHandshake = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileHandshake['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileHandshake['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileHandshake['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileHandshake['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileHandshake['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileHandshake['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileHandshake['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileHandshake['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileHandshake['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileHandshake['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-handshake', []),
+  render: createCommonRender('scale-icon-user-file-handshake', []),
 });
 
 
-export const ScaleIconUser_fileIdCard = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileIdCard = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileIdCard['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileIdCard['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileIdCard['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileIdCard['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileIdCard['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileIdCard['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileIdCard['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileIdCard['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileIdCard['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileIdCard['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-id-card', []),
+  render: createCommonRender('scale-icon-user-file-id-card', []),
 });
 
 
-export const ScaleIconUser_fileImageFile = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileImageFile = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileImageFile['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileImageFile['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileImageFile['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileImageFile['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileImageFile['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileImageFile['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileImageFile['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileImageFile['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileImageFile['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileImageFile['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-image-file', []),
+  render: createCommonRender('scale-icon-user-file-image-file', []),
 });
 
 
-export const ScaleIconUser_fileLogout = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileLogout = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileLogout['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileLogout['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileLogout['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileLogout['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileLogout['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileLogout['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileLogout['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileLogout['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileLogout['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileLogout['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-logout', []),
+  render: createCommonRender('scale-icon-user-file-logout', []),
 });
 
 
-export const ScaleIconUser_filePdfFile = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFilePdfFile = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_filePdfFile['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_filePdfFile['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_filePdfFile['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_filePdfFile['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_filePdfFile['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFilePdfFile['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFilePdfFile['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFilePdfFile['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFilePdfFile['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFilePdfFile['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-pdf-file', []),
+  render: createCommonRender('scale-icon-user-file-pdf-file', []),
 });
 
 
-export const ScaleIconUser_fileSwitchUsers = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileSwitchUsers = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileSwitchUsers['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileSwitchUsers['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileSwitchUsers['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileSwitchUsers['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileSwitchUsers['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileSwitchUsers['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileSwitchUsers['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileSwitchUsers['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileSwitchUsers['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileSwitchUsers['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-switch-users', []),
+  render: createCommonRender('scale-icon-user-file-switch-users', []),
 });
 
 
-export const ScaleIconUser_fileUser = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileUser = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileUser['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileUser['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileUser['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileUser['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileUser['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileUser['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileUser['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileUser['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileUser['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileUser['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-user', []),
+  render: createCommonRender('scale-icon-user-file-user', []),
 });
 
 
-export const ScaleIconUser_fileVideos = /*@__PURE__*/ Vue.extend({
+export const ScaleIconUserFileVideos = /*@__PURE__*/ Vue.extend({
 
   props: {
-    size: {} as PropOptions<Components.ScaleIconUser_fileVideos['size']>,
-    color: {} as PropOptions<Components.ScaleIconUser_fileVideos['color']>,
-    selected: {} as PropOptions<Components.ScaleIconUser_fileVideos['selected']>,
-    decorative: {} as PropOptions<Components.ScaleIconUser_fileVideos['decorative']>,
-    accessibilityTitle: {} as PropOptions<Components.ScaleIconUser_fileVideos['accessibilityTitle']>,
+    size: {} as PropOptions<Components.ScaleIconUserFileVideos['size']>,
+    color: {} as PropOptions<Components.ScaleIconUserFileVideos['color']>,
+    selected: {} as PropOptions<Components.ScaleIconUserFileVideos['selected']>,
+    decorative: {} as PropOptions<Components.ScaleIconUserFileVideos['decorative']>,
+    accessibilityTitle: {} as PropOptions<Components.ScaleIconUserFileVideos['accessibilityTitle']>,
   },
 
 
-  render: createCommonRender('scale-icon-user_file-videos', []),
+  render: createCommonRender('scale-icon-user-file-videos', []),
 });
 
 

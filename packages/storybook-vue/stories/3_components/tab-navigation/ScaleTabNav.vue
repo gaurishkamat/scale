@@ -14,7 +14,7 @@
       </p>
     </scale-tab-panel>
     <scale-tab-header slot="tab">
-      <scale-icon-user_file-analytics v-if="withIcon" size="16" /> Usage
+      <scale-icon-user-file-analytics v-if="withIcon" size="16" /> Usage
     </scale-tab-header>
     <scale-tab-panel slot="panel">
       <p class="scl-font-variant-body">

@@ -3964,7 +3964,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaCloud {
+    interface ScaleIconTProductMagentaCloud {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -3986,7 +3986,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaTv {
+    interface ScaleIconTProductMagentaTv {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4008,7 +4008,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaone {
+    interface ScaleIconTProductMagentaone {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4030,7 +4030,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMeasureInternetSpeed {
+    interface ScaleIconTProductMeasureInternetSpeed {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4052,7 +4052,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productSeamlessConnectivity {
+    interface ScaleIconTProductSeamlessConnectivity {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4074,7 +4074,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productTelekomShopB {
+    interface ScaleIconTProductTelekomShopB {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4096,7 +4096,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productUsage {
+    interface ScaleIconTProductUsage {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4118,7 +4118,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAnalytics {
+    interface ScaleIconUserFileAnalytics {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4140,7 +4140,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAttachment {
+    interface ScaleIconUserFileAttachment {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4162,7 +4162,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAudioFile {
+    interface ScaleIconUserFileAudioFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4184,7 +4184,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileBilling {
+    interface ScaleIconUserFileBilling {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4206,7 +4206,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileBussinesUsers {
+    interface ScaleIconUserFileBussinesUsers {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4228,7 +4228,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileCommunities {
+    interface ScaleIconUserFileCommunities {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4250,7 +4250,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileContacts {
+    interface ScaleIconUserFileContacts {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4272,7 +4272,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileContracts {
+    interface ScaleIconUserFileContracts {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4294,7 +4294,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileFamilies {
+    interface ScaleIconUserFileFamilies {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4316,7 +4316,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileHandshake {
+    interface ScaleIconUserFileHandshake {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4338,7 +4338,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileIdCard {
+    interface ScaleIconUserFileIdCard {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4360,7 +4360,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileImageFile {
+    interface ScaleIconUserFileImageFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4382,7 +4382,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileLogout {
+    interface ScaleIconUserFileLogout {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4404,7 +4404,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_filePdfFile {
+    interface ScaleIconUserFilePdfFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4426,7 +4426,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileSwitchUsers {
+    interface ScaleIconUserFileSwitchUsers {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4448,7 +4448,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileUser {
+    interface ScaleIconUserFileUser {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -4470,7 +4470,7 @@ export namespace Components {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileVideos {
+    interface ScaleIconUserFileVideos {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -6490,149 +6490,149 @@ declare global {
         prototype: HTMLScaleIconServiceSupportElement;
         new (): HTMLScaleIconServiceSupportElement;
     };
-    interface HTMLScaleIconT_productMagentaCloudElement extends Components.ScaleIconT_productMagentaCloud, HTMLStencilElement {
+    interface HTMLScaleIconTProductMagentaCloudElement extends Components.ScaleIconTProductMagentaCloud, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productMagentaCloudElement: {
-        prototype: HTMLScaleIconT_productMagentaCloudElement;
-        new (): HTMLScaleIconT_productMagentaCloudElement;
+    var HTMLScaleIconTProductMagentaCloudElement: {
+        prototype: HTMLScaleIconTProductMagentaCloudElement;
+        new (): HTMLScaleIconTProductMagentaCloudElement;
     };
-    interface HTMLScaleIconT_productMagentaTvElement extends Components.ScaleIconT_productMagentaTv, HTMLStencilElement {
+    interface HTMLScaleIconTProductMagentaTvElement extends Components.ScaleIconTProductMagentaTv, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productMagentaTvElement: {
-        prototype: HTMLScaleIconT_productMagentaTvElement;
-        new (): HTMLScaleIconT_productMagentaTvElement;
+    var HTMLScaleIconTProductMagentaTvElement: {
+        prototype: HTMLScaleIconTProductMagentaTvElement;
+        new (): HTMLScaleIconTProductMagentaTvElement;
     };
-    interface HTMLScaleIconT_productMagentaoneElement extends Components.ScaleIconT_productMagentaone, HTMLStencilElement {
+    interface HTMLScaleIconTProductMagentaoneElement extends Components.ScaleIconTProductMagentaone, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productMagentaoneElement: {
-        prototype: HTMLScaleIconT_productMagentaoneElement;
-        new (): HTMLScaleIconT_productMagentaoneElement;
+    var HTMLScaleIconTProductMagentaoneElement: {
+        prototype: HTMLScaleIconTProductMagentaoneElement;
+        new (): HTMLScaleIconTProductMagentaoneElement;
     };
-    interface HTMLScaleIconT_productMeasureInternetSpeedElement extends Components.ScaleIconT_productMeasureInternetSpeed, HTMLStencilElement {
+    interface HTMLScaleIconTProductMeasureInternetSpeedElement extends Components.ScaleIconTProductMeasureInternetSpeed, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productMeasureInternetSpeedElement: {
-        prototype: HTMLScaleIconT_productMeasureInternetSpeedElement;
-        new (): HTMLScaleIconT_productMeasureInternetSpeedElement;
+    var HTMLScaleIconTProductMeasureInternetSpeedElement: {
+        prototype: HTMLScaleIconTProductMeasureInternetSpeedElement;
+        new (): HTMLScaleIconTProductMeasureInternetSpeedElement;
     };
-    interface HTMLScaleIconT_productSeamlessConnectivityElement extends Components.ScaleIconT_productSeamlessConnectivity, HTMLStencilElement {
+    interface HTMLScaleIconTProductSeamlessConnectivityElement extends Components.ScaleIconTProductSeamlessConnectivity, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productSeamlessConnectivityElement: {
-        prototype: HTMLScaleIconT_productSeamlessConnectivityElement;
-        new (): HTMLScaleIconT_productSeamlessConnectivityElement;
+    var HTMLScaleIconTProductSeamlessConnectivityElement: {
+        prototype: HTMLScaleIconTProductSeamlessConnectivityElement;
+        new (): HTMLScaleIconTProductSeamlessConnectivityElement;
     };
-    interface HTMLScaleIconT_productTelekomShopBElement extends Components.ScaleIconT_productTelekomShopB, HTMLStencilElement {
+    interface HTMLScaleIconTProductTelekomShopBElement extends Components.ScaleIconTProductTelekomShopB, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productTelekomShopBElement: {
-        prototype: HTMLScaleIconT_productTelekomShopBElement;
-        new (): HTMLScaleIconT_productTelekomShopBElement;
+    var HTMLScaleIconTProductTelekomShopBElement: {
+        prototype: HTMLScaleIconTProductTelekomShopBElement;
+        new (): HTMLScaleIconTProductTelekomShopBElement;
     };
-    interface HTMLScaleIconT_productUsageElement extends Components.ScaleIconT_productUsage, HTMLStencilElement {
+    interface HTMLScaleIconTProductUsageElement extends Components.ScaleIconTProductUsage, HTMLStencilElement {
     }
-    var HTMLScaleIconT_productUsageElement: {
-        prototype: HTMLScaleIconT_productUsageElement;
-        new (): HTMLScaleIconT_productUsageElement;
+    var HTMLScaleIconTProductUsageElement: {
+        prototype: HTMLScaleIconTProductUsageElement;
+        new (): HTMLScaleIconTProductUsageElement;
     };
-    interface HTMLScaleIconUser_fileAnalyticsElement extends Components.ScaleIconUser_fileAnalytics, HTMLStencilElement {
+    interface HTMLScaleIconUserFileAnalyticsElement extends Components.ScaleIconUserFileAnalytics, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileAnalyticsElement: {
-        prototype: HTMLScaleIconUser_fileAnalyticsElement;
-        new (): HTMLScaleIconUser_fileAnalyticsElement;
+    var HTMLScaleIconUserFileAnalyticsElement: {
+        prototype: HTMLScaleIconUserFileAnalyticsElement;
+        new (): HTMLScaleIconUserFileAnalyticsElement;
     };
-    interface HTMLScaleIconUser_fileAttachmentElement extends Components.ScaleIconUser_fileAttachment, HTMLStencilElement {
+    interface HTMLScaleIconUserFileAttachmentElement extends Components.ScaleIconUserFileAttachment, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileAttachmentElement: {
-        prototype: HTMLScaleIconUser_fileAttachmentElement;
-        new (): HTMLScaleIconUser_fileAttachmentElement;
+    var HTMLScaleIconUserFileAttachmentElement: {
+        prototype: HTMLScaleIconUserFileAttachmentElement;
+        new (): HTMLScaleIconUserFileAttachmentElement;
     };
-    interface HTMLScaleIconUser_fileAudioFileElement extends Components.ScaleIconUser_fileAudioFile, HTMLStencilElement {
+    interface HTMLScaleIconUserFileAudioFileElement extends Components.ScaleIconUserFileAudioFile, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileAudioFileElement: {
-        prototype: HTMLScaleIconUser_fileAudioFileElement;
-        new (): HTMLScaleIconUser_fileAudioFileElement;
+    var HTMLScaleIconUserFileAudioFileElement: {
+        prototype: HTMLScaleIconUserFileAudioFileElement;
+        new (): HTMLScaleIconUserFileAudioFileElement;
     };
-    interface HTMLScaleIconUser_fileBillingElement extends Components.ScaleIconUser_fileBilling, HTMLStencilElement {
+    interface HTMLScaleIconUserFileBillingElement extends Components.ScaleIconUserFileBilling, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileBillingElement: {
-        prototype: HTMLScaleIconUser_fileBillingElement;
-        new (): HTMLScaleIconUser_fileBillingElement;
+    var HTMLScaleIconUserFileBillingElement: {
+        prototype: HTMLScaleIconUserFileBillingElement;
+        new (): HTMLScaleIconUserFileBillingElement;
     };
-    interface HTMLScaleIconUser_fileBussinesUsersElement extends Components.ScaleIconUser_fileBussinesUsers, HTMLStencilElement {
+    interface HTMLScaleIconUserFileBussinesUsersElement extends Components.ScaleIconUserFileBussinesUsers, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileBussinesUsersElement: {
-        prototype: HTMLScaleIconUser_fileBussinesUsersElement;
-        new (): HTMLScaleIconUser_fileBussinesUsersElement;
+    var HTMLScaleIconUserFileBussinesUsersElement: {
+        prototype: HTMLScaleIconUserFileBussinesUsersElement;
+        new (): HTMLScaleIconUserFileBussinesUsersElement;
     };
-    interface HTMLScaleIconUser_fileCommunitiesElement extends Components.ScaleIconUser_fileCommunities, HTMLStencilElement {
+    interface HTMLScaleIconUserFileCommunitiesElement extends Components.ScaleIconUserFileCommunities, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileCommunitiesElement: {
-        prototype: HTMLScaleIconUser_fileCommunitiesElement;
-        new (): HTMLScaleIconUser_fileCommunitiesElement;
+    var HTMLScaleIconUserFileCommunitiesElement: {
+        prototype: HTMLScaleIconUserFileCommunitiesElement;
+        new (): HTMLScaleIconUserFileCommunitiesElement;
     };
-    interface HTMLScaleIconUser_fileContactsElement extends Components.ScaleIconUser_fileContacts, HTMLStencilElement {
+    interface HTMLScaleIconUserFileContactsElement extends Components.ScaleIconUserFileContacts, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileContactsElement: {
-        prototype: HTMLScaleIconUser_fileContactsElement;
-        new (): HTMLScaleIconUser_fileContactsElement;
+    var HTMLScaleIconUserFileContactsElement: {
+        prototype: HTMLScaleIconUserFileContactsElement;
+        new (): HTMLScaleIconUserFileContactsElement;
     };
-    interface HTMLScaleIconUser_fileContractsElement extends Components.ScaleIconUser_fileContracts, HTMLStencilElement {
+    interface HTMLScaleIconUserFileContractsElement extends Components.ScaleIconUserFileContracts, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileContractsElement: {
-        prototype: HTMLScaleIconUser_fileContractsElement;
-        new (): HTMLScaleIconUser_fileContractsElement;
+    var HTMLScaleIconUserFileContractsElement: {
+        prototype: HTMLScaleIconUserFileContractsElement;
+        new (): HTMLScaleIconUserFileContractsElement;
     };
-    interface HTMLScaleIconUser_fileFamiliesElement extends Components.ScaleIconUser_fileFamilies, HTMLStencilElement {
+    interface HTMLScaleIconUserFileFamiliesElement extends Components.ScaleIconUserFileFamilies, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileFamiliesElement: {
-        prototype: HTMLScaleIconUser_fileFamiliesElement;
-        new (): HTMLScaleIconUser_fileFamiliesElement;
+    var HTMLScaleIconUserFileFamiliesElement: {
+        prototype: HTMLScaleIconUserFileFamiliesElement;
+        new (): HTMLScaleIconUserFileFamiliesElement;
     };
-    interface HTMLScaleIconUser_fileHandshakeElement extends Components.ScaleIconUser_fileHandshake, HTMLStencilElement {
+    interface HTMLScaleIconUserFileHandshakeElement extends Components.ScaleIconUserFileHandshake, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileHandshakeElement: {
-        prototype: HTMLScaleIconUser_fileHandshakeElement;
-        new (): HTMLScaleIconUser_fileHandshakeElement;
+    var HTMLScaleIconUserFileHandshakeElement: {
+        prototype: HTMLScaleIconUserFileHandshakeElement;
+        new (): HTMLScaleIconUserFileHandshakeElement;
     };
-    interface HTMLScaleIconUser_fileIdCardElement extends Components.ScaleIconUser_fileIdCard, HTMLStencilElement {
+    interface HTMLScaleIconUserFileIdCardElement extends Components.ScaleIconUserFileIdCard, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileIdCardElement: {
-        prototype: HTMLScaleIconUser_fileIdCardElement;
-        new (): HTMLScaleIconUser_fileIdCardElement;
+    var HTMLScaleIconUserFileIdCardElement: {
+        prototype: HTMLScaleIconUserFileIdCardElement;
+        new (): HTMLScaleIconUserFileIdCardElement;
     };
-    interface HTMLScaleIconUser_fileImageFileElement extends Components.ScaleIconUser_fileImageFile, HTMLStencilElement {
+    interface HTMLScaleIconUserFileImageFileElement extends Components.ScaleIconUserFileImageFile, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileImageFileElement: {
-        prototype: HTMLScaleIconUser_fileImageFileElement;
-        new (): HTMLScaleIconUser_fileImageFileElement;
+    var HTMLScaleIconUserFileImageFileElement: {
+        prototype: HTMLScaleIconUserFileImageFileElement;
+        new (): HTMLScaleIconUserFileImageFileElement;
     };
-    interface HTMLScaleIconUser_fileLogoutElement extends Components.ScaleIconUser_fileLogout, HTMLStencilElement {
+    interface HTMLScaleIconUserFileLogoutElement extends Components.ScaleIconUserFileLogout, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileLogoutElement: {
-        prototype: HTMLScaleIconUser_fileLogoutElement;
-        new (): HTMLScaleIconUser_fileLogoutElement;
+    var HTMLScaleIconUserFileLogoutElement: {
+        prototype: HTMLScaleIconUserFileLogoutElement;
+        new (): HTMLScaleIconUserFileLogoutElement;
     };
-    interface HTMLScaleIconUser_filePdfFileElement extends Components.ScaleIconUser_filePdfFile, HTMLStencilElement {
+    interface HTMLScaleIconUserFilePdfFileElement extends Components.ScaleIconUserFilePdfFile, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_filePdfFileElement: {
-        prototype: HTMLScaleIconUser_filePdfFileElement;
-        new (): HTMLScaleIconUser_filePdfFileElement;
+    var HTMLScaleIconUserFilePdfFileElement: {
+        prototype: HTMLScaleIconUserFilePdfFileElement;
+        new (): HTMLScaleIconUserFilePdfFileElement;
     };
-    interface HTMLScaleIconUser_fileSwitchUsersElement extends Components.ScaleIconUser_fileSwitchUsers, HTMLStencilElement {
+    interface HTMLScaleIconUserFileSwitchUsersElement extends Components.ScaleIconUserFileSwitchUsers, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileSwitchUsersElement: {
-        prototype: HTMLScaleIconUser_fileSwitchUsersElement;
-        new (): HTMLScaleIconUser_fileSwitchUsersElement;
+    var HTMLScaleIconUserFileSwitchUsersElement: {
+        prototype: HTMLScaleIconUserFileSwitchUsersElement;
+        new (): HTMLScaleIconUserFileSwitchUsersElement;
     };
-    interface HTMLScaleIconUser_fileUserElement extends Components.ScaleIconUser_fileUser, HTMLStencilElement {
+    interface HTMLScaleIconUserFileUserElement extends Components.ScaleIconUserFileUser, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileUserElement: {
-        prototype: HTMLScaleIconUser_fileUserElement;
-        new (): HTMLScaleIconUser_fileUserElement;
+    var HTMLScaleIconUserFileUserElement: {
+        prototype: HTMLScaleIconUserFileUserElement;
+        new (): HTMLScaleIconUserFileUserElement;
     };
-    interface HTMLScaleIconUser_fileVideosElement extends Components.ScaleIconUser_fileVideos, HTMLStencilElement {
+    interface HTMLScaleIconUserFileVideosElement extends Components.ScaleIconUserFileVideos, HTMLStencilElement {
     }
-    var HTMLScaleIconUser_fileVideosElement: {
-        prototype: HTMLScaleIconUser_fileVideosElement;
-        new (): HTMLScaleIconUser_fileVideosElement;
+    var HTMLScaleIconUserFileVideosElement: {
+        prototype: HTMLScaleIconUserFileVideosElement;
+        new (): HTMLScaleIconUserFileVideosElement;
     };
     interface HTMLScaleInputElement extends Components.ScaleInput, HTMLStencilElement {
     }
@@ -7005,30 +7005,30 @@ declare global {
         "scale-icon-service-services": HTMLScaleIconServiceServicesElement;
         "scale-icon-service-settings": HTMLScaleIconServiceSettingsElement;
         "scale-icon-service-support": HTMLScaleIconServiceSupportElement;
-        "scale-icon-t_product-magenta-cloud": HTMLScaleIconT_productMagentaCloudElement;
-        "scale-icon-t_product-magenta-tv": HTMLScaleIconT_productMagentaTvElement;
-        "scale-icon-t_product-magentaone": HTMLScaleIconT_productMagentaoneElement;
-        "scale-icon-t_product-measure-internet-speed": HTMLScaleIconT_productMeasureInternetSpeedElement;
-        "scale-icon-t_product-seamless-connectivity": HTMLScaleIconT_productSeamlessConnectivityElement;
-        "scale-icon-t_product-telekom-shop-b": HTMLScaleIconT_productTelekomShopBElement;
-        "scale-icon-t_product-usage": HTMLScaleIconT_productUsageElement;
-        "scale-icon-user_file-analytics": HTMLScaleIconUser_fileAnalyticsElement;
-        "scale-icon-user_file-attachment": HTMLScaleIconUser_fileAttachmentElement;
-        "scale-icon-user_file-audio-file": HTMLScaleIconUser_fileAudioFileElement;
-        "scale-icon-user_file-billing": HTMLScaleIconUser_fileBillingElement;
-        "scale-icon-user_file-bussines-users": HTMLScaleIconUser_fileBussinesUsersElement;
-        "scale-icon-user_file-communities": HTMLScaleIconUser_fileCommunitiesElement;
-        "scale-icon-user_file-contacts": HTMLScaleIconUser_fileContactsElement;
-        "scale-icon-user_file-contracts": HTMLScaleIconUser_fileContractsElement;
-        "scale-icon-user_file-families": HTMLScaleIconUser_fileFamiliesElement;
-        "scale-icon-user_file-handshake": HTMLScaleIconUser_fileHandshakeElement;
-        "scale-icon-user_file-id-card": HTMLScaleIconUser_fileIdCardElement;
-        "scale-icon-user_file-image-file": HTMLScaleIconUser_fileImageFileElement;
-        "scale-icon-user_file-logout": HTMLScaleIconUser_fileLogoutElement;
-        "scale-icon-user_file-pdf-file": HTMLScaleIconUser_filePdfFileElement;
-        "scale-icon-user_file-switch-users": HTMLScaleIconUser_fileSwitchUsersElement;
-        "scale-icon-user_file-user": HTMLScaleIconUser_fileUserElement;
-        "scale-icon-user_file-videos": HTMLScaleIconUser_fileVideosElement;
+        "scale-icon-t-product-magenta-cloud": HTMLScaleIconTProductMagentaCloudElement;
+        "scale-icon-t-product-magenta-tv": HTMLScaleIconTProductMagentaTvElement;
+        "scale-icon-t-product-magentaone": HTMLScaleIconTProductMagentaoneElement;
+        "scale-icon-t-product-measure-internet-speed": HTMLScaleIconTProductMeasureInternetSpeedElement;
+        "scale-icon-t-product-seamless-connectivity": HTMLScaleIconTProductSeamlessConnectivityElement;
+        "scale-icon-t-product-telekom-shop-b": HTMLScaleIconTProductTelekomShopBElement;
+        "scale-icon-t-product-usage": HTMLScaleIconTProductUsageElement;
+        "scale-icon-user-file-analytics": HTMLScaleIconUserFileAnalyticsElement;
+        "scale-icon-user-file-attachment": HTMLScaleIconUserFileAttachmentElement;
+        "scale-icon-user-file-audio-file": HTMLScaleIconUserFileAudioFileElement;
+        "scale-icon-user-file-billing": HTMLScaleIconUserFileBillingElement;
+        "scale-icon-user-file-bussines-users": HTMLScaleIconUserFileBussinesUsersElement;
+        "scale-icon-user-file-communities": HTMLScaleIconUserFileCommunitiesElement;
+        "scale-icon-user-file-contacts": HTMLScaleIconUserFileContactsElement;
+        "scale-icon-user-file-contracts": HTMLScaleIconUserFileContractsElement;
+        "scale-icon-user-file-families": HTMLScaleIconUserFileFamiliesElement;
+        "scale-icon-user-file-handshake": HTMLScaleIconUserFileHandshakeElement;
+        "scale-icon-user-file-id-card": HTMLScaleIconUserFileIdCardElement;
+        "scale-icon-user-file-image-file": HTMLScaleIconUserFileImageFileElement;
+        "scale-icon-user-file-logout": HTMLScaleIconUserFileLogoutElement;
+        "scale-icon-user-file-pdf-file": HTMLScaleIconUserFilePdfFileElement;
+        "scale-icon-user-file-switch-users": HTMLScaleIconUserFileSwitchUsersElement;
+        "scale-icon-user-file-user": HTMLScaleIconUserFileUserElement;
+        "scale-icon-user-file-videos": HTMLScaleIconUserFileVideosElement;
         "scale-input": HTMLScaleInputElement;
         "scale-link": HTMLScaleLinkElement;
         "scale-list": HTMLScaleListElement;
@@ -11049,7 +11049,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaCloud {
+    interface ScaleIconTProductMagentaCloud {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11071,7 +11071,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaTv {
+    interface ScaleIconTProductMagentaTv {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11093,7 +11093,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMagentaone {
+    interface ScaleIconTProductMagentaone {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11115,7 +11115,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productMeasureInternetSpeed {
+    interface ScaleIconTProductMeasureInternetSpeed {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11137,7 +11137,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productSeamlessConnectivity {
+    interface ScaleIconTProductSeamlessConnectivity {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11159,7 +11159,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productTelekomShopB {
+    interface ScaleIconTProductTelekomShopB {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11181,7 +11181,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconT_productUsage {
+    interface ScaleIconTProductUsage {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11203,7 +11203,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAnalytics {
+    interface ScaleIconUserFileAnalytics {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11225,7 +11225,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAttachment {
+    interface ScaleIconUserFileAttachment {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11247,7 +11247,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileAudioFile {
+    interface ScaleIconUserFileAudioFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11269,7 +11269,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileBilling {
+    interface ScaleIconUserFileBilling {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11291,7 +11291,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileBussinesUsers {
+    interface ScaleIconUserFileBussinesUsers {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11313,7 +11313,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileCommunities {
+    interface ScaleIconUserFileCommunities {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11335,7 +11335,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileContacts {
+    interface ScaleIconUserFileContacts {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11357,7 +11357,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileContracts {
+    interface ScaleIconUserFileContracts {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11379,7 +11379,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileFamilies {
+    interface ScaleIconUserFileFamilies {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11401,7 +11401,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileHandshake {
+    interface ScaleIconUserFileHandshake {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11423,7 +11423,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileIdCard {
+    interface ScaleIconUserFileIdCard {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11445,7 +11445,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileImageFile {
+    interface ScaleIconUserFileImageFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11467,7 +11467,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileLogout {
+    interface ScaleIconUserFileLogout {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11489,7 +11489,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_filePdfFile {
+    interface ScaleIconUserFilePdfFile {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11511,7 +11511,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileSwitchUsers {
+    interface ScaleIconUserFileSwitchUsers {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11533,7 +11533,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileUser {
+    interface ScaleIconUserFileUser {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -11555,7 +11555,7 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
-    interface ScaleIconUser_fileVideos {
+    interface ScaleIconUserFileVideos {
         /**
           * (optional) When using the icon standalone, make it meaningful for accessibility
          */
@@ -12776,30 +12776,30 @@ declare namespace LocalJSX {
         "scale-icon-service-services": ScaleIconServiceServices;
         "scale-icon-service-settings": ScaleIconServiceSettings;
         "scale-icon-service-support": ScaleIconServiceSupport;
-        "scale-icon-t_product-magenta-cloud": ScaleIconT_productMagentaCloud;
-        "scale-icon-t_product-magenta-tv": ScaleIconT_productMagentaTv;
-        "scale-icon-t_product-magentaone": ScaleIconT_productMagentaone;
-        "scale-icon-t_product-measure-internet-speed": ScaleIconT_productMeasureInternetSpeed;
-        "scale-icon-t_product-seamless-connectivity": ScaleIconT_productSeamlessConnectivity;
-        "scale-icon-t_product-telekom-shop-b": ScaleIconT_productTelekomShopB;
-        "scale-icon-t_product-usage": ScaleIconT_productUsage;
-        "scale-icon-user_file-analytics": ScaleIconUser_fileAnalytics;
-        "scale-icon-user_file-attachment": ScaleIconUser_fileAttachment;
-        "scale-icon-user_file-audio-file": ScaleIconUser_fileAudioFile;
-        "scale-icon-user_file-billing": ScaleIconUser_fileBilling;
-        "scale-icon-user_file-bussines-users": ScaleIconUser_fileBussinesUsers;
-        "scale-icon-user_file-communities": ScaleIconUser_fileCommunities;
-        "scale-icon-user_file-contacts": ScaleIconUser_fileContacts;
-        "scale-icon-user_file-contracts": ScaleIconUser_fileContracts;
-        "scale-icon-user_file-families": ScaleIconUser_fileFamilies;
-        "scale-icon-user_file-handshake": ScaleIconUser_fileHandshake;
-        "scale-icon-user_file-id-card": ScaleIconUser_fileIdCard;
-        "scale-icon-user_file-image-file": ScaleIconUser_fileImageFile;
-        "scale-icon-user_file-logout": ScaleIconUser_fileLogout;
-        "scale-icon-user_file-pdf-file": ScaleIconUser_filePdfFile;
-        "scale-icon-user_file-switch-users": ScaleIconUser_fileSwitchUsers;
-        "scale-icon-user_file-user": ScaleIconUser_fileUser;
-        "scale-icon-user_file-videos": ScaleIconUser_fileVideos;
+        "scale-icon-t-product-magenta-cloud": ScaleIconTProductMagentaCloud;
+        "scale-icon-t-product-magenta-tv": ScaleIconTProductMagentaTv;
+        "scale-icon-t-product-magentaone": ScaleIconTProductMagentaone;
+        "scale-icon-t-product-measure-internet-speed": ScaleIconTProductMeasureInternetSpeed;
+        "scale-icon-t-product-seamless-connectivity": ScaleIconTProductSeamlessConnectivity;
+        "scale-icon-t-product-telekom-shop-b": ScaleIconTProductTelekomShopB;
+        "scale-icon-t-product-usage": ScaleIconTProductUsage;
+        "scale-icon-user-file-analytics": ScaleIconUserFileAnalytics;
+        "scale-icon-user-file-attachment": ScaleIconUserFileAttachment;
+        "scale-icon-user-file-audio-file": ScaleIconUserFileAudioFile;
+        "scale-icon-user-file-billing": ScaleIconUserFileBilling;
+        "scale-icon-user-file-bussines-users": ScaleIconUserFileBussinesUsers;
+        "scale-icon-user-file-communities": ScaleIconUserFileCommunities;
+        "scale-icon-user-file-contacts": ScaleIconUserFileContacts;
+        "scale-icon-user-file-contracts": ScaleIconUserFileContracts;
+        "scale-icon-user-file-families": ScaleIconUserFileFamilies;
+        "scale-icon-user-file-handshake": ScaleIconUserFileHandshake;
+        "scale-icon-user-file-id-card": ScaleIconUserFileIdCard;
+        "scale-icon-user-file-image-file": ScaleIconUserFileImageFile;
+        "scale-icon-user-file-logout": ScaleIconUserFileLogout;
+        "scale-icon-user-file-pdf-file": ScaleIconUserFilePdfFile;
+        "scale-icon-user-file-switch-users": ScaleIconUserFileSwitchUsers;
+        "scale-icon-user-file-user": ScaleIconUserFileUser;
+        "scale-icon-user-file-videos": ScaleIconUserFileVideos;
         "scale-input": ScaleInput;
         "scale-link": ScaleLink;
         "scale-list": ScaleList;
@@ -13016,30 +13016,30 @@ declare module "@stencil/core" {
             "scale-icon-service-services": LocalJSX.ScaleIconServiceServices & JSXBase.HTMLAttributes<HTMLScaleIconServiceServicesElement>;
             "scale-icon-service-settings": LocalJSX.ScaleIconServiceSettings & JSXBase.HTMLAttributes<HTMLScaleIconServiceSettingsElement>;
             "scale-icon-service-support": LocalJSX.ScaleIconServiceSupport & JSXBase.HTMLAttributes<HTMLScaleIconServiceSupportElement>;
-            "scale-icon-t_product-magenta-cloud": LocalJSX.ScaleIconT_productMagentaCloud & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaCloudElement>;
-            "scale-icon-t_product-magenta-tv": LocalJSX.ScaleIconT_productMagentaTv & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaTvElement>;
-            "scale-icon-t_product-magentaone": LocalJSX.ScaleIconT_productMagentaone & JSXBase.HTMLAttributes<HTMLScaleIconT_productMagentaoneElement>;
-            "scale-icon-t_product-measure-internet-speed": LocalJSX.ScaleIconT_productMeasureInternetSpeed & JSXBase.HTMLAttributes<HTMLScaleIconT_productMeasureInternetSpeedElement>;
-            "scale-icon-t_product-seamless-connectivity": LocalJSX.ScaleIconT_productSeamlessConnectivity & JSXBase.HTMLAttributes<HTMLScaleIconT_productSeamlessConnectivityElement>;
-            "scale-icon-t_product-telekom-shop-b": LocalJSX.ScaleIconT_productTelekomShopB & JSXBase.HTMLAttributes<HTMLScaleIconT_productTelekomShopBElement>;
-            "scale-icon-t_product-usage": LocalJSX.ScaleIconT_productUsage & JSXBase.HTMLAttributes<HTMLScaleIconT_productUsageElement>;
-            "scale-icon-user_file-analytics": LocalJSX.ScaleIconUser_fileAnalytics & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAnalyticsElement>;
-            "scale-icon-user_file-attachment": LocalJSX.ScaleIconUser_fileAttachment & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAttachmentElement>;
-            "scale-icon-user_file-audio-file": LocalJSX.ScaleIconUser_fileAudioFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileAudioFileElement>;
-            "scale-icon-user_file-billing": LocalJSX.ScaleIconUser_fileBilling & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileBillingElement>;
-            "scale-icon-user_file-bussines-users": LocalJSX.ScaleIconUser_fileBussinesUsers & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileBussinesUsersElement>;
-            "scale-icon-user_file-communities": LocalJSX.ScaleIconUser_fileCommunities & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileCommunitiesElement>;
-            "scale-icon-user_file-contacts": LocalJSX.ScaleIconUser_fileContacts & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileContactsElement>;
-            "scale-icon-user_file-contracts": LocalJSX.ScaleIconUser_fileContracts & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileContractsElement>;
-            "scale-icon-user_file-families": LocalJSX.ScaleIconUser_fileFamilies & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileFamiliesElement>;
-            "scale-icon-user_file-handshake": LocalJSX.ScaleIconUser_fileHandshake & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileHandshakeElement>;
-            "scale-icon-user_file-id-card": LocalJSX.ScaleIconUser_fileIdCard & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileIdCardElement>;
-            "scale-icon-user_file-image-file": LocalJSX.ScaleIconUser_fileImageFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileImageFileElement>;
-            "scale-icon-user_file-logout": LocalJSX.ScaleIconUser_fileLogout & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileLogoutElement>;
-            "scale-icon-user_file-pdf-file": LocalJSX.ScaleIconUser_filePdfFile & JSXBase.HTMLAttributes<HTMLScaleIconUser_filePdfFileElement>;
-            "scale-icon-user_file-switch-users": LocalJSX.ScaleIconUser_fileSwitchUsers & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileSwitchUsersElement>;
-            "scale-icon-user_file-user": LocalJSX.ScaleIconUser_fileUser & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileUserElement>;
-            "scale-icon-user_file-videos": LocalJSX.ScaleIconUser_fileVideos & JSXBase.HTMLAttributes<HTMLScaleIconUser_fileVideosElement>;
+            "scale-icon-t-product-magenta-cloud": LocalJSX.ScaleIconTProductMagentaCloud & JSXBase.HTMLAttributes<HTMLScaleIconTProductMagentaCloudElement>;
+            "scale-icon-t-product-magenta-tv": LocalJSX.ScaleIconTProductMagentaTv & JSXBase.HTMLAttributes<HTMLScaleIconTProductMagentaTvElement>;
+            "scale-icon-t-product-magentaone": LocalJSX.ScaleIconTProductMagentaone & JSXBase.HTMLAttributes<HTMLScaleIconTProductMagentaoneElement>;
+            "scale-icon-t-product-measure-internet-speed": LocalJSX.ScaleIconTProductMeasureInternetSpeed & JSXBase.HTMLAttributes<HTMLScaleIconTProductMeasureInternetSpeedElement>;
+            "scale-icon-t-product-seamless-connectivity": LocalJSX.ScaleIconTProductSeamlessConnectivity & JSXBase.HTMLAttributes<HTMLScaleIconTProductSeamlessConnectivityElement>;
+            "scale-icon-t-product-telekom-shop-b": LocalJSX.ScaleIconTProductTelekomShopB & JSXBase.HTMLAttributes<HTMLScaleIconTProductTelekomShopBElement>;
+            "scale-icon-t-product-usage": LocalJSX.ScaleIconTProductUsage & JSXBase.HTMLAttributes<HTMLScaleIconTProductUsageElement>;
+            "scale-icon-user-file-analytics": LocalJSX.ScaleIconUserFileAnalytics & JSXBase.HTMLAttributes<HTMLScaleIconUserFileAnalyticsElement>;
+            "scale-icon-user-file-attachment": LocalJSX.ScaleIconUserFileAttachment & JSXBase.HTMLAttributes<HTMLScaleIconUserFileAttachmentElement>;
+            "scale-icon-user-file-audio-file": LocalJSX.ScaleIconUserFileAudioFile & JSXBase.HTMLAttributes<HTMLScaleIconUserFileAudioFileElement>;
+            "scale-icon-user-file-billing": LocalJSX.ScaleIconUserFileBilling & JSXBase.HTMLAttributes<HTMLScaleIconUserFileBillingElement>;
+            "scale-icon-user-file-bussines-users": LocalJSX.ScaleIconUserFileBussinesUsers & JSXBase.HTMLAttributes<HTMLScaleIconUserFileBussinesUsersElement>;
+            "scale-icon-user-file-communities": LocalJSX.ScaleIconUserFileCommunities & JSXBase.HTMLAttributes<HTMLScaleIconUserFileCommunitiesElement>;
+            "scale-icon-user-file-contacts": LocalJSX.ScaleIconUserFileContacts & JSXBase.HTMLAttributes<HTMLScaleIconUserFileContactsElement>;
+            "scale-icon-user-file-contracts": LocalJSX.ScaleIconUserFileContracts & JSXBase.HTMLAttributes<HTMLScaleIconUserFileContractsElement>;
+            "scale-icon-user-file-families": LocalJSX.ScaleIconUserFileFamilies & JSXBase.HTMLAttributes<HTMLScaleIconUserFileFamiliesElement>;
+            "scale-icon-user-file-handshake": LocalJSX.ScaleIconUserFileHandshake & JSXBase.HTMLAttributes<HTMLScaleIconUserFileHandshakeElement>;
+            "scale-icon-user-file-id-card": LocalJSX.ScaleIconUserFileIdCard & JSXBase.HTMLAttributes<HTMLScaleIconUserFileIdCardElement>;
+            "scale-icon-user-file-image-file": LocalJSX.ScaleIconUserFileImageFile & JSXBase.HTMLAttributes<HTMLScaleIconUserFileImageFileElement>;
+            "scale-icon-user-file-logout": LocalJSX.ScaleIconUserFileLogout & JSXBase.HTMLAttributes<HTMLScaleIconUserFileLogoutElement>;
+            "scale-icon-user-file-pdf-file": LocalJSX.ScaleIconUserFilePdfFile & JSXBase.HTMLAttributes<HTMLScaleIconUserFilePdfFileElement>;
+            "scale-icon-user-file-switch-users": LocalJSX.ScaleIconUserFileSwitchUsers & JSXBase.HTMLAttributes<HTMLScaleIconUserFileSwitchUsersElement>;
+            "scale-icon-user-file-user": LocalJSX.ScaleIconUserFileUser & JSXBase.HTMLAttributes<HTMLScaleIconUserFileUserElement>;
+            "scale-icon-user-file-videos": LocalJSX.ScaleIconUserFileVideos & JSXBase.HTMLAttributes<HTMLScaleIconUserFileVideosElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
