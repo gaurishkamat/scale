@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
+
+
+### Bug Fixes
+
+* **checkbox:** remove icon prop from story ([2bc168d](https://gitlab.com/scale-ds/scale-telekom/commit/2bc168dff7b717998bdded8243c8adf63ea46468))
+* **storybook:** link paths ([dbfc72f](https://gitlab.com/scale-ds/scale-telekom/commit/dbfc72f5b1cd0fd28c3a864112a85cb6a2bbfc4c))
+
+
+### Features
+
+* **storybook:** upgrade version && add sidebar links ([074fcc5](https://gitlab.com/scale-ds/scale-telekom/commit/074fcc587046bc7597a03b37ce00cf49bb57e6cc))
+
+
+
+
+
 # [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
 
 

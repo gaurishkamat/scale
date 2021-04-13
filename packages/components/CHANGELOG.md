@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
+
+
+### Bug Fixes
+
+* **logo:** update utils import path ([3ceed08](https://gitlab.com/scale-ds/scale-telekom/commit/3ceed0844bce9f7123a356fd5f4ebbcd8a505d11))
+* do not load fonts in whitelabel.css ([6f01684](https://gitlab.com/scale-ds/scale-telekom/commit/6f016844da69da72e85856b30045231993a36abb))
+
+
+
+
+
 # [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
 
 
