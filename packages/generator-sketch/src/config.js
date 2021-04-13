@@ -12,7 +12,7 @@
 const { findLayer, findLayers } = require('./utils');
 
 module.exports = {
-  libraryServerPath: "http://localhost:5000/",
+  libraryServerPath: "https://office.heichen.hk/shared/Public/telekom/",
 
   libraryTitle: "Telekom Scale Components",
   libraryDescription: "Telekom Scale Components design library",
@@ -28,7 +28,7 @@ module.exports = {
   },
 
   setSymbolResizing: function(symbol) {
-    if (!/^(Icon|(Unnamed Components \/ icon))/.test(symbol.name)) {
+    if (!/^(Icon|(X \/ icon))/.test(symbol.name)) {
       symbol.groupLayout = {
         _class: "MSImmutableInferredGroupLayout",
         axis: 0,
@@ -37,18 +37,16 @@ module.exports = {
         minSize: 0
       };
     } else {
-      var icon = findLayer(symbol, s => s.name === "svg.icon");
-      if (icon) icon.resizingConstraint = 18;
+      findLayers(symbol, "svg.icon", icon => icon.resizingConstraint = 18);
       if (symbol.layers && symbol.layers[0]) {
         symbol.layers[0].resizingConstraint = 18;
       }
     }
 
-    var icons = findLayers(
-      symbol,
-      s => s.name === /^Unnamed Components \/ icon/
+    findLayers(symbol,
+      /^((X \/ icon)|(svg\.icon))/,
+      icon => (icon.name = "Icon")
     );
-    icons.forEach(icon => (icon.name = "Icon"));
 
     try {
       if (/^Accordion/.test(symbol.name)) {
@@ -117,7 +115,7 @@ module.exports = {
       if (/^(Dropdown)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 11;
-        findLayer(symbol, "Icon", icon => icon.resizingConstraint = 44);
+        findLayer(symbol, /^((Icon)|(svg\.icon))$/, icon => icon.resizingConstraint = 44);
         findLayer(symbol, "label.input__label", label => label.resizingConstraint = 9);
         findLayer(symbol, "Dropdown Label", label => {
           label.resizingConstraint = 10;
@@ -217,7 +215,10 @@ module.exports = {
         if (knob) knob.resizingConstraint = 45;
       }
       if (/^Switch/.test(symbol.name)) {
+        symbol.groupLayout = undefined;
         symbol.layers[0].resizingConstraint = 9;
+        findLayer(symbol, /switch[-_]+wrapper/, l => l.resizingConstraint = 9);
+        findLayer(symbol, 'Switch Label', l => l.resizingConstraint = 18);
       }
       if (/^Table/.test(symbol.name)) {
         symbol.groupLayout = undefined;
