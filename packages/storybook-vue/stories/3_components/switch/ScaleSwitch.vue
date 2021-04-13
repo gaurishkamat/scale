@@ -5,6 +5,7 @@
     :input-id="inputId"
     :checked="checked"
     @scaleChange="scaleChange"
+    style="--color-on: blue"
   >
   </scale-switch>
 </template>

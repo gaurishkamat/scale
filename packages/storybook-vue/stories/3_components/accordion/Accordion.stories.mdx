@@ -79,6 +79,39 @@ export const Template = (args, { argTypes }) => ({
 </scale-accordion>
 ```
 
+### Scoped CSS variables
+
+```css
+/* scale-collapsible */
+:host {
+  --spacing-y: var(--scl-spacing-16);
+
+  /* button */
+  --font-size-button: var(--scl-font-size-20);
+  --font-weight-button: var(--scl-font-weight-extrabold);
+  --line-height-button: var(--scl-font-line-height-125);
+  --border-width-button: var(--scl-spacing-2);
+  --radius-button: var(--scl-radius-4);
+  --spacing-left-button: var(--scl-spacing-4);
+  --spacing-left-button-text: var(--scl-spacing-8);
+  --color-button-hover: var(--scl-color-primary-hover);
+  --color-button-active: var(--scl-color-primary-active);
+  --background-button-hover: var(--scl-color-background-light);
+  --border-color-button-focus: var(--scl-color-focus);
+
+  /* icon */
+  --spacing-top-icon: calc(var(--scl-spacing-4) + 1px);
+
+  /* content */
+  --spacing-right-content: var(--scl-spacing-48);
+  --spacing-left-content: var(--scl-spacing-32);
+  --spacing-top-content: var(--scl-spacing-16);
+  --spacing-bottom-content: var(--scl-spacing-24);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Dependent
 
 <Canvas withSource="none">

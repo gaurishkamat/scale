@@ -120,6 +120,27 @@ export const TemplateInteractive = (args, {argTypes}) => ({
 
 <ArgsTable story='Determinate' />
 
+### Scoped CSS variables
+
+```css
+:host {
+  --color-error: var(--scl-color-text-error);
+  --color-disabled: var(--scl-color-grey-50);
+  --background: var(--scl-color-primary);
+  --color-inner-status: var(--scl-color-background-standard);
+  --font-size-inner-status: var(--scl-font-size-12);
+  --font-size-status: var(--scl-font-size-12);
+  --font-weight-status: var(--scl-font-weight-extrabold);
+  --color-status: var(--scl-color-grey-60);
+  --color-status-description: var(--scl-color-grey-60);
+  --font-size-status-description: var(--scl-font-size-12);
+  --font-weight-status-description: var(--scl-font-weight-bold);
+  --spacing-label: var(--scl-spacing-8) 0;
+  --border: 1px solid var(--scl-color-grey-60);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
 
 ## Progress custom
 

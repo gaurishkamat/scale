@@ -215,6 +215,33 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+scale-table {
+  --radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
+  --background: var(--scl-color-background-light);
+  --color: var(--scl-color-text-standard);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-active);
+  --font-size: var(--scl-font-size-12);
+
+  --spacing-tbody-td: 16px 8px;
+  --border-bottom-tbody-td: 1px solid var(--scl-color-grey-20);
+  --background-tbody: var(--scl-color-background-standard);
+  --background-tbody-tr-hover: #ededed;
+
+  --background-tfoot: var(--scl-color-background-standard);
+  --border-bottom-tfoot-td: 1px solid var(--scl-color-text-standard);
+
+  --spacing-th-sortable: 0 8px 0 0;
+  --background-th-sortable-hover: #ededed;
+  --background-th-sortable-active: #dcdcdc;
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
+}
+```
+
 ## Small
 
 <Canvas withSource="none">

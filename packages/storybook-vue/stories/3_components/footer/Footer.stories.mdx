@@ -75,6 +75,50 @@ export const Template = (args, { argTypes }) => ({
 </scale-app-footer>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --background: var(--scl-color-black);
+  --color: var(--scl-color-white);
+  --spacing-top: var(--scl-spacing-32);
+  --spacing-bottom: var(--scl-spacing-24);
+  --spacing-x: var(--scl-spacing-24);
+  --background-container: var(--scl-color-background-standard, #fff);
+  --radius: var(--scl-radius-4);
+  --max-width: inherit;
+
+  --border-top-minimal: var(--scl-spacing-1) solid var(--scl-color-grey-20);
+  --color-minimal: var(--scl-color-grey-60);
+  --background-minimal: var(--scl-color-background-standard);
+
+  --spacing-angular: var(--scl-spacing-24);
+  --spacing-minimal: var(--scl-spacing-24);
+
+  --background-mask: var(--scl-color-background-standard, #fff);
+  --radius-mask: 0 0 var(--scl-radius-8) var(--scl-radius-8);
+
+  --height-logo: var(--scl-spacing-24);
+  --font-size-copyright: var(--scl-font-size-14);
+  --color-link-standard: var(--scl-color-white);
+  --color-link-minimal: var(--scl-color-grey-60);
+
+  --font-size-navigation-standard: var(--scl-font-size-14);
+  --font-family-navigation-standard: var(--scl-font-family-sans);
+  --font-weight-navigation-standard: var(--scl-font-weight-extrabold);
+  --font-weight-navigation-minimal: var(--scl-font-weight-medium);
+
+  --spacing-navigation-standard: var(--scl-spacing-8);
+  --color-navigation-standard-hover: var(--scl-color-white);
+  --color-navigation-minimal-hover: var(--scl-color-primary-hover);
+  --color-navigation-active-focus: var(--scl-color-primary-active);
+  --box-shadow-navigation-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-primary);
+
+  --border-color-standard-hover: var(--scl-color-white);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
 
 ## Angular
 

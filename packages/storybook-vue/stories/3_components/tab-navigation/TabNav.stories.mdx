@@ -77,6 +77,41 @@ export const Template = (args, { argTypes }) => ({
 </scale-tab-nav>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --tab-height: var(--scl-spacing-40);
+  --tab-spacing: var(--scl-spacing-24);
+  --tab-radius: var(--scl-radius-4);
+  --tab-border-size: var(--scl-spacing-2);
+  --tab-border-size-selected: var(--scl-spacing-4);
+  --tab-border-color: var(--scl-color-grey-20);
+}
+
+/* tab-header */
+:host {
+  --font-family: var(--scl-font-family-sans, TeleNeoWeb);
+  --font-weight: var(--scl-font-weight-bold);
+  --height-small: 2rem;
+  --color-hover: var(--scl-color-primary-hover);
+  --color-selected: var(--scl-color-primary);
+  --background-underline-hover: var(--scl-color-primary-hover);
+  --background-underline-active: var(--scl-color-primary-active);
+  --color-active: var(--scl-color-primary-active);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --spacing-right-slotted: var(--scl-spacing-8);
+}
+
+/* tab-panel */
+:host {
+  --spacing-top: var(--scl-spacing-24);
+  --spacing-top-small: var(--scl-spacing-16);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 <ArgsTable story="Text & Icon" />
 
 ## Text & Icon, Small

@@ -153,6 +153,50 @@ export const Template = (args, { argTypes }) => ({
 </scale-sidebar-nav>
 ```
 
+### Scoped CSS variables
+
+```css
+/* sidebar-nav */
+:host {
+  --max-width: 15rem;
+  --spacing-indent: var(--scl-spacing-24);
+  --spacing-collapsible: var(--scl-spacing-16);
+  --opacity-chevron: 0;
+  --left-current-border: 0;
+
+  --color: var(--scl-color-primary);
+  --color-active: var(--scl-color-primary-active);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --color-toggle-button: var(--scl-color-grey-60);
+  --border-y-toggle-button: 1px solid var(--scl-color-grey-10);
+  --radius-toggle-button: var(--scl-radius-2);
+}
+
+/* sidebar-nav-collapsible */
+:host {
+  --border-bottom-color: var(--scl-color-grey-10);
+  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  --color-active: var(--scl-color-primary-active);
+  --color-primary: var(--scl-color-primary);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--scl-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+
+/* sidebar-nav-item */
+:host {
+  --border-bottom-color: var(--scl-color-grey-10);
+  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  --color-active: var(--scl-color-primary-active);
+  --color-primary: var(--scl-color-primary);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--scl-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
 ## Active on Level 1
 
 <Canvas withSource="none">

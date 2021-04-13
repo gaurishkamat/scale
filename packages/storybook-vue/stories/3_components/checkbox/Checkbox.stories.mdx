@@ -55,6 +55,53 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+scale-checkbox {
+  --spacing-x: var(--scl-spacing-8);
+  --transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
+  --color-text: var(--scl-color-text-standard);
+  --color-error: var(--scl-color-text-error);
+  --color-disabled: var(--scl-color-background-disabled);
+  --color-standard: var(--scl-color-background-standard);
+  --background-disabled: var(--scl-color-white);
+  --color-primary: var(--scl-color-primary, #e20074);
+  --color-focus: var(--scl-color-focus);
+  --color-primary-hover: var(--scl-color-primary-hover, #f90984);
+  --color-primary-active: var(--scl-color-primary-active, #cb0068);
+
+  /*control*/
+  --width-control: var(--scl-spacing-16);
+  --height-control: var(--scl-spacing-16);
+  --transition-control: var(--transition);
+  --spacing-control: var(--scl-spacing-2);
+  --spacing-left-control: var(--scl-spacing-4);
+  --radius-control: var(--scl-radius-4);
+  --border-width-control: var(--scl-spacing-1);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --spacing-left-helper-text: calc(var(--width-control) + var(--spacing-x));
+  --font-size-helper-text: var(--scl-font-size-12);
+  --font-weight-helper-text: var(--scl-font-weight-bold);
+  --line-height-helper-text: var(--scl-font-line-height-133);
+  --color-helper-text: var(--scl-color-blue-70);
+
+  /*label*/
+  --font-weight-label: var(--scl-font-weight-medium);
+  --transition-label: var(--transition);
+
+  /*icon*/
+  --color-icon-checked-disabled: var(--scl-color-grey-30);
+  --color-icon-checked-active: var(--scl-color-white);
+  --width-icon: var(--scl-spacing-12);
+  --height-icon: var(--scl-spacing-12);
+  --left-icon: 50%;
+  --top-icon: 50%;
+  --transform-icon: translate(-50%, -50%);
+}
+```
 
 ## Standard Disabled
 

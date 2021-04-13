@@ -4,7 +4,7 @@
       <scale-icon-home-home v-if="withIcon" size="16" /> General
     </scale-tab-header>
     <scale-tab-panel slot="panel">
-      <p>
+      <p class="scl-font-variant-body">
         Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small
         batch pabst. 90's tumblr whatever direct trade, organic master cleanse
         copper mug schlitz palo santo bushwick ethical pop-up chambray portland.
@@ -17,7 +17,7 @@
       <scale-icon-user_file-analytics v-if="withIcon" size="16" /> Usage
     </scale-tab-header>
     <scale-tab-panel slot="panel">
-      <p>
+      <p class="scl-font-variant-body">
         Bespoke austin pork belly yuccie pop-up. Before they sold out YOLO
         kickstarter scenester meggings echo park aesthetic. Thundercats
         post-ironic wayfarers microdosing etsy hashtag seitan photo booth
@@ -28,7 +28,7 @@
       <scale-icon-content-heart v-if="withIcon" size="16" /> Style
     </scale-tab-header>
     <scale-tab-panel slot="panel">
-      <p>
+      <p class="scl-font-variant-body">
         Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe
         helvetica brunch godard cray viral prism. Street art tattooed bitters,
         ugh four loko selfies you probably haven't heard of them locavore
@@ -40,7 +40,7 @@
       <scale-icon-action-random v-if="withIcon" size="16" /> Code
     </scale-tab-header>
     <scale-tab-panel slot="panel">
-      <p>
+      <p class="scl-font-variant-body">
         Asymmetrical tattooed chia, banh mi blog microdosing edison bulb
         meditation readymade drinking vinegar brunch irony. Whatever humblebrag
         3 wolf moon kinfolk selvage. Listicle mumblecore forage paleo.

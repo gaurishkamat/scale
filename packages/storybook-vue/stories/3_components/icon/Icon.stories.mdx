@@ -90,6 +90,15 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story='Standard' />
 
+### Scoped CSS variables
+
+```css
+scale-icon {
+  --display: inline-flex;
+  --transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
+}
+```
+
 ## With Path Attribute
 
 <Canvas withSource="none">

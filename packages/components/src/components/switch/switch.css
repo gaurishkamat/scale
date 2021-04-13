@@ -1,4 +1,5 @@
 .switch {
+  /* TODO these variables placed in here are no use, they should be placed inside scale-switch */
   --size: 20px;
   --offset: 2px;
   --color-off: var(--scl-color-text-standard);
