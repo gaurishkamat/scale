@@ -36,8 +36,7 @@
     "storybook": "start-storybook -p 6006 -s ./build",
     "build-storybook": "build-storybook -s ./build",
     "generate": "yarn generate-icons",
-    "generate-icons": "node ./scripts/generate-icons.js",
-    "postgenerate-icons": "prettier --write \"*.ts\" \"src/components/icons/**/*.tsx\""
+    "generate-icons": "node ./scripts/generate-icons.js"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
