@@ -29,9 +29,15 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: 'telekom/fonts/TeleNeoWeb', warn: true },
+        // do not include fonts files for whitelabel build
+        process.env.WHITELABEL
+          ? null
+          : { src: 'telekom/fonts/TeleNeoWeb', warn: true },
+        // index file with icon information, useful for docs
         { src: 'components/icons/scale-icons.json', warn: true },
-      ],
+        // do not publish the telekom/ brand assets folder (in dist/collections/)
+        { src: '.npmignore', warn: true },
+      ].filter(x => x !== null),
     },
     {
       type: 'www',
