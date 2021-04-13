@@ -23,7 +23,9 @@ const svgo = new SVGO({
   plugins: [{ removeViewBox: false }, { removeXMLNS: true }],
 });
 
-const INPUT_GLOB = './src/telekom/icons/**/*.svg';
+const INPUT_GLOB = process.env.WHITELABEL
+  ? './src/icons/**/*.svg'
+  : './src/telekom/icons/**/*.svg';
 const OUTPUT_PATH = './src/components/icons';
 const ICON_TEMPLATE_PATH = './scripts/icon-component.hbs';
 // const SET_TEMPLATE_PATH = './scripts/set.hbs';
@@ -44,7 +46,9 @@ async function main() {
       const item = await svgo.optimize(file);
 
       const state = path.basename(filepath, EXT);
-      const cleanPath = path.dirname(filepath).replace(INPUT_GLOB.replace('**/*.svg', ''), '');
+      const cleanPath = path
+        .dirname(filepath)
+        .replace(INPUT_GLOB.replace('**/*.svg', ''), '');
       const pathParts = cleanPath.split('/');
       const key = cleanPath.replace(/\//gi, '-');
       const category = pathParts[0];
@@ -85,6 +89,7 @@ async function main() {
         default: toHTML(adaptTree(parse(defaultItem.data))),
         selected: toHTML(adaptTree(parse(selectedItem.data))),
       },
+      viewBox: getViewBox(parse(defaultItem.data)),
     };
   });
 
@@ -135,12 +140,19 @@ async function main() {
   }); */
 
   // HAST https://github.com/syntax-tree/hast
+  function getViewBox(tree) {
+    return tree.children[0].properties.viewBox;
+  }
   function adaptTree(tree) {
     // skip <svg> root
     const { children } = tree.children[0];
     // remove `fill` attributes
     const removeFillAttr = (node) => {
-      if (node.tagName === 'path' && node.properties.fill != null) {
+      if (
+        node.tagName === 'path' &&
+        node.properties.fill != null &&
+        node.properties.fill !== 'none'
+      ) {
         delete node.properties.fill;
       }
       return node;

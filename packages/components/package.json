@@ -35,7 +35,8 @@
     "develop": "stencil build --docs --watch",
     "storybook": "start-storybook -p 6006 -s ./build",
     "build-storybook": "build-storybook -s ./build",
-    "generate-icons": "node ./scripts/generate-icons.js"
+    "generate-icons": "node ./scripts/generate-icons.js",
+    "postgenerate-icons": "prettier --write \"*.ts\" \"src/components/icons/**/*.tsx\""
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
