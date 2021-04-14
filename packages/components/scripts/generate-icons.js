@@ -141,7 +141,7 @@ async function main() {
 
   // HAST https://github.com/syntax-tree/hast
   function getViewBox(tree) {
-    return tree.children[0].properties.viewBox;
+    return tree.children[0].properties.viewBox || '0 0 24 24';
   }
   function adaptTree(tree) {
     // skip <svg> root
