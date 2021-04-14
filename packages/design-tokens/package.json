@@ -11,9 +11,10 @@
     "src/"
   ],
   "scripts": {
-    "build": "node ./scripts/build.js",
+    "generate": "node ./scripts/build.js",
+    "postgenerate": "yarn format",
     "format": "prettier --write \"**/*.js\" \"!**/*.d.ts\"",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run generate"
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",

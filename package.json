@@ -13,7 +13,7 @@
         "build:components": "yarn workspace @scaleds/components-telekom build",
         "watch:components": "yarn workspace @scaleds/components-telekom start",
         "bootstrap": "lerna bootstrap",
-        "postbootstrap": "yarn workspace @scaleds/design-tokens-telekom build",
+        "postbootstrap": "lerna run generate",
         "test": "lerna run test --scope @scaleds/components-telekom",
         "new-version": "lerna version --conventional-commits --no-push",
         "force-version": "lerna version --conventional-commits --force-publish --no-push"

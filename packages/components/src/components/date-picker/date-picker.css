@@ -5,7 +5,7 @@ duet-date-picker {
   --duet-font: var(--scl-font-family-sans);
   --duet-font-normal: var(--scl-font-weight-regular);
   --duet-font-bold: var(--scl-font-weight-medium);
-  --duet-color-placeholder: var(--scl-color-grey, #666666);
+  --duet-color-placeholder: var(--scl-color-grey-60);
   --duet-radius: var(--scl-radius-4);
 
   --duet-color-text-active: var(--scl-color-white, #ffffff);
