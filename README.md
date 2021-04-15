@@ -1,33 +1,32 @@
 ![Scale The Telekom Digital Design System](assets/scale-banner.png)
+Scale is the Telekom Digital Design System for products and experiences. It helps you build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
 
-Scale is the Telekom digital design system for products and experiences. Build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
+The Scale UI components are customizable and written in `TypeScript`. Simply replace the default `theme` if you want to represent the corporate identity of a dedicated brand.
 
-The library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
-
-[![Scale badge](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667)](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667) [![GitHub License](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub code size in bytes](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub repo size](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)
+[![Scale badge](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667)](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667) [![GitHub License](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)
 
 # Welcome to Scale
 
-Access the [complete documentation of Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+Access the [comprehensive documentation of Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
 
 ## Setup with NPM
 
-Install the Scale component library in your project with npm or yarn:
+Install the Scale component library in your project with NPM or Yarn:
 
 ```
 npm install @scaleds/components-telekom
 ```
 
-Notice the Telekom Brand assets Logos, Magenta, Typeface and Icons as well as the Footer and Header Components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
+Please note that the Telekom brand assets, logos, magenta, typeface and icons as well as the footer and header components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
 
 **MIT Version**
-We provide a package for the open source community. The Scale Default Package uses a neutral theme and is fully covered by MIT license.
+We provide a package for the open-source community. The Scale default package uses a neutral theme and is fully covered by the MIT license.
 
 ```
 npm install @scaleds/components
 ```
 
-To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and the design tokens.
+To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and design tokens.
 
 ### Plain HTML
 
@@ -92,7 +91,7 @@ applyPolyfills().then(() => {
 | @scaleds/components-vue-telekom     | Component proxies for Vue     |
 | @scaleds/components-angular-telekom | Component proxies for Angular |
 
-**NPM Packages MIT version**
+**MIT Version**
 
 | Package Name                | Description                   |
 | --------------------------- | ----------------------------- |
@@ -115,6 +114,4 @@ applyPolyfills().then(() => {
 
 ---
 
-[Find more Documentation on Storybook](https://www.brand-design.telekom.com/scale/)
-
-[Find Scale on GitHub](https://github.com/telekom/scale)
+[Find our comprehensive documentation on Storybook](https://www.brand-design.telekom.com/scale/)
