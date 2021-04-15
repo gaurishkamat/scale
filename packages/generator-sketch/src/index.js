@@ -228,7 +228,14 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   const styleMap = new Map();
   const styleObjects = new Map();
   function createSymbolOverrides(symbol, symbolVariantName, symbolMaster=symbol, iconInstance=symbol) {
-    if (symbol.name === 'Icon') iconInstance = symbol;
+    if (symbol.name === 'Icon') {
+      iconInstance = symbol;
+      symbolMaster.overrideProperties.push({
+        "_class": "MSImmutableOverrideProperty",
+        "canOverride": false,
+        "overrideName": `${iconInstance.do_objectID}_fillColor`
+      });
+    }
     const keys = Object.keys(symbol);
     for (let i = 0 ; i < keys.length; i++) {
       const key = keys[i];
@@ -262,40 +269,31 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           }
           if (differs) {
             // console.log('style override', JSON.stringify(override, null, 4));
-            if (!symbol.sharedStyleID && symbol.name !== 'Background' && !/^border/.test(symbol.name)) {
+            if (!symbol.sharedStyleID && symbol.name !== 'Background' && symbol.name !== 'Border' && !/^border/.test(symbol.name)) {
               var styleKey = makeStyleKey(override);
               if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
                 symbol.name = 'Icon Color';
               }
-              if (styleMap.has(styleKey)) {
-                if (symbol.name !== 'Icon Color')
+              // Make a shared style for the SymbolMaster
+              if (symbol.name !== 'Icon Color') {
+                if (styleMap.has(styleKey)) {
                   symbol.sharedStyleID = styleMap.get(styleKey);
-                symbol[key] = {
-                  ...styleObjects.get(styleKey),
-                  do_objectID: symbol.do_objectID,
-                };
-              } else {
-                // Make a shared style for the SymbolMaster
-                const sharedStyle = new SharedStyle(null, {
-                  name: makeStyleName(override),
-                  do_objectID: styleKey,
-                  _class: 'sharedStyle',
-                  value: symbolValue
-                });
-                sketch.addLayerStyle(sharedStyle);
-                if (symbol.name !== 'Icon Color') {
-                  symbol.sharedStyleID = sharedStyle.do_objectID;
+                  symbol[key] = {
+                    ...styleObjects.get(styleKey),
+                    do_objectID: symbol.do_objectID,
+                  };
                 } else {
-                  // add overrideProperties
-                  symbolMaster.overrideProperties.push({
-                    "_class": "MSImmutableOverrideProperty",
-                    "canOverride": false,
-                    "overrideName": `${iconInstance.do_objectID}_fillColor`
+                  const sharedStyle = new SharedStyle(null, {
+                    name: makeStyleName(override),
+                    do_objectID: styleKey,
+                    _class: 'sharedStyle',
+                    value: symbolValue
                   });
-                  console.log(symbolMaster.name, iconInstance.name, symbolMaster.overrideProperties);
+                  sketch.addLayerStyle(sharedStyle);
+                  symbol.sharedStyleID = sharedStyle.do_objectID;
+                  styleMap.set(styleKey, symbol.sharedStyleID);
+                  styleObjects.set(styleKey, {...symbol[key]});
                 }
-                styleMap.set(styleKey, symbol.sharedStyleID);
-                styleObjects.set(styleKey, symbol[key]);
               }
             }
           }
@@ -350,39 +348,30 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
               var styleKey = makeStyleKey(override);
               if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
                 symbol.name = 'Icon Color';
-                symbol.canOverride = false;
               }
-              if (styleMap.has(styleKey)) {
-                // Use a pre-existing style
-                sharedStyle = {do_objectID: styleMap.get(styleKey)};
-                if (symbol.name !== 'Icon Color')
-                  symbol.sharedStyleID = sharedStyle.do_objectID;
-                symbol[key] = {
-                  ...styleObjects.get(styleKey),
-                  do_objectID: symbol.do_objectID,
-                };
-              } else {
-                // Make a shared style for the SymbolMaster
-                sharedStyle = new SharedStyle(null, {
-                  name: makeStyleName(symbolValue),
-                  do_objectID: styleKey,
-                  _class: 'sharedStyle',
-                  value: symbolValue
-                });
-                sketch.addLayerStyle(sharedStyle);
-                if (symbol.name !== 'Icon Color') {
-                  symbol.sharedStyleID = sharedStyle.do_objectID;
+              if (symbol.name !== 'Icon Color') {
+                if (styleMap.has(styleKey)) {
+                  // Use a pre-existing style
+                  sharedStyle = {do_objectID: styleMap.get(styleKey)};
+                  if (symbol.name !== 'Icon Color')
+                    symbol.sharedStyleID = sharedStyle.do_objectID;
+                  symbol[key] = {
+                    ...styleObjects.get(styleKey),
+                    do_objectID: symbol.do_objectID,
+                  };
                 } else {
-                  // add overrideProperties
-                  symbolMaster.overrideProperties.push({
-                    "_class": "MSImmutableOverrideProperty",
-                    "canOverride": false,
-                    "overrideName": `${iconInstance.do_objectID}_fillColor`
+                  // Make a shared style for the SymbolMaster
+                  sharedStyle = new SharedStyle(null, {
+                    name: makeStyleName(symbolValue),
+                    do_objectID: styleKey,
+                    _class: 'sharedStyle',
+                    value: symbolValue
                   });
-                  console.log(symbolMaster.name, symbolMaster.overrideProperties);
+                  sketch.addLayerStyle(sharedStyle);
+                  symbol.sharedStyleID = sharedStyle.do_objectID;
+                  styleMap.set(styleKey, sharedStyle.do_objectID);
+                  styleObjects.set(styleKey, symbol[key]);
                 }
-                styleMap.set(styleKey, sharedStyle.do_objectID);
-                styleObjects.set(styleKey, symbol[key]);
               }
             }
             // Style key matching
