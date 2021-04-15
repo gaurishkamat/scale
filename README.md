@@ -20,6 +20,7 @@ npm install @scaleds/components-telekom
 Please note that the Telekom brand assets, logos, magenta, typeface and icons as well as the footer and header components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
 
 **MIT Version**
+
 We provide a package for the open-source community. The Scale default package uses a neutral theme and is fully covered by the MIT license.
 
 ```
