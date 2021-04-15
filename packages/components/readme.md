@@ -120,19 +120,19 @@ applyPolyfills().then(() => {
 
 ## Local development
 
-## get dependencies
+## Get dependencies
 
 ```bash
 yarn
 ```
 
-## build assets
+## Build assets
 
 ```bash
 yarn build
 ```
 
-## start development mode
+## Start development mode
 
 ```bash
 yarn start
