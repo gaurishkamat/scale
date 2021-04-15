@@ -148,7 +148,7 @@ tokens[TYPE_VARIANT] = {
 /* COLOR */
 
 const palette = {
-  magenta: Color('#E20074'),
+  primary: Color('#E20074'),
   black: Color('#000000'),
   white: Color('#FFFFFF'),
   grey0: Color('#F2F2F2'),
@@ -288,7 +288,6 @@ const palette = {
 tokens[COLOR] = {
   DEFAULT: {
     ...palette,
-    primary: palette.magenta,
     primaryHover: Color('#F90984'),
     primaryActive: Color('#CB0068'),
     focus: palette.blue50,
