@@ -1,7 +1,7 @@
 scale :- a javascript library offering a set of customizable UI components written in JavaScript / TypeScript.
 
-(c) 2019 Egor Kirpichev, Deutsche Telekom AG
+(c) 2021 Egor Kirpichev, Deutsche Telekom AG
 
-This file is licensed under the MIT license. For details
-see the file license on the top level of the repository.
-
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at https://mozilla.org/MPL/2.0/.
