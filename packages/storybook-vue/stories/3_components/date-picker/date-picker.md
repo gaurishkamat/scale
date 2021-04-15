@@ -49,4 +49,4 @@ This component is still in the beta phase. When testing it, keep in mind that it
 <a href="?path=/usage/components-text-field--standard">Input, </a>
 <a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
 <a href="?path=/usage/components-slider--standard">Slider, </a>
-<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-radio-button--standard">Radio Button</a>

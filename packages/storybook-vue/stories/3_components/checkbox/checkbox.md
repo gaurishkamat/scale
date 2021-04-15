@@ -55,4 +55,4 @@ When checking a box is required, use an asterisk (*) in the text label.
 
 <a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
 <a href="?path=/usage/components-switch--standard">Switch, </a>
-<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-radio-button--standard">Radio Button</a>

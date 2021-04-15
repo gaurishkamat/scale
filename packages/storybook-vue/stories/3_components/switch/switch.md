@@ -15,7 +15,7 @@ A switch offers two mutually exclusive states (on/off, yes/no). It always has a 
 
 Use a switch whenever the user may want to immediately activate or deactivate something. It is commonly used as an on/off switch, e.g., to control preferences.
 
-## When not to use
+### When not to use
 
 Use radio buttons or a single checkbox if
 
@@ -32,4 +32,4 @@ Clearly label the switch and keep it short. For some use cases, a single noun pr
 
 <a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
 <a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="?path=/usage/components-radiobutton--standard">Radio Button</a>
+<a href="?path=/usage/components-radio-button--standard">Radio Button</a>

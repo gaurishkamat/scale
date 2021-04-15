@@ -7,7 +7,7 @@ Mit Hilfe eines Switch können Nutzer*innen eine Option direkt ein- oder ausscha
 
 ## Allgemein
 
-AEin Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/aus oder ja/nein). Er hat immer einen Default-Wert. Der magentafarbene, flächige Switch zeigt an, dass er eingeschaltet ist, während ein Outline-Switch anzeigt, dass er ausgeschaltet ist.
+Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/aus oder ja/nein). Er hat immer einen Default-Wert. Der magentafarbene, flächige Switch zeigt an, dass er eingeschaltet ist, während ein Outline-Switch anzeigt, dass er ausgeschaltet ist.
 
 ![Image Name](assets/3_components/switch/switch.png)
 
@@ -15,7 +15,7 @@ AEin Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/
 
 * Nutzer*innen etwas sofort aktivieren oder deaktivieren möchten, zum Beispiel als Ein-Aus-Schalter oder um Einstellungen vorzunehmen.
 
-## Verwende besser keine Switches, wenn 
+### Verwende besser keine Switches, wenn 
 
 * die Nutzer*innen die Änderung über Speichern oder Absenden bestätigen müssen oder
 * ein unmittelbares Ergebnis nicht möglich ist (bei beidem eigenen sich Radio-Buttons oder Checkboxen). 
@@ -30,4 +30,4 @@ Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eign
 
 <a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
 <a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="?path=/usage/components-radiobutton--standard">Radio-Button</a>
+<a href="?path=/usage/components-radio-button--standard">Radio-Button</a>

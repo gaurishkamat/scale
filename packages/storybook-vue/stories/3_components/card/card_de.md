@@ -51,7 +51,7 @@ Dient die Card als Vorschau und Einstiegspunkt zu ausführlicheren Informationen
 
 ### Card-Padding
 
-Standardmäßig hat eine Card ein Padding, an dem du die Typografie und visuellen Elemente ausrichten kannst. Wenn du Bilder im Anschnitt platzieren möchtest, schalte das Padding aus. 
+Standardmäßig hat eine Card ein Padding, an dem du die Typografie und visuellen Elemente ausrichten kannst. Bilder darfst du im Anschnitt platzieren.
 
 ![Image Name](assets/3_components/card/cards-padding.png)
 

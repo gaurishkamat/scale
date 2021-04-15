@@ -54,7 +54,7 @@ The headline should be clickable if the card serves as a preview and point of en
 
 ### Card Padding
 
-By default, a card has padding to align the typography and visual elements. If you want to place images in the bleed, turn the padding off.
+By default, a card has padding to align the typography and visual elements. If you want, you can place images in the bleed.
 
 ![Image Name](assets/3_components/card/cards-padding.png)
 
