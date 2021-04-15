@@ -120,12 +120,12 @@
     "de": "Kontakt"
   },
   {
-    "elementSelector": "#community-contributing-to-scale--page",
+    "elementSelector": "#contact-contributing-to-scale--page",
     "en": "Contributing to Scale",
     "de": "An Scale mitwirken"
   },
   {
-    "elementSelector": "#community-your-feedback--page",
+    "elementSelector": "#contact-your-feedback--page",
     "en": "Your Feedback",
     "de": "Feedback"
   }
