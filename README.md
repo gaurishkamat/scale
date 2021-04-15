@@ -1,70 +1,96 @@
-![Scale](assets/scale-banner-ascii-light.png)
+![Scale The Telekom Digital Design System](assets/scale-banner.png)
 
-The `scale` library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
+Scale is the Telekom digital design system for products and experiences. Build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
 
-![Scale badge](https://img.shields.io/badge/telekom-scale-%23e20074.svg) ![GitHub License](https://img.shields.io/github/license/telekom/scale.svg?style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/telekom/scale.svg?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/telekom/scale.svg?style=flat-square)
+The library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
 
-## Scale Monorepo
+[![Scale badge](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667)](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667) [![GitHub License](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub code size in bytes](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub repo size](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)
 
-### Setup
+# Welcome to Scale
 
-This repository uses `lerna` and `typescript`
+Access the [complete documentation of Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
 
-#### Package overview
-|Package name       |Description|
-|---                |---|
-|components         |Stencil components|
-|components-react   |Component binding for React (auto-generated)|
-|config             |Shared configuration across packages|
-|nuxt-module        |Plugin to enable SSR for Nuxt apps|
+## Setup with NPM
 
-### Running locally
+Install the Scale component library in your project with npm or yarn:
 
-#### 1. Clone this repository to a local folder of your choice
+```
+npm install @scaleds/components-telekom
+```
+
+Notice the Telekom Brand assets Logos, Magenta, Typeface and Icons as well as the Footer and Header Components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
+
+**MIT Version**
+We provide a package for the open source community. The Scale Default Package uses a neutral theme and is fully covered by MIT license.
+
+```
+npm install @scaleds/components
+```
+
+To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and the design tokens.
+
+### Plain HTML
 
 ```bash
-cd path-to/folder-name
-git clone git@github.com:telekom/scale.git
-cd scale
+<link rel="stylesheet" href="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.js"></script>
 ```
 
-#### 2. Install dependencies
-
-Before you install any packages, make sure you are logged into your npm account locally.
-You will also need to be part of the scaleds organization on npm.
-(if you need an invitation please send an email to Egor egor.kirpichev@telekom.de)
-
-To login to npm use the following command and follow the instructions.
-```
-npm login
-```
-
-This repository uses `yarn lerna`, for the symlinks to work correctly we use `yarn` in favour of `npm`
+**MIT Version**
 
 ```bash
-yarn bootstrap
+<link rel="stylesheet" href="node_modules/@scaleds/components/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/components/dist/scale-components/scale-components.js"></script>
 ```
 
-#### 3. Build packages
+####
+
+### With a bundler or ES modules
 
 ```bash
-# build
-yarn build
+import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/components-telekom/loader";
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
 ```
 
-### Contributing
+**MIT Version**
 
-#### Pull requests
+```bash
+import "@scaleds/components/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/components/loader";
 
-When opening a new PR it is advised to branch off the latest `master` branch. We loosely follow the `Git flow` standards for branch naming e.g. `feat|feature`, `fix`, `chore`, `test` etc. All pull requests are then merged into `master` and released through the `CI` pipeline via the `release` branch.
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+```
 
-#### Tests
+### Package overview
 
-When developing new features or components it is required to provide `unit tests` and `end to end` tests if appropriate and aim at 100% test coverage. In addition we use `screenshot tests` for components via `jest-image-snapshot`. Stencil uses `Jest` as the testing framework, please take a look at the existing components as an example or visit the official documentation:
+| Package Name       | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| components         | Stencil components                             |
+| design-token       | Design tokens                                  |
+| components-react   | Component proxies for React (auto-generated)   |
+| components-vue     | Component proxies for Vue (auto-generated)     |
+| components-angular | Component proxies for Angular (auto-generated) |
 
-- https://stenciljs.com/docs/testing-overview
-- https://jestjs.io/
+## Frameworks
 
-#### Development Tooling
+- [Scale and Vue](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-vue--page)
+- [Scale and Angular](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-angular--page)
+- [Scale and React](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-react--page)
 
-We strongly recommend you use the `VSCode text editor` since most of our code is written in `Typescript` and it offers amazing support for the language.
+**MIT Version**
+
+- [Vue Boilerplate](https://github.com/telekom/scale/examples/boilerplate-vue)
+- [Angular Boilerplate](https://github.com/telekom/scale/examples/boilerplate-angular)
+- [React Boilerplate](https://github.com/telekom/scale/examples/boilerplate-react)
+
+---
+
+[Find more Documentation on Storybook](https://www.brand-design.telekom.com/scale/)
+
+[Find Scale on GitHub](https://github.com/telekom/scale)

@@ -1,42 +1,149 @@
-# Scale Components
+![Scale The Telekom Digital Design System](../../assets/scale-banner.png)
+
+Scale is the Telekom digital design system for products and experiences. Build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
+
+The library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
+
+[![Scale badge](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667)](https://user-content.gitlab-static.net/376a8c0895adde2b9c040c2637e0c073fe366f0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74656c656b6f6d2d7363616c652d2532336532303037342e737667) [![GitHub License](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/c157b3f97237128f7b5ee42d0364696ed37c1eae/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub code size in bytes](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/28a77f2ed685e83585790e174c938ea3fcfb9ec8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f636f64652d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265) [![GitHub repo size](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)](https://user-content.gitlab-static.net/89327ec0370bd36e34419f0f179378a8bf2c101a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7265706f2d73697a652f74656c656b6f6d2f7363616c652e7376673f7374796c653d666c61742d737175617265)
+
+# Welcome to Scale
+
+Access the [complete documentation of Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+
+## Setup with NPM
+
+Install the Scale component library in your project with npm or yarn:
+
+```
+npm install @scaleds/components-telekom
+```
+
+Notice the Telekom Brand assets Logos, Magenta, Typeface and Icons as well as the Footer and Header Components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
+
+**MIT Version**
+We provide a package for the open source community. The Scale Default Package uses a neutral theme and is fully covered by MIT license.
+
+```
+npm install @scaleds/components
+```
+
+To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and the design tokens.
+
+### Plain HTML
+
+```bash
+<link rel="stylesheet" href="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.js"></script>
+```
+
+**MIT Version**
+
+```bash
+<link rel="stylesheet" href="node_modules/@scaleds/components/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/components/dist/scale-components/scale-components.js"></script>
+```
+
+####
+
+### With a bundler or ES modules
+
+```bash
+import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/components-telekom/loader";
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+```
+
+**MIT Version**
+
+```bash
+import "@scaleds/components/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/components/loader";
+
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+```
+
+### Package overview
+
+| Package Name       | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| components         | Stencil components                             |
+| design-token       | Design tokens                                  |
+| components-react   | Component proxies for React (auto-generated)   |
+| components-vue     | Component proxies for Vue (auto-generated)     |
+| components-angular | Component proxies for Angular (auto-generated) |
+
+## Frameworks
+
+- [Scale and Vue](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-vue--page)
+- [Scale and Angular](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-angular--page)
+- [Scale and React](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-react--page)
+
+**MIT Version**
+
+- [Vue Boilerplate](https://github.com/telekom/scale/examples/boilerplate-vue)
+- [Angular Boilerplate](https://github.com/telekom/scale/examples/boilerplate-angular)
+- [React Boilerplate](https://github.com/telekom/scale/examples/boilerplate-react)
+
+---
+
+[Find more Documentation on Storybook](https://www.brand-design.telekom.com/scale/)
+
+[Find Scale on GitHub](https://github.com/telekom/scale)
 
 ## Local development
 
+## get dependencies
+
 ```bash
-# get dependencies
 yarn
+```
 
-# build assets
+## build assets
+
+```bash
 yarn build
+```
 
-# start development mode
+## start development mode
+
+```bash
 yarn start
+```
 
 ## Component development
 
-### Useful commands
+## Useful commands
+
 See the `scripts` section inside `package.json` for a list of all available commands
 
-#### Testing
-|Command|Description|
-|---|---|
-|`yarn test --spec` |Run all tests|
-|`yarn test --spec component-name` |Run all tests for a specific component|
-|`yarn test --spec --watch` |Run all tests in watch mode|
-|`yarn test --spec -u`|Run all tests and update snapshots|
-|`yarn test --spec--coverage`|Run all tests and show coverage|
-|`yarn test --e2e`|Run all visual tests|
+### Testing
+
+| Command                           | Description                            |
+| --------------------------------- | -------------------------------------- |
+| `yarn test --spec`                | Run all tests                          |
+| `yarn test --spec component-name` | Run all tests for a specific component |
+| `yarn test --spec --watch`        | Run all tests in watch mode            |
+| `yarn test --spec -u`             | Run all tests and update snapshots     |
+| `yarn test --spec--coverage`      | Run all tests and show coverage        |
+| `yarn test --e2e`                 | Run all visual tests                   |
 
 > Some test commands can be combined e.g. `yarn test -u --coverage`
 
-#### Format & lint
-|Command|Description|
-|---|---|
-|`yarn format` |Run formatter on all supported files|
-|`yarn lint` |Run linter for all supported files|
+### Format & lint
 
-#### Before you push
-In order to satisfy the `CI` pipeline it is advised to run some scripts before pushing your changes to remote. Here some crutial ones:
+| Command       | Description                          |
+| ------------- | ------------------------------------ |
+| `yarn format` | Run formatter on all supported files |
+| `yarn lint`   | Run linter for all supported files   |
+
+### Before you push
+
+In order to satisfy the `CI` pipeline it is advised to run some scripts before pushing your changes to remote. Here some crucial ones:
 
 `yarn format`
 `yarn lint`
@@ -44,69 +151,8 @@ In order to satisfy the `CI` pipeline it is advised to run some scripts before p
 
 > If any of the above commands throw an error, please fix the errors before pushing to remote
 
-### Component blueprint
-
-When building a new component it may be helpful to rely on this blueprint to get started
-
-`components/src/example/example.tsx`
-
-```typescript
-import { Component, h, Prop, Listen, State, Host } from '@stencil/core';
-import classNames from 'classnames';
-import { StyleSheet } from 'jss';
-import { CssClassMap } from '../../utils/utils';
-import { CssInJs } from '../../utils/css-in-js';
-import Base from '../../utils/base-interface';
-import { styles } from './example.styles';
-
-@Component({
-  tag: 'example',
-})
-export class Example implements Base {
-  stylesheet: StyleSheet;
-  @CssInJs('Example', styles)
-  @Prop() styles?: StyleSheet;
-  @Prop() customClass?: string = '';
-
-  componentWillLoad() {}
-  componentWillUpdate() {}
-  componentDidUnload() {}
-
-  render() {
-    return (
-      <Host>
-        <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()}>
-          Content goes here...
-        </div>
-      </Host>
-    );
-  }
-
-  getCssClassMap(): CssClassMap {
-    const { classes } = this.stylesheet;
-    return classNames(
-      classes.example,
-      this.customClass && this.customClass,
-    );
-  }
-}
-```
-
-`components/src/example/example.styles.ts`
-
-```typescript
-import { JssStyle } from 'jss';
-
-export const styles: JssStyle = {
-  'example': {
-    background: '#fff',
-    color: '#333'
-  }
-}
-```
-
 ## Adding the components to Storybook
+
 - Create new folder in packages/storybook-vue/stories/3_components
 - Create new dummy Vue component enlisting all props and events
 - Create stories
@@ -115,193 +161,8 @@ export const styles: JssStyle = {
 - Restart storybook to test
 
 ## Adding visual snapshot tests
+
 - Switch to packages/visual-tests
 - Add the test for the new component - take a previous test as an example
 - Run the tests, check if the new snapshot looks as expected
 - Check in the new snapshot image to git
-
-## Theming
-
-Scale uses `css-in-js` and particular [`jss`](http://jss.com) as it's styling solution. 
-
-### Default theme
-The default theme can be found under `src/theme/defaultTheme.ts`
-
-## Using a custom theme
-
-### Using the theme in a HTML file
-
-```html
-<html>
-    ...
-    <!-- Include theme helper  -->
-    <script src="/build/theme/theme.iife.js"></script>
-
-    <!-- Include components  -->
-    <script type="module" src="/build/scale-components.esm.js"></script>
-    <script nomodule src="/build/scale-components.js"></script>
-    <script>
-      // Applying changes to theme
-      scale.useTheme({
-        shape: {
-          borderRadius: 24
-        },
-        components: {
-          Button: {
-            button: {
-              background: 'purple',
-            }
-          }
-        }
-      })
-    </script>
-    <body>
-      <h3 id="title">Button</h3>
-      <scale-button>Click!</scale-button>
-    </body>
-    <script>
-      // Getting current theme values
-      const { colors } = scale.getTheme()
-      
-      document.getElementById('title').style.color = colors.primary.default
-    </script>
-</html>
-```
-
-### Using the theme in a React app
-
-Modifying existing theme, preferrably in `index.(jsx|tsx)`
-
-```tsx
-const { useTheme } = require('@scaleds/components-telekom/dist/theme')
-
-useTheme({
-  shape: {
-    borderRadius: 24
-  },
-  components: {
-    Button: {
-      button: {
-        background: 'purple',
-      }
-    }
-  }
-})
-```
-
-Using current theme values 
-
-```tsx
-import React from 'react';
-import { ScaleButton } from '@scaleds/components-react';
-
-const { colors } = require('@scaleds/components-telekom/dist/theme').getTheme()
-
-const App: React.FC = () => (
-  <div className="app">
-    <h3 style={{ color: colors.primary.default }}>
-      Button
-    </h3>
-    <ScaleButton variant="primary">Click!</ScaleButton>
-  </div>
-);
-```
-
-### Using the theme in a Angular app
-
-Modifying existing theme, preferrably in `main.ts`
-
-```tsx
-const { useTheme } = require('@scaleds/components-telekom/dist/theme')
-
-useTheme({
-  shape: {
-    borderRadius: 24
-  },
-  components: {
-    Button: {
-      button: {
-        background: 'purple',
-      }
-    }
-  }
-})
-```
-
-Using current theme values 
-
-`app.component.ts`
-
-```ts
-import { Component } from '@angular/core';
-const { colors } = require('@scaleds/components-telekom/dist/theme').getTheme()
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'boilerplate-angular';
-  colors = colors
-}
-
-```
-
-`app.component.html`
-
-```html
-<div>
-    <h3 style="color: {{colors.primary.default}}">Button</h3>
-    <scale-button>Click!</scale-button>
-</div>
-```
-
-### Using the theme in a Vue app
-
-Modifying existing theme, preferrably in `main.ts`
-
-```tsx
-const { useTheme } = require('@scaleds/components-telekom/dist/theme.esm.js')
-
-useTheme({
-  shape: {
-    borderRadius: 24
-  },
-  components: {
-    Button: {
-      button: {
-        background: 'purple',
-      }
-    }
-  }
-})
-```
-
-Using current theme values 
-
-`App.vue`
-
-```ts
-<template>
-  <div>
-    <h3 v-bind:style="`color: ${colors.primary.default}`">
-      Button
-    </h3>
-    <scale-button>Click!</scale-button>
-  </div>
-</template>
-
-<script lang="ts">
-import Vue from "vue";
-const { colors } = require('@scaleds/components-telekom/dist/theme.esm.js').getTheme()
-
-export default Vue.extend({
-  name: "app",
-  data: () => ({
-    colors
-  })
-});
-</script>
-
-```
