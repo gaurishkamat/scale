@@ -1,7 +1,7 @@
 import { create } from "@storybook/theming/create";
 import { color } from "../public/design-tokens-telekom";
 
-const PRIMARY = color.magenta;
+const PRIMARY = color.primary;
 const WHITE = color.white;
 const TEXT = color.text.standard;
 const GREY = color.grey0;
