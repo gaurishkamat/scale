@@ -1,10 +1,10 @@
 @import '~@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css';
 
 :root {
-  --scl-color-primary: #5300FF;
+  --scl-color-primary: #5300ff;
   --scl-color-primary-hue: 255;
-  --scl-color-primary-hover: #7633FF;
-  --scl-color-primary-active: #5E29CC;
+  --scl-color-primary-hover: #7633ff;
+  --scl-color-primary-active: #5e29cc;
 
   --scl-font-family-sans: sans-serif;
   --scl-font-variant-body-family: sans-serif;
