@@ -67,15 +67,39 @@ applyPolyfills().then(() => {
 });
 ```
 
-### Package overview
 
-| Package Name       | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| components         | Stencil components                             |
-| design-token       | Design tokens                                  |
-| components-react   | Component proxies for React (auto-generated)   |
-| components-vue     | Component proxies for Vue (auto-generated)     |
-| components-angular | Component proxies for Angular (auto-generated) |
+### Monorepo Packages Overview
+
+| Package Name       | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| components         | Stencil components                                         |
+| components-angular | Component proxies for Angular (auto-generated)             |
+| components-react   | Component proxies for React (auto-generated)               |
+| components-sketch  | Component templates for Sketch generation (auto-generated) |
+| components-vue     | Component proxies for Vue (auto-generated)                 |
+| design-token       | Design tokens                                              |
+| generator-sketch   | Sketch generator                                           |
+| html-to-sketch     | Component template Sketch conversion utilities             |
+| storybook-vue      | Our Storybook                                              |
+| visual-tests       | Visual Snapshot Testing                                    |
+
+### NPM Packages
+
+| Package Name                        | Description                   |
+| ----------------------------------- | ----------------------------- |
+| @scaleds/components-telekom         | Stencil components            |
+| @scaleds/components-react-telekom   | Component proxies for React   |
+| @scaleds/components-vue-telekom     | Component proxies for Vue     |
+| @scaleds/components-angular-telekom | Component proxies for Angular |
+
+**NPM Packages MIT version**
+
+| Package Name                | Description                   |
+| --------------------------- | ----------------------------- |
+| @scaleds/components         | Stencil components            |
+| @scaleds/components-react   | Component proxies for React   |
+| @scaleds/components-vue     | Component proxies for Vue     |
+| @scaleds/components-angular | Component proxies for Angular |
 
 ## Frameworks
 
