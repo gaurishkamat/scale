@@ -20,6 +20,8 @@ const {
   SharedStyle,
   SymbolMaster,
   SymbolInstance,
+  Color,
+  Fill,
 } = require("sketch-constructor");
 const fs = require("fs");
 const path = require("path");
@@ -32,6 +34,7 @@ const sqlite = require('sqlite');
 const rssBuilder = require('./rss-builder');
 const config = require('./config');
 const colorConvert = require('color');
+const { node } = require("webpack");
 
 const documentName = process.argv[2] || "default";
 
@@ -53,7 +56,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         border.fillType, border.position, Math.floor(border.thickness * 100)
       ].join(",");
     });
-    const fills = (style.fills || []).filter(b => b.color.alpha > 0).map(fill => {
+    const fills = (style.fills || []).filter(b => b.color && b.color.alpha > 0).map(fill => {
       return [
         Math.round(fill.color.red * 255),
         Math.round(fill.color.green * 255),
@@ -227,188 +230,61 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
   const styleMap = new Map();
   const styleObjects = new Map();
-  function createSymbolOverrides(symbol, symbolVariantName, symbolMaster=symbol, iconInstance=symbol) {
-    if (symbol.name === 'Icon') {
-      iconInstance = symbol;
+  function createSymbolOverrides(node, symbolMaster=node, iconInstance=node) {
+    if (node.name === 'Icon') {
+      iconInstance = node;
       symbolMaster.overrideProperties.push({
         "_class": "MSImmutableOverrideProperty",
         "canOverride": false,
         "overrideName": `${iconInstance.do_objectID}_fillColor`
       });
     }
-    const keys = Object.keys(symbol);
-    for (let i = 0 ; i < keys.length; i++) {
-      const key = keys[i];
-      const symbolValue = symbol[key];
-      if (key === 'do_objectID') {
-        objectID = symbolValue;
+    node.layers?.forEach((nestedJson) => createSymbolOverrides(nestedJson, symbolMaster, iconInstance));
+  }
+
+  function findFillColor(node) {
+    if (node instanceof Array) {
+      for (var i = 0; i < node.length; i++) {
+        var c = findFillColor(node[i]);
+        if (c) return c;
       }
-      if (Array.isArray(symbolValue)) {
-        symbolValue.forEach((nestedJson, i) => createSymbolOverrides(nestedJson, symbolVariantName, symbolMaster, iconInstance));
-      } else if (!excludeKeys.has(key) && typeof symbolValue === 'string') {
-        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
-        // const overrideValue = {
-        //   "_class": "overrideValue",
-        //   "overrideName": `${objectID}_${key}Value`,
-        //   "value": jsonValue
-        // };
-        // instance.overrideValues.push(overrideValue);
-      } else if (typeof symbolValue === 'object') {
-        // If we're in style, do fill, borders and textStyle comparisons
-        // If they differ, create a new SharedStyle and assign it to the symbol instance.
-        if (key === 'style') {
-          let differs = false;
-          const override = {};
-          if (symbolValue.borders && symbolValue.borders.length > 0) {
-            differs = true;
-            override.borders = symbolValue.borders;
-          }
-          if (symbolValue.fills && symbolValue.fills.length > 0) {
-            differs = true;
-            override.fills = symbolValue.fills;
-          }
-          if (differs) {
-            // console.log('style override', JSON.stringify(override, null, 4));
-            if (!symbol.sharedStyleID && symbol.name !== 'Background' && symbol.name !== 'Border' && !/^border/.test(symbol.name)) {
-              var styleKey = makeStyleKey(override);
-              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
-                symbol.name = 'Icon Color';
-              }
-              // Make a shared style for the SymbolMaster
-              if (symbol.name !== 'Icon Color') {
-                if (styleMap.has(styleKey)) {
-                  symbol.sharedStyleID = styleMap.get(styleKey);
-                  symbol[key] = {
-                    ...styleObjects.get(styleKey),
-                    do_objectID: symbol.do_objectID,
-                  };
-                } else {
-                  const sharedStyle = new SharedStyle(null, {
-                    name: makeStyleName(override),
-                    do_objectID: styleKey,
-                    _class: 'sharedStyle',
-                    value: symbolValue
-                  });
-                  sketch.addLayerStyle(sharedStyle);
-                  symbol.sharedStyleID = sharedStyle.do_objectID;
-                  styleMap.set(styleKey, symbol.sharedStyleID);
-                  styleObjects.set(styleKey, {...symbol[key]});
-                }
-              }
-            }
-          }
-        }
-        createSymbolOverrides(symbolValue, symbolVariantName, symbolMaster, iconInstance);
+    } else if (typeof node === 'object') {
+      if (node.fills && node.fills[0] && node.fills[0].color) return node.fills[0].color;
+      for (var k in node) {
+        var c = findFillColor(node[k]);
+        if (c) return c;
       }
     }
   }
 
-  const excludeKeys = new Set(['_class', 'frame', 'contextSettings', 'attributedString', 'style', 'do_objectID', 'name', 'text']);
+  function extractIconFillOverrides(node, overrides=[]) {
+    if (node instanceof Array) {
+      for (var i = 0; i < node.length; i++) {
+        extractIconFillOverrides(node[i], overrides);
+      }
+    } else if (typeof node === 'object') {
+      if (node.overrideValues && node.name.startsWith('Icon')) {
+        overrides.push(...node.overrideValues);
+        node.overrideValues = [];
+      }
+      for (var k in node) {
+        extractIconFillOverrides(node[k], overrides);
+      }
+    }
+    return overrides;
+  }
+
   // Set instance frame size and overrides
-  function fillInstance(instance, symbol, json, objectID = '', symbolName, symbolVariantName, variantName, symbolMaster=symbol, iconInstance=symbol) {
-    const keys = Object.keys(json);
-    if (symbol.name === 'Icon') iconInstance = symbol;
-    for (let i = 0 ; i < keys.length; i++) {
-      const key = keys[i];
-      const symbolValue = symbol[key];
-      const jsonValue = json[key];
-      if (key === 'do_objectID') {
-        objectID = symbolValue;
-      }
-      if (Array.isArray(jsonValue)) {
-        if (symbolValue) {
-          jsonValue.forEach((nestedJson, i) => fillInstance(instance, symbolValue[i], nestedJson, objectID, symbolName, symbolVariantName, variantName, symbolMaster, iconInstance));
-        }
-      } else if (!excludeKeys.has(key) && typeof symbolValue === 'string' && symbolValue !== jsonValue) {
-        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
-        const overrideValue = {
-          "_class": "overrideValue",
-          "overrideName": `${objectID}_${key}Value`,
-          "value": jsonValue
-        };
-        instance.overrideValues.push(overrideValue);
-      } else if (typeof symbolValue === 'object') {
-        // If we're in style, do fill, borders and textStyle comparisons
-        // If they differ, create a new SharedStyle and assign it to the symbol instance.
-        if (key === 'style') {
-          let differs = false;
-          const override = {};
-          if (JSON.stringify(symbolValue.borders) !== JSON.stringify(jsonValue.borders)) {
-            differs = true;
-            override.borders = jsonValue.borders;
-          }
-          if (JSON.stringify(symbolValue.fills) !== JSON.stringify(jsonValue.fills)) {
-            differs = true;
-            override.fills = jsonValue.fills;
-          }
-          if (differs) {
-            // console.log('style override', JSON.stringify(override, null, 4));
-            let sharedStyle;
-            if (!symbol.sharedStyleID) {
-              var styleKey = makeStyleKey(override);
-              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
-                symbol.name = 'Icon Color';
-              }
-              if (symbol.name !== 'Icon Color') {
-                if (styleMap.has(styleKey)) {
-                  // Use a pre-existing style
-                  sharedStyle = {do_objectID: styleMap.get(styleKey)};
-                  if (symbol.name !== 'Icon Color')
-                    symbol.sharedStyleID = sharedStyle.do_objectID;
-                  symbol[key] = {
-                    ...styleObjects.get(styleKey),
-                    do_objectID: symbol.do_objectID,
-                  };
-                } else {
-                  // Make a shared style for the SymbolMaster
-                  sharedStyle = new SharedStyle(null, {
-                    name: makeStyleName(symbolValue),
-                    do_objectID: styleKey,
-                    _class: 'sharedStyle',
-                    value: symbolValue
-                  });
-                  sketch.addLayerStyle(sharedStyle);
-                  symbol.sharedStyleID = sharedStyle.do_objectID;
-                  styleMap.set(styleKey, sharedStyle.do_objectID);
-                  styleObjects.set(styleKey, symbol[key]);
-                }
-              }
-            }
-            // Style key matching
-            var styleKey = makeStyleKey(jsonValue);
-            if (styleMap.has(styleKey)) {
-              sharedStyle = {do_objectID: styleMap.get(styleKey)};
-            } else {
-              sharedStyle = new SharedStyle(null, {
-                name: makeStyleName(jsonValue),
-                do_objectID: styleKey,
-                _class: 'sharedStyle',
-                value: jsonValue
-              });
-              sketch.addLayerStyle(sharedStyle);
-              styleMap.set(styleKey, sharedStyle.do_objectID);
-              styleObjects.set(styleKey, instance[key]);
-            }
-            if (symbol.name !== 'Icon Color') {
-              const overrideValue = {
-                "_class": "overrideValue",
-                "overrideName": `${objectID}_layerStyle`,
-                "value": sharedStyle.do_objectID
-              };
-              instance.overrideValues.push(overrideValue);
-            }
-            instance[key] = {
-              ...styleObjects.get(styleKey),
-              do_objectID: instance.do_objectID,
-            };
-          }
-          if (differs) {
-            // console.log('symbol uses diff style', symbolVariantName, variantName);
-            continue;
-          }
-        }
-        fillInstance(instance, symbolValue, jsonValue, objectID, symbolName, symbolVariantName, variantName, symbolMaster, iconInstance);
-      }
+  function fillInstance(instance, masterNode, instanceNode, overrideValues, objectID = '', symbolMaster=masterNode, iconInstance=null) {
+    if (symbolMaster.name.startsWith('Icon')) {
+      const overrideValue = {
+        "_class": "overrideValue",
+        "overrideName": `${instance.do_objectID}_fillColor`,
+        "value": findFillColor(instanceNode)
+      };
+      overrideValues.push(overrideValue);
+      instance.style = new Style({fills: [new Fill({color: new Color()})]});
+      instance.style.fills[0].color = overrideValue.value;
     }
   }
 
@@ -432,14 +308,15 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   const symbols = new Map();
   const iconMap = new Map();
 
-  function enhanceJson(json) {
+  function enhanceJson(json, overrideValues = {v:[]}) {
+    //if (json.name?.match(/Dropdown.*Disabled/)) debugger;
     let enhanced = {};
     const keys = Object.keys(json);
     for (let i = 0; i < keys.length; i++) {
       const key = keys[i];
       const value = json[key];
       if (Array.isArray(value)) {
-        enhanced[key] = value.map(nestedJson => enhanceJson(nestedJson))
+        enhanced[key] = value.map(nestedJson => enhanceJson(nestedJson));
       } else if (key === 'image') {
         const fileName = crypto
                       .createHash('sha1')
@@ -449,7 +326,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       } else if (typeof value === 'object') {
         enhanced[key] = enhanceJson(value);
       } else {
-        enhanced[key] = value
+        enhanced[key] = value;
       }
     }
     /*
@@ -488,13 +365,13 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       if (isIcon && iconMap.has(iconName)) {
         symbol = true;
         const master = iconMap.get(iconName);
-        //console.log('instance match');
         instance = master.createInstance({name: "Icon"});
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
         //isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-        fillInstance(instance, master, enhanced, '', master.name, '', '');
+        instance.overrideValues = [];
+        fillInstance(instance, master, enhanced, instance.overrideValues);
       }
 
       // Couldn't create a symbol instance, let's create a new master instead.
@@ -515,7 +392,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        createSymbolOverrides(symbol, symbol.name);
+        createSymbolOverrides(symbol);
         const symbolShouldHaveOverrides = !/(Sidebar.*Example)/.test(symbol.name);
         symbol.allowsOverrides = symbolShouldHaveOverrides;
         symbolArray.push(symbol);
@@ -523,7 +400,9 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
-        fillInstance(instance, symbol, enhanced, '', symbol.name, '', '');
+        instance.overrideValues = [];
+        fillInstance(instance, symbol, enhanced, instance.overrideValues);
+        instance.overrideValues.push(...extractIconFillOverrides(enhanced));
       }
       if (/^((X \/ icon))/.test(symbol.name)) {
         instance.name = 'Icon';
@@ -632,7 +511,6 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       sketch.document.layerStyles.objects.forEach(style => {
         const styleKey = makeStyleKey(style.value);
         replaceValue(doc, style.do_objectID, styleKey);
-        console.log(style.name, styleKey, style.do_objectID);
         styleMap.set(styleKey, style.do_objectID);
         styleObjects.set(styleKey, style.value);
       });
@@ -699,8 +577,6 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
     sketch.addPage(componentsPage);
   });
-
-  console.log(styleMap.entries());
 
   for (const symbolArray of symbols.values()) {
     symbolArray.forEach(symbol => {
