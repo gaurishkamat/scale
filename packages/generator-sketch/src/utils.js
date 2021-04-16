@@ -85,9 +85,22 @@ const Resize = {
   LEFT: 59
 };
 
+function setResizingConstraints(symbol, ...predicateActionPairs) {
+  for (var i = 0; i < predicateActionPairs.length; i += 2) {
+    const predicate = predicateActionPairs[i];
+    const action = predicateActionPairs[i+1];
+    if (typeof action === 'function') {
+      findLayers(symbol, predicateActionPairs[i], action);
+    } else {
+      findLayers(symbol, predicateActionPairs[i], l => l.resizingConstraint = action);
+    }
+  }
+}
+
 module.exports = {
   findLayer,
   findLayers,
   printSymbolStructure,
+  setResizingConstraints,
   Resize
 };
