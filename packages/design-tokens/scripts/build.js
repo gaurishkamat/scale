@@ -8,7 +8,7 @@ import getTokens from '../src/tokens.js';
 import { outputCSS } from './output-css.js';
 import { outputJSS } from './output-jss.js';
 
-const DEFAULT_FILENAME = 'design-tokens-telekom';
+const DEFAULT_FILENAME = 'design-tokens';
 const OUTPUT_PATH = './dist';
 
 main();

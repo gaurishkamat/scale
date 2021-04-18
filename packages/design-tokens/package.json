@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/design-tokens-telekom",
+  "name": "@scaleds/design-tokens",
   "publishConfig": {
     "access": "restricted"
   },
