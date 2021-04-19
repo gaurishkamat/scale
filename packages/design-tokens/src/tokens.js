@@ -33,11 +33,11 @@ tokens[SPACING] = {
 };
 
 /* TYPOGRAPHY */
-
 const family = {
-  sans: 'sans-serif',
+  sans: process.env.WHITELABEL ? 'sans-serif' : 'TeleNeoWeb, sans-serif',
   mono: 'monospace',
 };
+
 const size = {
   10: 10,
   12: 12,
