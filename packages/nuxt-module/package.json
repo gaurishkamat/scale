@@ -4,7 +4,7 @@
     "access": "restricted"
   },
   "private": true,
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "license": "MIT",
   "files": [
     "lib"

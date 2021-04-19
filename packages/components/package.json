@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "description": "Scale Components Telekom",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -75,7 +75,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
-    "@scaleds/telekom-design-tokens": "^3.0.0-beta.0",
+    "@scaleds/telekom-design-tokens": "^3.0.0-beta.1",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
     "web-animations-js": "^2.3.2"

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v3.0.0-beta.0...v3.0.0-beta.1) (2021-04-19)
+
+**Note:** Version bump only for package @scaleds/html-to-sketch
+
+
+
+
+
 # [3.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.6...v3.0.0-beta.0) (2021-04-19)
 
 **Note:** Version bump only for package @scaleds/html-to-sketch
