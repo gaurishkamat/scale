@@ -30,8 +30,8 @@
     "@scaleds/components-vue-telekom": "^2.0.0-beta.6"
   },
   "scripts": {
-    "prestart": "yes | cp -a ../design-tokens/dist/* public/",
-    "prebuild": "yes | cp -a ../design-tokens/dist/* public/",
+    "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
+    "prebuild": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
     "start": "start-storybook -s ./public -p 6006",
     "build": "build-storybook -s ./public",
     "preserve": "yarn build",

@@ -35,7 +35,7 @@ tokens[SPACING] = {
 /* TYPOGRAPHY */
 
 const family = {
-  sans: 'TeleNeoWeb, sans-serif',
+  sans: 'sans-serif',
   mono: 'monospace',
 };
 const size = {
@@ -148,7 +148,7 @@ tokens[TYPE_VARIANT] = {
 /* COLOR */
 
 const palette = {
-  primary: Color('#E20074'),
+  primary: Color('#5300ff'),
   black: Color('#000000'),
   white: Color('#FFFFFF'),
   grey0: Color('#F2F2F2'),
@@ -288,8 +288,8 @@ const palette = {
 tokens[COLOR] = {
   DEFAULT: {
     ...palette,
-    primaryHover: Color('#F90984'),
-    primaryActive: Color('#CB0068'),
+    primaryHover: Color('#7633ff'),
+    primaryActive: Color('#5e29cc'),
     focus: palette.blue50,
   },
   text: {
@@ -394,6 +394,30 @@ tokens[Z_INDEX] = {
   },
 };
 
-export default function () {
-  return { ...tokens }; // a copy to avoid any outputs accidentally mutating it
+export default function ({ isWhitelabel }) {
+  // a copy to avoid any outputs accidentally mutating it
+  const returnValue = isWhitelabel
+    ? { ...tokens }
+    : {
+        ...tokens,
+        [COLOR]: {
+          ...tokens[COLOR],
+          DEFAULT: {
+            ...palette,
+            primary: Color('#E20074'),
+            primaryHover: Color('#F90984'),
+            primaryActive: Color('#CB0068'),
+          },
+        },
+        [TYPOGRAPHY]: {
+          ...tokens[TYPOGRAPHY],
+          family: {
+            sans: 'TeleNeoWeb, sans-serif',
+            mono: 'monospace',
+          },
+        },
+      };
+
+  console.log(returnValue);
+  return returnValue;
 }

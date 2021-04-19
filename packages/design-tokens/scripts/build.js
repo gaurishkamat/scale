@@ -8,7 +8,8 @@ import getTokens from '../src/tokens.js';
 import { outputCSS } from './output-css.js';
 import { outputJSS } from './output-jss.js';
 
-const DEFAULT_FILENAME = 'design-tokens-telekom';
+const isWhitelabel = !!process.env.WHITELABEL;
+const DEFAULT_FILENAME = `design-tokens${isWhitelabel ? '' : '-telekom'}`;
 const OUTPUT_PATH = './dist';
 
 main();
@@ -18,7 +19,7 @@ async function main() {
   await fs.mkdirp(OUTPUT_PATH);
 
   const outputs = [outputCSS, outputJSS];
-  const tokens = getTokens();
+  const tokens = getTokens({ isWhitelabel });
 
   try {
     // Loop through categories (level 1)
