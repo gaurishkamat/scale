@@ -4,6 +4,9 @@ import { frameworkTargets } from './framework-targets';
 import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
+  tsconfig: process.env.WHITELABEL
+    ? 'tsconfig.whitelabel.json'
+    : 'tsconfig.json',
   testing: {
     testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
     collectCoverageFrom: [
