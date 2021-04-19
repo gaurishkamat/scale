@@ -1,25 +1,2 @@
 @import './fonts.css';
-@import '~@scaleds/design-tokens/dist/design-tokens.css';
-
-:root {
-  --scl-color-primary: #e20074;
-  --scl-color-primary-hue: 255;
-  --scl-color-primary-hover: #f90984;
-  --scl-color-primary-active: #cb0068;
-
-  --scl-font-family-sans: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-body-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-body-short-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-body-large-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-smaller-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-label-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-caption-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-6-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-5-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-4-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-3-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-2-family: 'TeleNeoWeb, sans-serif';
-  --scl-font-variant-heading-1-family: 'TeleNeoWeb, sans-serif';
-
-  font-family: 'TeleNeoWeb, sans-serif';
-}
+@import '~@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css';

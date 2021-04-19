@@ -67,7 +67,7 @@ export const outputJSS = {
     }
     outputJSS.content = prettier.format(output, prettierOptions);
   },
-  filename: 'design-tokens',
+  filename: `design-tokens${process.env.WHITELABEL ? '' : '-telekom'}`,
   ext: '.js',
   suffix: '',
   content: null,

@@ -394,6 +394,30 @@ tokens[Z_INDEX] = {
   },
 };
 
-export default function () {
-  return { ...tokens }; // a copy to avoid any outputs accidentally mutating it
+export default function ({ isWhitelabel }) {
+  // a copy to avoid any outputs accidentally mutating it
+  const returnValue = isWhitelabel
+    ? { ...tokens }
+    : {
+        ...tokens,
+        [COLOR]: {
+          ...tokens[COLOR],
+          DEFAULT: {
+            ...palette,
+            primary: Color('#E20074'),
+            primaryHover: Color('#F90984'),
+            primaryActive: Color('#CB0068'),
+          },
+        },
+        [TYPOGRAPHY]: {
+          ...tokens[TYPOGRAPHY],
+          family: {
+            sans: 'TeleNeoWeb, sans-serif',
+            mono: 'monospace',
+          },
+        },
+      };
+
+  console.log(returnValue);
+  return returnValue;
 }
