@@ -87,23 +87,23 @@ Please note that the use of the Telekom brand and design assets, including but n
 Install the Scale component library in your project with NPM or Yarn:
 
 ```
-npm install @scaleds/components-telekom
+npm install @scaleds/telekom-components
 ```
 
 
 ### Setup with plain HTML
 
 ```html
-<link rel="stylesheet" href="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.js"></script>
+<link rel="stylesheet" href="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.js"></script>
 ```
 
 
 ### Setup with a bundler or ES modules
 
 ```
-import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@scaleds/components-telekom/loader";
+import "@scaleds/telekom-components/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/telekom-components/loader";
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -115,11 +115,11 @@ applyPolyfills().then(() => {
 
 | Package Name                        | Description                   |
 | ----------------------------------- | ----------------------------- |
-| @scaleds/components-telekom         | Stencil components            |
-| @scaleds/components-react-telekom   | Component proxies for React   |
-| @scaleds/components-vue-telekom     | Component proxies for Vue     |
-| @scaleds/components-angular-telekom | Component proxies for Angular |
-| @scaleds/design-tokens-telekom      | Telekom design tokens         |
+| @scaleds/telekom-components         | Stencil components            |
+| @scaleds/telekom-components-react   | Component proxies for React   |
+| @scaleds/telekom-components-vue     | Component proxies for Vue     |
+| @scaleds/telekom-components-angular | Component proxies for Angular |
+| @scaleds/telekom-design-tokens      | Telekom design tokens         |
 
 ### Using the source code directly
 
