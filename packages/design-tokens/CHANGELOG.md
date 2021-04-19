@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.6...v3.0.0-beta.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **design-tokens:** add missing focus token ([5b37fbd](https://gitlab.com/scale-ds/scale-telekom/commit/5b37fbd74dcd7b545bcd9a358aa8bb0199959960))
+
+
+
+
+
 # [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
 
 **Note:** Version bump only for package @scaleds/telekom-design-tokens

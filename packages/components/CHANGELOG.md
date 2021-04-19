@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.6...v3.0.0-beta.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **date-picker:** use correct css variable ([edec4a2](https://gitlab.com/scale-ds/scale-telekom/commit/edec4a2bdf293dfbf30c493f736ce32921f84f2e))
+* **icons:** add viewBox fallback value for telekom icons ([64f59b8](https://gitlab.com/scale-ds/scale-telekom/commit/64f59b89a40a9422b7205c0ed890859b6bf9ee38))
+* **icons:** use icon which supports currentColor ([3047a9a](https://gitlab.com/scale-ds/scale-telekom/commit/3047a9a592219e770a9d33c61df25847d8a80057))
+
+
+### Features
+
+* **icons:** add option to generate whitelabel icons ([8162de8](https://gitlab.com/scale-ds/scale-telekom/commit/8162de82c56a78b59347c73c76962e2381916efb))
+
+
+
+
+
 # [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
 
 

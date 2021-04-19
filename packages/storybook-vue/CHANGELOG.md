@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.0](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.6...v3.0.0-beta.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **storybook:** add design tokens to package list ([e89b9bc](https://gitlab.com/scale-ds/scale-telekom/commit/e89b9bc53d160764438e043c498bd836ab115c8a))
+* **storybook:** add verbose design tokens text ([2eaaa0e](https://gitlab.com/scale-ds/scale-telekom/commit/2eaaa0ec21bf591fc4e42c6989057ddab743230b))
+* **storybook:** fix broken links ([27116cb](https://gitlab.com/scale-ds/scale-telekom/commit/27116cbadbf821e6469d99db29850364d0cf0e8a))
+* **storybook:** remove header margin ([ce68f30](https://gitlab.com/scale-ds/scale-telekom/commit/ce68f30d6ed3f4ed373ed5d6d877ae7c4e5616ed))
+* **storybook:** remove header margin for real ([972a6e0](https://gitlab.com/scale-ds/scale-telekom/commit/972a6e01b0c293ffd28baaca63643f100751868e))
+* magenta leftover ([14caab9](https://gitlab.com/scale-ds/scale-telekom/commit/14caab93300f23bb6905ef182aee5ef65ab53885))
+* relative links ([10fdbc5](https://gitlab.com/scale-ds/scale-telekom/commit/10fdbc53d276a5eda34997ebf77ad6ff315e391f))
+
+
+### Features
+
+* **storybook:** change sidebar section copy ([74287ba](https://gitlab.com/scale-ds/scale-telekom/commit/74287ba95207faaf2a1a025f0c3239d262b22799))
+
+
+
+
+
 # [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
 
 
