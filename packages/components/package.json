@@ -1,7 +1,7 @@
 {
   "name": "@scaleds/telekom-components",
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "version": "2.0.0-beta.6",
   "description": "Scale Components Telekom",
@@ -70,7 +70,7 @@
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0"
   },
-  "license": "MIT",
+  "license": "MPL-2.0",
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",

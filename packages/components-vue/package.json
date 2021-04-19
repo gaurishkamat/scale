@@ -1,5 +1,8 @@
 {
   "name": "@scaleds/telekom-components-vue",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false,
   "version": "2.0.0-beta.6",
   "description": "Vue specific wrapper for @scaleds/telekom-components",
