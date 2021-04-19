@@ -31,6 +31,24 @@ describe('Link', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should handle disabled link', async () => {
+    const page = await newSpecPage({
+      components: [Link],
+      html: `<scale-link href="http://example.com" disabled=true>Label</scale-link>`,
+    });
+    expect(page.rootInstance.disabled).toBeTruthy();
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle setted styles', async () => {
+    const page = await newSpecPage({
+      components: [Link],
+      html: `<scale-link href="http://example.com" styles="color:red">Label</scale-link>`,
+    });
+    expect(page.rootInstance.styles).toBe('color:red');
+    expect(page.root).toMatchSnapshot();
+  });
+
   it('should handle css classes', () => {
     element.block = true;
     expect(element.getCssClassMap()).toContain('link--block');

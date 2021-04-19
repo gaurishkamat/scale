@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component snapshots rating 0 should match snapshot 1`] = `
+exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 <scale-rating-stars rating="0">
   <mock:shadow-root>
     <div aria-label="0 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
@@ -63,7 +63,7 @@ exports[`component snapshots rating 0 should match snapshot 1`] = `
 </scale-rating-stars>
 `;
 
-exports[`component snapshots rating 2 and disabled should match snapshot 1`] = `
+exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] = `
 <scale-rating-stars disabled="" rating="2">
   <mock:shadow-root>
     <div aria-label="2 out of 5 stars" class="rating rating--disabled" id="rating" role="img" tabindex="-1">
@@ -126,7 +126,7 @@ exports[`component snapshots rating 2 and disabled should match snapshot 1`] = `
 </scale-rating-stars>
 `;
 
-exports[`component snapshots rating 3 should match snapshot 1`] = `
+exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 <scale-rating-stars rating="3">
   <mock:shadow-root>
     <div aria-label="3 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
@@ -189,7 +189,7 @@ exports[`component snapshots rating 3 should match snapshot 1`] = `
 </scale-rating-stars>
 `;
 
-exports[`component snapshots rating 4 and small should match snapshot 1`] = `
+exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
 <scale-rating-stars rating="4" small="">
   <mock:shadow-root>
     <div aria-label="4 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">

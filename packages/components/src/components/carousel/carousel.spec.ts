@@ -48,4 +48,52 @@ describe('Carousel', () => {
     element.setTransformValue();
     expect(element.setTransformValue()).toBe('translateX(-200%)');
   });
+
+  it('function setActiveCssClass should return (cssClass)string', () => {
+    const functionIndex = 1;
+    element.value = 100;
+    expect(element.setActiveCssClass(functionIndex)).toBe(
+      'carousel__indicator--active'
+    );
+  });
+
+  it('function setActiveCssClass should return empty string', () => {
+    const functionIndex = 0;
+    element.value = 100;
+    expect(element.setActiveCssClass(functionIndex)).toBe('');
+  });
+
+  it('function handleSlideChange set to [prev] should return value plus 100', () => {
+    const value = 1;
+    element.value = value;
+    element.handleSlideChange('prev');
+    expect(element.value).toBe(101);
+  });
+
+  it('function handleSlideChange set to [prev] should return right value', () => {
+    const value = 0;
+    const slidesArray = [];
+    element.value = value;
+    element.slidesArray = slidesArray;
+    element.handleSlideChange('prev');
+    expect(element.value).toBe(100);
+  });
+
+  it('function handleSlideChange set to [next] should return value minus 100', () => {
+    const value = 100;
+    const slidesArray = [];
+    element.value = value;
+    element.slidesArray = slidesArray;
+    element.handleSlideChange('next');
+    expect(element.value).toBe(0);
+  });
+
+  it('function handleSlideChange set to [next] should return right value', () => {
+    const value = 101;
+    const slidesArray = [];
+    element.value = value;
+    element.slidesArray = slidesArray;
+    element.handleSlideChange('next');
+    expect(element.value).toBe(1);
+  });
 });

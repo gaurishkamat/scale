@@ -2,10 +2,6 @@
 
 exports[`Breadcrumb should match snapshot 1`] = `
 <scale-breadcrumb>
-  <mock:shadow-root>
-    <nav aria-label="Breadcrumb" class="breadcrumb">
-      <ol></ol>
-    </nav>
-  </mock:shadow-root>
+  <mock:shadow-root></mock:shadow-root>
 </scale-breadcrumb>
 `;
