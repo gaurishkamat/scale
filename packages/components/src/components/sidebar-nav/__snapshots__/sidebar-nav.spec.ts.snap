@@ -2,21 +2,6 @@
 
 exports[`SidebarNav should match snapshot 1`] = `
 <scale-sidebar-nav>
-  <mock:shadow-root>
-    <style>
-      .sidebar-nav {}
-.sidebar-nav__list {
-  list-style: none;
-  margin-top: 0;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-    </style>
-    <nav class="sidebar-nav">
-      <ul class="sidebar-nav__list">
-        <slot></slot>
-      </ul>
-    </nav>
-  </mock:shadow-root>
+  <mock:shadow-root></mock:shadow-root>
 </scale-sidebar-nav>
 `;

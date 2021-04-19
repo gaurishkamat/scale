@@ -40,8 +40,8 @@ exports[`Toast should match snapshot 1`] = `
         opacity: 0;
       }
     </style>
-    <div class="toast toast--show">
-      <div class="toast__header">
+    <div class="toast toast--show" part="base --show">
+      <div class="toast__header" part="header">
         <slot name="header"></slot>
         <small></small>
         <a>
@@ -50,7 +50,7 @@ exports[`Toast should match snapshot 1`] = `
           </span>
         </a>
       </div>
-      <div class="toast__body">
+      <div class="toast__body" part="body">
         <slot></slot>
       </div>
     </div>
@@ -99,8 +99,8 @@ exports[`Toast should match snapshot when opened 1`] = `
         opacity: 0;
       }
     </style>
-    <div class="toast toast--opened toast--show">
-      <div class="toast__header">
+    <div class="toast toast--opened toast--show" part="base --opened --show">
+      <div class="toast__header" part="header">
         <slot name="header"></slot>
         <small></small>
         <a>
@@ -109,7 +109,7 @@ exports[`Toast should match snapshot when opened 1`] = `
           </span>
         </a>
       </div>
-      <div class="toast__body">
+      <div class="toast__body" part="body">
         <slot></slot>
       </div>
     </div>

@@ -3,7 +3,7 @@
 exports[`SidebarNavItem should match snapshot 1`] = `
 <scale-sidebar-nav-item>
   <mock:shadow-root>
-    <li class="sidebar-nav-item" part="base" role="listitem">
+    <li class="sidebar-nav-item" part="sidebar-nav-item" role="listitem">
       <slot></slot>
     </li>
   </mock:shadow-root>
