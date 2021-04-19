@@ -33,11 +33,11 @@ tokens[SPACING] = {
 };
 
 /* TYPOGRAPHY */
-
 const family = {
-  sans: 'sans-serif',
+  sans: process.env.WHITELABEL ? 'sans-serif' : 'TeleNeoWeb, sans-serif',
   mono: 'monospace',
 };
+
 const size = {
   10: 10,
   12: 12,
@@ -407,6 +407,7 @@ export default function ({ isWhitelabel }) {
             primary: Color('#E20074'),
             primaryHover: Color('#F90984'),
             primaryActive: Color('#CB0068'),
+            focus: palette.blue50,
           },
         },
         [TYPOGRAPHY]: {
