@@ -9,9 +9,9 @@ echo "${GREEN}Build config...${NC}"
 yarn workspace @scaleds/config build;
 echo "--------"
 echo "${GREEN}Build Components...${NC}"
-yarn workspace @scaleds/components-telekom build;
+yarn workspace @scaleds/telekom-components build;
 echo "--------"
 echo "${GREEN}Build React wrappers...${NC}"
-yarn workspace @scaleds/components-react-telekom build;
+yarn workspace @scaleds/telekom-components-react build;
 echo "--------"
 echo "--------"

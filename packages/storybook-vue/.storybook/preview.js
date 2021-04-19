@@ -3,7 +3,7 @@ import Vue from "vue";
 import {
   defineCustomElements,
   applyPolyfills
-} from "@scaleds/components-telekom/loader";
+} from "@scaleds/telekom-components/loader";
 
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = [/scale-\w*/];

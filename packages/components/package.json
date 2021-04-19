@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/components-telekom",
+  "name": "@scaleds/telekom-components",
   "publishConfig": {
     "access": "restricted"
   },
@@ -74,7 +74,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
-    "@scaleds/design-tokens-telekom": "^2.0.0-beta.6",
+    "@scaleds/telekom-design-tokens": "^2.0.0-beta.6",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
     "web-animations-js": "^2.3.2"

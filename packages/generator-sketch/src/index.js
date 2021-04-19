@@ -714,7 +714,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     }
   }
 
-  const designTokens = await import('@scaleds/design-tokens-telekom/dist/design-tokens-telekom.js');
+  const designTokens = await import('@scaleds/telekom-design-tokens/dist/design-tokens-telekom.js');
   parseColors(sketchColors, [], designTokens.color);
 
   // Add color swatches

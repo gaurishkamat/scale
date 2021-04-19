@@ -687,7 +687,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.11.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.11.0...v1.11.1) (2020-10-12)
 
-**Note:** Version bump only for package @scaleds/components-telekom
+**Note:** Version bump only for package @scaleds/telekom-components
 
 
 
@@ -888,7 +888,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.6.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.6.0...v1.6.1) (2020-09-20)
 
-**Note:** Version bump only for package @scaleds/components-telekom
+**Note:** Version bump only for package @scaleds/telekom-components
 
 
 
@@ -928,7 +928,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.5.1](https://gitlab.com/scale-ds/scale-telekom/compare/v1.5.0...v1.5.1) (2020-09-03)
 
-**Note:** Version bump only for package @scaleds/components-telekom
+**Note:** Version bump only for package @scaleds/telekom-components
 
 
 
@@ -1117,7 +1117,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.13](https://gitlab.com/scale-ds/scale-telekom/compare/v0.1.12...v0.1.13) (2020-06-18)
 
-**Note:** Version bump only for package @scaleds/components-telekom
+**Note:** Version bump only for package @scaleds/telekom-components
 
 
 

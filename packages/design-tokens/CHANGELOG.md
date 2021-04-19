@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.6](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-04-13)
 
-**Note:** Version bump only for package @scaleds/design-tokens-telekom
+**Note:** Version bump only for package @scaleds/telekom-design-tokens
 
 
 
@@ -13,7 +13,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.5](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.3...v2.0.0-beta.5) (2021-04-09)
 
-**Note:** Version bump only for package @scaleds/design-tokens-telekom
+**Note:** Version bump only for package @scaleds/telekom-design-tokens
 
 
 
@@ -55,7 +55,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.3](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-03-25)
 
-**Note:** Version bump only for package @scaleds/design-tokens-telekom
+**Note:** Version bump only for package @scaleds/telekom-design-tokens
 
 
 
@@ -63,7 +63,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.2](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-03-18)
 
-**Note:** Version bump only for package @scaleds/design-tokens-telekom
+**Note:** Version bump only for package @scaleds/telekom-design-tokens
 
 
 
@@ -71,7 +71,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.1](https://gitlab.com/scale-ds/scale-telekom/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2021-03-12)
 
-**Note:** Version bump only for package @scaleds/design-tokens-telekom
+**Note:** Version bump only for package @scaleds/telekom-design-tokens
 
 
 

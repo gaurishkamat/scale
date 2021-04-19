@@ -14,7 +14,7 @@ Access the [complete documentation of Scale](https://www.brand-design.telekom.co
 Install the Scale component library in your project with NPM or Yarn:
 
 ```
-npm install @scaleds/components-telekom
+npm install @scaleds/telekom-components
 ```
 
 Please note that the Telekom brand assets, logos, magenta, typeface and icons as well as the footer and header components are protected under a [special license to use for Telekom Products only](https://github.com/telekom/scale/packages/components/src/telekom/LICENSE).
@@ -32,8 +32,8 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ### Plain HTML
 
 ```bash
-<link rel="stylesheet" href="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@scaleds/components-telekom/dist/scale-components/scale-components.js"></script>
+<link rel="stylesheet" href="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.js"></script>
 ```
 
 **MIT Version**
@@ -48,8 +48,8 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ### With a bundler or ES modules
 
 ```bash
-import "@scaleds/components-telekom/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@scaleds/components-telekom/loader";
+import "@scaleds/telekom-components/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@scaleds/telekom-components/loader";
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -87,10 +87,10 @@ applyPolyfills().then(() => {
 
 | Package Name                        | Description                   |
 | ----------------------------------- | ----------------------------- |
-| @scaleds/components-telekom         | Stencil components            |
-| @scaleds/components-react-telekom   | Component proxies for React   |
-| @scaleds/components-vue-telekom     | Component proxies for Vue     |
-| @scaleds/components-angular-telekom | Component proxies for Angular |
+| @scaleds/telekom-components         | Stencil components            |
+| @scaleds/telekom-components-react   | Component proxies for React   |
+| @scaleds/telekom-components-vue     | Component proxies for Vue     |
+| @scaleds/telekom-components-angular | Component proxies for Angular |
 
 **MIT Version**
 

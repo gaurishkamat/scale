@@ -1,8 +1,8 @@
 {
-  "name": "@scaleds/components-vue-telekom",
+  "name": "@scaleds/telekom-components-vue",
   "sideEffects": false,
   "version": "2.0.0-beta.6",
-  "description": "Vue specific wrapper for @scaleds/components-telekom",
+  "description": "Vue specific wrapper for @scaleds/telekom-components",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p .",
