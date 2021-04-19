@@ -407,6 +407,7 @@ export default function ({ isWhitelabel }) {
             primary: Color('#E20074'),
             primaryHover: Color('#F90984'),
             primaryActive: Color('#CB0068'),
+            focus: palette.blue50,
           },
         },
         [TYPOGRAPHY]: {
