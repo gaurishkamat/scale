@@ -1,8 +1,9 @@
 {
   "name": "@scaleds/storybook-vue",
+  "private": true,
   "version": "2.0.0-beta.6",
   "main": "index.js",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@storybook/addon-actions": "^6.2.7",
@@ -26,8 +27,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "@scaleds/components-telekom": "^2.0.0-beta.6",
-    "@scaleds/components-vue-telekom": "^2.0.0-beta.6"
+    "@scaleds/telekom-components": "^2.0.0-beta.6",
+    "@scaleds/telekom-components-vue": "^2.0.0-beta.6"
   },
   "scripts": {
     "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",

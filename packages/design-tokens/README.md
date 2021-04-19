@@ -11,7 +11,7 @@ Some ideas:
 
 ## Installation
 
-Install with npm (or yarn): `npm install @scaleds/design-tokens-telekom`
+Install with npm (or yarn): `npm install @scaleds/telekom-design-tokens`
 
 ## Usage
 
@@ -19,12 +19,12 @@ Currently the tokens are available as CSS variables only. Other output targets a
 
 ### CSS
 
-If you're using the Scale component library (`@scaleds/components-telekom`), the variables are already available for you.
+If you're using the Scale component library (`@scaleds/telekom-components`), the variables are already available for you.
 
 If you want to use the tokens independently, import the `design-tokens-telekom.css` file in your CSS .
 
 ```css
-@import '@scaleds/design-tokens-telekom/dist/design-tokens-telekom.css';
+@import '@scaleds/telekom-design-tokens/dist/design-tokens-telekom.css';
 ```
 
 ## Internals

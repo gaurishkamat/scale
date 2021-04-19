@@ -11,8 +11,8 @@
     "serve": "serve dist --single"
   },
   "dependencies": {
-    "@scaleds/components-telekom": "2.0.0-beta.0",
-    "@scaleds/components-vue-telekom": "^2.0.0-beta.0",
+    "@scaleds/telekom-components": "2.0.0-beta.0",
+    "@scaleds/telekom-components-vue": "^2.0.0-beta.0",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "promise-polyfill": "^6.0.2",

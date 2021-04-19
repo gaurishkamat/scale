@@ -1,5 +1,9 @@
 {
   "name": "@scaleds/nuxt-module",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "private": true,
   "version": "2.0.0-beta.6",
   "license": "MIT",
   "files": [

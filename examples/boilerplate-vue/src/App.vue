@@ -9,7 +9,7 @@
 
 <script>
 import Vue from "vue";
-import { ScaleAppShell } from "@scaleds/components-vue-telekom";
+import { ScaleAppShell } from "@scaleds/telekom-components-vue";
 // @ts-ignore
 export default Vue.extend({
   name: "app",

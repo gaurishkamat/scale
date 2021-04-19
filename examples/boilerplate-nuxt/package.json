@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nuxt/ufo": "^0.5.4",
-    "@scaleds/components-telekom": "^2.0.0-beta.0",
+    "@scaleds/telekom-components": "^2.0.0-beta.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

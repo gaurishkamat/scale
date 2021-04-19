@@ -1,7 +1,10 @@
 {
-  "name": "@scaleds/components-angular-telekom",
+  "name": "@scaleds/telekom-components-angular",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "2.0.0-beta.6",
-  "description": "Angular specific wrapper for @scaleds/components-telekom",
+  "description": "Angular specific wrapper for @scaleds/telekom-components",
   "scripts": {
     "build": "yarn build.ng",
     "build.fesm": "rollup --config ./scripts/rollup.config.js",

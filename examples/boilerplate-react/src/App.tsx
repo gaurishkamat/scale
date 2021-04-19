@@ -11,7 +11,7 @@ import {
   AppMegaMenu,
   ScaleNavIcon,
   ScaleNavSegment
-} from "@scaleds/components-react-telekom";
+} from "@scaleds/telekom-components-react";
 
 import "./App.css";
 

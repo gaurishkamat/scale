@@ -1,5 +1,6 @@
 {
   "name": "@scaleds/html-to-sketch",
+  "private": true,
   "version": "2.0.0-beta.6",
   "description": "HTML to Sketch",
   "keywords": [
@@ -9,7 +10,7 @@
     "html"
   ],
   "author": "eeegor",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "scripts": {
     "build": "tsc"
   },

@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { defineCustomElements } from '@scaleds/components-telekom/loader';
+import { defineCustomElements } from '@scaleds/telekom-components/loader';
 
 if (environment.production) {
   enableProdMode();
