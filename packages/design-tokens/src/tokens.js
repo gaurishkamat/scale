@@ -396,7 +396,7 @@ tokens[Z_INDEX] = {
 
 export default function ({ isWhitelabel }) {
   // a copy to avoid any outputs accidentally mutating it
-  const returnValue = isWhitelabel
+  return isWhitelabel
     ? { ...tokens }
     : {
         ...tokens,
@@ -417,7 +417,4 @@ export default function ({ isWhitelabel }) {
           },
         },
       };
-
-  console.log(returnValue);
-  return returnValue;
 }
