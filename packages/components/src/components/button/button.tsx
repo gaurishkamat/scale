@@ -98,7 +98,6 @@ export class Button {
           </a>
         ) : (
           <button
-            id="buttonTesting"
             class={this.getCssClassMap()}
             onClick={this.handleClick}
             disabled={this.disabled}
