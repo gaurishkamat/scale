@@ -1,2 +1,3 @@
-# this is meant to be useful only inside the dist/collection/ folder
+# This is useful inside the dist/collection/ folder, 
+# and it gets copied over there during build.
 telekom/
