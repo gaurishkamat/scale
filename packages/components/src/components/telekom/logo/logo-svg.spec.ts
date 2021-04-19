@@ -14,15 +14,12 @@ import { LogoSvg } from './logo-svg';
 
 describe('component prop snapshots', () => {
   let page: any;
-  let component: any;
 
   beforeEach(async () => {
     page = await newSpecPage({
       components: [LogoSvg],
-      html: `<div></div>`,
+      html: `<scale-logo-svg></scale-logo-svg>`,
     });
-    component = page.doc.createElement('scale-logo-svg');
-    page.root.appendChild(component);
   });
 
   const language:
@@ -32,10 +29,11 @@ describe('component prop snapshots', () => {
     | 'hr'
     | 'hu'
     | 'me'
-    | 'mk'
+    | 'mk_lat'
+    | 'mk_kyr'
     | 'ro'
     | 'sk'
-    | 'laimOff' = 'en';
+    | '' = 'en';
   const size: number = 36;
   const color: string = 'magenta';
 
@@ -53,10 +51,10 @@ describe('component prop snapshots', () => {
       const setColor = 'black';
       const setAccessibilityTitle = 'title';
 
-      component.language = setLanguage;
-      component.size = setSize;
-      component.color = setColor;
-      component.accessibilityTitle = setAccessibilityTitle;
+      page.rootInstance.language = setLanguage;
+      page.rootInstance.size = setSize;
+      page.rootInstance.color = setColor;
+      page.rootInstance.accessibilityTitle = setAccessibilityTitle;
 
       await page.waitForChanges();
       expect(page.rootInstance.language).toBe(setLanguage);
@@ -109,6 +107,7 @@ describe('testing all languages', () => {
   it('de', async () => {
     const setLanguage = 'de';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -116,6 +115,7 @@ describe('testing all languages', () => {
   it('en', async () => {
     const setLanguage = 'en';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -123,6 +123,7 @@ describe('testing all languages', () => {
   it('cz', async () => {
     const setLanguage = 'cz';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -130,6 +131,7 @@ describe('testing all languages', () => {
   it('hr', async () => {
     const setLanguage = 'hr';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -137,6 +139,7 @@ describe('testing all languages', () => {
   it('hu', async () => {
     const setLanguage = 'hu';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -144,13 +147,23 @@ describe('testing all languages', () => {
   it('me', async () => {
     const setLanguage = 'me';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
   });
-  it('mk', async () => {
-    const setLanguage = 'mk';
+  it('mk_lat', async () => {
+    const setLanguage = 'mk_lat';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
+    await page.waitForChanges();
+    expect(page.rootInstance.language).toBe(setLanguage);
+    expect(page.root).toMatchSnapshot();
+  });
+  it('mk_kyr', async () => {
+    const setLanguage = 'mk_kyr';
+    component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -158,6 +171,7 @@ describe('testing all languages', () => {
   it('ro', async () => {
     const setLanguage = 'ro';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -165,6 +179,7 @@ describe('testing all languages', () => {
   it('', async () => {
     const setLanguage = '';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();
@@ -172,6 +187,7 @@ describe('testing all languages', () => {
   it('sk', async () => {
     const setLanguage = 'sk';
     component.language = setLanguage;
+    component.accessibilityTitle = 'logo';
     await page.waitForChanges();
     expect(page.rootInstance.language).toBe(setLanguage);
     expect(page.root).toMatchSnapshot();

@@ -20,4 +20,13 @@ describe('RadioButton', () => {
     });
     expect(page.root).toMatchSnapshot();
   });
+
+  it('should handle change of checked', async () => {
+    const page = await newSpecPage({
+      components: [RadioButton],
+      html: `<scale-radio-button inputId="testing" checked="false"></scale-radio-button>`,
+    });
+    page.rootInstance.checked = true;
+    expect(page.root).toMatchSnapshot();
+  });
 });

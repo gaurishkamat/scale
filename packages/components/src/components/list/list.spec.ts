@@ -30,4 +30,16 @@ describe('List', () => {
     element.ordered = true;
     expect(element.getCssClassMap()).toContain('list--type-ordered');
   });
+
+  it('should handle listItem', async () => {
+    const page = await newSpecPage({
+      components: [List],
+      html: `
+        <scale-list ordered>
+          <scale-list-item>
+          </scale-list-item>
+        </scale-list>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
 });

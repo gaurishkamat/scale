@@ -14,15 +14,12 @@ import { Logo } from './logo';
 
 describe('component prop snapshots', () => {
   let page: any;
-  let component: any;
 
   beforeEach(async () => {
     page = await newSpecPage({
       components: [Logo],
-      html: `<div></div>`,
+      html: `<scale-logo></scale-logo>`,
     });
-    component = page.doc.createElement('scale-logo');
-    page.root.appendChild(component);
   });
 
   const variant: 'magenta' | 'white' = 'magenta';
@@ -33,10 +30,11 @@ describe('component prop snapshots', () => {
     | 'hr'
     | 'hu'
     | 'me'
-    | 'mk'
+    | 'mk_lat'
+    | 'mk_kyr'
     | 'ro'
     | 'sk'
-    | 'laimOff' = 'en';
+    | '' = 'en';
   const transparent: boolean = false;
   const size: number = 36;
 
@@ -57,11 +55,11 @@ describe('component prop snapshots', () => {
       const setSize = 100;
       const setHref = 'https://www.telekom.de/start';
 
-      component.variant = setVariant;
-      component.language = setLanguage;
-      component.transparent = setTransparent;
-      component.size = setSize;
-      component.href = setHref;
+      page.rootInstance.variant = setVariant;
+      page.rootInstance.language = setLanguage;
+      page.rootInstance.transparent = setTransparent;
+      page.rootInstance.size = setSize;
+      page.rootInstance.href = setHref;
 
       await page.waitForChanges();
       expect(page.rootInstance.variant).toBe(setVariant);
@@ -70,6 +68,12 @@ describe('component prop snapshots', () => {
       expect(page.rootInstance.size).toBe(setSize);
       expect(page.rootInstance.href).toBe(setHref);
 
+      expect(page.root).toMatchSnapshot();
+    });
+
+    it('should handle no link', async () => {
+      page.rootInstance.href = '';
+      await page.waitForChanges();
       expect(page.root).toMatchSnapshot();
     });
   });

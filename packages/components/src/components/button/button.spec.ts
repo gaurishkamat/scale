@@ -9,16 +9,14 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage, SpecPage } from '@stencil/core/testing';
 import { Button } from './button';
 
 describe('Button', () => {
   let element;
 
   beforeEach(async () => {
-    beforeEach(async () => {
-      element = new Button();
-    });
+    element = new Button();
   });
 
   it('should match snapshot', async () => {
@@ -39,4 +37,62 @@ describe('Button', () => {
     element.disabled = true;
     expect(element.getCssClassMap()).toContain('button--disabled');
   });
+
+  it('should handle more than 1 node', async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `    
+      <scale-button size="small">
+        <scale-icon-action-search size="16" /> Label
+      </scale-button>
+      `,
+    });
+    expect(page.rootInstance.iconPosition).toBe('after');
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle click', async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `
+      <scale-button>
+      Label
+      </scale-button>`,
+    });
+    expect(page.root).toMatchSnapshot();
+    simulateMouseEvent(
+      page,
+      'click',
+      'button',
+      expect(page.root).toMatchSnapshot()
+    );
+  });
 });
+
+/**
+ * - Helper function for the onMouseEvents
+ * @param page = The component, in this case the rating star component
+ * @param eventType = The MouseEvent that should be executed on the element
+ * @param element = Id of the element on which the MouseEvent is to be executed
+ * @param callBack = Testing function
+ */
+async function simulateMouseEvent(
+  page: SpecPage,
+  eventType: string,
+  element: string,
+  callBack: any
+) {
+  const event = new MouseEvent(eventType, {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+  });
+  const myTarget = page.root.shadowRoot.querySelector(element);
+  const canceled = !myTarget.dispatchEvent(event);
+  if (canceled) {
+    alert('canceled');
+  } else {
+    alert('not canceled');
+    callBack; // tslint:disable-line
+  }
+}
