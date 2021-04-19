@@ -28,4 +28,12 @@ describe('Divider', () => {
     element.vertical = true;
     expect(element.getCssClassMap()).toContain('divider--vertical');
   });
+
+  it('should handle style', async () => {
+    const page = await newSpecPage({
+      components: [Divider],
+      html: `<scale-divider styles="color:blue;"></scale-divider>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
 });

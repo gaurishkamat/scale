@@ -45,7 +45,7 @@ async function simulateKeyboardEvent(
   }
 }
 
-describe('component', () => {
+describe('RatingStars', () => {
   let page: SpecPage;
 
   it('builds', () => {
@@ -144,6 +144,24 @@ describe('component', () => {
         html: `<scale-rating-stars rating="4" small></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
+    });
+  });
+  describe('has css classes', () => {
+    it('has class rating', () => {
+      const element = new RatingStars();
+      expect(element.getCssClassMap()).toContain('rating');
+    });
+
+    it('has class rating--disabled', () => {
+      const element = new RatingStars();
+      element.disabled = true;
+      expect(element.getCssClassMap()).toContain('rating--disabled');
+    });
+
+    it('has class rating--hover', () => {
+      const element = new RatingStars();
+      element.isHovering = true;
+      expect(element.getCssClassMap()).toContain('rating--hover');
     });
   });
 });

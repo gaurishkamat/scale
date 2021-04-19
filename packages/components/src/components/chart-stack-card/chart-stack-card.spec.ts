@@ -2,6 +2,11 @@ import { newSpecPage } from '@stencil/core/testing';
 import { ChartStackCard } from './chart-stack-card';
 
 describe('ChartStack', () => {
+  let element;
+  beforeEach(async () => {
+    element = new ChartStackCard();
+  });
+
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [ChartStackCard],
@@ -13,5 +18,16 @@ describe('ChartStack', () => {
        `,
     });
     expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle error', () => {
+    expect(element.readData('no data')).toEqual([]);
+  });
+
+  it('should handle JSON error', () => {
+    expect(element.readData(['arraydata', 'arraydata'])).toEqual([
+      'arraydata',
+      'arraydata',
+    ]);
   });
 });
