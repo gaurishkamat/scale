@@ -7,7 +7,7 @@
   {
     "elementSelector": "#about-scale--page",
     "en": "About Scale",
-    "de": "&Uuml;ber Scale"
+    "de": "Über Scale"
   },
   {
     "elementSelector": "#faq--page",
@@ -52,7 +52,7 @@
   {
     "elementSelector": "#scale-for-developers-setup--page",
     "en": "Setup for Developers",
-    "de": "Setup f&uuml;r Entwickler*innen"
+    "de": "Setup für Entwickler*innen"
   },
   {
     "elementSelector": "#scale-for-developers-icon-library--page",
