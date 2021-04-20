@@ -13,7 +13,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/scale-components/scale-components.js",
+  "unpkg": "dist/scale-components/scale-components.esm.js",
   "files": [
     "assets/",
     "dist/",
