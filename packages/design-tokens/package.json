@@ -13,8 +13,7 @@
   "scripts": {
     "generate": "node ./scripts/build.js",
     "postgenerate": "yarn format",
-    "format": "prettier --write \"**/*.js\" \"!**/*.d.ts\"",
-    "prepublishOnly": "npm run generate"
+    "format": "prettier --write \"**/*.js\" \"!**/*.d.ts\""
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",
