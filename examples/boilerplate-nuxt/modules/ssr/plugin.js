@@ -9,19 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. 
  */
 
-const { useTheme } = require("@scaleds/components-telekom/dist/theme");
-
-export default async function(moduleOptions) {
+export default async function() {
   if (process.client) {
     const {
       defineCustomElements,
       applyPolyfills
-    } = require("@scaleds/components-telekom/loader");
+    } = require("@telekom/scale-components-neutral/loader");
 
     // Bind the custom elements to the window object
     applyPolyfills().then(() => {
       defineCustomElements(window);
-      useTheme(<%= serialize(options.theme) %>);
     });
   }
 }

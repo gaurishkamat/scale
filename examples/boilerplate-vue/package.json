@@ -11,12 +11,11 @@
     "serve": "serve dist --single"
   },
   "dependencies": {
-    "@telekom/scale-components": "2.0.0-beta.0",
-    "@telekom/scale-components-vue": "^2.0.0-beta.0",
+    "@telekom/scale-components-neutral": "^3.0.0-beta.1",
+    "@telekom/scale-components-vue-neutral": "^3.0.0-beta.1",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
-    "promise-polyfill": "^6.0.2",
-    "vue-router": "^3.5.1"
+    "promise-polyfill": "^6.0.2"
   },
   "devDependencies": {
     "poi": "^9.0.0",

@@ -7,8 +7,7 @@ import {
   ScaleTextField,
   ScaleDatePicker,
   ScaleTextarea
-} from "@telekom/scale-components-react"
-import { Link } from "gatsby"
+} from "@telekom/scale-components-react-neutral"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

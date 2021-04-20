@@ -24,7 +24,7 @@
               ],
               "styles": [
                 "src/styles.css",
-                "./node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+                "./node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
               ],
               "scripts": [],
               "es5BrowserSupport": true,

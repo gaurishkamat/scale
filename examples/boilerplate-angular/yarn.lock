@@ -327,34 +327,6 @@
   resolved "https://registry.yarnpkg.com/@proyecto26/animatable-component/-/animatable-component-1.1.8.tgz#8fb365c0ff95e4fd5b859407a4165f09724f470c"
   integrity sha512-JvnRXBKUvtADqligiNIHr8NG5zI4Y4MbBdrwlFxzXBzgHqRbyQiGIDBReDcO1XNgQFKRxyceJP3NGqrlz/DSuA==
 
-"@telekom/scale-components-angular@^2.0.0-beta.0":
-  version "2.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-components-angular/-/components-angular-telekom-2.0.0-beta.0.tgz#c0678fe1689bd4483858ea16ec2420192916eb3b"
-  integrity sha512-XO6hkV3SoWcilYN0uBYk2ufiXuPLYIsP8Yp8h79ann26QaLHvQEbelvRr6sDr8NG2pYP+VMg0oyqgoj7CqYGDQ==
-  dependencies:
-    "@ionic/angular" "^5.3.1"
-    "@telekom/scale-components" "^2.0.0-beta.0"
-    tslib "^1.9.3"
-
-"@telekom/scale-components@2.0.0-beta.0", "@telekom/scale-components@^2.0.0-beta.0":
-  version "2.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-components/-/components-telekom-2.0.0-beta.0.tgz#14c62c82c10078d2938e3dc39bde39a012c39161"
-  integrity sha512-6O5v48rfaJCFuaGar+uQyy4MGVzyejdDrL9yvTEsmZGDNWjwYZv1yGJ0MQ3UEdXvDIq7XvX9V+LXUBe7L7hW7w==
-  dependencies:
-    "@duetds/date-picker" "1.2.0"
-    "@proyecto26/animatable-component" "^1.1.8"
-    "@telekom/scale-design-tokens" "^2.0.0-beta.0"
-    classnames "^2.2.6"
-    web-animations-js "^2.3.2"
-
-"@telekom/scale-design-tokens@^2.0.0-beta.0":
-  version "2.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/design-tokens-telekom-2.0.0-beta.0.tgz#70e5e4da72463c2f0326f1ccddfd2259af275107"
-  integrity sha512-TDWUNKrb9yettlt967PkxJJjDk3C11F1BilLpBYic5h7R0BPsSJEt0NxG4Bm0DY2UU7TCDLba2GVEBh5jISFeg==
-  dependencies:
-    color "^3.1.3"
-    prettier "^2.2.1"
-
 "@schematics/angular@7.3.10":
   version "7.3.10"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.3.10.tgz#0f94e9d206c6a240f832f1cd5d0e6b65deb0dc28"
@@ -382,6 +354,34 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.4.0.tgz#17b45629c8986e35dcbce3f7dab7d64beede83f2"
   integrity sha512-gU6+Yyd6O0KrCSS/O6j8KKqmRo+/Dcs2fI0+APCpbAWK+nqhwDISpdnSEfGDCLMoAC08XOZCycBRk2K1VGnEcg==
+
+"@telekom/scale-components-angular-neutral@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-components-angular-neutral/-/scale-components-angular-neutral-3.0.0-beta.1.tgz#8949c0c6f9ece0a10b1e389f25ebad87e398409a"
+  integrity sha512-KTTOawx15fvvHTsYgeBtMMbewm/7b485o5W9WUz1ZUa89T5YDIxb+wYOKqI/wL3UM27xKLak6tOejGJfvGsURQ==
+  dependencies:
+    "@ionic/angular" "^5.3.1"
+    tslib "^1.9.3"
+
+"@telekom/scale-components-neutral@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-components-neutral/-/scale-components-neutral-3.0.0-beta.1.tgz#b11eb2970221b16e239cc696ce345edf12c51b66"
+  integrity sha512-sYExjrarasxi6TuasR5YuJHBfytMUtiWaMPcv6EHGMQlRMH05nWewQ94Z1NGk7x1lb2n7Bg6ZJnqWT9ngwNbeA==
+  dependencies:
+    "@duetds/date-picker" "1.2.0"
+    "@proyecto26/animatable-component" "^1.1.8"
+    "@telekom/scale-design-tokens" "^3.0.0-beta.1"
+    classnames "^2.2.6"
+    stencil-inline-svg "^1.0.1"
+    web-animations-js "^2.3.2"
+
+"@telekom/scale-design-tokens@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.1.tgz#0b176662c92ded1127afa6d8179094bc3bc8e062"
+  integrity sha512-4DDpLHurQNZAyRMJJcaeeatidOIynUazVBC+1tKHzSadX94RxVug7Y6nGV1f2x46ClqjKFKdztkz6hisZjnmuA==
+  dependencies:
+    color "^3.1.3"
+    prettier "^2.2.1"
 
 "@types/jasmine@*":
   version "3.5.13"
@@ -6470,6 +6470,11 @@ stdout-stream@^1.4.0:
   integrity sha512-j4emi03KXqJWcIeF8eIXkjMFN1Cmb8gUlDYGeBALLPo5qdyTfA9bOtl8m33lRoC+vFMkP3gl0WsDr6+gzxbbTA==
   dependencies:
     readable-stream "^2.0.1"
+
+stencil-inline-svg@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/stencil-inline-svg/-/stencil-inline-svg-1.0.1.tgz#1ae2ae279f47b5d53efcdd5b1a3bf55a3e675177"
+  integrity sha512-0pi9bMta3uQjLdB+yrieZLLURAq25ZC3ZGGRy7C95mKalcZVltW3gokUVyIM4Sq1xDW2i667Pkxtk6hASarrnQ==
 
 stream-browserify@^2.0.1:
   version "2.0.2"

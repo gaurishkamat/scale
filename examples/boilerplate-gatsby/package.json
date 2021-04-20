@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@telekom/scale-components-react": "2.0.0-beta.0",
-    "@telekom/scale-components": "2.0.0-beta.0",
+    "@telekom/scale-components-react-neutral": "^3.0.0-beta.1",
+    "@telekom/scale-components-neutral": "^3.0.0-beta.1",
     "gatsby": "^2.20.36",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-manifest": "^2.3.7",

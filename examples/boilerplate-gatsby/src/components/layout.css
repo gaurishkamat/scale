@@ -1,17 +1,3 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  /* height: 100%;
-  width: 100%; */
-}
-.block {
-  height: 800px;
-  border-bottom: 1px solid #dfdfdf;
+.layout {
+  padding: 1em;
 }
