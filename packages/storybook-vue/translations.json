@@ -7,7 +7,7 @@
   {
     "elementSelector": "#about-scale--page",
     "en": "About Scale",
-    "de": "Das Design System Scale"
+    "de": "&Uuml;ber Scale"
   },
   {
     "elementSelector": "#faq--page",
@@ -21,8 +21,8 @@
   },
   {
     "elementSelector": "#scale-for-designers-getting-started--page",
-    "en": "Getting Started",
-    "de": "Erste Schritte"
+    "en": "Getting Started for Designers",
+    "de": "Erste Schritte für Designer*innen"
   },
   {
     "elementSelector": "#scale-for-designers-grid--page",
@@ -51,8 +51,8 @@
   },
   {
     "elementSelector": "#scale-for-developers-setup--page",
-    "en": "Setup",
-    "de": "Setup"
+    "en": "Setup for Developers",
+    "de": "Setup f&uuml;r Entwickler*innen"
   },
   {
     "elementSelector": "#scale-for-developers-icon-library--page",
