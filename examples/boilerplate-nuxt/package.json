@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/boilerplate-nuxt",
+  "name": "@telekom/scale-boilerplate-nuxt",
   "version": "1.0.0",
   "description": "My legendary Nuxt.js project",
   "author": "@scaled",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nuxt/ufo": "^0.5.4",
-    "@scaleds/telekom-components": "^2.0.0-beta.0",
+    "@telekom/scale-components": "^2.0.0-beta.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

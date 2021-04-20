@@ -64,18 +64,18 @@ const excludeComponents = [
 
 export const frameworkTargets = [
   reactOutputTarget({
-    componentCorePackage: '@scaleds/telekom-components',
+    componentCorePackage: '@telekom/scale-components',
     proxiesFile: '../components-react/src/components.ts',
     excludeComponents,
   }),
   vueOutputTarget({
-    componentCorePackage: '@scaleds/telekom-components',
+    componentCorePackage: '@telekom/scale-components',
     proxiesFile: '../components-vue/src/proxies.ts',
     componentModels: vueComponentModels,
     excludeComponents,
   }),
   angularOutputTarget({
-    componentCorePackage: '@scaleds/telekom-components',
+    componentCorePackage: '@telekom/scale-components',
     directivesProxyFile: '../components-angular/src/directives/proxies.ts',
     directivesArrayFile:
       '../components-angular/src/directives/proxies-list.tsx',

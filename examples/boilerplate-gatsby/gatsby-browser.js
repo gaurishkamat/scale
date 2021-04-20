@@ -1,4 +1,4 @@
-const { defineCustomElements } = require("@scaleds/telekom-components/loader");
+const { defineCustomElements } = require("@telekom/scale-components/loader");
 
 exports.onInitialClientRender = ({ element }, options) => {
   defineCustomElements(window);

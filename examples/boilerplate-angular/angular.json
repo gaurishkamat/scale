@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-      "scaleds-boilerplate-angular": {
+      "telekom-scale-boilerplate-angular": {
         "root": "",
         "sourceRoot": "src",
         "projectType": "application",
@@ -13,7 +13,7 @@
           "build": {
             "builder": "@angular-devkit/build-angular:browser",
             "options": {
-              "outputPath": "dist/scaleds-boilerplate-angular",
+              "outputPath": "dist/telekom-scale-boilerplate-angular",
               "index": "src/index.html",
               "main": "src/main.ts",
               "polyfills": "src/polyfills.ts",
@@ -24,7 +24,7 @@
               ],
               "styles": [
                 "src/styles.css",
-                "./node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.css"
+                "./node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
               ],
               "scripts": [],
               "es5BrowserSupport": true,
@@ -60,18 +60,18 @@
           "serve": {
             "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
-              "browserTarget": "scaleds-boilerplate-angular:build"
+              "browserTarget": "telekom-scale-boilerplate-angular:build"
             },
             "configurations": {
               "production": {
-                "browserTarget": "scaleds-boilerplate-angular:build:production"
+                "browserTarget": "telekom-scale-boilerplate-angular:build:production"
               }
             }
           },
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "scaleds-boilerplate-angular:build"
+              "browserTarget": "telekom-scale-boilerplate-angular:build"
             }
           },
           "test": {
@@ -105,7 +105,7 @@
           }
         }
       },
-      "scaleds-boilerplate-angular-e2e": {
+      "telekom-scale-boilerplate-angular-e2e": {
         "root": "e2e/",
         "projectType": "application",
         "prefix": "",
@@ -114,11 +114,11 @@
             "builder": "@angular-devkit/build-angular:protractor",
             "options": {
               "protractorConfig": "e2e/protractor.conf.js",
-              "devServerTarget": "scaleds-boilerplate-angular:serve"
+              "devServerTarget": "telekom-scale-boilerplate-angular:serve"
             },
             "configurations": {
               "production": {
-                "devServerTarget": "scaleds-boilerplate-angular:serve:production"
+                "devServerTarget": "telekom-scale-boilerplate-angular:serve:production"
               }
             }
           },
@@ -134,5 +134,5 @@
         }
       }
     },
-    "defaultProject": "scaleds-boilerplate-angular"
+    "defaultProject": "telekom-scale-boilerplate-angular"
   }

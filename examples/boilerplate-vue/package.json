@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/boilerplate-vue",
+  "name": "@telekom/scale-boilerplate-vue",
   "version": "0.0.1",
   "private": true,
   "description": "Vue example for scale",
@@ -11,8 +11,8 @@
     "serve": "serve dist --single"
   },
   "dependencies": {
-    "@scaleds/telekom-components": "2.0.0-beta.0",
-    "@scaleds/telekom-components-vue": "^2.0.0-beta.0",
+    "@telekom/scale-components": "2.0.0-beta.0",
+    "@telekom/scale-components-vue": "^2.0.0-beta.0",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "promise-polyfill": "^6.0.2",

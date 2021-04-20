@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/nuxt-module",
+  "name": "@telekom/scale-nuxt-module",
   "publishConfig": {
     "access": "restricted"
   },

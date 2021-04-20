@@ -10,4 +10,4 @@
  */
 
 @import './fonts.css';
-@import '~@scaleds/telekom-design-tokens/dist/design-tokens-telekom.css';
+@import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';

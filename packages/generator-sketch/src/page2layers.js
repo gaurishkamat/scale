@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {nodeTreeToSketchPage} from '@scaleds/html-to-sketch';
+import {nodeTreeToSketchPage} from '@telekom/scale-html-to-sketch';
 
 export function run(mainNode = document.body) {
   const artboards = Array.from(mainNode.querySelectorAll("*[data-sketch-artboard]"));

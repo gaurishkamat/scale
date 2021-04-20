@@ -1,12 +1,12 @@
 {
-  "name": "@scaleds/boilerplate-gatsby",
+  "name": "@telekom/scale-boilerplate-gatsby",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@scaleds/telekom-components-react": "2.0.0-beta.0",
-    "@scaleds/telekom-components": "2.0.0-beta.0",
+    "@telekom/scale-components-react": "2.0.0-beta.0",
+    "@telekom/scale-components": "2.0.0-beta.0",
     "gatsby": "^2.20.36",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-manifest": "^2.3.7",

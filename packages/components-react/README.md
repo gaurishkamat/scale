@@ -2,12 +2,12 @@
 A React Proxy for Scale Components
 
 ## Installation
-- To installl run `yarn add @scaleds/components-react`
+- To installl run `yarn add @telekom/scale-components-react`
 
 ## Usage
 ```
 import React from 'react';
-import { ScaleButton } from '@scaleds/components-react';
+import { ScaleButton } from '@telekom/scale-components-react';
 
 const App: React.FC = () => (
   <div className="app">

@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-const nodeTreeToSketchPage = require("@scaleds/html-to-sketch")
+const nodeTreeToSketchPage = require("@telekom/scale-html-to-sketch")
   .nodeTreeToSketchPage;
 const puppeteer = require("puppeteer");
 const fs = require("fs");

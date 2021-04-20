@@ -5,10 +5,10 @@ import About from "./About.vue";
 import {
   defineCustomElements,
   applyPolyfills
-} from "@scaleds/telekom-components/loader";
+} from "@telekom/scale-components/loader";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
-import "@scaleds/telekom-components/dist/scale-components/scale-components.css";
+import "@telekom/scale-components/dist/scale-components/scale-components.css";
 
 applyPolyfills().then(() => {
   defineCustomElements(window);

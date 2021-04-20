@@ -5,7 +5,7 @@ const path = require("path");
 function renderToString() {
   const {
     renderToString
-  } = require("@scaleds/telekom-components/hydrate/index.js");
+  } = require("@telekom/scale-components/hydrate/index.js");
 
   const files = glob.sync(path.join(process.cwd(), "/public/**/*.html"));
 

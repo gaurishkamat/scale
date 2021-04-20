@@ -29,8 +29,8 @@ const createLink = ({ title, href }) => {
 
 let sidebarLinksContainer;
 
-addons.register("@scaleds/sidebar-links-addon", () => {
-  addons.add(`@scaleds/sidebar-links-addon`, {
+addons.register("@telekom/scale-sidebar-links-addon", () => {
+  addons.add(`@telekom/scale-sidebar-links-addon`, {
     type: types.TAB,
     route: () => {
       const [{ locale }] = useGlobals();

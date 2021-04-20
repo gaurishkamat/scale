@@ -1,11 +1,11 @@
 {
-    "name": "@scaleds/boilerplate-react",
+    "name": "@telekom/scale-boilerplate-react",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index.js",
     "dependencies": {
-        "@scaleds/telekom-components-react": "2.0.0-beta.0",
-        "@scaleds/telekom-components": "2.0.0-beta.0",
+        "@telekom/scale-components-react": "2.0.0-beta.0",
+        "@telekom/scale-components": "2.0.0-beta.0",
         "@types/jest": "25.1.4",
         "@types/node": "13.9.8",
         "@types/react": "16.9.31",

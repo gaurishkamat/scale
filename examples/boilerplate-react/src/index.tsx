@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import { defineCustomElements } from '@scaleds/telekom-components/loader';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 import App from './App';
-import '@scaleds/telekom-components/dist/scale-components/scale-components.css';
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
 import './index.css';
 
 defineCustomElements(window)

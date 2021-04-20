@@ -38,8 +38,8 @@ let languageToolbar;
 const englishLink = createLink("English");
 const germanLink = createLink("Deutsch");
 
-addons.register("@scaleds/language-addon", () => {
-  addons.add(`@scaleds/language-addon`, {
+addons.register("@telekom/scale-language-addon", () => {
+  addons.add(`@telekom/scale-language-addon`, {
     type: types.TAB,
     title: "",
     route: () => {

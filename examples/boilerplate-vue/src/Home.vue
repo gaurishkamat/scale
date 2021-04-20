@@ -22,7 +22,7 @@
 
 <script>
 import Vue from 'vue'
-import { ScaleButton } from "@scaleds/telekom-components-vue";
+import { ScaleButton } from "@telekom/scale-components-vue";
 
 export default Vue.extend({
   name: "home",

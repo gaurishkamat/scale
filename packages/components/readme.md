@@ -23,7 +23,7 @@ By following the instructions for the Open Source Version you obtain source code
 ### Setup with NPM
 
 ```
-npm install @scaleds/components
+npm install @telekom/scale-components
 ```
 
 To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and design tokens.
@@ -33,22 +33,22 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/@scaleds/components/dist/scale-components/scale-components.css"
+  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
 />
 <script
   type="module"
-  src="node_modules/@scaleds/components/dist/scale-components/scale-components.js"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.js"
 ></script>
 ```
 
 ### Setup with a bundler or ES modules
 
 ```javascript
-import '@scaleds/components/dist/scale-components/scale-components.css';
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
 import {
   applyPolyfills,
   defineCustomElements,
-} from '@scaleds/components/loader';
+} from '@telekom/scale-components/loader';
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -59,11 +59,11 @@ applyPolyfills().then(() => {
 
 | Package Name                | Description                   |
 | --------------------------- | ----------------------------- |
-| @scaleds/components         | Stencil components            |
-| @scaleds/components-react   | Component proxies for React   |
-| @scaleds/components-vue     | Component proxies for Vue     |
-| @scaleds/components-angular | Component proxies for Angular |
-| @scaleds/design-tokens      | Design tokens                 |
+| @telekom/scale-components         | Stencil components            |
+| @telekom/scale-components-react   | Component proxies for React   |
+| @telekom/scale-components-vue     | Component proxies for Vue     |
+| @telekom/scale-components-angular | Component proxies for Angular |
+| @telekom/scale-design-tokens      | Design tokens                 |
 
 ### Using the source code directly
 
@@ -87,7 +87,7 @@ Please note that the use of the Telekom brand and design assets, including but n
 Install the Scale component library in your project with NPM or Yarn:
 
 ```
-npm install @scaleds/telekom-components
+npm install @telekom/scale-components
 ```
 
 ### Setup with plain HTML
@@ -95,19 +95,19 @@ npm install @scaleds/telekom-components
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.css"
+  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
 />
 <script
   type="module"
-  src="node_modules/@scaleds/telekom-components/dist/scale-components/scale-components.js"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.js"
 ></script>
 ```
 
 ### Setup with a bundler or ES modules
 
 ```
-import "@scaleds/telekom-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@scaleds/telekom-components/loader";
+import "@telekom/scale-components/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -118,11 +118,11 @@ applyPolyfills().then(() => {
 
 | Package Name                        | Description                   |
 | ----------------------------------- | ----------------------------- |
-| @scaleds/telekom-components         | Stencil components            |
-| @scaleds/telekom-components-react   | Component proxies for React   |
-| @scaleds/telekom-components-vue     | Component proxies for Vue     |
-| @scaleds/telekom-components-angular | Component proxies for Angular |
-| @scaleds/telekom-design-tokens      | Telekom design tokens         |
+| @telekom/scale-components         | Stencil components            |
+| @telekom/scale-components-react   | Component proxies for React   |
+| @telekom/scale-components-vue     | Component proxies for Vue     |
+| @telekom/scale-components-angular | Component proxies for Angular |
+| @telekom/scale-design-tokens      | Telekom design tokens         |
 
 ### Using the source code directly
 

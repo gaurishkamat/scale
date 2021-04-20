@@ -4,8 +4,8 @@ echo "--------"
 echo "${GREEN}Build Components...${NC}"
 echo "--------"
 echo "${GREEN}Build Components...${NC}"
-yarn workspace @scaleds/telekom-components build;
+yarn workspace @telekom/scale-components build;
 echo "--------"
 echo "${GREEN}Build React wrappers...${NC}"
-yarn workspace @scaleds/telekom-components-react build;
+yarn workspace @telekom/scale-components-react build;
 echo "--------"

@@ -13,8 +13,8 @@ import React from "react";
 import { addons, types } from "@storybook/addons";
 import Usage from "./usage";
 
-addons.register("@scaleds/usage-addon", () => {
-  addons.add(`@scaleds/usage-addon`, {
+addons.register("@telekom/scale-usage-addon", () => {
+  addons.add(`@telekom/scale-usage-addon`, {
     type: types.TAB,
     title: "Usage",
     route: ({ storyId, refId, path }) => {

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { defineCustomElements } from '@scaleds/telekom-components/loader';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 import { BooleanValueAccessor } from './directives/boolean-value-accessor';
 import { NumericValueAccessor } from './directives/number-value-accessor';

@@ -1,11 +1,11 @@
 {
-  "name": "@scaleds/telekom-components-react",
+  "name": "@telekom/scale-components-react",
   "publishConfig": {
     "access": "public"
   },
   "sideEffects": false,
   "version": "3.0.0-beta.1",
-  "description": "React proxy for @scaleds/components",
+  "description": "React proxy for @telekom/scale-components",
   "scripts": {
     "build": "yarn clean && yarn compile",
     "clean": "rimraf dist",

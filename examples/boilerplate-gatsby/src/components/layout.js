@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import {
   ScaleAppShell,
   ScaleAppFooter
-} from "@scaleds/telekom-components-react"
+} from "@telekom/scale-components-react"
 
 import "./layout.css"
-import "@scaleds/telekom-components/dist/scale-components/scale-components.css"
+import "@telekom/scale-components/dist/scale-components/scale-components.css"
 import {
   addonNavigation,
   footerNavigation,

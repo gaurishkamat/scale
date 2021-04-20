@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScaleButton, ScaleTextField, ScaleDropdown, ScaleCheckbox, ScaleTextarea } from "@scaleds/telekom-components-react";
+import { ScaleButton, ScaleTextField, ScaleDropdown, ScaleCheckbox, ScaleTextarea } from "@telekom/scale-components-react";
 import "./App.css";
 
 const App: React.FC = () => {

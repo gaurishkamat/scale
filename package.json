@@ -1,5 +1,5 @@
 {
-    "name": "scaleds",
+    "name": "telekom",
     "version": "0.0.1",
     "license": "MPL-2.0",
     "private": true,
@@ -10,11 +10,11 @@
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
         "build:storybook:staging": "./scripts/storybook-staging-build.sh",
-        "build:components": "yarn workspace @scaleds/telekom-components build",
-        "watch:components": "yarn workspace @scaleds/telekom-components start",
+        "build:components": "yarn workspace @telekom/scale-components build",
+        "watch:components": "yarn workspace @telekom/scale-components start",
         "bootstrap": "lerna bootstrap",
         "postbootstrap": "lerna run generate",
-        "test": "lerna run test --scope @scaleds/telekom-components",
+        "test": "lerna run test --scope @telekom/scale-components",
         "new-version": "lerna version --conventional-commits --no-push",
         "force-version": "lerna version --conventional-commits --force-publish --no-push"
     },

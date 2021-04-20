@@ -35,7 +35,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@scaleds/nuxt-module'],
+  modules: ['@telekom/scale-nuxt-module'],
   /*
    ** scaled configuration
    */
