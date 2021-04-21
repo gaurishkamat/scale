@@ -35,6 +35,10 @@ body {
     background: #D8D8D8;
 }
 
+select {
+    background: white;
+}
+
 .artboard {
     width: 1280px;
     padding: 88px 80px;

@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-const { findLayer, findLayers } = require('./utils');
+const { findLayer, findLayers, Resize, setResizingConstraints } = require('./utils');
 
 const {
   NONE,
@@ -78,35 +78,32 @@ module.exports = {
           symbol.layers[0] = symbol.layers[0].layers[1];
         }
         symbol.layers[0].resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-        var icon = findLayer(symbol, s => s.name === "Icon" || s.name === "group");
-        if (icon) icon.resizingConstraint = TOP_LEFT_FIXED_SIZE;
-        var label = findLayer(symbol, s => s.name === "Accordion Label");
-        if (label) label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-        var bg = findLayer(symbol, s => s.name === "Background");
-        if (bg) bg.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
+        setResizingConstraints(symbol,
+          /^(Icon|group)$/, TOP_LEFT_FIXED_SIZE,
+          "Accordion Label", TOP_LEFT_RIGHT_FIXED_HEIGHT,
+          "Background", TOP_LEFT_RIGHT_FIXED_HEIGHT
+        );
       }
       if (/^(Button)/.test(symbol.name)) {
-        var button = findLayer(symbol, s => s.name === "button.button");
-        if (button) {
-          button.resizingConstraint = TOP_LEFT_FIXED_HEIGHT;
-          button.layers.pop();
-        }
-        var slot = findLayer(symbol, s => s.name === "slot");
-        if (slot) slot.resizingConstraint = FIXED_SIZE;
-        var icon = findLayer(symbol, s => s.name === "Icon");
-        if (icon) icon.resizingConstraint = TOP_LEFT_FIXED_SIZE;
-        var label = findLayer(symbol, s => s.name === "Button Label");
-        if (icon) {
-          if (label) label.resizingConstraint = TOP_LEFT_FIXED_SIZE;
-          else icon.resizingConstraint = FIXED_SIZE;
-        } else {
-          if (label) label.resizingConstraint = FIXED_SIZE;
-        }
+        findLayers(symbol, /.?/, l => l.frame.width = Math.ceil(l.frame.width));
+        setResizingConstraints(symbol,
+          "button.button", TOP_LEFT_FIXED_HEIGHT,
+          "slot", FIXED_SIZE,
+          "Icon", FIXED_SIZE,
+          "Button Label", label => {
+            if (/Large/.test(symbol.name)) {
+              label.frame.width = 83;
+            } else {
+              label.frame.width = 62;
+            }
+            label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
+            setResizingConstraints(symbol, "Icon", TOP_LEFT_FIXED_SIZE);
+          }
+        );
       }
       if (/^Breadcrumb/.test(symbol.name)) {
         symbol.groupLayout = undefined;
-        symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
-        findLayers(symbol.layers[0], l => { l.resizingConstraint = TOP_LEFT_FIXED_SIZE; });
+        setResizingConstraints(symbol, /.?/, TOP_LEFT_FIXED_SIZE);
       }
       if (/^(Card)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
@@ -138,9 +135,13 @@ module.exports = {
       }
       if (/^(Dropdown)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
-        findLayer(symbol, "label.input__label", label => label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT);
-        findLayer(symbol, "div.input__helper-text", label => label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT);
-        findLayer(symbol, /^((Icon)|(svg\.icon))$/, icon => icon.resizingConstraint = RIGHT_FIXED_SIZE);
+        setResizingConstraints(symbol,
+          "div.dropdown", TOP_LEFT_FIXED_HEIGHT,
+          "div.input__dropdown-wrapper", TOP_LEFT_FIXED_HEIGHT,
+          "label.input__label", TOP_LEFT_RIGHT_FIXED_HEIGHT,
+          "div.input__helper-text", TOP_LEFT_RIGHT_FIXED_HEIGHT,
+          /^((Icon)|(svg\.icon))$/, RIGHT_FIXED_SIZE
+        );
         findLayer(symbol, "Dropdown Label", label => {
           label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
           var addWidth = (symbol.frame.width - 46) - label.frame.width;

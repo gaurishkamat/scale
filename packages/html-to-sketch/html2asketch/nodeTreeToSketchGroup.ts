@@ -159,6 +159,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       const childNodes = Array.from((childNode as HTMLSlotElement).assignedNodes())
         .filter(n => {
           if (n instanceof HTMLElement) {
+            // FIXME add the pseudo-element creation from nodeToSketchLayers.
             materializeStyle(n);
           }
           childNode.appendChild(n);
