@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shell should match snapshot 1`] = `
+<scale-app-shell>
+  <mock:shadow-root>
+    <div class="shell" part="base">
+      <scale-app-header activerouteid="" activesectorid="" claimlang="de" portalname=""></scale-app-header>
+      <main class="content">
+        <slot></slot>
+      </main>
+    </div>
+  </mock:shadow-root>
+</scale-app-shell>
+`;
