@@ -1,35 +1,5 @@
-import { newSpecPage, SpecPage } from '@stencil/core/testing';
+import { newSpecPage } from '@stencil/core/testing';
 import { Slider } from './slider';
-
-async function simulateKeyboardEvent(
-  page: SpecPage,
-  strEvent: string,
-  querySelectorString: string,
-  key: string
-) {
-  const event = new KeyboardEvent(strEvent, {
-    view: window,
-    bubbles: true,
-    cancelable: true,
-    key,
-  });
-  const element = page.root.shadowRoot.querySelector(querySelectorString);
-  !element.dispatchEvent(event); // tslint:disable-line
-}
-
-async function simulateMouseEvent(
-  page: SpecPage,
-  strEvent: string,
-  querySelectorString: string
-) {
-  const event = new MouseEvent(strEvent, {
-    view: window,
-    bubbles: true,
-    cancelable: true,
-  });
-  const element = page.root.shadowRoot.querySelector(querySelectorString);
-  !element.dispatchEvent(event); // tslint:disable-line
-}
 
 describe('Slider', () => {
   it('should match snapshot', async () => {
@@ -150,34 +120,65 @@ describe('Slider', () => {
     });
   });
 
-  it('keydown .slider__thumb with ArrowRight', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider></scale-slider>`,
+  describe('events', () => {
+    let page;
+    beforeEach(async () => {
+      page = await newSpecPage({
+        components: [Slider],
+        html: `<scale-slider></scale-slider>`,
+      });
     });
-    page.root.value = 50;
-    simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowRight');
-    expect(await page.rootInstance.value).toBe(51);
-  });
 
-  it('keydown .slider__thumb with ArrowUp', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider></scale-slider>`,
+    it('onKeyDown with ArrowRight', async () => {
+      page.root.value = 50;
+      const sliderThumb = page.root.shadowRoot.querySelector('.slider__thumb');
+      sliderThumb.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          key: 'ArrowRight',
+        })
+      );
+      await page.waitForChanges();
+      expect(await page.rootInstance.value).toBe(51);
     });
-    page.root.value = 50;
-    simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowUp');
-    expect(await page.rootInstance.value).toBe(60);
-  });
 
-  it('mousedown .slider__thumb-wrapper', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider></scale-slider>`,
+    it('onKeyDown with ArrowUp', async () => {
+      page.root.value = 50;
+      const sliderThumb = page.root.shadowRoot.querySelector('.slider__thumb');
+      sliderThumb.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          key: 'ArrowUp',
+        })
+      );
+      await page.waitForChanges();
+      expect(await page.rootInstance.value).toBe(60);
     });
-    page.root.dragging = false;
-    expect(await page.rootInstance.dragging).toBe(undefined);
-    simulateMouseEvent(page, 'mousedown', '.slider__thumb-wrapper');
-    expect(await page.rootInstance.dragging).toBe(true);
+
+    it('mock onMousedown', async () => {
+      const mock = jest.fn();
+      const sliderThumbWrapper = page.root.shadowRoot.querySelector(
+        '.slider__thumb-wrapper'
+      );
+      sliderThumbWrapper.addEventListener('mousedown', mock);
+      await page.waitForChanges();
+      sliderThumbWrapper.dispatchEvent(new MouseEvent('mousedown'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+    });
+
+    it('onMousedown with disabled', async () => {
+      page.root.disabled = true;
+      const sliderThumbWrapper = page.root.shadowRoot.querySelector(
+        '.slider__thumb-wrapper'
+      );
+      sliderThumbWrapper.dispatchEvent(new MouseEvent('mousedown'));
+      await page.waitForChanges();
+      expect(page.rootInstance.dragging).toBe(undefined);
+    });
   });
 });
