@@ -1,4 +1,5 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
+import classNames from 'classnames';
 
 @Component({
   tag: 'scale-loading',
@@ -6,28 +7,42 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class Loading {
-  @Prop() progressAmount: string = '0';
-  @Prop() progressColor: string = '#2ecc71';
+  @Prop() loadingAmount: number = 90;
+  @Prop() variant: string = '#e20074';
+  @Prop() alignment: 'horizontal' | 'vertical' | '' = '';
+
+  getLoadingText() {
+    return this.alignment === 'horizontal' ? (
+      <div class="loading-text-horizontal">Loading...</div>
+    ) : (
+      <div class="loading-text-vertical">Loading ...</div>
+    );
+  }
+
+  styles() {
+    return `:host {
+        --loading-color: ${this.variant};
+        --loading-amount-percentage: ${this.loadingAmount}%
+      }`;
+  }
 
   render() {
     return (
-      <div
-        style={{
-          width: `100%`,
-          height: `100%`,
-          display: `flex`,
-          alignItems: `center`,
-          justifyContent: `center`,
-          background: `conic-gradient(${this.progressColor} ${
-            this.progressAmount
-          }%, 0, #ecf0f1 ${(100 - parseInt(this.progressAmount)).toString()}%)`,
-          borderRadius: `50%`,
-        }}
-      >
-        <div>
-          <span>{this.progressAmount}</span>
+      <Host>
+        <style>{this.styles()}</style>
+        <div class={this.getCssClassMap()}>
+          <div class="loading-spinner">
+            <div class="loading-spinner-container"></div>
+          </div>
+          {this.alignment === '' ? '' : this.getLoadingText()}
         </div>
-      </div>
+      </Host>
+    );
+  }
+  getCssClassMap() {
+    return (
+      classNames(`loading`),
+      this.alignment && `loading--alignment-${this.alignment}`
     );
   }
 }

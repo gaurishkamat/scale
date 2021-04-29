@@ -1,0 +1,44 @@
+:host {
+  --loading-color: #e20074;
+  --loading-amount-percentage: 90%;
+}
+
+.loading--alignment-horizontal {
+  display: inline-flex;
+}
+.loading--alignment-vertical {
+  display: block;
+  width: 140px;
+}
+
+.loading-spinner {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--loading-color) var(--loading-amount-percentage),
+    0,
+    #ecf0f1 calc(100% - var(--loading-amount-percentage))
+  );
+}
+.loading-spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+}
+.loading-text-horizontal {
+  height: 140px;
+  line-height: 140px;
+}
+.loading-text-vertical {
+  width: 140px;
+  text-align: center;
+}
