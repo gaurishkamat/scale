@@ -8,8 +8,8 @@ import classNames from 'classnames';
 })
 export class Loading {
   @Prop() loadingAmount: number = 90;
-  @Prop() variant: string = '#e20074';
-  @Prop() alignment: 'horizontal' | 'vertical' | '' = '';
+  @Prop() variant: 'white' | 'magenta' = 'magenta';
+  @Prop() alignment: 'horizontal' | 'vertical' | 'without' = 'without';
 
   getLoadingText() {
     return this.alignment === 'horizontal' ? (
@@ -21,7 +21,7 @@ export class Loading {
 
   styles() {
     return `:host {
-        --loading-color: ${this.variant};
+        --loading-color: ${this.variant === 'white' ? '#fff' : '#e20074'};
         --loading-amount-percentage: ${this.loadingAmount}%
       }`;
   }
@@ -31,10 +31,10 @@ export class Loading {
       <Host>
         <style>{this.styles()}</style>
         <div class={this.getCssClassMap()}>
-          <div class="loading-spinner">
+          <div class={`loading-spinner-${this.alignment}`}>
             <div class="loading-spinner-container"></div>
           </div>
-          {this.alignment === '' ? '' : this.getLoadingText()}
+          {this.alignment === 'without' ? '' : this.getLoadingText()}
         </div>
       </Host>
     );
