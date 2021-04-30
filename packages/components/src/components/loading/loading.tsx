@@ -9,7 +9,8 @@ import classNames from 'classnames';
 export class Loading {
   @Prop() loadingAmount: number = 90;
   @Prop() variant: 'white' | 'magenta' = 'magenta';
-  @Prop() alignment: 'horizontal' | 'vertical' | 'without' = 'without';
+  @Prop() alignment: 'horizontal' | 'vertical' | '' = '';
+  @Prop() animated: boolean = true;
 
   getLoadingText() {
     return this.alignment === 'horizontal' ? (
@@ -31,10 +32,21 @@ export class Loading {
       <Host>
         <style>{this.styles()}</style>
         <div class={this.getCssClassMap()}>
-          <div class={`loading-spinner-${this.alignment}`}>
-            <div class="loading-spinner-container"></div>
+          <div class="loading-spinner">
+            {this.animated ? (
+              <div class="animated-loading-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            ) : (
+              <div class="loading-spinner-container">
+                <div class="loading-spinner-innerCircle"></div>
+              </div>
+            )}
           </div>
-          {this.alignment === 'without' ? '' : this.getLoadingText()}
+          {this.alignment === '' ? '' : this.getLoadingText()}
         </div>
       </Host>
     );
@@ -42,7 +54,7 @@ export class Loading {
   getCssClassMap() {
     return (
       classNames(`loading`),
-      this.alignment && `loading--alignment-${this.alignment}`
+      this.alignment && `loading--alignment${'-' + this.alignment}`
     );
   }
 }
