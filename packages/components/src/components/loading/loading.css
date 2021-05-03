@@ -13,13 +13,13 @@
   width: 70px;
 }
 
-.spinner--alignment-horizontal .spinner-container {
+.spinner spinner--alignment-horizontal .spinner-container {
   height: 40px;
   width: 40px;
   text-align: center;
 }
 
-.spinner--alignment-vertical .spinner-container {
+.spinner spinner--alignment-vertical .spinner-container {
   height: 40px;
   width: 40px;
   margin-left: 15px;

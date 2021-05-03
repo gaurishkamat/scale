@@ -42,8 +42,7 @@ export class Loading {
   getCssClassMap() {
     return (
       classNames(`spinner`),
-      this.alignment && `spinner--alignment${'-' + this.alignment}`
+      this.alignment && `spinner--alignment-${this.alignment}`
     );
   }
 }
-//this.alignment === 'vertical' ? 'spinner-vertical' : 'spinner'
