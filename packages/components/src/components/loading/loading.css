@@ -1,5 +1,4 @@
 :host {
-  --loading-color: var(--scl-color-primary);
   --loading-size: 24px;
 }
 
@@ -13,35 +12,42 @@
   width: 70px;
 }
 
-.spinner spinner--alignment-horizontal .spinner-container {
+.spinner--alignment-horizontal .spinner__container {
   height: 40px;
   width: 40px;
   text-align: center;
 }
 
-.spinner spinner--alignment-vertical .spinner-container {
+.spinner--alignment-vertical .spinner__container {
   height: 40px;
   width: 40px;
   margin-left: 15px;
   text-align: center;
 }
 
-.spinner-text--alignment-horizontal {
+.spinner__text {
+  font-weight: bold;
+  font-size: var(--scl-font-size-16);
+}
+
+.spinner__text--alignment-horizontal {
   padding-left: 5px;
   line-height: 40px;
-  font-weight: bold;
-  font-size: var(--scl-font-size-16);
-  color: var(--scl-color-grey-60);
 }
-.spinner-text--alignment-vertical {
+.spinner__text--alignment-vertical {
   width: 70px;
-  font-weight: bold;
   margin-left: 5px;
-  font-size: var(--scl-font-size-16);
+}
+
+.spinner__text--variant-white {
+  color: var(--scl-color-white);
+}
+
+.spinner__text--variant-magenta {
   color: var(--scl-color-grey-60);
 }
 
-.spinner-circle {
+.spinner__circle {
   display: inline-block;
   height: var(--loading-size);
   width: var(--loading-size);
@@ -51,11 +57,20 @@
   -moz-animation: rotation 1.5s infinite linear;
   -o-animation: rotation 1.5s infinite linear;
   animation: rotation 1.5s infinite linear;
-  border-left: 3px solid var(--loading-color);
-  border-right: 3px solid var(--loading-color);
-  border-bottom: 3px solid var(--loading-color);
   border-top: 3px solid #d0d0d0;
   border-radius: 100%;
+}
+
+.spinner__circle--variant-magenta {
+  border-left: 3px solid var(--scl-color-primary);
+  border-right: 3px solid var(--scl-color-primary);
+  border-bottom: 3px solid var(--scl-color-primary);
+}
+
+.spinner__circle--variant-white {
+  border-left: 3px solid var(--scl-color-white);
+  border-right: 3px solid var(--scl-color-white);
+  border-bottom: 3px solid var(--scl-color-white);
 }
 
 @-webkit-keyframes rotation {

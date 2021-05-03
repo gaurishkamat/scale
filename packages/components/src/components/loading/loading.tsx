@@ -11,29 +11,24 @@ export class Loading {
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: boolean = false;
 
-  getLoadingText() {
-    return this.alignment === 'horizontal' ? (
-      <div class="spinner-text--alignment-horizontal">Loading...</div>
-    ) : (
-      <div class="spinner-text--alignment-vertical">Loading ...</div>
-    );
-  }
-
-  styles() {
-    return `:host {
-        --loading-color: ${this.variant === 'white' ? '#fff' : '#e20074'};
-      }`;
-  }
-
   render() {
     return (
       <Host>
-        <style>{this.styles()}</style>
         <div class={this.getCssClassMap()}>
-          <div class="spinner-container">
-            <div class="spinner-circle"></div>
+          <div class="spinner__container">
+            <div
+              class={`spinner__circle spinner__circle--variant-${this.variant}`}
+            ></div>
           </div>
-          {this.text ? this.getLoadingText() : false}
+          {this.text ? (
+            <div
+              class={`spinner__text spinner__text--alignment-${this.alignment} spinner__text--variant-${this.variant} `}
+            >
+              Loading ...
+            </div>
+          ) : (
+            false
+          )}
         </div>
       </Host>
     );
