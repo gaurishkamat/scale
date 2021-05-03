@@ -32,20 +32,23 @@ export class Loading {
       <Host>
         <style>{this.styles()}</style>
         <div class={this.getCssClassMap()}>
-          <div class="loading-spinner">
-            {this.animated ? (
-              <div class="animated-loading-spinner">
+          {this.animated ? (
+            <div class="animated-loading-spinner">
+              <div class="animated-loading-spinner-container">
                 <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
               </div>
-            ) : (
+            </div>
+          ) : (
+            <div class="loading-spinner">
               <div class="loading-spinner-container">
                 <div class="loading-spinner-innerCircle"></div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
+
           {this.alignment === '' ? '' : this.getLoadingText()}
         </div>
       </Host>
