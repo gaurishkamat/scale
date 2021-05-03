@@ -8,13 +8,14 @@ import classNames from 'classnames';
 })
 export class Loading {
   @Prop() variant: 'white' | 'magenta' = 'magenta';
-  @Prop() alignment: 'horizontal' | 'vertical' | '' = '';
+  @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
+  @Prop() text: boolean = false;
 
   getLoadingText() {
     return this.alignment === 'horizontal' ? (
-      <div class="loading-text-horizontal">Loading...</div>
+      <div class="spinner-text--alignment-horizontal">Loading...</div>
     ) : (
-      <div class="loading-text-vertical">Loading ...</div>
+      <div class="spinner-text--alignment-vertical">Loading ...</div>
     );
   }
 
@@ -29,22 +30,20 @@ export class Loading {
       <Host>
         <style>{this.styles()}</style>
         <div class={this.getCssClassMap()}>
-          <div
-            class={
-              this.alignment === 'vertical' ? 'spinner-vertical' : 'spinner'
-            }
-          >
-            <div class="spinner-container"></div>
+          <div class="spinner-container">
+            <div class="spinner-circle"></div>
           </div>
-          {this.alignment === '' ? '' : this.getLoadingText()}
+          {this.text ? this.getLoadingText() : false}
         </div>
       </Host>
     );
   }
+
   getCssClassMap() {
     return (
-      classNames(`loading`),
-      this.alignment && `loading--alignment${'-' + this.alignment}`
+      classNames(`spinner`),
+      this.alignment && `spinner--alignment${'-' + this.alignment}`
     );
   }
 }
+//this.alignment === 'vertical' ? 'spinner-vertical' : 'spinner'
