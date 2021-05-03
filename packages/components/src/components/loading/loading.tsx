@@ -17,8 +17,16 @@ export class Loading {
         <div class={this.getCssClassMap()}>
           <div class="spinner__container">
             <div
-              class={`spinner__circle spinner__circle--variant-${this.variant}`}
+              class={`spinner__circle_background spinner__circle_background--variant-${this.variant}`}
             ></div>
+            <div
+              class={`spinner__circle spinner__circle--alignment-${this.alignment} spinner__circle--variant-${this.variant}`}
+            >
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
           {this.text ? (
             <div
