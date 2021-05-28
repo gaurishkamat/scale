@@ -6,11 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // WIP
-  title = 'Scale + Angular';
+  title = 'boilerplate-angular';
 
-  links = [
-    { name: 'Vanilla Form' },
-    { name: 'Scale Form' }
-  ]
+  testValue = 10;
+  testText: string = 'OK';
 }

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('@telekom/scale-components-neutral/dist/scale-components/scale-components.css');
+
+:root {
+  margin: 0;
+  font-family: sans-serif;
+  color: var(--scl-color-text-standard);
+}
+
+body {
+  /*padding: var(--scl-spacing-24);*/
+}

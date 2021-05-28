@@ -1,18 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ComponentLibraryModule } from '@telekom/scale-components-angular-neutral';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { VanillaFormComponent } from './vanilla-form/vanilla-form.component';
+import { ScaleFormComponent } from './scale-form/scale-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VanillaFormComponent,
+    ScaleFormComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    ComponentLibraryModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
