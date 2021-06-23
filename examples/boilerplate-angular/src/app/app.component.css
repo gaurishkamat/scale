@@ -1,1 +1,12 @@
+.wrapper {
+	background: rgb(238, 252, 235);
+	border-radius: 8px;
+	padding: 16px;
+	margin: 16px 0;
+	z-index: -1000;
+}
 
+.components-row {
+	display: flex;
+	justify-content: space-around;
+}
