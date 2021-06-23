@@ -1,79 +1,19 @@
-<div>
-    <h1>Scale Components: Angular</h1>
-    <div class="wrapper">
-        <h3>Buttons</h3>
-        <div class="components-row">
-            <scale-button>Click!</scale-button>
-            <scale-button variant="secondary">Click!</scale-button>
-            <scale-button size="small">Click!</scale-button>
-            <scale-button variant="secondary" size="small">Click!</scale-button>
-            <scale-button>
-                <scale-icon-action-search></scale-icon-action-search> Icon
-            </scale-button>
-            <scale-button variant="secondary">
-                Icon <scale-icon-action-search></scale-icon-action-search>
-            </scale-button>
-            <scale-button size="small">
-                <scale-icon-action-search></scale-icon-action-search> Icon
-            </scale-button>
-            <scale-button variant="secondary" size="small">
-                Icon <scale-icon-action-search></scale-icon-action-search>
-            </scale-button>
-        </div>
-    </div>
-    <div class="wrapper">
-        <h3>Card</h3>
-        <scale-card>A title</scale-card>
-    </div>
-    <div class="wrapper">
-        <h3>Checkbox</h3>
-        <scale-checkbox input-id="checkbox1" value="1" label="checkbox"
-            icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
-            name="nameOfCheckbox"></scale-checkbox>
-        <scale-checkbox input-id="checkbox2" value="2" transparent="true" label="another checkbox"
-            icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
-            name="nameOfCheckbox"></scale-checkbox>
-        <scale-checkbox input-id="checkbox3" value="3" disabled="true" label="disabled checkbox" name="nameOfCheckbox">
-        </scale-checkbox>
-        <scale-checkbox input-id="checkbox4" value="4" status="error" label="checkbox with error"
-            icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
-            name="nameOfCheckbox"></scale-checkbox>
-        <scale-checkbox input-id="checkbox5" value="5" label="disabled checked checkbox" checked="true" disabled="true"
-            icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
-            name="nameOfCheckbox"></scale-checkbox>
-    </div>
-    <div class="wrapper">
-        <h3>Link</h3>
-        <scale-link variant="success">Success</scale-link>
-    </div>
-    <div class="wrapper">
-        <h3>Radio input</h3>
-        <scale-radio-button value="1" label="One" name="radioSelect" transparent="true" input-id="choiceOne">
-        </scale-radio-button>
-        <scale-radio-button value="2" label="Two" name="radioSelect" input-id="choiceTwo"></scale-radio-button>
-        <scale-radio-button value="3" label="Three" name="radioSelect" input-id="choiceThree"></scale-radio-button>
-        <scale-radio-button value="3" label="disabled radio" name="radioSelect" input-id="choiceFour" disabled="true">
-        </scale-radio-button>
-        <scale-radio-button value="4" label="radio with error" name="radioSelect" input-id="choiceFive" status="error">
-        </scale-radio-button>
-        <scale-radio-button value="5" label="disabled checked radio" name="radioSelect" disabled="true"
-            pre-checked="true" input-id="choiceSix"></scale-radio-button>
-    </div>
-    <div class="wrapper">
-        <h3>Rating Stars</h3>
-        <div class="components-row">
-            <scale-rating-stars value="1"></scale-rating-stars>
-            <scale-rating-stars value="2" label="Has Label"></scale-rating-stars>
-            <scale-rating-stars max="3" label="Three" value="3"></scale-rating-stars>
-            <scale-rating-stars small value="4" label="small"></scale-rating-stars>
-        </div>
-    </div>
-    <div class="wrapper">
-        <h3>Slider</h3>
-        <scale-slider [(ngModel)]="testValue"></scale-slider>
-    </div>
-    <div class="wrapper">
-        <h3>Text Field</h3>
-        <scale-text-field name="test" ngDefaultControl [(ngModel)]="testText" label="Text">
-        </scale-text-field>
-    </div>
+<scale-app-shell>
+  <app-top-bar slot="header"></app-top-bar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+
+    <scale-button>test</scale-button>
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
+<scale-app-footer claim-lang="en" [footerNavigation]="footerNavigation">
+</scale-app-footer>

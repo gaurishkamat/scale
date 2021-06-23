@@ -1,16 +1,23 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import "@telekom/scale-components/dist/scale-components/scale-components.css";
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppModule } from "./app/app.module";
+import { environment } from "./environments/environment";
 
-import { defineCustomElements } from '@telekom/scale-components-neutral/loader';
+import {
+  applyPolyfills,
+  defineCustomElements
+} from "@telekom/scale-components/loader";
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
 
-defineCustomElements(window);
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});

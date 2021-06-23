@@ -1,0 +1,18 @@
+<scale-app-header
+  id="header"
+  custom-class="customClass"
+  [mainNavigation]="mainNavigation"
+  [iconNavigation]="iconNavigation"
+  [sectorNavigation]="sectorNavigation"
+  [activeRouteId]="activeRouteId"
+  [activeSectorId]="activeSectorId"
+>
+  <div slot="menu-addon">
+    <scale-nav-segment is-active="true" href="#custom-addon-1">
+      Custom Addon #1
+    </scale-nav-segment>
+    <scale-nav-segment href="#custom-addon-2">
+      Custom Addon #2
+    </scale-nav-segment>
+  </div>
+</scale-app-header>
