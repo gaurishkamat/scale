@@ -1,12 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import { defineCustomElements } from "@telekom/scale-components-neutral/loader";
+import {
+	applyPolyfills,
+	defineCustomElements,
+  } from '@telekom/scale-components/loader';
+ 
 import App from "./App";
-import "@telekom/scale-components-neutral/dist/scale-components/scale-components.css";
+import "@telekom/scale-components/dist/scale-components/scale-components.css";
 import "./index.css";
 
-defineCustomElements(window);
+ 
+applyPolyfills().then(() => {
+	defineCustomElements(window);
+  });
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

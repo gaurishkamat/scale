@@ -6,18 +6,10 @@ import {
   ScaleTag,
 } from "@telekom/scale-components-react";
 
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
 import "./App.css";
 import TopBar from './TopBar/TopBar';
 import Footer from './Footer/Footer';
-import '@telekom/scale-components/dist/scale-components/scale-components.css';
-import {
-  applyPolyfills,
-  defineCustomElements,
-} from '@telekom/scale-components/loader';
-
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
 
 
 const App = () => {
