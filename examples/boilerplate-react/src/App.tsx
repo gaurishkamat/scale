@@ -4,15 +4,27 @@ import {
   ScaleCard,
   ScaleLink,
   ScaleTag,
-} from "@telekom/scale-components-react-neutral";
+} from "@telekom/scale-components-react";
 
 import "./App.css";
+import TopBar from './TopBar/TopBar';
+import Footer from './Footer/Footer';
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@telekom/scale-components/loader';
 
-const App: React.FC = () => {
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+
+
+const App = () => {
   return (
     <div>
-      <h1>React App</h1>
-      <h3>Alert</h3>
+      <TopBar>
+      </TopBar>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
       </ScaleLink>
@@ -34,6 +46,7 @@ const App: React.FC = () => {
       <div className="block">One</div>
       <div className="block">One</div>
       <div className="block">One</div>
+      <Footer></Footer>
     </div>
   );
 };
