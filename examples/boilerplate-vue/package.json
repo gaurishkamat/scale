@@ -1,25 +1,46 @@
 {
-  "name": "@telekom/scale-boilerplate-vue",
-  "version": "0.0.1",
+  "name": "my-vue2-app",
+  "version": "0.1.0",
   "private": true,
-  "description": "Vue example for scale",
-  "license": "MIT",
   "scripts": {
-    "dev": "poi",
-    "build": "poi build",
-    "report": "poi build --bundle-report",
-    "serve": "serve dist --single"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@telekom/scale-components": "^3.0.0-beta.1",
     "@telekom/scale-components-neutral": "^3.0.0-beta.1",
+    "@telekom/scale-components-vue": "^3.0.0-beta.15",
     "@telekom/scale-components-vue-neutral": "^3.0.0-beta.1",
-    "normalize.css": "^7.0.0",
-    "object-assign": "^4.1.1",
-    "promise-polyfill": "^6.0.2"
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "poi": "^9.0.0",
-    "poi-preset-bundle-report": "^2.0.0",
-    "serve": "^11.3.2"
-  }
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
