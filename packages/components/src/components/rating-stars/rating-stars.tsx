@@ -23,6 +23,7 @@ import {
   State,
   Event,
   EventEmitter,
+  Watch,
 } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
@@ -62,6 +63,11 @@ export class RatingStars {
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
+
+  @Watch('value')
+  setAriaLabelTranslation() {
+    this.ariaLabelTranslation = `${this.value} out of ${this.max} stars`;
+  }
 
   renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {
