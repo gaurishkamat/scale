@@ -16,6 +16,7 @@
 .rating__label {
   position: absolute;
   bottom: var(--scl-spacing-32, 2rem);
+  white-space: nowrap;
 }
 
 .rating--disabled .rating__label {
