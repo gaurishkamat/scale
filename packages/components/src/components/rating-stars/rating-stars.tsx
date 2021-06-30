@@ -217,85 +217,41 @@ export class RatingStars {
 
     return (
       <Host>
-        <div
-          class={this.getCssClassMap()}
-          ref={(el) => (this.element = el)}
-          onMouseMove={this.handleMouseMove}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          onClick={this.handleMouseClick}
-          onKeyDown={this.handleKeyDown}
-          onTouchStart={this.handleTouchStart}
-          onTouchEnd={this.handleTouchEnd}
-          onTouchMove={this.handleTouchMove}
-          tabIndex={this.disabled ? -1 : 0}
-          role="figure"
-          aria-describedby="rating__description"
-          aria-label={this.label}
-        >
-          <label class="rating__label" aria-hidden="true">
-            {this.label}
-          </label>
-          <span
-            id="rating__description"
-            innerHTML={this.getAriaLabel()}
-            hidden
-          ></span>
-          <span class="rating__symbols" aria-hidden="true">
-            {counter.map((index) => (
-              <span
-                class="rating__symbol-wrapper"
-                onMouseEnter={this.handleMouseEnter}
-              >
-                <span
-                  role="presentation"
-                  style={{
-                    clipPath:
-                      Math.ceil(displayValue) >= index + 1
-                        ? `inset(0 ${
-                            (Math.ceil(displayValue) - index) * 100
-                          }% 0 0)`
-                        : null,
-                  }}
-                  class={{
-                    rating__symbol: true,
-                    'rating__symbol--hover':
-                      this.isHovering && Math.ceil(displayValue) === index + 1,
-                  }}
-                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
-                  id={`star-${index + 1}`}
-                />
-              </span>
-            ))}
-          </span>
-          <span
-            class="rating__symbols rating__symbols--indicator"
-            aria-hidden="true"
+        <fieldset>
+          {this.label && <legend>Rating</legend>}
+          <div
+            class={this.getCssClassMap()}
+            ref={(el) => (this.element = el)}
+            onMouseMove={this.handleMouseMove}
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseLeave}
+            onClick={this.handleMouseClick}
+            onKeyDown={this.handleKeyDown}
+            onTouchStart={this.handleTouchStart}
+            onTouchEnd={this.handleTouchEnd}
+            onTouchMove={this.handleTouchMove}
+            tabIndex={this.disabled ? -1 : 0}
           >
             {counter.map((index) => (
-              <span
-                class="rating__symbol-wrapper"
-                onMouseEnter={this.handleMouseEnter}
-              >
-                <span
-                  role="presentation"
-                  style={{
-                    clipPath:
-                      displayValue > index + 1
-                        ? null
-                        : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
-                  }}
+              <label class="rating__symbol">
+                <input
                   class={{
-                    rating__symbol: true,
-                    'rating__symbol--hover':
-                      this.isHovering && Math.ceil(displayValue) === index + 1,
+                    rating__input: true,
+                    'rating__input--small': this.small,
+                    'rating__input--large': !this.small,
                   }}
-                  innerHTML={this.renderIcon(this.colorFilled, this.size, true)}
+                  name="Rating"
+                  value={index + 1}
+                  type="radio"
                 />
-              </span>
+                <span
+                  aria-label={`${index + 1} out of ${this.max} stars`}
+                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
+                />
+              </label>
             ))}
-          </span>
-        </div>
+          </div>
+        </fieldset>
       </Host>
     );
   }

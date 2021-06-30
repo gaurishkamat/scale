@@ -11,6 +11,15 @@
 
 :host {
   --rating-spacing: 0.125rem;
+  --rating-size-large: var(--scl-spacing-24);
+  --rating-size-small: var(--scl-spacing-16);
+}
+
+fieldset {
+  padding: 0;
+  padding-top: 8px;
+  border: none;
+  display: inline-block;
 }
 
 .rating__label {
@@ -32,10 +41,6 @@
   display: inline-flex;
 }
 
-.rating--has-label {
-  margin-top: var(--scl-spacing-24, 1.5rem);
-}
-
 .rating:focus {
   outline: none;
 }
@@ -44,10 +49,28 @@
   outline: -webkit-focus-ring-color auto 1px;
 }
 
+.rating__input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 25%;
+}
+
+.rating__input--large {
+  width: var(--rating-size-large);
+  height: var(--rating-size-large);
+}
+
+.rating__input--small {
+  width: var(--rating-size-small);
+  height: var(--rating-size-small);
+}
+
 .rating__symbols {
   display: inline-flex;
   position: relative;
   cursor: pointer;
+  height: 100%;
 }
 
 .rating__symbols--indicator {
@@ -58,7 +81,7 @@
 }
 
 .rating__symbol {
-  display: flex;
+  position: relative;
 }
 
 .rating--disabled .rating__symbols {
