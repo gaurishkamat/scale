@@ -82,6 +82,7 @@ fieldset {
 
 .rating__symbol {
   position: relative;
+  padding: 0 var(--rating-spacing, 0.125rem);
 }
 
 .rating--disabled .rating__symbols {

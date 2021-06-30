@@ -232,24 +232,57 @@ export class RatingStars {
             onTouchMove={this.handleTouchMove}
             tabIndex={this.disabled ? -1 : 0}
           >
-            {counter.map((index) => (
-              <label class="rating__symbol">
-                <input
-                  class={{
-                    rating__input: true,
-                    'rating__input--small': this.small,
-                    'rating__input--large': !this.small,
-                  }}
-                  name="Rating"
-                  value={index + 1}
-                  type="radio"
-                />
-                <span
-                  aria-label={`${index + 1} out of ${this.max} stars`}
-                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
-                />
-              </label>
-            ))}
+            <span
+              class="rating__symbols"
+              aria-label={`${this.value} stars selected`}
+            >
+              {counter.map((index) => (
+                <label class="rating__symbol">
+                  <input
+                    class={{
+                      rating__input: true,
+                      'rating__input--small': this.small,
+                      'rating__input--large': !this.small,
+                    }}
+                    name="Rating"
+                    value={index + 1}
+                    type="radio"
+                  />
+                  <span
+                    innerHTML={this.renderIcon(this.colorBlank, this.size)}
+                    style={{
+                      clipPath:
+                        Math.ceil(displayValue) >= index + 1
+                          ? `inset(0 ${
+                              (Math.ceil(displayValue) - index) * 100
+                            }% 0 0)`
+                          : null,
+                    }}
+                  />
+                </label>
+              ))}
+            </span>
+            <span class="rating__symbols rating__symbols--indicator">
+              {counter.map((index) => (
+                <label class="rating__symbol">
+                  <span
+                    innerHTML={this.renderIcon(
+                      this.colorFilled,
+                      this.size,
+                      true
+                    )}
+                    style={{
+                      clipPath:
+                        displayValue > index + 1
+                          ? null
+                          : `inset(0 ${
+                              100 - (displayValue - index) * 100
+                            }% 0 0)`,
+                    }}
+                  />
+                </label>
+              ))}
+            </span>
           </div>
         </fieldset>
       </Host>
