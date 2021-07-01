@@ -237,7 +237,18 @@ export class RatingStars {
               aria-label={`${this.value} stars selected`}
             >
               {counter.map((index) => (
-                <label class="rating__symbol">
+                <label
+                  class="rating__symbol"
+                  style={{
+                    clipPath:
+                      Math.ceil(displayValue) >= index + 1
+                        ? `inset(0 ${
+                            (Math.ceil(displayValue) - index) * 100
+                          }% 0 0)`
+                        : null,
+                  }}
+                  onMouseEnter={this.handleMouseEnter}
+                >
                   <input
                     class={{
                       rating__input: true,
@@ -245,40 +256,32 @@ export class RatingStars {
                       'rating__input--large': !this.small,
                     }}
                     name="Rating"
-                    value={index + 1}
                     type="radio"
+                    value={index + 1}
                   />
                   <span
                     innerHTML={this.renderIcon(this.colorBlank, this.size)}
-                    style={{
-                      clipPath:
-                        Math.ceil(displayValue) >= index + 1
-                          ? `inset(0 ${
-                              (Math.ceil(displayValue) - index) * 100
-                            }% 0 0)`
-                          : null,
-                    }}
                   />
                 </label>
               ))}
             </span>
             <span class="rating__symbols rating__symbols--indicator">
               {counter.map((index) => (
-                <label class="rating__symbol">
+                <label
+                  class="rating__symbol"
+                  style={{
+                    clipPath:
+                      displayValue > index + 1
+                        ? null
+                        : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
+                  }}
+                >
                   <span
                     innerHTML={this.renderIcon(
                       this.colorFilled,
                       this.size,
                       true
                     )}
-                    style={{
-                      clipPath:
-                        displayValue > index + 1
-                          ? null
-                          : `inset(0 ${
-                              100 - (displayValue - index) * 100
-                            }% 0 0)`,
-                    }}
                   />
                 </label>
               ))}
