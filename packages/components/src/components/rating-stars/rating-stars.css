@@ -50,10 +50,8 @@ fieldset {
 }
 
 .rating__input {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  opacity: 25%;
+  opacity: 80%;
+  margin: 0 var(--rating-spacing, 0.125rem);
 }
 
 .rating__input--large {
@@ -78,6 +76,10 @@ fieldset {
   top: 0;
   left: 0;
   pointer-events: none;
+}
+
+.rating__input-layer {
+  position: absolute;
 }
 
 .rating__symbol {

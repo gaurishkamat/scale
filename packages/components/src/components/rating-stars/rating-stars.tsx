@@ -217,10 +217,10 @@ export class RatingStars {
 
     return (
       <Host>
-        <fieldset>
+        <fieldset tabIndex={0}>
           {this.label && <legend>Rating</legend>}
           <div
-            class={this.getCssClassMap()}
+            /* class={this.getCssClassMap()}
             ref={(el) => (this.element = el)}
             onMouseMove={this.handleMouseMove}
             onMouseEnter={this.handleMouseEnter}
@@ -230,12 +230,9 @@ export class RatingStars {
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
             onTouchMove={this.handleTouchMove}
-            tabIndex={this.disabled ? -1 : 0}
+            tabIndex={this.disabled ? -1 : 0} */
           >
-            <span
-              class="rating__symbols"
-              aria-label={`${this.value} stars selected`}
-            >
+            {/* <span class="rating__symbols" aria-hidden="true">
               {counter.map((index) => (
                 <label
                   class="rating__symbol"
@@ -249,23 +246,16 @@ export class RatingStars {
                   }}
                   onMouseEnter={this.handleMouseEnter}
                 >
-                  <input
-                    class={{
-                      rating__input: true,
-                      'rating__input--small': this.small,
-                      'rating__input--large': !this.small,
-                    }}
-                    name="Rating"
-                    type="radio"
-                    value={index + 1}
-                  />
                   <span
                     innerHTML={this.renderIcon(this.colorBlank, this.size)}
                   />
                 </label>
               ))}
-            </span>
-            <span class="rating__symbols rating__symbols--indicator">
+            </span> */}
+            {/* <span
+              class="rating__symbols rating__symbols--indicator"
+              aria-hidden="true"
+            >
               {counter.map((index) => (
                 <label
                   class="rating__symbol"
@@ -284,6 +274,33 @@ export class RatingStars {
                     )}
                   />
                 </label>
+              ))}
+            </span> */}
+            <span
+              /* class="rating__symbols rating__symbols--indicator" */
+              /* aria-label={`${this.value} stars selected`} */
+            >
+              {counter.map((index) => (
+                <span>
+                  <input
+                    class={{
+                      rating__input: true,
+                      'rating__input--small': this.small,
+                      'rating__input--large': !this.small,
+                    }}
+                    id={`rating__input-${index + 1}`}
+                    name="ratingInput"
+                    type="radio"
+                    value={index + 1}
+                    checked={this.value === index + 1}
+                  />
+                  <label
+                    htmlFor={`rating__input-${index + 1}`}
+                    class="rating-label"
+                    aria-label={`${index + 1} stars`}
+                    title={`${index + 1} stars title`}
+                  />
+                </span>
               ))}
             </span>
           </div>
