@@ -50,7 +50,7 @@ fieldset {
 }
 
 .rating__input {
-  opacity: 80%;
+  opacity: 40%;
   margin: 0 var(--rating-spacing, 0.125rem);
 }
 

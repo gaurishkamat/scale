@@ -220,7 +220,7 @@ export class RatingStars {
         <fieldset tabIndex={0}>
           {this.label && <legend>Rating</legend>}
           <div
-            /* class={this.getCssClassMap()}
+            class={this.getCssClassMap()}
             ref={(el) => (this.element = el)}
             onMouseMove={this.handleMouseMove}
             onMouseEnter={this.handleMouseEnter}
@@ -230,9 +230,9 @@ export class RatingStars {
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
             onTouchMove={this.handleTouchMove}
-            tabIndex={this.disabled ? -1 : 0} */
+            /* tabIndex={this.disabled ? -1 : 0} */
           >
-            {/* <span class="rating__symbols" aria-hidden="true">
+            <span class="rating__symbols" aria-hidden="true">
               {counter.map((index) => (
                 <label
                   class="rating__symbol"
@@ -251,8 +251,8 @@ export class RatingStars {
                   />
                 </label>
               ))}
-            </span> */}
-            {/* <span
+            </span>
+            <span
               class="rating__symbols rating__symbols--indicator"
               aria-hidden="true"
             >
@@ -275,13 +275,13 @@ export class RatingStars {
                   />
                 </label>
               ))}
-            </span> */}
+            </span>
             <span
-              /* class="rating__symbols rating__symbols--indicator" */
-              /* aria-label={`${this.value} stars selected`} */
+              class="rating__symbols rating__input-layer"
+              aria-label={`${this.value} stars selected`}
             >
               {counter.map((index) => (
-                <span>
+                <span class="rating__input-wrapper">
                   <input
                     class={{
                       rating__input: true,
