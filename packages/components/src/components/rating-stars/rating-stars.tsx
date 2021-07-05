@@ -78,14 +78,6 @@ export class RatingStars {
   };
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleMouseClick = this.handleMouseClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
   }
 
   componentDidLoad() {
@@ -96,27 +88,28 @@ export class RatingStars {
     handleListeners(this.element, 'removeListeners');
   }
 
-  handleMouseLeave() {
+  handleMouseLeave = () => {
     this.isHovering = false;
     return false;
   }
 
-  handleMouseEnter() {
+  handleMouseEnter = () =>  {
+    console.log('handleMouseEnter');
     if (!this.disabled) {
       this.isHovering = true;
       return true;
     }
   }
 
-  handleMouseMove(event: MouseEvent) {
+  handleMouseMove = (event: MouseEvent) => {
     this.hoverValue = this.getValueFromXPosition(null, event);
   }
 
-  handleMouseClick(event: MouseEvent) {
+  handleMouseClick = (event: MouseEvent) => {
     this.setValue(this.getValueFromXPosition(null, event));
   }
 
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown = (event: KeyboardEvent) => {
     if (this.disabled) {
       return;
     }
@@ -152,19 +145,19 @@ export class RatingStars {
     return this.getValueFromXPosition(event);
   }
 
-  handleTouchStart(event: TouchEvent) {
+  handleTouchStart = (event: TouchEvent) => {
     this.hoverValue = this.getValueFromTouchPosition(event);
 
     // Prevent scrolling when touch is initiated
     event.preventDefault();
   }
 
-  handleTouchMove(event: TouchEvent) {
+  handleTouchMove = (event: TouchEvent) => {
     this.isHovering = true;
     this.hoverValue = this.getValueFromTouchPosition(event);
   }
 
-  handleTouchEnd(event: TouchEvent) {
+  handleTouchEnd = (event: TouchEvent) => {
     this.isHovering = false;
     this.setValue(this.hoverValue);
 
@@ -230,7 +223,7 @@ export class RatingStars {
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
             onTouchMove={this.handleTouchMove}
-            /* tabIndex={this.disabled ? -1 : 0} */
+            tabIndex={this.disabled ? -1 : 0}
           >
             <span class="rating__symbols" aria-hidden="true">
               {counter.map((index) => (
@@ -244,7 +237,6 @@ export class RatingStars {
                           }% 0 0)`
                         : null,
                   }}
-                  onMouseEnter={this.handleMouseEnter}
                 >
                   <span
                     innerHTML={this.renderIcon(this.colorBlank, this.size)}
@@ -281,7 +273,10 @@ export class RatingStars {
               aria-label={`${this.value} stars selected`}
             >
               {counter.map((index) => (
-                <span class="rating__input-wrapper">
+                <span
+                  class="rating__input-wrapper"
+                  onMouseEnter={this.handleMouseEnter}
+                >
                   <input
                     class={{
                       rating__input: true,
