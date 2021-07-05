@@ -41,6 +41,10 @@ fieldset {
   display: inline-flex;
 }
 
+.rating * {
+  z-index: 100;
+}
+
 .rating:focus {
   outline: none;
 }
