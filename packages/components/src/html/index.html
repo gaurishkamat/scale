@@ -34,27 +34,21 @@
   </head>
 
   <body>
-    <scale-data-grid id="graph-example" hide-menu></scale-data-grid>
+    <scale-data-grid id="html-example" hide-menu></scale-data-grid>
     <script type="application/javascript">
       {
-        const dataGrid = document.querySelector('#graph-example');
+        const dataGrid = document.querySelector('#html-example');
         dataGrid.fields = [
           {
-            type: 'graph',
-            label: 'Progress',
-          },
-          {
-            type: 'graph',
-            label: 'Bar',
-            style: 'bar',
-            max: 20000,
+            type: 'html',
+            label: 'HTML',
           },
         ];
         dataGrid.rows = [
-          [87, 1020],
-          [100, 15034],
-          [12, 19209],
-          [34, 89],
+          [document.createElement('scale-icon-service-support')],
+          [document.createElement('scale-icon-service-settings')],
+          [document.createElement('scale-icon-service-services')],
+          [document.createElement('scale-icon-service-devices-service')],
         ];
       }
     </script>

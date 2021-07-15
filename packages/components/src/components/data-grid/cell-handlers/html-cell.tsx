@@ -20,8 +20,10 @@ export const HTMLCell: Cell = {
     // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
+
   render: ({ content, component }) => {
     /* TODO: use scale button */
+
     return (
       <scale-button
         variant="secondary"
@@ -31,6 +33,7 @@ export const HTMLCell: Cell = {
           content.isExpanded = !content.isExpanded;
           component.forceRender++;
         }}
+        ariaLabel={!content.isExpanded ? 'open accordion' : 'close accordion'}
       >
         {content.isExpanded ? (
           <scale-icon-navigation-collapse-up
