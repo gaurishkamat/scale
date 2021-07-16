@@ -914,9 +914,9 @@ export class DataGrid {
       <thead
         ref={(el) => (this.elTableHead = el)}
         class={`thead`}
-        role="rowgroup"
+        /* role="rowgroup" */
       >
-        <tr class={`thead__row`} role="row">
+        <tr class={`thead__row`} /* role="row" */>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
           {this.fields.map(
@@ -955,8 +955,8 @@ export class DataGrid {
                   width: `calc(${width}px + ${stretchWidth}px)`,
                   textAlign,
                 },
-                role: 'columnheader',
-                'aria-colindex': columnIndex + 1,
+                /* role: 'columnheader',
+                'aria-colindex': columnIndex + 1, */
                 'data-type': type,
               };
               if (sortable) {
@@ -1037,7 +1037,7 @@ export class DataGrid {
 
   renderTableBody() {
     return (
-      <tbody class={`tbody`} role="rowgroup" tabindex="0">
+      <tbody class={`tbody`} /* role="rowgroup" */ tabindex="0">
         {(() => {
           const rows = [];
           // Pagination functionality
@@ -1049,7 +1049,7 @@ export class DataGrid {
             const rowNestedContent = [];
             let isNestedExpanded = false;
             rows.push(
-              <tr class={`tbody__row`} role="row" aria-rowindex={rowIndex + 1}>
+              <tr class={`tbody__row`} /* role="row"  aria-rowindex={rowIndex + 1}*/>
                 {this.renderMobileTitle(rowData)}
                 {this.numbered && this.renderTableBodyNumberedCell(rowIndex)}
                 {this.selectable &&
