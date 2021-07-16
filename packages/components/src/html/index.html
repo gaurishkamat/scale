@@ -34,6 +34,8 @@
   </head>
 
   <body>
+    <h3>HTML Example</h3>
+
     <scale-data-grid id="html-example" hide-menu></scale-data-grid>
     <script type="application/javascript">
       {
@@ -51,6 +53,37 @@
           [document.createElement('scale-icon-service-devices-service')],
         ];
       }
+    </script>
+
+    <h3>Column Stretch Example</h3>
+
+    <scale-data-grid heading="Column Stretch" id="column-stretch-example"></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#column-stretch-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                stretchWeight: 1,
+            },
+            {
+                type: 'number',
+                label: 'ID',
+            },
+            {
+                type: 'date',
+                label: 'Time',
+            },
+        ];
+        dataGrid.rows = [
+            ['John', 1, '12:30'],
+            ['Mary', 2, '2:12'],
+            ['Patek', 3, '16:01'],
+            ['Heidi', 4, '3:15'],
+            ['Muhammad', 5, '21:45'],
+        ];
+    }
     </script>
   </body>
 </html>
